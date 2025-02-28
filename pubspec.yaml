@@ -1,7 +1,7 @@
 name: on_the_go_sdk
 version: 1.0.0
-description: open
-homepage: homepage
+description: OpenAPI Dart client for on-the-go 
+homepage: https://aztrix.me
 
 environment:
   sdk: '>=2.15.0 <4.0.0'
