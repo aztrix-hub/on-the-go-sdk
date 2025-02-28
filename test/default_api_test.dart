@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:uberall_api/uberall_api.dart';
+import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 /// tests for DefaultApi
 void main() {
-  final instance = UberallApi().getDefaultApi();
+  final instance = OnTheGoSdk().getDefaultApi();
 
   group(DefaultApi, () {
     // Upload a Photo

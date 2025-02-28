@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
-import 'package:uberall_api/uberall_api.dart';
+import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 /// tests for UsersApi
 void main() {
-  final instance = UberallApi().getUsersApi();
+  final instance = OnTheGoSdk().getUsersApi();
 
   group(UsersApi, () {
     // Get the current user
