@@ -230,6 +230,8 @@ import 'package:on_the_go_sdk/src/model/product_search_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/product_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/prompt_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/prompt_post200_response_messages_inner.dart';
 import 'package:on_the_go_sdk/src/model/prompt_post_request.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
@@ -546,6 +548,8 @@ part 'serializers.g.dart';
   ProductWrapper,
   ProfileCompleteness,
   ProfileCompletenessWrapper,
+  PromptPost200Response,
+  PromptPost200ResponseMessagesInner,
   PromptPostRequest,
   ProvincesResponse,
   ProvincesResponseWrapper,

@@ -6,75 +6,74 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'prompt_post_request.g.dart';
+part 'prompt_post200_response_messages_inner.g.dart';
 
-/// PromptPostRequest
+/// PromptPost200ResponseMessagesInner
 ///
 /// Properties:
-/// * [userId]
-/// * [conversationId]
+/// * [role]
 /// * [message]
 @BuiltValue()
-abstract class PromptPostRequest
-    implements Built<PromptPostRequest, PromptPostRequestBuilder> {
-  @BuiltValueField(wireName: r'userId')
-  String get userId;
-
-  @BuiltValueField(wireName: r'conversationId')
-  String? get conversationId;
+abstract class PromptPost200ResponseMessagesInner
+    implements
+        Built<PromptPost200ResponseMessagesInner,
+            PromptPost200ResponseMessagesInnerBuilder> {
+  @BuiltValueField(wireName: r'role')
+  String? get role;
 
   @BuiltValueField(wireName: r'message')
-  String get message;
+  String? get message;
 
-  PromptPostRequest._();
+  PromptPost200ResponseMessagesInner._();
 
-  factory PromptPostRequest([void updates(PromptPostRequestBuilder b)]) =
-      _$PromptPostRequest;
+  factory PromptPost200ResponseMessagesInner(
+          [void updates(PromptPost200ResponseMessagesInnerBuilder b)]) =
+      _$PromptPost200ResponseMessagesInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PromptPostRequestBuilder b) => b;
+  static void _defaults(PromptPost200ResponseMessagesInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PromptPostRequest> get serializer =>
-      _$PromptPostRequestSerializer();
+  static Serializer<PromptPost200ResponseMessagesInner> get serializer =>
+      _$PromptPost200ResponseMessagesInnerSerializer();
 }
 
-class _$PromptPostRequestSerializer
-    implements PrimitiveSerializer<PromptPostRequest> {
+class _$PromptPost200ResponseMessagesInnerSerializer
+    implements PrimitiveSerializer<PromptPost200ResponseMessagesInner> {
   @override
-  final Iterable<Type> types = const [PromptPostRequest, _$PromptPostRequest];
+  final Iterable<Type> types = const [
+    PromptPost200ResponseMessagesInner,
+    _$PromptPost200ResponseMessagesInner
+  ];
 
   @override
-  final String wireName = r'PromptPostRequest';
+  final String wireName = r'PromptPost200ResponseMessagesInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PromptPostRequest object, {
+    PromptPost200ResponseMessagesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userId';
-    yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(String),
-    );
-    if (object.conversationId != null) {
-      yield r'conversationId';
+    if (object.role != null) {
+      yield r'role';
       yield serializers.serialize(
-        object.conversationId,
+        object.role,
         specifiedType: const FullType(String),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
+    if (object.message != null) {
+      yield r'message';
+      yield serializers.serialize(
+        object.message,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    PromptPostRequest object, {
+    PromptPost200ResponseMessagesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -87,26 +86,19 @@ class _$PromptPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required PromptPostRequestBuilder result,
+    required PromptPost200ResponseMessagesInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userId':
+        case r'role':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.userId = valueDes;
-          break;
-        case r'conversationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.conversationId = valueDes;
+          result.role = valueDes;
           break;
         case r'message':
           final valueDes = serializers.deserialize(
@@ -124,12 +116,12 @@ class _$PromptPostRequestSerializer
   }
 
   @override
-  PromptPostRequest deserialize(
+  PromptPost200ResponseMessagesInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = PromptPostRequestBuilder();
+    final result = PromptPost200ResponseMessagesInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

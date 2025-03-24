@@ -8,6 +8,8 @@ part of 'prompt_post_request.dart';
 
 class _$PromptPostRequest extends PromptPostRequest {
   @override
+  final String userId;
+  @override
   final String? conversationId;
   @override
   final String message;
@@ -16,8 +18,11 @@ class _$PromptPostRequest extends PromptPostRequest {
           [void Function(PromptPostRequestBuilder)? updates]) =>
       (new PromptPostRequestBuilder()..update(updates))._build();
 
-  _$PromptPostRequest._({this.conversationId, required this.message})
+  _$PromptPostRequest._(
+      {required this.userId, this.conversationId, required this.message})
       : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        userId, r'PromptPostRequest', 'userId');
     BuiltValueNullFieldError.checkNotNull(
         message, r'PromptPostRequest', 'message');
   }
@@ -34,6 +39,7 @@ class _$PromptPostRequest extends PromptPostRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is PromptPostRequest &&
+        userId == other.userId &&
         conversationId == other.conversationId &&
         message == other.message;
   }
@@ -41,6 +47,7 @@ class _$PromptPostRequest extends PromptPostRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, conversationId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jf(_$hash);
@@ -50,6 +57,7 @@ class _$PromptPostRequest extends PromptPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'PromptPostRequest')
+          ..add('userId', userId)
           ..add('conversationId', conversationId)
           ..add('message', message))
         .toString();
@@ -59,6 +67,10 @@ class _$PromptPostRequest extends PromptPostRequest {
 class PromptPostRequestBuilder
     implements Builder<PromptPostRequest, PromptPostRequestBuilder> {
   _$PromptPostRequest? _$v;
+
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
 
   String? _conversationId;
   String? get conversationId => _$this._conversationId;
@@ -76,6 +88,7 @@ class PromptPostRequestBuilder
   PromptPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _userId = $v.userId;
       _conversationId = $v.conversationId;
       _message = $v.message;
       _$v = null;
@@ -100,6 +113,8 @@ class PromptPostRequestBuilder
   _$PromptPostRequest _build() {
     final _$result = _$v ??
         new _$PromptPostRequest._(
+          userId: BuiltValueNullFieldError.checkNotNull(
+              userId, r'PromptPostRequest', 'userId'),
           conversationId: conversationId,
           message: BuiltValueNullFieldError.checkNotNull(
               message, r'PromptPostRequest', 'message'),

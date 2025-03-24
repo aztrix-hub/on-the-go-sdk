@@ -51,7 +51,8 @@ final api = OnTheGoSdk().getAiApi();
 final PromptPostRequest promptPostRequest = ; // PromptPostRequest | 
 
 try {
-    api.promptPost(promptPostRequest);
+    final response = await api.promptPost(promptPostRequest);
+    print(response);
 } catch on DioException (e) {
     print("Exception when calling AiApi->promptPost: $e\n");
 }
@@ -295,6 +296,8 @@ Class | Method | HTTP request | Description
  - [ProductWrapper](doc/ProductWrapper.md)
  - [ProfileCompleteness](doc/ProfileCompleteness.md)
  - [ProfileCompletenessWrapper](doc/ProfileCompletenessWrapper.md)
+ - [PromptPost200Response](doc/PromptPost200Response.md)
+ - [PromptPost200ResponseMessagesInner](doc/PromptPost200ResponseMessagesInner.md)
  - [PromptPostRequest](doc/PromptPostRequest.md)
  - [ProvincesResponse](doc/ProvincesResponse.md)
  - [ProvincesResponseWrapper](doc/ProvincesResponseWrapper.md)

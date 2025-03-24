@@ -218,6 +218,8 @@ doc/ProductSearchWrapper.md
 doc/ProductWrapper.md
 doc/ProfileCompleteness.md
 doc/ProfileCompletenessWrapper.md
+doc/PromptPost200Response.md
+doc/PromptPost200ResponseMessagesInner.md
 doc/PromptPostRequest.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
@@ -546,6 +548,8 @@ lib/src/model/product_search_wrapper.dart
 lib/src/model/product_wrapper.dart
 lib/src/model/profile_completeness.dart
 lib/src/model/profile_completeness_wrapper.dart
+lib/src/model/prompt_post200_response.dart
+lib/src/model/prompt_post200_response_messages_inner.dart
 lib/src/model/prompt_post_request.dart
 lib/src/model/provinces_response.dart
 lib/src/model/provinces_response_wrapper.dart
@@ -643,3 +647,5 @@ lib/src/model/webhook_wrapper.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/prompt_post200_response_messages_inner_test.dart
+test/prompt_post200_response_test.dart

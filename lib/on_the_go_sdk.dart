@@ -231,6 +231,8 @@ export 'package:on_the_go_sdk/src/model/product_search_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/product_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 export 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
+export 'package:on_the_go_sdk/src/model/prompt_post200_response.dart';
+export 'package:on_the_go_sdk/src/model/prompt_post200_response_messages_inner.dart';
 export 'package:on_the_go_sdk/src/model/prompt_post_request.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';

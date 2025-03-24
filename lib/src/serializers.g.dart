@@ -502,6 +502,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProfileCompletenessWrapper.serializer)
       ..add(ProfileCompletenessWrapperErrorCodeEnum.serializer)
       ..add(ProfileCompletenessWrapperStatusEnum.serializer)
+      ..add(PromptPost200Response.serializer)
+      ..add(PromptPost200ResponseMessagesInner.serializer)
       ..add(PromptPostRequest.serializer)
       ..add(ProvincesResponse.serializer)
       ..add(ProvincesResponseWrapper.serializer)
@@ -937,6 +939,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ProductPlan)]),
           () => new ListBuilder<ProductPlan>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(PromptPost200ResponseMessagesInner)]),
+          () => new ListBuilder<PromptPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ResponseBusiness)]),
           () => new ListBuilder<ResponseBusiness>())

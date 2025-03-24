@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **promptPost**
-> promptPost(promptPostRequest)
+> PromptPost200Response promptPost(promptPostRequest)
 
 
 
@@ -25,7 +25,8 @@ final api = OnTheGoSdk().getAiApi();
 final PromptPostRequest promptPostRequest = ; // PromptPostRequest | 
 
 try {
-    api.promptPost(promptPostRequest);
+    final response = api.promptPost(promptPostRequest);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->promptPost: $e\n');
 }
@@ -39,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**PromptPost200Response**](PromptPost200Response.md)
 
 ### Authorization
 
@@ -48,7 +49,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
