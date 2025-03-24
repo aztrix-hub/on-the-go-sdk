@@ -12,7 +12,7 @@ part 'prompt_post200_response_messages_inner.g.dart';
 ///
 /// Properties:
 /// * [role]
-/// * [message]
+/// * [content]
 @BuiltValue()
 abstract class PromptPost200ResponseMessagesInner
     implements
@@ -21,8 +21,8 @@ abstract class PromptPost200ResponseMessagesInner
   @BuiltValueField(wireName: r'role')
   String? get role;
 
-  @BuiltValueField(wireName: r'message')
-  String? get message;
+  @BuiltValueField(wireName: r'content')
+  String? get content;
 
   PromptPost200ResponseMessagesInner._();
 
@@ -61,10 +61,10 @@ class _$PromptPost200ResponseMessagesInnerSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.message != null) {
-      yield r'message';
+    if (object.content != null) {
+      yield r'content';
       yield serializers.serialize(
-        object.message,
+        object.content,
         specifiedType: const FullType(String),
       );
     }
@@ -100,12 +100,12 @@ class _$PromptPost200ResponseMessagesInnerSerializer
           ) as String;
           result.role = valueDes;
           break;
-        case r'message':
+        case r'content':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.message = valueDes;
+          result.content = valueDes;
           break;
         default:
           unhandled.add(key);

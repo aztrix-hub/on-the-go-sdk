@@ -11,7 +11,7 @@ class _$PromptPost200ResponseMessagesInner
   @override
   final String? role;
   @override
-  final String? message;
+  final String? content;
 
   factory _$PromptPost200ResponseMessagesInner(
           [void Function(PromptPost200ResponseMessagesInnerBuilder)?
@@ -19,7 +19,7 @@ class _$PromptPost200ResponseMessagesInner
       (new PromptPost200ResponseMessagesInnerBuilder()..update(updates))
           ._build();
 
-  _$PromptPost200ResponseMessagesInner._({this.role, this.message}) : super._();
+  _$PromptPost200ResponseMessagesInner._({this.role, this.content}) : super._();
 
   @override
   PromptPost200ResponseMessagesInner rebuild(
@@ -35,14 +35,14 @@ class _$PromptPost200ResponseMessagesInner
     if (identical(other, this)) return true;
     return other is PromptPost200ResponseMessagesInner &&
         role == other.role &&
-        message == other.message;
+        content == other.content;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, role.hashCode);
-    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, content.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -51,7 +51,7 @@ class _$PromptPost200ResponseMessagesInner
   String toString() {
     return (newBuiltValueToStringHelper(r'PromptPost200ResponseMessagesInner')
           ..add('role', role)
-          ..add('message', message))
+          ..add('content', content))
         .toString();
   }
 }
@@ -66,9 +66,9 @@ class PromptPost200ResponseMessagesInnerBuilder
   String? get role => _$this._role;
   set role(String? role) => _$this._role = role;
 
-  String? _message;
-  String? get message => _$this._message;
-  set message(String? message) => _$this._message = message;
+  String? _content;
+  String? get content => _$this._content;
+  set content(String? content) => _$this._content = content;
 
   PromptPost200ResponseMessagesInnerBuilder() {
     PromptPost200ResponseMessagesInner._defaults(this);
@@ -78,7 +78,7 @@ class PromptPost200ResponseMessagesInnerBuilder
     final $v = _$v;
     if ($v != null) {
       _role = $v.role;
-      _message = $v.message;
+      _content = $v.content;
       _$v = null;
     }
     return this;
@@ -103,7 +103,7 @@ class PromptPost200ResponseMessagesInnerBuilder
     final _$result = _$v ??
         new _$PromptPost200ResponseMessagesInner._(
           role: role,
-          message: message,
+          content: content,
         );
     replace(_$result);
     return _$result;

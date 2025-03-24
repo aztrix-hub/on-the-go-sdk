@@ -933,7 +933,7 @@
                           "role": {
                             "type": "string"
                           },
-                          "message": {
+                          "content": {
                             "type": "string"
                           }
                         }
