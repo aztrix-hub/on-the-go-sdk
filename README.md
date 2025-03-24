@@ -47,14 +47,13 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
-final api = OnTheGoSdk().getDefaultApi();
-final PhotosPostRequest photosPostRequest = ; // PhotosPostRequest | The photo data to upload
+final api = OnTheGoSdk().getAiApi();
+final PromptPostRequest promptPostRequest = ; // PromptPostRequest | 
 
 try {
-    final response = await api.photosPost(photosPostRequest);
-    print(response);
+    api.promptPost(promptPostRequest);
 } catch on DioException (e) {
-    print("Exception when calling DefaultApi->photosPost: $e\n");
+    print("Exception when calling AiApi->promptPost: $e\n");
 }
 
 ```
@@ -65,13 +64,14 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*DefaultApi*](doc/DefaultApi.md) | [**photosPost**](doc/DefaultApi.md#photospost) | **POST** /photos | Upload a Photo
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationGet**](doc/LocationsDataApi.md#locationget) | **GET** /location | Get a Location
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationPatch**](doc/LocationsDataApi.md#locationpatch) | **PATCH** /location | Update a Location
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationsDelete**](doc/LocationsDataApi.md#locationsdelete) | **DELETE** /locations | Delete Several Locations
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationsGet**](doc/LocationsDataApi.md#locationsget) | **GET** /locations | Get Several Locations
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationsPatch**](doc/LocationsDataApi.md#locationspatch) | **PATCH** /locations | Update Several Locations
-[*LocationsDataApi*](doc/LocationsDataApi.md) | [**locationsPost**](doc/LocationsDataApi.md#locationspost) | **POST** /locations | Create a Location
+[*AiApi*](doc/AiApi.md) | [**promptPost**](doc/AiApi.md#promptpost) | **POST** /prompt | 
+[*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
+[*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get Several Locations
+[*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
+[*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
+[*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
 [*UsersApi*](doc/UsersApi.md) | [**userCurrentGet**](doc/UsersApi.md#usercurrentget) | **GET** /user/current | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userCurrentPatch**](doc/UsersApi.md#usercurrentpatch) | **PATCH** /user/current | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
@@ -106,6 +106,10 @@ Class | Method | HTTP request | Description
  - [BusinessStatistics](doc/BusinessStatistics.md)
  - [BusinessStatisticsWrapper](doc/BusinessStatisticsWrapper.md)
  - [CallTrackingNumber](doc/CallTrackingNumber.md)
+ - [CategoriesGet200Response](doc/CategoriesGet200Response.md)
+ - [CategoriesGet200ResponseResponse](doc/CategoriesGet200ResponseResponse.md)
+ - [CategoriesGet200ResponseResponseResults](doc/CategoriesGet200ResponseResponseResults.md)
+ - [CategoriesGet200ResponseResponseResultsOneOf](doc/CategoriesGet200ResponseResponseResultsOneOf.md)
  - [Category](doc/Category.md)
  - [CheckConflictRequest](doc/CheckConflictRequest.md)
  - [CitiesResponse](doc/CitiesResponse.md)
@@ -243,7 +247,6 @@ Class | Method | HTTP request | Description
  - [LocationPhoto](doc/LocationPhoto.md)
  - [LocationPhotoResponse](doc/LocationPhotoResponse.md)
  - [LocationPhotoResponseWrapper](doc/LocationPhotoResponseWrapper.md)
- - [LocationPhotoTypeEnum](doc/LocationPhotoTypeEnum.md)
  - [LocationResponse](doc/LocationResponse.md)
  - [LocationResponseWrapper](doc/LocationResponseWrapper.md)
  - [LocationSearchResponse](doc/LocationSearchResponse.md)
@@ -278,7 +281,6 @@ Class | Method | HTTP request | Description
  - [PersonSearchResponseObject](doc/PersonSearchResponseObject.md)
  - [PersonSearchResponseWrapper](doc/PersonSearchResponseWrapper.md)
  - [PhotoContainer](doc/PhotoContainer.md)
- - [PhotosPostRequest](doc/PhotosPostRequest.md)
  - [PostcodesResponse](doc/PostcodesResponse.md)
  - [PostcodesResponseWrapper](doc/PostcodesResponseWrapper.md)
  - [PricePerCountry](doc/PricePerCountry.md)
@@ -293,6 +295,7 @@ Class | Method | HTTP request | Description
  - [ProductWrapper](doc/ProductWrapper.md)
  - [ProfileCompleteness](doc/ProfileCompleteness.md)
  - [ProfileCompletenessWrapper](doc/ProfileCompletenessWrapper.md)
+ - [PromptPostRequest](doc/PromptPostRequest.md)
  - [ProvincesResponse](doc/ProvincesResponse.md)
  - [ProvincesResponseWrapper](doc/ProvincesResponseWrapper.md)
  - [ResponseBusiness](doc/ResponseBusiness.md)
@@ -321,6 +324,7 @@ Class | Method | HTTP request | Description
  - [ServiceItemSearchObject](doc/ServiceItemSearchObject.md)
  - [ServiceItemSearchWrapper](doc/ServiceItemSearchWrapper.md)
  - [ServiceItemWrapper](doc/ServiceItemWrapper.md)
+ - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
  - [SocialPost](doc/SocialPost.md)
  - [SocialPostCallToAction](doc/SocialPostCallToAction.md)
  - [SocialPostDirectoriesResponse](doc/SocialPostDirectoriesResponse.md)

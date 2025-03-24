@@ -9,8 +9,9 @@ import 'package:on_the_go_sdk/src/auth/api_key_auth.dart';
 import 'package:on_the_go_sdk/src/auth/basic_auth.dart';
 import 'package:on_the_go_sdk/src/auth/bearer_auth.dart';
 import 'package:on_the_go_sdk/src/auth/oauth.dart';
-import 'package:on_the_go_sdk/src/api/default_api.dart';
-import 'package:on_the_go_sdk/src/api/locations_data_api.dart';
+import 'package:on_the_go_sdk/src/api/ai_api.dart';
+import 'package:on_the_go_sdk/src/api/locations_api.dart';
+import 'package:on_the_go_sdk/src/api/sites_api.dart';
 import 'package:on_the_go_sdk/src/api/users_api.dart';
 
 class OnTheGoSdk {
@@ -78,16 +79,22 @@ class OnTheGoSdk {
     }
   }
 
-  /// Get DefaultApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get AiApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  DefaultApi getDefaultApi() {
-    return DefaultApi(dio, serializers);
+  AiApi getAiApi() {
+    return AiApi(dio, serializers);
   }
 
-  /// Get LocationsDataApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get LocationsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  LocationsDataApi getLocationsDataApi() {
-    return LocationsDataApi(dio, serializers);
+  LocationsApi getLocationsApi() {
+    return LocationsApi(dio, serializers);
+  }
+
+  /// Get SitesApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SitesApi getSitesApi() {
+    return SitesApi(dio, serializers);
   }
 
   /// Get UsersApi instance, base route and serializer can be overridden by a given but be careful,

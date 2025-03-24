@@ -9,6 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/model/login_command.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
+import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 
 class UsersApi {
@@ -103,6 +104,7 @@ class UsersApi {
   /// Update the current user
   ///
   /// Parameters:
+  /// * [user]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -113,6 +115,7 @@ class UsersApi {
   /// Returns a [Future] containing a [Response] with a [UserWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<UserWrapper>> userCurrentPatch({
+    required User user,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -137,11 +140,30 @@ class UsersApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(User);
+      _bodyData = _serializers.serialize(user, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,

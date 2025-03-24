@@ -58,7 +58,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userCurrentPatch**
-> UserWrapper userCurrentPatch()
+> UserWrapper userCurrentPatch(user)
 
 Update the current user
 
@@ -73,9 +73,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getUsersApi();
+final User user = ; // User | 
 
 try {
-    final response = api.userCurrentPatch();
+    final response = api.userCurrentPatch(user);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userCurrentPatch: $e\n');
@@ -83,7 +84,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user** | [**User**](User.md)|  | 
 
 ### Return type
 
@@ -95,7 +99,7 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -15,186 +15,23 @@
   ],
   "tags": [
     {
-      "name": "Users",
-      "description": "Set up - Users",
-      "x-group": "Set up"
+      "name": "users"
     },
     {
-      "name": "Auto Response",
-      "description": "Products - Auto Response",
-      "x-group": "Products"
+      "name": "locations"
     },
     {
-      "name": "Batch Operation",
-      "description": "Locations Hub - Locations - Batch Operations (excel)",
-      "x-group": "Locations Hub"
+      "name": "sites"
     },
     {
-      "name": "Brand Data Points",
-      "description": "Products - Brand Data Points",
-      "x-group": "Products"
-    },
-    {
-      "name": "Business Connections",
-      "description": "Set up - Business Connections",
-      "x-group": "Set up"
-    },
-    {
-      "name": "Businesses",
-      "description": "Set up - Businesses",
-      "x-group": "Set up"
-    },
-    {
-      "name": "Categories",
-      "description": "Locations Hub - Categories",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Collection Management",
-      "description": "Locations Hub - Collections - Collection Management",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Content List",
-      "description": "Locations Hub - Collections - Content List",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Locations Data",
-      "description": "Locations Hub - Locations Data",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Custom Items",
-      "description": "Locations Hub - Collections - Custom Items",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Dashboard",
-      "description": "Products - Analytics - Dashboard",
-      "x-group": "Products"
-    },
-    {
-      "name": "Dashboard Exports",
-      "description": "Products - Analytics - Dashboard Exports",
-      "x-group": "Products"
-    },
-    {
-      "name": "Data Points",
-      "description": "Products - Data Points",
-      "x-group": "Products"
-    },
-    {
-      "name": "Data Point Filters",
-      "description": "Products - Data Points - Data Point Filters",
-      "x-group": "Products"
-    },
-    {
-      "name": "Configuration",
-      "description": "Set up - Configuration",
-      "x-group": "Set up"
-    },
-    {
-      "name": "Sales Partners",
-      "description": "Set up - Tenancy - Sales Partners",
-      "x-group": "Set up"
-    },
-    {
-      "name": "Events",
-      "description": "Locations Hub - Collections - Events",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Listings",
-      "description": "Locations Hub - Locations - Listings",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Labels",
-      "description": "Locations Hub - Labels",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Location Groups",
-      "description": "Locations Hub - Location Groups",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Menu Items",
-      "description": "Locations Hub - Locations - Menu Items",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Persons",
-      "description": "Locations Hub - Locations - Persons",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Locations Photos",
-      "description": "Locations Hub - Locations Photos",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Products",
-      "description": "Locations Hub - Locations - Product",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Product Plans",
-      "description": "Set up - Tenancy - Product Plans",
-      "x-group": "Set up"
-    },
-    {
-      "name": "Templates",
-      "description": "Products - Response Library - Templates",
-      "x-group": "Products"
-    },
-    {
-      "name": "Service Items",
-      "description": "Locations Hub - Locations - Service Items",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Social Posting",
-      "description": "Products - Social Posting",
-      "x-group": "Products"
-    },
-    {
-      "name": "Social Posting Templates",
-      "description": "Products - Social Posting - Social Posting Templates",
-      "x-group": "Products"
-    },
-    {
-      "name": "Digital Asset Management",
-      "description": "Products - Digital Asset Management",
-      "x-group": "Products"
-    },
-    {
-      "name": "Status Check",
-      "description": "Products - Status Check",
-      "x-group": "Products"
-    },
-    {
-      "name": "Store Finder",
-      "description": "Products - Store Finder",
-      "x-group": "Products"
-    },
-    {
-      "name": "Suggestions",
-      "description": "Locations Hub - Locations - Suggestions",
-      "x-group": "Locations Hub"
-    },
-    {
-      "name": "Webhooks",
-      "description": "Set up - Tenancy - Sales Partners - Webhooks",
-      "x-group": "Set up"
+      "name": "ai"
     }
   ],
   "paths": {
     "/user/login": {
       "post": {
         "tags": [
-          "Users"
+          "users"
         ],
         "summary": "Provide an access_token for the user",
         "description": "Provides an access_token for the email provided in the LoginCommand",
@@ -235,7 +72,7 @@
     "/user/current": {
       "get": {
         "tags": [
-          "Users"
+          "users"
         ],
         "summary": "Get the current user",
         "description": "Get the current user",
@@ -262,10 +99,20 @@
       },
       "patch": {
         "tags": [
-          "Users"
+          "users"
         ],
         "summary": "Update the current user",
         "description": "Update the current user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/User"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successfully edited user",
@@ -294,7 +141,7 @@
     "/location": {
       "get": {
         "tags": [
-          "Locations Data"
+          "locations"
         ],
         "summary": "Get a Location",
         "description": "Get all information about a specific location, including listing statuses",
@@ -336,7 +183,7 @@
       },
       "patch": {
         "tags": [
-          "Locations Data"
+          "locations"
         ],
         "summary": "Update a Location",
         "description": "Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing",
@@ -390,7 +237,7 @@
     "/locations": {
       "get": {
         "tags": [
-          "Locations Data"
+          "locations"
         ],
         "summary": "Get Several Locations",
         "description": "Get locations managed by the current API user. Some fields are omitted (such as paymentOptions and services). For a full list use the GET/api/locations/$id endpoint.",
@@ -731,128 +578,194 @@
             "authToken": []
           }
         ]
-      },
-      "post": {
+      }
+    },
+    "/categories": {
+      "get": {
         "tags": [
-          "Locations Data"
+          "Locations"
         ],
-        "summary": "Create a Location",
-        "description": "Create a location and add it to an existing business",
-        "requestBody": {
-          "description": "Location object",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Location"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Location successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LocationWrapper"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Request Forbidden"
-          },
-          "400": {
-            "description": "Invalid or missing parameter"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Locations Data"
-        ],
-        "summary": "Delete Several Locations",
-        "description": "Delete several locations identified by their uberall unique ids. \nLocations can be deleted only if they are inactivated (status = INACTIVE) and are no longer billed (endDate < now).",
+        "summary": "Get All or Several Categories",
+        "description": "Get a list of all available location categories, or specific location categories based on the following parameters",
         "parameters": [
           {
-            "name": "locations",
+            "name": "categories",
             "in": "query",
-            "description": "The uberall unique ids for the locations you want to delete",
-            "required": true,
+            "description": "The uberall unique id of the category you want to get",
             "schema": {
               "type": "array",
               "items": {
-                "type": "string"
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Locations successfully deleted",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/DeleteResponseWrapper"
-                }
+                "type": "integer",
+                "format": "int64"
               }
             }
           },
-          "403": {
-            "description": "Request Forbidden"
-          },
-          "400": {
-            "description": "Invalid or missing parameter"
-          }
-        },
-        "security": [
           {
-            "authToken": []
-          }
-        ]
-      },
-      "patch": {
-        "tags": [
-          "Locations Data"
-        ],
-        "summary": "Update Several Locations",
-        "description": "Make changes to a list of locations. Any blank parameter deletes an old value, any unspecified parameter does nothing",
-        "requestBody": {
-          "description": "List of Maps with both location id and params to update : [{id: 123, status: CANCELLED}, ...]",
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Location"
-                }
-              }
+            "name": "query",
+            "in": "query",
+            "description": "Filter categories by a search query",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Auto"
+          },
+          {
+            "name": "roots",
+            "in": "query",
+            "description": "Set to 'true' to show root categories as well (i.e., show all categories)",
+            "schema": {
+              "type": "boolean"
             }
           },
-          "required": true
-        },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "Show categories in the specified language. One of de, en, es, fr",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "max",
+            "in": "query",
+            "description": "Used for pagination. Maximum number of results per page. Default: 10",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 10
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "description": "Offset used for pagination. Default: 0",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "example": 0
+          }
+        ],
         "responses": {
           "200": {
-            "description": "Locations successfully updated",
+            "description": "Successfully retrieved categories",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateResponseWrapper"
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "SUCCESS",
+                        "QUOTA_LIMIT_EXCEED",
+                        "NOT_AUTHORIZED",
+                        "FORBIDDEN",
+                        "BAD_ACCESS_TOKEN",
+                        "BAD_PRIVATE_KEY",
+                        "BAD_PUBLIC_KEY",
+                        "MISSING_PARAMETER",
+                        "INVALID_PARAMETER",
+                        "WRONG_PARAMETER_TYPE",
+                        "CONFLICT",
+                        "RESOURCE_LOCKED",
+                        "SERVER_ERROR",
+                        "ERROR",
+                        "NOT_FOUND",
+                        "BAD_REQUEST",
+                        "USER_ERROR",
+                        "PARTIAL_ERROR",
+                        "METHOD_NOT_ALLOWED"
+                      ]
+                    },
+                    "message": {
+                      "type": "string",
+                      "description": "(optional) Holds further information about the response"
+                    },
+                    "errorCode": {
+                      "type": "string",
+                      "enum": [
+                        "NORMALIZATION_FAILED",
+                        "DATA_CORRUPTED",
+                        "INVALID_INPUT",
+                        "NOT_SYNCABLE",
+                        "PAYMENT_FAILED",
+                        "FREE_TIER_REACHED",
+                        "LIMIT_REACHED",
+                        "INACTIVE",
+                        "UNKNOWN",
+                        "IDENTIFIER_NOT_UNIQUE",
+                        "ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT",
+                        "NO_ACCOUNT_CONNECTED",
+                        "NO_PAGE_SELECTED",
+                        "PAGE_NOT_CREATED",
+                        "PAGE_IN_REVIEW",
+                        "PAGE_CLAIMED_BY_OTHERS",
+                        "OVERLAPPING_SOCIALPOST",
+                        "TOO_MANY_REPLIES",
+                        "REPLY_TOO_LONG",
+                        "DEPRECATED"
+                      ]
+                    },
+                    "warnings": {
+                      "type": "array",
+                      "description": "(optional) Holds further warnings",
+                      "items": {
+                        "type": "string",
+                        "description": "(optional) Holds further warnings"
+                      }
+                    },
+                    "response": {
+                      "type": "object",
+                      "properties": {
+                        "max": {
+                          "type": "integer"
+                        },
+                        "offset": {
+                          "type": "integer"
+                        },
+                        "results": {
+                          "oneOf": [
+                            {
+                              "type": "array",
+                              "description": "A list of categories",
+                              "items": {
+                                "$ref": "#/components/schemas/Category"
+                              }
+                            },
+                            {
+                              "type": "object",
+                              "properties": {
+                                "resultTotalCount": {
+                                  "type": "integer"
+                                },
+                                "results": {
+                                  "type": "array",
+                                  "description": "A list of categories",
+                                  "items": {
+                                    "$ref": "#/components/schemas/Category"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           },
-          "403": {
-            "description": "Request Forbidden"
-          },
           "400": {
             "description": "Invalid or missing parameter"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         },
         "security": [
@@ -862,70 +775,161 @@
         ]
       }
     },
-    "/photos": {
-      "post": {
-        "summary": "Upload a Photo",
-        "description": "Upload a photo",
+    "/site/colors": {
+      "get": {
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "200": {
+            "description": "The global design elements",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "design": {
+                    "$ref": "#/definitions/resource_design"
+                  }
+                }
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "sites"
+        ],
+        "responses": {
+          "200": {
+            "description": "The complete design of the page",
+            "schema": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "cols": {
+                    "$ref": "#/definitions/resource_design"
+                  }
+                },
+                "type": "object"
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "sites"
+        ],
         "requestBody": {
-          "description": "The photo data to upload",
           "content": {
             "application/json": {
               "schema": {
-                "required": [
-                  "locationId",
-                  "photo",
-                  "type"
-                ],
                 "type": "object",
                 "properties": {
-                  "description": {
-                    "type": "string",
-                    "description": "A description for the photo - max 255 chars"
+                  "primary100": {
+                    "type": "string"
                   },
-                  "locationId": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "Location ID"
+                  "primary300": {
+                    "type": "string"
                   },
-                  "photo": {
-                    "type": "string",
-                    "description": "file or base64"
+                  "primary500": {
+                    "type": "string"
                   },
-                  "type": {
-                    "$ref": "#/components/schemas/LocationPhotoTypeEnum"
+                  "primary900": {
+                    "type": "string"
+                  },
+                  "secondary100": {
+                    "type": "string"
+                  },
+                  "secondary300": {
+                    "type": "string"
+                  },
+                  "secondary500": {
+                    "type": "string"
+                  },
+                  "secondary900": {
+                    "type": "string"
                   }
                 }
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
-            "description": "The photo has been uploaded",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/LocationPhotoResponseWrapper"
+            "description": "The items in the global design elements",
+            "schema": {
+              "type": "array",
+              "items": {
+                "properties": {
+                  "cols": {
+                    "$ref": "#/definitions/resource_design"
+                  }
+                },
+                "type": "object"
+              },
+              "maxItems": 1,
+              "minItems": 1
+            }
+          }
+        }
+      }
+    },
+    "/prompt": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "message"
+                ],
+                "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "type": "string"
+                  }
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "400": {
-            "description": "Invalid or Missing parameter"
           }
         },
-        "security": [
-          {
-            "accessToken": []
-          },
-          {
-            "privateKey": []
+        "responses": {
+          "200": {
+            "description": "All messages in the conversation including the assistant response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "conversationId": {
+                  "type": "string"
+                },
+                "messages": {
+                  "type": "array",
+                  "items": {
+                    "role": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           }
-        ]
+        }
       }
     }
   },
@@ -13954,7 +13958,29 @@
             "format": "int32"
           },
           "type": {
-            "$ref": "#/components/schemas/LocationPhotoTypeEnum"
+            "type": "string",
+            "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category ",
+            "enum": [
+              "MAIN",
+              "DOCTOR_COM_PORTRAIT",
+              "LOGO",
+              "STOREFINDER_LOGO",
+              "SQUARED_LOGO",
+              "LANDSCAPE",
+              "STOREFINDER_COVER",
+              "FACEBOOK_LANDSCAPE",
+              "APPLE_LANDSCAPE",
+              "MENU",
+              "PHOTO",
+              "ROOMS",
+              "TEAMS",
+              "AT_WORK",
+              "PRODUCT",
+              "EXTERIOR",
+              "INTERIOR",
+              "COMMON_AREA",
+              "FOOD_AND_DRINK"
+            ]
           },
           "order": {
             "type": "integer",
@@ -13985,31 +14011,6 @@
           }
         },
         "description": "Location Photo"
-      },
-      "LocationPhotoTypeEnum": {
-        "type": "string",
-        "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category ",
-        "enum": [
-          "MAIN",
-          "DOCTOR_COM_PORTRAIT",
-          "LOGO",
-          "STOREFINDER_LOGO",
-          "SQUARED_LOGO",
-          "LANDSCAPE",
-          "STOREFINDER_COVER",
-          "FACEBOOK_LANDSCAPE",
-          "APPLE_LANDSCAPE",
-          "MENU",
-          "PHOTO",
-          "ROOMS",
-          "TEAMS",
-          "AT_WORK",
-          "PRODUCT",
-          "EXTERIOR",
-          "INTERIOR",
-          "COMMON_AREA",
-          "FOOD_AND_DRINK"
-        ]
       },
       "LocationPhotoResponse": {
         "required": [
@@ -14053,7 +14054,8 @@
             "description": "A boolean indicating whether this photo is the location''s logo. Maximum one logo per location"
           },
           "type": {
-            "$ref": "#/components/schemas/LocationPhotoTypeEnum"
+            "type": "string",
+            "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category "
           },
           "publicUrl": {
             "type": "string",
@@ -14093,7 +14095,68 @@
       "LocationPhotoResponseWrapper": {
         "type": "object",
         "properties": {
-          "photo": {
+          "status": {
+            "type": "string",
+            "enum": [
+              "SUCCESS",
+              "QUOTA_LIMIT_EXCEED",
+              "NOT_AUTHORIZED",
+              "FORBIDDEN",
+              "BAD_ACCESS_TOKEN",
+              "BAD_PRIVATE_KEY",
+              "BAD_PUBLIC_KEY",
+              "MISSING_PARAMETER",
+              "INVALID_PARAMETER",
+              "WRONG_PARAMETER_TYPE",
+              "CONFLICT",
+              "RESOURCE_LOCKED",
+              "SERVER_ERROR",
+              "ERROR",
+              "NOT_FOUND",
+              "BAD_REQUEST",
+              "USER_ERROR",
+              "PARTIAL_ERROR",
+              "METHOD_NOT_ALLOWED"
+            ]
+          },
+          "message": {
+            "type": "string",
+            "description": "(optional) Holds further information about the response"
+          },
+          "errorCode": {
+            "type": "string",
+            "enum": [
+              "NORMALIZATION_FAILED",
+              "DATA_CORRUPTED",
+              "INVALID_INPUT",
+              "NOT_SYNCABLE",
+              "PAYMENT_FAILED",
+              "FREE_TIER_REACHED",
+              "LIMIT_REACHED",
+              "INACTIVE",
+              "UNKNOWN",
+              "IDENTIFIER_NOT_UNIQUE",
+              "ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT",
+              "NO_ACCOUNT_CONNECTED",
+              "NO_PAGE_SELECTED",
+              "PAGE_NOT_CREATED",
+              "PAGE_IN_REVIEW",
+              "PAGE_CLAIMED_BY_OTHERS",
+              "OVERLAPPING_SOCIALPOST",
+              "TOO_MANY_REPLIES",
+              "REPLY_TOO_LONG",
+              "DEPRECATED"
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "description": "(optional) Holds further warnings",
+            "items": {
+              "type": "string",
+              "description": "(optional) Holds further warnings"
+            }
+          },
+          "response": {
             "$ref": "#/components/schemas/LocationPhotoResponse"
           }
         }
@@ -23747,57 +23810,5 @@
         "in": "header"
       }
     }
-  },
-  "x-tagGroups": [
-    {
-      "name": "Set up",
-      "tags": [
-        "Users",
-        "Business Connections",
-        "Businesses",
-        "Configuration",
-        "Sales Partners",
-        "Product Plans",
-        "Webhooks"
-      ]
-    },
-    {
-      "name": "Products",
-      "tags": [
-        "Auto Response",
-        "Brand Data Points",
-        "Dashboard",
-        "Dashboard Exports",
-        "Data Points",
-        "Data Point Filters",
-        "Templates",
-        "Social Posting",
-        "Social Posting Templates",
-        "Digital Asset Management",
-        "Status Check",
-        "Store Finder"
-      ]
-    },
-    {
-      "name": "Locations Hub",
-      "tags": [
-        "Batch Operation",
-        "Categories",
-        "Collection Management",
-        "Content List",
-        "Locations Data",
-        "Custom Items",
-        "Events",
-        "Listings",
-        "Labels",
-        "Location Groups",
-        "Menu Items",
-        "Persons",
-        "Locations Photos",
-        "Products",
-        "Service Items",
-        "Suggestions"
-      ]
-    }
-  ]
+  }
 }

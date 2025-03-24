@@ -117,6 +117,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BusinessTypeEnum.serializer)
       ..add(CallTrackingNumber.serializer)
       ..add(CallTrackingNumberTypeEnum.serializer)
+      ..add(CategoriesGet200Response.serializer)
+      ..add(CategoriesGet200ResponseErrorCodeEnum.serializer)
+      ..add(CategoriesGet200ResponseResponse.serializer)
+      ..add(CategoriesGet200ResponseResponseResults.serializer)
+      ..add(CategoriesGet200ResponseResponseResultsOneOf.serializer)
+      ..add(CategoriesGet200ResponseStatusEnum.serializer)
       ..add(Category.serializer)
       ..add(CheckConflictRequest.serializer)
       ..add(CitiesResponse.serializer)
@@ -401,6 +407,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LocationPhoto.serializer)
       ..add(LocationPhotoResponse.serializer)
       ..add(LocationPhotoResponseWrapper.serializer)
+      ..add(LocationPhotoResponseWrapperErrorCodeEnum.serializer)
+      ..add(LocationPhotoResponseWrapperStatusEnum.serializer)
       ..add(LocationPhotoTypeEnum.serializer)
       ..add(LocationResponse.serializer)
       ..add(LocationResponseWrapper.serializer)
@@ -464,7 +472,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PersonSearchResponseWrapperErrorCodeEnum.serializer)
       ..add(PersonSearchResponseWrapperStatusEnum.serializer)
       ..add(PhotoContainer.serializer)
-      ..add(PhotosPostRequest.serializer)
       ..add(PostcodesResponse.serializer)
       ..add(PostcodesResponseWrapper.serializer)
       ..add(PostcodesResponseWrapperErrorCodeEnum.serializer)
@@ -495,6 +502,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProfileCompletenessWrapper.serializer)
       ..add(ProfileCompletenessWrapperErrorCodeEnum.serializer)
       ..add(ProfileCompletenessWrapperStatusEnum.serializer)
+      ..add(PromptPostRequest.serializer)
       ..add(ProvincesResponse.serializer)
       ..add(ProvincesResponseWrapper.serializer)
       ..add(ProvincesResponseWrapperErrorCodeEnum.serializer)
@@ -553,6 +561,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ServiceItemWrapper.serializer)
       ..add(ServiceItemWrapperErrorCodeEnum.serializer)
       ..add(ServiceItemWrapperStatusEnum.serializer)
+      ..add(SiteColorsPatchRequest.serializer)
       ..add(SocialPost.serializer)
       ..add(SocialPostAlertTypeEnum.serializer)
       ..add(SocialPostCallToAction.serializer)
@@ -728,6 +737,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(TimeSeriesSegment)]),
           () => new ListBuilder<TimeSeriesSegment>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Category)]),
+          () => new ListBuilder<Category>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ContentList)]),
           () => new ListBuilder<ContentList>())
@@ -987,6 +999,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

@@ -41,6 +41,10 @@ import 'package:on_the_go_sdk/src/model/business_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/business_statistics.dart';
 import 'package:on_the_go_sdk/src/model/business_statistics_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/call_tracking_number.dart';
+import 'package:on_the_go_sdk/src/model/categories_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/categories_get200_response_response.dart';
+import 'package:on_the_go_sdk/src/model/categories_get200_response_response_results.dart';
+import 'package:on_the_go_sdk/src/model/categories_get200_response_response_results_one_of.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/check_conflict_request.dart';
 import 'package:on_the_go_sdk/src/model/cities_response.dart';
@@ -178,7 +182,6 @@ import 'package:on_the_go_sdk/src/model/location_object.dart';
 import 'package:on_the_go_sdk/src/model/location_photo.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_response_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/location_photo_type_enum.dart';
 import 'package:on_the_go_sdk/src/model/location_response.dart';
 import 'package:on_the_go_sdk/src/model/location_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/location_search_response.dart';
@@ -213,7 +216,6 @@ import 'package:on_the_go_sdk/src/model/person_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/person_search_response_object.dart';
 import 'package:on_the_go_sdk/src/model/person_search_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/photo_container.dart';
-import 'package:on_the_go_sdk/src/model/photos_post_request.dart';
 import 'package:on_the_go_sdk/src/model/postcodes_response.dart';
 import 'package:on_the_go_sdk/src/model/postcodes_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/price_per_country.dart';
@@ -228,6 +230,7 @@ import 'package:on_the_go_sdk/src/model/product_search_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/product_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/prompt_post_request.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/response_business.dart';
@@ -256,6 +259,7 @@ import 'package:on_the_go_sdk/src/model/service_item.dart';
 import 'package:on_the_go_sdk/src/model/service_item_search_object.dart';
 import 'package:on_the_go_sdk/src/model/service_item_search_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/service_item_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/social_post_call_to_action.dart';
 import 'package:on_the_go_sdk/src/model/social_post_directories_response.dart';
@@ -353,6 +357,10 @@ part 'serializers.g.dart';
   BusinessStatistics,
   BusinessStatisticsWrapper,
   CallTrackingNumber,
+  CategoriesGet200Response,
+  CategoriesGet200ResponseResponse,
+  CategoriesGet200ResponseResponseResults,
+  CategoriesGet200ResponseResponseResultsOneOf,
   Category,
   CheckConflictRequest,
   CitiesResponse,
@@ -490,7 +498,6 @@ part 'serializers.g.dart';
   LocationPhoto,
   LocationPhotoResponse,
   LocationPhotoResponseWrapper,
-  LocationPhotoTypeEnum,
   LocationResponse,
   LocationResponseWrapper,
   LocationSearchResponse,
@@ -525,7 +532,6 @@ part 'serializers.g.dart';
   PersonSearchResponseObject,
   PersonSearchResponseWrapper,
   PhotoContainer,
-  PhotosPostRequest,
   PostcodesResponse,
   PostcodesResponseWrapper,
   PricePerCountry,
@@ -540,6 +546,7 @@ part 'serializers.g.dart';
   ProductWrapper,
   ProfileCompleteness,
   ProfileCompletenessWrapper,
+  PromptPostRequest,
   ProvincesResponse,
   ProvincesResponseWrapper,
   ResponseBusiness,
@@ -568,6 +575,7 @@ part 'serializers.g.dart';
   ServiceItemSearchObject,
   ServiceItemSearchWrapper,
   ServiceItemWrapper,
+  SiteColorsPatchRequest,
   SocialPost,
   SocialPostCallToAction,
   SocialPostDirectoriesResponse,
@@ -637,8 +645,8 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Location)]),
-        () => ListBuilder<Location>(),
+        const FullType(BuiltList, [FullType(int)]),
+        () => ListBuilder<int>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),

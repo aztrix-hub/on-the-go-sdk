@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.LocationPhotoResponseWrapper
+# on_the_go_sdk.model.CategoriesGet200Response
 
 ## Load the model package
 ```dart
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **message** | **String** | (optional) Holds further information about the response | [optional] 
 **errorCode** | **String** |  | [optional] 
 **warnings** | **BuiltList&lt;String&gt;** | (optional) Holds further warnings | [optional] 
-**response** | [**LocationPhotoResponse**](LocationPhotoResponse.md) |  | [optional] 
+**response** | [**CategoriesGet200ResponseResponse**](CategoriesGet200ResponseResponse.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

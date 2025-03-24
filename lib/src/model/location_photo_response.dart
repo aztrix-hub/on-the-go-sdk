@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/location_photo_type_enum.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,7 +19,7 @@ part 'location_photo_response.g.dart';
 /// * [identifier] - The photo identifier based on your internal identification system
 /// * [main] - A boolean indicating whether this photo is the location''s main photo. Maximum one per location
 /// * [logo] - A boolean indicating whether this photo is the location''s logo. Maximum one logo per location
-/// * [type]
+/// * [type] - Required - One of: <br>  MAIN <br> LOGO <br> SQUARED_LOGO <br> DOCTOR_COM_PORTRAIT - Doctor.com clients only <br> LANDSCAPE - Updates Google Cover Photo<br> APPLE_LANDSCAPE <br> PHOTO  <br> STOREFINDER_LOGO - Only for Uberall locator product <br> STOREFINDER_COVER - Only for Uberall locator product<br> FACEBOOK_LANDSCAPE - Facebook Cover Photo <br> EXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br> INTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br> FOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br> MENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br> PRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br> TEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br> AT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br> COMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br> ROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category
 /// * [publicUrl] - A public url for this photo
 /// * [thumbnailUrl] - Url for the image thumbnail
 /// * [cropOffsetX] - Horizontal pixel offset of the top-left corner of the cropped area [LANDSCAPE photo only]
@@ -63,9 +62,9 @@ abstract class LocationPhotoResponse
   @BuiltValueField(wireName: r'logo')
   bool? get logo;
 
+  /// Required - One of: <br>  MAIN <br> LOGO <br> SQUARED_LOGO <br> DOCTOR_COM_PORTRAIT - Doctor.com clients only <br> LANDSCAPE - Updates Google Cover Photo<br> APPLE_LANDSCAPE <br> PHOTO  <br> STOREFINDER_LOGO - Only for Uberall locator product <br> STOREFINDER_COVER - Only for Uberall locator product<br> FACEBOOK_LANDSCAPE - Facebook Cover Photo <br> EXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br> INTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br> FOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br> MENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br> PRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br> TEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br> AT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br> COMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br> ROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category
   @BuiltValueField(wireName: r'type')
-  LocationPhotoTypeEnum get type;
-  // enum typeEnum {  MAIN,  DOCTOR_COM_PORTRAIT,  LOGO,  STOREFINDER_LOGO,  SQUARED_LOGO,  LANDSCAPE,  STOREFINDER_COVER,  FACEBOOK_LANDSCAPE,  APPLE_LANDSCAPE,  MENU,  PHOTO,  ROOMS,  TEAMS,  AT_WORK,  PRODUCT,  EXTERIOR,  INTERIOR,  COMMON_AREA,  FOOD_AND_DRINK,  };
+  String get type;
 
   /// A public url for this photo
   @BuiltValueField(wireName: r'publicUrl')
@@ -183,7 +182,7 @@ class _$LocationPhotoResponseSerializer
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(LocationPhotoTypeEnum),
+      specifiedType: const FullType(String),
     );
     if (object.publicUrl != null) {
       yield r'publicUrl';
@@ -318,8 +317,8 @@ class _$LocationPhotoResponseSerializer
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationPhotoTypeEnum),
-          ) as LocationPhotoTypeEnum;
+            specifiedType: const FullType(String),
+          ) as String;
           result.type = valueDes;
           break;
         case r'publicUrl':

@@ -24,7 +24,7 @@ class _$LocationPhotoResponse extends LocationPhotoResponse {
   @override
   final bool? logo;
   @override
-  final LocationPhotoTypeEnum type;
+  final String type;
   @override
   final String? publicUrl;
   @override
@@ -179,9 +179,9 @@ class LocationPhotoResponseBuilder
   bool? get logo => _$this._logo;
   set logo(bool? logo) => _$this._logo = logo;
 
-  LocationPhotoTypeEnum? _type;
-  LocationPhotoTypeEnum? get type => _$this._type;
-  set type(LocationPhotoTypeEnum? type) => _$this._type = type;
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
 
   String? _publicUrl;
   String? get publicUrl => _$this._publicUrl;
