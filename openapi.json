@@ -1053,7 +1053,7 @@
         }
       }
     },
-    "/inbox/{id}": {
+    "/inbox/item": {
       "get": {
         "tags": [
           "inbox"
@@ -1061,10 +1061,11 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {
@@ -1089,7 +1090,7 @@
         }
       }
     },
-    "/inbox/{id}/children": {
+    "/inbox/item/children": {
       "get": {
         "tags": [
           "inbox"
@@ -1097,10 +1098,11 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           }
         ],
         "responses": {

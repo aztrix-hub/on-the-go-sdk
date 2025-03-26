@@ -9,13 +9,13 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**inboxIdChildrenGet**](InboxApi.md#inboxidchildrenget) | **GET** /inbox/{id}/children | 
-[**inboxIdGet**](InboxApi.md#inboxidget) | **GET** /inbox/{id} | 
+[**inboxItemChildrenGet**](InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
+[**inboxItemGet**](InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [**inboxPost**](InboxApi.md#inboxpost) | **POST** /inbox | 
 
 
-# **inboxIdChildrenGet**
-> InboxPost200Response inboxIdChildrenGet(id)
+# **inboxItemChildrenGet**
+> InboxPost200Response inboxItemChildrenGet(id)
 
 
 
@@ -27,10 +27,10 @@ final api = OnTheGoSdk().getInboxApi();
 final String id = id_example; // String | 
 
 try {
-    final response = api.inboxIdChildrenGet(id);
+    final response = api.inboxItemChildrenGet(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling InboxApi->inboxIdChildrenGet: $e\n');
+    print('Exception when calling InboxApi->inboxItemChildrenGet: $e\n');
 }
 ```
 
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | [optional] 
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -55,8 +55,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inboxIdGet**
-> InboxItem inboxIdGet(id)
+# **inboxItemGet**
+> InboxItem inboxItemGet(id)
 
 
 
@@ -68,10 +68,10 @@ final api = OnTheGoSdk().getInboxApi();
 final String id = id_example; // String | 
 
 try {
-    final response = api.inboxIdGet(id);
+    final response = api.inboxItemGet(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling InboxApi->inboxIdGet: $e\n');
+    print('Exception when calling InboxApi->inboxItemGet: $e\n');
 }
 ```
 
@@ -79,7 +79,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  | [optional] 
+ **id** | **String**|  | 
 
 ### Return type
 

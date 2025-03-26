@@ -66,8 +66,8 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**promptPost**](doc/AiApi.md#promptpost) | **POST** /prompt | 
-[*InboxApi*](doc/InboxApi.md) | [**inboxIdChildrenGet**](doc/InboxApi.md#inboxidchildrenget) | **GET** /inbox/{id}/children | 
-[*InboxApi*](doc/InboxApi.md) | [**inboxIdGet**](doc/InboxApi.md#inboxidget) | **GET** /inbox/{id} | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location

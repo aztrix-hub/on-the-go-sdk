@@ -19,7 +19,7 @@ class InboxApi {
 
   const InboxApi(this._dio, this._serializers);
 
-  /// inboxIdChildrenGet
+  /// inboxItemChildrenGet
   ///
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class InboxApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InboxPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InboxPost200Response>> inboxIdChildrenGet({
+  Future<Response<InboxPost200Response>> inboxItemChildrenGet({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -42,10 +42,7 @@ class InboxApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/inbox/{id}/children'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+    final _path = r'/inbox/item/children';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -58,9 +55,14 @@ class InboxApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -98,7 +100,7 @@ class InboxApi {
     );
   }
 
-  /// inboxIdGet
+  /// inboxItemGet
   ///
   ///
   /// Parameters:
@@ -112,7 +114,7 @@ class InboxApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InboxItem] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InboxItem>> inboxIdGet({
+  Future<Response<InboxItem>> inboxItemGet({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -121,10 +123,7 @@ class InboxApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/inbox/{id}'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+    final _path = r'/inbox/item';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -137,9 +136,14 @@ class InboxApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
