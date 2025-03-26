@@ -1050,7 +1050,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/inbox/item": {
@@ -1087,7 +1092,12 @@
           "400": {
             "description": "Invalid or Missing Parameter"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/inbox/item/children": {
@@ -1132,7 +1142,12 @@
           "400": {
             "description": "Invalid or Missing Parameter"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     }
   },
