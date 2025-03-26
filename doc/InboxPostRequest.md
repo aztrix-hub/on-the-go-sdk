@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **startDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **endDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | **BuiltList&lt;String&gt;** |  | [optional] 
-**page** | **num** |  | [optional] [default to 0]
+**page** | **num** |  | [optional] [default to 1]
 **pageSize** | **num** |  | [optional] [default to 20]
 **sort** | **String** |  | [optional] [default to 'date']
 **sortDir** | **String** |  | [optional] [default to 'desc']

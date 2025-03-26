@@ -1008,7 +1008,7 @@
                   },
                   "page": {
                     "type": "number",
-                    "default": 0
+                    "default": 1
                   },
                   "pageSize": {
                     "type": "number",

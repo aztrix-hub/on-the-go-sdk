@@ -661,10 +661,3 @@ lib/src/model/webhook_wrapper.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/inbox_api_test.dart
-test/inbox_item_author_test.dart
-test/inbox_item_media_inner_test.dart
-test/inbox_item_metrics_test.dart
-test/inbox_item_test.dart
-test/inbox_post200_response_test.dart
-test/inbox_post_request_test.dart

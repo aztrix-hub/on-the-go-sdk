@@ -57,7 +57,7 @@ abstract class InboxPostRequest
 
   @BuiltValueHook(initializeBuilder: true)
   static void _defaults(InboxPostRequestBuilder b) => b
-    ..page = 0
+    ..page = 1
     ..pageSize = 20
     ..sort = 'date'
     ..sortDir = const InboxPostRequestSortDirEnum._('desc');
