@@ -321,6 +321,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(GoogleVenueDetailsWrapperStatusEnum.serializer)
       ..add(Image.serializer)
       ..add(ImageTypeEnum.serializer)
+      ..add(InboxItem.serializer)
+      ..add(InboxItemAuthor.serializer)
+      ..add(InboxItemContentTypeEnum.serializer)
+      ..add(InboxItemMediaInner.serializer)
+      ..add(InboxItemMetrics.serializer)
+      ..add(InboxPost200Response.serializer)
+      ..add(InboxPostRequest.serializer)
+      ..add(InboxPostRequestChannelsEnum.serializer)
+      ..add(InboxPostRequestSortDirEnum.serializer)
+      ..add(InboxPostRequestStatusEnum.serializer)
       ..add(InboxResponse.serializer)
       ..add(InboxResponseObject.serializer)
       ..add(InboxResponseStatusEnum.serializer)
@@ -817,6 +827,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GoogleServiceItem)]),
           () => new ListBuilder<GoogleServiceItem>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(InboxItem)]),
+          () => new ListBuilder<InboxItem>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
+          () => new ListBuilder<InboxPostRequestStatusEnum>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InsightsMetricsInner)]),
@@ -1380,6 +1397,13 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(JsonObject)]),
           () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(InboxItemMediaInner)]),
+          () => new ListBuilder<InboxItemMediaInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())

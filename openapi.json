@@ -24,6 +24,9 @@
       "name": "sites"
     },
     {
+      "name": "inbox"
+    },
+    {
       "name": "ai"
     }
   ],
@@ -946,10 +949,322 @@
           }
         }
       }
+    },
+    "/inbox": {
+      "post": {
+        "tags": [
+          "inbox"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "channels": {
+                    "type": "string",
+                    "enum": [
+                      "cylex-review",
+                      "google-review",
+                      "iglobal-review",
+                      "stadtbranchenbuch-review",
+                      "whereto-review",
+                      "cylex-comment",
+                      "facebook-comment",
+                      "facebook-recommendation",
+                      "facebook-post",
+                      "facebook-recommendationcomment",
+                      "google-comment",
+                      "google-question",
+                      "google-photo",
+                      "google-answer",
+                      "instagram-comment",
+                      "instagram-post",
+                      "iglobal-comment",
+                      "whereto-comment"
+                    ]
+                  },
+                  "startDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "endDate": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "status": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "resolved",
+                        "unresolved",
+                        "replied",
+                        "unreplied",
+                        "contentUpdated",
+                        "contentNonUpdated"
+                      ]
+                    }
+                  },
+                  "page": {
+                    "type": "number",
+                    "default": 0
+                  },
+                  "pageSize": {
+                    "type": "number",
+                    "default": 20
+                  },
+                  "sort": {
+                    "type": "string",
+                    "default": "date"
+                  },
+                  "sortDir": {
+                    "type": "string",
+                    "enum": [
+                      "asc",
+                      "desc"
+                    ],
+                    "default": "desc"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InboxItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/inbox/{id}": {
+      "get": {
+        "tags": [
+          "inbox"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InboxItem"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        }
+      }
+    },
+    "/inbox/{id}/children": {
+      "get": {
+        "tags": [
+          "inbox"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InboxItem"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "InboxItem": {
+        "type": "object",
+        "properties": {
+          "actionDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "author": {
+            "type": "object",
+            "properties": {
+              "image": {
+                "type": "string"
+              },
+              "isClient": {
+                "type": "boolean"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "businessIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "contentType": {
+            "type": "string",
+            "enum": [
+              "review",
+              "comment",
+              "recommendation",
+              "recommendationcomment",
+              "post",
+              "photo"
+            ]
+          },
+          "dataPointId": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "indexedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isBrand": {
+            "type": "boolean"
+          },
+          "isExpandedReviewNetwork": {
+            "type": "boolean"
+          },
+          "location": {
+            "$ref": "#/components/schemas/StoreFinderResponse"
+          },
+          "locationId": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          },
+          "metrics": {
+            "type": "object",
+            "properties": {
+              "likes": {
+                "type": "integer"
+              }
+            }
+          },
+          "nativeId": {
+            "type": "string"
+          },
+          "nativeLink": {
+            "type": "string"
+          },
+          "nativeVenueLink": {
+            "type": "string"
+          },
+          "parentDataPointId": {
+            "type": "string"
+          },
+          "parentIdLink": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number",
+            "format": "double"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number",
+            "format": "double"
+          },
+          "rootDataPointId": {
+            "type": "string"
+          },
+          "rootIdLink": {
+            "type": "string"
+          },
+          "salesPartnerId": {
+            "type": "string"
+          },
+          "sortDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "type": "string"
+          },
+          "media": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "image": {
+                  "type": "string"
+                },
+                "dataPointId": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
       "AcceptedExtraFieldsResponseObject": {
         "type": "object",
         "properties": {

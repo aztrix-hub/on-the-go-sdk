@@ -143,6 +143,12 @@ import 'package:on_the_go_sdk/src/model/google_services_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/google_venue_details_object.dart';
 import 'package:on_the_go_sdk/src/model/google_venue_details_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/image.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
+import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response_object.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response_wrapper.dart';
@@ -461,6 +467,12 @@ part 'serializers.g.dart';
   GoogleVenueDetailsObject,
   GoogleVenueDetailsWrapper,
   Image,
+  InboxItem,
+  InboxItemAuthor,
+  InboxItemMediaInner,
+  InboxItemMetrics,
+  InboxPost200Response,
+  InboxPostRequest,
   InboxResponse,
   InboxResponseObject,
   InboxResponseWrapper,

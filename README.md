@@ -66,6 +66,9 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**promptPost**](doc/AiApi.md#promptpost) | **POST** /prompt | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxIdChildrenGet**](doc/InboxApi.md#inboxidchildrenget) | **GET** /inbox/{id}/children | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxIdGet**](doc/InboxApi.md#inboxidget) | **GET** /inbox/{id} | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
@@ -209,6 +212,12 @@ Class | Method | HTTP request | Description
  - [GoogleVenueDetailsObject](doc/GoogleVenueDetailsObject.md)
  - [GoogleVenueDetailsWrapper](doc/GoogleVenueDetailsWrapper.md)
  - [Image](doc/Image.md)
+ - [InboxItem](doc/InboxItem.md)
+ - [InboxItemAuthor](doc/InboxItemAuthor.md)
+ - [InboxItemMediaInner](doc/InboxItemMediaInner.md)
+ - [InboxItemMetrics](doc/InboxItemMetrics.md)
+ - [InboxPost200Response](doc/InboxPost200Response.md)
+ - [InboxPostRequest](doc/InboxPostRequest.md)
  - [InboxResponse](doc/InboxResponse.md)
  - [InboxResponseObject](doc/InboxResponseObject.md)
  - [InboxResponseWrapper](doc/InboxResponseWrapper.md)

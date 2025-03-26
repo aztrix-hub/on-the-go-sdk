@@ -130,6 +130,13 @@ doc/GoogleServicesResponseWrapper.md
 doc/GoogleVenueDetailsObject.md
 doc/GoogleVenueDetailsWrapper.md
 doc/Image.md
+doc/InboxApi.md
+doc/InboxItem.md
+doc/InboxItemAuthor.md
+doc/InboxItemMediaInner.md
+doc/InboxItemMetrics.md
+doc/InboxPost200Response.md
+doc/InboxPostRequest.md
 doc/InboxResponse.md
 doc/InboxResponseObject.md
 doc/InboxResponseWrapper.md
@@ -321,6 +328,7 @@ doc/WhitelabelInformationWrapper.md
 lib/on_the_go_sdk.dart
 lib/src/api.dart
 lib/src/api/ai_api.dart
+lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/sites_api.dart
 lib/src/api/users_api.dart
@@ -461,6 +469,12 @@ lib/src/model/google_services_response_wrapper.dart
 lib/src/model/google_venue_details_object.dart
 lib/src/model/google_venue_details_wrapper.dart
 lib/src/model/image.dart
+lib/src/model/inbox_item.dart
+lib/src/model/inbox_item_author.dart
+lib/src/model/inbox_item_media_inner.dart
+lib/src/model/inbox_item_metrics.dart
+lib/src/model/inbox_post200_response.dart
+lib/src/model/inbox_post_request.dart
 lib/src/model/inbox_response.dart
 lib/src/model/inbox_response_object.dart
 lib/src/model/inbox_response_wrapper.dart
@@ -647,3 +661,10 @@ lib/src/model/webhook_wrapper.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/inbox_api_test.dart
+test/inbox_item_author_test.dart
+test/inbox_item_media_inner_test.dart
+test/inbox_item_metrics_test.dart
+test/inbox_item_test.dart
+test/inbox_post200_response_test.dart
+test/inbox_post_request_test.dart
