@@ -323,6 +323,8 @@ doc/Webhook.md
 doc/WebhookCommand.md
 doc/WebhookListWrapper.md
 doc/WebhookWrapper.md
+doc/WhitelabelApi.md
+doc/WhitelabelData.md
 doc/WhitelabelInformation.md
 doc/WhitelabelInformationWrapper.md
 lib/on_the_go_sdk.dart
@@ -332,6 +334,7 @@ lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/sites_api.dart
 lib/src/api/users_api.dart
+lib/src/api/whitelabel_api.dart
 lib/src/api_util.dart
 lib/src/auth/api_key_auth.dart
 lib/src/auth/auth.dart
@@ -658,6 +661,9 @@ lib/src/model/webhook.dart
 lib/src/model/webhook_command.dart
 lib/src/model/webhook_list_wrapper.dart
 lib/src/model/webhook_wrapper.dart
+lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/whitelabel_api_test.dart
+test/whitelabel_data_test.dart

@@ -332,6 +332,7 @@ import 'package:on_the_go_sdk/src/model/webhook.dart';
 import 'package:on_the_go_sdk/src/model/webhook_command.dart';
 import 'package:on_the_go_sdk/src/model/webhook_list_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/webhook_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_information.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_information_wrapper.dart';
 
@@ -656,6 +657,7 @@ part 'serializers.g.dart';
   WebhookCommand,
   WebhookListWrapper,
   WebhookWrapper,
+  WhitelabelData,
   WhitelabelInformation,
   WhitelabelInformationWrapper,
 ])

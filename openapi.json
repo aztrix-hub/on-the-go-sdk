@@ -28,6 +28,9 @@
     },
     {
       "name": "ai"
+    },
+    {
+      "name": "whitelabel"
     }
   ],
   "paths": {
@@ -1149,10 +1152,59 @@
           }
         ]
       }
+    },
+    "/whitelabel": {
+      "get": {
+        "tags": [
+          "whitelabel"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WhitelabelData"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
     "schemas": {
+      "WhitelabelData": {
+        "type": "object",
+        "properties": {
+          "primaryColor": {
+            "type": "string"
+          },
+          "secondaryColor": {
+            "type": "string"
+          },
+          "tertiaryColor": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          }
+        }
+      },
       "InboxItem": {
         "type": "object",
         "properties": {

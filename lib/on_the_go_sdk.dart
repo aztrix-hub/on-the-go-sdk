@@ -15,6 +15,7 @@ export 'package:on_the_go_sdk/src/api/inbox_api.dart';
 export 'package:on_the_go_sdk/src/api/locations_api.dart';
 export 'package:on_the_go_sdk/src/api/sites_api.dart';
 export 'package:on_the_go_sdk/src/api/users_api.dart';
+export 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
 
 export 'package:on_the_go_sdk/src/model/accepted_extra_fields_response_object.dart';
 export 'package:on_the_go_sdk/src/model/accepted_extra_fields_response_wrapper.dart';
@@ -334,5 +335,6 @@ export 'package:on_the_go_sdk/src/model/webhook.dart';
 export 'package:on_the_go_sdk/src/model/webhook_command.dart';
 export 'package:on_the_go_sdk/src/model/webhook_list_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/webhook_wrapper.dart';
+export 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 export 'package:on_the_go_sdk/src/model/whitelabel_information.dart';
 export 'package:on_the_go_sdk/src/model/whitelabel_information_wrapper.dart';

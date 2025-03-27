@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userCurrentGet**](doc/UsersApi.md#usercurrentget) | **GET** /user/current | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userCurrentPatch**](doc/UsersApi.md#usercurrentpatch) | **PATCH** /user/current | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
+[*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
 ## Documentation For Models
@@ -401,6 +402,7 @@ Class | Method | HTTP request | Description
  - [WebhookCommand](doc/WebhookCommand.md)
  - [WebhookListWrapper](doc/WebhookListWrapper.md)
  - [WebhookWrapper](doc/WebhookWrapper.md)
+ - [WhitelabelData](doc/WhitelabelData.md)
  - [WhitelabelInformation](doc/WhitelabelInformation.md)
  - [WhitelabelInformationWrapper](doc/WhitelabelInformationWrapper.md)
 
