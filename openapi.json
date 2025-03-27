@@ -1191,6 +1191,13 @@
       "WhitelabelData": {
         "type": "object",
         "properties": {
+          "theme": {
+            "type": "string",
+            "enum": [
+              "light",
+              "dark"
+            ]
+          },
           "primaryColor": {
             "type": "string"
           },

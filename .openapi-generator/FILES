@@ -665,5 +665,3 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/whitelabel_api_test.dart
-test/whitelabel_data_test.dart

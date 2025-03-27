@@ -6,7 +6,63 @@ part of 'whitelabel_data.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const WhitelabelDataThemeEnum _$whitelabelDataThemeEnum_light =
+    const WhitelabelDataThemeEnum._('light');
+const WhitelabelDataThemeEnum _$whitelabelDataThemeEnum_dark =
+    const WhitelabelDataThemeEnum._('dark');
+
+WhitelabelDataThemeEnum _$whitelabelDataThemeEnumValueOf(String name) {
+  switch (name) {
+    case 'light':
+      return _$whitelabelDataThemeEnum_light;
+    case 'dark':
+      return _$whitelabelDataThemeEnum_dark;
+    default:
+      throw new ArgumentError(name);
+  }
+}
+
+final BuiltSet<WhitelabelDataThemeEnum> _$whitelabelDataThemeEnumValues =
+    new BuiltSet<WhitelabelDataThemeEnum>(const <WhitelabelDataThemeEnum>[
+  _$whitelabelDataThemeEnum_light,
+  _$whitelabelDataThemeEnum_dark,
+]);
+
+Serializer<WhitelabelDataThemeEnum> _$whitelabelDataThemeEnumSerializer =
+    new _$WhitelabelDataThemeEnumSerializer();
+
+class _$WhitelabelDataThemeEnumSerializer
+    implements PrimitiveSerializer<WhitelabelDataThemeEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'light': 'light',
+    'dark': 'dark',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'light': 'light',
+    'dark': 'dark',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[WhitelabelDataThemeEnum];
+  @override
+  final String wireName = 'WhitelabelDataThemeEnum';
+
+  @override
+  Object serialize(Serializers serializers, WhitelabelDataThemeEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  WhitelabelDataThemeEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      WhitelabelDataThemeEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$WhitelabelData extends WhitelabelData {
+  @override
+  final WhitelabelDataThemeEnum? theme;
   @override
   final String? primaryColor;
   @override
@@ -20,7 +76,11 @@ class _$WhitelabelData extends WhitelabelData {
       (new WhitelabelDataBuilder()..update(updates))._build();
 
   _$WhitelabelData._(
-      {this.primaryColor, this.secondaryColor, this.tertiaryColor, this.logo})
+      {this.theme,
+      this.primaryColor,
+      this.secondaryColor,
+      this.tertiaryColor,
+      this.logo})
       : super._();
 
   @override
@@ -35,6 +95,7 @@ class _$WhitelabelData extends WhitelabelData {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is WhitelabelData &&
+        theme == other.theme &&
         primaryColor == other.primaryColor &&
         secondaryColor == other.secondaryColor &&
         tertiaryColor == other.tertiaryColor &&
@@ -44,6 +105,7 @@ class _$WhitelabelData extends WhitelabelData {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, theme.hashCode);
     _$hash = $jc(_$hash, primaryColor.hashCode);
     _$hash = $jc(_$hash, secondaryColor.hashCode);
     _$hash = $jc(_$hash, tertiaryColor.hashCode);
@@ -55,6 +117,7 @@ class _$WhitelabelData extends WhitelabelData {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'WhitelabelData')
+          ..add('theme', theme)
           ..add('primaryColor', primaryColor)
           ..add('secondaryColor', secondaryColor)
           ..add('tertiaryColor', tertiaryColor)
@@ -66,6 +129,10 @@ class _$WhitelabelData extends WhitelabelData {
 class WhitelabelDataBuilder
     implements Builder<WhitelabelData, WhitelabelDataBuilder> {
   _$WhitelabelData? _$v;
+
+  WhitelabelDataThemeEnum? _theme;
+  WhitelabelDataThemeEnum? get theme => _$this._theme;
+  set theme(WhitelabelDataThemeEnum? theme) => _$this._theme = theme;
 
   String? _primaryColor;
   String? get primaryColor => _$this._primaryColor;
@@ -92,6 +159,7 @@ class WhitelabelDataBuilder
   WhitelabelDataBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _theme = $v.theme;
       _primaryColor = $v.primaryColor;
       _secondaryColor = $v.secondaryColor;
       _tertiaryColor = $v.tertiaryColor;
@@ -118,6 +186,7 @@ class WhitelabelDataBuilder
   _$WhitelabelData _build() {
     final _$result = _$v ??
         new _$WhitelabelData._(
+          theme: theme,
           primaryColor: primaryColor,
           secondaryColor: secondaryColor,
           tertiaryColor: tertiaryColor,

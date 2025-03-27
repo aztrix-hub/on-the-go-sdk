@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,6 +12,7 @@ part 'whitelabel_data.g.dart';
 /// WhitelabelData
 ///
 /// Properties:
+/// * [theme]
 /// * [primaryColor]
 /// * [secondaryColor]
 /// * [tertiaryColor]
@@ -18,6 +20,10 @@ part 'whitelabel_data.g.dart';
 @BuiltValue()
 abstract class WhitelabelData
     implements Built<WhitelabelData, WhitelabelDataBuilder> {
+  @BuiltValueField(wireName: r'theme')
+  WhitelabelDataThemeEnum? get theme;
+  // enum themeEnum {  light,  dark,  };
+
   @BuiltValueField(wireName: r'primaryColor')
   String? get primaryColor;
 
@@ -56,6 +62,13 @@ class _$WhitelabelDataSerializer
     WhitelabelData object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.theme != null) {
+      yield r'theme';
+      yield serializers.serialize(
+        object.theme,
+        specifiedType: const FullType(WhitelabelDataThemeEnum),
+      );
+    }
     if (object.primaryColor != null) {
       yield r'primaryColor';
       yield serializers.serialize(
@@ -109,6 +122,13 @@ class _$WhitelabelDataSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'theme':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(WhitelabelDataThemeEnum),
+          ) as WhitelabelDataThemeEnum;
+          result.theme = valueDes;
+          break;
         case r'primaryColor':
           final valueDes = serializers.deserialize(
             value,
@@ -164,4 +184,21 @@ class _$WhitelabelDataSerializer
     );
     return result.build();
   }
+}
+
+class WhitelabelDataThemeEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'light')
+  static const WhitelabelDataThemeEnum light = _$whitelabelDataThemeEnum_light;
+  @BuiltValueEnumConst(wireName: r'dark')
+  static const WhitelabelDataThemeEnum dark = _$whitelabelDataThemeEnum_dark;
+
+  static Serializer<WhitelabelDataThemeEnum> get serializer =>
+      _$whitelabelDataThemeEnumSerializer;
+
+  const WhitelabelDataThemeEnum._(String name) : super(name);
+
+  static BuiltSet<WhitelabelDataThemeEnum> get values =>
+      _$whitelabelDataThemeEnumValues;
+  static WhitelabelDataThemeEnum valueOf(String name) =>
+      _$whitelabelDataThemeEnumValueOf(name);
 }

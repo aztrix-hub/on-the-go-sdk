@@ -8,6 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**theme** | **String** |  | [optional] 
 **primaryColor** | **String** |  | [optional] 
 **secondaryColor** | **String** |  | [optional] 
 **tertiaryColor** | **String** |  | [optional] 
