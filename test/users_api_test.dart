@@ -19,7 +19,7 @@ void main() {
     //
     // Update the current user
     //
-    //Future<UserWrapper> userCurrentPatch() async
+    //Future<UserWrapper> userCurrentPatch(User user) async
     test('test userCurrentPatch', () async {
       // TODO
     });

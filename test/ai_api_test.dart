@@ -6,7 +6,7 @@ void main() {
   final instance = OnTheGoSdk().getAiApi();
 
   group(AiApi, () {
-    //Future promptPost({ PromptPostRequest promptPostRequest }) async
+    //Future<PromptPost200Response> promptPost({ PromptPostRequest promptPostRequest }) async
     test('test promptPost', () async {
       // TODO
     });

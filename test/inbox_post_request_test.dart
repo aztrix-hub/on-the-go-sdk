@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // num page (default value: 0)
+    // num page (default value: 1)
     test('to test the property `page`', () async {
       // TODO
     });

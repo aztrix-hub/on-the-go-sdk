@@ -32,7 +32,7 @@ class _$Product extends Product {
   @override
   final int? priceMax;
   @override
-  final Image? image;
+  final SdkImage? image;
 
   factory _$Product([void Function(ProductBuilder)? updates]) =>
       (new ProductBuilder()..update(updates))._build();
@@ -172,9 +172,9 @@ class ProductBuilder implements Builder<Product, ProductBuilder> {
   int? get priceMax => _$this._priceMax;
   set priceMax(int? priceMax) => _$this._priceMax = priceMax;
 
-  ImageBuilder? _image;
-  ImageBuilder get image => _$this._image ??= new ImageBuilder();
-  set image(ImageBuilder? image) => _$this._image = image;
+  SdkImageBuilder? _image;
+  SdkImageBuilder get image => _$this._image ??= new SdkImageBuilder();
+  set image(SdkImageBuilder? image) => _$this._image = image;
 
   ProductBuilder() {
     Product._defaults(this);

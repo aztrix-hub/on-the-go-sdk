@@ -5532,7 +5532,7 @@
             "format": "int32"
           },
           "image": {
-            "$ref": "#/components/schemas/Image"
+            "$ref": "#/components/schemas/SdkImage"
           }
         },
         "description": "Custom Item"
@@ -11012,7 +11012,7 @@
           }
         }
       },
-      "Image": {
+      "SdkImage": {
         "required": [
           "type",
           "uid",
@@ -11046,8 +11046,7 @@
             "type": "string",
             "description": "user identifier of the image"
           }
-        },
-        "description": "Image"
+        }
       },
       "InboxResponse": {
         "type": "object",
@@ -15351,7 +15350,7 @@
             "example": "Starters, Drinks, Desert, etc."
           },
           "image": {
-            "$ref": "#/components/schemas/Image"
+            "$ref": "#/components/schemas/SdkImage"
           },
           "url": {
             "type": "string",
@@ -15814,7 +15813,7 @@
             "description": "The person''s full name"
           },
           "image": {
-            "$ref": "#/components/schemas/Image"
+            "$ref": "#/components/schemas/SdkImage"
           },
           "url": {
             "type": "string",
@@ -16435,7 +16434,7 @@
             "format": "int32"
           },
           "image": {
-            "$ref": "#/components/schemas/Image"
+            "$ref": "#/components/schemas/SdkImage"
           }
         },
         "description": "Product Model"

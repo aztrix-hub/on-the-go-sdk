@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **unit** | **String** | A unit of measure, e.g. 'per kg' | [optional] 
 **url** | **String** | A valid page url with more details about the product | [optional] 
 **priceMax** | **int** | Maximum price if you want to use a price range for the product | [optional] 
-**image** | [**Image**](Image.md) |  | [optional] 
+**image** | [**SdkImage**](SdkImage.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

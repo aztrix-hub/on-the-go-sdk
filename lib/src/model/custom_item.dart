@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/image.dart';
 import 'package:on_the_go_sdk/src/model/video.dart';
+import 'package:on_the_go_sdk/src/model/sdk_image.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -74,7 +74,7 @@ abstract class CustomItem implements Built<CustomItem, CustomItemBuilder> {
   int? get priceMax;
 
   @BuiltValueField(wireName: r'image')
-  Image? get image;
+  SdkImage? get image;
 
   CustomItem._();
 
@@ -185,7 +185,7 @@ class _$CustomItemSerializer implements PrimitiveSerializer<CustomItem> {
       yield r'image';
       yield serializers.serialize(
         object.image,
-        specifiedType: const FullType(Image),
+        specifiedType: const FullType(SdkImage),
       );
     }
   }
@@ -300,8 +300,8 @@ class _$CustomItemSerializer implements PrimitiveSerializer<CustomItem> {
         case r'image':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Image),
-          ) as Image;
+            specifiedType: const FullType(SdkImage),
+          ) as SdkImage;
           result.image.replace(valueDes);
           break;
         default:

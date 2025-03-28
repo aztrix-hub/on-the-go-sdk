@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **price** | **int** | Price of the menu item in cents: e.g. '1500' for 15 € | [optional] 
 **currency** | [**JsonObject**](.md) | Currency used for prices in ISO-4217: e.g. EUR, USD, CHF | [optional] 
 **category** | **String** | Category or section of the menu item (e.g. Starters, Drinks, Desert, etc.) | [optional] 
-**image** | [**Image**](Image.md) |  | [optional] 
+**image** | [**SdkImage**](SdkImage.md) |  | [optional] 
 **url** | **String** | A valid page url with more details about the item | [optional] 
 **priceMax** | **int** | Maximum price if you want to use a price range for the item | [optional] 
 **caloriesLow** | **int** | The lowest possible number of calories for a menu item | [optional] 

@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(WhitelabelData, () {
+    // String theme
+    test('to test the property `theme`', () async {
+      // TODO
+    });
+
     // String primaryColor
     test('to test the property `primaryColor`', () async {
       // TODO

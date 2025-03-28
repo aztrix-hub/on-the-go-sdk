@@ -7,9 +7,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'image.g.dart';
+part 'sdk_image.g.dart';
 
-/// Image
+/// SdkImage
 ///
 /// Properties:
 /// * [id] - The uberall unique id for the image
@@ -18,7 +18,7 @@ part 'image.g.dart';
 /// * [description] - Description of the image
 /// * [uid] - user identifier of the image
 @BuiltValue()
-abstract class Image implements Built<Image, ImageBuilder> {
+abstract class SdkImage implements Built<SdkImage, SdkImageBuilder> {
   /// The uberall unique id for the image
   @BuiltValueField(wireName: r'id')
   int? get id;
@@ -29,7 +29,7 @@ abstract class Image implements Built<Image, ImageBuilder> {
 
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueField(wireName: r'type')
-  ImageTypeEnum get type;
+  SdkImageTypeEnum get type;
   // enum typeEnum {  LOGO,  MAIN,  IMAGE,  };
 
   /// Description of the image
@@ -40,27 +40,27 @@ abstract class Image implements Built<Image, ImageBuilder> {
   @BuiltValueField(wireName: r'uid')
   String get uid;
 
-  Image._();
+  SdkImage._();
 
-  factory Image([void updates(ImageBuilder b)]) = _$Image;
+  factory SdkImage([void updates(SdkImageBuilder b)]) = _$SdkImage;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ImageBuilder b) => b;
+  static void _defaults(SdkImageBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Image> get serializer => _$ImageSerializer();
+  static Serializer<SdkImage> get serializer => _$SdkImageSerializer();
 }
 
-class _$ImageSerializer implements PrimitiveSerializer<Image> {
+class _$SdkImageSerializer implements PrimitiveSerializer<SdkImage> {
   @override
-  final Iterable<Type> types = const [Image, _$Image];
+  final Iterable<Type> types = const [SdkImage, _$SdkImage];
 
   @override
-  final String wireName = r'Image';
+  final String wireName = r'SdkImage';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Image object, {
+    SdkImage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -78,7 +78,7 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(ImageTypeEnum),
+      specifiedType: const FullType(SdkImageTypeEnum),
     );
     if (object.description != null) {
       yield r'description';
@@ -97,7 +97,7 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
   @override
   Object serialize(
     Serializers serializers,
-    Image object, {
+    SdkImage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -110,7 +110,7 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ImageBuilder result,
+    required SdkImageBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -134,8 +134,8 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ImageTypeEnum),
-          ) as ImageTypeEnum;
+            specifiedType: const FullType(SdkImageTypeEnum),
+          ) as SdkImageTypeEnum;
           result.type = valueDes;
           break;
         case r'description':
@@ -161,12 +161,12 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
   }
 
   @override
-  Image deserialize(
+  SdkImage deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ImageBuilder();
+    final result = SdkImageBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -181,23 +181,25 @@ class _$ImageSerializer implements PrimitiveSerializer<Image> {
   }
 }
 
-class ImageTypeEnum extends EnumClass {
+class SdkImageTypeEnum extends EnumClass {
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'LOGO')
-  static const ImageTypeEnum LOGO = _$imageTypeEnum_LOGO;
+  static const SdkImageTypeEnum LOGO = _$sdkImageTypeEnum_LOGO;
 
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'MAIN')
-  static const ImageTypeEnum MAIN = _$imageTypeEnum_MAIN;
+  static const SdkImageTypeEnum MAIN = _$sdkImageTypeEnum_MAIN;
 
   /// The image type, one of [LOGO, MAIN, IMAGE]
   @BuiltValueEnumConst(wireName: r'IMAGE')
-  static const ImageTypeEnum IMAGE = _$imageTypeEnum_IMAGE;
+  static const SdkImageTypeEnum IMAGE = _$sdkImageTypeEnum_IMAGE;
 
-  static Serializer<ImageTypeEnum> get serializer => _$imageTypeEnumSerializer;
+  static Serializer<SdkImageTypeEnum> get serializer =>
+      _$sdkImageTypeEnumSerializer;
 
-  const ImageTypeEnum._(String name) : super(name);
+  const SdkImageTypeEnum._(String name) : super(name);
 
-  static BuiltSet<ImageTypeEnum> get values => _$imageTypeEnumValues;
-  static ImageTypeEnum valueOf(String name) => _$imageTypeEnumValueOf(name);
+  static BuiltSet<SdkImageTypeEnum> get values => _$sdkImageTypeEnumValues;
+  static SdkImageTypeEnum valueOf(String name) =>
+      _$sdkImageTypeEnumValueOf(name);
 }

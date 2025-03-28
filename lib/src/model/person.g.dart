@@ -20,7 +20,7 @@ class _$Person extends Person {
   @override
   final String name;
   @override
-  final Image? image;
+  final SdkImage? image;
   @override
   final String? url;
 
@@ -119,9 +119,9 @@ class PersonBuilder implements Builder<Person, PersonBuilder> {
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  ImageBuilder? _image;
-  ImageBuilder get image => _$this._image ??= new ImageBuilder();
-  set image(ImageBuilder? image) => _$this._image = image;
+  SdkImageBuilder? _image;
+  SdkImageBuilder get image => _$this._image ??= new SdkImageBuilder();
+  set image(SdkImageBuilder? image) => _$this._image = image;
 
   String? _url;
   String? get url => _$this._url;

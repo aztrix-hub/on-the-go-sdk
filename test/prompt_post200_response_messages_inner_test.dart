@@ -12,8 +12,8 @@ void main() {
       // TODO
     });
 
-    // String message
-    test('to test the property `message`', () async {
+    // String content
+    test('to test the property `content`', () async {
       // TODO
     });
   });

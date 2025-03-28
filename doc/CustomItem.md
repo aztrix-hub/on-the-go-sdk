@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **unit** | **String** | optional, indicating the unit of measure, e.g. ''per kg'' | [optional] 
 **url** | **String** | optional, a url related to the custom item | [optional] 
 **priceMax** | **int** | optional, indicating there is a price range, e.g. 2500 ( i.e. 25,00 EUR ) | [optional] 
-**image** | [**Image**](Image.md) |  | [optional] 
+**image** | [**SdkImage**](SdkImage.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

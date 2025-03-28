@@ -1,39 +1,43 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'image.dart';
+part of 'sdk_image.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const ImageTypeEnum _$imageTypeEnum_LOGO = const ImageTypeEnum._('LOGO');
-const ImageTypeEnum _$imageTypeEnum_MAIN = const ImageTypeEnum._('MAIN');
-const ImageTypeEnum _$imageTypeEnum_IMAGE = const ImageTypeEnum._('IMAGE');
+const SdkImageTypeEnum _$sdkImageTypeEnum_LOGO =
+    const SdkImageTypeEnum._('LOGO');
+const SdkImageTypeEnum _$sdkImageTypeEnum_MAIN =
+    const SdkImageTypeEnum._('MAIN');
+const SdkImageTypeEnum _$sdkImageTypeEnum_IMAGE =
+    const SdkImageTypeEnum._('IMAGE');
 
-ImageTypeEnum _$imageTypeEnumValueOf(String name) {
+SdkImageTypeEnum _$sdkImageTypeEnumValueOf(String name) {
   switch (name) {
     case 'LOGO':
-      return _$imageTypeEnum_LOGO;
+      return _$sdkImageTypeEnum_LOGO;
     case 'MAIN':
-      return _$imageTypeEnum_MAIN;
+      return _$sdkImageTypeEnum_MAIN;
     case 'IMAGE':
-      return _$imageTypeEnum_IMAGE;
+      return _$sdkImageTypeEnum_IMAGE;
     default:
       throw new ArgumentError(name);
   }
 }
 
-final BuiltSet<ImageTypeEnum> _$imageTypeEnumValues =
-    new BuiltSet<ImageTypeEnum>(const <ImageTypeEnum>[
-  _$imageTypeEnum_LOGO,
-  _$imageTypeEnum_MAIN,
-  _$imageTypeEnum_IMAGE,
+final BuiltSet<SdkImageTypeEnum> _$sdkImageTypeEnumValues =
+    new BuiltSet<SdkImageTypeEnum>(const <SdkImageTypeEnum>[
+  _$sdkImageTypeEnum_LOGO,
+  _$sdkImageTypeEnum_MAIN,
+  _$sdkImageTypeEnum_IMAGE,
 ]);
 
-Serializer<ImageTypeEnum> _$imageTypeEnumSerializer =
-    new _$ImageTypeEnumSerializer();
+Serializer<SdkImageTypeEnum> _$sdkImageTypeEnumSerializer =
+    new _$SdkImageTypeEnumSerializer();
 
-class _$ImageTypeEnumSerializer implements PrimitiveSerializer<ImageTypeEnum> {
+class _$SdkImageTypeEnumSerializer
+    implements PrimitiveSerializer<SdkImageTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'LOGO': 'LOGO',
     'MAIN': 'MAIN',
@@ -46,60 +50,60 @@ class _$ImageTypeEnumSerializer implements PrimitiveSerializer<ImageTypeEnum> {
   };
 
   @override
-  final Iterable<Type> types = const <Type>[ImageTypeEnum];
+  final Iterable<Type> types = const <Type>[SdkImageTypeEnum];
   @override
-  final String wireName = 'ImageTypeEnum';
+  final String wireName = 'SdkImageTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, ImageTypeEnum object,
+  Object serialize(Serializers serializers, SdkImageTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  ImageTypeEnum deserialize(Serializers serializers, Object serialized,
+  SdkImageTypeEnum deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      ImageTypeEnum.valueOf(
+      SdkImageTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$Image extends Image {
+class _$SdkImage extends SdkImage {
   @override
   final int? id;
   @override
   final String url;
   @override
-  final ImageTypeEnum type;
+  final SdkImageTypeEnum type;
   @override
   final String? description;
   @override
   final String uid;
 
-  factory _$Image([void Function(ImageBuilder)? updates]) =>
-      (new ImageBuilder()..update(updates))._build();
+  factory _$SdkImage([void Function(SdkImageBuilder)? updates]) =>
+      (new SdkImageBuilder()..update(updates))._build();
 
-  _$Image._(
+  _$SdkImage._(
       {this.id,
       required this.url,
       required this.type,
       this.description,
       required this.uid})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(url, r'Image', 'url');
-    BuiltValueNullFieldError.checkNotNull(type, r'Image', 'type');
-    BuiltValueNullFieldError.checkNotNull(uid, r'Image', 'uid');
+    BuiltValueNullFieldError.checkNotNull(url, r'SdkImage', 'url');
+    BuiltValueNullFieldError.checkNotNull(type, r'SdkImage', 'type');
+    BuiltValueNullFieldError.checkNotNull(uid, r'SdkImage', 'uid');
   }
 
   @override
-  Image rebuild(void Function(ImageBuilder) updates) =>
+  SdkImage rebuild(void Function(SdkImageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ImageBuilder toBuilder() => new ImageBuilder()..replace(this);
+  SdkImageBuilder toBuilder() => new SdkImageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Image &&
+    return other is SdkImage &&
         id == other.id &&
         url == other.url &&
         type == other.type &&
@@ -121,7 +125,7 @@ class _$Image extends Image {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Image')
+    return (newBuiltValueToStringHelper(r'SdkImage')
           ..add('id', id)
           ..add('url', url)
           ..add('type', type)
@@ -131,8 +135,8 @@ class _$Image extends Image {
   }
 }
 
-class ImageBuilder implements Builder<Image, ImageBuilder> {
-  _$Image? _$v;
+class SdkImageBuilder implements Builder<SdkImage, SdkImageBuilder> {
+  _$SdkImage? _$v;
 
   int? _id;
   int? get id => _$this._id;
@@ -142,9 +146,9 @@ class ImageBuilder implements Builder<Image, ImageBuilder> {
   String? get url => _$this._url;
   set url(String? url) => _$this._url = url;
 
-  ImageTypeEnum? _type;
-  ImageTypeEnum? get type => _$this._type;
-  set type(ImageTypeEnum? type) => _$this._type = type;
+  SdkImageTypeEnum? _type;
+  SdkImageTypeEnum? get type => _$this._type;
+  set type(SdkImageTypeEnum? type) => _$this._type = type;
 
   String? _description;
   String? get description => _$this._description;
@@ -154,11 +158,11 @@ class ImageBuilder implements Builder<Image, ImageBuilder> {
   String? get uid => _$this._uid;
   set uid(String? uid) => _$this._uid = uid;
 
-  ImageBuilder() {
-    Image._defaults(this);
+  SdkImageBuilder() {
+    SdkImage._defaults(this);
   }
 
-  ImageBuilder get _$this {
+  SdkImageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -172,27 +176,28 @@ class ImageBuilder implements Builder<Image, ImageBuilder> {
   }
 
   @override
-  void replace(Image other) {
+  void replace(SdkImage other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$Image;
+    _$v = other as _$SdkImage;
   }
 
   @override
-  void update(void Function(ImageBuilder)? updates) {
+  void update(void Function(SdkImageBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  Image build() => _build();
+  SdkImage build() => _build();
 
-  _$Image _build() {
+  _$SdkImage _build() {
     final _$result = _$v ??
-        new _$Image._(
+        new _$SdkImage._(
           id: id,
-          url: BuiltValueNullFieldError.checkNotNull(url, r'Image', 'url'),
-          type: BuiltValueNullFieldError.checkNotNull(type, r'Image', 'type'),
+          url: BuiltValueNullFieldError.checkNotNull(url, r'SdkImage', 'url'),
+          type:
+              BuiltValueNullFieldError.checkNotNull(type, r'SdkImage', 'type'),
           description: description,
-          uid: BuiltValueNullFieldError.checkNotNull(uid, r'Image', 'uid'),
+          uid: BuiltValueNullFieldError.checkNotNull(uid, r'SdkImage', 'uid'),
         );
     replace(_$result);
     return _$result;

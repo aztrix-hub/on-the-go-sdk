@@ -32,7 +32,7 @@ class _$CustomItem extends CustomItem {
   @override
   final int? priceMax;
   @override
-  final Image? image;
+  final SdkImage? image;
 
   factory _$CustomItem([void Function(CustomItemBuilder)? updates]) =>
       (new CustomItemBuilder()..update(updates))._build();
@@ -172,9 +172,9 @@ class CustomItemBuilder implements Builder<CustomItem, CustomItemBuilder> {
   int? get priceMax => _$this._priceMax;
   set priceMax(int? priceMax) => _$this._priceMax = priceMax;
 
-  ImageBuilder? _image;
-  ImageBuilder get image => _$this._image ??= new ImageBuilder();
-  set image(ImageBuilder? image) => _$this._image = image;
+  SdkImageBuilder? _image;
+  SdkImageBuilder get image => _$this._image ??= new SdkImageBuilder();
+  set image(SdkImageBuilder? image) => _$this._image = image;
 
   CustomItemBuilder() {
     CustomItem._defaults(this);

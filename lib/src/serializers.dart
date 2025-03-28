@@ -142,7 +142,6 @@ import 'package:on_the_go_sdk/src/model/google_services_response_object.dart';
 import 'package:on_the_go_sdk/src/model/google_services_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/google_venue_details_object.dart';
 import 'package:on_the_go_sdk/src/model/google_venue_details_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/image.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
@@ -257,6 +256,7 @@ import 'package:on_the_go_sdk/src/model/sales_partner_list_response_object.dart'
 import 'package:on_the_go_sdk/src/model/sales_partner_list_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/sales_partner_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/sales_partner_wrapper_object.dart';
+import 'package:on_the_go_sdk/src/model/sdk_image.dart';
 import 'package:on_the_go_sdk/src/model/search_data.dart';
 import 'package:on_the_go_sdk/src/model/search_data_list_object.dart';
 import 'package:on_the_go_sdk/src/model/search_data_list_wrapper.dart';
@@ -467,7 +467,6 @@ part 'serializers.g.dart';
   GoogleServicesResponseWrapper,
   GoogleVenueDetailsObject,
   GoogleVenueDetailsWrapper,
-  Image,
   InboxItem,
   InboxItemAuthor,
   InboxItemMediaInner,
@@ -582,6 +581,7 @@ part 'serializers.g.dart';
   SalesPartnerListResponseWrapper,
   SalesPartnerWrapper,
   SalesPartnerWrapperObject,
+  SdkImage,
   SearchData,
   SearchDataListObject,
   SearchDataListWrapper,

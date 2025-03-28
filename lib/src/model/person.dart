@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/image.dart';
+import 'package:on_the_go_sdk/src/model/sdk_image.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -47,7 +47,7 @@ abstract class Person implements Built<Person, PersonBuilder> {
   String get name;
 
   @BuiltValueField(wireName: r'image')
-  Image? get image;
+  SdkImage? get image;
 
   /// A valid url of a page with more details about the person
   @BuiltValueField(wireName: r'url')
@@ -118,7 +118,7 @@ class _$PersonSerializer implements PrimitiveSerializer<Person> {
       yield r'image';
       yield serializers.serialize(
         object.image,
-        specifiedType: const FullType(Image),
+        specifiedType: const FullType(SdkImage),
       );
     }
     if (object.url != null) {
@@ -198,8 +198,8 @@ class _$PersonSerializer implements PrimitiveSerializer<Person> {
         case r'image':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Image),
-          ) as Image;
+            specifiedType: const FullType(SdkImage),
+          ) as SdkImage;
           result.image.replace(valueDes);
           break;
         case r'url':

@@ -54,7 +54,7 @@ void main() {
       // TODO
     });
 
-    // Image image
+    // SdkImage image
     test('to test the property `image`', () async {
       // TODO
     });

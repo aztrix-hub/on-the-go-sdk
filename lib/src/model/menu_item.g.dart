@@ -24,7 +24,7 @@ class _$MenuItem extends MenuItem {
   @override
   final String? category;
   @override
-  final Image? image;
+  final SdkImage? image;
   @override
   final String? url;
   @override
@@ -168,9 +168,9 @@ class MenuItemBuilder implements Builder<MenuItem, MenuItemBuilder> {
   String? get category => _$this._category;
   set category(String? category) => _$this._category = category;
 
-  ImageBuilder? _image;
-  ImageBuilder get image => _$this._image ??= new ImageBuilder();
-  set image(ImageBuilder? image) => _$this._image = image;
+  SdkImageBuilder? _image;
+  SdkImageBuilder get image => _$this._image ??= new SdkImageBuilder();
+  set image(SdkImageBuilder? image) => _$this._image = image;
 
   String? _url;
   String? get url => _$this._url;
