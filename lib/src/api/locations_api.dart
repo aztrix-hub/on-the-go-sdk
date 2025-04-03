@@ -254,10 +254,7 @@ class LocationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/location'.replaceAll(
-        '{' r'id' '}',
-        encodeQueryParameter(_serializers, id, const FullType(String))
-            .toString());
+    final _path = r'/location';
     final _options = Options(
       method: r'PATCH',
       headers: <String, dynamic>{
@@ -278,6 +275,10 @@ class LocationsApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+    };
+
     dynamic _bodyData;
 
     try {
@@ -288,6 +289,7 @@ class LocationsApi {
         requestOptions: _options.compose(
           _dio.options,
           _path,
+          queryParameters: _queryParameters,
         ),
         type: DioExceptionType.unknown,
         error: error,
@@ -299,6 +301,7 @@ class LocationsApi {
       _path,
       data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

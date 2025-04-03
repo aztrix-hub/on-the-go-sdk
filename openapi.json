@@ -31,6 +31,9 @@
     },
     {
       "name": "whitelabel"
+    },
+    {
+      "name": "notifications"
     }
   ],
   "paths": {
@@ -196,7 +199,7 @@
         "parameters": [
           {
             "name": "id",
-            "in": "path",
+            "in": "query",
             "description": "The uberall unique id for the location you want to update",
             "required": true,
             "schema": {
@@ -1167,6 +1170,42 @@
                 }
               }
             }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "notifications/register": {
+      "post": {
+        "tags": [
+          "notifications"
+        ],
+        "parameters": [
+          {
+            "name": "deviceId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
           },
           "403": {
             "description": "Forbidden"
