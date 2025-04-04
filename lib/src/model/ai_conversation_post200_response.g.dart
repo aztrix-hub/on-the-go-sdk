@@ -1,39 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'prompt_post200_response.dart';
+part of 'ai_conversation_post200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$PromptPost200Response extends PromptPost200Response {
+class _$AiConversationPost200Response extends AiConversationPost200Response {
   @override
   final String? userId;
   @override
   final String? conversationId;
   @override
-  final BuiltList<PromptPost200ResponseMessagesInner>? messages;
+  final BuiltList<AiConversationPost200ResponseMessagesInner>? messages;
 
-  factory _$PromptPost200Response(
-          [void Function(PromptPost200ResponseBuilder)? updates]) =>
-      (new PromptPost200ResponseBuilder()..update(updates))._build();
+  factory _$AiConversationPost200Response(
+          [void Function(AiConversationPost200ResponseBuilder)? updates]) =>
+      (new AiConversationPost200ResponseBuilder()..update(updates))._build();
 
-  _$PromptPost200Response._({this.userId, this.conversationId, this.messages})
+  _$AiConversationPost200Response._(
+      {this.userId, this.conversationId, this.messages})
       : super._();
 
   @override
-  PromptPost200Response rebuild(
-          void Function(PromptPost200ResponseBuilder) updates) =>
+  AiConversationPost200Response rebuild(
+          void Function(AiConversationPost200ResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PromptPost200ResponseBuilder toBuilder() =>
-      new PromptPost200ResponseBuilder()..replace(this);
+  AiConversationPost200ResponseBuilder toBuilder() =>
+      new AiConversationPost200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is PromptPost200Response &&
+    return other is AiConversationPost200Response &&
         userId == other.userId &&
         conversationId == other.conversationId &&
         messages == other.messages;
@@ -51,7 +52,7 @@ class _$PromptPost200Response extends PromptPost200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PromptPost200Response')
+    return (newBuiltValueToStringHelper(r'AiConversationPost200Response')
           ..add('userId', userId)
           ..add('conversationId', conversationId)
           ..add('messages', messages))
@@ -59,9 +60,11 @@ class _$PromptPost200Response extends PromptPost200Response {
   }
 }
 
-class PromptPost200ResponseBuilder
-    implements Builder<PromptPost200Response, PromptPost200ResponseBuilder> {
-  _$PromptPost200Response? _$v;
+class AiConversationPost200ResponseBuilder
+    implements
+        Builder<AiConversationPost200Response,
+            AiConversationPost200ResponseBuilder> {
+  _$AiConversationPost200Response? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -72,18 +75,19 @@ class PromptPost200ResponseBuilder
   set conversationId(String? conversationId) =>
       _$this._conversationId = conversationId;
 
-  ListBuilder<PromptPost200ResponseMessagesInner>? _messages;
-  ListBuilder<PromptPost200ResponseMessagesInner> get messages =>
+  ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
+  ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          new ListBuilder<PromptPost200ResponseMessagesInner>();
-  set messages(ListBuilder<PromptPost200ResponseMessagesInner>? messages) =>
+          new ListBuilder<AiConversationPost200ResponseMessagesInner>();
+  set messages(
+          ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
       _$this._messages = messages;
 
-  PromptPost200ResponseBuilder() {
-    PromptPost200Response._defaults(this);
+  AiConversationPost200ResponseBuilder() {
+    AiConversationPost200Response._defaults(this);
   }
 
-  PromptPost200ResponseBuilder get _$this {
+  AiConversationPost200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -95,24 +99,24 @@ class PromptPost200ResponseBuilder
   }
 
   @override
-  void replace(PromptPost200Response other) {
+  void replace(AiConversationPost200Response other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$PromptPost200Response;
+    _$v = other as _$AiConversationPost200Response;
   }
 
   @override
-  void update(void Function(PromptPost200ResponseBuilder)? updates) {
+  void update(void Function(AiConversationPost200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  PromptPost200Response build() => _build();
+  AiConversationPost200Response build() => _build();
 
-  _$PromptPost200Response _build() {
-    _$PromptPost200Response _$result;
+  _$AiConversationPost200Response _build() {
+    _$AiConversationPost200Response _$result;
     try {
       _$result = _$v ??
-          new _$PromptPost200Response._(
+          new _$AiConversationPost200Response._(
             userId: userId,
             conversationId: conversationId,
             messages: _messages?.build(),
@@ -124,7 +128,7 @@ class PromptPost200ResponseBuilder
         _messages?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
-            r'PromptPost200Response', _$failedField, e.toString());
+            r'AiConversationPost200Response', _$failedField, e.toString());
       }
       rethrow;
     }

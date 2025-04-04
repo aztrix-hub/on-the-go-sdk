@@ -16,6 +16,11 @@ import 'package:on_the_go_sdk/src/model/date.dart';
 
 import 'package:on_the_go_sdk/src/model/accepted_extra_fields_response_object.dart';
 import 'package:on_the_go_sdk/src/model/accepted_extra_fields_response_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/asset_info.dart';
 import 'package:on_the_go_sdk/src/model/attribute_recommendations_object.dart';
 import 'package:on_the_go_sdk/src/model/attribute_recommendations_wrapper.dart';
@@ -235,9 +240,6 @@ import 'package:on_the_go_sdk/src/model/product_search_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/product_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/prompt_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/prompt_post200_response_messages_inner.dart';
-import 'package:on_the_go_sdk/src/model/prompt_post_request.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/response_business.dart';
@@ -341,6 +343,11 @@ part 'serializers.g.dart';
 @SerializersFor([
   AcceptedExtraFieldsResponseObject,
   AcceptedExtraFieldsResponseWrapper,
+  AiChatPost200Response,
+  AiChatPostRequest,
+  AiConversationPost200Response,
+  AiConversationPost200ResponseMessagesInner,
+  AiConversationPostRequest,
   AssetInfo,
   AttributeRecommendationsObject,
   AttributeRecommendationsWrapper,
@@ -560,9 +567,6 @@ part 'serializers.g.dart';
   ProductWrapper,
   ProfileCompleteness,
   ProfileCompletenessWrapper,
-  PromptPost200Response,
-  PromptPost200ResponseMessagesInner,
-  PromptPostRequest,
   ProvincesResponse,
   ProvincesResponseWrapper,
   ResponseBusiness,

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'prompt_post_request.dart';
+part of 'ai_conversation_post_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$PromptPostRequest extends PromptPostRequest {
+class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
   final String userId;
   @override
@@ -14,29 +14,30 @@ class _$PromptPostRequest extends PromptPostRequest {
   @override
   final String? message;
 
-  factory _$PromptPostRequest(
-          [void Function(PromptPostRequestBuilder)? updates]) =>
-      (new PromptPostRequestBuilder()..update(updates))._build();
+  factory _$AiConversationPostRequest(
+          [void Function(AiConversationPostRequestBuilder)? updates]) =>
+      (new AiConversationPostRequestBuilder()..update(updates))._build();
 
-  _$PromptPostRequest._(
+  _$AiConversationPostRequest._(
       {required this.userId, this.conversationId, this.message})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
-        userId, r'PromptPostRequest', 'userId');
+        userId, r'AiConversationPostRequest', 'userId');
   }
 
   @override
-  PromptPostRequest rebuild(void Function(PromptPostRequestBuilder) updates) =>
+  AiConversationPostRequest rebuild(
+          void Function(AiConversationPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  PromptPostRequestBuilder toBuilder() =>
-      new PromptPostRequestBuilder()..replace(this);
+  AiConversationPostRequestBuilder toBuilder() =>
+      new AiConversationPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is PromptPostRequest &&
+    return other is AiConversationPostRequest &&
         userId == other.userId &&
         conversationId == other.conversationId &&
         message == other.message;
@@ -54,7 +55,7 @@ class _$PromptPostRequest extends PromptPostRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'PromptPostRequest')
+    return (newBuiltValueToStringHelper(r'AiConversationPostRequest')
           ..add('userId', userId)
           ..add('conversationId', conversationId)
           ..add('message', message))
@@ -62,9 +63,10 @@ class _$PromptPostRequest extends PromptPostRequest {
   }
 }
 
-class PromptPostRequestBuilder
-    implements Builder<PromptPostRequest, PromptPostRequestBuilder> {
-  _$PromptPostRequest? _$v;
+class AiConversationPostRequestBuilder
+    implements
+        Builder<AiConversationPostRequest, AiConversationPostRequestBuilder> {
+  _$AiConversationPostRequest? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -79,11 +81,11 @@ class PromptPostRequestBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  PromptPostRequestBuilder() {
-    PromptPostRequest._defaults(this);
+  AiConversationPostRequestBuilder() {
+    AiConversationPostRequest._defaults(this);
   }
 
-  PromptPostRequestBuilder get _$this {
+  AiConversationPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -95,24 +97,24 @@ class PromptPostRequestBuilder
   }
 
   @override
-  void replace(PromptPostRequest other) {
+  void replace(AiConversationPostRequest other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$PromptPostRequest;
+    _$v = other as _$AiConversationPostRequest;
   }
 
   @override
-  void update(void Function(PromptPostRequestBuilder)? updates) {
+  void update(void Function(AiConversationPostRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  PromptPostRequest build() => _build();
+  AiConversationPostRequest build() => _build();
 
-  _$PromptPostRequest _build() {
+  _$AiConversationPostRequest _build() {
     final _$result = _$v ??
-        new _$PromptPostRequest._(
+        new _$AiConversationPostRequest._(
           userId: BuiltValueNullFieldError.checkNotNull(
-              userId, r'PromptPostRequest', 'userId'),
+              userId, r'AiConversationPostRequest', 'userId'),
           conversationId: conversationId,
           message: message,
         );

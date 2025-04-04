@@ -3,60 +3,71 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'prompt_post_request.g.dart';
+part 'ai_conversation_post200_response.g.dart';
 
-/// PromptPostRequest
+/// AiConversationPost200Response
 ///
 /// Properties:
 /// * [userId]
 /// * [conversationId]
-/// * [message]
+/// * [messages] - All messages in the conversation including the assistant response
 @BuiltValue()
-abstract class PromptPostRequest
-    implements Built<PromptPostRequest, PromptPostRequestBuilder> {
+abstract class AiConversationPost200Response
+    implements
+        Built<AiConversationPost200Response,
+            AiConversationPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'userId')
-  String get userId;
+  String? get userId;
 
   @BuiltValueField(wireName: r'conversationId')
   String? get conversationId;
 
-  @BuiltValueField(wireName: r'message')
-  String? get message;
+  /// All messages in the conversation including the assistant response
+  @BuiltValueField(wireName: r'messages')
+  BuiltList<AiConversationPost200ResponseMessagesInner>? get messages;
 
-  PromptPostRequest._();
+  AiConversationPost200Response._();
 
-  factory PromptPostRequest([void updates(PromptPostRequestBuilder b)]) =
-      _$PromptPostRequest;
+  factory AiConversationPost200Response(
+          [void updates(AiConversationPost200ResponseBuilder b)]) =
+      _$AiConversationPost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PromptPostRequestBuilder b) => b;
+  static void _defaults(AiConversationPost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<PromptPostRequest> get serializer =>
-      _$PromptPostRequestSerializer();
+  static Serializer<AiConversationPost200Response> get serializer =>
+      _$AiConversationPost200ResponseSerializer();
 }
 
-class _$PromptPostRequestSerializer
-    implements PrimitiveSerializer<PromptPostRequest> {
+class _$AiConversationPost200ResponseSerializer
+    implements PrimitiveSerializer<AiConversationPost200Response> {
   @override
-  final Iterable<Type> types = const [PromptPostRequest, _$PromptPostRequest];
+  final Iterable<Type> types = const [
+    AiConversationPost200Response,
+    _$AiConversationPost200Response
+  ];
 
   @override
-  final String wireName = r'PromptPostRequest';
+  final String wireName = r'AiConversationPost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    PromptPostRequest object, {
+    AiConversationPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userId';
-    yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(String),
-    );
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.conversationId != null) {
       yield r'conversationId';
       yield serializers.serialize(
@@ -64,11 +75,12 @@ class _$PromptPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.message != null) {
-      yield r'message';
+    if (object.messages != null) {
+      yield r'messages';
       yield serializers.serialize(
-        object.message,
-        specifiedType: const FullType(String),
+        object.messages,
+        specifiedType: const FullType(
+            BuiltList, [FullType(AiConversationPost200ResponseMessagesInner)]),
       );
     }
   }
@@ -76,7 +88,7 @@ class _$PromptPostRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    PromptPostRequest object, {
+    AiConversationPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -89,7 +101,7 @@ class _$PromptPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required PromptPostRequestBuilder result,
+    required AiConversationPost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -110,12 +122,13 @@ class _$PromptPostRequestSerializer
           ) as String;
           result.conversationId = valueDes;
           break;
-        case r'message':
+        case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.message = valueDes;
+            specifiedType: const FullType(BuiltList,
+                [FullType(AiConversationPost200ResponseMessagesInner)]),
+          ) as BuiltList<AiConversationPost200ResponseMessagesInner>;
+          result.messages.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -126,12 +139,12 @@ class _$PromptPostRequestSerializer
   }
 
   @override
-  PromptPostRequest deserialize(
+  AiConversationPost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = PromptPostRequestBuilder();
+    final result = AiConversationPost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

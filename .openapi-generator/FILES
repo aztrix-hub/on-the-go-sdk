@@ -3,6 +3,11 @@ analysis_options.yaml
 doc/AcceptedExtraFieldsResponseObject.md
 doc/AcceptedExtraFieldsResponseWrapper.md
 doc/AiApi.md
+doc/AiChatPost200Response.md
+doc/AiChatPostRequest.md
+doc/AiConversationPost200Response.md
+doc/AiConversationPost200ResponseMessagesInner.md
+doc/AiConversationPostRequest.md
 doc/AssetInfo.md
 doc/AttributeRecommendationsObject.md
 doc/AttributeRecommendationsWrapper.md
@@ -225,9 +230,6 @@ doc/ProductSearchWrapper.md
 doc/ProductWrapper.md
 doc/ProfileCompleteness.md
 doc/ProfileCompletenessWrapper.md
-doc/PromptPost200Response.md
-doc/PromptPost200ResponseMessagesInner.md
-doc/PromptPostRequest.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
 doc/ResponseBusiness.md
@@ -346,6 +348,11 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/accepted_extra_fields_response_object.dart
 lib/src/model/accepted_extra_fields_response_wrapper.dart
+lib/src/model/ai_chat_post200_response.dart
+lib/src/model/ai_chat_post_request.dart
+lib/src/model/ai_conversation_post200_response.dart
+lib/src/model/ai_conversation_post200_response_messages_inner.dart
+lib/src/model/ai_conversation_post_request.dart
 lib/src/model/asset_info.dart
 lib/src/model/attribute_recommendations_object.dart
 lib/src/model/attribute_recommendations_wrapper.dart
@@ -566,9 +573,6 @@ lib/src/model/product_search_wrapper.dart
 lib/src/model/product_wrapper.dart
 lib/src/model/profile_completeness.dart
 lib/src/model/profile_completeness_wrapper.dart
-lib/src/model/prompt_post200_response.dart
-lib/src/model/prompt_post200_response_messages_inner.dart
-lib/src/model/prompt_post_request.dart
 lib/src/model/provinces_response.dart
 lib/src/model/provinces_response_wrapper.dart
 lib/src/model/response_business.dart

@@ -48,13 +48,13 @@ import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
 final api = OnTheGoSdk().getAiApi();
-final PromptPostRequest promptPostRequest = ; // PromptPostRequest | 
+final AiChatPostRequest aiChatPostRequest = ; // AiChatPostRequest | 
 
 try {
-    final response = await api.promptPost(promptPostRequest);
+    final response = await api.aiChatPost(aiChatPostRequest);
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AiApi->promptPost: $e\n");
+    print("Exception when calling AiApi->aiChatPost: $e\n");
 }
 
 ```
@@ -65,7 +65,8 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*AiApi*](doc/AiApi.md) | [**promptPost**](doc/AiApi.md#promptpost) | **POST** /prompt | 
+[*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
@@ -87,6 +88,11 @@ Class | Method | HTTP request | Description
 
  - [AcceptedExtraFieldsResponseObject](doc/AcceptedExtraFieldsResponseObject.md)
  - [AcceptedExtraFieldsResponseWrapper](doc/AcceptedExtraFieldsResponseWrapper.md)
+ - [AiChatPost200Response](doc/AiChatPost200Response.md)
+ - [AiChatPostRequest](doc/AiChatPostRequest.md)
+ - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
+ - [AiConversationPost200ResponseMessagesInner](doc/AiConversationPost200ResponseMessagesInner.md)
+ - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
  - [AssetInfo](doc/AssetInfo.md)
  - [AttributeRecommendationsObject](doc/AttributeRecommendationsObject.md)
  - [AttributeRecommendationsWrapper](doc/AttributeRecommendationsWrapper.md)
@@ -306,9 +312,6 @@ Class | Method | HTTP request | Description
  - [ProductWrapper](doc/ProductWrapper.md)
  - [ProfileCompleteness](doc/ProfileCompleteness.md)
  - [ProfileCompletenessWrapper](doc/ProfileCompletenessWrapper.md)
- - [PromptPost200Response](doc/PromptPost200Response.md)
- - [PromptPost200ResponseMessagesInner](doc/PromptPost200ResponseMessagesInner.md)
- - [PromptPostRequest](doc/PromptPostRequest.md)
  - [ProvincesResponse](doc/ProvincesResponse.md)
  - [ProvincesResponseWrapper](doc/ProvincesResponseWrapper.md)
  - [ResponseBusiness](doc/ResponseBusiness.md)

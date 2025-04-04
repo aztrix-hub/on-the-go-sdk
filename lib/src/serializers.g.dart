@@ -11,6 +11,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AcceptedExtraFieldsResponseWrapper.serializer)
       ..add(AcceptedExtraFieldsResponseWrapperErrorCodeEnum.serializer)
       ..add(AcceptedExtraFieldsResponseWrapperStatusEnum.serializer)
+      ..add(AiChatPost200Response.serializer)
+      ..add(AiChatPostRequest.serializer)
+      ..add(AiConversationPost200Response.serializer)
+      ..add(AiConversationPost200ResponseMessagesInner.serializer)
+      ..add(AiConversationPostRequest.serializer)
       ..add(AssetInfo.serializer)
       ..add(AttributeRecommendationsObject.serializer)
       ..add(AttributeRecommendationsWrapper.serializer)
@@ -510,9 +515,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ProfileCompletenessWrapper.serializer)
       ..add(ProfileCompletenessWrapperErrorCodeEnum.serializer)
       ..add(ProfileCompletenessWrapperStatusEnum.serializer)
-      ..add(PromptPost200Response.serializer)
-      ..add(PromptPost200ResponseMessagesInner.serializer)
-      ..add(PromptPostRequest.serializer)
       ..add(ProvincesResponse.serializer)
       ..add(ProvincesResponseWrapper.serializer)
       ..add(ProvincesResponseWrapperErrorCodeEnum.serializer)
@@ -718,6 +720,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WhitelabelInformationWrapper.serializer)
       ..add(WhitelabelInformationWrapperErrorCodeEnum.serializer)
       ..add(WhitelabelInformationWrapperStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(AiConversationPost200ResponseMessagesInner)
+          ]),
+          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(AiConversationPost200ResponseMessagesInner)
+          ]),
+          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(AiConversationPost200ResponseMessagesInner)
+          ]),
+          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AttributeWrapper)]),
           () => new ListBuilder<AttributeWrapper>())
@@ -958,10 +975,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ProductPlan)]),
           () => new ListBuilder<ProductPlan>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(PromptPost200ResponseMessagesInner)]),
-          () => new ListBuilder<PromptPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ResponseBusiness)]),
           () => new ListBuilder<ResponseBusiness>())

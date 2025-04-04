@@ -890,7 +890,7 @@
         }
       }
     },
-    "/prompt": {
+    "/ai/conversation": {
       "post": {
         "tags": [
           "ai"
@@ -930,6 +930,76 @@
                       "type": "string"
                     },
                     "conversationId": {
+                      "type": "string"
+                    },
+                    "messages": {
+                      "type": "array",
+                      "description": "All messages in the conversation including the assistant response",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "role": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ai/chat": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "userId"
+                ],
+                "properties": {
+                  "userId": {
+                    "type": "string"
+                  },
+                  "messages": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "role": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
                       "type": "string"
                     },
                     "messages": {
