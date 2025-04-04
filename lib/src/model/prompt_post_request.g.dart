@@ -12,19 +12,17 @@ class _$PromptPostRequest extends PromptPostRequest {
   @override
   final String? conversationId;
   @override
-  final String message;
+  final String? message;
 
   factory _$PromptPostRequest(
           [void Function(PromptPostRequestBuilder)? updates]) =>
       (new PromptPostRequestBuilder()..update(updates))._build();
 
   _$PromptPostRequest._(
-      {required this.userId, this.conversationId, required this.message})
+      {required this.userId, this.conversationId, this.message})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         userId, r'PromptPostRequest', 'userId');
-    BuiltValueNullFieldError.checkNotNull(
-        message, r'PromptPostRequest', 'message');
   }
 
   @override
@@ -116,8 +114,7 @@ class PromptPostRequestBuilder
           userId: BuiltValueNullFieldError.checkNotNull(
               userId, r'PromptPostRequest', 'userId'),
           conversationId: conversationId,
-          message: BuiltValueNullFieldError.checkNotNull(
-              message, r'PromptPostRequest', 'message'),
+          message: message,
         );
     replace(_$result);
     return _$result;

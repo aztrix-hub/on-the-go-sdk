@@ -901,8 +901,7 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "userId",
-                  "message"
+                  "userId"
                 ],
                 "properties": {
                   "userId": {

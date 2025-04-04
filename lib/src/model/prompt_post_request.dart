@@ -24,7 +24,7 @@ abstract class PromptPostRequest
   String? get conversationId;
 
   @BuiltValueField(wireName: r'message')
-  String get message;
+  String? get message;
 
   PromptPostRequest._();
 
@@ -64,11 +64,13 @@ class _$PromptPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
-    yield r'message';
-    yield serializers.serialize(
-      object.message,
-      specifiedType: const FullType(String),
-    );
+    if (object.message != null) {
+      yield r'message';
+      yield serializers.serialize(
+        object.message,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
