@@ -190,8 +190,10 @@ import 'package:on_the_go_sdk/src/model/location_managers_count.dart';
 import 'package:on_the_go_sdk/src/model/location_managers_count_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/location_object.dart';
 import 'package:on_the_go_sdk/src/model/location_photo.dart';
+import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_response_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/location_response.dart';
 import 'package:on_the_go_sdk/src/model/location_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/location_search_response.dart';
@@ -517,8 +519,10 @@ part 'serializers.g.dart';
   LocationManagersCountWrapper,
   LocationObject,
   LocationPhoto,
+  LocationPhotoPostRequest,
   LocationPhotoResponse,
   LocationPhotoResponseWrapper,
+  LocationPhotoType,
   LocationResponse,
   LocationResponseWrapper,
   LocationSearchResponse,

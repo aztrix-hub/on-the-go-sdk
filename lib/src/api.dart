@@ -13,6 +13,7 @@ import 'package:on_the_go_sdk/src/api/ai_api.dart';
 import 'package:on_the_go_sdk/src/api/inbox_api.dart';
 import 'package:on_the_go_sdk/src/api/locations_api.dart';
 import 'package:on_the_go_sdk/src/api/notifications_api.dart';
+import 'package:on_the_go_sdk/src/api/publish_api.dart';
 import 'package:on_the_go_sdk/src/api/sites_api.dart';
 import 'package:on_the_go_sdk/src/api/users_api.dart';
 import 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
@@ -104,6 +105,12 @@ class OnTheGoSdk {
   /// by doing that all interceptors will not be executed
   NotificationsApi getNotificationsApi() {
     return NotificationsApi(dio, serializers);
+  }
+
+  /// Get PublishApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  PublishApi getPublishApi() {
+    return PublishApi(dio, serializers);
   }
 
   /// Get SitesApi instance, base route and serializer can be overridden by a given but be careful,

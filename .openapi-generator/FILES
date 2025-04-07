@@ -178,8 +178,10 @@ doc/LocationManagersCount.md
 doc/LocationManagersCountWrapper.md
 doc/LocationObject.md
 doc/LocationPhoto.md
+doc/LocationPhotoPostRequest.md
 doc/LocationPhotoResponse.md
 doc/LocationPhotoResponseWrapper.md
+doc/LocationPhotoType.md
 doc/LocationResponse.md
 doc/LocationResponseWrapper.md
 doc/LocationSearchResponse.md
@@ -232,6 +234,7 @@ doc/ProfileCompleteness.md
 doc/ProfileCompletenessWrapper.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
+doc/PublishApi.md
 doc/ResponseBusiness.md
 doc/ResponseLocation.md
 doc/ResponseTemplate.md
@@ -336,6 +339,7 @@ lib/src/api/ai_api.dart
 lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/notifications_api.dart
+lib/src/api/publish_api.dart
 lib/src/api/sites_api.dart
 lib/src/api/users_api.dart
 lib/src/api/whitelabel_api.dart
@@ -523,8 +527,10 @@ lib/src/model/location_managers_count.dart
 lib/src/model/location_managers_count_wrapper.dart
 lib/src/model/location_object.dart
 lib/src/model/location_photo.dart
+lib/src/model/location_photo_post_request.dart
 lib/src/model/location_photo_response.dart
 lib/src/model/location_photo_response_wrapper.dart
+lib/src/model/location_photo_type.dart
 lib/src/model/location_response.dart
 lib/src/model/location_response_wrapper.dart
 lib/src/model/location_search_response.dart

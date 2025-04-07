@@ -34,6 +34,9 @@
     },
     {
       "name": "notifications"
+    },
+    {
+      "name": "publish"
     }
   ],
   "paths": {
@@ -592,7 +595,7 @@
     "/categories": {
       "get": {
         "tags": [
-          "Locations"
+          "locations"
         ],
         "summary": "Get All or Several Categories",
         "description": "Get a list of all available location categories, or specific location categories based on the following parameters",
@@ -784,6 +787,100 @@
         ]
       }
     },
+    "location/photo": {
+      "post": {
+        "tags": [
+          "locations"
+        ],
+        "requestBody": {
+          "description": "The photo data to upload",
+          "content": {
+            "application/json": {
+              "schema": {
+                "required": [
+                  "locationId",
+                  "photo",
+                  "type"
+                ],
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string",
+                    "description": "A description for the photo - max 255 chars"
+                  },
+                  "locationId": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "Location ID"
+                  },
+                  "photo": {
+                    "type": "string",
+                    "description": "file or base64"
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/LocationPhotoType"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "locations"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The photo has been deleted"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Invalid or Missing parameter"
+          },
+          "404": {
+            "description": "Not found"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
     "/site/colors": {
       "get": {
         "tags": [
@@ -791,20 +888,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The global design elements",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "properties": {
-                  "design": {
-                    "$ref": "#/definitions/resource_design"
-                  }
-                }
-              },
-              "maxItems": 1,
-              "minItems": 1
-            }
+            "description": "Success"
           }
         }
       },
@@ -814,20 +898,7 @@
         ],
         "responses": {
           "200": {
-            "description": "The complete design of the page",
-            "schema": {
-              "type": "array",
-              "items": {
-                "properties": {
-                  "cols": {
-                    "$ref": "#/definitions/resource_design"
-                  }
-                },
-                "type": "object"
-              },
-              "maxItems": 1,
-              "minItems": 1
-            }
+            "description": "Success"
           }
         }
       },
@@ -872,20 +943,7 @@
         },
         "responses": {
           "200": {
-            "description": "The items in the global design elements",
-            "schema": {
-              "type": "array",
-              "items": {
-                "properties": {
-                  "cols": {
-                    "$ref": "#/definitions/resource_design"
-                  }
-                },
-                "type": "object"
-              },
-              "maxItems": 1,
-              "minItems": 1
-            }
+            "description": "Success"
           }
         }
       }
@@ -1292,10 +1350,152 @@
           }
         ]
       }
+    },
+    "publish/posts": {
+      "get": {
+        "tags": [
+          "publish"
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SocialPostsResponseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "publish"
+        ],
+        "requestBody": {
+          "description": "A SocialPost object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SocialPost"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Social Posts created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SocialPostWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/location/listing": {
+      "get": {
+        "tags": [
+          "locations"
+        ],
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "description": "The unique id of the location",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing details successfully retrieved",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingsDetailsResponseWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request Forbidden"
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
     }
   },
   "components": {
     "schemas": {
+      "LocationPhotoType": {
+        "type": "string",
+        "enum": [
+          "MAIN",
+          "DOCTOR_COM_PORTRAIT",
+          "LOGO",
+          "STOREFINDER_LOGO",
+          "SQUARED_LOGO",
+          "LANDSCAPE",
+          "STOREFINDER_COVER",
+          "FACEBOOK_LANDSCAPE",
+          "APPLE_LANDSCAPE",
+          "MENU",
+          "PHOTO",
+          "ROOMS",
+          "TEAMS",
+          "AT_WORK",
+          "PRODUCT",
+          "EXTERIOR",
+          "INTERIOR",
+          "COMMON_AREA",
+          "FOOD_AND_DRINK"
+        ]
+      },
       "WhitelabelData": {
         "type": "object",
         "properties": {

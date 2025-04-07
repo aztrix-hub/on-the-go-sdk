@@ -11,7 +11,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
+[**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
+[**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
+[**locationPhotoPost**](LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get Several Locations
 
 
@@ -119,6 +122,47 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **locationListingGet**
+> ListingsDetailsResponseWrapper locationListingGet(locationId)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String locationId = locationId_example; // String | The unique id of the location
+
+try {
+    final response = api.locationListingGet(locationId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **String**| The unique id of the location | 
+
+### Return type
+
+[**ListingsDetailsResponseWrapper**](ListingsDetailsResponseWrapper.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **locationPatch**
 > LocationWrapper locationPatch(id, location)
 
@@ -165,6 +209,90 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationPhotoDelete**
+> locationPhotoDelete(id)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String id = id_example; // String | 
+
+try {
+    api.locationPhotoDelete(id);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationPhotoDelete: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationPhotoPost**
+> locationPhotoPost(locationPhotoPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final LocationPhotoPostRequest locationPhotoPostRequest = ; // LocationPhotoPostRequest | The photo data to upload
+
+try {
+    api.locationPhotoPost(locationPhotoPostRequest);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationPhotoPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationPhotoPostRequest** | [**LocationPhotoPostRequest**](LocationPhotoPostRequest.md)| The photo data to upload | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

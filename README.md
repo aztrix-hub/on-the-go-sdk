@@ -72,9 +72,14 @@ Class | Method | HTTP request | Description
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
+[*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoPost**](doc/LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get Several Locations
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
+[*PublishApi*](doc/PublishApi.md) | [**publishPostsGet**](doc/PublishApi.md#publishpostsget) | **GET** /publish/posts | 
+[*PublishApi*](doc/PublishApi.md) | [**publishPostsPost**](doc/PublishApi.md#publishpostspost) | **POST** /publish/posts | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
@@ -262,8 +267,10 @@ Class | Method | HTTP request | Description
  - [LocationManagersCountWrapper](doc/LocationManagersCountWrapper.md)
  - [LocationObject](doc/LocationObject.md)
  - [LocationPhoto](doc/LocationPhoto.md)
+ - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoResponse](doc/LocationPhotoResponse.md)
  - [LocationPhotoResponseWrapper](doc/LocationPhotoResponseWrapper.md)
+ - [LocationPhotoType](doc/LocationPhotoType.md)
  - [LocationResponse](doc/LocationResponse.md)
  - [LocationResponseWrapper](doc/LocationResponseWrapper.md)
  - [LocationSearchResponse](doc/LocationSearchResponse.md)
