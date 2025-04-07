@@ -11,6 +11,7 @@ export 'package:on_the_go_sdk/src/serializers.dart';
 export 'package:on_the_go_sdk/src/model/date.dart';
 
 export 'package:on_the_go_sdk/src/api/ai_api.dart';
+export 'package:on_the_go_sdk/src/api/analytics_api.dart';
 export 'package:on_the_go_sdk/src/api/inbox_api.dart';
 export 'package:on_the_go_sdk/src/api/locations_api.dart';
 export 'package:on_the_go_sdk/src/api/notifications_api.dart';
@@ -158,6 +159,7 @@ export 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
+export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 export 'package:on_the_go_sdk/src/model/inbox_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_response_object.dart';
 export 'package:on_the_go_sdk/src/model/inbox_response_wrapper.dart';

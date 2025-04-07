@@ -8,6 +8,7 @@ doc/AiChatPostRequest.md
 doc/AiConversationPost200Response.md
 doc/AiConversationPost200ResponseMessagesInner.md
 doc/AiConversationPostRequest.md
+doc/AnalyticsApi.md
 doc/AssetInfo.md
 doc/AttributeRecommendationsObject.md
 doc/AttributeRecommendationsWrapper.md
@@ -141,6 +142,7 @@ doc/InboxItemMediaInner.md
 doc/InboxItemMetrics.md
 doc/InboxPost200Response.md
 doc/InboxPostRequest.md
+doc/InboxReplyPostRequest.md
 doc/InboxResponse.md
 doc/InboxResponseObject.md
 doc/InboxResponseWrapper.md
@@ -336,6 +338,7 @@ doc/WhitelabelInformationWrapper.md
 lib/on_the_go_sdk.dart
 lib/src/api.dart
 lib/src/api/ai_api.dart
+lib/src/api/analytics_api.dart
 lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/notifications_api.dart
@@ -490,6 +493,7 @@ lib/src/model/inbox_item_media_inner.dart
 lib/src/model/inbox_item_metrics.dart
 lib/src/model/inbox_post200_response.dart
 lib/src/model/inbox_post_request.dart
+lib/src/model/inbox_reply_post_request.dart
 lib/src/model/inbox_response.dart
 lib/src/model/inbox_response_object.dart
 lib/src/model/inbox_response_wrapper.dart
@@ -677,3 +681,5 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/analytics_api_test.dart
+test/inbox_reply_post_request_test.dart

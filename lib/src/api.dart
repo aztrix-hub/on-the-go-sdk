@@ -10,6 +10,7 @@ import 'package:on_the_go_sdk/src/auth/basic_auth.dart';
 import 'package:on_the_go_sdk/src/auth/bearer_auth.dart';
 import 'package:on_the_go_sdk/src/auth/oauth.dart';
 import 'package:on_the_go_sdk/src/api/ai_api.dart';
+import 'package:on_the_go_sdk/src/api/analytics_api.dart';
 import 'package:on_the_go_sdk/src/api/inbox_api.dart';
 import 'package:on_the_go_sdk/src/api/locations_api.dart';
 import 'package:on_the_go_sdk/src/api/notifications_api.dart';
@@ -87,6 +88,12 @@ class OnTheGoSdk {
   /// by doing that all interceptors will not be executed
   AiApi getAiApi() {
     return AiApi(dio, serializers);
+  }
+
+  /// Get AnalyticsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AnalyticsApi getAnalyticsApi() {
+    return AnalyticsApi(dio, serializers);
   }
 
   /// Get InboxApi instance, base route and serializer can be overridden by a given but be careful,

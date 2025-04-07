@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**inboxItemChildrenGet**](InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [**inboxItemGet**](InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [**inboxPost**](InboxApi.md#inboxpost) | **POST** /inbox | 
+[**inboxReplyPost**](InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 
 
 # **inboxItemChildrenGet**
@@ -146,6 +147,49 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inboxReplyPost**
+> DataPointResponseWrapper inboxReplyPost(datapointId, inboxReplyPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getInboxApi();
+final String datapointId = datapointId_example; // String | The uberall unique ID of the data point you want to reply to
+final InboxReplyPostRequest inboxReplyPostRequest = ; // InboxReplyPostRequest | 
+
+try {
+    final response = api.inboxReplyPost(datapointId, inboxReplyPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling InboxApi->inboxReplyPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datapointId** | **String**| The uberall unique ID of the data point you want to reply to | 
+ **inboxReplyPostRequest** | [**InboxReplyPostRequest**](InboxReplyPostRequest.md)|  | 
+
+### Return type
+
+[**DataPointResponseWrapper**](DataPointResponseWrapper.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: */*
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -67,9 +67,11 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[*AnalyticsApi*](doc/AnalyticsApi.md) | [**dashboardInsightsDataGet**](doc/AnalyticsApi.md#dashboardinsightsdataget) | **GET** /dashboard/insights-data | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
@@ -230,6 +232,7 @@ Class | Method | HTTP request | Description
  - [InboxItemMetrics](doc/InboxItemMetrics.md)
  - [InboxPost200Response](doc/InboxPost200Response.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
+ - [InboxReplyPostRequest](doc/InboxReplyPostRequest.md)
  - [InboxResponse](doc/InboxResponse.md)
  - [InboxResponseObject](doc/InboxResponseObject.md)
  - [InboxResponseWrapper](doc/InboxResponseWrapper.md)

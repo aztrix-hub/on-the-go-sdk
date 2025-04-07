@@ -37,6 +37,9 @@
     },
     {
       "name": "publish"
+    },
+    {
+      "name": "analytics"
     }
   ],
   "paths": {
@@ -1283,6 +1286,66 @@
         ]
       }
     },
+    "/inbox/reply": {
+      "post": {
+        "tags": [
+          "inbox"
+        ],
+        "parameters": [
+          {
+            "name": "datapointId",
+            "in": "path",
+            "description": "Data point ID you want to reply to",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "required": [
+                    "reply"
+                  ],
+                  "reply": {
+                    "type": "string",
+                    "description": "The text you want to reply"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Reply sent",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/DataPointResponseWrapper"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "404": {
+            "description": "Data point not found"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
     "/whitelabel": {
       "get": {
         "tags": [
@@ -1460,6 +1523,117 @@
           },
           "500": {
             "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/dashboard/insights-data": {
+      "get": {
+        "tags": [
+          "analytics"
+        ],
+        "parameters": [
+          {
+            "name": "businessIds",
+            "in": "query",
+            "description": "The ids of the businesses you want insights data for",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "locationIds",
+            "in": "query",
+            "description": "The ids of the locations you want insights data for",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          },
+          {
+            "name": "textFilter",
+            "in": "query",
+            "description": "Filter locations to get insights data for by name, zip, street, city, label",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Berlin"
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "startDate",
+            "in": "query",
+            "description": "The start date YYYY-MM-DD",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "endDate",
+            "in": "query",
+            "description": "The end date YYYY-MM-DD",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "group",
+            "in": "query",
+            "description": "How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "metrics",
+            "in": "query",
+            "description": "The types of metrics you want to get",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved insights data",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/InsightsWrapper"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "400": {
+            "description": "Invalid or Missing parameter"
           }
         },
         "security": [
@@ -14671,29 +14845,7 @@
             "format": "int32"
           },
           "type": {
-            "type": "string",
-            "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category ",
-            "enum": [
-              "MAIN",
-              "DOCTOR_COM_PORTRAIT",
-              "LOGO",
-              "STOREFINDER_LOGO",
-              "SQUARED_LOGO",
-              "LANDSCAPE",
-              "STOREFINDER_COVER",
-              "FACEBOOK_LANDSCAPE",
-              "APPLE_LANDSCAPE",
-              "MENU",
-              "PHOTO",
-              "ROOMS",
-              "TEAMS",
-              "AT_WORK",
-              "PRODUCT",
-              "EXTERIOR",
-              "INTERIOR",
-              "COMMON_AREA",
-              "FOOD_AND_DRINK"
-            ]
+            "$ref": "#/components/schemas/LocationPhotoType"
           },
           "order": {
             "type": "integer",
@@ -14767,8 +14919,7 @@
             "description": "A boolean indicating whether this photo is the location''s logo. Maximum one logo per location"
           },
           "type": {
-            "type": "string",
-            "description": "Required - One of: <br>\n\nMAIN <br>\nLOGO <br>\nSQUARED_LOGO <br>\nDOCTOR_COM_PORTRAIT - Doctor.com clients only <br>\nLANDSCAPE - Updates Google Cover Photo<br>\nAPPLE_LANDSCAPE <br>\nPHOTO  <br>\nSTOREFINDER_LOGO - Only for Uberall locator product <br>\nSTOREFINDER_COVER - Only for Uberall locator product<br>\nFACEBOOK_LANDSCAPE - Facebook Cover Photo <br>\nEXTERIOR - Google''s Exterior Photo tag - availability dependent on a location''s business category <br>\nINTERIOR - Google''s Interior Photo tag  - availability dependent on a location''s business category <br>\nFOOD_AND_DRINK - Google''s Food and Drink Photo tag - availability dependent on a location''s business category  <br>\nMENU  - Google''s Menu Photo tag, which should only be photos of the menu - availability dependent on a location''s business category <br>\nPRODUCT  - Google''s Product Photo tag - availability dependent on a location''s business category <br>\nTEAMS  - Google''s Teams Photo tag - availability dependent on a location''s business category <br>\nAT_WORK  - Google''s At Work Photo tag - availability dependent on a location''s business category <br>\nCOMMON_AREA  - Google''s Common Area Photo tag - availability dependent on a location''s business category <br>\nROOMS - Google''s Rooms Photo tag - availability dependent on a location''s business category "
+            "$ref": "#/components/schemas/LocationPhotoType"
           },
           "publicUrl": {
             "type": "string",

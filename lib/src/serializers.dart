@@ -153,6 +153,7 @@ import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
+import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response_object.dart';
 import 'package:on_the_go_sdk/src/model/inbox_response_wrapper.dart';
@@ -482,6 +483,7 @@ part 'serializers.g.dart';
   InboxItemMetrics,
   InboxPost200Response,
   InboxPostRequest,
+  InboxReplyPostRequest,
   InboxResponse,
   InboxResponseObject,
   InboxResponseWrapper,

@@ -6,178 +6,6 @@ part of 'location_photo.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_MAIN =
-    const LocationPhotoTypeEnum._('MAIN');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_DOCTOR_COM_PORTRAIT =
-    const LocationPhotoTypeEnum._('DOCTOR_COM_PORTRAIT');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_LOGO =
-    const LocationPhotoTypeEnum._('LOGO');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_STOREFINDER_LOGO =
-    const LocationPhotoTypeEnum._('STOREFINDER_LOGO');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_SQUARED_LOGO =
-    const LocationPhotoTypeEnum._('SQUARED_LOGO');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_LANDSCAPE =
-    const LocationPhotoTypeEnum._('LANDSCAPE');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_STOREFINDER_COVER =
-    const LocationPhotoTypeEnum._('STOREFINDER_COVER');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_FACEBOOK_LANDSCAPE =
-    const LocationPhotoTypeEnum._('FACEBOOK_LANDSCAPE');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_APPLE_LANDSCAPE =
-    const LocationPhotoTypeEnum._('APPLE_LANDSCAPE');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_MENU =
-    const LocationPhotoTypeEnum._('MENU');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_PHOTO =
-    const LocationPhotoTypeEnum._('PHOTO');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_ROOMS =
-    const LocationPhotoTypeEnum._('ROOMS');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_TEAMS =
-    const LocationPhotoTypeEnum._('TEAMS');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_AT_WORK =
-    const LocationPhotoTypeEnum._('AT_WORK');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_PRODUCT =
-    const LocationPhotoTypeEnum._('PRODUCT');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_EXTERIOR =
-    const LocationPhotoTypeEnum._('EXTERIOR');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_INTERIOR =
-    const LocationPhotoTypeEnum._('INTERIOR');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_COMMON_AREA =
-    const LocationPhotoTypeEnum._('COMMON_AREA');
-const LocationPhotoTypeEnum _$locationPhotoTypeEnum_FOOD_AND_DRINK =
-    const LocationPhotoTypeEnum._('FOOD_AND_DRINK');
-
-LocationPhotoTypeEnum _$locationPhotoTypeEnumValueOf(String name) {
-  switch (name) {
-    case 'MAIN':
-      return _$locationPhotoTypeEnum_MAIN;
-    case 'DOCTOR_COM_PORTRAIT':
-      return _$locationPhotoTypeEnum_DOCTOR_COM_PORTRAIT;
-    case 'LOGO':
-      return _$locationPhotoTypeEnum_LOGO;
-    case 'STOREFINDER_LOGO':
-      return _$locationPhotoTypeEnum_STOREFINDER_LOGO;
-    case 'SQUARED_LOGO':
-      return _$locationPhotoTypeEnum_SQUARED_LOGO;
-    case 'LANDSCAPE':
-      return _$locationPhotoTypeEnum_LANDSCAPE;
-    case 'STOREFINDER_COVER':
-      return _$locationPhotoTypeEnum_STOREFINDER_COVER;
-    case 'FACEBOOK_LANDSCAPE':
-      return _$locationPhotoTypeEnum_FACEBOOK_LANDSCAPE;
-    case 'APPLE_LANDSCAPE':
-      return _$locationPhotoTypeEnum_APPLE_LANDSCAPE;
-    case 'MENU':
-      return _$locationPhotoTypeEnum_MENU;
-    case 'PHOTO':
-      return _$locationPhotoTypeEnum_PHOTO;
-    case 'ROOMS':
-      return _$locationPhotoTypeEnum_ROOMS;
-    case 'TEAMS':
-      return _$locationPhotoTypeEnum_TEAMS;
-    case 'AT_WORK':
-      return _$locationPhotoTypeEnum_AT_WORK;
-    case 'PRODUCT':
-      return _$locationPhotoTypeEnum_PRODUCT;
-    case 'EXTERIOR':
-      return _$locationPhotoTypeEnum_EXTERIOR;
-    case 'INTERIOR':
-      return _$locationPhotoTypeEnum_INTERIOR;
-    case 'COMMON_AREA':
-      return _$locationPhotoTypeEnum_COMMON_AREA;
-    case 'FOOD_AND_DRINK':
-      return _$locationPhotoTypeEnum_FOOD_AND_DRINK;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<LocationPhotoTypeEnum> _$locationPhotoTypeEnumValues =
-    new BuiltSet<LocationPhotoTypeEnum>(const <LocationPhotoTypeEnum>[
-  _$locationPhotoTypeEnum_MAIN,
-  _$locationPhotoTypeEnum_DOCTOR_COM_PORTRAIT,
-  _$locationPhotoTypeEnum_LOGO,
-  _$locationPhotoTypeEnum_STOREFINDER_LOGO,
-  _$locationPhotoTypeEnum_SQUARED_LOGO,
-  _$locationPhotoTypeEnum_LANDSCAPE,
-  _$locationPhotoTypeEnum_STOREFINDER_COVER,
-  _$locationPhotoTypeEnum_FACEBOOK_LANDSCAPE,
-  _$locationPhotoTypeEnum_APPLE_LANDSCAPE,
-  _$locationPhotoTypeEnum_MENU,
-  _$locationPhotoTypeEnum_PHOTO,
-  _$locationPhotoTypeEnum_ROOMS,
-  _$locationPhotoTypeEnum_TEAMS,
-  _$locationPhotoTypeEnum_AT_WORK,
-  _$locationPhotoTypeEnum_PRODUCT,
-  _$locationPhotoTypeEnum_EXTERIOR,
-  _$locationPhotoTypeEnum_INTERIOR,
-  _$locationPhotoTypeEnum_COMMON_AREA,
-  _$locationPhotoTypeEnum_FOOD_AND_DRINK,
-]);
-
-Serializer<LocationPhotoTypeEnum> _$locationPhotoTypeEnumSerializer =
-    new _$LocationPhotoTypeEnumSerializer();
-
-class _$LocationPhotoTypeEnumSerializer
-    implements PrimitiveSerializer<LocationPhotoTypeEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'MAIN': 'MAIN',
-    'DOCTOR_COM_PORTRAIT': 'DOCTOR_COM_PORTRAIT',
-    'LOGO': 'LOGO',
-    'STOREFINDER_LOGO': 'STOREFINDER_LOGO',
-    'SQUARED_LOGO': 'SQUARED_LOGO',
-    'LANDSCAPE': 'LANDSCAPE',
-    'STOREFINDER_COVER': 'STOREFINDER_COVER',
-    'FACEBOOK_LANDSCAPE': 'FACEBOOK_LANDSCAPE',
-    'APPLE_LANDSCAPE': 'APPLE_LANDSCAPE',
-    'MENU': 'MENU',
-    'PHOTO': 'PHOTO',
-    'ROOMS': 'ROOMS',
-    'TEAMS': 'TEAMS',
-    'AT_WORK': 'AT_WORK',
-    'PRODUCT': 'PRODUCT',
-    'EXTERIOR': 'EXTERIOR',
-    'INTERIOR': 'INTERIOR',
-    'COMMON_AREA': 'COMMON_AREA',
-    'FOOD_AND_DRINK': 'FOOD_AND_DRINK',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'MAIN': 'MAIN',
-    'DOCTOR_COM_PORTRAIT': 'DOCTOR_COM_PORTRAIT',
-    'LOGO': 'LOGO',
-    'STOREFINDER_LOGO': 'STOREFINDER_LOGO',
-    'SQUARED_LOGO': 'SQUARED_LOGO',
-    'LANDSCAPE': 'LANDSCAPE',
-    'STOREFINDER_COVER': 'STOREFINDER_COVER',
-    'FACEBOOK_LANDSCAPE': 'FACEBOOK_LANDSCAPE',
-    'APPLE_LANDSCAPE': 'APPLE_LANDSCAPE',
-    'MENU': 'MENU',
-    'PHOTO': 'PHOTO',
-    'ROOMS': 'ROOMS',
-    'TEAMS': 'TEAMS',
-    'AT_WORK': 'AT_WORK',
-    'PRODUCT': 'PRODUCT',
-    'EXTERIOR': 'EXTERIOR',
-    'INTERIOR': 'INTERIOR',
-    'COMMON_AREA': 'COMMON_AREA',
-    'FOOD_AND_DRINK': 'FOOD_AND_DRINK',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[LocationPhotoTypeEnum];
-  @override
-  final String wireName = 'LocationPhotoTypeEnum';
-
-  @override
-  Object serialize(Serializers serializers, LocationPhotoTypeEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  LocationPhotoTypeEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      LocationPhotoTypeEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$LocationPhoto extends LocationPhoto {
   @override
   final int? id;
@@ -196,7 +24,7 @@ class _$LocationPhoto extends LocationPhoto {
   @override
   final int? cropHeight;
   @override
-  final LocationPhotoTypeEnum type;
+  final LocationPhotoType type;
   @override
   final int? order;
   @override
@@ -342,9 +170,9 @@ class LocationPhotoBuilder
   int? get cropHeight => _$this._cropHeight;
   set cropHeight(int? cropHeight) => _$this._cropHeight = cropHeight;
 
-  LocationPhotoTypeEnum? _type;
-  LocationPhotoTypeEnum? get type => _$this._type;
-  set type(LocationPhotoTypeEnum? type) => _$this._type = type;
+  LocationPhotoType? _type;
+  LocationPhotoType? get type => _$this._type;
+  set type(LocationPhotoType? type) => _$this._type = type;
 
   int? _order;
   int? get order => _$this._order;
