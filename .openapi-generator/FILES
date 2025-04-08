@@ -681,5 +681,3 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/analytics_api_test.dart
-test/inbox_reply_post_request_test.dart

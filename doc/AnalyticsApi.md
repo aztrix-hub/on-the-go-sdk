@@ -9,11 +9,11 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**dashboardInsightsDataGet**](AnalyticsApi.md#dashboardinsightsdataget) | **GET** /dashboard/insights-data | 
+[**analyticsGet**](AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 
 
-# **dashboardInsightsDataGet**
-> InsightsWrapper dashboardInsightsDataGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics)
+# **analyticsGet**
+> InsightsWrapper analyticsGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics)
 
 
 
@@ -32,10 +32,10 @@ final String group = group_example; // String | How to group the results, one of
 final BuiltList<String> metrics = ; // BuiltList<String> | The types of metrics you want to get
 
 try {
-    final response = api.dashboardInsightsDataGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics);
+    final response = api.analyticsGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AnalyticsApi->dashboardInsightsDataGet: $e\n');
+    print('Exception when calling AnalyticsApi->analyticsGet: $e\n');
 }
 ```
 

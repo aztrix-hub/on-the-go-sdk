@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getInboxApi();
-final String datapointId = datapointId_example; // String | The uberall unique ID of the data point you want to reply to
+final String datapointId = datapointId_example; // String | Data point ID you want to reply to
 final InboxReplyPostRequest inboxReplyPostRequest = ; // InboxReplyPostRequest | 
 
 try {
@@ -175,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datapointId** | **String**| The uberall unique ID of the data point you want to reply to | 
+ **datapointId** | **String**| Data point ID you want to reply to | 
  **inboxReplyPostRequest** | [**InboxReplyPostRequest**](InboxReplyPostRequest.md)|  | 
 
 ### Return type

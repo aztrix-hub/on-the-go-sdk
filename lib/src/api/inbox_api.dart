@@ -304,7 +304,7 @@ class InboxApi {
   ///
   ///
   /// Parameters:
-  /// * [datapointId] - The uberall unique ID of the data point you want to reply to
+  /// * [datapointId] - Data point ID you want to reply to
   /// * [inboxReplyPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

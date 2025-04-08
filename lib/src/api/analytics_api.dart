@@ -19,7 +19,7 @@ class AnalyticsApi {
 
   const AnalyticsApi(this._dio, this._serializers);
 
-  /// dashboardInsightsDataGet
+  /// analyticsGet
   ///
   ///
   /// Parameters:
@@ -40,7 +40,7 @@ class AnalyticsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [InsightsWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InsightsWrapper>> dashboardInsightsDataGet({
+  Future<Response<InsightsWrapper>> analyticsGet({
     required String type,
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
@@ -56,7 +56,7 @@ class AnalyticsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/dashboard/insights-data';
+    final _path = r'/analytics';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{

@@ -67,7 +67,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
-[*AnalyticsApi*](doc/AnalyticsApi.md) | [**dashboardInsightsDataGet**](doc/AnalyticsApi.md#dashboardinsightsdataget) | **GET** /dashboard/insights-data | 
+[*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
