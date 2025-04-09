@@ -84,6 +84,26 @@
         }
       }
     },
+    "/user/logout": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully logged out"
+          },
+          "400": {
+            "description": "Error occurred during logout"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
     "/user/current": {
       "get": {
         "tags": [

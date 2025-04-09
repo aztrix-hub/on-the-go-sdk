@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**userCurrentGet**](UsersApi.md#usercurrentget) | **GET** /user/current | Get the current user
 [**userCurrentPatch**](UsersApi.md#usercurrentpatch) | **PATCH** /user/current | Update the current user
 [**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
+[**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
 
 
 # **userCurrentGet**
@@ -144,6 +145,42 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userLogoutPost**
+> userLogoutPost()
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+
+try {
+    api.userLogoutPost();
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userLogoutPost: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
