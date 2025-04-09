@@ -85,10 +85,11 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
-[*UsersApi*](doc/UsersApi.md) | [**userCurrentGet**](doc/UsersApi.md#usercurrentget) | **GET** /user/current | Get the current user
-[*UsersApi*](doc/UsersApi.md) | [**userCurrentPatch**](doc/UsersApi.md#usercurrentpatch) | **PATCH** /user/current | Update the current user
+[*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
+[*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
+[*UsersApi*](doc/UsersApi.md) | [**userSsoCheckPost**](doc/UsersApi.md#userssocheckpost) | **POST** /user/sso/check | 
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -406,6 +407,7 @@ Class | Method | HTTP request | Description
  - [UserObject](doc/UserObject.md)
  - [UserSearchObject](doc/UserSearchObject.md)
  - [UserSearchWrapper](doc/UserSearchWrapper.md)
+ - [UserSsoCheckPostRequest](doc/UserSsoCheckPostRequest.md)
  - [UserWrapper](doc/UserWrapper.md)
  - [Video](doc/Video.md)
  - [VisibilityIndex](doc/VisibilityIndex.md)

@@ -104,13 +104,47 @@
         ]
       }
     },
-    "/user/current": {
+    "/user/sso/check": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User email requires SSO"
+          },
+          "404": {
+            "description": "User email does not require SSO"
+          }
+        },
+        "security": [
+          {
+            "accessToken": []
+          }
+        ]
+      }
+    },
+    "/user": {
       "get": {
         "tags": [
           "users"
         ],
         "summary": "Get the current user",
-        "description": "Get the current user",
         "responses": {
           "200": {
             "description": "Successfully retrieved user",
@@ -137,7 +171,6 @@
           "users"
         ],
         "summary": "Update the current user",
-        "description": "Update the current user",
         "requestBody": {
           "content": {
             "application/json": {

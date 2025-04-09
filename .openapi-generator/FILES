@@ -319,6 +319,7 @@ doc/UserMissingConnectionWarningsWrapper.md
 doc/UserObject.md
 doc/UserSearchObject.md
 doc/UserSearchWrapper.md
+doc/UserSsoCheckPostRequest.md
 doc/UserWrapper.md
 doc/UsersApi.md
 doc/Video.md
@@ -665,6 +666,7 @@ lib/src/model/user_missing_connection_warnings_wrapper.dart
 lib/src/model/user_object.dart
 lib/src/model/user_search_object.dart
 lib/src/model/user_search_wrapper.dart
+lib/src/model/user_sso_check_post_request.dart
 lib/src/model/user_wrapper.dart
 lib/src/model/utm.dart
 lib/src/model/video.dart
@@ -681,3 +683,4 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/user_sso_check_post_request_test.dart
