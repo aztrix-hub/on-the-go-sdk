@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:on_the_go_sdk/src/model/login_command.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_sso_check_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_sso_check_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 
@@ -355,9 +356,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [UserSsoCheckPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> userSsoCheckPost({
+  Future<Response<UserSsoCheckPost200Response>> userSsoCheckPost({
     required UserSsoCheckPostRequest userSsoCheckPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -407,6 +408,35 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    UserSsoCheckPost200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserSsoCheckPost200Response),
+            ) as UserSsoCheckPost200Response;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserSsoCheckPost200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 }

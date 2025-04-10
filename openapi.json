@@ -93,7 +93,7 @@
           "200": {
             "description": "Successfully logged out"
           },
-          "400": {
+          "500": {
             "description": "Error occurred during logout"
           }
         },
@@ -126,10 +126,19 @@
         },
         "responses": {
           "200": {
-            "description": "User email requires SSO"
-          },
-          "404": {
-            "description": "User email does not require SSO"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sso": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "security": [

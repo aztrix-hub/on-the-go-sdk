@@ -407,6 +407,7 @@ Class | Method | HTTP request | Description
  - [UserObject](doc/UserObject.md)
  - [UserSearchObject](doc/UserSearchObject.md)
  - [UserSearchWrapper](doc/UserSearchWrapper.md)
+ - [UserSsoCheckPost200Response](doc/UserSsoCheckPost200Response.md)
  - [UserSsoCheckPostRequest](doc/UserSsoCheckPostRequest.md)
  - [UserWrapper](doc/UserWrapper.md)
  - [Video](doc/Video.md)

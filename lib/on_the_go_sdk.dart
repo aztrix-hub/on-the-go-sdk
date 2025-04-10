@@ -332,6 +332,7 @@ export 'package:on_the_go_sdk/src/model/user_missing_connection_warnings_wrapper
 export 'package:on_the_go_sdk/src/model/user_object.dart';
 export 'package:on_the_go_sdk/src/model/user_search_object.dart';
 export 'package:on_the_go_sdk/src/model/user_search_wrapper.dart';
+export 'package:on_the_go_sdk/src/model/user_sso_check_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/user_sso_check_post_request.dart';
 export 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/video.dart';
