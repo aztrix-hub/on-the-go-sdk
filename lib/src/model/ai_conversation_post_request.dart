@@ -19,7 +19,7 @@ abstract class AiConversationPostRequest
     implements
         Built<AiConversationPostRequest, AiConversationPostRequestBuilder> {
   @BuiltValueField(wireName: r'userId')
-  String get userId;
+  String? get userId;
 
   @BuiltValueField(wireName: r'conversationId')
   String? get conversationId;
@@ -57,11 +57,13 @@ class _$AiConversationPostRequestSerializer
     AiConversationPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userId';
-    yield serializers.serialize(
-      object.userId,
-      specifiedType: const FullType(String),
-    );
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.conversationId != null) {
       yield r'conversationId';
       yield serializers.serialize(

@@ -114,6 +114,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "email"
+                ],
                 "properties": {
                   "email": {
                     "type": "string"
@@ -1023,9 +1026,6 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": [
-                  "userId"
-                ],
                 "properties": {
                   "userId": {
                     "type": "string"

@@ -8,13 +8,16 @@ part of 'user_sso_check_post_request.dart';
 
 class _$UserSsoCheckPostRequest extends UserSsoCheckPostRequest {
   @override
-  final String? email;
+  final String email;
 
   factory _$UserSsoCheckPostRequest(
           [void Function(UserSsoCheckPostRequestBuilder)? updates]) =>
       (new UserSsoCheckPostRequestBuilder()..update(updates))._build();
 
-  _$UserSsoCheckPostRequest._({this.email}) : super._();
+  _$UserSsoCheckPostRequest._({required this.email}) : super._() {
+    BuiltValueNullFieldError.checkNotNull(
+        email, r'UserSsoCheckPostRequest', 'email');
+  }
 
   @override
   UserSsoCheckPostRequest rebuild(
@@ -86,7 +89,8 @@ class UserSsoCheckPostRequestBuilder
   _$UserSsoCheckPostRequest _build() {
     final _$result = _$v ??
         new _$UserSsoCheckPostRequest._(
-          email: email,
+          email: BuiltValueNullFieldError.checkNotNull(
+              email, r'UserSsoCheckPostRequest', 'email'),
         );
     replace(_$result);
     return _$result;

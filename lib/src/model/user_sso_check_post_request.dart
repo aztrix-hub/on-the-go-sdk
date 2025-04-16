@@ -16,7 +16,7 @@ part 'user_sso_check_post_request.g.dart';
 abstract class UserSsoCheckPostRequest
     implements Built<UserSsoCheckPostRequest, UserSsoCheckPostRequestBuilder> {
   @BuiltValueField(wireName: r'email')
-  String? get email;
+  String get email;
 
   UserSsoCheckPostRequest._();
 
@@ -48,13 +48,11 @@ class _$UserSsoCheckPostRequestSerializer
     UserSsoCheckPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override

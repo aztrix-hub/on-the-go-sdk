@@ -8,7 +8,7 @@ part of 'ai_conversation_post_request.dart';
 
 class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
-  final String userId;
+  final String? userId;
   @override
   final String? conversationId;
   @override
@@ -19,11 +19,8 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
       (new AiConversationPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationPostRequest._(
-      {required this.userId, this.conversationId, this.message})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        userId, r'AiConversationPostRequest', 'userId');
-  }
+      {this.userId, this.conversationId, this.message})
+      : super._();
 
   @override
   AiConversationPostRequest rebuild(
@@ -113,8 +110,7 @@ class AiConversationPostRequestBuilder
   _$AiConversationPostRequest _build() {
     final _$result = _$v ??
         new _$AiConversationPostRequest._(
-          userId: BuiltValueNullFieldError.checkNotNull(
-              userId, r'AiConversationPostRequest', 'userId'),
+          userId: userId,
           conversationId: conversationId,
           message: message,
         );
