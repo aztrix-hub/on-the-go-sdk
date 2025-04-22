@@ -9,8 +9,8 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **newReviews** | **bool** |  | [optional] 
-**newReviewsIgnoreDirectories** | **BuiltList&lt;String&gt;** |  | [optional] 
-**newReviewsIgnoreStars** | **BuiltList&lt;String&gt;** |  | [optional] 
+**newReviewsIgnoreDirectories** | [**BuiltList&lt;DirectoryType&gt;**](DirectoryType.md) |  | [optional] 
+**newReviewsIgnoreStars** | **BuiltList&lt;int&gt;** |  | [optional] 
 **newSocialComments** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

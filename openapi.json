@@ -1493,13 +1493,14 @@
                   "newReviewsIgnoreDirectories": {
                     "type": "array",
                     "items": {
-                      "type": "string"
+                      "$ref": "#/components/schemas/DirectoryType"
                     }
                   },
                   "newReviewsIgnoreStars": {
                     "type": "array",
                     "items": {
-                      "type": "string"
+                      "type": "integer",
+                      "format": "int32"
                     }
                   },
                   "newSocialComments": {

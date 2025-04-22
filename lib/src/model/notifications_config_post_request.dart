@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -25,10 +26,10 @@ abstract class NotificationsConfigPostRequest
   bool? get newReviews;
 
   @BuiltValueField(wireName: r'newReviewsIgnoreDirectories')
-  BuiltList<String>? get newReviewsIgnoreDirectories;
+  BuiltList<DirectoryType>? get newReviewsIgnoreDirectories;
 
   @BuiltValueField(wireName: r'newReviewsIgnoreStars')
-  BuiltList<String>? get newReviewsIgnoreStars;
+  BuiltList<int>? get newReviewsIgnoreStars;
 
   @BuiltValueField(wireName: r'newSocialComments')
   bool? get newSocialComments;
@@ -74,14 +75,14 @@ class _$NotificationsConfigPostRequestSerializer
       yield r'newReviewsIgnoreDirectories';
       yield serializers.serialize(
         object.newReviewsIgnoreDirectories,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(BuiltList, [FullType(DirectoryType)]),
       );
     }
     if (object.newReviewsIgnoreStars != null) {
       yield r'newReviewsIgnoreStars';
       yield serializers.serialize(
         object.newReviewsIgnoreStars,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        specifiedType: const FullType(BuiltList, [FullType(int)]),
       );
     }
     if (object.newSocialComments != null) {
@@ -126,15 +127,15 @@ class _$NotificationsConfigPostRequestSerializer
         case r'newReviewsIgnoreDirectories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+            specifiedType: const FullType(BuiltList, [FullType(DirectoryType)]),
+          ) as BuiltList<DirectoryType>;
           result.newReviewsIgnoreDirectories.replace(valueDes);
           break;
         case r'newReviewsIgnoreStars':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
+            specifiedType: const FullType(BuiltList, [FullType(int)]),
+          ) as BuiltList<int>;
           result.newReviewsIgnoreStars.replace(valueDes);
           break;
         case r'newSocialComments':

@@ -689,4 +689,3 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/directory_type_test.dart

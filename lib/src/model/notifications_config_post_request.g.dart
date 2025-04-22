@@ -10,9 +10,9 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
   @override
   final bool? newReviews;
   @override
-  final BuiltList<String>? newReviewsIgnoreDirectories;
+  final BuiltList<DirectoryType>? newReviewsIgnoreDirectories;
   @override
-  final BuiltList<String>? newReviewsIgnoreStars;
+  final BuiltList<int>? newReviewsIgnoreStars;
   @override
   final bool? newSocialComments;
 
@@ -78,17 +78,17 @@ class NotificationsConfigPostRequestBuilder
   bool? get newReviews => _$this._newReviews;
   set newReviews(bool? newReviews) => _$this._newReviews = newReviews;
 
-  ListBuilder<String>? _newReviewsIgnoreDirectories;
-  ListBuilder<String> get newReviewsIgnoreDirectories =>
-      _$this._newReviewsIgnoreDirectories ??= new ListBuilder<String>();
+  ListBuilder<DirectoryType>? _newReviewsIgnoreDirectories;
+  ListBuilder<DirectoryType> get newReviewsIgnoreDirectories =>
+      _$this._newReviewsIgnoreDirectories ??= new ListBuilder<DirectoryType>();
   set newReviewsIgnoreDirectories(
-          ListBuilder<String>? newReviewsIgnoreDirectories) =>
+          ListBuilder<DirectoryType>? newReviewsIgnoreDirectories) =>
       _$this._newReviewsIgnoreDirectories = newReviewsIgnoreDirectories;
 
-  ListBuilder<String>? _newReviewsIgnoreStars;
-  ListBuilder<String> get newReviewsIgnoreStars =>
-      _$this._newReviewsIgnoreStars ??= new ListBuilder<String>();
-  set newReviewsIgnoreStars(ListBuilder<String>? newReviewsIgnoreStars) =>
+  ListBuilder<int>? _newReviewsIgnoreStars;
+  ListBuilder<int> get newReviewsIgnoreStars =>
+      _$this._newReviewsIgnoreStars ??= new ListBuilder<int>();
+  set newReviewsIgnoreStars(ListBuilder<int>? newReviewsIgnoreStars) =>
       _$this._newReviewsIgnoreStars = newReviewsIgnoreStars;
 
   bool? _newSocialComments;
