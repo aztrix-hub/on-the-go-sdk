@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | Unique identifier of the Directory Category | [optional] 
-**type** | **String** | Type of the Directory | [optional] 
+**type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
 **name** | **String** | String representation of the category | [optional] 
 **externalId** | **String** | External id used by the directory to describe or chose a category | [optional] 
 **parent** | [**DirectoryCategory**](DirectoryCategory.md) |  | [optional] 

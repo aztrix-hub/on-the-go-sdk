@@ -204,6 +204,7 @@ Class | Method | HTTP request | Description
  - [DirectoryPageResponse](doc/DirectoryPageResponse.md)
  - [DirectoryPageResponseObject](doc/DirectoryPageResponseObject.md)
  - [DirectoryPageResponseWrapper](doc/DirectoryPageResponseWrapper.md)
+ - [DirectoryType](doc/DirectoryType.md)
  - [EmailSettings](doc/EmailSettings.md)
  - [EvConnector](doc/EvConnector.md)
  - [EvData](doc/EvData.md)

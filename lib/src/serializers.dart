@@ -122,6 +122,7 @@ import 'package:on_the_go_sdk/src/model/directory_page.dart';
 import 'package:on_the_go_sdk/src/model/directory_page_response.dart';
 import 'package:on_the_go_sdk/src/model/directory_page_response_object.dart';
 import 'package:on_the_go_sdk/src/model/directory_page_response_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/email_settings.dart';
 import 'package:on_the_go_sdk/src/model/ev_connector.dart';
 import 'package:on_the_go_sdk/src/model/ev_data.dart';
@@ -455,6 +456,7 @@ part 'serializers.g.dart';
   DirectoryPageResponse,
   DirectoryPageResponseObject,
   DirectoryPageResponseWrapper,
+  DirectoryType,
   EmailSettings,
   EvConnector,
   EvData,

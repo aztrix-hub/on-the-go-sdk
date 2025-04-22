@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **countComments** | **int** | Number of comments to this item. | [optional] 
 **dateCreated** | [**DateTime**](DateTime.md) | The date the datapoint was found | [optional] 
 **directLink** | **String** | A link to the online profile | [optional] 
-**directoryType** | **String** | Online directory reference name | [optional] 
+**directoryType** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
 **flagged** | **bool** | Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\" | [optional] 
 **lastUpdated** | [**DateTime**](DateTime.md) | Date of last update. | [optional] 
 **rating** | **double** | Rating given by the user. Float value, max: 5. | [optional] 

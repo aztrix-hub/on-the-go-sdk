@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **identifier** | **String** | The Product Plan identifier based on your internal identification system | [optional] 
 **name** | **String** | The name of the product plan | 
 **status** | **String** | One among PENDING_APPROVAL, ACTIVE, INACTIVE | [optional] 
-**automationDirectories** | **BuiltSet&lt;String&gt;** | List of directories supported by this plan | [optional] 
+**automationDirectories** | [**BuiltSet&lt;DirectoryType&gt;**](DirectoryType.md) | List of directories supported by this plan | [optional] 
 **billingPeriod** | **int** | Period in months for which the location is billed | [optional] 
 **countryPrices** | [**BuiltSet&lt;PricePerCountry&gt;**](PricePerCountry.md) | List of country specific prices | [optional] 
 **defaultMarketDevelopmentFunds** | **int** | Default Market Development Funds | [optional] 

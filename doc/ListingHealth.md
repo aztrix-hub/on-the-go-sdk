@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **countListingsActionRequired** | **int** | The number of listings where client action is required. | [optional] 
 **countLocationsRequireSync** | **int** | The number of locations which require to be syncronized | [optional] 
 **countLocationsNeedsReview** | **int** | The number of locations which are in needs review. | [optional] 
-**directoriesMissingConnect** | **BuiltSet&lt;String&gt;** | The list of DirectoryType missing connection | [optional] 
+**directoriesMissingConnect** | [**BuiltSet&lt;DirectoryType&gt;**](DirectoryType.md) | The list of DirectoryType missing connection | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

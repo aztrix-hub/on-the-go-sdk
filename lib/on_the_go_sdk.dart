@@ -128,6 +128,7 @@ export 'package:on_the_go_sdk/src/model/directory_page.dart';
 export 'package:on_the_go_sdk/src/model/directory_page_response.dart';
 export 'package:on_the_go_sdk/src/model/directory_page_response_object.dart';
 export 'package:on_the_go_sdk/src/model/directory_page_response_wrapper.dart';
+export 'package:on_the_go_sdk/src/model/directory_type.dart';
 export 'package:on_the_go_sdk/src/model/email_settings.dart';
 export 'package:on_the_go_sdk/src/model/ev_connector.dart';
 export 'package:on_the_go_sdk/src/model/ev_data.dart';

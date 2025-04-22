@@ -110,6 +110,7 @@ doc/DirectoryPage.md
 doc/DirectoryPageResponse.md
 doc/DirectoryPageResponseObject.md
 doc/DirectoryPageResponseWrapper.md
+doc/DirectoryType.md
 doc/EmailSettings.md
 doc/EvConnector.md
 doc/EvData.md
@@ -465,6 +466,7 @@ lib/src/model/directory_page.dart
 lib/src/model/directory_page_response.dart
 lib/src/model/directory_page_response_object.dart
 lib/src/model/directory_page_response_wrapper.dart
+lib/src/model/directory_type.dart
 lib/src/model/email_settings.dart
 lib/src/model/ev_connector.dart
 lib/src/model/ev_data.dart
@@ -687,4 +689,4 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/notifications_config_post_request_test.dart
+test/directory_type_test.dart

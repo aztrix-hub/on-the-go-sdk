@@ -48,7 +48,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BasicListingCustomFieldsStatusEnum.serializer)
       ..add(BasicListingDescriptionLongStatusEnum.serializer)
       ..add(BasicListingDescriptionShortStatusEnum.serializer)
-      ..add(BasicListingDirectoryTypeEnum.serializer)
       ..add(BasicListingDoctorCategoriesStatusEnum.serializer)
       ..add(BasicListingEmailStatusEnum.serializer)
       ..add(BasicListingFaxStatusEnum.serializer)
@@ -94,7 +93,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BasicListingWebsiteStatusEnum.serializer)
       ..add(BasicListingZipStatusEnum.serializer)
       ..add(BrandDataPoint.serializer)
-      ..add(BrandDataPointDirectoryTypeEnum.serializer)
       ..add(BrandDataPointResponseObject.serializer)
       ..add(BrandDataPointResponseWrapper.serializer)
       ..add(BrandDataPointResponseWrapperErrorCodeEnum.serializer)
@@ -121,7 +119,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BusinessStatusEnum.serializer)
       ..add(BusinessTypeEnum.serializer)
       ..add(CallTrackingNumber.serializer)
-      ..add(CallTrackingNumberTypeEnum.serializer)
       ..add(CategoriesGet200Response.serializer)
       ..add(CategoriesGet200ResponseErrorCodeEnum.serializer)
       ..add(CategoriesGet200ResponseResponse.serializer)
@@ -199,11 +196,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DashboardExportInsightsDataResponseWrapperStatusEnum.serializer)
       ..add(DashboardLocation.serializer)
       ..add(DataPoint.serializer)
-      ..add(DataPointDirectoryTypeEnum.serializer)
       ..add(DataPointFilter.serializer)
       ..add(DataPointFilterCountriesEnum.serializer)
       ..add(DataPointFilterDataPointTypesEnum.serializer)
-      ..add(DataPointFilterDirectoriesEnum.serializer)
       ..add(DataPointFilterResponseObject.serializer)
       ..add(DataPointFilterResponseWrapper.serializer)
       ..add(DataPointFilterResponseWrapperErrorCodeEnum.serializer)
@@ -250,7 +245,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DirectoryBrandWrapperStatusEnum.serializer)
       ..add(DirectoryCategory.serializer)
       ..add(DirectoryCategoryCountryEnum.serializer)
-      ..add(DirectoryCategoryTypeEnum.serializer)
       ..add(DirectoryConnectInfo.serializer)
       ..add(DirectoryConnectInfoStatusEnum.serializer)
       ..add(DirectoryContactDetails.serializer)
@@ -261,12 +255,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(DirectoryPageResponse.serializer)
       ..add(DirectoryPageResponseLevelEnum.serializer)
       ..add(DirectoryPageResponseObject.serializer)
-      ..add(DirectoryPageResponseTypeEnum.serializer)
       ..add(DirectoryPageResponseWrapper.serializer)
       ..add(DirectoryPageResponseWrapperErrorCodeEnum.serializer)
       ..add(DirectoryPageResponseWrapperStatusEnum.serializer)
       ..add(DirectoryPageStatusEnum.serializer)
       ..add(DirectoryPageTypeEnum.serializer)
+      ..add(DirectoryType.serializer)
       ..add(EmailSettings.serializer)
       ..add(EmailSettingsEmailTypeEnum.serializer)
       ..add(EmailSettingsFrequencyEnum.serializer)
@@ -307,7 +301,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(FeedItemWrapperStatusEnum.serializer)
       ..add(FiltersResponse.serializer)
       ..add(FiltersResponseCountriesEnum.serializer)
-      ..add(FiltersResponseDirectoriesEnum.serializer)
       ..add(FiltersResponseTimeSpansEnum.serializer)
       ..add(FiltersResponseWrapper.serializer)
       ..add(FiltersResponseWrapperErrorCodeEnum.serializer)
@@ -371,14 +364,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ListingDetailsActionEnum.serializer)
       ..add(ListingDetailsStatusEnum.serializer)
       ..add(ListingHealth.serializer)
-      ..add(ListingHealthDirectoriesMissingConnectEnum.serializer)
       ..add(ListingHealthWrapper.serializer)
       ..add(ListingHealthWrapperErrorCodeEnum.serializer)
       ..add(ListingHealthWrapperStatusEnum.serializer)
       ..add(ListingMandatoryFieldsEnum.serializer)
       ..add(ListingStatusEnum.serializer)
       ..add(ListingSyncStatusEnum.serializer)
-      ..add(ListingTypeEnum.serializer)
       ..add(ListingsDetailsResponse.serializer)
       ..add(ListingsDetailsResponseWrapper.serializer)
       ..add(ListingsDetailsResponseWrapperErrorCodeEnum.serializer)
@@ -496,7 +487,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PricePerCountryCountryEnum.serializer)
       ..add(Product.serializer)
       ..add(ProductPlan.serializer)
-      ..add(ProductPlanAutomationDirectoriesEnum.serializer)
       ..add(ProductPlanFeaturesEnum.serializer)
       ..add(ProductPlanListResponseObject.serializer)
       ..add(ProductPlanListResponseWrapper.serializer)
@@ -583,7 +573,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SocialPostAlertTypeEnum.serializer)
       ..add(SocialPostCallToAction.serializer)
       ..add(SocialPostDirectoriesResponse.serializer)
-      ..add(SocialPostDirectoriesResponseDirectoriesEnum.serializer)
       ..add(SocialPostDirectoriesResponseWrapper.serializer)
       ..add(SocialPostDirectoriesResponseWrapperErrorCodeEnum.serializer)
       ..add(SocialPostDirectoriesResponseWrapperStatusEnum.serializer)
@@ -645,7 +634,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SuccessResponseWrapperErrorCodeEnum.serializer)
       ..add(SuccessResponseWrapperStatusEnum.serializer)
       ..add(Suggestion.serializer)
-      ..add(SuggestionDirectoryEnum.serializer)
       ..add(SuggestionListWrapper.serializer)
       ..add(SuggestionListWrapperErrorCodeEnum.serializer)
       ..add(SuggestionListWrapperStatusEnum.serializer)
@@ -666,7 +654,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(SuppressedDuplicatesWrapperStatusEnum.serializer)
       ..add(TimeSeriesSegment.serializer)
       ..add(UTM.serializer)
-      ..add(UTMTypeEnum.serializer)
       ..add(UnsubscribeActionLinkObject.serializer)
       ..add(UnsubscribeActionLinkWrapper.serializer)
       ..add(UnsubscribeActionLinkWrapperErrorCodeEnum.serializer)
@@ -827,12 +814,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(DirectoryPageResponse)]),
           () => new ListBuilder<DirectoryPageResponse>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Event)]),
-          () => new ListBuilder<Event>())
-      ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(FiltersResponseDirectoriesEnum)]),
-          () => new ListBuilder<FiltersResponseDirectoriesEnum>())
+          const FullType(BuiltList, const [const FullType(DirectoryType)]),
+          () => new ListBuilder<DirectoryType>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(FiltersResponseCountriesEnum)]),
@@ -848,6 +831,21 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(FiltersResponseTimeSpansEnum)]),
           () => new ListBuilder<FiltersResponseTimeSpansEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(DirectoryType)]),
+          () => new ListBuilder<DirectoryType>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(JsonObject)]),
+          () => new ListBuilder<JsonObject>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Event)]),
+          () => new ListBuilder<Event>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(GoogleServiceItem)]),
           () => new ListBuilder<GoogleServiceItem>())
@@ -1004,20 +1002,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPost)]),
           () => new ListBuilder<SocialPost>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(SocialPostDirectoriesResponseDirectoriesEnum)
-          ]),
-          () => new ListBuilder<SocialPostDirectoriesResponseDirectoriesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(JsonObject)]),
-          () => new ListBuilder<JsonObject>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(JsonObject)]),
-          () => new ListBuilder<JsonObject>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPostTemplate)]),
           () => new ListBuilder<SocialPostTemplate>())
@@ -1629,9 +1613,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltMap, const [const FullType(String), const FullType(int)]),
           () => new MapBuilder<String, int>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltSet, const [const FullType(DataPointFilterDirectoriesEnum)]),
-          () => new SetBuilder<DataPointFilterDirectoriesEnum>())
+          const FullType(BuiltSet, const [const FullType(DirectoryType)]),
+          () => new SetBuilder<DirectoryType>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(DirectoryType)]),
+          () => new SetBuilder<DirectoryType>())
       ..addBuilderFactory(
           const FullType(
               BuiltSet, const [const FullType(DataPointFilterCountriesEnum)]),
@@ -1650,6 +1636,16 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => new ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(DirectoryType)]),
+          () => new SetBuilder<DirectoryType>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(PricePerCountry)]),
+          () => new SetBuilder<PricePerCountry>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltSet, const [const FullType(ProductPlanFeaturesEnum)]),
+          () => new SetBuilder<ProductPlanFeaturesEnum>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(EvConnector)]),
           () => new SetBuilder<EvConnector>())
@@ -1729,24 +1725,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Video)]),
           () => new ListBuilder<Video>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [
-            const FullType(ListingHealthDirectoriesMissingConnectEnum)
-          ]),
-          () => new SetBuilder<ListingHealthDirectoriesMissingConnectEnum>())
-      ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(PricePerCountry)]),
           () => new SetBuilder<PricePerCountry>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet,
-              const [const FullType(ProductPlanAutomationDirectoriesEnum)]),
-          () => new SetBuilder<ProductPlanAutomationDirectoriesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(PricePerCountry)]),
-          () => new SetBuilder<PricePerCountry>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltSet, const [const FullType(ProductPlanFeaturesEnum)]),
-          () => new SetBuilder<ProductPlanFeaturesEnum>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
           () => new SetBuilder<String>())

@@ -88,7 +88,7 @@ Name | Type | Description | Notes
 **numberOfRatingsStatus** | **String** | The sync status of this specific field. One of NOT_APPLICABLE or PRESENT | [optional] 
 **listingId** | **String** | The listing id in the directory''s database | [optional] 
 **listingUrl** | **String** | The listing url on the directory''s website | [optional] 
-**directoryType** | **String** | The directory where this listing appears | [optional] 
+**directoryType** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
 **flowStatus** | **String** | The status of the current listing. One of  SUBMISSION_NEEDED, WAITING_USER_ACTION, WAITING_DIRECTORY_ACTION, ALL_INFORMATION_SUBMITTED, NO_ACTION_NEEDED, NOT_SUPPORTED, INACTIVE, NEEDS_REVIEW, MANUALLY_DEACTIVATED, REMOVAL_REVIEW_NEEDED, REMOVAL_NEEDED, REMOVAL_SUBMITTED, REMOVED, DONT_REMOVE | [optional] 
 **syncStatus** | **String** | The sync status of the listing. One of: IN_SYNC (location found on remote directory and in sync with reference data), NOT_IN_SYNC (location found on remote directory but differs from reference data), NOT_FOUND (location not found (yet) on remote directory), TECHNICAL_PROBLEMS (temporary problems when connecting with the directory),  NOT_SUPPORTED (if the location is incompatible with the directory or if we cannot search on that directory), NO_ONLINE_LISTING (for the types where there is no listing that can be checked online, e.g. GARMIN), LINK_ONLY (for the types where we can only link a listing by not update it) | [optional] 
 **claimStatus** | **String** | Claim status of the listing. One of CLAIMABLE, NOT_CLAIMABLE, CLAIMED_BY_US, CLAIMED_BY_OTHERS, CLAIMING_IN_PROGRESS, UNKNOWN | [optional] 

@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**directories** | **BuiltList&lt;String&gt;** |  | [optional] 
+**directories** | [**BuiltList&lt;DirectoryType&gt;**](DirectoryType.md) |  | [optional] 
 **totalLocationsCount** | **int** | Total amount of considered directories | [optional] 
 **directoryWarnings** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | [optional] 
 **locationWarnings** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) |  | [optional] 

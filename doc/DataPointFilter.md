@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The filter name | 
 **shared** | **bool** | Defines if the filter is shared or not | [optional] 
-**directories** | **BuiltSet&lt;String&gt;** | The list of directories for which the dataPoints should be filtered | [optional] 
+**directories** | [**BuiltSet&lt;DirectoryType&gt;**](DirectoryType.md) | The list of directories for which the dataPoints should be filtered | [optional] 
 **countries** | **BuiltSet&lt;String&gt;** | The list of countries for which the dataPoints should be filtered | [optional] 
 **dataPointTypes** | **BuiltSet&lt;String&gt;** | The list of data point types (REVIEW or PHOTO) for which the dataPoints should be filtered | [optional] 
 **ratings** | **BuiltSet&lt;int&gt;** | The list of ratings (1, 2, 3, 4 or 5) for which the dataPoints should be filtered | [optional] 
