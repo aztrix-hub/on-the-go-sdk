@@ -228,6 +228,7 @@ export 'package:on_the_go_sdk/src/model/more_hours_object.dart';
 export 'package:on_the_go_sdk/src/model/more_hours_response.dart';
 export 'package:on_the_go_sdk/src/model/more_hours_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/next_open.dart';
+export 'package:on_the_go_sdk/src/model/notifications_config_post_request.dart';
 export 'package:on_the_go_sdk/src/model/opening_hours.dart';
 export 'package:on_the_go_sdk/src/model/person.dart';
 export 'package:on_the_go_sdk/src/model/person_response_object.dart';

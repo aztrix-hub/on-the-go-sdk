@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoPost**](doc/LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get Several Locations
+[*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigPost**](doc/NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsGet**](doc/PublishApi.md#publishpostsget) | **GET** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsPost**](doc/PublishApi.md#publishpostspost) | **POST** /publish/posts | 
@@ -303,6 +304,7 @@ Class | Method | HTTP request | Description
  - [MoreHoursResponse](doc/MoreHoursResponse.md)
  - [MoreHoursWrapper](doc/MoreHoursWrapper.md)
  - [NextOpen](doc/NextOpen.md)
+ - [NotificationsConfigPostRequest](doc/NotificationsConfigPostRequest.md)
  - [OpeningHours](doc/OpeningHours.md)
  - [Person](doc/Person.md)
  - [PersonResponseObject](doc/PersonResponseObject.md)

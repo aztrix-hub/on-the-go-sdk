@@ -476,6 +476,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(MoreHoursWrapperStatusEnum.serializer)
       ..add(NextOpen.serializer)
       ..add(NextOpenDayOfWeekEnum.serializer)
+      ..add(NotificationsConfigPostRequest.serializer)
       ..add(OpeningHours.serializer)
       ..add(Person.serializer)
       ..add(PersonResponseObject.serializer)
@@ -1447,6 +1448,12 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(RuleResponse)]),
           () => new ListBuilder<RuleResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
