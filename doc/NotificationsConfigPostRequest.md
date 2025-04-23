@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **newReviewsIgnoreDirectories** | [**BuiltList&lt;DirectoryType&gt;**](DirectoryType.md) |  | [optional] 
 **newReviewsIgnoreStars** | **BuiltList&lt;int&gt;** |  | [optional] 
 **newSocialComments** | **bool** |  | [optional] 
+**aiSuggestions** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

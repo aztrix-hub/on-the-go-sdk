@@ -17,6 +17,7 @@ part 'notifications_config_post_request.g.dart';
 /// * [newReviewsIgnoreDirectories]
 /// * [newReviewsIgnoreStars]
 /// * [newSocialComments]
+/// * [aiSuggestions]
 @BuiltValue()
 abstract class NotificationsConfigPostRequest
     implements
@@ -33,6 +34,9 @@ abstract class NotificationsConfigPostRequest
 
   @BuiltValueField(wireName: r'newSocialComments')
   bool? get newSocialComments;
+
+  @BuiltValueField(wireName: r'aiSuggestions')
+  bool? get aiSuggestions;
 
   NotificationsConfigPostRequest._();
 
@@ -92,6 +96,13 @@ class _$NotificationsConfigPostRequestSerializer
         specifiedType: const FullType(bool),
       );
     }
+    if (object.aiSuggestions != null) {
+      yield r'aiSuggestions';
+      yield serializers.serialize(
+        object.aiSuggestions,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -144,6 +155,13 @@ class _$NotificationsConfigPostRequestSerializer
             specifiedType: const FullType(bool),
           ) as bool;
           result.newSocialComments = valueDes;
+          break;
+        case r'aiSuggestions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.aiSuggestions = valueDes;
           break;
         default:
           unhandled.add(key);

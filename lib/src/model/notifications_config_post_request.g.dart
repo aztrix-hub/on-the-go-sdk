@@ -15,6 +15,8 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
   final BuiltList<int>? newReviewsIgnoreStars;
   @override
   final bool? newSocialComments;
+  @override
+  final bool? aiSuggestions;
 
   factory _$NotificationsConfigPostRequest(
           [void Function(NotificationsConfigPostRequestBuilder)? updates]) =>
@@ -24,7 +26,8 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
       {this.newReviews,
       this.newReviewsIgnoreDirectories,
       this.newReviewsIgnoreStars,
-      this.newSocialComments})
+      this.newSocialComments,
+      this.aiSuggestions})
       : super._();
 
   @override
@@ -43,7 +46,8 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
         newReviews == other.newReviews &&
         newReviewsIgnoreDirectories == other.newReviewsIgnoreDirectories &&
         newReviewsIgnoreStars == other.newReviewsIgnoreStars &&
-        newSocialComments == other.newSocialComments;
+        newSocialComments == other.newSocialComments &&
+        aiSuggestions == other.aiSuggestions;
   }
 
   @override
@@ -53,6 +57,7 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
     _$hash = $jc(_$hash, newReviewsIgnoreDirectories.hashCode);
     _$hash = $jc(_$hash, newReviewsIgnoreStars.hashCode);
     _$hash = $jc(_$hash, newSocialComments.hashCode);
+    _$hash = $jc(_$hash, aiSuggestions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -63,7 +68,8 @@ class _$NotificationsConfigPostRequest extends NotificationsConfigPostRequest {
           ..add('newReviews', newReviews)
           ..add('newReviewsIgnoreDirectories', newReviewsIgnoreDirectories)
           ..add('newReviewsIgnoreStars', newReviewsIgnoreStars)
-          ..add('newSocialComments', newSocialComments))
+          ..add('newSocialComments', newSocialComments)
+          ..add('aiSuggestions', aiSuggestions))
         .toString();
   }
 }
@@ -96,6 +102,11 @@ class NotificationsConfigPostRequestBuilder
   set newSocialComments(bool? newSocialComments) =>
       _$this._newSocialComments = newSocialComments;
 
+  bool? _aiSuggestions;
+  bool? get aiSuggestions => _$this._aiSuggestions;
+  set aiSuggestions(bool? aiSuggestions) =>
+      _$this._aiSuggestions = aiSuggestions;
+
   NotificationsConfigPostRequestBuilder() {
     NotificationsConfigPostRequest._defaults(this);
   }
@@ -108,6 +119,7 @@ class NotificationsConfigPostRequestBuilder
           $v.newReviewsIgnoreDirectories?.toBuilder();
       _newReviewsIgnoreStars = $v.newReviewsIgnoreStars?.toBuilder();
       _newSocialComments = $v.newSocialComments;
+      _aiSuggestions = $v.aiSuggestions;
       _$v = null;
     }
     return this;
@@ -136,6 +148,7 @@ class NotificationsConfigPostRequestBuilder
             newReviewsIgnoreDirectories: _newReviewsIgnoreDirectories?.build(),
             newReviewsIgnoreStars: _newReviewsIgnoreStars?.build(),
             newSocialComments: newSocialComments,
+            aiSuggestions: aiSuggestions,
           );
     } catch (_) {
       late String _$failedField;

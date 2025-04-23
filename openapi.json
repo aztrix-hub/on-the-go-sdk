@@ -1505,6 +1505,9 @@
                   },
                   "newSocialComments": {
                     "type": "boolean"
+                  },
+                  "aiSuggestions": {
+                    "type": "boolean"
                   }
                 }
               }
