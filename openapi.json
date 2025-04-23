@@ -1477,6 +1477,61 @@
       }
     },
     "notifications/config": {
+      "get": {
+        "tags": [
+          "notifications"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "newReviews": {
+                      "type": "boolean"
+                    },
+                    "newReviewsIgnoreDirectories": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/DirectoryType"
+                      }
+                    },
+                    "newReviewsIgnoreStars": {
+                      "type": "array",
+                      "items": {
+                        "type": "integer",
+                        "format": "int32"
+                      }
+                    },
+                    "newSocialComments": {
+                      "type": "boolean"
+                    },
+                    "aiSuggestions": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
       "post": {
         "tags": [
           "notifications"

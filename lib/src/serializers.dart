@@ -223,7 +223,7 @@ import 'package:on_the_go_sdk/src/model/more_hours_object.dart';
 import 'package:on_the_go_sdk/src/model/more_hours_response.dart';
 import 'package:on_the_go_sdk/src/model/more_hours_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/next_open.dart';
-import 'package:on_the_go_sdk/src/model/notifications_config_post_request.dart';
+import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hours.dart';
 import 'package:on_the_go_sdk/src/model/person.dart';
 import 'package:on_the_go_sdk/src/model/person_response_object.dart';
@@ -557,7 +557,7 @@ part 'serializers.g.dart';
   MoreHoursResponse,
   MoreHoursWrapper,
   NextOpen,
-  NotificationsConfigPostRequest,
+  NotificationsConfigGet200Response,
   OpeningHours,
   Person,
   PersonResponseObject,

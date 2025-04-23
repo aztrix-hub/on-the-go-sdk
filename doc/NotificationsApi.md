@@ -9,12 +9,13 @@ All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**notificationsConfigGet**](NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
 [**notificationsConfigPost**](NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [**notificationsRegisterPost**](NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
 
 
-# **notificationsConfigPost**
-> notificationsConfigPost(notificationsConfigPostRequest)
+# **notificationsConfigGet**
+> NotificationsConfigGet200Response notificationsConfigGet()
 
 
 
@@ -27,10 +28,51 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getNotificationsApi();
-final NotificationsConfigPostRequest notificationsConfigPostRequest = ; // NotificationsConfigPostRequest | 
 
 try {
-    api.notificationsConfigPost(notificationsConfigPostRequest);
+    final response = api.notificationsConfigGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling NotificationsApi->notificationsConfigGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**NotificationsConfigGet200Response**](NotificationsConfigGet200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **notificationsConfigPost**
+> notificationsConfigPost(notificationsConfigGet200Response)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getNotificationsApi();
+final NotificationsConfigGet200Response notificationsConfigGet200Response = ; // NotificationsConfigGet200Response | 
+
+try {
+    api.notificationsConfigPost(notificationsConfigGet200Response);
 } catch on DioException (e) {
     print('Exception when calling NotificationsApi->notificationsConfigPost: $e\n');
 }
@@ -40,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **notificationsConfigPostRequest** | [**NotificationsConfigPostRequest**](NotificationsConfigPostRequest.md)|  | 
+ **notificationsConfigGet200Response** | [**NotificationsConfigGet200Response**](NotificationsConfigGet200Response.md)|  | 
 
 ### Return type
 

@@ -214,7 +214,7 @@ doc/MoreHoursResponse.md
 doc/MoreHoursWrapper.md
 doc/NextOpen.md
 doc/NotificationsApi.md
-doc/NotificationsConfigPostRequest.md
+doc/NotificationsConfigGet200Response.md
 doc/OpeningHours.md
 doc/Person.md
 doc/PersonResponseObject.md
@@ -567,7 +567,7 @@ lib/src/model/more_hours_object.dart
 lib/src/model/more_hours_response.dart
 lib/src/model/more_hours_wrapper.dart
 lib/src/model/next_open.dart
-lib/src/model/notifications_config_post_request.dart
+lib/src/model/notifications_config_get200_response.dart
 lib/src/model/opening_hours.dart
 lib/src/model/person.dart
 lib/src/model/person_response_object.dart
@@ -689,3 +689,4 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/notifications_config_get200_response_test.dart
