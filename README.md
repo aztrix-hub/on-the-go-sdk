@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
@@ -104,6 +105,8 @@ Class | Method | HTTP request | Description
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
  - [AiConversationPost200ResponseMessagesInner](doc/AiConversationPost200ResponseMessagesInner.md)
  - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
+ - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
+ - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
  - [AssetInfo](doc/AssetInfo.md)
  - [AttributeRecommendationsObject](doc/AttributeRecommendationsObject.md)
  - [AttributeRecommendationsWrapper](doc/AttributeRecommendationsWrapper.md)

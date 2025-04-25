@@ -16,6 +16,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AiConversationPost200Response.serializer)
       ..add(AiConversationPost200ResponseMessagesInner.serializer)
       ..add(AiConversationPostRequest.serializer)
+      ..add(AiMemoriesGet200Response.serializer)
+      ..add(AiMemoriesGet200ResponseMemoriesInner.serializer)
       ..add(AssetInfo.serializer)
       ..add(AttributeRecommendationsObject.serializer)
       ..add(AttributeRecommendationsWrapper.serializer)
@@ -728,6 +730,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
           ]),
           () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(AiMemoriesGet200ResponseMemoriesInner)]),
+          () => new ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AttributeWrapper)]),
           () => new ListBuilder<AttributeWrapper>())
       ..addBuilderFactory(
@@ -1032,6 +1038,9 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
