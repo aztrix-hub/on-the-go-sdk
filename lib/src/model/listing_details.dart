@@ -7,7 +7,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/directory_contact_details.dart';
 import 'package:on_the_go_sdk/src/model/directory_connect_info.dart';
-import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -22,7 +21,6 @@ part 'listing_details.g.dart';
 /// * [listingUrl] - Listing URL
 /// * [category] - The category of the directory of this listing
 /// * [mandatoryFieldsMissing] - Mandatory field missing on the location which prevents the data to be submitted to the publisher
-/// * [directorySpecificData] - Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE.
 /// * [directoryContactDetails]
 /// * [directoryConnectInfo]
 /// * [status] - Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
@@ -53,10 +51,6 @@ abstract class ListingDetails
   /// Mandatory field missing on the location which prevents the data to be submitted to the publisher
   @BuiltValueField(wireName: r'mandatoryFieldsMissing')
   BuiltList<String>? get mandatoryFieldsMissing;
-
-  /// Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE.
-  @BuiltValueField(wireName: r'directorySpecificData')
-  BuiltMap<String, JsonObject>? get directorySpecificData;
 
   @BuiltValueField(wireName: r'directoryContactDetails')
   DirectoryContactDetails? get directoryContactDetails;
@@ -140,14 +134,6 @@ class _$ListingDetailsSerializer
       yield serializers.serialize(
         object.mandatoryFieldsMissing,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.directorySpecificData != null) {
-      yield r'directorySpecificData';
-      yield serializers.serialize(
-        object.directorySpecificData,
-        specifiedType:
-            const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
       );
     }
     if (object.directoryContactDetails != null) {
@@ -244,14 +230,6 @@ class _$ListingDetailsSerializer
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.mandatoryFieldsMissing.replace(valueDes);
-          break;
-        case r'directorySpecificData':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.directorySpecificData.replace(valueDes);
           break;
         case r'directoryContactDetails':
           final valueDes = serializers.deserialize(

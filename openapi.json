@@ -11108,16 +11108,6 @@
               "description": "Mandatory field missing on the location which prevents the data to be submitted to the publisher"
             }
           },
-          "directorySpecificData": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "description": "Directory specific data.",
-              "example": "Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE."
-            },
-            "description": "Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE.",
-            "example": "Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE."
-          },
           "directoryContactDetails": {
             "$ref": "#/components/schemas/DirectoryContactDetails"
           },

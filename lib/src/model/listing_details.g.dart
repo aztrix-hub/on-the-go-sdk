@@ -169,8 +169,6 @@ class _$ListingDetails extends ListingDetails {
   @override
   final BuiltList<String>? mandatoryFieldsMissing;
   @override
-  final BuiltMap<String, JsonObject>? directorySpecificData;
-  @override
   final DirectoryContactDetails? directoryContactDetails;
   @override
   final DirectoryConnectInfo? directoryConnectInfo;
@@ -189,7 +187,6 @@ class _$ListingDetails extends ListingDetails {
       this.listingUrl,
       this.category,
       this.mandatoryFieldsMissing,
-      this.directorySpecificData,
       this.directoryContactDetails,
       this.directoryConnectInfo,
       this.status,
@@ -214,7 +211,6 @@ class _$ListingDetails extends ListingDetails {
         listingUrl == other.listingUrl &&
         category == other.category &&
         mandatoryFieldsMissing == other.mandatoryFieldsMissing &&
-        directorySpecificData == other.directorySpecificData &&
         directoryContactDetails == other.directoryContactDetails &&
         directoryConnectInfo == other.directoryConnectInfo &&
         status == other.status &&
@@ -230,7 +226,6 @@ class _$ListingDetails extends ListingDetails {
     _$hash = $jc(_$hash, listingUrl.hashCode);
     _$hash = $jc(_$hash, category.hashCode);
     _$hash = $jc(_$hash, mandatoryFieldsMissing.hashCode);
-    _$hash = $jc(_$hash, directorySpecificData.hashCode);
     _$hash = $jc(_$hash, directoryContactDetails.hashCode);
     _$hash = $jc(_$hash, directoryConnectInfo.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
@@ -248,7 +243,6 @@ class _$ListingDetails extends ListingDetails {
           ..add('listingUrl', listingUrl)
           ..add('category', category)
           ..add('mandatoryFieldsMissing', mandatoryFieldsMissing)
-          ..add('directorySpecificData', directorySpecificData)
           ..add('directoryContactDetails', directoryContactDetails)
           ..add('directoryConnectInfo', directoryConnectInfo)
           ..add('status', status)
@@ -287,13 +281,6 @@ class ListingDetailsBuilder
   set mandatoryFieldsMissing(ListBuilder<String>? mandatoryFieldsMissing) =>
       _$this._mandatoryFieldsMissing = mandatoryFieldsMissing;
 
-  MapBuilder<String, JsonObject>? _directorySpecificData;
-  MapBuilder<String, JsonObject> get directorySpecificData =>
-      _$this._directorySpecificData ??= new MapBuilder<String, JsonObject>();
-  set directorySpecificData(
-          MapBuilder<String, JsonObject>? directorySpecificData) =>
-      _$this._directorySpecificData = directorySpecificData;
-
   DirectoryContactDetailsBuilder? _directoryContactDetails;
   DirectoryContactDetailsBuilder get directoryContactDetails =>
       _$this._directoryContactDetails ??= new DirectoryContactDetailsBuilder();
@@ -328,7 +315,6 @@ class ListingDetailsBuilder
       _listingUrl = $v.listingUrl;
       _category = $v.category;
       _mandatoryFieldsMissing = $v.mandatoryFieldsMissing?.toBuilder();
-      _directorySpecificData = $v.directorySpecificData?.toBuilder();
       _directoryContactDetails = $v.directoryContactDetails?.toBuilder();
       _directoryConnectInfo = $v.directoryConnectInfo?.toBuilder();
       _status = $v.status;
@@ -363,7 +349,6 @@ class ListingDetailsBuilder
             listingUrl: listingUrl,
             category: category,
             mandatoryFieldsMissing: _mandatoryFieldsMissing?.build(),
-            directorySpecificData: _directorySpecificData?.build(),
             directoryContactDetails: _directoryContactDetails?.build(),
             directoryConnectInfo: _directoryConnectInfo?.build(),
             status: status,
@@ -374,8 +359,6 @@ class ListingDetailsBuilder
       try {
         _$failedField = 'mandatoryFieldsMissing';
         _mandatoryFieldsMissing?.build();
-        _$failedField = 'directorySpecificData';
-        _directorySpecificData?.build();
         _$failedField = 'directoryContactDetails';
         _directoryContactDetails?.build();
         _$failedField = 'directoryConnectInfo';

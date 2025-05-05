@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **listingUrl** | **String** | Listing URL | [optional] 
 **category** | **String** | The category of the directory of this listing | [optional] 
 **mandatoryFieldsMissing** | **BuiltList&lt;String&gt;** | Mandatory field missing on the location which prevents the data to be submitted to the publisher | [optional] 
-**directorySpecificData** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) | Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE. | [optional] 
 **directoryContactDetails** | [**DirectoryContactDetails**](DirectoryContactDetails.md) |  | [optional] 
 **directoryConnectInfo** | [**DirectoryConnectInfo**](DirectoryConnectInfo.md) |  | [optional] 
 **status** | **String** | Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED] | [optional] 
