@@ -693,5 +693,3 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/ai_memories_get200_response_memories_inner_test.dart
-test/ai_memories_get200_response_test.dart

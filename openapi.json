@@ -11089,8 +11089,8 @@
             "format": "int64"
           },
           "type": {
-            "type": "string",
-            "description": "The directory where this listing appears"
+            "description": "The directory where this listing appears",
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "typeName": {
             "type": "string",

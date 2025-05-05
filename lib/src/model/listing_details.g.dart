@@ -159,7 +159,7 @@ class _$ListingDetails extends ListingDetails {
   @override
   final int? id;
   @override
-  final String? type;
+  final DirectoryType? type;
   @override
   final String? typeName;
   @override
@@ -265,9 +265,9 @@ class ListingDetailsBuilder
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  DirectoryType? _type;
+  DirectoryType? get type => _$this._type;
+  set type(DirectoryType? type) => _$this._type = type;
 
   String? _typeName;
   String? get typeName => _$this._typeName;
