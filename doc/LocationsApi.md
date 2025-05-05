@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get All or Several Categories
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
-[**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
+[**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [**locationPhotoPost**](LocationsApi.md#locationphotopost) | **POST** /location/photo | 
@@ -122,8 +122,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **locationListingGet**
-> ListingsDetailsResponseWrapper locationListingGet(locationId)
+# **locationListingsGet**
+> ListingsDetailsResponseWrapper locationListingsGet(locationId)
 
 
 
@@ -135,10 +135,10 @@ final api = OnTheGoSdk().getLocationsApi();
 final String locationId = locationId_example; // String | The unique id of the location
 
 try {
-    final response = api.locationListingGet(locationId);
+    final response = api.locationListingsGet(locationId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationListingGet: $e\n');
+    print('Exception when calling LocationsApi->locationListingsGet: $e\n');
 }
 ```
 

@@ -231,7 +231,7 @@ class LocationsApi {
     );
   }
 
-  /// locationListingGet
+  /// locationListingsGet
   ///
   ///
   /// Parameters:
@@ -245,7 +245,7 @@ class LocationsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ListingsDetailsResponseWrapper] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ListingsDetailsResponseWrapper>> locationListingGet({
+  Future<Response<ListingsDetailsResponseWrapper>> locationListingsGet({
     required String locationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -254,7 +254,7 @@ class LocationsApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/location/listing';
+    final _path = r'/location/listings';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
