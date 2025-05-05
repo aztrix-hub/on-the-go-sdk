@@ -99,7 +99,7 @@
         },
         "security": [
           {
-            "accessToken": []
+            "authToken": []
           }
         ]
       }
@@ -143,12 +143,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "accessToken": []
-          }
-        ]
+        }
       }
     },
     "/user": {
@@ -944,7 +939,7 @@
         },
         "security": [
           {
-            "accessToken": []
+            "authToken": []
           }
         ]
       }
@@ -1474,7 +1469,7 @@
         },
         "security": [
           {
-            "accessToken": []
+            "authToken": []
           }
         ]
       }
@@ -1775,7 +1770,7 @@
         },
         "security": [
           {
-            "accessToken": []
+            "authToken": []
           }
         ]
       }
@@ -1886,7 +1881,7 @@
         },
         "security": [
           {
-            "accessToken": []
+            "authToken": []
           }
         ]
       }

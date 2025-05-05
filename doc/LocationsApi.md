@@ -130,6 +130,10 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
 final String locationId = locationId_example; // String | The unique id of the location
@@ -154,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 
@@ -220,6 +224,10 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
 final String id = id_example; // String | 
@@ -243,7 +251,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 
