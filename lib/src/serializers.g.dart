@@ -1833,9 +1833,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           () => new SetBuilder<WhitelabelInformation>())
       ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(int)]),
           () => new SetBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(Business)]),
-          () => new SetBuilder<Business>())
+      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(num)]),
+          () => new SetBuilder<num>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(UserFeaturesEnum)]),
           () => new SetBuilder<UserFeaturesEnum>())

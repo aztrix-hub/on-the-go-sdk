@@ -6,7 +6,6 @@
 import 'package:on_the_go_sdk/src/model/sales_partner.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/email_settings.dart';
-import 'package:on_the_go_sdk/src/model/business.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -24,7 +23,7 @@ part 'user.g.dart';
 /// * [status] - The status of the current user. One of CREATED, VERIFIED, UNVERIFIED, INVITED, INACTIVE, NO_LOGIN
 /// * [role] - User Role
 /// * [managedLocations] - A list of locations managed by this user
-/// * [managedBusinesses] - A list of businesses managed by this user
+/// * [managedBusinesses] - A list of business ids managed by this user
 /// * [salesPartner]
 /// * [preferredLanguage] - Preferred language of a user. If not set, this will default to the language in context, e.g., location''s for e-mails and browser language for our applications.
 /// * [identifier] - The unique user identifier based on your internal identification system
@@ -71,9 +70,9 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'managedLocations')
   BuiltSet<int>? get managedLocations;
 
-  /// A list of businesses managed by this user
+  /// A list of business ids managed by this user
   @BuiltValueField(wireName: r'managedBusinesses')
-  BuiltSet<Business>? get managedBusinesses;
+  BuiltSet<num>? get managedBusinesses;
 
   @BuiltValueField(wireName: r'salesPartner')
   SalesPartner? get salesPartner;
@@ -188,7 +187,7 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield r'managedBusinesses';
       yield serializers.serialize(
         object.managedBusinesses,
-        specifiedType: const FullType(BuiltSet, [FullType(Business)]),
+        specifiedType: const FullType(BuiltSet, [FullType(num)]),
       );
     }
     if (object.salesPartner != null) {
@@ -338,8 +337,8 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         case r'managedBusinesses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltSet, [FullType(Business)]),
-          ) as BuiltSet<Business>;
+            specifiedType: const FullType(BuiltSet, [FullType(num)]),
+          ) as BuiltSet<num>;
           result.managedBusinesses.replace(valueDes);
           break;
         case r'salesPartner':

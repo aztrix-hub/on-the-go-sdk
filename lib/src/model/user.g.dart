@@ -1026,7 +1026,7 @@ class _$User extends User {
   @override
   final BuiltSet<int>? managedLocations;
   @override
-  final BuiltSet<Business>? managedBusinesses;
+  final BuiltSet<num>? managedBusinesses;
   @override
   final SalesPartner? salesPartner;
   @override
@@ -1195,10 +1195,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set managedLocations(SetBuilder<int>? managedLocations) =>
       _$this._managedLocations = managedLocations;
 
-  SetBuilder<Business>? _managedBusinesses;
-  SetBuilder<Business> get managedBusinesses =>
-      _$this._managedBusinesses ??= new SetBuilder<Business>();
-  set managedBusinesses(SetBuilder<Business>? managedBusinesses) =>
+  SetBuilder<num>? _managedBusinesses;
+  SetBuilder<num> get managedBusinesses =>
+      _$this._managedBusinesses ??= new SetBuilder<num>();
+  set managedBusinesses(SetBuilder<num>? managedBusinesses) =>
       _$this._managedBusinesses = managedBusinesses;
 
   SalesPartnerBuilder? _salesPartner;
