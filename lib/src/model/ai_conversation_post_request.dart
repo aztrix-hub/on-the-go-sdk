@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,7 +15,7 @@ part 'ai_conversation_post_request.g.dart';
 /// * [userId]
 /// * [conversationId]
 /// * [message]
-/// * [location]
+/// * [userLocation]
 @BuiltValue()
 abstract class AiConversationPostRequest
     implements
@@ -28,8 +29,8 @@ abstract class AiConversationPostRequest
   @BuiltValueField(wireName: r'message')
   String? get message;
 
-  @BuiltValueField(wireName: r'location')
-  String? get location;
+  @BuiltValueField(wireName: r'userLocation')
+  AiConversationPostRequestUserLocation? get userLocation;
 
   AiConversationPostRequest._();
 
@@ -82,11 +83,11 @@ class _$AiConversationPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.location != null) {
-      yield r'location';
+    if (object.userLocation != null) {
+      yield r'userLocation';
       yield serializers.serialize(
-        object.location,
-        specifiedType: const FullType(String),
+        object.userLocation,
+        specifiedType: const FullType(AiConversationPostRequestUserLocation),
       );
     }
   }
@@ -135,12 +136,13 @@ class _$AiConversationPostRequestSerializer
           ) as String;
           result.message = valueDes;
           break;
-        case r'location':
+        case r'userLocation':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.location = valueDes;
+            specifiedType:
+                const FullType(AiConversationPostRequestUserLocation),
+          ) as AiConversationPostRequestUserLocation;
+          result.userLocation.replace(valueDes);
           break;
         default:
           unhandled.add(key);

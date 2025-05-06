@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
  - [AiConversationPost200ResponseMessagesInner](doc/AiConversationPost200ResponseMessagesInner.md)
  - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
+ - [AiConversationPostRequestUserLocation](doc/AiConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
  - [AssetInfo](doc/AssetInfo.md)

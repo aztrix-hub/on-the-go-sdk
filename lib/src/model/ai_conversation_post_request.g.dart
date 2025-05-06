@@ -14,14 +14,14 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
   final String? message;
   @override
-  final String? location;
+  final AiConversationPostRequestUserLocation? userLocation;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
       (new AiConversationPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationPostRequest._(
-      {this.userId, this.conversationId, this.message, this.location})
+      {this.userId, this.conversationId, this.message, this.userLocation})
       : super._();
 
   @override
@@ -40,7 +40,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
         userId == other.userId &&
         conversationId == other.conversationId &&
         message == other.message &&
-        location == other.location;
+        userLocation == other.userLocation;
   }
 
   @override
@@ -49,7 +49,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, conversationId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
-    _$hash = $jc(_$hash, location.hashCode);
+    _$hash = $jc(_$hash, userLocation.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,7 +60,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
           ..add('userId', userId)
           ..add('conversationId', conversationId)
           ..add('message', message)
-          ..add('location', location))
+          ..add('userLocation', userLocation))
         .toString();
   }
 }
@@ -83,9 +83,13 @@ class AiConversationPostRequestBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  String? _location;
-  String? get location => _$this._location;
-  set location(String? location) => _$this._location = location;
+  AiConversationPostRequestUserLocationBuilder? _userLocation;
+  AiConversationPostRequestUserLocationBuilder get userLocation =>
+      _$this._userLocation ??=
+          new AiConversationPostRequestUserLocationBuilder();
+  set userLocation(
+          AiConversationPostRequestUserLocationBuilder? userLocation) =>
+      _$this._userLocation = userLocation;
 
   AiConversationPostRequestBuilder() {
     AiConversationPostRequest._defaults(this);
@@ -97,7 +101,7 @@ class AiConversationPostRequestBuilder
       _userId = $v.userId;
       _conversationId = $v.conversationId;
       _message = $v.message;
-      _location = $v.location;
+      _userLocation = $v.userLocation?.toBuilder();
       _$v = null;
     }
     return this;
@@ -118,13 +122,26 @@ class AiConversationPostRequestBuilder
   AiConversationPostRequest build() => _build();
 
   _$AiConversationPostRequest _build() {
-    final _$result = _$v ??
-        new _$AiConversationPostRequest._(
-          userId: userId,
-          conversationId: conversationId,
-          message: message,
-          location: location,
-        );
+    _$AiConversationPostRequest _$result;
+    try {
+      _$result = _$v ??
+          new _$AiConversationPostRequest._(
+            userId: userId,
+            conversationId: conversationId,
+            message: message,
+            userLocation: _userLocation?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'userLocation';
+        _userLocation?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'AiConversationPostRequest', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

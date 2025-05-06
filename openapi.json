@@ -1031,8 +1031,18 @@
                   "message": {
                     "type": "string"
                   },
-                  "location": {
-                    "type": "string"
+                  "userLocation": {
+                    "type": "object",
+                    "properties": {
+                      "lat": {
+                        "type": "number",
+                        "format": "double"
+                      },
+                      "lng": {
+                        "type": "number",
+                        "format": "double"
+                      }
+                    }
                   }
                 }
               }

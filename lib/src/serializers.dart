@@ -21,6 +21,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
 import 'package:on_the_go_sdk/src/model/asset_info.dart';
@@ -357,6 +358,7 @@ part 'serializers.g.dart';
   AiConversationPost200Response,
   AiConversationPost200ResponseMessagesInner,
   AiConversationPostRequest,
+  AiConversationPostRequestUserLocation,
   AiMemoriesGet200Response,
   AiMemoriesGet200ResponseMemoriesInner,
   AssetInfo,
