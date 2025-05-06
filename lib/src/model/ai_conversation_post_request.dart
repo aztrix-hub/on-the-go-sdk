@@ -14,6 +14,7 @@ part 'ai_conversation_post_request.g.dart';
 /// * [userId]
 /// * [conversationId]
 /// * [message]
+/// * [location]
 @BuiltValue()
 abstract class AiConversationPostRequest
     implements
@@ -26,6 +27,9 @@ abstract class AiConversationPostRequest
 
   @BuiltValueField(wireName: r'message')
   String? get message;
+
+  @BuiltValueField(wireName: r'location')
+  String? get location;
 
   AiConversationPostRequest._();
 
@@ -78,6 +82,13 @@ class _$AiConversationPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.location != null) {
+      yield r'location';
+      yield serializers.serialize(
+        object.location,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -123,6 +134,13 @@ class _$AiConversationPostRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.message = valueDes;
+          break;
+        case r'location':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.location = valueDes;
           break;
         default:
           unhandled.add(key);

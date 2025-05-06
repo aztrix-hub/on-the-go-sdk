@@ -13,13 +13,15 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   final String? conversationId;
   @override
   final String? message;
+  @override
+  final String? location;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
       (new AiConversationPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationPostRequest._(
-      {this.userId, this.conversationId, this.message})
+      {this.userId, this.conversationId, this.message, this.location})
       : super._();
 
   @override
@@ -37,7 +39,8 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     return other is AiConversationPostRequest &&
         userId == other.userId &&
         conversationId == other.conversationId &&
-        message == other.message;
+        message == other.message &&
+        location == other.location;
   }
 
   @override
@@ -46,6 +49,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, conversationId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -55,7 +59,8 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     return (newBuiltValueToStringHelper(r'AiConversationPostRequest')
           ..add('userId', userId)
           ..add('conversationId', conversationId)
-          ..add('message', message))
+          ..add('message', message)
+          ..add('location', location))
         .toString();
   }
 }
@@ -78,6 +83,10 @@ class AiConversationPostRequestBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  String? _location;
+  String? get location => _$this._location;
+  set location(String? location) => _$this._location = location;
+
   AiConversationPostRequestBuilder() {
     AiConversationPostRequest._defaults(this);
   }
@@ -88,6 +97,7 @@ class AiConversationPostRequestBuilder
       _userId = $v.userId;
       _conversationId = $v.conversationId;
       _message = $v.message;
+      _location = $v.location;
       _$v = null;
     }
     return this;
@@ -113,6 +123,7 @@ class AiConversationPostRequestBuilder
           userId: userId,
           conversationId: conversationId,
           message: message,
+          location: location,
         );
     replace(_$result);
     return _$result;
