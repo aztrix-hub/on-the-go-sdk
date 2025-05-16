@@ -64,7 +64,7 @@ abstract class LocationPhoto
 
   @BuiltValueField(wireName: r'type')
   LocationPhotoType get type;
-  // enum typeEnum {  MAIN,  DOCTOR_COM_PORTRAIT,  LOGO,  STOREFINDER_LOGO,  SQUARED_LOGO,  LANDSCAPE,  STOREFINDER_COVER,  FACEBOOK_LANDSCAPE,  APPLE_LANDSCAPE,  MENU,  PHOTO,  ROOMS,  TEAMS,  AT_WORK,  PRODUCT,  EXTERIOR,  INTERIOR,  COMMON_AREA,  FOOD_AND_DRINK,  };
+  // enum typeEnum {  MAIN,  DOCTOR_COM_PORTRAIT,  LOGO,  STOREFINDER_LOGO,  SQUARED_LOGO,  LANDSCAPE,  STOREFINDER_COVER,  FACEBOOK_LANDSCAPE,  MENU,  PHOTO,  ROOMS,  TEAMS,  AT_WORK,  PRODUCT,  EXTERIOR,  INTERIOR,  COMMON_AREA,  FOOD_AND_DRINK,  };
 
   /// Sets the order in which the photos should be shown
   @BuiltValueField(wireName: r'order')

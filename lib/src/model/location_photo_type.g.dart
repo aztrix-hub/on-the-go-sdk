@@ -19,8 +19,6 @@ const LocationPhotoType _$STOREFINDER_COVER =
     const LocationPhotoType._('STOREFINDER_COVER');
 const LocationPhotoType _$FACEBOOK_LANDSCAPE =
     const LocationPhotoType._('FACEBOOK_LANDSCAPE');
-const LocationPhotoType _$APPLE_LANDSCAPE =
-    const LocationPhotoType._('APPLE_LANDSCAPE');
 const LocationPhotoType _$MENU = const LocationPhotoType._('MENU');
 const LocationPhotoType _$PHOTO = const LocationPhotoType._('PHOTO');
 const LocationPhotoType _$ROOMS = const LocationPhotoType._('ROOMS');
@@ -52,8 +50,6 @@ LocationPhotoType _$valueOf(String name) {
       return _$STOREFINDER_COVER;
     case 'FACEBOOK_LANDSCAPE':
       return _$FACEBOOK_LANDSCAPE;
-    case 'APPLE_LANDSCAPE':
-      return _$APPLE_LANDSCAPE;
     case 'MENU':
       return _$MENU;
     case 'PHOTO':
@@ -89,7 +85,6 @@ final BuiltSet<LocationPhotoType> _$values =
   _$LANDSCAPE,
   _$STOREFINDER_COVER,
   _$FACEBOOK_LANDSCAPE,
-  _$APPLE_LANDSCAPE,
   _$MENU,
   _$PHOTO,
   _$ROOMS,
@@ -112,7 +107,6 @@ class _$LocationPhotoTypeMeta {
   LocationPhotoType get LANDSCAPE => _$LANDSCAPE;
   LocationPhotoType get STOREFINDER_COVER => _$STOREFINDER_COVER;
   LocationPhotoType get FACEBOOK_LANDSCAPE => _$FACEBOOK_LANDSCAPE;
-  LocationPhotoType get APPLE_LANDSCAPE => _$APPLE_LANDSCAPE;
   LocationPhotoType get MENU => _$MENU;
   LocationPhotoType get PHOTO => _$PHOTO;
   LocationPhotoType get ROOMS => _$ROOMS;
@@ -147,7 +141,6 @@ class _$LocationPhotoTypeSerializer
     'LANDSCAPE': 'LANDSCAPE',
     'STOREFINDER_COVER': 'STOREFINDER_COVER',
     'FACEBOOK_LANDSCAPE': 'FACEBOOK_LANDSCAPE',
-    'APPLE_LANDSCAPE': 'APPLE_LANDSCAPE',
     'MENU': 'MENU',
     'PHOTO': 'PHOTO',
     'ROOMS': 'ROOMS',
@@ -168,7 +161,6 @@ class _$LocationPhotoTypeSerializer
     'LANDSCAPE': 'LANDSCAPE',
     'STOREFINDER_COVER': 'STOREFINDER_COVER',
     'FACEBOOK_LANDSCAPE': 'FACEBOOK_LANDSCAPE',
-    'APPLE_LANDSCAPE': 'APPLE_LANDSCAPE',
     'MENU': 'MENU',
     'PHOTO': 'PHOTO',
     'ROOMS': 'ROOMS',

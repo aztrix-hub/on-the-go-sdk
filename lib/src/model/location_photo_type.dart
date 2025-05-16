@@ -26,8 +26,6 @@ class LocationPhotoType extends EnumClass {
   static const LocationPhotoType STOREFINDER_COVER = _$STOREFINDER_COVER;
   @BuiltValueEnumConst(wireName: r'FACEBOOK_LANDSCAPE')
   static const LocationPhotoType FACEBOOK_LANDSCAPE = _$FACEBOOK_LANDSCAPE;
-  @BuiltValueEnumConst(wireName: r'APPLE_LANDSCAPE')
-  static const LocationPhotoType APPLE_LANDSCAPE = _$APPLE_LANDSCAPE;
   @BuiltValueEnumConst(wireName: r'MENU')
   static const LocationPhotoType MENU = _$MENU;
   @BuiltValueEnumConst(wireName: r'PHOTO')
