@@ -15,13 +15,19 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   final String? message;
   @override
   final AiConversationPostRequestUserLocation? userLocation;
+  @override
+  final String? timezone;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
       (new AiConversationPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationPostRequest._(
-      {this.userId, this.conversationId, this.message, this.userLocation})
+      {this.userId,
+      this.conversationId,
+      this.message,
+      this.userLocation,
+      this.timezone})
       : super._();
 
   @override
@@ -40,7 +46,8 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
         userId == other.userId &&
         conversationId == other.conversationId &&
         message == other.message &&
-        userLocation == other.userLocation;
+        userLocation == other.userLocation &&
+        timezone == other.timezone;
   }
 
   @override
@@ -50,6 +57,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     _$hash = $jc(_$hash, conversationId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, userLocation.hashCode);
+    _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,7 +68,8 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
           ..add('userId', userId)
           ..add('conversationId', conversationId)
           ..add('message', message)
-          ..add('userLocation', userLocation))
+          ..add('userLocation', userLocation)
+          ..add('timezone', timezone))
         .toString();
   }
 }
@@ -91,6 +100,10 @@ class AiConversationPostRequestBuilder
           AiConversationPostRequestUserLocationBuilder? userLocation) =>
       _$this._userLocation = userLocation;
 
+  String? _timezone;
+  String? get timezone => _$this._timezone;
+  set timezone(String? timezone) => _$this._timezone = timezone;
+
   AiConversationPostRequestBuilder() {
     AiConversationPostRequest._defaults(this);
   }
@@ -102,6 +115,7 @@ class AiConversationPostRequestBuilder
       _conversationId = $v.conversationId;
       _message = $v.message;
       _userLocation = $v.userLocation?.toBuilder();
+      _timezone = $v.timezone;
       _$v = null;
     }
     return this;
@@ -130,6 +144,7 @@ class AiConversationPostRequestBuilder
             conversationId: conversationId,
             message: message,
             userLocation: _userLocation?.build(),
+            timezone: timezone,
           );
     } catch (_) {
       late String _$failedField;

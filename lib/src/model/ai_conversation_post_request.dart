@@ -16,6 +16,7 @@ part 'ai_conversation_post_request.g.dart';
 /// * [conversationId]
 /// * [message]
 /// * [userLocation]
+/// * [timezone]
 @BuiltValue()
 abstract class AiConversationPostRequest
     implements
@@ -31,6 +32,9 @@ abstract class AiConversationPostRequest
 
   @BuiltValueField(wireName: r'userLocation')
   AiConversationPostRequestUserLocation? get userLocation;
+
+  @BuiltValueField(wireName: r'timezone')
+  String? get timezone;
 
   AiConversationPostRequest._();
 
@@ -90,6 +94,13 @@ class _$AiConversationPostRequestSerializer
         specifiedType: const FullType(AiConversationPostRequestUserLocation),
       );
     }
+    if (object.timezone != null) {
+      yield r'timezone';
+      yield serializers.serialize(
+        object.timezone,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -143,6 +154,13 @@ class _$AiConversationPostRequestSerializer
                 const FullType(AiConversationPostRequestUserLocation),
           ) as AiConversationPostRequestUserLocation;
           result.userLocation.replace(valueDes);
+          break;
+        case r'timezone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.timezone = valueDes;
           break;
         default:
           unhandled.add(key);
