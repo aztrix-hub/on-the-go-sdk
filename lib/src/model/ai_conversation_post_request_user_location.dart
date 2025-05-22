@@ -13,6 +13,7 @@ part 'ai_conversation_post_request_user_location.g.dart';
 /// Properties:
 /// * [lat]
 /// * [lng]
+/// * [freeform]
 @BuiltValue()
 abstract class AiConversationPostRequestUserLocation
     implements
@@ -23,6 +24,9 @@ abstract class AiConversationPostRequestUserLocation
 
   @BuiltValueField(wireName: r'lng')
   double? get lng;
+
+  @BuiltValueField(wireName: r'freeform')
+  String? get freeform;
 
   AiConversationPostRequestUserLocation._();
 
@@ -68,6 +72,13 @@ class _$AiConversationPostRequestUserLocationSerializer
         specifiedType: const FullType(double),
       );
     }
+    if (object.freeform != null) {
+      yield r'freeform';
+      yield serializers.serialize(
+        object.freeform,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -106,6 +117,13 @@ class _$AiConversationPostRequestUserLocationSerializer
             specifiedType: const FullType(double),
           ) as double;
           result.lng = valueDes;
+          break;
+        case r'freeform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.freeform = valueDes;
           break;
         default:
           unhandled.add(key);

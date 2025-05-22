@@ -12,6 +12,8 @@ class _$AiConversationPostRequestUserLocation
   final double? lat;
   @override
   final double? lng;
+  @override
+  final String? freeform;
 
   factory _$AiConversationPostRequestUserLocation(
           [void Function(AiConversationPostRequestUserLocationBuilder)?
@@ -19,7 +21,8 @@ class _$AiConversationPostRequestUserLocation
       (new AiConversationPostRequestUserLocationBuilder()..update(updates))
           ._build();
 
-  _$AiConversationPostRequestUserLocation._({this.lat, this.lng}) : super._();
+  _$AiConversationPostRequestUserLocation._({this.lat, this.lng, this.freeform})
+      : super._();
 
   @override
   AiConversationPostRequestUserLocation rebuild(
@@ -36,7 +39,8 @@ class _$AiConversationPostRequestUserLocation
     if (identical(other, this)) return true;
     return other is AiConversationPostRequestUserLocation &&
         lat == other.lat &&
-        lng == other.lng;
+        lng == other.lng &&
+        freeform == other.freeform;
   }
 
   @override
@@ -44,6 +48,7 @@ class _$AiConversationPostRequestUserLocation
     var _$hash = 0;
     _$hash = $jc(_$hash, lat.hashCode);
     _$hash = $jc(_$hash, lng.hashCode);
+    _$hash = $jc(_$hash, freeform.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -53,7 +58,8 @@ class _$AiConversationPostRequestUserLocation
     return (newBuiltValueToStringHelper(
             r'AiConversationPostRequestUserLocation')
           ..add('lat', lat)
-          ..add('lng', lng))
+          ..add('lng', lng)
+          ..add('freeform', freeform))
         .toString();
   }
 }
@@ -72,6 +78,10 @@ class AiConversationPostRequestUserLocationBuilder
   double? get lng => _$this._lng;
   set lng(double? lng) => _$this._lng = lng;
 
+  String? _freeform;
+  String? get freeform => _$this._freeform;
+  set freeform(String? freeform) => _$this._freeform = freeform;
+
   AiConversationPostRequestUserLocationBuilder() {
     AiConversationPostRequestUserLocation._defaults(this);
   }
@@ -81,6 +91,7 @@ class AiConversationPostRequestUserLocationBuilder
     if ($v != null) {
       _lat = $v.lat;
       _lng = $v.lng;
+      _freeform = $v.freeform;
       _$v = null;
     }
     return this;
@@ -106,6 +117,7 @@ class AiConversationPostRequestUserLocationBuilder
         new _$AiConversationPostRequestUserLocation._(
           lat: lat,
           lng: lng,
+          freeform: freeform,
         );
     replace(_$result);
     return _$result;

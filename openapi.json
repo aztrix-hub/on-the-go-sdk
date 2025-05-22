@@ -1077,10 +1077,13 @@
                       "lng": {
                         "type": "number",
                         "format": "double"
+                      },
+                      "freeform": {
+                        "type": "string"
                       }
                     }
                   },
-                  "timezone": {
+                  "time": {
                     "type": "string"
                   }
                 }
