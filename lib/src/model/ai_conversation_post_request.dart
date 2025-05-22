@@ -17,7 +17,6 @@ part 'ai_conversation_post_request.g.dart';
 /// * [message]
 /// * [userLocation]
 /// * [dateTime]
-/// * [timezone]
 @BuiltValue()
 abstract class AiConversationPostRequest
     implements
@@ -35,10 +34,7 @@ abstract class AiConversationPostRequest
   AiConversationPostRequestUserLocation? get userLocation;
 
   @BuiltValueField(wireName: r'dateTime')
-  DateTime? get dateTime;
-
-  @BuiltValueField(wireName: r'timezone')
-  String? get timezone;
+  String? get dateTime;
 
   AiConversationPostRequest._();
 
@@ -102,13 +98,6 @@ class _$AiConversationPostRequestSerializer
       yield r'dateTime';
       yield serializers.serialize(
         object.dateTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.timezone != null) {
-      yield r'timezone';
-      yield serializers.serialize(
-        object.timezone,
         specifiedType: const FullType(String),
       );
     }
@@ -169,16 +158,9 @@ class _$AiConversationPostRequestSerializer
         case r'dateTime':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.dateTime = valueDes;
-          break;
-        case r'timezone':
-          final valueDes = serializers.deserialize(
-            value,
             specifiedType: const FullType(String),
           ) as String;
-          result.timezone = valueDes;
+          result.dateTime = valueDes;
           break;
         default:
           unhandled.add(key);
