@@ -1083,7 +1083,11 @@
                       }
                     }
                   },
-                  "time": {
+                  "dateTime": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "timezone": {
                     "type": "string"
                   }
                 }

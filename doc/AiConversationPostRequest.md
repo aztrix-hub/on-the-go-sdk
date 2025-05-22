@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **conversationId** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
 **userLocation** | [**AiConversationPostRequestUserLocation**](AiConversationPostRequestUserLocation.md) |  | [optional] 
-**time** | **String** |  | [optional] 
+**dateTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**timezone** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
