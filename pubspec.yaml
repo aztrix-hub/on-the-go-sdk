@@ -20,4 +20,4 @@ dev_dependencies:
 
 scripts:
   install: wget https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar -O openapi-generator-cli.jar 
-  generate: java -jar openapi-generator-cli.jar generate -g dart-dio -i openapi.json -o . --skip-validate-spec --additional-properties=pubLibrary=on_the_go_sdk,pubName=on_the_go_sdk --model-name-mappings Response=GenericResponse && sed -i 's/&lt;/</g' lib/src/serializers.dart && sed -i 's/&gt;/>/g' lib/src/serializers.dart && dart run build_runner build && dart fix --apply --code=unused_import && dart format .
+  generate: java -jar openapi-generator-cli.jar generate -g dart-dio -i openapi.json -o . --skip-validate-spec --additional-properties=pubLibrary=on_the_go_sdk,pubName=on_the_go_sdk --model-name-mappings Response=GenericResponse && sed -i 's/&lt;/</g' lib/src/serializers.dart && sed -i 's/&gt;/>/g' lib/src/serializers.dart && dart run build_runner build && dart fix --apply --code=unused_import --code=duplicate_import && dart format .

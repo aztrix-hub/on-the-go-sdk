@@ -52,9 +52,7 @@ class _$CategoriesGet200ResponseResponseResultsSerializer
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    CategoriesGet200ResponseResponseResults object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {}
+    CategoriesGet200ResponseResponseResults object) sync* {}
 
   @override
   Object serialize(
