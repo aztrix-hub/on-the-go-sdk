@@ -107,24 +107,19 @@
         ]
       }
     },
-    "/user/sso/check": {
+    "/user/reset-password": {
       "post": {
         "tags": [
           "users"
         ],
+        "summary": "Resets the user's password",
+        "description": "Changes the user's password to a new password",
         "requestBody": {
+          "description": "A ResetPasswordCommand object",
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "email"
-                ],
-                "properties": {
-                  "email": {
-                    "type": "string"
-                  }
-                }
+                "$ref": "#/components/schemas/ResetPasswordCommand"
               }
             }
           },
@@ -132,19 +127,16 @@
         },
         "responses": {
           "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "sso": {
-                      "type": "boolean"
-                    }
-                  }
-                }
-              }
-            }
+            "description": "User password succesfully changed"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
           },
           "500": {
             "description": "Internal Server Error"
@@ -14236,6 +14228,21 @@
             "$ref": "#/components/schemas/LogoutResponse"
           }
         }
+      },
+      "ResetPasswordCommand": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "newPassword": {
+            "type": "string"
+          }
+        },
+        "description": "Login Command"
       },
       "MenuItem": {
         "required": [

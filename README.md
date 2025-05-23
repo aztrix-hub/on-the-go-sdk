@@ -92,7 +92,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
 [*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
-[*UsersApi*](doc/UsersApi.md) | [**userSsoCheckPost**](doc/UsersApi.md#userssocheckpost) | **POST** /user/sso/check | 
+[*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -334,6 +334,7 @@ Class | Method | HTTP request | Description
  - [ProfileCompletenessWrapper](doc/ProfileCompletenessWrapper.md)
  - [ProvincesResponse](doc/ProvincesResponse.md)
  - [ProvincesResponseWrapper](doc/ProvincesResponseWrapper.md)
+ - [ResetPasswordCommand](doc/ResetPasswordCommand.md)
  - [ResponseBusiness](doc/ResponseBusiness.md)
  - [ResponseLocation](doc/ResponseLocation.md)
  - [ResponseTemplate](doc/ResponseTemplate.md)
@@ -415,8 +416,6 @@ Class | Method | HTTP request | Description
  - [UserObject](doc/UserObject.md)
  - [UserSearchObject](doc/UserSearchObject.md)
  - [UserSearchWrapper](doc/UserSearchWrapper.md)
- - [UserSsoCheckPost200Response](doc/UserSsoCheckPost200Response.md)
- - [UserSsoCheckPostRequest](doc/UserSsoCheckPostRequest.md)
  - [UserWrapper](doc/UserWrapper.md)
  - [Video](doc/Video.md)
  - [VisibilityIndex](doc/VisibilityIndex.md)

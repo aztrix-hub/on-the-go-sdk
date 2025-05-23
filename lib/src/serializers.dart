@@ -250,6 +250,7 @@ import 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/reset_password_command.dart';
 import 'package:on_the_go_sdk/src/model/response_business.dart';
 import 'package:on_the_go_sdk/src/model/response_location.dart';
 import 'package:on_the_go_sdk/src/model/response_template.dart';
@@ -331,8 +332,6 @@ import 'package:on_the_go_sdk/src/model/user_missing_connection_warnings_wrapper
 import 'package:on_the_go_sdk/src/model/user_object.dart';
 import 'package:on_the_go_sdk/src/model/user_search_object.dart';
 import 'package:on_the_go_sdk/src/model/user_search_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/user_sso_check_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/user_sso_check_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/video.dart';
 import 'package:on_the_go_sdk/src/model/visibility_index.dart';
@@ -587,6 +586,7 @@ part 'serializers.g.dart';
   ProfileCompletenessWrapper,
   ProvincesResponse,
   ProvincesResponseWrapper,
+  ResetPasswordCommand,
   ResponseBusiness,
   ResponseLocation,
   ResponseTemplate,
@@ -668,8 +668,6 @@ part 'serializers.g.dart';
   UserObject,
   UserSearchObject,
   UserSearchWrapper,
-  UserSsoCheckPost200Response,
-  UserSsoCheckPostRequest,
   UserWrapper,
   Video,
   VisibilityIndex,

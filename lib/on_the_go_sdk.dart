@@ -256,6 +256,7 @@ export 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 export 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
+export 'package:on_the_go_sdk/src/model/reset_password_command.dart';
 export 'package:on_the_go_sdk/src/model/response_business.dart';
 export 'package:on_the_go_sdk/src/model/response_location.dart';
 export 'package:on_the_go_sdk/src/model/response_template.dart';
@@ -337,8 +338,6 @@ export 'package:on_the_go_sdk/src/model/user_missing_connection_warnings_wrapper
 export 'package:on_the_go_sdk/src/model/user_object.dart';
 export 'package:on_the_go_sdk/src/model/user_search_object.dart';
 export 'package:on_the_go_sdk/src/model/user_search_wrapper.dart';
-export 'package:on_the_go_sdk/src/model/user_sso_check_post200_response.dart';
-export 'package:on_the_go_sdk/src/model/user_sso_check_post_request.dart';
 export 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/video.dart';
 export 'package:on_the_go_sdk/src/model/visibility_index.dart';

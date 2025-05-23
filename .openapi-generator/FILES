@@ -242,6 +242,7 @@ doc/ProfileCompletenessWrapper.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
 doc/PublishApi.md
+doc/ResetPasswordCommand.md
 doc/ResponseBusiness.md
 doc/ResponseLocation.md
 doc/ResponseTemplate.md
@@ -324,8 +325,6 @@ doc/UserMissingConnectionWarningsWrapper.md
 doc/UserObject.md
 doc/UserSearchObject.md
 doc/UserSearchWrapper.md
-doc/UserSsoCheckPost200Response.md
-doc/UserSsoCheckPostRequest.md
 doc/UserWrapper.md
 doc/UsersApi.md
 doc/Video.md
@@ -597,6 +596,7 @@ lib/src/model/profile_completeness.dart
 lib/src/model/profile_completeness_wrapper.dart
 lib/src/model/provinces_response.dart
 lib/src/model/provinces_response_wrapper.dart
+lib/src/model/reset_password_command.dart
 lib/src/model/response_business.dart
 lib/src/model/response_location.dart
 lib/src/model/response_template.dart
@@ -677,8 +677,6 @@ lib/src/model/user_missing_connection_warnings_wrapper.dart
 lib/src/model/user_object.dart
 lib/src/model/user_search_object.dart
 lib/src/model/user_search_wrapper.dart
-lib/src/model/user_sso_check_post200_response.dart
-lib/src/model/user_sso_check_post_request.dart
 lib/src/model/user_wrapper.dart
 lib/src/model/utm.dart
 lib/src/model/video.dart
@@ -695,3 +693,4 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
+test/reset_password_command_test.dart

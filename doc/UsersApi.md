@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
 [**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
 [**userPatch**](UsersApi.md#userpatch) | **PATCH** /user | Update the current user
-[**userSsoCheckPost**](UsersApi.md#userssocheckpost) | **POST** /user/sso/check | 
+[**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 
 
 # **userGet**
@@ -185,23 +185,24 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userSsoCheckPost**
-> UserSsoCheckPost200Response userSsoCheckPost(userSsoCheckPostRequest)
+# **userResetPasswordPost**
+> userResetPasswordPost(resetPasswordCommand)
 
+Resets the user's password
 
+Changes the user's password to a new password
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserSsoCheckPostRequest userSsoCheckPostRequest = ; // UserSsoCheckPostRequest | 
+final ResetPasswordCommand resetPasswordCommand = ; // ResetPasswordCommand | A ResetPasswordCommand object
 
 try {
-    final response = api.userSsoCheckPost(userSsoCheckPostRequest);
-    print(response);
+    api.userResetPasswordPost(resetPasswordCommand);
 } catch on DioException (e) {
-    print('Exception when calling UsersApi->userSsoCheckPost: $e\n');
+    print('Exception when calling UsersApi->userResetPasswordPost: $e\n');
 }
 ```
 
@@ -209,11 +210,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userSsoCheckPostRequest** | [**UserSsoCheckPostRequest**](UserSsoCheckPostRequest.md)|  | 
+ **resetPasswordCommand** | [**ResetPasswordCommand**](ResetPasswordCommand.md)| A ResetPasswordCommand object | 
 
 ### Return type
 
-[**UserSsoCheckPost200Response**](UserSsoCheckPost200Response.md)
+void (empty response body)
 
 ### Authorization
 
@@ -222,7 +223,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -9,9 +9,8 @@ import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/model/login_command.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
+import 'package:on_the_go_sdk/src/model/reset_password_command.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
-import 'package:on_the_go_sdk/src/model/user_sso_check_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/user_sso_check_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 
 class UsersApi {
@@ -351,11 +350,11 @@ class UsersApi {
     );
   }
 
-  /// userSsoCheckPost
-  ///
+  /// Resets the user&#39;s password
+  /// Changes the user&#39;s password to a new password
   ///
   /// Parameters:
-  /// * [userSsoCheckPostRequest]
+  /// * [resetPasswordCommand] - A ResetPasswordCommand object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -363,10 +362,10 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserSsoCheckPost200Response] as data
+  /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserSsoCheckPost200Response>> userSsoCheckPost({
-    required UserSsoCheckPostRequest userSsoCheckPostRequest,
+  Future<Response<void>> userResetPasswordPost({
+    required ResetPasswordCommand resetPasswordCommand,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -374,7 +373,7 @@ class UsersApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/user/sso/check';
+    final _path = r'/user/reset-password';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -391,9 +390,9 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserSsoCheckPostRequest);
+      const _type = FullType(ResetPasswordCommand);
       _bodyData =
-          _serializers.serialize(userSsoCheckPostRequest, specifiedType: _type);
+          _serializers.serialize(resetPasswordCommand, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -415,35 +414,6 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserSsoCheckPost200Response? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(UserSsoCheckPost200Response),
-            ) as UserSsoCheckPost200Response;
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<UserSsoCheckPost200Response>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 }
