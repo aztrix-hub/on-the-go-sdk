@@ -8,7 +8,7 @@ void main() {
 
   group(FiltersResponse, () {
     // List of directory names
-    // BuiltList<String> directories
+    // BuiltList<DirectoryType> directories
     test('to test the property `directories`', () async {
       // TODO
     });

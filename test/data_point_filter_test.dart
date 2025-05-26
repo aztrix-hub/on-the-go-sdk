@@ -20,7 +20,7 @@ void main() {
     });
 
     // The list of directories for which the dataPoints should be filtered
-    // BuiltSet<String> directories
+    // BuiltSet<DirectoryType> directories
     test('to test the property `directories`', () async {
       // TODO
     });

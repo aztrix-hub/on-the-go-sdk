@@ -25,8 +25,7 @@ void main() {
       // TODO
     });
 
-    // Suggestion from directory
-    // String directory
+    // DirectoryType directory
     test('to test the property `directory`', () async {
       // TODO
     });

@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userResetPasswordPost**
-> userResetPasswordPost(body)
+> userResetPasswordPost(resetPassword)
 
 Resets the user's password
 
@@ -197,10 +197,10 @@ Changes the user's password to a new password
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final ResetPasswordCommand body = ; // ResetPasswordCommand | A ResetPasswordCommand object
+final ResetPassword resetPassword = ; // ResetPassword | A ResetPassword object
 
 try {
-    api.userResetPasswordPost(body);
+    api.userResetPasswordPost(resetPassword);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userResetPasswordPost: $e\n');
 }
@@ -210,7 +210,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **ResetPasswordCommand**| A ResetPasswordCommand object | 
+ **resetPassword** | [**ResetPassword**](ResetPassword.md)| A ResetPassword object | 
 
 ### Return type
 

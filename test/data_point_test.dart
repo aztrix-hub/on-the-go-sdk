@@ -84,8 +84,7 @@ void main() {
       // TODO
     });
 
-    // Online directory reference name
-    // String directoryType
+    // DirectoryType directoryType
     test('to test the property `directoryType`', () async {
       // TODO
     });

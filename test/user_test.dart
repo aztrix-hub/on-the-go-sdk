@@ -19,6 +19,12 @@ void main() {
       // TODO
     });
 
+    // User email
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
     // First Name
     // String firstname
     test('to test the property `firstname`', () async {
@@ -55,8 +61,8 @@ void main() {
       // TODO
     });
 
-    // A list of businesses managed by this user
-    // BuiltSet<Business> managedBusinesses
+    // A list of business ids managed by this user
+    // BuiltSet<num> managedBusinesses
     test('to test the property `managedBusinesses`', () async {
       // TODO
     });

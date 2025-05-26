@@ -38,7 +38,7 @@ void main() {
     });
 
     // List of directories supported by this plan
-    // BuiltSet<String> automationDirectories
+    // BuiltSet<DirectoryType> automationDirectories
     test('to test the property `automationDirectories`', () async {
       // TODO
     });

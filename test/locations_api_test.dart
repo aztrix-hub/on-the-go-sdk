@@ -24,12 +24,27 @@ void main() {
       // TODO
     });
 
+    //Future<ListingsDetailsResponseWrapper> locationListingsGet(String locationId) async
+    test('test locationListingsGet', () async {
+      // TODO
+    });
+
     // Update a Location
     //
     // Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing
     //
     //Future<LocationWrapper> locationPatch(String id, Location location) async
     test('test locationPatch', () async {
+      // TODO
+    });
+
+    //Future locationPhotoDelete(String id) async
+    test('test locationPhotoDelete', () async {
+      // TODO
+    });
+
+    //Future locationPhotoPost(LocationPhotoPostRequest locationPhotoPostRequest) async
+    test('test locationPhotoPost', () async {
       // TODO
     });
 

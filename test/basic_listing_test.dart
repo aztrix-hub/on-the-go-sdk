@@ -485,8 +485,7 @@ void main() {
       // TODO
     });
 
-    // The directory where this listing appears
-    // String directoryType
+    // DirectoryType directoryType
     test('to test the property `directoryType`', () async {
       // TODO
     });

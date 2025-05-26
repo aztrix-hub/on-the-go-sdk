@@ -13,8 +13,7 @@ void main() {
       // TODO
     });
 
-    // Google, Facebook, or Bing
-    // String type
+    // DirectoryType type
     test('to test the property `type`', () async {
       // TODO
     });

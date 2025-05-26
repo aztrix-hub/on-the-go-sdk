@@ -13,8 +13,7 @@ void main() {
       // TODO
     });
 
-    // The directory where this listing appears
-    // String type
+    // DirectoryType type
     test('to test the property `type`', () async {
       // TODO
     });
@@ -40,12 +39,6 @@ void main() {
     // Mandatory field missing on the location which prevents the data to be submitted to the publisher
     // BuiltList<String> mandatoryFieldsMissing
     test('to test the property `mandatoryFieldsMissing`', () async {
-      // TODO
-    });
-
-    // Directory specific data. e.g. Google publishing states which can be UNVERIFIED, DISABLED, SUSPENDED, DUPLICATE.
-    // BuiltMap<String, JsonObject> directorySpecificData
-    test('to test the property `directorySpecificData`', () async {
       // TODO
     });
 

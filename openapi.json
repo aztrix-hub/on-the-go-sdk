@@ -115,11 +115,11 @@
         "summary": "Resets the user's password",
         "description": "Changes the user's password to a new password",
         "requestBody": {
-          "description": "A ResetPasswordCommand object",
+          "description": "A ResetPassword object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ResetPasswordCommand"
+                "$ref": "#/components/schemas/ResetPassword"
               }
             }
           },

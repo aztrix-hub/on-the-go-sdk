@@ -8,19 +8,8 @@ void main() {
   group(UsersApi, () {
     // Get the current user
     //
-    // Get the current user
-    //
-    //Future<UserWrapper> userCurrentGet() async
-    test('test userCurrentGet', () async {
-      // TODO
-    });
-
-    // Update the current user
-    //
-    // Update the current user
-    //
-    //Future<UserWrapper> userCurrentPatch(User user) async
-    test('test userCurrentPatch', () async {
+    //Future<UserWrapper> userGet() async
+    test('test userGet', () async {
       // TODO
     });
 
@@ -30,6 +19,27 @@ void main() {
     //
     //Future<LoginResponse> userLoginPost(LoginCommand loginCommand) async
     test('test userLoginPost', () async {
+      // TODO
+    });
+
+    //Future userLogoutPost() async
+    test('test userLogoutPost', () async {
+      // TODO
+    });
+
+    // Update the current user
+    //
+    //Future<UserWrapper> userPatch(User user) async
+    test('test userPatch', () async {
+      // TODO
+    });
+
+    // Resets the user's password
+    //
+    // Changes the user's password to a new password
+    //
+    //Future userResetPasswordPost(ResetPassword resetPassword) async
+    test('test userResetPasswordPost', () async {
       // TODO
     });
   });

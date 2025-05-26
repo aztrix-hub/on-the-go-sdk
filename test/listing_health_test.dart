@@ -56,7 +56,7 @@ void main() {
     });
 
     // The list of DirectoryType missing connection
-    // BuiltSet<String> directoriesMissingConnect
+    // BuiltSet<DirectoryType> directoriesMissingConnect
     test('to test the property `directoriesMissingConnect`', () async {
       // TODO
     });

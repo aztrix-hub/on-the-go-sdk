@@ -31,8 +31,7 @@ void main() {
       // TODO
     });
 
-    // The Directory Page type [BUSINESS_PAGE, DIRECTORY_PAGE]
-    // String type
+    // DirectoryType type
     test('to test the property `type`', () async {
       // TODO
     });

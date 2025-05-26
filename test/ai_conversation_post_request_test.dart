@@ -21,5 +21,15 @@ void main() {
     test('to test the property `message`', () async {
       // TODO
     });
+
+    // AiConversationPostRequestUserLocation userLocation
+    test('to test the property `userLocation`', () async {
+      // TODO
+    });
+
+    // String dateTime
+    test('to test the property `dateTime`', () async {
+      // TODO
+    });
   });
 }

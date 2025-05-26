@@ -20,5 +20,10 @@ void main() {
     test('test inboxPost', () async {
       // TODO
     });
+
+    //Future<DataPointResponseWrapper> inboxReplyPost(String datapointId, InboxReplyPostRequest inboxReplyPostRequest) async
+    test('test inboxReplyPost', () async {
+      // TODO
+    });
   });
 }

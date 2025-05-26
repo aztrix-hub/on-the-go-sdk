@@ -13,8 +13,7 @@ void main() {
       // TODO
     });
 
-    // Type of the Directory
-    // String type
+    // DirectoryType type
     test('to test the property `type`', () async {
       // TODO
     });

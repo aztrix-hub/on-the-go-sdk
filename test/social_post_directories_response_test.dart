@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(SocialPostDirectoriesResponse, () {
-    // BuiltList<String> directories
+    // BuiltList<DirectoryType> directories
     test('to test the property `directories`', () async {
       // TODO
     });

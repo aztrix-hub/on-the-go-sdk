@@ -25,7 +25,7 @@ void main() {
       // TODO
     });
 
-    // LocationPhotoTypeEnum type
+    // LocationPhotoType type
     test('to test the property `type`', () async {
       // TODO
     });
