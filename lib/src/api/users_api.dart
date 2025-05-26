@@ -354,7 +354,7 @@ class UsersApi {
   /// Changes the user&#39;s password to a new password
   ///
   /// Parameters:
-  /// * [resetPasswordCommand] - A ResetPasswordCommand object
+  /// * [body] - A ResetPasswordCommand object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -365,7 +365,7 @@ class UsersApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> userResetPasswordPost({
-    required ResetPasswordCommand resetPasswordCommand,
+    required ResetPasswordCommand body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -390,9 +390,7 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ResetPasswordCommand);
-      _bodyData =
-          _serializers.serialize(resetPasswordCommand, specifiedType: _type);
+      _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

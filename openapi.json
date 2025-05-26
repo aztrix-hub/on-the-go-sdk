@@ -14229,7 +14229,7 @@
           }
         }
       },
-      "ResetPasswordCommand": {
+      "ResetPassword": {
         "type": "object",
         "properties": {
           "email": {
@@ -20815,6 +20815,10 @@
               "FEMALE",
               "OTHER"
             ]
+          },
+          "email": {
+            "type": "string",
+            "description": "User email"
           },
           "firstname": {
             "type": "string",

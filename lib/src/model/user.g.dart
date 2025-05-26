@@ -1014,6 +1014,8 @@ class _$User extends User {
   @override
   final UserSalutationEnum? salutation;
   @override
+  final String? email;
+  @override
   final String firstname;
   @override
   final String lastname;
@@ -1052,6 +1054,7 @@ class _$User extends User {
   _$User._(
       {this.id,
       this.salutation,
+      this.email,
       required this.firstname,
       required this.lastname,
       this.phone,
@@ -1087,6 +1090,7 @@ class _$User extends User {
     return other is User &&
         id == other.id &&
         salutation == other.salutation &&
+        email == other.email &&
         firstname == other.firstname &&
         lastname == other.lastname &&
         phone == other.phone &&
@@ -1111,6 +1115,7 @@ class _$User extends User {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, salutation.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
@@ -1136,6 +1141,7 @@ class _$User extends User {
     return (newBuiltValueToStringHelper(r'User')
           ..add('id', id)
           ..add('salutation', salutation)
+          ..add('email', email)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
           ..add('phone', phone)
@@ -1168,6 +1174,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   UserSalutationEnum? get salutation => _$this._salutation;
   set salutation(UserSalutationEnum? salutation) =>
       _$this._salutation = salutation;
+
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   String? _firstname;
   String? get firstname => _$this._firstname;
@@ -1261,6 +1271,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
     if ($v != null) {
       _id = $v.id;
       _salutation = $v.salutation;
+      _email = $v.email;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
       _phone = $v.phone;
@@ -1303,6 +1314,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
           new _$User._(
             id: id,
             salutation: salutation,
+            email: email,
             firstname: BuiltValueNullFieldError.checkNotNull(
                 firstname, r'User', 'firstname'),
             lastname: BuiltValueNullFieldError.checkNotNull(

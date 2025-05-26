@@ -256,7 +256,7 @@ export 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 export 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response.dart';
 export 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
-export 'package:on_the_go_sdk/src/model/reset_password_command.dart';
+export 'package:on_the_go_sdk/src/model/reset_password.dart';
 export 'package:on_the_go_sdk/src/model/response_business.dart';
 export 'package:on_the_go_sdk/src/model/response_location.dart';
 export 'package:on_the_go_sdk/src/model/response_template.dart';

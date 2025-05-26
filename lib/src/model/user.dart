@@ -17,6 +17,7 @@ part 'user.g.dart';
 /// Properties:
 /// * [id] - The uberall unique id for the user
 /// * [salutation] - One of MALE, FEMALE or OTHER
+/// * [email] - User email
 /// * [firstname] - First Name
 /// * [lastname] - Last name
 /// * [phone] - The user''s phone number
@@ -43,6 +44,10 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'salutation')
   UserSalutationEnum? get salutation;
   // enum salutationEnum {  MALE,  FEMALE,  OTHER,  };
+
+  /// User email
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   /// First Name
   @BuiltValueField(wireName: r'firstname')
@@ -145,6 +150,13 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield serializers.serialize(
         object.salutation,
         specifiedType: const FullType(UserSalutationEnum),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
       );
     }
     yield r'firstname';
@@ -291,6 +303,13 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
             specifiedType: const FullType(UserSalutationEnum),
           ) as UserSalutationEnum;
           result.salutation = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         case r'firstname':
           final valueDes = serializers.deserialize(

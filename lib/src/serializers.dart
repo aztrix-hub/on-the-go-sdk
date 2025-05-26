@@ -250,7 +250,7 @@ import 'package:on_the_go_sdk/src/model/profile_completeness.dart';
 import 'package:on_the_go_sdk/src/model/profile_completeness_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response.dart';
 import 'package:on_the_go_sdk/src/model/provinces_response_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/reset_password_command.dart';
+import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/response_business.dart';
 import 'package:on_the_go_sdk/src/model/response_location.dart';
 import 'package:on_the_go_sdk/src/model/response_template.dart';
@@ -586,7 +586,7 @@ part 'serializers.g.dart';
   ProfileCompletenessWrapper,
   ProvincesResponse,
   ProvincesResponseWrapper,
-  ResetPasswordCommand,
+  ResetPassword,
   ResponseBusiness,
   ResponseLocation,
   ResponseTemplate,

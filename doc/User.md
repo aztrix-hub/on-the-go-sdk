@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | The uberall unique id for the user | [optional] 
 **salutation** | **String** | One of MALE, FEMALE or OTHER | [optional] 
+**email** | **String** | User email | [optional] 
 **firstname** | **String** | First Name | 
 **lastname** | **String** | Last name | 
 **phone** | **String** | The user''s phone number | [optional] 

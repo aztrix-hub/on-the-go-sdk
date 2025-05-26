@@ -242,7 +242,7 @@ doc/ProfileCompletenessWrapper.md
 doc/ProvincesResponse.md
 doc/ProvincesResponseWrapper.md
 doc/PublishApi.md
-doc/ResetPasswordCommand.md
+doc/ResetPassword.md
 doc/ResponseBusiness.md
 doc/ResponseLocation.md
 doc/ResponseTemplate.md
@@ -596,7 +596,7 @@ lib/src/model/profile_completeness.dart
 lib/src/model/profile_completeness_wrapper.dart
 lib/src/model/provinces_response.dart
 lib/src/model/provinces_response_wrapper.dart
-lib/src/model/reset_password_command.dart
+lib/src/model/reset_password.dart
 lib/src/model/response_business.dart
 lib/src/model/response_location.dart
 lib/src/model/response_template.dart
@@ -693,4 +693,3 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/reset_password_command_test.dart

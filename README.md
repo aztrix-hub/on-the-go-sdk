@@ -334,7 +334,7 @@ Class | Method | HTTP request | Description
  - [ProfileCompletenessWrapper](doc/ProfileCompletenessWrapper.md)
  - [ProvincesResponse](doc/ProvincesResponse.md)
  - [ProvincesResponseWrapper](doc/ProvincesResponseWrapper.md)
- - [ResetPasswordCommand](doc/ResetPasswordCommand.md)
+ - [ResetPassword](doc/ResetPassword.md)
  - [ResponseBusiness](doc/ResponseBusiness.md)
  - [ResponseLocation](doc/ResponseLocation.md)
  - [ResponseTemplate](doc/ResponseTemplate.md)
