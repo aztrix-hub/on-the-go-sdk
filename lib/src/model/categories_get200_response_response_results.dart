@@ -50,11 +50,8 @@ class _$CategoriesGet200ResponseResponseResultsSerializer
   @override
   final String wireName = r'CategoriesGet200ResponseResponseResults';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CategoriesGet200ResponseResponseResults object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {}
+  Iterable<Object?> _serializeProperties(Serializers serializers,
+      CategoriesGet200ResponseResponseResults object) sync* {}
 
   @override
   Object serialize(
