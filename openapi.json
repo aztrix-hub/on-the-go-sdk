@@ -1203,7 +1203,7 @@
         ],
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "in": "query",
             "schema": {
               "type": "string"
@@ -1213,7 +1213,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved messages",
+            "description": "Successfully retrieved memories",
             "content": {
               "application/json": {
                 "schema": {
@@ -1263,6 +1263,76 @@
                 }
               }
             }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully updated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "type": "array",
+                      "description": "The conversation where memories should be retrieved from",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "role": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "ai"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully deleted memory"
           },
           "500": {
             "description": "Internal Server Error"

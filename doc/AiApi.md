@@ -11,7 +11,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
 [**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [**aiMemoriesGet**](AiApi.md#aimemoriesget) | **GET** /ai/memories | 
+[**aiMemoriesPost**](AiApi.md#aimemoriespost) | **POST** /ai/memories | 
 
 
 # **aiChatPost**
@@ -96,8 +98,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **aiMemoriesGet**
-> AiMemoriesGet200Response aiMemoriesGet(id)
+# **aiMemoriesDelete**
+> aiMemoriesDelete(id)
 
 
 
@@ -109,10 +111,9 @@ final api = OnTheGoSdk().getAiApi();
 final String id = id_example; // String | 
 
 try {
-    final response = api.aiMemoriesGet(id);
-    print(response);
+    api.aiMemoriesDelete(id);
 } catch on DioException (e) {
-    print('Exception when calling AiApi->aiMemoriesGet: $e\n');
+    print('Exception when calling AiApi->aiMemoriesDelete: $e\n');
 }
 ```
 
@@ -124,7 +125,89 @@ Name | Type | Description  | Notes
 
 ### Return type
 
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiMemoriesGet**
+> AiMemoriesGet200Response aiMemoriesGet(userId)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getAiApi();
+final String userId = userId_example; // String | 
+
+try {
+    final response = api.aiMemoriesGet(userId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiMemoriesGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  | 
+
+### Return type
+
 [**AiMemoriesGet200Response**](AiMemoriesGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiMemoriesPost**
+> AiMemoriesPost200Response aiMemoriesPost(userId)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getAiApi();
+final String userId = userId_example; // String | 
+
+try {
+    final response = api.aiMemoriesPost(userId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiMemoriesPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **String**|  | 
+
+### Return type
+
+[**AiMemoriesPost200Response**](AiMemoriesPost200Response.md)
 
 ### Authorization
 

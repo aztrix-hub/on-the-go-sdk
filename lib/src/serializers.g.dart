@@ -19,6 +19,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(AiConversationPostRequestUserLocation.serializer)
       ..add(AiMemoriesGet200Response.serializer)
       ..add(AiMemoriesGet200ResponseMemoriesInner.serializer)
+      ..add(AiMemoriesPost200Response.serializer)
       ..add(AssetInfo.serializer)
       ..add(AttributeRecommendationsObject.serializer)
       ..add(AttributeRecommendationsWrapper.serializer)
@@ -714,6 +715,11 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(WhitelabelInformationWrapper.serializer)
       ..add(WhitelabelInformationWrapperErrorCodeEnum.serializer)
       ..add(WhitelabelInformationWrapperStatusEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [
+            const FullType(AiConversationPost200ResponseMessagesInner)
+          ]),
+          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AiConversationPost200ResponseMessagesInner)

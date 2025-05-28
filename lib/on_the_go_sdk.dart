@@ -30,6 +30,7 @@ export 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_location.dart';
 export 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
+export 'package:on_the_go_sdk/src/model/ai_memories_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/asset_info.dart';
 export 'package:on_the_go_sdk/src/model/attribute_recommendations_object.dart';
 export 'package:on_the_go_sdk/src/model/attribute_recommendations_wrapper.dart';

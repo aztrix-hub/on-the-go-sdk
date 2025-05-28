@@ -67,7 +67,9 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
+[*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
@@ -108,6 +110,7 @@ Class | Method | HTTP request | Description
  - [AiConversationPostRequestUserLocation](doc/AiConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
+ - [AiMemoriesPost200Response](doc/AiMemoriesPost200Response.md)
  - [AssetInfo](doc/AssetInfo.md)
  - [AttributeRecommendationsObject](doc/AttributeRecommendationsObject.md)
  - [AttributeRecommendationsWrapper](doc/AttributeRecommendationsWrapper.md)
