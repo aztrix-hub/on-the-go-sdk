@@ -1283,26 +1283,26 @@
             "required": true
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Successfully updated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "messages": {
-                      "type": "array",
-                      "description": "The conversation where memories should be retrieved from",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "role": {
-                            "type": "string"
-                          },
-                          "content": {
-                            "type": "string"
-                          }
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "messages"
+                ],
+                "properties": {
+                  "messages": {
+                    "type": "array",
+                    "description": "The conversation where memories should be retrieved from",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "role": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
                         }
                       }
                     }
@@ -1310,6 +1310,11 @@
                 }
               }
             }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully updated"
           },
           "500": {
             "description": "Internal Server Error"

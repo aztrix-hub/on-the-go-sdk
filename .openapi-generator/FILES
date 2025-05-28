@@ -11,7 +11,7 @@ doc/AiConversationPostRequest.md
 doc/AiConversationPostRequestUserLocation.md
 doc/AiMemoriesGet200Response.md
 doc/AiMemoriesGet200ResponseMemoriesInner.md
-doc/AiMemoriesPost200Response.md
+doc/AiMemoriesPostRequest.md
 doc/AnalyticsApi.md
 doc/AssetInfo.md
 doc/AttributeRecommendationsObject.md
@@ -370,7 +370,7 @@ lib/src/model/ai_conversation_post_request.dart
 lib/src/model/ai_conversation_post_request_user_location.dart
 lib/src/model/ai_memories_get200_response.dart
 lib/src/model/ai_memories_get200_response_memories_inner.dart
-lib/src/model/ai_memories_post200_response.dart
+lib/src/model/ai_memories_post_request.dart
 lib/src/model/asset_info.dart
 lib/src/model/attribute_recommendations_object.dart
 lib/src/model/attribute_recommendations_wrapper.dart
@@ -695,4 +695,4 @@ lib/src/model/whitelabel_data.dart
 lib/src/model/whitelabel_information.dart
 lib/src/model/whitelabel_information_wrapper.dart
 lib/src/serializers.dart
-test/ai_memories_post200_response_test.dart
+test/ai_memories_post_request_test.dart

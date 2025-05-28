@@ -180,7 +180,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiMemoriesPost**
-> AiMemoriesPost200Response aiMemoriesPost(userId)
+> aiMemoriesPost(userId, aiMemoriesPostRequest)
 
 
 
@@ -190,10 +190,10 @@ import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getAiApi();
 final String userId = userId_example; // String | 
+final AiMemoriesPostRequest aiMemoriesPostRequest = ; // AiMemoriesPostRequest | 
 
 try {
-    final response = api.aiMemoriesPost(userId);
-    print(response);
+    api.aiMemoriesPost(userId, aiMemoriesPostRequest);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiMemoriesPost: $e\n');
 }
@@ -204,10 +204,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **String**|  | 
+ **aiMemoriesPostRequest** | [**AiMemoriesPostRequest**](AiMemoriesPostRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AiMemoriesPost200Response**](AiMemoriesPost200Response.md)
+void (empty response body)
 
 ### Authorization
 
@@ -215,8 +216,8 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

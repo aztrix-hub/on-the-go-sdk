@@ -110,7 +110,7 @@ Class | Method | HTTP request | Description
  - [AiConversationPostRequestUserLocation](doc/AiConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
- - [AiMemoriesPost200Response](doc/AiMemoriesPost200Response.md)
+ - [AiMemoriesPostRequest](doc/AiMemoriesPostRequest.md)
  - [AssetInfo](doc/AssetInfo.md)
  - [AttributeRecommendationsObject](doc/AttributeRecommendationsObject.md)
  - [AttributeRecommendationsWrapper](doc/AttributeRecommendationsWrapper.md)

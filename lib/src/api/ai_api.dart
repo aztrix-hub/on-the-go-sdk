@@ -13,7 +13,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_memories_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 
 class AiApi {
   final Dio _dio;
@@ -356,6 +356,7 @@ class AiApi {
   ///
   /// Parameters:
   /// * [userId]
+  /// * [aiMemoriesPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -363,10 +364,11 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiMemoriesPost200Response] as data
+  /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiMemoriesPost200Response>> aiMemoriesPost({
+  Future<Response<void>> aiMemoriesPost({
     required String userId,
+    AiMemoriesPostRequest? aiMemoriesPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -384,6 +386,7 @@ class AiApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
@@ -392,8 +395,29 @@ class AiApi {
           encodeQueryParameter(_serializers, userId, const FullType(String)),
     };
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(AiMemoriesPostRequest);
+      _bodyData = aiMemoriesPostRequest == null
+          ? null
+          : _serializers.serialize(aiMemoriesPostRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+          queryParameters: _queryParameters,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       queryParameters: _queryParameters,
       cancelToken: cancelToken,
@@ -401,35 +425,6 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiMemoriesPost200Response? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AiMemoriesPost200Response),
-            ) as AiMemoriesPost200Response;
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<AiMemoriesPost200Response>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 }
