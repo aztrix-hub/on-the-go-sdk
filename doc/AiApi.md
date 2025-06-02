@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [**aiMemoriesGet**](AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [**aiMemoriesPost**](AiApi.md#aimemoriespost) | **POST** /ai/memories | 
+[**aiSystemGet**](AiApi.md#aisystemget) | **GET** /ai/system | 
 
 
 # **aiChatPost**
@@ -218,6 +219,43 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiSystemGet**
+> AiSystemGet200Response aiSystemGet()
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getAiApi();
+
+try {
+    final response = api.aiSystemGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiSystemGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AiSystemGet200Response**](AiSystemGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

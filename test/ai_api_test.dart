@@ -16,8 +16,23 @@ void main() {
       // TODO
     });
 
-    //Future<AiMemoriesGet200Response> aiMemoriesGet(String id) async
+    //Future aiMemoriesDelete(String id) async
+    test('test aiMemoriesDelete', () async {
+      // TODO
+    });
+
+    //Future<AiMemoriesGet200Response> aiMemoriesGet(String userId) async
     test('test aiMemoriesGet', () async {
+      // TODO
+    });
+
+    //Future aiMemoriesPost(String userId, { AiMemoriesPostRequest aiMemoriesPostRequest }) async
+    test('test aiMemoriesPost', () async {
+      // TODO
+    });
+
+    //Future<AiSystemGet200Response> aiSystemGet() async
+    test('test aiSystemGet', () async {
       // TODO
     });
   });
