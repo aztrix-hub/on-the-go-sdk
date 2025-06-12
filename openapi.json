@@ -5,11 +5,11 @@
   },
   "servers": [
     {
-      "url": "https://aztrix.app.n8n.cloud/webhook/",
+      "url": "https://api.aztrix.me/webhook/",
       "description": "Aztrix on-the-go server"
     },
     {
-      "url": "https://aztrix.app.n8n.cloud/webhook-test/",
+      "url": "https://api.aztrix.me/webhook-test/",
       "description": "Aztrix on-the-go test server"
     }
   ],

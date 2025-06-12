@@ -5,7 +5,7 @@
 import 'package:on_the_go_sdk/api.dart';
 ```
 
-All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
+All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

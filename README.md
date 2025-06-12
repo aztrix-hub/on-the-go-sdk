@@ -61,7 +61,7 @@ try {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://aztrix.app.n8n.cloud/webhook*
+All URIs are relative to *https://api.aztrix.me/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

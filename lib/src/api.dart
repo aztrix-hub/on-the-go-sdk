@@ -20,7 +20,7 @@ import 'package:on_the_go_sdk/src/api/users_api.dart';
 import 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
 
 class OnTheGoSdk {
-  static const String basePath = r'https://aztrix.app.n8n.cloud/webhook';
+  static const String basePath = r'https://api.aztrix.me/webhook';
 
   final Dio dio;
   final Serializers serializers;
