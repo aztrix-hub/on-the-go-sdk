@@ -31,6 +31,9 @@ const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_AI_LOCALISATION =
     const FeaturesResponseDefaultFeaturesEnum._('AI_LOCALISATION');
 const FeaturesResponseDefaultFeaturesEnum
+    _$featuresResponseDefaultFeaturesEnum_AI_LOCATION_INFORMATION =
+    const FeaturesResponseDefaultFeaturesEnum._('AI_LOCATION_INFORMATION');
+const FeaturesResponseDefaultFeaturesEnum
     _$featuresResponseDefaultFeaturesEnum_AI_SUGGESTED_REPLIES =
     const FeaturesResponseDefaultFeaturesEnum._('AI_SUGGESTED_REPLIES');
 const FeaturesResponseDefaultFeaturesEnum
@@ -341,6 +344,8 @@ FeaturesResponseDefaultFeaturesEnum
       return _$featuresResponseDefaultFeaturesEnum_AI_KNOWLEDGEBASE;
     case 'AI_LOCALISATION':
       return _$featuresResponseDefaultFeaturesEnum_AI_LOCALISATION;
+    case 'AI_LOCATION_INFORMATION':
+      return _$featuresResponseDefaultFeaturesEnum_AI_LOCATION_INFORMATION;
     case 'AI_SUGGESTED_REPLIES':
       return _$featuresResponseDefaultFeaturesEnum_AI_SUGGESTED_REPLIES;
     case 'APPLE_POSTING':
@@ -551,6 +556,7 @@ final BuiltSet<FeaturesResponseDefaultFeaturesEnum>
   _$featuresResponseDefaultFeaturesEnum_aDVANCEDANALYTICS20,
   _$featuresResponseDefaultFeaturesEnum_AI_KNOWLEDGEBASE,
   _$featuresResponseDefaultFeaturesEnum_AI_LOCALISATION,
+  _$featuresResponseDefaultFeaturesEnum_AI_LOCATION_INFORMATION,
   _$featuresResponseDefaultFeaturesEnum_AI_SUGGESTED_REPLIES,
   _$featuresResponseDefaultFeaturesEnum_APPLE_POSTING,
   _$featuresResponseDefaultFeaturesEnum_APPLE_POSTING_WRITE,
@@ -665,6 +671,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'aDVANCEDANALYTICS20': 'ADVANCED_ANALYTICS_2_0',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
+    'AI_LOCATION_INFORMATION': 'AI_LOCATION_INFORMATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
     'APPLE_POSTING': 'APPLE_POSTING',
     'APPLE_POSTING_WRITE': 'APPLE_POSTING_WRITE',
@@ -772,6 +779,7 @@ class _$FeaturesResponseDefaultFeaturesEnumSerializer
     'ADVANCED_ANALYTICS_2_0': 'aDVANCEDANALYTICS20',
     'AI_KNOWLEDGEBASE': 'AI_KNOWLEDGEBASE',
     'AI_LOCALISATION': 'AI_LOCALISATION',
+    'AI_LOCATION_INFORMATION': 'AI_LOCATION_INFORMATION',
     'AI_SUGGESTED_REPLIES': 'AI_SUGGESTED_REPLIES',
     'APPLE_POSTING': 'APPLE_POSTING',
     'APPLE_POSTING_WRITE': 'APPLE_POSTING_WRITE',
