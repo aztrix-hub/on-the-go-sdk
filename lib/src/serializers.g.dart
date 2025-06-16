@@ -295,7 +295,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(ExternalEntitiesWrapperErrorCodeEnum.serializer)
       ..add(ExternalEntitiesWrapperStatusEnum.serializer)
       ..add(FeaturesResponse.serializer)
-      ..add(FeaturesResponseDefaultFeaturesEnum.serializer)
       ..add(FeaturesResponseWrapper.serializer)
       ..add(FeaturesResponseWrapperErrorCodeEnum.serializer)
       ..add(FeaturesResponseWrapperStatusEnum.serializer)
@@ -391,11 +390,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LocationDashboardStatistics.serializer)
       ..add(LocationEmailVerificationEnum.serializer)
       ..add(LocationFeatureResponse.serializer)
-      ..add(LocationFeatureResponseCurrentFeaturesEnum.serializer)
-      ..add(LocationFeatureResponseLimitReachedEnum.serializer)
-      ..add(LocationFeatureResponsePotentialFeaturesEnum.serializer)
       ..add(LocationFeatureResponseStatusEnum.serializer)
-      ..add(LocationFeaturesEnum.serializer)
       ..add(LocationGroupListResponseWrapper.serializer)
       ..add(LocationGroupListResponseWrapperErrorCodeEnum.serializer)
       ..add(LocationGroupListResponseWrapperStatusEnum.serializer)
@@ -492,7 +487,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(PricePerCountryCountryEnum.serializer)
       ..add(Product.serializer)
       ..add(ProductPlan.serializer)
-      ..add(ProductPlanFeaturesEnum.serializer)
       ..add(ProductPlanListResponseObject.serializer)
       ..add(ProductPlanListResponseWrapper.serializer)
       ..add(ProductPlanListResponseWrapperErrorCodeEnum.serializer)
@@ -669,7 +663,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UpdateResponseWrapperErrorCodeEnum.serializer)
       ..add(UpdateResponseWrapperStatusEnum.serializer)
       ..add(User.serializer)
-      ..add(UserFeaturesEnum.serializer)
       ..add(UserLeftObject.serializer)
       ..add(UserLeftWrapper.serializer)
       ..add(UserLeftWrapperErrorCodeEnum.serializer)
@@ -915,23 +908,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltList, const [const FullType(LocationFeatureResponse)]),
           () => new ListBuilder<LocationFeatureResponse>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(FeaturesResponseDefaultFeaturesEnum)]),
-          () => new ListBuilder<FeaturesResponseDefaultFeaturesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(LocationFeatureResponseCurrentFeaturesEnum)
-          ]),
-          () => new ListBuilder<LocationFeatureResponseCurrentFeaturesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [
-            const FullType(LocationFeatureResponsePotentialFeaturesEnum)
-          ]),
-          () => new SetBuilder<LocationFeatureResponsePotentialFeaturesEnum>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet,
-              const [const FullType(LocationFeatureResponseLimitReachedEnum)]),
-          () => new SetBuilder<LocationFeatureResponseLimitReachedEnum>())
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(LodgingField)]),
           () => new ListBuilder<LodgingField>())
@@ -1510,6 +1488,15 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltSet, const [const FullType(ConflictingRuleResponse)]),
           () => new SetBuilder<ConflictingRuleResponse>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => new ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => new SetBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => new SetBuilder<String>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SuggestionResponse)]),
           () => new ListBuilder<SuggestionResponse>())
       ..addBuilderFactory(
@@ -1655,9 +1642,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(PricePerCountry)]),
           () => new SetBuilder<PricePerCountry>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltSet, const [const FullType(ProductPlanFeaturesEnum)]),
-          () => new SetBuilder<ProductPlanFeaturesEnum>())
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => new SetBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(EvConnector)]),
           () => new SetBuilder<EvConnector>())
@@ -1711,9 +1697,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
               BuiltSet, const [const FullType(LocationTransactionLink)]),
           () => new SetBuilder<LocationTransactionLink>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltSet, const [const FullType(LocationFeaturesEnum)]),
-          () => new SetBuilder<LocationFeaturesEnum>())
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => new SetBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ServiceItem)]),
           () => new ListBuilder<ServiceItem>())
@@ -1842,8 +1827,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(num)]),
           () => new SetBuilder<num>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(UserFeaturesEnum)]),
-          () => new SetBuilder<UserFeaturesEnum>())
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => new SetBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(EmailSettings)]),
           () => new SetBuilder<EmailSettings>())
