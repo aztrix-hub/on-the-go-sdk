@@ -9,11 +9,13 @@ part of 'login_response.dart';
 class _$LoginResponse extends LoginResponse {
   @override
   final String? accessToken;
+  @override
+  final bool? oauth;
 
   factory _$LoginResponse([void Function(LoginResponseBuilder)? updates]) =>
       (new LoginResponseBuilder()..update(updates))._build();
 
-  _$LoginResponse._({this.accessToken}) : super._();
+  _$LoginResponse._({this.accessToken, this.oauth}) : super._();
 
   @override
   LoginResponse rebuild(void Function(LoginResponseBuilder) updates) =>
@@ -25,13 +27,16 @@ class _$LoginResponse extends LoginResponse {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginResponse && accessToken == other.accessToken;
+    return other is LoginResponse &&
+        accessToken == other.accessToken &&
+        oauth == other.oauth;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, accessToken.hashCode);
+    _$hash = $jc(_$hash, oauth.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -39,7 +44,8 @@ class _$LoginResponse extends LoginResponse {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LoginResponse')
-          ..add('accessToken', accessToken))
+          ..add('accessToken', accessToken)
+          ..add('oauth', oauth))
         .toString();
   }
 }
@@ -52,6 +58,10 @@ class LoginResponseBuilder
   String? get accessToken => _$this._accessToken;
   set accessToken(String? accessToken) => _$this._accessToken = accessToken;
 
+  bool? _oauth;
+  bool? get oauth => _$this._oauth;
+  set oauth(bool? oauth) => _$this._oauth = oauth;
+
   LoginResponseBuilder() {
     LoginResponse._defaults(this);
   }
@@ -60,6 +70,7 @@ class LoginResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _accessToken = $v.accessToken;
+      _oauth = $v.oauth;
       _$v = null;
     }
     return this;
@@ -83,6 +94,7 @@ class LoginResponseBuilder
     final _$result = _$v ??
         new _$LoginResponse._(
           accessToken: accessToken,
+          oauth: oauth,
         );
     replace(_$result);
     return _$result;

@@ -92,8 +92,9 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
-[*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
+[*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
+[*UsersApi*](doc/UsersApi.md) | [**userOauthPost**](doc/UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
 [*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
@@ -301,9 +302,8 @@ Class | Method | HTTP request | Description
  - [LodgingField](doc/LodgingField.md)
  - [LodgingFieldResponseObject](doc/LodgingFieldResponseObject.md)
  - [LodgingFieldResponseWrapper](doc/LodgingFieldResponseWrapper.md)
- - [LoginCommand](doc/LoginCommand.md)
+ - [LoginBody](doc/LoginBody.md)
  - [LoginResponse](doc/LoginResponse.md)
- - [LoginResponseWrapper](doc/LoginResponseWrapper.md)
  - [LogoutResponse](doc/LogoutResponse.md)
  - [LogoutResponseWrapper](doc/LogoutResponseWrapper.md)
  - [MenuItem](doc/MenuItem.md)
@@ -418,6 +418,8 @@ Class | Method | HTTP request | Description
  - [UserLeftWrapper](doc/UserLeftWrapper.md)
  - [UserMissingConnectionWarnings](doc/UserMissingConnectionWarnings.md)
  - [UserMissingConnectionWarningsWrapper](doc/UserMissingConnectionWarningsWrapper.md)
+ - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
+ - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
  - [UserObject](doc/UserObject.md)
  - [UserSearchObject](doc/UserSearchObject.md)
  - [UserSearchWrapper](doc/UserSearchWrapper.md)

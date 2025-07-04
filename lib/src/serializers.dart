@@ -214,9 +214,8 @@ import 'package:on_the_go_sdk/src/model/location_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/lodging_field.dart';
 import 'package:on_the_go_sdk/src/model/lodging_field_response_object.dart';
 import 'package:on_the_go_sdk/src/model/lodging_field_response_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/login_command.dart';
+import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
-import 'package:on_the_go_sdk/src/model/login_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/logout_response.dart';
 import 'package:on_the_go_sdk/src/model/logout_response_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/menu_item.dart';
@@ -331,6 +330,8 @@ import 'package:on_the_go_sdk/src/model/user_left_object.dart';
 import 'package:on_the_go_sdk/src/model/user_left_wrapper.dart';
 import 'package:on_the_go_sdk/src/model/user_missing_connection_warnings.dart';
 import 'package:on_the_go_sdk/src/model/user_missing_connection_warnings_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_object.dart';
 import 'package:on_the_go_sdk/src/model/user_search_object.dart';
 import 'package:on_the_go_sdk/src/model/user_search_wrapper.dart';
@@ -552,9 +553,8 @@ part 'serializers.g.dart';
   LodgingField,
   LodgingFieldResponseObject,
   LodgingFieldResponseWrapper,
-  LoginCommand,
+  LoginBody,
   LoginResponse,
-  LoginResponseWrapper,
   LogoutResponse,
   LogoutResponseWrapper,
   MenuItem,
@@ -669,6 +669,8 @@ part 'serializers.g.dart';
   UserLeftWrapper,
   UserMissingConnectionWarnings,
   UserMissingConnectionWarningsWrapper,
+  UserOauthPost200Response,
+  UserOauthPostRequest,
   UserObject,
   UserSearchObject,
   UserSearchWrapper,

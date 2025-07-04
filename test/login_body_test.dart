@@ -1,19 +1,19 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for LoginCommand
+// tests for LoginBody
 void main() {
-  final instance = LoginCommandBuilder();
+  final instance = LoginBodyBuilder();
   // TODO add properties to the builder and call build()
 
-  group(LoginCommand, () {
-    // User email (email or userId is required)
+  group(LoginBody, () {
+    // User email
     // String email
     test('to test the property `email`', () async {
       // TODO
     });
 
-    // User Password (password or private_key is required)
+    // User Password
     // String password
     test('to test the property `password`', () async {
       // TODO

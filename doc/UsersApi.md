@@ -10,8 +10,9 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userGet**](UsersApi.md#userget) | **GET** /user | Get the current user
-[**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provide an access_token for the user
+[**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
+[**userOauthPost**](UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
 [**userPatch**](UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 
@@ -58,21 +59,19 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userLoginPost**
-> LoginResponse userLoginPost(loginCommand)
+> LoginResponse userLoginPost(loginBody)
 
-Provide an access_token for the user
-
-Provides an access_token for the email provided in the LoginCommand
+Provides an access_token for the user
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final LoginCommand loginCommand = ; // LoginCommand | A LoginCommand object
+final LoginBody loginBody = ; // LoginBody | 
 
 try {
-    final response = api.userLoginPost(loginCommand);
+    final response = api.userLoginPost(loginBody);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userLoginPost: $e\n');
@@ -83,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginCommand** | [**LoginCommand**](LoginCommand.md)| A LoginCommand object | 
+ **loginBody** | [**LoginBody**](LoginBody.md)|  | 
 
 ### Return type
 
@@ -137,6 +136,49 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userOauthPost**
+> UserOauthPost200Response userOauthPost(userOauthPostRequest)
+
+Finish OAuth flow
+
+Provides an access_token for a authorization_code
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserOauthPostRequest userOauthPostRequest = ; // UserOauthPostRequest | 
+
+try {
+    final response = api.userOauthPost(userOauthPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userOauthPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userOauthPostRequest** | [**UserOauthPostRequest**](UserOauthPostRequest.md)|  | 
+
+### Return type
+
+[**UserOauthPost200Response**](UserOauthPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

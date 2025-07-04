@@ -48,14 +48,12 @@
         "tags": [
           "users"
         ],
-        "summary": "Provide an access_token for the user",
-        "description": "Provides an access_token for the email provided in the LoginCommand",
+        "summary": "Provides an access_token for the user",
         "requestBody": {
-          "description": "A LoginCommand object",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginCommand"
+                "$ref": "#/components/schemas/LoginBody"
               }
             }
           },
@@ -105,6 +103,61 @@
             "authToken": []
           }
         ]
+      }
+    },
+    "/user/oauth": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Finish OAuth flow",
+        "description": "Provides an access_token for a authorization_code",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "authorization_code": {
+                    "type": "string",
+                    "description": "Authorization code"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User successfully authenticated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "access_token": {
+                      "type": "string",
+                      "description": "Access Token"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "401": {
+            "description": "Not Authorized"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/user/reset-password": {
@@ -2095,6 +2148,34 @@
   },
   "components": {
     "schemas": {
+      "LoginBody": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "User email"
+          },
+          "password": {
+            "type": "string",
+            "description": "User Password"
+          }
+        },
+        "description": "Login Command"
+      },
+      "LoginResponse": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "description": "Access Token"
+          },
+          "oauth": {
+            "type": "boolean",
+            "description": "Whether OAuth should be initiated"
+          }
+        },
+        "description": "User access_token"
+      },
       "LocationPhotoType": {
         "type": "string",
         "enum": [
@@ -13632,99 +13713,6 @@
       "LoggingEvent": {
         "type": "object",
         "description": "Reasons explaining the current visibility index"
-      },
-      "LoginCommand": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "User email (email or userId is required)"
-          },
-          "password": {
-            "type": "string",
-            "description": "User Password (password or private_key is required)"
-          }
-        },
-        "description": "Login Command"
-      },
-      "LoginResponse": {
-        "type": "object",
-        "properties": {
-          "access_token": {
-            "type": "string",
-            "description": "Access Token"
-          }
-        },
-        "description": "User access_token "
-      },
-      "LoginResponseWrapper": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "enum": [
-              "SUCCESS",
-              "QUOTA_LIMIT_EXCEED",
-              "NOT_AUTHORIZED",
-              "FORBIDDEN",
-              "BAD_ACCESS_TOKEN",
-              "BAD_PRIVATE_KEY",
-              "BAD_PUBLIC_KEY",
-              "MISSING_PARAMETER",
-              "INVALID_PARAMETER",
-              "WRONG_PARAMETER_TYPE",
-              "CONFLICT",
-              "RESOURCE_LOCKED",
-              "SERVER_ERROR",
-              "ERROR",
-              "NOT_FOUND",
-              "BAD_REQUEST",
-              "USER_ERROR",
-              "PARTIAL_ERROR",
-              "METHOD_NOT_ALLOWED"
-            ]
-          },
-          "message": {
-            "type": "string",
-            "description": "(optional) Holds further information about the response"
-          },
-          "errorCode": {
-            "type": "string",
-            "enum": [
-              "NORMALIZATION_FAILED",
-              "DATA_CORRUPTED",
-              "INVALID_INPUT",
-              "NOT_SYNCABLE",
-              "PAYMENT_FAILED",
-              "FREE_TIER_REACHED",
-              "LIMIT_REACHED",
-              "INACTIVE",
-              "UNKNOWN",
-              "IDENTIFIER_NOT_UNIQUE",
-              "ACCOUNT_WAITING_FOR_AUTO_PAGE_SELECT",
-              "NO_ACCOUNT_CONNECTED",
-              "NO_PAGE_SELECTED",
-              "PAGE_NOT_CREATED",
-              "PAGE_IN_REVIEW",
-              "PAGE_CLAIMED_BY_OTHERS",
-              "OVERLAPPING_SOCIALPOST",
-              "TOO_MANY_REPLIES",
-              "REPLY_TOO_LONG",
-              "DEPRECATED"
-            ]
-          },
-          "warnings": {
-            "type": "array",
-            "description": "(optional) Holds further warnings",
-            "items": {
-              "type": "string",
-              "description": "(optional) Holds further warnings"
-            }
-          },
-          "response": {
-            "$ref": "#/components/schemas/LoginResponse"
-          }
-        }
       },
       "LogoutResponse": {
         "type": "object",

@@ -1,33 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_command.dart';
+part of 'login_body.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LoginCommand extends LoginCommand {
+class _$LoginBody extends LoginBody {
   @override
   final String? email;
   @override
   final String? password;
 
-  factory _$LoginCommand([void Function(LoginCommandBuilder)? updates]) =>
-      (new LoginCommandBuilder()..update(updates))._build();
+  factory _$LoginBody([void Function(LoginBodyBuilder)? updates]) =>
+      (new LoginBodyBuilder()..update(updates))._build();
 
-  _$LoginCommand._({this.email, this.password}) : super._();
+  _$LoginBody._({this.email, this.password}) : super._();
 
   @override
-  LoginCommand rebuild(void Function(LoginCommandBuilder) updates) =>
+  LoginBody rebuild(void Function(LoginBodyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginCommandBuilder toBuilder() => new LoginCommandBuilder()..replace(this);
+  LoginBodyBuilder toBuilder() => new LoginBodyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginCommand &&
+    return other is LoginBody &&
         email == other.email &&
         password == other.password;
   }
@@ -43,16 +43,15 @@ class _$LoginCommand extends LoginCommand {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'LoginCommand')
+    return (newBuiltValueToStringHelper(r'LoginBody')
           ..add('email', email)
           ..add('password', password))
         .toString();
   }
 }
 
-class LoginCommandBuilder
-    implements Builder<LoginCommand, LoginCommandBuilder> {
-  _$LoginCommand? _$v;
+class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
+  _$LoginBody? _$v;
 
   String? _email;
   String? get email => _$this._email;
@@ -62,11 +61,11 @@ class LoginCommandBuilder
   String? get password => _$this._password;
   set password(String? password) => _$this._password = password;
 
-  LoginCommandBuilder() {
-    LoginCommand._defaults(this);
+  LoginBodyBuilder() {
+    LoginBody._defaults(this);
   }
 
-  LoginCommandBuilder get _$this {
+  LoginBodyBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _email = $v.email;
@@ -77,22 +76,22 @@ class LoginCommandBuilder
   }
 
   @override
-  void replace(LoginCommand other) {
+  void replace(LoginBody other) {
     ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$LoginCommand;
+    _$v = other as _$LoginBody;
   }
 
   @override
-  void update(void Function(LoginCommandBuilder)? updates) {
+  void update(void Function(LoginBodyBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LoginCommand build() => _build();
+  LoginBody build() => _build();
 
-  _$LoginCommand _build() {
+  _$LoginBody _build() {
     final _$result = _$v ??
-        new _$LoginCommand._(
+        new _$LoginBody._(
           email: email,
           password: password,
         );

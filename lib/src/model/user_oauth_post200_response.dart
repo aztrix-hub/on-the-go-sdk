@@ -6,58 +6,54 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login_command.g.dart';
+part 'user_oauth_post200_response.g.dart';
 
-/// Login Command
+/// UserOauthPost200Response
 ///
 /// Properties:
-/// * [email] - User email (email or userId is required)
-/// * [password] - User Password (password or private_key is required)
+/// * [accessToken] - Access Token
 @BuiltValue()
-abstract class LoginCommand
-    implements Built<LoginCommand, LoginCommandBuilder> {
-  /// User email (email or userId is required)
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+abstract class UserOauthPost200Response
+    implements
+        Built<UserOauthPost200Response, UserOauthPost200ResponseBuilder> {
+  /// Access Token
+  @BuiltValueField(wireName: r'access_token')
+  String? get accessToken;
 
-  /// User Password (password or private_key is required)
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+  UserOauthPost200Response._();
 
-  LoginCommand._();
-
-  factory LoginCommand([void updates(LoginCommandBuilder b)]) = _$LoginCommand;
+  factory UserOauthPost200Response(
+          [void updates(UserOauthPost200ResponseBuilder b)]) =
+      _$UserOauthPost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginCommandBuilder b) => b;
+  static void _defaults(UserOauthPost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LoginCommand> get serializer => _$LoginCommandSerializer();
+  static Serializer<UserOauthPost200Response> get serializer =>
+      _$UserOauthPost200ResponseSerializer();
 }
 
-class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
+class _$UserOauthPost200ResponseSerializer
+    implements PrimitiveSerializer<UserOauthPost200Response> {
   @override
-  final Iterable<Type> types = const [LoginCommand, _$LoginCommand];
+  final Iterable<Type> types = const [
+    UserOauthPost200Response,
+    _$UserOauthPost200Response
+  ];
 
   @override
-  final String wireName = r'LoginCommand';
+  final String wireName = r'UserOauthPost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LoginCommand object, {
+    UserOauthPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.email != null) {
-      yield r'email';
+    if (object.accessToken != null) {
+      yield r'access_token';
       yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
+        object.accessToken,
         specifiedType: const FullType(String),
       );
     }
@@ -66,7 +62,7 @@ class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
   @override
   Object serialize(
     Serializers serializers,
-    LoginCommand object, {
+    UserOauthPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -79,26 +75,19 @@ class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginCommandBuilder result,
+    required UserOauthPost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'email':
+        case r'access_token':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.email = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
+          result.accessToken = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -109,12 +98,12 @@ class _$LoginCommandSerializer implements PrimitiveSerializer<LoginCommand> {
   }
 
   @override
-  LoginCommand deserialize(
+  UserOauthPost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginCommandBuilder();
+    final result = UserOauthPost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

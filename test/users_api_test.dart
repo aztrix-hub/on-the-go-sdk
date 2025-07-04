@@ -13,17 +13,24 @@ void main() {
       // TODO
     });
 
-    // Provide an access_token for the user
+    // Provides an access_token for the user
     //
-    // Provides an access_token for the email provided in the LoginCommand
-    //
-    //Future<LoginResponse> userLoginPost(LoginCommand loginCommand) async
+    //Future<LoginResponse> userLoginPost(LoginBody loginBody) async
     test('test userLoginPost', () async {
       // TODO
     });
 
     //Future userLogoutPost() async
     test('test userLogoutPost', () async {
+      // TODO
+    });
+
+    // Finish OAuth flow
+    //
+    // Provides an access_token for a authorization_code
+    //
+    //Future<UserOauthPost200Response> userOauthPost(UserOauthPostRequest userOauthPostRequest) async
+    test('test userOauthPost', () async {
       // TODO
     });
 

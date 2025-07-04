@@ -442,11 +442,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(LodgingFieldResponseWrapper.serializer)
       ..add(LodgingFieldResponseWrapperErrorCodeEnum.serializer)
       ..add(LodgingFieldResponseWrapperStatusEnum.serializer)
-      ..add(LoginCommand.serializer)
+      ..add(LoginBody.serializer)
       ..add(LoginResponse.serializer)
-      ..add(LoginResponseWrapper.serializer)
-      ..add(LoginResponseWrapperErrorCodeEnum.serializer)
-      ..add(LoginResponseWrapperStatusEnum.serializer)
       ..add(LogoutResponse.serializer)
       ..add(LogoutResponseWrapper.serializer)
       ..add(LogoutResponseWrapperErrorCodeEnum.serializer)
@@ -671,6 +668,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(UserMissingConnectionWarningsWrapper.serializer)
       ..add(UserMissingConnectionWarningsWrapperErrorCodeEnum.serializer)
       ..add(UserMissingConnectionWarningsWrapperStatusEnum.serializer)
+      ..add(UserOauthPost200Response.serializer)
+      ..add(UserOauthPostRequest.serializer)
       ..add(UserObject.serializer)
       ..add(UserRoleEnum.serializer)
       ..add(UserSalutationEnum.serializer)
@@ -1023,9 +1022,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(StoreFinderResponse)]),
           () => new ListBuilder<StoreFinderResponse>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => new ListBuilder<String>())
