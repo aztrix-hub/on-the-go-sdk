@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **userGet**
-> UserWrapper userGet()
+> User userGet()
 
 Get the current user
 
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**UserWrapper**](UserWrapper.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userPatch**
-> UserWrapper userPatch(user)
+> User userPatch(user)
 
 Update the current user
 
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserWrapper**](UserWrapper.md)
+[**User**](User.md)
 
 ### Authorization
 

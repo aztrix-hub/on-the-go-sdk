@@ -8,7 +8,7 @@ void main() {
   group(UsersApi, () {
     // Get the current user
     //
-    //Future<UserWrapper> userGet() async
+    //Future<User> userGet() async
     test('test userGet', () async {
       // TODO
     });
@@ -36,7 +36,7 @@ void main() {
 
     // Update the current user
     //
-    //Future<UserWrapper> userPatch(User user) async
+    //Future<User> userPatch(User user) async
     test('test userPatch', () async {
       // TODO
     });

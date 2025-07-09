@@ -13,7 +13,6 @@ import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_wrapper.dart';
 
 class UsersApi {
   final Dio _dio;
@@ -33,9 +32,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserWrapper>> userGet({
+  Future<Response<User>> userGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -71,7 +70,7 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserWrapper? _responseData;
+    User? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -79,8 +78,8 @@ class UsersApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(UserWrapper),
-            ) as UserWrapper;
+              specifiedType: const FullType(User),
+            ) as User;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -91,7 +90,7 @@ class UsersApi {
       );
     }
 
-    return Response<UserWrapper>(
+    return Response<User>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -358,9 +357,9 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [UserWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [User] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserWrapper>> userPatch({
+  Future<Response<User>> userPatch({
     required User user,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -416,7 +415,7 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    UserWrapper? _responseData;
+    User? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -424,8 +423,8 @@ class UsersApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(UserWrapper),
-            ) as UserWrapper;
+              specifiedType: const FullType(User),
+            ) as User;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -436,7 +435,7 @@ class UsersApi {
       );
     }
 
-    return Response<UserWrapper>(
+    return Response<User>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

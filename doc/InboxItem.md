@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **indexedDate** | [**DateTime**](DateTime.md) |  | [optional] 
 **isBrand** | **bool** |  | [optional] 
 **isExpandedReviewNetwork** | **bool** |  | [optional] 
-**location** | [**StoreFinderResponse**](StoreFinderResponse.md) |  | [optional] 
+**location** | [**Location**](Location.md) |  | [optional] 
 **locationId** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
 **metrics** | [**InboxItemMetrics**](InboxItemMetrics.md) |  | [optional] 

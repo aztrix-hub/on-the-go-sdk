@@ -11,7 +11,7 @@ void main() {
       // TODO
     });
 
-    //Future<SocialPostWrapper> publishPostsPost(SocialPost socialPost) async
+    //Future<SocialPostWrapper> publishPostsPost(SocialPost body) async
     test('test publishPostsPost', () async {
       // TODO
     });

@@ -109,7 +109,7 @@ class _$InboxItem extends InboxItem {
   @override
   final bool? isExpandedReviewNetwork;
   @override
-  final StoreFinderResponse? location;
+  final Location? location;
   @override
   final String? locationId;
   @override
@@ -330,11 +330,9 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   set isExpandedReviewNetwork(bool? isExpandedReviewNetwork) =>
       _$this._isExpandedReviewNetwork = isExpandedReviewNetwork;
 
-  StoreFinderResponseBuilder? _location;
-  StoreFinderResponseBuilder get location =>
-      _$this._location ??= new StoreFinderResponseBuilder();
-  set location(StoreFinderResponseBuilder? location) =>
-      _$this._location = location;
+  LocationBuilder? _location;
+  LocationBuilder get location => _$this._location ??= new LocationBuilder();
+  set location(LocationBuilder? location) => _$this._location = location;
 
   String? _locationId;
   String? get locationId => _$this._locationId;

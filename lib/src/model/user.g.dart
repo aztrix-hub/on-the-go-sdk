@@ -259,15 +259,11 @@ class _$User extends User {
   @override
   final BuiltSet<num>? managedBusinesses;
   @override
-  final SalesPartner? salesPartner;
-  @override
   final String? preferredLanguage;
   @override
   final String? identifier;
   @override
   final BuiltSet<String>? features;
-  @override
-  final BuiltSet<EmailSettings>? emailSettings;
   @override
   final JsonObject? featuresDetailed;
   @override
@@ -291,11 +287,9 @@ class _$User extends User {
       required this.role,
       this.managedLocations,
       this.managedBusinesses,
-      this.salesPartner,
       this.preferredLanguage,
       this.identifier,
       this.features,
-      this.emailSettings,
       this.featuresDetailed,
       this.locationGroupIds,
       this.managedLocationsViaGroups,
@@ -327,11 +321,9 @@ class _$User extends User {
         role == other.role &&
         managedLocations == other.managedLocations &&
         managedBusinesses == other.managedBusinesses &&
-        salesPartner == other.salesPartner &&
         preferredLanguage == other.preferredLanguage &&
         identifier == other.identifier &&
         features == other.features &&
-        emailSettings == other.emailSettings &&
         featuresDetailed == other.featuresDetailed &&
         locationGroupIds == other.locationGroupIds &&
         managedLocationsViaGroups == other.managedLocationsViaGroups &&
@@ -352,11 +344,9 @@ class _$User extends User {
     _$hash = $jc(_$hash, role.hashCode);
     _$hash = $jc(_$hash, managedLocations.hashCode);
     _$hash = $jc(_$hash, managedBusinesses.hashCode);
-    _$hash = $jc(_$hash, salesPartner.hashCode);
     _$hash = $jc(_$hash, preferredLanguage.hashCode);
     _$hash = $jc(_$hash, identifier.hashCode);
     _$hash = $jc(_$hash, features.hashCode);
-    _$hash = $jc(_$hash, emailSettings.hashCode);
     _$hash = $jc(_$hash, featuresDetailed.hashCode);
     _$hash = $jc(_$hash, locationGroupIds.hashCode);
     _$hash = $jc(_$hash, managedLocationsViaGroups.hashCode);
@@ -378,11 +368,9 @@ class _$User extends User {
           ..add('role', role)
           ..add('managedLocations', managedLocations)
           ..add('managedBusinesses', managedBusinesses)
-          ..add('salesPartner', salesPartner)
           ..add('preferredLanguage', preferredLanguage)
           ..add('identifier', identifier)
           ..add('features', features)
-          ..add('emailSettings', emailSettings)
           ..add('featuresDetailed', featuresDetailed)
           ..add('locationGroupIds', locationGroupIds)
           ..add('managedLocationsViaGroups', managedLocationsViaGroups)
@@ -440,12 +428,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set managedBusinesses(SetBuilder<num>? managedBusinesses) =>
       _$this._managedBusinesses = managedBusinesses;
 
-  SalesPartnerBuilder? _salesPartner;
-  SalesPartnerBuilder get salesPartner =>
-      _$this._salesPartner ??= new SalesPartnerBuilder();
-  set salesPartner(SalesPartnerBuilder? salesPartner) =>
-      _$this._salesPartner = salesPartner;
-
   String? _preferredLanguage;
   String? get preferredLanguage => _$this._preferredLanguage;
   set preferredLanguage(String? preferredLanguage) =>
@@ -459,12 +441,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   SetBuilder<String> get features =>
       _$this._features ??= new SetBuilder<String>();
   set features(SetBuilder<String>? features) => _$this._features = features;
-
-  SetBuilder<EmailSettings>? _emailSettings;
-  SetBuilder<EmailSettings> get emailSettings =>
-      _$this._emailSettings ??= new SetBuilder<EmailSettings>();
-  set emailSettings(SetBuilder<EmailSettings>? emailSettings) =>
-      _$this._emailSettings = emailSettings;
 
   JsonObject? _featuresDetailed;
   JsonObject? get featuresDetailed => _$this._featuresDetailed;
@@ -507,11 +483,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _role = $v.role;
       _managedLocations = $v.managedLocations?.toBuilder();
       _managedBusinesses = $v.managedBusinesses?.toBuilder();
-      _salesPartner = $v.salesPartner?.toBuilder();
       _preferredLanguage = $v.preferredLanguage;
       _identifier = $v.identifier;
       _features = $v.features?.toBuilder();
-      _emailSettings = $v.emailSettings?.toBuilder();
       _featuresDetailed = $v.featuresDetailed;
       _locationGroupIds = $v.locationGroupIds?.toBuilder();
       _managedLocationsViaGroups = $v.managedLocationsViaGroups?.toBuilder();
@@ -552,11 +526,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
             role: BuiltValueNullFieldError.checkNotNull(role, r'User', 'role'),
             managedLocations: _managedLocations?.build(),
             managedBusinesses: _managedBusinesses?.build(),
-            salesPartner: _salesPartner?.build(),
             preferredLanguage: preferredLanguage,
             identifier: identifier,
             features: _features?.build(),
-            emailSettings: _emailSettings?.build(),
             featuresDetailed: featuresDetailed,
             locationGroupIds: _locationGroupIds?.build(),
             managedLocationsViaGroups: _managedLocationsViaGroups?.build(),
@@ -569,13 +541,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
         _managedLocations?.build();
         _$failedField = 'managedBusinesses';
         _managedBusinesses?.build();
-        _$failedField = 'salesPartner';
-        _salesPartner?.build();
 
         _$failedField = 'features';
         _features?.build();
-        _$failedField = 'emailSettings';
-        _emailSettings?.build();
 
         _$failedField = 'locationGroupIds';
         _locationGroupIds?.build();

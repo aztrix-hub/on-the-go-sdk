@@ -77,12 +77,6 @@ void main() {
       // TODO
     });
 
-    // Mandatory fields for the specific Directory that are not set yet
-    // BuiltList<String> mandatoryFields
-    test('to test the property `mandatoryFields`', () async {
-      // TODO
-    });
-
     // The listing''s status.
     // String status
     test('to test the property `status`', () async {

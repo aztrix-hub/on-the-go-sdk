@@ -127,273 +127,6 @@ final BuiltSet<ListingConnectStatusEnum> _$listingConnectStatusEnumValues =
   _$listingConnectStatusEnum_NOT_NEEDED,
 ]);
 
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_NAME =
-    const ListingMandatoryFieldsEnum._('NAME');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_NAME_DESCRIPTOR =
-    const ListingMandatoryFieldsEnum._('NAME_DESCRIPTOR');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_STREET_NO =
-    const ListingMandatoryFieldsEnum._('STREET_NO');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_STREET =
-    const ListingMandatoryFieldsEnum._('STREET');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_STREET_TYPE =
-    const ListingMandatoryFieldsEnum._('STREET_TYPE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_ADDRESS_EXTRA =
-    const ListingMandatoryFieldsEnum._('ADDRESS_EXTRA');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_PROVINCE =
-    const ListingMandatoryFieldsEnum._('PROVINCE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_ZIP =
-    const ListingMandatoryFieldsEnum._('ZIP');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_CITY =
-    const ListingMandatoryFieldsEnum._('CITY');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_COUNTRY =
-    const ListingMandatoryFieldsEnum._('COUNTRY');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_LATITUDE =
-    const ListingMandatoryFieldsEnum._('LATITUDE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_LONGITUDE =
-    const ListingMandatoryFieldsEnum._('LONGITUDE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_ADDRESS_DISPLAY =
-    const ListingMandatoryFieldsEnum._('ADDRESS_DISPLAY');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_SERVICE_AREAS =
-    const ListingMandatoryFieldsEnum._('SERVICE_AREAS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_CATEGORIES =
-    const ListingMandatoryFieldsEnum._('CATEGORIES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_OPENING_DATE =
-    const ListingMandatoryFieldsEnum._('OPENING_DATE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_PHONE =
-    const ListingMandatoryFieldsEnum._('PHONE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_CELLPHONE =
-    const ListingMandatoryFieldsEnum._('CELLPHONE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_FAX =
-    const ListingMandatoryFieldsEnum._('FAX');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_WEBSITE =
-    const ListingMandatoryFieldsEnum._('WEBSITE');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_WEBSITE_EXTRA =
-    const ListingMandatoryFieldsEnum._('WEBSITE_EXTRA');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_EMAIL =
-    const ListingMandatoryFieldsEnum._('EMAIL');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_OPENINGHOURS =
-    const ListingMandatoryFieldsEnum._('OPENINGHOURS');
-const ListingMandatoryFieldsEnum
-    _$listingMandatoryFieldsEnum_OPENINGHOURS_NOTES =
-    const ListingMandatoryFieldsEnum._('OPENINGHOURS_NOTES');
-const ListingMandatoryFieldsEnum
-    _$listingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS =
-    const ListingMandatoryFieldsEnum._('SPECIAL_OPENINGHOURS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_MORE_HOURS =
-    const ListingMandatoryFieldsEnum._('MORE_HOURS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_KEYWORDS =
-    const ListingMandatoryFieldsEnum._('KEYWORDS');
-const ListingMandatoryFieldsEnum
-    _$listingMandatoryFieldsEnum_DESCRIPTION_SHORT =
-    const ListingMandatoryFieldsEnum._('DESCRIPTION_SHORT');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_DESCRIPTION_LONG =
-    const ListingMandatoryFieldsEnum._('DESCRIPTION_LONG');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_IMPRINT =
-    const ListingMandatoryFieldsEnum._('IMPRINT');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_LEGAL_IDENT =
-    const ListingMandatoryFieldsEnum._('LEGAL_IDENT');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_TAX_NUMBER =
-    const ListingMandatoryFieldsEnum._('TAX_NUMBER');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_ATTRIBUTION =
-    const ListingMandatoryFieldsEnum._('ATTRIBUTION');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_IS_PUBLISHED =
-    const ListingMandatoryFieldsEnum._('IS_PUBLISHED');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_SOCIAL_PROFILES =
-    const ListingMandatoryFieldsEnum._('SOCIAL_PROFILES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_ATTRIBUTES =
-    const ListingMandatoryFieldsEnum._('ATTRIBUTES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_PAYMENT_OPTIONS =
-    const ListingMandatoryFieldsEnum._('PAYMENT_OPTIONS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_BRANDS =
-    const ListingMandatoryFieldsEnum._('BRANDS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_LANGUAGES =
-    const ListingMandatoryFieldsEnum._('LANGUAGES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_SERVICES =
-    const ListingMandatoryFieldsEnum._('SERVICES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_CONTENT_LISTS =
-    const ListingMandatoryFieldsEnum._('CONTENT_LISTS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_PHOTOS =
-    const ListingMandatoryFieldsEnum._('PHOTOS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_VIDEOS =
-    const ListingMandatoryFieldsEnum._('VIDEOS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_SOCIAL_POST =
-    const ListingMandatoryFieldsEnum._('SOCIAL_POST');
-const ListingMandatoryFieldsEnum
-    _$listingMandatoryFieldsEnum_DOCTOR_CATEGORIES =
-    const ListingMandatoryFieldsEnum._('DOCTOR_CATEGORIES');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_NPI =
-    const ListingMandatoryFieldsEnum._('NPI');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_EV_DATA =
-    const ListingMandatoryFieldsEnum._('EV_DATA');
-const ListingMandatoryFieldsEnum
-    _$listingMandatoryFieldsEnum_TRANSACTION_LINKS =
-    const ListingMandatoryFieldsEnum._('TRANSACTION_LINKS');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_SUBLOCALITY =
-    const ListingMandatoryFieldsEnum._('SUBLOCALITY');
-const ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnum_CUSTOM_FIELDS =
-    const ListingMandatoryFieldsEnum._('CUSTOM_FIELDS');
-
-ListingMandatoryFieldsEnum _$listingMandatoryFieldsEnumValueOf(String name) {
-  switch (name) {
-    case 'NAME':
-      return _$listingMandatoryFieldsEnum_NAME;
-    case 'NAME_DESCRIPTOR':
-      return _$listingMandatoryFieldsEnum_NAME_DESCRIPTOR;
-    case 'STREET_NO':
-      return _$listingMandatoryFieldsEnum_STREET_NO;
-    case 'STREET':
-      return _$listingMandatoryFieldsEnum_STREET;
-    case 'STREET_TYPE':
-      return _$listingMandatoryFieldsEnum_STREET_TYPE;
-    case 'ADDRESS_EXTRA':
-      return _$listingMandatoryFieldsEnum_ADDRESS_EXTRA;
-    case 'PROVINCE':
-      return _$listingMandatoryFieldsEnum_PROVINCE;
-    case 'ZIP':
-      return _$listingMandatoryFieldsEnum_ZIP;
-    case 'CITY':
-      return _$listingMandatoryFieldsEnum_CITY;
-    case 'COUNTRY':
-      return _$listingMandatoryFieldsEnum_COUNTRY;
-    case 'LATITUDE':
-      return _$listingMandatoryFieldsEnum_LATITUDE;
-    case 'LONGITUDE':
-      return _$listingMandatoryFieldsEnum_LONGITUDE;
-    case 'ADDRESS_DISPLAY':
-      return _$listingMandatoryFieldsEnum_ADDRESS_DISPLAY;
-    case 'SERVICE_AREAS':
-      return _$listingMandatoryFieldsEnum_SERVICE_AREAS;
-    case 'CATEGORIES':
-      return _$listingMandatoryFieldsEnum_CATEGORIES;
-    case 'OPENING_DATE':
-      return _$listingMandatoryFieldsEnum_OPENING_DATE;
-    case 'PHONE':
-      return _$listingMandatoryFieldsEnum_PHONE;
-    case 'CELLPHONE':
-      return _$listingMandatoryFieldsEnum_CELLPHONE;
-    case 'FAX':
-      return _$listingMandatoryFieldsEnum_FAX;
-    case 'WEBSITE':
-      return _$listingMandatoryFieldsEnum_WEBSITE;
-    case 'WEBSITE_EXTRA':
-      return _$listingMandatoryFieldsEnum_WEBSITE_EXTRA;
-    case 'EMAIL':
-      return _$listingMandatoryFieldsEnum_EMAIL;
-    case 'OPENINGHOURS':
-      return _$listingMandatoryFieldsEnum_OPENINGHOURS;
-    case 'OPENINGHOURS_NOTES':
-      return _$listingMandatoryFieldsEnum_OPENINGHOURS_NOTES;
-    case 'SPECIAL_OPENINGHOURS':
-      return _$listingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS;
-    case 'MORE_HOURS':
-      return _$listingMandatoryFieldsEnum_MORE_HOURS;
-    case 'KEYWORDS':
-      return _$listingMandatoryFieldsEnum_KEYWORDS;
-    case 'DESCRIPTION_SHORT':
-      return _$listingMandatoryFieldsEnum_DESCRIPTION_SHORT;
-    case 'DESCRIPTION_LONG':
-      return _$listingMandatoryFieldsEnum_DESCRIPTION_LONG;
-    case 'IMPRINT':
-      return _$listingMandatoryFieldsEnum_IMPRINT;
-    case 'LEGAL_IDENT':
-      return _$listingMandatoryFieldsEnum_LEGAL_IDENT;
-    case 'TAX_NUMBER':
-      return _$listingMandatoryFieldsEnum_TAX_NUMBER;
-    case 'ATTRIBUTION':
-      return _$listingMandatoryFieldsEnum_ATTRIBUTION;
-    case 'IS_PUBLISHED':
-      return _$listingMandatoryFieldsEnum_IS_PUBLISHED;
-    case 'SOCIAL_PROFILES':
-      return _$listingMandatoryFieldsEnum_SOCIAL_PROFILES;
-    case 'ATTRIBUTES':
-      return _$listingMandatoryFieldsEnum_ATTRIBUTES;
-    case 'PAYMENT_OPTIONS':
-      return _$listingMandatoryFieldsEnum_PAYMENT_OPTIONS;
-    case 'BRANDS':
-      return _$listingMandatoryFieldsEnum_BRANDS;
-    case 'LANGUAGES':
-      return _$listingMandatoryFieldsEnum_LANGUAGES;
-    case 'SERVICES':
-      return _$listingMandatoryFieldsEnum_SERVICES;
-    case 'CONTENT_LISTS':
-      return _$listingMandatoryFieldsEnum_CONTENT_LISTS;
-    case 'PHOTOS':
-      return _$listingMandatoryFieldsEnum_PHOTOS;
-    case 'VIDEOS':
-      return _$listingMandatoryFieldsEnum_VIDEOS;
-    case 'SOCIAL_POST':
-      return _$listingMandatoryFieldsEnum_SOCIAL_POST;
-    case 'DOCTOR_CATEGORIES':
-      return _$listingMandatoryFieldsEnum_DOCTOR_CATEGORIES;
-    case 'NPI':
-      return _$listingMandatoryFieldsEnum_NPI;
-    case 'EV_DATA':
-      return _$listingMandatoryFieldsEnum_EV_DATA;
-    case 'TRANSACTION_LINKS':
-      return _$listingMandatoryFieldsEnum_TRANSACTION_LINKS;
-    case 'SUBLOCALITY':
-      return _$listingMandatoryFieldsEnum_SUBLOCALITY;
-    case 'CUSTOM_FIELDS':
-      return _$listingMandatoryFieldsEnum_CUSTOM_FIELDS;
-    default:
-      throw new ArgumentError(name);
-  }
-}
-
-final BuiltSet<ListingMandatoryFieldsEnum> _$listingMandatoryFieldsEnumValues =
-    new BuiltSet<ListingMandatoryFieldsEnum>(const <ListingMandatoryFieldsEnum>[
-  _$listingMandatoryFieldsEnum_NAME,
-  _$listingMandatoryFieldsEnum_NAME_DESCRIPTOR,
-  _$listingMandatoryFieldsEnum_STREET_NO,
-  _$listingMandatoryFieldsEnum_STREET,
-  _$listingMandatoryFieldsEnum_STREET_TYPE,
-  _$listingMandatoryFieldsEnum_ADDRESS_EXTRA,
-  _$listingMandatoryFieldsEnum_PROVINCE,
-  _$listingMandatoryFieldsEnum_ZIP,
-  _$listingMandatoryFieldsEnum_CITY,
-  _$listingMandatoryFieldsEnum_COUNTRY,
-  _$listingMandatoryFieldsEnum_LATITUDE,
-  _$listingMandatoryFieldsEnum_LONGITUDE,
-  _$listingMandatoryFieldsEnum_ADDRESS_DISPLAY,
-  _$listingMandatoryFieldsEnum_SERVICE_AREAS,
-  _$listingMandatoryFieldsEnum_CATEGORIES,
-  _$listingMandatoryFieldsEnum_OPENING_DATE,
-  _$listingMandatoryFieldsEnum_PHONE,
-  _$listingMandatoryFieldsEnum_CELLPHONE,
-  _$listingMandatoryFieldsEnum_FAX,
-  _$listingMandatoryFieldsEnum_WEBSITE,
-  _$listingMandatoryFieldsEnum_WEBSITE_EXTRA,
-  _$listingMandatoryFieldsEnum_EMAIL,
-  _$listingMandatoryFieldsEnum_OPENINGHOURS,
-  _$listingMandatoryFieldsEnum_OPENINGHOURS_NOTES,
-  _$listingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS,
-  _$listingMandatoryFieldsEnum_MORE_HOURS,
-  _$listingMandatoryFieldsEnum_KEYWORDS,
-  _$listingMandatoryFieldsEnum_DESCRIPTION_SHORT,
-  _$listingMandatoryFieldsEnum_DESCRIPTION_LONG,
-  _$listingMandatoryFieldsEnum_IMPRINT,
-  _$listingMandatoryFieldsEnum_LEGAL_IDENT,
-  _$listingMandatoryFieldsEnum_TAX_NUMBER,
-  _$listingMandatoryFieldsEnum_ATTRIBUTION,
-  _$listingMandatoryFieldsEnum_IS_PUBLISHED,
-  _$listingMandatoryFieldsEnum_SOCIAL_PROFILES,
-  _$listingMandatoryFieldsEnum_ATTRIBUTES,
-  _$listingMandatoryFieldsEnum_PAYMENT_OPTIONS,
-  _$listingMandatoryFieldsEnum_BRANDS,
-  _$listingMandatoryFieldsEnum_LANGUAGES,
-  _$listingMandatoryFieldsEnum_SERVICES,
-  _$listingMandatoryFieldsEnum_CONTENT_LISTS,
-  _$listingMandatoryFieldsEnum_PHOTOS,
-  _$listingMandatoryFieldsEnum_VIDEOS,
-  _$listingMandatoryFieldsEnum_SOCIAL_POST,
-  _$listingMandatoryFieldsEnum_DOCTOR_CATEGORIES,
-  _$listingMandatoryFieldsEnum_NPI,
-  _$listingMandatoryFieldsEnum_EV_DATA,
-  _$listingMandatoryFieldsEnum_TRANSACTION_LINKS,
-  _$listingMandatoryFieldsEnum_SUBLOCALITY,
-  _$listingMandatoryFieldsEnum_CUSTOM_FIELDS,
-]);
-
 const ListingStatusEnum _$listingStatusEnum_ACTIVE =
     const ListingStatusEnum._('ACTIVE');
 const ListingStatusEnum _$listingStatusEnum_INACTIVE =
@@ -427,8 +160,6 @@ Serializer<ListingClaimStatusEnum> _$listingClaimStatusEnumSerializer =
     new _$ListingClaimStatusEnumSerializer();
 Serializer<ListingConnectStatusEnum> _$listingConnectStatusEnumSerializer =
     new _$ListingConnectStatusEnumSerializer();
-Serializer<ListingMandatoryFieldsEnum> _$listingMandatoryFieldsEnumSerializer =
-    new _$ListingMandatoryFieldsEnumSerializer();
 Serializer<ListingStatusEnum> _$listingStatusEnumSerializer =
     new _$ListingStatusEnumSerializer();
 
@@ -539,131 +270,6 @@ class _$ListingConnectStatusEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$ListingMandatoryFieldsEnumSerializer
-    implements PrimitiveSerializer<ListingMandatoryFieldsEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'NAME': 'NAME',
-    'NAME_DESCRIPTOR': 'NAME_DESCRIPTOR',
-    'STREET_NO': 'STREET_NO',
-    'STREET': 'STREET',
-    'STREET_TYPE': 'STREET_TYPE',
-    'ADDRESS_EXTRA': 'ADDRESS_EXTRA',
-    'PROVINCE': 'PROVINCE',
-    'ZIP': 'ZIP',
-    'CITY': 'CITY',
-    'COUNTRY': 'COUNTRY',
-    'LATITUDE': 'LATITUDE',
-    'LONGITUDE': 'LONGITUDE',
-    'ADDRESS_DISPLAY': 'ADDRESS_DISPLAY',
-    'SERVICE_AREAS': 'SERVICE_AREAS',
-    'CATEGORIES': 'CATEGORIES',
-    'OPENING_DATE': 'OPENING_DATE',
-    'PHONE': 'PHONE',
-    'CELLPHONE': 'CELLPHONE',
-    'FAX': 'FAX',
-    'WEBSITE': 'WEBSITE',
-    'WEBSITE_EXTRA': 'WEBSITE_EXTRA',
-    'EMAIL': 'EMAIL',
-    'OPENINGHOURS': 'OPENINGHOURS',
-    'OPENINGHOURS_NOTES': 'OPENINGHOURS_NOTES',
-    'SPECIAL_OPENINGHOURS': 'SPECIAL_OPENINGHOURS',
-    'MORE_HOURS': 'MORE_HOURS',
-    'KEYWORDS': 'KEYWORDS',
-    'DESCRIPTION_SHORT': 'DESCRIPTION_SHORT',
-    'DESCRIPTION_LONG': 'DESCRIPTION_LONG',
-    'IMPRINT': 'IMPRINT',
-    'LEGAL_IDENT': 'LEGAL_IDENT',
-    'TAX_NUMBER': 'TAX_NUMBER',
-    'ATTRIBUTION': 'ATTRIBUTION',
-    'IS_PUBLISHED': 'IS_PUBLISHED',
-    'SOCIAL_PROFILES': 'SOCIAL_PROFILES',
-    'ATTRIBUTES': 'ATTRIBUTES',
-    'PAYMENT_OPTIONS': 'PAYMENT_OPTIONS',
-    'BRANDS': 'BRANDS',
-    'LANGUAGES': 'LANGUAGES',
-    'SERVICES': 'SERVICES',
-    'CONTENT_LISTS': 'CONTENT_LISTS',
-    'PHOTOS': 'PHOTOS',
-    'VIDEOS': 'VIDEOS',
-    'SOCIAL_POST': 'SOCIAL_POST',
-    'DOCTOR_CATEGORIES': 'DOCTOR_CATEGORIES',
-    'NPI': 'NPI',
-    'EV_DATA': 'EV_DATA',
-    'TRANSACTION_LINKS': 'TRANSACTION_LINKS',
-    'SUBLOCALITY': 'SUBLOCALITY',
-    'CUSTOM_FIELDS': 'CUSTOM_FIELDS',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'NAME': 'NAME',
-    'NAME_DESCRIPTOR': 'NAME_DESCRIPTOR',
-    'STREET_NO': 'STREET_NO',
-    'STREET': 'STREET',
-    'STREET_TYPE': 'STREET_TYPE',
-    'ADDRESS_EXTRA': 'ADDRESS_EXTRA',
-    'PROVINCE': 'PROVINCE',
-    'ZIP': 'ZIP',
-    'CITY': 'CITY',
-    'COUNTRY': 'COUNTRY',
-    'LATITUDE': 'LATITUDE',
-    'LONGITUDE': 'LONGITUDE',
-    'ADDRESS_DISPLAY': 'ADDRESS_DISPLAY',
-    'SERVICE_AREAS': 'SERVICE_AREAS',
-    'CATEGORIES': 'CATEGORIES',
-    'OPENING_DATE': 'OPENING_DATE',
-    'PHONE': 'PHONE',
-    'CELLPHONE': 'CELLPHONE',
-    'FAX': 'FAX',
-    'WEBSITE': 'WEBSITE',
-    'WEBSITE_EXTRA': 'WEBSITE_EXTRA',
-    'EMAIL': 'EMAIL',
-    'OPENINGHOURS': 'OPENINGHOURS',
-    'OPENINGHOURS_NOTES': 'OPENINGHOURS_NOTES',
-    'SPECIAL_OPENINGHOURS': 'SPECIAL_OPENINGHOURS',
-    'MORE_HOURS': 'MORE_HOURS',
-    'KEYWORDS': 'KEYWORDS',
-    'DESCRIPTION_SHORT': 'DESCRIPTION_SHORT',
-    'DESCRIPTION_LONG': 'DESCRIPTION_LONG',
-    'IMPRINT': 'IMPRINT',
-    'LEGAL_IDENT': 'LEGAL_IDENT',
-    'TAX_NUMBER': 'TAX_NUMBER',
-    'ATTRIBUTION': 'ATTRIBUTION',
-    'IS_PUBLISHED': 'IS_PUBLISHED',
-    'SOCIAL_PROFILES': 'SOCIAL_PROFILES',
-    'ATTRIBUTES': 'ATTRIBUTES',
-    'PAYMENT_OPTIONS': 'PAYMENT_OPTIONS',
-    'BRANDS': 'BRANDS',
-    'LANGUAGES': 'LANGUAGES',
-    'SERVICES': 'SERVICES',
-    'CONTENT_LISTS': 'CONTENT_LISTS',
-    'PHOTOS': 'PHOTOS',
-    'VIDEOS': 'VIDEOS',
-    'SOCIAL_POST': 'SOCIAL_POST',
-    'DOCTOR_CATEGORIES': 'DOCTOR_CATEGORIES',
-    'NPI': 'NPI',
-    'EV_DATA': 'EV_DATA',
-    'TRANSACTION_LINKS': 'TRANSACTION_LINKS',
-    'SUBLOCALITY': 'SUBLOCALITY',
-    'CUSTOM_FIELDS': 'CUSTOM_FIELDS',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[ListingMandatoryFieldsEnum];
-  @override
-  final String wireName = 'ListingMandatoryFieldsEnum';
-
-  @override
-  Object serialize(Serializers serializers, ListingMandatoryFieldsEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  ListingMandatoryFieldsEnum deserialize(
-          Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      ListingMandatoryFieldsEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$ListingStatusEnumSerializer
     implements PrimitiveSerializer<ListingStatusEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
@@ -720,8 +326,6 @@ class _$Listing extends Listing {
   @override
   final ListingConnectStatusEnum? connectStatus;
   @override
-  final BuiltList<ListingMandatoryFieldsEnum>? mandatoryFields;
-  @override
   final ListingStatusEnum? status;
   @override
   final String? typeName;
@@ -742,7 +346,6 @@ class _$Listing extends Listing {
       this.accountInfo,
       this.connectSecret,
       this.connectStatus,
-      this.mandatoryFields,
       this.status,
       this.typeName})
       : super._();
@@ -770,7 +373,6 @@ class _$Listing extends Listing {
         accountInfo == other.accountInfo &&
         connectSecret == other.connectSecret &&
         connectStatus == other.connectStatus &&
-        mandatoryFields == other.mandatoryFields &&
         status == other.status &&
         typeName == other.typeName;
   }
@@ -790,7 +392,6 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, accountInfo.hashCode);
     _$hash = $jc(_$hash, connectSecret.hashCode);
     _$hash = $jc(_$hash, connectStatus.hashCode);
-    _$hash = $jc(_$hash, mandatoryFields.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, typeName.hashCode);
     _$hash = $jf(_$hash);
@@ -812,7 +413,6 @@ class _$Listing extends Listing {
           ..add('accountInfo', accountInfo)
           ..add('connectSecret', connectSecret)
           ..add('connectStatus', connectStatus)
-          ..add('mandatoryFields', mandatoryFields)
           ..add('status', status)
           ..add('typeName', typeName))
         .toString();
@@ -876,13 +476,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   set connectStatus(ListingConnectStatusEnum? connectStatus) =>
       _$this._connectStatus = connectStatus;
 
-  ListBuilder<ListingMandatoryFieldsEnum>? _mandatoryFields;
-  ListBuilder<ListingMandatoryFieldsEnum> get mandatoryFields =>
-      _$this._mandatoryFields ??= new ListBuilder<ListingMandatoryFieldsEnum>();
-  set mandatoryFields(
-          ListBuilder<ListingMandatoryFieldsEnum>? mandatoryFields) =>
-      _$this._mandatoryFields = mandatoryFields;
-
   ListingStatusEnum? _status;
   ListingStatusEnum? get status => _$this._status;
   set status(ListingStatusEnum? status) => _$this._status = status;
@@ -910,7 +503,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _accountInfo = $v.accountInfo;
       _connectSecret = $v.connectSecret;
       _connectStatus = $v.connectStatus;
-      _mandatoryFields = $v.mandatoryFields?.toBuilder();
       _status = $v.status;
       _typeName = $v.typeName;
       _$v = null;
@@ -949,7 +541,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
             accountInfo: accountInfo,
             connectSecret: connectSecret,
             connectStatus: connectStatus,
-            mandatoryFields: _mandatoryFields?.build(),
             status: status,
             typeName: typeName,
           );
@@ -958,9 +549,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       try {
         _$failedField = 'data';
         _data?.build();
-
-        _$failedField = 'mandatoryFields';
-        _mandatoryFields?.build();
       } catch (e) {
         throw new BuiltValueNestedFieldError(
             r'Listing', _$failedField, e.toString());

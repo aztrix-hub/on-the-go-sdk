@@ -3,73 +3,68 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/locations_get200_response_response.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'reset_password.g.dart';
+part 'locations_get200_response.g.dart';
 
-/// ResetPassword
+/// LocationsGet200Response
 ///
 /// Properties:
-/// * [email]
-/// * [password]
-/// * [newPassword]
+/// * [message]
+/// * [response]
 @BuiltValue()
-abstract class ResetPassword
-    implements Built<ResetPassword, ResetPasswordBuilder> {
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+abstract class LocationsGet200Response
+    implements Built<LocationsGet200Response, LocationsGet200ResponseBuilder> {
+  @BuiltValueField(wireName: r'message')
+  String? get message;
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+  @BuiltValueField(wireName: r'response')
+  LocationsGet200ResponseResponse? get response;
 
-  @BuiltValueField(wireName: r'newPassword')
-  String? get newPassword;
+  LocationsGet200Response._();
 
-  ResetPassword._();
-
-  factory ResetPassword([void updates(ResetPasswordBuilder b)]) =
-      _$ResetPassword;
+  factory LocationsGet200Response(
+          [void updates(LocationsGet200ResponseBuilder b)]) =
+      _$LocationsGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ResetPasswordBuilder b) => b;
+  static void _defaults(LocationsGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ResetPassword> get serializer =>
-      _$ResetPasswordSerializer();
+  static Serializer<LocationsGet200Response> get serializer =>
+      _$LocationsGet200ResponseSerializer();
 }
 
-class _$ResetPasswordSerializer implements PrimitiveSerializer<ResetPassword> {
+class _$LocationsGet200ResponseSerializer
+    implements PrimitiveSerializer<LocationsGet200Response> {
   @override
-  final Iterable<Type> types = const [ResetPassword, _$ResetPassword];
+  final Iterable<Type> types = const [
+    LocationsGet200Response,
+    _$LocationsGet200Response
+  ];
 
   @override
-  final String wireName = r'ResetPassword';
+  final String wireName = r'LocationsGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ResetPassword object, {
+    LocationsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.email != null) {
-      yield r'email';
+    if (object.message != null) {
+      yield r'message';
       yield serializers.serialize(
-        object.email,
+        object.message,
         specifiedType: const FullType(String),
       );
     }
-    if (object.password != null) {
-      yield r'password';
+    if (object.response != null) {
+      yield r'response';
       yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.newPassword != null) {
-      yield r'newPassword';
-      yield serializers.serialize(
-        object.newPassword,
-        specifiedType: const FullType(String),
+        object.response,
+        specifiedType: const FullType(LocationsGet200ResponseResponse),
       );
     }
   }
@@ -77,7 +72,7 @@ class _$ResetPasswordSerializer implements PrimitiveSerializer<ResetPassword> {
   @override
   Object serialize(
     Serializers serializers,
-    ResetPassword object, {
+    LocationsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -90,33 +85,26 @@ class _$ResetPasswordSerializer implements PrimitiveSerializer<ResetPassword> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ResetPasswordBuilder result,
+    required LocationsGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'email':
+        case r'message':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.email = valueDes;
+          result.message = valueDes;
           break;
-        case r'password':
+        case r'response':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'newPassword':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.newPassword = valueDes;
+            specifiedType: const FullType(LocationsGet200ResponseResponse),
+          ) as LocationsGet200ResponseResponse;
+          result.response.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -127,12 +115,12 @@ class _$ResetPasswordSerializer implements PrimitiveSerializer<ResetPassword> {
   }
 
   @override
-  ResetPassword deserialize(
+  LocationsGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ResetPasswordBuilder();
+    final result = LocationsGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

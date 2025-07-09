@@ -67,11 +67,6 @@ void main() {
       // TODO
     });
 
-    // SalesPartner salesPartner
-    test('to test the property `salesPartner`', () async {
-      // TODO
-    });
-
     // Preferred language of a user. If not set, this will default to the language in context, e.g., location''s for e-mails and browser language for our applications.
     // String preferredLanguage
     test('to test the property `preferredLanguage`', () async {
@@ -87,12 +82,6 @@ void main() {
     // A list of features this user can work with. Values:  <pre>ADS_READ ADS_WRITE ADVANCED_ANALYTICS AI_SUGGESTED_REPLIES APPLE_POSTING_WRITE AUTO_RESPONSE_WRITE BULK_UPDATES BUSINESS_LEVEL_CONNECT CAN_PAY_INVOICE CAN_SEE_HELP_SECTION CHAT_READ CHAT_WRITE CHATBOT_READ CHATBOT_WRITE DAM ENTERPRISE_ONBOARDING FIRST_PARTY_REVIEW_APPROVAL FORMS INBOX_2_0_BETA_READ INBOX_2_0_BETA_WRITE INBOX_APPROVAL INBOX_READ INBOX_WRITE INSTAGRAM_POSTING_WRITE LISTINGS_PAGE_NEW LISTINGS LIVE_CHAT LOCATION_GROUP LOCATION_READ LOCATION_SCHEDULED_UPDATES LOCATION_STATUS_CHANGE LOCATION_WRITE POSTING_APPROVAL POSTING_READ POSTING_WRITE PRICE_INFO RESPONSE_LIBRARY_READ RESPONSE_LIBRARY_WRITE REVIEW_GENERATION_CREATE REVIEW_GENERATION_SEND SINGLE_SIGN_ON SOCIAL_ADS SUPPRESSION TRACKING UPGRADE USER_OTHERS_EDIT USER_SELF_EDIT</pre>
     // BuiltSet<String> features
     test('to test the property `features`', () async {
-      // TODO
-    });
-
-    // A list of EmailSettings for this user. Only one EmailSettings object per EmailType possible.
-    // BuiltSet<EmailSettings> emailSettings
-    test('to test the property `emailSettings`', () async {
       // TODO
     });
 

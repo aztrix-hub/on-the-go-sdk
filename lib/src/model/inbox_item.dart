@@ -5,8 +5,8 @@
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
-import 'package:on_the_go_sdk/src/model/store_finder_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -74,7 +74,7 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   bool? get isExpandedReviewNetwork;
 
   @BuiltValueField(wireName: r'location')
-  StoreFinderResponse? get location;
+  Location? get location;
 
   @BuiltValueField(wireName: r'locationId')
   String? get locationId;
@@ -217,7 +217,7 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       yield r'location';
       yield serializers.serialize(
         object.location,
-        specifiedType: const FullType(StoreFinderResponse),
+        specifiedType: const FullType(Location),
       );
     }
     if (object.locationId != null) {
@@ -431,8 +431,8 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         case r'location':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(StoreFinderResponse),
-          ) as StoreFinderResponse;
+            specifiedType: const FullType(Location),
+          ) as Location;
           result.location.replace(valueDes);
           break;
         case r'locationId':

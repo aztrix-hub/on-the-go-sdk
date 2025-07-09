@@ -4,6 +4,7 @@
 
 import 'dart:async';
 
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
@@ -103,7 +104,7 @@ class PublishApi {
   ///
   ///
   /// Parameters:
-  /// * [socialPost] - A SocialPost object
+  /// * [body] - A SocialPost object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -114,7 +115,7 @@ class PublishApi {
   /// Returns a [Future] containing a [Response] with a [SocialPostWrapper] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<SocialPostWrapper>> publishPostsPost({
-    required SocialPost socialPost,
+    required SocialPost body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -146,8 +147,7 @@ class PublishApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SocialPost);
-      _bodyData = _serializers.serialize(socialPost, specifiedType: _type);
+      _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

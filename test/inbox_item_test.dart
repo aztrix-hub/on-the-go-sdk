@@ -52,7 +52,7 @@ void main() {
       // TODO
     });
 
-    // StoreFinderResponse location
+    // Location location
     test('to test the property `location`', () async {
       // TODO
     });

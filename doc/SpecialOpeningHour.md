@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.Insights
+# on_the_go_sdk.model.SpecialOpeningHour
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metrics** | [**BuiltList&lt;InsightsMetricsInner&gt;**](InsightsMetricsInner.md) |  | [optional] 
-**matchedLocationsCount** | **int** | The number of locations matching the filter which the insights are returned for | [optional] 
+**date** | **String** | The date of a special opening hour (format: yyyy-MM-dd) | 
+**closed** | **bool** | Open or closed on [date] | [optional] 
+**intervals** | [**BuiltList&lt;JsonObject&gt;**](JsonObject.md) | A list of hour ranges (time intervals), only required when `closed` is `false` | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

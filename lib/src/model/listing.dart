@@ -26,7 +26,6 @@ part 'listing.g.dart';
 /// * [accountInfo] - A map consisting of the name and pageId of the connected account if the listing is either Google or Facebook.
 /// * [connectSecret]
 /// * [connectStatus] - Connect status of the listing.
-/// * [mandatoryFields] - Mandatory fields for the specific Directory that are not set yet
 /// * [status] - The listing''s status.
 /// * [typeName] - The directory''s name in the language of the current locale.
 @BuiltValue()
@@ -80,11 +79,6 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'connectStatus')
   ListingConnectStatusEnum? get connectStatus;
   // enum connectStatusEnum {  CONNECTED,  NOT_CONNECTED,  NOT_NEEDED,  };
-
-  /// Mandatory fields for the specific Directory that are not set yet
-  @BuiltValueField(wireName: r'mandatoryFields')
-  BuiltList<ListingMandatoryFieldsEnum>? get mandatoryFields;
-  // enum mandatoryFieldsEnum {  NAME,  NAME_DESCRIPTOR,  STREET_NO,  STREET,  STREET_TYPE,  ADDRESS_EXTRA,  PROVINCE,  ZIP,  CITY,  COUNTRY,  LATITUDE,  LONGITUDE,  ADDRESS_DISPLAY,  SERVICE_AREAS,  CATEGORIES,  OPENING_DATE,  PHONE,  CELLPHONE,  FAX,  WEBSITE,  WEBSITE_EXTRA,  EMAIL,  OPENINGHOURS,  OPENINGHOURS_NOTES,  SPECIAL_OPENINGHOURS,  MORE_HOURS,  KEYWORDS,  DESCRIPTION_SHORT,  DESCRIPTION_LONG,  IMPRINT,  LEGAL_IDENT,  TAX_NUMBER,  ATTRIBUTION,  IS_PUBLISHED,  SOCIAL_PROFILES,  ATTRIBUTES,  PAYMENT_OPTIONS,  BRANDS,  LANGUAGES,  SERVICES,  CONTENT_LISTS,  PHOTOS,  VIDEOS,  SOCIAL_POST,  DOCTOR_CATEGORIES,  NPI,  EV_DATA,  TRANSACTION_LINKS,  SUBLOCALITY,  CUSTOM_FIELDS,  };
 
   /// The listing''s status.
   @BuiltValueField(wireName: r'status')
@@ -201,14 +195,6 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield serializers.serialize(
         object.connectStatus,
         specifiedType: const FullType(ListingConnectStatusEnum),
-      );
-    }
-    if (object.mandatoryFields != null) {
-      yield r'mandatoryFields';
-      yield serializers.serialize(
-        object.mandatoryFields,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ListingMandatoryFieldsEnum)]),
       );
     }
     if (object.status != null) {
@@ -334,14 +320,6 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
             specifiedType: const FullType(ListingConnectStatusEnum),
           ) as ListingConnectStatusEnum;
           result.connectStatus = valueDes;
-          break;
-        case r'mandatoryFields':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(ListingMandatoryFieldsEnum)]),
-          ) as BuiltList<ListingMandatoryFieldsEnum>;
-          result.mandatoryFields.replace(valueDes);
           break;
         case r'status':
           final valueDes = serializers.deserialize(
@@ -504,169 +482,6 @@ class ListingConnectStatusEnum extends EnumClass {
       _$listingConnectStatusEnumValues;
   static ListingConnectStatusEnum valueOf(String name) =>
       _$listingConnectStatusEnumValueOf(name);
-}
-
-class ListingMandatoryFieldsEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'NAME')
-  static const ListingMandatoryFieldsEnum NAME =
-      _$listingMandatoryFieldsEnum_NAME;
-  @BuiltValueEnumConst(wireName: r'NAME_DESCRIPTOR')
-  static const ListingMandatoryFieldsEnum NAME_DESCRIPTOR =
-      _$listingMandatoryFieldsEnum_NAME_DESCRIPTOR;
-  @BuiltValueEnumConst(wireName: r'STREET_NO')
-  static const ListingMandatoryFieldsEnum STREET_NO =
-      _$listingMandatoryFieldsEnum_STREET_NO;
-  @BuiltValueEnumConst(wireName: r'STREET')
-  static const ListingMandatoryFieldsEnum STREET =
-      _$listingMandatoryFieldsEnum_STREET;
-  @BuiltValueEnumConst(wireName: r'STREET_TYPE')
-  static const ListingMandatoryFieldsEnum STREET_TYPE =
-      _$listingMandatoryFieldsEnum_STREET_TYPE;
-  @BuiltValueEnumConst(wireName: r'ADDRESS_EXTRA')
-  static const ListingMandatoryFieldsEnum ADDRESS_EXTRA =
-      _$listingMandatoryFieldsEnum_ADDRESS_EXTRA;
-  @BuiltValueEnumConst(wireName: r'PROVINCE')
-  static const ListingMandatoryFieldsEnum PROVINCE =
-      _$listingMandatoryFieldsEnum_PROVINCE;
-  @BuiltValueEnumConst(wireName: r'ZIP')
-  static const ListingMandatoryFieldsEnum ZIP =
-      _$listingMandatoryFieldsEnum_ZIP;
-  @BuiltValueEnumConst(wireName: r'CITY')
-  static const ListingMandatoryFieldsEnum CITY =
-      _$listingMandatoryFieldsEnum_CITY;
-  @BuiltValueEnumConst(wireName: r'COUNTRY')
-  static const ListingMandatoryFieldsEnum COUNTRY =
-      _$listingMandatoryFieldsEnum_COUNTRY;
-  @BuiltValueEnumConst(wireName: r'LATITUDE')
-  static const ListingMandatoryFieldsEnum LATITUDE =
-      _$listingMandatoryFieldsEnum_LATITUDE;
-  @BuiltValueEnumConst(wireName: r'LONGITUDE')
-  static const ListingMandatoryFieldsEnum LONGITUDE =
-      _$listingMandatoryFieldsEnum_LONGITUDE;
-  @BuiltValueEnumConst(wireName: r'ADDRESS_DISPLAY')
-  static const ListingMandatoryFieldsEnum ADDRESS_DISPLAY =
-      _$listingMandatoryFieldsEnum_ADDRESS_DISPLAY;
-  @BuiltValueEnumConst(wireName: r'SERVICE_AREAS')
-  static const ListingMandatoryFieldsEnum SERVICE_AREAS =
-      _$listingMandatoryFieldsEnum_SERVICE_AREAS;
-  @BuiltValueEnumConst(wireName: r'CATEGORIES')
-  static const ListingMandatoryFieldsEnum CATEGORIES =
-      _$listingMandatoryFieldsEnum_CATEGORIES;
-  @BuiltValueEnumConst(wireName: r'OPENING_DATE')
-  static const ListingMandatoryFieldsEnum OPENING_DATE =
-      _$listingMandatoryFieldsEnum_OPENING_DATE;
-  @BuiltValueEnumConst(wireName: r'PHONE')
-  static const ListingMandatoryFieldsEnum PHONE =
-      _$listingMandatoryFieldsEnum_PHONE;
-  @BuiltValueEnumConst(wireName: r'CELLPHONE')
-  static const ListingMandatoryFieldsEnum CELLPHONE =
-      _$listingMandatoryFieldsEnum_CELLPHONE;
-  @BuiltValueEnumConst(wireName: r'FAX')
-  static const ListingMandatoryFieldsEnum FAX =
-      _$listingMandatoryFieldsEnum_FAX;
-  @BuiltValueEnumConst(wireName: r'WEBSITE')
-  static const ListingMandatoryFieldsEnum WEBSITE =
-      _$listingMandatoryFieldsEnum_WEBSITE;
-  @BuiltValueEnumConst(wireName: r'WEBSITE_EXTRA')
-  static const ListingMandatoryFieldsEnum WEBSITE_EXTRA =
-      _$listingMandatoryFieldsEnum_WEBSITE_EXTRA;
-  @BuiltValueEnumConst(wireName: r'EMAIL')
-  static const ListingMandatoryFieldsEnum EMAIL =
-      _$listingMandatoryFieldsEnum_EMAIL;
-  @BuiltValueEnumConst(wireName: r'OPENINGHOURS')
-  static const ListingMandatoryFieldsEnum OPENINGHOURS =
-      _$listingMandatoryFieldsEnum_OPENINGHOURS;
-  @BuiltValueEnumConst(wireName: r'OPENINGHOURS_NOTES')
-  static const ListingMandatoryFieldsEnum OPENINGHOURS_NOTES =
-      _$listingMandatoryFieldsEnum_OPENINGHOURS_NOTES;
-  @BuiltValueEnumConst(wireName: r'SPECIAL_OPENINGHOURS')
-  static const ListingMandatoryFieldsEnum SPECIAL_OPENINGHOURS =
-      _$listingMandatoryFieldsEnum_SPECIAL_OPENINGHOURS;
-  @BuiltValueEnumConst(wireName: r'MORE_HOURS')
-  static const ListingMandatoryFieldsEnum MORE_HOURS =
-      _$listingMandatoryFieldsEnum_MORE_HOURS;
-  @BuiltValueEnumConst(wireName: r'KEYWORDS')
-  static const ListingMandatoryFieldsEnum KEYWORDS =
-      _$listingMandatoryFieldsEnum_KEYWORDS;
-  @BuiltValueEnumConst(wireName: r'DESCRIPTION_SHORT')
-  static const ListingMandatoryFieldsEnum DESCRIPTION_SHORT =
-      _$listingMandatoryFieldsEnum_DESCRIPTION_SHORT;
-  @BuiltValueEnumConst(wireName: r'DESCRIPTION_LONG')
-  static const ListingMandatoryFieldsEnum DESCRIPTION_LONG =
-      _$listingMandatoryFieldsEnum_DESCRIPTION_LONG;
-  @BuiltValueEnumConst(wireName: r'IMPRINT')
-  static const ListingMandatoryFieldsEnum IMPRINT =
-      _$listingMandatoryFieldsEnum_IMPRINT;
-  @BuiltValueEnumConst(wireName: r'LEGAL_IDENT')
-  static const ListingMandatoryFieldsEnum LEGAL_IDENT =
-      _$listingMandatoryFieldsEnum_LEGAL_IDENT;
-  @BuiltValueEnumConst(wireName: r'TAX_NUMBER')
-  static const ListingMandatoryFieldsEnum TAX_NUMBER =
-      _$listingMandatoryFieldsEnum_TAX_NUMBER;
-  @BuiltValueEnumConst(wireName: r'ATTRIBUTION')
-  static const ListingMandatoryFieldsEnum ATTRIBUTION =
-      _$listingMandatoryFieldsEnum_ATTRIBUTION;
-  @BuiltValueEnumConst(wireName: r'IS_PUBLISHED')
-  static const ListingMandatoryFieldsEnum IS_PUBLISHED =
-      _$listingMandatoryFieldsEnum_IS_PUBLISHED;
-  @BuiltValueEnumConst(wireName: r'SOCIAL_PROFILES')
-  static const ListingMandatoryFieldsEnum SOCIAL_PROFILES =
-      _$listingMandatoryFieldsEnum_SOCIAL_PROFILES;
-  @BuiltValueEnumConst(wireName: r'ATTRIBUTES')
-  static const ListingMandatoryFieldsEnum ATTRIBUTES =
-      _$listingMandatoryFieldsEnum_ATTRIBUTES;
-  @BuiltValueEnumConst(wireName: r'PAYMENT_OPTIONS')
-  static const ListingMandatoryFieldsEnum PAYMENT_OPTIONS =
-      _$listingMandatoryFieldsEnum_PAYMENT_OPTIONS;
-  @BuiltValueEnumConst(wireName: r'BRANDS')
-  static const ListingMandatoryFieldsEnum BRANDS =
-      _$listingMandatoryFieldsEnum_BRANDS;
-  @BuiltValueEnumConst(wireName: r'LANGUAGES')
-  static const ListingMandatoryFieldsEnum LANGUAGES =
-      _$listingMandatoryFieldsEnum_LANGUAGES;
-  @BuiltValueEnumConst(wireName: r'SERVICES')
-  static const ListingMandatoryFieldsEnum SERVICES =
-      _$listingMandatoryFieldsEnum_SERVICES;
-  @BuiltValueEnumConst(wireName: r'CONTENT_LISTS')
-  static const ListingMandatoryFieldsEnum CONTENT_LISTS =
-      _$listingMandatoryFieldsEnum_CONTENT_LISTS;
-  @BuiltValueEnumConst(wireName: r'PHOTOS')
-  static const ListingMandatoryFieldsEnum PHOTOS =
-      _$listingMandatoryFieldsEnum_PHOTOS;
-  @BuiltValueEnumConst(wireName: r'VIDEOS')
-  static const ListingMandatoryFieldsEnum VIDEOS =
-      _$listingMandatoryFieldsEnum_VIDEOS;
-  @BuiltValueEnumConst(wireName: r'SOCIAL_POST')
-  static const ListingMandatoryFieldsEnum SOCIAL_POST =
-      _$listingMandatoryFieldsEnum_SOCIAL_POST;
-  @BuiltValueEnumConst(wireName: r'DOCTOR_CATEGORIES')
-  static const ListingMandatoryFieldsEnum DOCTOR_CATEGORIES =
-      _$listingMandatoryFieldsEnum_DOCTOR_CATEGORIES;
-  @BuiltValueEnumConst(wireName: r'NPI')
-  static const ListingMandatoryFieldsEnum NPI =
-      _$listingMandatoryFieldsEnum_NPI;
-  @BuiltValueEnumConst(wireName: r'EV_DATA')
-  static const ListingMandatoryFieldsEnum EV_DATA =
-      _$listingMandatoryFieldsEnum_EV_DATA;
-  @BuiltValueEnumConst(wireName: r'TRANSACTION_LINKS')
-  static const ListingMandatoryFieldsEnum TRANSACTION_LINKS =
-      _$listingMandatoryFieldsEnum_TRANSACTION_LINKS;
-  @BuiltValueEnumConst(wireName: r'SUBLOCALITY')
-  static const ListingMandatoryFieldsEnum SUBLOCALITY =
-      _$listingMandatoryFieldsEnum_SUBLOCALITY;
-  @BuiltValueEnumConst(wireName: r'CUSTOM_FIELDS')
-  static const ListingMandatoryFieldsEnum CUSTOM_FIELDS =
-      _$listingMandatoryFieldsEnum_CUSTOM_FIELDS;
-
-  static Serializer<ListingMandatoryFieldsEnum> get serializer =>
-      _$listingMandatoryFieldsEnumSerializer;
-
-  const ListingMandatoryFieldsEnum._(String name) : super(name);
-
-  static BuiltSet<ListingMandatoryFieldsEnum> get values =>
-      _$listingMandatoryFieldsEnumValues;
-  static ListingMandatoryFieldsEnum valueOf(String name) =>
-      _$listingMandatoryFieldsEnumValueOf(name);
 }
 
 class ListingStatusEnum extends EnumClass {
