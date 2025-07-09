@@ -20,7 +20,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
-      (new AiConversationPostRequestBuilder()..update(updates))._build();
+      (AiConversationPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationPostRequest._(
       {this.userId,
@@ -29,7 +29,6 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
       this.userLocation,
       this.dateTime})
       : super._();
-
   @override
   AiConversationPostRequest rebuild(
           void Function(AiConversationPostRequestBuilder) updates) =>
@@ -37,7 +36,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
 
   @override
   AiConversationPostRequestBuilder toBuilder() =>
-      new AiConversationPostRequestBuilder()..replace(this);
+      AiConversationPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -94,8 +93,7 @@ class AiConversationPostRequestBuilder
 
   AiConversationPostRequestUserLocationBuilder? _userLocation;
   AiConversationPostRequestUserLocationBuilder get userLocation =>
-      _$this._userLocation ??=
-          new AiConversationPostRequestUserLocationBuilder();
+      _$this._userLocation ??= AiConversationPostRequestUserLocationBuilder();
   set userLocation(
           AiConversationPostRequestUserLocationBuilder? userLocation) =>
       _$this._userLocation = userLocation;
@@ -123,7 +121,6 @@ class AiConversationPostRequestBuilder
 
   @override
   void replace(AiConversationPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiConversationPostRequest;
   }
 
@@ -139,7 +136,7 @@ class AiConversationPostRequestBuilder
     _$AiConversationPostRequest _$result;
     try {
       _$result = _$v ??
-          new _$AiConversationPostRequest._(
+          _$AiConversationPostRequest._(
             userId: userId,
             conversationId: conversationId,
             message: message,
@@ -152,7 +149,7 @@ class AiConversationPostRequestBuilder
         _$failedField = 'userLocation';
         _userLocation?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiConversationPostRequest', _$failedField, e.toString());
       }
       rethrow;

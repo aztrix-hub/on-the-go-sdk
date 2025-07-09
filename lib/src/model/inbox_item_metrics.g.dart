@@ -12,17 +12,16 @@ class _$InboxItemMetrics extends InboxItemMetrics {
 
   factory _$InboxItemMetrics(
           [void Function(InboxItemMetricsBuilder)? updates]) =>
-      (new InboxItemMetricsBuilder()..update(updates))._build();
+      (InboxItemMetricsBuilder()..update(updates))._build();
 
   _$InboxItemMetrics._({this.likes}) : super._();
-
   @override
   InboxItemMetrics rebuild(void Function(InboxItemMetricsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   InboxItemMetricsBuilder toBuilder() =>
-      new InboxItemMetricsBuilder()..replace(this);
+      InboxItemMetricsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -69,7 +68,6 @@ class InboxItemMetricsBuilder
 
   @override
   void replace(InboxItemMetrics other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxItemMetrics;
   }
 
@@ -83,7 +81,7 @@ class InboxItemMetricsBuilder
 
   _$InboxItemMetrics _build() {
     final _$result = _$v ??
-        new _$InboxItemMetrics._(
+        _$InboxItemMetrics._(
           likes: likes,
         );
     replace(_$result);

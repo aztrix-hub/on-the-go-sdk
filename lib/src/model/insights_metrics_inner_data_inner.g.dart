@@ -14,10 +14,9 @@ class _$InsightsMetricsInnerDataInner extends InsightsMetricsInnerDataInner {
 
   factory _$InsightsMetricsInnerDataInner(
           [void Function(InsightsMetricsInnerDataInnerBuilder)? updates]) =>
-      (new InsightsMetricsInnerDataInnerBuilder()..update(updates))._build();
+      (InsightsMetricsInnerDataInnerBuilder()..update(updates))._build();
 
   _$InsightsMetricsInnerDataInner._({this.period, this.count}) : super._();
-
   @override
   InsightsMetricsInnerDataInner rebuild(
           void Function(InsightsMetricsInnerDataInnerBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$InsightsMetricsInnerDataInner extends InsightsMetricsInnerDataInner {
 
   @override
   InsightsMetricsInnerDataInnerBuilder toBuilder() =>
-      new InsightsMetricsInnerDataInnerBuilder()..replace(this);
+      InsightsMetricsInnerDataInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -83,7 +82,6 @@ class InsightsMetricsInnerDataInnerBuilder
 
   @override
   void replace(InsightsMetricsInnerDataInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InsightsMetricsInnerDataInner;
   }
 
@@ -97,7 +95,7 @@ class InsightsMetricsInnerDataInnerBuilder
 
   _$InsightsMetricsInnerDataInner _build() {
     final _$result = _$v ??
-        new _$InsightsMetricsInnerDataInner._(
+        _$InsightsMetricsInnerDataInner._(
           period: period,
           count: count,
         );

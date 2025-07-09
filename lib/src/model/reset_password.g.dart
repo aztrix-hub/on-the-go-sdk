@@ -15,16 +15,15 @@ class _$ResetPassword extends ResetPassword {
   final String? newPassword;
 
   factory _$ResetPassword([void Function(ResetPasswordBuilder)? updates]) =>
-      (new ResetPasswordBuilder()..update(updates))._build();
+      (ResetPasswordBuilder()..update(updates))._build();
 
   _$ResetPassword._({this.email, this.password, this.newPassword}) : super._();
-
   @override
   ResetPassword rebuild(void Function(ResetPasswordBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ResetPasswordBuilder toBuilder() => new ResetPasswordBuilder()..replace(this);
+  ResetPasswordBuilder toBuilder() => ResetPasswordBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -88,7 +87,6 @@ class ResetPasswordBuilder
 
   @override
   void replace(ResetPassword other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$ResetPassword;
   }
 
@@ -102,7 +100,7 @@ class ResetPasswordBuilder
 
   _$ResetPassword _build() {
     final _$result = _$v ??
-        new _$ResetPassword._(
+        _$ResetPassword._(
           email: email,
           password: password,
           newPassword: newPassword,

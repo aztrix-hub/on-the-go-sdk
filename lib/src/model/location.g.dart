@@ -45,7 +45,7 @@ class _$Location extends Location {
   final int? reviewCount;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
-      (new LocationBuilder()..update(updates))._build();
+      (LocationBuilder()..update(updates))._build();
 
   _$Location._(
       {this.id,
@@ -66,18 +66,13 @@ class _$Location extends Location {
       required this.categories,
       this.averageRating,
       this.reviewCount})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(name, r'Location', 'name');
-    BuiltValueNullFieldError.checkNotNull(
-        categories, r'Location', 'categories');
-  }
-
+      : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LocationBuilder toBuilder() => new LocationBuilder()..replace(this);
+  LocationBuilder toBuilder() => LocationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -165,7 +160,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set name(String? name) => _$this._name = name;
 
   AddressBuilder? _address;
-  AddressBuilder get address => _$this._address ??= new AddressBuilder();
+  AddressBuilder get address => _$this._address ??= AddressBuilder();
   set address(AddressBuilder? address) => _$this._address = address;
 
   String? _cellphone;
@@ -190,31 +185,31 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
-      _$this._keywords ??= new ListBuilder<String>();
+      _$this._keywords ??= ListBuilder<String>();
   set keywords(ListBuilder<String>? keywords) => _$this._keywords = keywords;
 
   ListBuilder<OpeningHour>? _openingHours;
   ListBuilder<OpeningHour> get openingHours =>
-      _$this._openingHours ??= new ListBuilder<OpeningHour>();
+      _$this._openingHours ??= ListBuilder<OpeningHour>();
   set openingHours(ListBuilder<OpeningHour>? openingHours) =>
       _$this._openingHours = openingHours;
 
   ListBuilder<SpecialOpeningHour>? _specialOpeningHours;
   ListBuilder<SpecialOpeningHour> get specialOpeningHours =>
-      _$this._specialOpeningHours ??= new ListBuilder<SpecialOpeningHour>();
+      _$this._specialOpeningHours ??= ListBuilder<SpecialOpeningHour>();
   set specialOpeningHours(
           ListBuilder<SpecialOpeningHour>? specialOpeningHours) =>
       _$this._specialOpeningHours = specialOpeningHours;
 
   LocationPhotoBuilder? _coverPhoto;
   LocationPhotoBuilder get coverPhoto =>
-      _$this._coverPhoto ??= new LocationPhotoBuilder();
+      _$this._coverPhoto ??= LocationPhotoBuilder();
   set coverPhoto(LocationPhotoBuilder? coverPhoto) =>
       _$this._coverPhoto = coverPhoto;
 
   SetBuilder<LocationPhoto>? _photos;
   SetBuilder<LocationPhoto> get photos =>
-      _$this._photos ??= new SetBuilder<LocationPhoto>();
+      _$this._photos ??= SetBuilder<LocationPhoto>();
   set photos(SetBuilder<LocationPhoto>? photos) => _$this._photos = photos;
 
   String? _timezone;
@@ -226,8 +221,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set website(String? website) => _$this._website = website;
 
   ListBuilder<int>? _categories;
-  ListBuilder<int> get categories =>
-      _$this._categories ??= new ListBuilder<int>();
+  ListBuilder<int> get categories => _$this._categories ??= ListBuilder<int>();
   set categories(ListBuilder<int>? categories) =>
       _$this._categories = categories;
 
@@ -272,7 +266,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
   @override
   void replace(Location other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Location;
   }
 
@@ -288,7 +281,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
     _$Location _$result;
     try {
       _$result = _$v ??
-          new _$Location._(
+          _$Location._(
             id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'Location', 'name'),
@@ -329,7 +322,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _$failedField = 'categories';
         categories.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());
       }
       rethrow;

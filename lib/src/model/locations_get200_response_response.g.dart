@@ -19,12 +19,11 @@ class _$LocationsGet200ResponseResponse
 
   factory _$LocationsGet200ResponseResponse(
           [void Function(LocationsGet200ResponseResponseBuilder)? updates]) =>
-      (new LocationsGet200ResponseResponseBuilder()..update(updates))._build();
+      (LocationsGet200ResponseResponseBuilder()..update(updates))._build();
 
   _$LocationsGet200ResponseResponse._(
       {this.offset, this.max, this.count, this.locations})
       : super._();
-
   @override
   LocationsGet200ResponseResponse rebuild(
           void Function(LocationsGet200ResponseResponseBuilder) updates) =>
@@ -32,7 +31,7 @@ class _$LocationsGet200ResponseResponse
 
   @override
   LocationsGet200ResponseResponseBuilder toBuilder() =>
-      new LocationsGet200ResponseResponseBuilder()..replace(this);
+      LocationsGet200ResponseResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -86,7 +85,7 @@ class LocationsGet200ResponseResponseBuilder
 
   ListBuilder<Location>? _locations;
   ListBuilder<Location> get locations =>
-      _$this._locations ??= new ListBuilder<Location>();
+      _$this._locations ??= ListBuilder<Location>();
   set locations(ListBuilder<Location>? locations) =>
       _$this._locations = locations;
 
@@ -108,7 +107,6 @@ class LocationsGet200ResponseResponseBuilder
 
   @override
   void replace(LocationsGet200ResponseResponse other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LocationsGet200ResponseResponse;
   }
 
@@ -124,7 +122,7 @@ class LocationsGet200ResponseResponseBuilder
     _$LocationsGet200ResponseResponse _$result;
     try {
       _$result = _$v ??
-          new _$LocationsGet200ResponseResponse._(
+          _$LocationsGet200ResponseResponse._(
             offset: offset,
             max: max,
             count: count,
@@ -136,7 +134,7 @@ class LocationsGet200ResponseResponseBuilder
         _$failedField = 'locations';
         _locations?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'LocationsGet200ResponseResponse', _$failedField, e.toString());
       }
       rethrow;

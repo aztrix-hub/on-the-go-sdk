@@ -18,22 +18,14 @@ class _$LocationPhotoPostRequest extends LocationPhotoPostRequest {
 
   factory _$LocationPhotoPostRequest(
           [void Function(LocationPhotoPostRequestBuilder)? updates]) =>
-      (new LocationPhotoPostRequestBuilder()..update(updates))._build();
+      (LocationPhotoPostRequestBuilder()..update(updates))._build();
 
   _$LocationPhotoPostRequest._(
       {this.description,
       required this.locationId,
       required this.photo,
       required this.type})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        locationId, r'LocationPhotoPostRequest', 'locationId');
-    BuiltValueNullFieldError.checkNotNull(
-        photo, r'LocationPhotoPostRequest', 'photo');
-    BuiltValueNullFieldError.checkNotNull(
-        type, r'LocationPhotoPostRequest', 'type');
-  }
-
+      : super._();
   @override
   LocationPhotoPostRequest rebuild(
           void Function(LocationPhotoPostRequestBuilder) updates) =>
@@ -41,7 +33,7 @@ class _$LocationPhotoPostRequest extends LocationPhotoPostRequest {
 
   @override
   LocationPhotoPostRequestBuilder toBuilder() =>
-      new LocationPhotoPostRequestBuilder()..replace(this);
+      LocationPhotoPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -114,7 +106,6 @@ class LocationPhotoPostRequestBuilder
 
   @override
   void replace(LocationPhotoPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LocationPhotoPostRequest;
   }
 
@@ -128,7 +119,7 @@ class LocationPhotoPostRequestBuilder
 
   _$LocationPhotoPostRequest _build() {
     final _$result = _$v ??
-        new _$LocationPhotoPostRequest._(
+        _$LocationPhotoPostRequest._(
           description: description,
           locationId: BuiltValueNullFieldError.checkNotNull(
               locationId, r'LocationPhotoPostRequest', 'locationId'),

@@ -18,12 +18,11 @@ class _$AiConversationPostRequestUserLocation
   factory _$AiConversationPostRequestUserLocation(
           [void Function(AiConversationPostRequestUserLocationBuilder)?
               updates]) =>
-      (new AiConversationPostRequestUserLocationBuilder()..update(updates))
+      (AiConversationPostRequestUserLocationBuilder()..update(updates))
           ._build();
 
   _$AiConversationPostRequestUserLocation._({this.lat, this.lng, this.freeform})
       : super._();
-
   @override
   AiConversationPostRequestUserLocation rebuild(
           void Function(AiConversationPostRequestUserLocationBuilder)
@@ -32,7 +31,7 @@ class _$AiConversationPostRequestUserLocation
 
   @override
   AiConversationPostRequestUserLocationBuilder toBuilder() =>
-      new AiConversationPostRequestUserLocationBuilder()..replace(this);
+      AiConversationPostRequestUserLocationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -99,7 +98,6 @@ class AiConversationPostRequestUserLocationBuilder
 
   @override
   void replace(AiConversationPostRequestUserLocation other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiConversationPostRequestUserLocation;
   }
 
@@ -114,7 +112,7 @@ class AiConversationPostRequestUserLocationBuilder
 
   _$AiConversationPostRequestUserLocation _build() {
     final _$result = _$v ??
-        new _$AiConversationPostRequestUserLocation._(
+        _$AiConversationPostRequestUserLocation._(
           lat: lat,
           lng: lng,
           freeform: freeform,

@@ -12,10 +12,9 @@ class _$UserOauthPostRequest extends UserOauthPostRequest {
 
   factory _$UserOauthPostRequest(
           [void Function(UserOauthPostRequestBuilder)? updates]) =>
-      (new UserOauthPostRequestBuilder()..update(updates))._build();
+      (UserOauthPostRequestBuilder()..update(updates))._build();
 
   _$UserOauthPostRequest._({this.authorizationCode}) : super._();
-
   @override
   UserOauthPostRequest rebuild(
           void Function(UserOauthPostRequestBuilder) updates) =>
@@ -23,7 +22,7 @@ class _$UserOauthPostRequest extends UserOauthPostRequest {
 
   @override
   UserOauthPostRequestBuilder toBuilder() =>
-      new UserOauthPostRequestBuilder()..replace(this);
+      UserOauthPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -72,7 +71,6 @@ class UserOauthPostRequestBuilder
 
   @override
   void replace(UserOauthPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$UserOauthPostRequest;
   }
 
@@ -86,7 +84,7 @@ class UserOauthPostRequestBuilder
 
   _$UserOauthPostRequest _build() {
     final _$result = _$v ??
-        new _$UserOauthPostRequest._(
+        _$UserOauthPostRequest._(
           authorizationCode: authorizationCode,
         );
     replace(_$result);

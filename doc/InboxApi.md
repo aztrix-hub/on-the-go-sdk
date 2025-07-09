@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inboxReplyPost**
-> DataPointResponseWrapper inboxReplyPost(datapointId, inboxReplyPostRequest)
+> DataPoint inboxReplyPost(datapointId, inboxReplyPostRequest)
 
 
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPointResponseWrapper**](DataPointResponseWrapper.md)
+[**DataPoint**](DataPoint.md)
 
 ### Authorization
 

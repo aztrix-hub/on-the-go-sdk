@@ -21,8 +21,7 @@ class _$NotificationsConfigGet200Response
 
   factory _$NotificationsConfigGet200Response(
           [void Function(NotificationsConfigGet200ResponseBuilder)? updates]) =>
-      (new NotificationsConfigGet200ResponseBuilder()..update(updates))
-          ._build();
+      (NotificationsConfigGet200ResponseBuilder()..update(updates))._build();
 
   _$NotificationsConfigGet200Response._(
       {this.newReviews,
@@ -31,7 +30,6 @@ class _$NotificationsConfigGet200Response
       this.newSocialComments,
       this.aiSuggestions})
       : super._();
-
   @override
   NotificationsConfigGet200Response rebuild(
           void Function(NotificationsConfigGet200ResponseBuilder) updates) =>
@@ -39,7 +37,7 @@ class _$NotificationsConfigGet200Response
 
   @override
   NotificationsConfigGet200ResponseBuilder toBuilder() =>
-      new NotificationsConfigGet200ResponseBuilder()..replace(this);
+      NotificationsConfigGet200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -88,14 +86,14 @@ class NotificationsConfigGet200ResponseBuilder
 
   ListBuilder<DirectoryType>? _newReviewsIgnoreDirectories;
   ListBuilder<DirectoryType> get newReviewsIgnoreDirectories =>
-      _$this._newReviewsIgnoreDirectories ??= new ListBuilder<DirectoryType>();
+      _$this._newReviewsIgnoreDirectories ??= ListBuilder<DirectoryType>();
   set newReviewsIgnoreDirectories(
           ListBuilder<DirectoryType>? newReviewsIgnoreDirectories) =>
       _$this._newReviewsIgnoreDirectories = newReviewsIgnoreDirectories;
 
   ListBuilder<int>? _newReviewsIgnoreStars;
   ListBuilder<int> get newReviewsIgnoreStars =>
-      _$this._newReviewsIgnoreStars ??= new ListBuilder<int>();
+      _$this._newReviewsIgnoreStars ??= ListBuilder<int>();
   set newReviewsIgnoreStars(ListBuilder<int>? newReviewsIgnoreStars) =>
       _$this._newReviewsIgnoreStars = newReviewsIgnoreStars;
 
@@ -129,7 +127,6 @@ class NotificationsConfigGet200ResponseBuilder
 
   @override
   void replace(NotificationsConfigGet200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$NotificationsConfigGet200Response;
   }
 
@@ -146,7 +143,7 @@ class NotificationsConfigGet200ResponseBuilder
     _$NotificationsConfigGet200Response _$result;
     try {
       _$result = _$v ??
-          new _$NotificationsConfigGet200Response._(
+          _$NotificationsConfigGet200Response._(
             newReviews: newReviews,
             newReviewsIgnoreDirectories: _newReviewsIgnoreDirectories?.build(),
             newReviewsIgnoreStars: _newReviewsIgnoreStars?.build(),
@@ -161,7 +158,7 @@ class NotificationsConfigGet200ResponseBuilder
         _$failedField = 'newReviewsIgnoreStars';
         _newReviewsIgnoreStars?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'NotificationsConfigGet200Response', _$failedField, e.toString());
       }
       rethrow;

@@ -17,20 +17,17 @@ class _$LocationPhoto extends LocationPhoto {
   final String? thumbnailUrl;
 
   factory _$LocationPhoto([void Function(LocationPhotoBuilder)? updates]) =>
-      (new LocationPhotoBuilder()..update(updates))._build();
+      (LocationPhotoBuilder()..update(updates))._build();
 
   _$LocationPhoto._(
       {this.id, this.description, required this.url, this.thumbnailUrl})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(url, r'LocationPhoto', 'url');
-  }
-
+      : super._();
   @override
   LocationPhoto rebuild(void Function(LocationPhotoBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LocationPhotoBuilder toBuilder() => new LocationPhotoBuilder()..replace(this);
+  LocationPhotoBuilder toBuilder() => LocationPhotoBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -102,7 +99,6 @@ class LocationPhotoBuilder
 
   @override
   void replace(LocationPhoto other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LocationPhoto;
   }
 
@@ -116,7 +112,7 @@ class LocationPhotoBuilder
 
   _$LocationPhoto _build() {
     final _$result = _$v ??
-        new _$LocationPhoto._(
+        _$LocationPhoto._(
           id: id,
           description: description,
           url: BuiltValueNullFieldError.checkNotNull(

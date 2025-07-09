@@ -22,7 +22,7 @@ class _$AiSystemGet200Response extends AiSystemGet200Response {
 
   factory _$AiSystemGet200Response(
           [void Function(AiSystemGet200ResponseBuilder)? updates]) =>
-      (new AiSystemGet200ResponseBuilder()..update(updates))._build();
+      (AiSystemGet200ResponseBuilder()..update(updates))._build();
 
   _$AiSystemGet200Response._(
       {this.task,
@@ -32,7 +32,6 @@ class _$AiSystemGet200Response extends AiSystemGet200Response {
       this.format,
       this.tone})
       : super._();
-
   @override
   AiSystemGet200Response rebuild(
           void Function(AiSystemGet200ResponseBuilder) updates) =>
@@ -40,7 +39,7 @@ class _$AiSystemGet200Response extends AiSystemGet200Response {
 
   @override
   AiSystemGet200ResponseBuilder toBuilder() =>
-      new AiSystemGet200ResponseBuilder()..replace(this);
+      AiSystemGet200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -128,7 +127,6 @@ class AiSystemGet200ResponseBuilder
 
   @override
   void replace(AiSystemGet200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiSystemGet200Response;
   }
 
@@ -142,7 +140,7 @@ class AiSystemGet200ResponseBuilder
 
   _$AiSystemGet200Response _build() {
     final _$result = _$v ??
-        new _$AiSystemGet200Response._(
+        _$AiSystemGet200Response._(
           task: task,
           context: context,
           exemplar: exemplar,

@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/api_util.dart';
-import 'package:on_the_go_sdk/src/model/data_point_response_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
@@ -314,9 +313,9 @@ class InboxApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [DataPointResponseWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [DataPoint] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<DataPointResponseWrapper>> inboxReplyPost({
+  Future<Response<DataPoint>> inboxReplyPost({
     required String datapointId,
     required InboxReplyPostRequest inboxReplyPostRequest,
     CancelToken? cancelToken,
@@ -377,7 +376,7 @@ class InboxApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    DataPointResponseWrapper? _responseData;
+    DataPoint? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -385,8 +384,8 @@ class InboxApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(DataPointResponseWrapper),
-            ) as DataPointResponseWrapper;
+              specifiedType: const FullType(DataPoint),
+            ) as DataPoint;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -397,7 +396,7 @@ class InboxApi {
       );
     }
 
-    return Response<DataPointResponseWrapper>(
+    return Response<DataPoint>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

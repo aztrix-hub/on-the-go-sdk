@@ -12,13 +12,9 @@ class _$AiMemoriesPostRequest extends AiMemoriesPostRequest {
 
   factory _$AiMemoriesPostRequest(
           [void Function(AiMemoriesPostRequestBuilder)? updates]) =>
-      (new AiMemoriesPostRequestBuilder()..update(updates))._build();
+      (AiMemoriesPostRequestBuilder()..update(updates))._build();
 
-  _$AiMemoriesPostRequest._({required this.messages}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        messages, r'AiMemoriesPostRequest', 'messages');
-  }
-
+  _$AiMemoriesPostRequest._({required this.messages}) : super._();
   @override
   AiMemoriesPostRequest rebuild(
           void Function(AiMemoriesPostRequestBuilder) updates) =>
@@ -26,7 +22,7 @@ class _$AiMemoriesPostRequest extends AiMemoriesPostRequest {
 
   @override
   AiMemoriesPostRequestBuilder toBuilder() =>
-      new AiMemoriesPostRequestBuilder()..replace(this);
+      AiMemoriesPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -57,7 +53,7 @@ class AiMemoriesPostRequestBuilder
   ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
   ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          new ListBuilder<AiConversationPost200ResponseMessagesInner>();
+          ListBuilder<AiConversationPost200ResponseMessagesInner>();
   set messages(
           ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
       _$this._messages = messages;
@@ -77,7 +73,6 @@ class AiMemoriesPostRequestBuilder
 
   @override
   void replace(AiMemoriesPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiMemoriesPostRequest;
   }
 
@@ -93,7 +88,7 @@ class AiMemoriesPostRequestBuilder
     _$AiMemoriesPostRequest _$result;
     try {
       _$result = _$v ??
-          new _$AiMemoriesPostRequest._(
+          _$AiMemoriesPostRequest._(
             messages: messages.build(),
           );
     } catch (_) {
@@ -102,7 +97,7 @@ class AiMemoriesPostRequestBuilder
         _$failedField = 'messages';
         messages.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiMemoriesPostRequest', _$failedField, e.toString());
       }
       rethrow;

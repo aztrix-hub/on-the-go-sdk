@@ -16,12 +16,11 @@ class _$AiConversationPost200ResponseMessagesInner
   factory _$AiConversationPost200ResponseMessagesInner(
           [void Function(AiConversationPost200ResponseMessagesInnerBuilder)?
               updates]) =>
-      (new AiConversationPost200ResponseMessagesInnerBuilder()..update(updates))
+      (AiConversationPost200ResponseMessagesInnerBuilder()..update(updates))
           ._build();
 
   _$AiConversationPost200ResponseMessagesInner._({this.role, this.content})
       : super._();
-
   @override
   AiConversationPost200ResponseMessagesInner rebuild(
           void Function(AiConversationPost200ResponseMessagesInnerBuilder)
@@ -30,7 +29,7 @@ class _$AiConversationPost200ResponseMessagesInner
 
   @override
   AiConversationPost200ResponseMessagesInnerBuilder toBuilder() =>
-      new AiConversationPost200ResponseMessagesInnerBuilder()..replace(this);
+      AiConversationPost200ResponseMessagesInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -89,7 +88,6 @@ class AiConversationPost200ResponseMessagesInnerBuilder
 
   @override
   void replace(AiConversationPost200ResponseMessagesInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiConversationPost200ResponseMessagesInner;
   }
 
@@ -105,7 +103,7 @@ class AiConversationPost200ResponseMessagesInnerBuilder
 
   _$AiConversationPost200ResponseMessagesInner _build() {
     final _$result = _$v ??
-        new _$AiConversationPost200ResponseMessagesInner._(
+        _$AiConversationPost200ResponseMessagesInner._(
           role: role,
           content: content,
         );

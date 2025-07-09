@@ -18,18 +18,18 @@ WhitelabelDataThemeEnum _$whitelabelDataThemeEnumValueOf(String name) {
     case 'dark':
       return _$whitelabelDataThemeEnum_dark;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<WhitelabelDataThemeEnum> _$whitelabelDataThemeEnumValues =
-    new BuiltSet<WhitelabelDataThemeEnum>(const <WhitelabelDataThemeEnum>[
+    BuiltSet<WhitelabelDataThemeEnum>(const <WhitelabelDataThemeEnum>[
   _$whitelabelDataThemeEnum_light,
   _$whitelabelDataThemeEnum_dark,
 ]);
 
 Serializer<WhitelabelDataThemeEnum> _$whitelabelDataThemeEnumSerializer =
-    new _$WhitelabelDataThemeEnumSerializer();
+    _$WhitelabelDataThemeEnumSerializer();
 
 class _$WhitelabelDataThemeEnumSerializer
     implements PrimitiveSerializer<WhitelabelDataThemeEnum> {
@@ -73,7 +73,7 @@ class _$WhitelabelData extends WhitelabelData {
   final String? logo;
 
   factory _$WhitelabelData([void Function(WhitelabelDataBuilder)? updates]) =>
-      (new WhitelabelDataBuilder()..update(updates))._build();
+      (WhitelabelDataBuilder()..update(updates))._build();
 
   _$WhitelabelData._(
       {this.theme,
@@ -82,14 +82,12 @@ class _$WhitelabelData extends WhitelabelData {
       this.tertiaryColor,
       this.logo})
       : super._();
-
   @override
   WhitelabelData rebuild(void Function(WhitelabelDataBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  WhitelabelDataBuilder toBuilder() =>
-      new WhitelabelDataBuilder()..replace(this);
+  WhitelabelDataBuilder toBuilder() => WhitelabelDataBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -171,7 +169,6 @@ class WhitelabelDataBuilder
 
   @override
   void replace(WhitelabelData other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$WhitelabelData;
   }
 
@@ -185,7 +182,7 @@ class WhitelabelDataBuilder
 
   _$WhitelabelData _build() {
     final _$result = _$v ??
-        new _$WhitelabelData._(
+        _$WhitelabelData._(
           theme: theme,
           primaryColor: primaryColor,
           secondaryColor: secondaryColor,

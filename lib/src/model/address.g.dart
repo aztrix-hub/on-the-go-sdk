@@ -27,7 +27,7 @@ class _$Address extends Address {
   final double? longitude;
 
   factory _$Address([void Function(AddressBuilder)? updates]) =>
-      (new AddressBuilder()..update(updates))._build();
+      (AddressBuilder()..update(updates))._build();
 
   _$Address._(
       {this.countryCode,
@@ -40,13 +40,12 @@ class _$Address extends Address {
       this.latitude,
       this.longitude})
       : super._();
-
   @override
   Address rebuild(void Function(AddressBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AddressBuilder toBuilder() => new AddressBuilder()..replace(this);
+  AddressBuilder toBuilder() => AddressBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -158,7 +157,6 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
 
   @override
   void replace(Address other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Address;
   }
 
@@ -172,7 +170,7 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
 
   _$Address _build() {
     final _$result = _$v ??
-        new _$Address._(
+        _$Address._(
           countryCode: countryCode,
           city: city,
           streetAndNo: streetAndNo,

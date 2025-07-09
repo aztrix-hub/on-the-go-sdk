@@ -16,13 +16,10 @@ class _$SpecialOpeningHour extends SpecialOpeningHour {
 
   factory _$SpecialOpeningHour(
           [void Function(SpecialOpeningHourBuilder)? updates]) =>
-      (new SpecialOpeningHourBuilder()..update(updates))._build();
+      (SpecialOpeningHourBuilder()..update(updates))._build();
 
   _$SpecialOpeningHour._({required this.date, this.closed, this.intervals})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(date, r'SpecialOpeningHour', 'date');
-  }
-
+      : super._();
   @override
   SpecialOpeningHour rebuild(
           void Function(SpecialOpeningHourBuilder) updates) =>
@@ -30,7 +27,7 @@ class _$SpecialOpeningHour extends SpecialOpeningHour {
 
   @override
   SpecialOpeningHourBuilder toBuilder() =>
-      new SpecialOpeningHourBuilder()..replace(this);
+      SpecialOpeningHourBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -75,7 +72,7 @@ class SpecialOpeningHourBuilder
 
   ListBuilder<JsonObject?>? _intervals;
   ListBuilder<JsonObject?> get intervals =>
-      _$this._intervals ??= new ListBuilder<JsonObject?>();
+      _$this._intervals ??= ListBuilder<JsonObject?>();
   set intervals(ListBuilder<JsonObject?>? intervals) =>
       _$this._intervals = intervals;
 
@@ -96,7 +93,6 @@ class SpecialOpeningHourBuilder
 
   @override
   void replace(SpecialOpeningHour other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SpecialOpeningHour;
   }
 
@@ -112,7 +108,7 @@ class SpecialOpeningHourBuilder
     _$SpecialOpeningHour _$result;
     try {
       _$result = _$v ??
-          new _$SpecialOpeningHour._(
+          _$SpecialOpeningHour._(
             date: BuiltValueNullFieldError.checkNotNull(
                 date, r'SpecialOpeningHour', 'date'),
             closed: closed,
@@ -124,7 +120,7 @@ class SpecialOpeningHourBuilder
         _$failedField = 'intervals';
         _intervals?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'SpecialOpeningHour', _$failedField, e.toString());
       }
       rethrow;

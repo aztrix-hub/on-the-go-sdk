@@ -4,13 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
-import 'package:on_the_go_sdk/src/model/social_post_wrapper.dart';
-import 'package:on_the_go_sdk/src/model/social_posts_response_wrapper.dart';
 
 class PublishApi {
   final Dio _dio;
@@ -30,9 +28,9 @@ class PublishApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [SocialPostsResponseWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<SocialPost>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostsResponseWrapper>> publishPostsGet({
+  Future<Response<BuiltList<SocialPost>>> publishPostsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,7 +66,7 @@ class PublishApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SocialPostsResponseWrapper? _responseData;
+    BuiltList<SocialPost>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -76,8 +74,8 @@ class PublishApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(SocialPostsResponseWrapper),
-            ) as SocialPostsResponseWrapper;
+              specifiedType: const FullType(BuiltList, [FullType(SocialPost)]),
+            ) as BuiltList<SocialPost>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -88,7 +86,7 @@ class PublishApi {
       );
     }
 
-    return Response<SocialPostsResponseWrapper>(
+    return Response<BuiltList<SocialPost>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -104,7 +102,7 @@ class PublishApi {
   ///
   ///
   /// Parameters:
-  /// * [body] - A SocialPost object
+  /// * [socialPost] - A SocialPost object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -112,10 +110,10 @@ class PublishApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [SocialPostWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [SocialPost] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPostWrapper>> publishPostsPost({
-    required SocialPost body,
+  Future<Response<SocialPost>> publishPostsPost({
+    required SocialPost socialPost,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -147,7 +145,8 @@ class PublishApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = body;
+      const _type = FullType(SocialPost);
+      _bodyData = _serializers.serialize(socialPost, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -169,7 +168,7 @@ class PublishApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SocialPostWrapper? _responseData;
+    SocialPost? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -177,8 +176,8 @@ class PublishApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(SocialPostWrapper),
-            ) as SocialPostWrapper;
+              specifiedType: const FullType(SocialPost),
+            ) as SocialPost;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -189,7 +188,7 @@ class PublishApi {
       );
     }
 
-    return Response<SocialPostWrapper>(
+    return Response<SocialPost>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

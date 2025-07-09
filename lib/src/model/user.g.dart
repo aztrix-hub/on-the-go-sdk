@@ -22,12 +22,12 @@ UserSalutationEnum _$userSalutationEnumValueOf(String name) {
     case 'OTHER':
       return _$userSalutationEnum_OTHER;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<UserSalutationEnum> _$userSalutationEnumValues =
-    new BuiltSet<UserSalutationEnum>(const <UserSalutationEnum>[
+    BuiltSet<UserSalutationEnum>(const <UserSalutationEnum>[
   _$userSalutationEnum_MALE,
   _$userSalutationEnum_FEMALE,
   _$userSalutationEnum_OTHER,
@@ -65,12 +65,12 @@ UserStatusEnum _$userStatusEnumValueOf(String name) {
     case 'NO_LOGIN':
       return _$userStatusEnum_NO_LOGIN;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<UserStatusEnum> _$userStatusEnumValues =
-    new BuiltSet<UserStatusEnum>(const <UserStatusEnum>[
+    BuiltSet<UserStatusEnum>(const <UserStatusEnum>[
   _$userStatusEnum_INVITED,
   _$userStatusEnum_CREATED,
   _$userStatusEnum_VERIFIED,
@@ -110,12 +110,12 @@ UserRoleEnum _$userRoleEnumValueOf(String name) {
     case 'BUSINESS_MANAGER_INBOX':
       return _$userRoleEnum_BUSINESS_MANAGER_INBOX;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<UserRoleEnum> _$userRoleEnumValues =
-    new BuiltSet<UserRoleEnum>(const <UserRoleEnum>[
+    BuiltSet<UserRoleEnum>(const <UserRoleEnum>[
   _$userRoleEnum_UBER_API_ADMIN,
   _$userRoleEnum_API_ADMIN,
   _$userRoleEnum_ADMIN,
@@ -126,11 +126,10 @@ final BuiltSet<UserRoleEnum> _$userRoleEnumValues =
 ]);
 
 Serializer<UserSalutationEnum> _$userSalutationEnumSerializer =
-    new _$UserSalutationEnumSerializer();
+    _$UserSalutationEnumSerializer();
 Serializer<UserStatusEnum> _$userStatusEnumSerializer =
-    new _$UserStatusEnumSerializer();
-Serializer<UserRoleEnum> _$userRoleEnumSerializer =
-    new _$UserRoleEnumSerializer();
+    _$UserStatusEnumSerializer();
+Serializer<UserRoleEnum> _$userRoleEnumSerializer = _$UserRoleEnumSerializer();
 
 class _$UserSalutationEnumSerializer
     implements PrimitiveSerializer<UserSalutationEnum> {
@@ -274,7 +273,7 @@ class _$User extends User {
   final String? whitelabelInformationIdentifier;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
-      (new UserBuilder()..update(updates))._build();
+      (UserBuilder()..update(updates))._build();
 
   _$User._(
       {this.id,
@@ -294,18 +293,13 @@ class _$User extends User {
       this.locationGroupIds,
       this.managedLocationsViaGroups,
       this.whitelabelInformationIdentifier})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(firstname, r'User', 'firstname');
-    BuiltValueNullFieldError.checkNotNull(lastname, r'User', 'lastname');
-    BuiltValueNullFieldError.checkNotNull(role, r'User', 'role');
-  }
-
+      : super._();
   @override
   User rebuild(void Function(UserBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserBuilder toBuilder() => new UserBuilder()..replace(this);
+  UserBuilder toBuilder() => UserBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -418,13 +412,13 @@ class UserBuilder implements Builder<User, UserBuilder> {
 
   SetBuilder<int>? _managedLocations;
   SetBuilder<int> get managedLocations =>
-      _$this._managedLocations ??= new SetBuilder<int>();
+      _$this._managedLocations ??= SetBuilder<int>();
   set managedLocations(SetBuilder<int>? managedLocations) =>
       _$this._managedLocations = managedLocations;
 
   SetBuilder<num>? _managedBusinesses;
   SetBuilder<num> get managedBusinesses =>
-      _$this._managedBusinesses ??= new SetBuilder<num>();
+      _$this._managedBusinesses ??= SetBuilder<num>();
   set managedBusinesses(SetBuilder<num>? managedBusinesses) =>
       _$this._managedBusinesses = managedBusinesses;
 
@@ -438,8 +432,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set identifier(String? identifier) => _$this._identifier = identifier;
 
   SetBuilder<String>? _features;
-  SetBuilder<String> get features =>
-      _$this._features ??= new SetBuilder<String>();
+  SetBuilder<String> get features => _$this._features ??= SetBuilder<String>();
   set features(SetBuilder<String>? features) => _$this._features = features;
 
   JsonObject? _featuresDetailed;
@@ -449,13 +442,13 @@ class UserBuilder implements Builder<User, UserBuilder> {
 
   ListBuilder<int>? _locationGroupIds;
   ListBuilder<int> get locationGroupIds =>
-      _$this._locationGroupIds ??= new ListBuilder<int>();
+      _$this._locationGroupIds ??= ListBuilder<int>();
   set locationGroupIds(ListBuilder<int>? locationGroupIds) =>
       _$this._locationGroupIds = locationGroupIds;
 
   ListBuilder<int>? _managedLocationsViaGroups;
   ListBuilder<int> get managedLocationsViaGroups =>
-      _$this._managedLocationsViaGroups ??= new ListBuilder<int>();
+      _$this._managedLocationsViaGroups ??= ListBuilder<int>();
   set managedLocationsViaGroups(ListBuilder<int>? managedLocationsViaGroups) =>
       _$this._managedLocationsViaGroups = managedLocationsViaGroups;
 
@@ -497,7 +490,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
 
   @override
   void replace(User other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$User;
   }
 
@@ -513,7 +505,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
     _$User _$result;
     try {
       _$result = _$v ??
-          new _$User._(
+          _$User._(
             id: id,
             salutation: salutation,
             email: email,
@@ -550,8 +542,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
         _$failedField = 'managedLocationsViaGroups';
         _managedLocationsViaGroups?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'User', _$failedField, e.toString());
+        throw BuiltValueNestedFieldError(r'User', _$failedField, e.toString());
       }
       rethrow;
     }

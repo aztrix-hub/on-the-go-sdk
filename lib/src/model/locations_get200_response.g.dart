@@ -14,10 +14,9 @@ class _$LocationsGet200Response extends LocationsGet200Response {
 
   factory _$LocationsGet200Response(
           [void Function(LocationsGet200ResponseBuilder)? updates]) =>
-      (new LocationsGet200ResponseBuilder()..update(updates))._build();
+      (LocationsGet200ResponseBuilder()..update(updates))._build();
 
   _$LocationsGet200Response._({this.message, this.response}) : super._();
-
   @override
   LocationsGet200Response rebuild(
           void Function(LocationsGet200ResponseBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$LocationsGet200Response extends LocationsGet200Response {
 
   @override
   LocationsGet200ResponseBuilder toBuilder() =>
-      new LocationsGet200ResponseBuilder()..replace(this);
+      LocationsGet200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -64,7 +63,7 @@ class LocationsGet200ResponseBuilder
 
   LocationsGet200ResponseResponseBuilder? _response;
   LocationsGet200ResponseResponseBuilder get response =>
-      _$this._response ??= new LocationsGet200ResponseResponseBuilder();
+      _$this._response ??= LocationsGet200ResponseResponseBuilder();
   set response(LocationsGet200ResponseResponseBuilder? response) =>
       _$this._response = response;
 
@@ -84,7 +83,6 @@ class LocationsGet200ResponseBuilder
 
   @override
   void replace(LocationsGet200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LocationsGet200Response;
   }
 
@@ -100,7 +98,7 @@ class LocationsGet200ResponseBuilder
     _$LocationsGet200Response _$result;
     try {
       _$result = _$v ??
-          new _$LocationsGet200Response._(
+          _$LocationsGet200Response._(
             message: message,
             response: _response?.build(),
           );
@@ -110,7 +108,7 @@ class LocationsGet200ResponseBuilder
         _$failedField = 'response';
         _response?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'LocationsGet200Response', _$failedField, e.toString());
       }
       rethrow;

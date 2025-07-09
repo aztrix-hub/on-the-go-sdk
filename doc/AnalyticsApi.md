@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **analyticsGet**
-> InsightsWrapper analyticsGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics)
+> Insights analyticsGet(type, businessIds, locationIds, textFilter, startDate, endDate, group, metrics)
 
 
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InsightsWrapper**](InsightsWrapper.md)
+[**Insights**](Insights.md)
 
 ### Authorization
 

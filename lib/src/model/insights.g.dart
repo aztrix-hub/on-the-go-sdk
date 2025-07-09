@@ -13,16 +13,15 @@ class _$Insights extends Insights {
   final int? matchedLocationsCount;
 
   factory _$Insights([void Function(InsightsBuilder)? updates]) =>
-      (new InsightsBuilder()..update(updates))._build();
+      (InsightsBuilder()..update(updates))._build();
 
   _$Insights._({this.metrics, this.matchedLocationsCount}) : super._();
-
   @override
   Insights rebuild(void Function(InsightsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  InsightsBuilder toBuilder() => new InsightsBuilder()..replace(this);
+  InsightsBuilder toBuilder() => InsightsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -55,7 +54,7 @@ class InsightsBuilder implements Builder<Insights, InsightsBuilder> {
 
   ListBuilder<InsightsMetricsInner>? _metrics;
   ListBuilder<InsightsMetricsInner> get metrics =>
-      _$this._metrics ??= new ListBuilder<InsightsMetricsInner>();
+      _$this._metrics ??= ListBuilder<InsightsMetricsInner>();
   set metrics(ListBuilder<InsightsMetricsInner>? metrics) =>
       _$this._metrics = metrics;
 
@@ -80,7 +79,6 @@ class InsightsBuilder implements Builder<Insights, InsightsBuilder> {
 
   @override
   void replace(Insights other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Insights;
   }
 
@@ -96,7 +94,7 @@ class InsightsBuilder implements Builder<Insights, InsightsBuilder> {
     _$Insights _$result;
     try {
       _$result = _$v ??
-          new _$Insights._(
+          _$Insights._(
             metrics: _metrics?.build(),
             matchedLocationsCount: matchedLocationsCount,
           );
@@ -106,7 +104,7 @@ class InsightsBuilder implements Builder<Insights, InsightsBuilder> {
         _$failedField = 'metrics';
         _metrics?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'Insights', _$failedField, e.toString());
       }
       rethrow;

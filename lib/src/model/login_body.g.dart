@@ -13,16 +13,15 @@ class _$LoginBody extends LoginBody {
   final String? password;
 
   factory _$LoginBody([void Function(LoginBodyBuilder)? updates]) =>
-      (new LoginBodyBuilder()..update(updates))._build();
+      (LoginBodyBuilder()..update(updates))._build();
 
   _$LoginBody._({this.email, this.password}) : super._();
-
   @override
   LoginBody rebuild(void Function(LoginBodyBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginBodyBuilder toBuilder() => new LoginBodyBuilder()..replace(this);
+  LoginBodyBuilder toBuilder() => LoginBodyBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -77,7 +76,6 @@ class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
 
   @override
   void replace(LoginBody other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LoginBody;
   }
 
@@ -91,7 +89,7 @@ class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
 
   _$LoginBody _build() {
     final _$result = _$v ??
-        new _$LoginBody._(
+        _$LoginBody._(
           email: email,
           password: password,
         );

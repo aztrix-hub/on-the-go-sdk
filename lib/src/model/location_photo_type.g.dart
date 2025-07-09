@@ -71,12 +71,12 @@ LocationPhotoType _$valueOf(String name) {
     case 'FOOD_AND_DRINK':
       return _$FOOD_AND_DRINK;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<LocationPhotoType> _$values =
-    new BuiltSet<LocationPhotoType>(const <LocationPhotoType>[
+    BuiltSet<LocationPhotoType>(const <LocationPhotoType>[
   _$MAIN,
   _$DOCTOR_COM_PORTRAIT,
   _$LOGO,
@@ -128,7 +128,7 @@ abstract class _$LocationPhotoTypeMixin {
 }
 
 Serializer<LocationPhotoType> _$locationPhotoTypeSerializer =
-    new _$LocationPhotoTypeSerializer();
+    _$LocationPhotoTypeSerializer();
 
 class _$LocationPhotoTypeSerializer
     implements PrimitiveSerializer<LocationPhotoType> {

@@ -1,93 +1,93 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'brand_data_point.dart';
+part of 'data_point.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_REVIEW =
-    const BrandDataPointTypeEnum._('REVIEW');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_PHOTO =
-    const BrandDataPointTypeEnum._('PHOTO');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_CHECKIN =
-    const BrandDataPointTypeEnum._('CHECKIN');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_CONVERSATION =
-    const BrandDataPointTypeEnum._('CONVERSATION');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_COMMENT =
-    const BrandDataPointTypeEnum._('COMMENT');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_QUESTION =
-    const BrandDataPointTypeEnum._('QUESTION');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_POST =
-    const BrandDataPointTypeEnum._('POST');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_IMAGE =
-    const BrandDataPointTypeEnum._('IMAGE');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_VIDEO =
-    const BrandDataPointTypeEnum._('VIDEO');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_CAROUSEL_ALBUM =
-    const BrandDataPointTypeEnum._('CAROUSEL_ALBUM');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_LINK =
-    const BrandDataPointTypeEnum._('LINK');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_EXPANDEDREVIEW =
-    const BrandDataPointTypeEnum._('EXPANDEDREVIEW');
-const BrandDataPointTypeEnum _$brandDataPointTypeEnum_AD_POST =
-    const BrandDataPointTypeEnum._('AD_POST');
+const DataPointTypeEnum _$dataPointTypeEnum_REVIEW =
+    const DataPointTypeEnum._('REVIEW');
+const DataPointTypeEnum _$dataPointTypeEnum_PHOTO =
+    const DataPointTypeEnum._('PHOTO');
+const DataPointTypeEnum _$dataPointTypeEnum_CHECKIN =
+    const DataPointTypeEnum._('CHECKIN');
+const DataPointTypeEnum _$dataPointTypeEnum_CONVERSATION =
+    const DataPointTypeEnum._('CONVERSATION');
+const DataPointTypeEnum _$dataPointTypeEnum_COMMENT =
+    const DataPointTypeEnum._('COMMENT');
+const DataPointTypeEnum _$dataPointTypeEnum_QUESTION =
+    const DataPointTypeEnum._('QUESTION');
+const DataPointTypeEnum _$dataPointTypeEnum_POST =
+    const DataPointTypeEnum._('POST');
+const DataPointTypeEnum _$dataPointTypeEnum_IMAGE =
+    const DataPointTypeEnum._('IMAGE');
+const DataPointTypeEnum _$dataPointTypeEnum_VIDEO =
+    const DataPointTypeEnum._('VIDEO');
+const DataPointTypeEnum _$dataPointTypeEnum_CAROUSEL_ALBUM =
+    const DataPointTypeEnum._('CAROUSEL_ALBUM');
+const DataPointTypeEnum _$dataPointTypeEnum_LINK =
+    const DataPointTypeEnum._('LINK');
+const DataPointTypeEnum _$dataPointTypeEnum_EXPANDEDREVIEW =
+    const DataPointTypeEnum._('EXPANDEDREVIEW');
+const DataPointTypeEnum _$dataPointTypeEnum_AD_POST =
+    const DataPointTypeEnum._('AD_POST');
 
-BrandDataPointTypeEnum _$brandDataPointTypeEnumValueOf(String name) {
+DataPointTypeEnum _$dataPointTypeEnumValueOf(String name) {
   switch (name) {
     case 'REVIEW':
-      return _$brandDataPointTypeEnum_REVIEW;
+      return _$dataPointTypeEnum_REVIEW;
     case 'PHOTO':
-      return _$brandDataPointTypeEnum_PHOTO;
+      return _$dataPointTypeEnum_PHOTO;
     case 'CHECKIN':
-      return _$brandDataPointTypeEnum_CHECKIN;
+      return _$dataPointTypeEnum_CHECKIN;
     case 'CONVERSATION':
-      return _$brandDataPointTypeEnum_CONVERSATION;
+      return _$dataPointTypeEnum_CONVERSATION;
     case 'COMMENT':
-      return _$brandDataPointTypeEnum_COMMENT;
+      return _$dataPointTypeEnum_COMMENT;
     case 'QUESTION':
-      return _$brandDataPointTypeEnum_QUESTION;
+      return _$dataPointTypeEnum_QUESTION;
     case 'POST':
-      return _$brandDataPointTypeEnum_POST;
+      return _$dataPointTypeEnum_POST;
     case 'IMAGE':
-      return _$brandDataPointTypeEnum_IMAGE;
+      return _$dataPointTypeEnum_IMAGE;
     case 'VIDEO':
-      return _$brandDataPointTypeEnum_VIDEO;
+      return _$dataPointTypeEnum_VIDEO;
     case 'CAROUSEL_ALBUM':
-      return _$brandDataPointTypeEnum_CAROUSEL_ALBUM;
+      return _$dataPointTypeEnum_CAROUSEL_ALBUM;
     case 'LINK':
-      return _$brandDataPointTypeEnum_LINK;
+      return _$dataPointTypeEnum_LINK;
     case 'EXPANDEDREVIEW':
-      return _$brandDataPointTypeEnum_EXPANDEDREVIEW;
+      return _$dataPointTypeEnum_EXPANDEDREVIEW;
     case 'AD_POST':
-      return _$brandDataPointTypeEnum_AD_POST;
+      return _$dataPointTypeEnum_AD_POST;
     default:
       throw ArgumentError(name);
   }
 }
 
-final BuiltSet<BrandDataPointTypeEnum> _$brandDataPointTypeEnumValues =
-    BuiltSet<BrandDataPointTypeEnum>(const <BrandDataPointTypeEnum>[
-  _$brandDataPointTypeEnum_REVIEW,
-  _$brandDataPointTypeEnum_PHOTO,
-  _$brandDataPointTypeEnum_CHECKIN,
-  _$brandDataPointTypeEnum_CONVERSATION,
-  _$brandDataPointTypeEnum_COMMENT,
-  _$brandDataPointTypeEnum_QUESTION,
-  _$brandDataPointTypeEnum_POST,
-  _$brandDataPointTypeEnum_IMAGE,
-  _$brandDataPointTypeEnum_VIDEO,
-  _$brandDataPointTypeEnum_CAROUSEL_ALBUM,
-  _$brandDataPointTypeEnum_LINK,
-  _$brandDataPointTypeEnum_EXPANDEDREVIEW,
-  _$brandDataPointTypeEnum_AD_POST,
+final BuiltSet<DataPointTypeEnum> _$dataPointTypeEnumValues =
+    BuiltSet<DataPointTypeEnum>(const <DataPointTypeEnum>[
+  _$dataPointTypeEnum_REVIEW,
+  _$dataPointTypeEnum_PHOTO,
+  _$dataPointTypeEnum_CHECKIN,
+  _$dataPointTypeEnum_CONVERSATION,
+  _$dataPointTypeEnum_COMMENT,
+  _$dataPointTypeEnum_QUESTION,
+  _$dataPointTypeEnum_POST,
+  _$dataPointTypeEnum_IMAGE,
+  _$dataPointTypeEnum_VIDEO,
+  _$dataPointTypeEnum_CAROUSEL_ALBUM,
+  _$dataPointTypeEnum_LINK,
+  _$dataPointTypeEnum_EXPANDEDREVIEW,
+  _$dataPointTypeEnum_AD_POST,
 ]);
 
-Serializer<BrandDataPointTypeEnum> _$brandDataPointTypeEnumSerializer =
-    _$BrandDataPointTypeEnumSerializer();
+Serializer<DataPointTypeEnum> _$dataPointTypeEnumSerializer =
+    _$DataPointTypeEnumSerializer();
 
-class _$BrandDataPointTypeEnumSerializer
-    implements PrimitiveSerializer<BrandDataPointTypeEnum> {
+class _$DataPointTypeEnumSerializer
+    implements PrimitiveSerializer<DataPointTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'REVIEW': 'REVIEW',
     'PHOTO': 'PHOTO',
@@ -120,31 +120,37 @@ class _$BrandDataPointTypeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[BrandDataPointTypeEnum];
+  final Iterable<Type> types = const <Type>[DataPointTypeEnum];
   @override
-  final String wireName = 'BrandDataPointTypeEnum';
+  final String wireName = 'DataPointTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, BrandDataPointTypeEnum object,
+  Object serialize(Serializers serializers, DataPointTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  BrandDataPointTypeEnum deserialize(Serializers serializers, Object serialized,
+  DataPointTypeEnum deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      BrandDataPointTypeEnum.valueOf(
+      DataPointTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$BrandDataPoint extends BrandDataPoint {
+class _$DataPoint extends DataPoint {
   @override
   final int? id;
+  @override
+  final BuiltList<DataPoint>? comments;
   @override
   final bool? liked;
   @override
   final String? data;
   @override
-  final BrandDataPointTypeEnum? type;
+  final DataPointTypeEnum? type;
+  @override
+  final int? countLikes;
+  @override
+  final int? locationId;
   @override
   final DateTime? actionDate;
   @override
@@ -172,14 +178,17 @@ class _$BrandDataPoint extends BrandDataPoint {
   @override
   final DateTime? threadActionDate;
 
-  factory _$BrandDataPoint([void Function(BrandDataPointBuilder)? updates]) =>
-      (BrandDataPointBuilder()..update(updates))._build();
+  factory _$DataPoint([void Function(DataPointBuilder)? updates]) =>
+      (DataPointBuilder()..update(updates))._build();
 
-  _$BrandDataPoint._(
+  _$DataPoint._(
       {this.id,
+      this.comments,
       this.liked,
       this.data,
       this.type,
+      this.countLikes,
+      this.locationId,
       this.actionDate,
       this.author,
       this.authorImage,
@@ -195,20 +204,23 @@ class _$BrandDataPoint extends BrandDataPoint {
       this.threadActionDate})
       : super._();
   @override
-  BrandDataPoint rebuild(void Function(BrandDataPointBuilder) updates) =>
+  DataPoint rebuild(void Function(DataPointBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  BrandDataPointBuilder toBuilder() => BrandDataPointBuilder()..replace(this);
+  DataPointBuilder toBuilder() => DataPointBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is BrandDataPoint &&
+    return other is DataPoint &&
         id == other.id &&
+        comments == other.comments &&
         liked == other.liked &&
         data == other.data &&
         type == other.type &&
+        countLikes == other.countLikes &&
+        locationId == other.locationId &&
         actionDate == other.actionDate &&
         author == other.author &&
         authorImage == other.authorImage &&
@@ -228,9 +240,12 @@ class _$BrandDataPoint extends BrandDataPoint {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jc(_$hash, liked.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, countLikes.hashCode);
+    _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, actionDate.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, authorImage.hashCode);
@@ -250,11 +265,14 @@ class _$BrandDataPoint extends BrandDataPoint {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'BrandDataPoint')
+    return (newBuiltValueToStringHelper(r'DataPoint')
           ..add('id', id)
+          ..add('comments', comments)
           ..add('liked', liked)
           ..add('data', data)
           ..add('type', type)
+          ..add('countLikes', countLikes)
+          ..add('locationId', locationId)
           ..add('actionDate', actionDate)
           ..add('author', author)
           ..add('authorImage', authorImage)
@@ -272,13 +290,17 @@ class _$BrandDataPoint extends BrandDataPoint {
   }
 }
 
-class BrandDataPointBuilder
-    implements Builder<BrandDataPoint, BrandDataPointBuilder> {
-  _$BrandDataPoint? _$v;
+class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
+  _$DataPoint? _$v;
 
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  ListBuilder<DataPoint>? _comments;
+  ListBuilder<DataPoint> get comments =>
+      _$this._comments ??= ListBuilder<DataPoint>();
+  set comments(ListBuilder<DataPoint>? comments) => _$this._comments = comments;
 
   bool? _liked;
   bool? get liked => _$this._liked;
@@ -288,9 +310,17 @@ class BrandDataPointBuilder
   String? get data => _$this._data;
   set data(String? data) => _$this._data = data;
 
-  BrandDataPointTypeEnum? _type;
-  BrandDataPointTypeEnum? get type => _$this._type;
-  set type(BrandDataPointTypeEnum? type) => _$this._type = type;
+  DataPointTypeEnum? _type;
+  DataPointTypeEnum? get type => _$this._type;
+  set type(DataPointTypeEnum? type) => _$this._type = type;
+
+  int? _countLikes;
+  int? get countLikes => _$this._countLikes;
+  set countLikes(int? countLikes) => _$this._countLikes = countLikes;
+
+  int? _locationId;
+  int? get locationId => _$this._locationId;
+  set locationId(int? locationId) => _$this._locationId = locationId;
 
   DateTime? _actionDate;
   DateTime? get actionDate => _$this._actionDate;
@@ -349,17 +379,20 @@ class BrandDataPointBuilder
   set threadActionDate(DateTime? threadActionDate) =>
       _$this._threadActionDate = threadActionDate;
 
-  BrandDataPointBuilder() {
-    BrandDataPoint._defaults(this);
+  DataPointBuilder() {
+    DataPoint._defaults(this);
   }
 
-  BrandDataPointBuilder get _$this {
+  DataPointBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _comments = $v.comments?.toBuilder();
       _liked = $v.liked;
       _data = $v.data;
       _type = $v.type;
+      _countLikes = $v.countLikes;
+      _locationId = $v.locationId;
       _actionDate = $v.actionDate;
       _author = $v.author;
       _authorImage = $v.authorImage;
@@ -379,39 +412,55 @@ class BrandDataPointBuilder
   }
 
   @override
-  void replace(BrandDataPoint other) {
-    _$v = other as _$BrandDataPoint;
+  void replace(DataPoint other) {
+    _$v = other as _$DataPoint;
   }
 
   @override
-  void update(void Function(BrandDataPointBuilder)? updates) {
+  void update(void Function(DataPointBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  BrandDataPoint build() => _build();
+  DataPoint build() => _build();
 
-  _$BrandDataPoint _build() {
-    final _$result = _$v ??
-        _$BrandDataPoint._(
-          id: id,
-          liked: liked,
-          data: data,
-          type: type,
-          actionDate: actionDate,
-          author: author,
-          authorImage: authorImage,
-          countComments: countComments,
-          dateCreated: dateCreated,
-          directLink: directLink,
-          directoryType: directoryType,
-          flagged: flagged,
-          lastUpdated: lastUpdated,
-          rating: rating,
-          repliedByOwner: repliedByOwner,
-          secondaryData: secondaryData,
-          threadActionDate: threadActionDate,
-        );
+  _$DataPoint _build() {
+    _$DataPoint _$result;
+    try {
+      _$result = _$v ??
+          _$DataPoint._(
+            id: id,
+            comments: _comments?.build(),
+            liked: liked,
+            data: data,
+            type: type,
+            countLikes: countLikes,
+            locationId: locationId,
+            actionDate: actionDate,
+            author: author,
+            authorImage: authorImage,
+            countComments: countComments,
+            dateCreated: dateCreated,
+            directLink: directLink,
+            directoryType: directoryType,
+            flagged: flagged,
+            lastUpdated: lastUpdated,
+            rating: rating,
+            repliedByOwner: repliedByOwner,
+            secondaryData: secondaryData,
+            threadActionDate: threadActionDate,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'comments';
+        _comments?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'DataPoint', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

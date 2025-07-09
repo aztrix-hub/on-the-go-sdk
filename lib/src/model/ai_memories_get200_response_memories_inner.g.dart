@@ -22,13 +22,12 @@ class _$AiMemoriesGet200ResponseMemoriesInner
   factory _$AiMemoriesGet200ResponseMemoriesInner(
           [void Function(AiMemoriesGet200ResponseMemoriesInnerBuilder)?
               updates]) =>
-      (new AiMemoriesGet200ResponseMemoriesInnerBuilder()..update(updates))
+      (AiMemoriesGet200ResponseMemoriesInnerBuilder()..update(updates))
           ._build();
 
   _$AiMemoriesGet200ResponseMemoriesInner._(
       {this.id, this.memory, this.categories, this.createdAt, this.updatedAt})
       : super._();
-
   @override
   AiMemoriesGet200ResponseMemoriesInner rebuild(
           void Function(AiMemoriesGet200ResponseMemoriesInnerBuilder)
@@ -37,7 +36,7 @@ class _$AiMemoriesGet200ResponseMemoriesInner
 
   @override
   AiMemoriesGet200ResponseMemoriesInnerBuilder toBuilder() =>
-      new AiMemoriesGet200ResponseMemoriesInnerBuilder()..replace(this);
+      AiMemoriesGet200ResponseMemoriesInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -91,7 +90,7 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
 
   ListBuilder<String>? _categories;
   ListBuilder<String> get categories =>
-      _$this._categories ??= new ListBuilder<String>();
+      _$this._categories ??= ListBuilder<String>();
   set categories(ListBuilder<String>? categories) =>
       _$this._categories = categories;
 
@@ -122,7 +121,6 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
 
   @override
   void replace(AiMemoriesGet200ResponseMemoriesInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiMemoriesGet200ResponseMemoriesInner;
   }
 
@@ -139,7 +137,7 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
     _$AiMemoriesGet200ResponseMemoriesInner _$result;
     try {
       _$result = _$v ??
-          new _$AiMemoriesGet200ResponseMemoriesInner._(
+          _$AiMemoriesGet200ResponseMemoriesInner._(
             id: id,
             memory: memory,
             categories: _categories?.build(),
@@ -152,7 +150,7 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
         _$failedField = 'categories';
         _categories?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiMemoriesGet200ResponseMemoriesInner',
             _$failedField,
             e.toString());

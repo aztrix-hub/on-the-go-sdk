@@ -14,10 +14,9 @@ class _$AiChatPost200Response extends AiChatPost200Response {
 
   factory _$AiChatPost200Response(
           [void Function(AiChatPost200ResponseBuilder)? updates]) =>
-      (new AiChatPost200ResponseBuilder()..update(updates))._build();
+      (AiChatPost200ResponseBuilder()..update(updates))._build();
 
   _$AiChatPost200Response._({this.userId, this.messages}) : super._();
-
   @override
   AiChatPost200Response rebuild(
           void Function(AiChatPost200ResponseBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$AiChatPost200Response extends AiChatPost200Response {
 
   @override
   AiChatPost200ResponseBuilder toBuilder() =>
-      new AiChatPost200ResponseBuilder()..replace(this);
+      AiChatPost200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -64,7 +63,7 @@ class AiChatPost200ResponseBuilder
   ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
   ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          new ListBuilder<AiConversationPost200ResponseMessagesInner>();
+          ListBuilder<AiConversationPost200ResponseMessagesInner>();
   set messages(
           ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
       _$this._messages = messages;
@@ -85,7 +84,6 @@ class AiChatPost200ResponseBuilder
 
   @override
   void replace(AiChatPost200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiChatPost200Response;
   }
 
@@ -101,7 +99,7 @@ class AiChatPost200ResponseBuilder
     _$AiChatPost200Response _$result;
     try {
       _$result = _$v ??
-          new _$AiChatPost200Response._(
+          _$AiChatPost200Response._(
             userId: userId,
             messages: _messages?.build(),
           );
@@ -111,7 +109,7 @@ class AiChatPost200ResponseBuilder
         _$failedField = 'messages';
         _messages?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiChatPost200Response', _$failedField, e.toString());
       }
       rethrow;

@@ -16,12 +16,11 @@ class _$AiConversationPost200Response extends AiConversationPost200Response {
 
   factory _$AiConversationPost200Response(
           [void Function(AiConversationPost200ResponseBuilder)? updates]) =>
-      (new AiConversationPost200ResponseBuilder()..update(updates))._build();
+      (AiConversationPost200ResponseBuilder()..update(updates))._build();
 
   _$AiConversationPost200Response._(
       {this.userId, this.conversationId, this.messages})
       : super._();
-
   @override
   AiConversationPost200Response rebuild(
           void Function(AiConversationPost200ResponseBuilder) updates) =>
@@ -29,7 +28,7 @@ class _$AiConversationPost200Response extends AiConversationPost200Response {
 
   @override
   AiConversationPost200ResponseBuilder toBuilder() =>
-      new AiConversationPost200ResponseBuilder()..replace(this);
+      AiConversationPost200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -78,7 +77,7 @@ class AiConversationPost200ResponseBuilder
   ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
   ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          new ListBuilder<AiConversationPost200ResponseMessagesInner>();
+          ListBuilder<AiConversationPost200ResponseMessagesInner>();
   set messages(
           ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
       _$this._messages = messages;
@@ -100,7 +99,6 @@ class AiConversationPost200ResponseBuilder
 
   @override
   void replace(AiConversationPost200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiConversationPost200Response;
   }
 
@@ -116,7 +114,7 @@ class AiConversationPost200ResponseBuilder
     _$AiConversationPost200Response _$result;
     try {
       _$result = _$v ??
-          new _$AiConversationPost200Response._(
+          _$AiConversationPost200Response._(
             userId: userId,
             conversationId: conversationId,
             messages: _messages?.build(),
@@ -127,7 +125,7 @@ class AiConversationPost200ResponseBuilder
         _$failedField = 'messages';
         _messages?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiConversationPost200Response', _$failedField, e.toString());
       }
       rethrow;

@@ -13,16 +13,15 @@ class _$LoginResponse extends LoginResponse {
   final bool? oauth;
 
   factory _$LoginResponse([void Function(LoginResponseBuilder)? updates]) =>
-      (new LoginResponseBuilder()..update(updates))._build();
+      (LoginResponseBuilder()..update(updates))._build();
 
   _$LoginResponse._({this.accessToken, this.oauth}) : super._();
-
   @override
   LoginResponse rebuild(void Function(LoginResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginResponseBuilder toBuilder() => new LoginResponseBuilder()..replace(this);
+  LoginResponseBuilder toBuilder() => LoginResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -78,7 +77,6 @@ class LoginResponseBuilder
 
   @override
   void replace(LoginResponse other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$LoginResponse;
   }
 
@@ -92,7 +90,7 @@ class LoginResponseBuilder
 
   _$LoginResponse _build() {
     final _$result = _$v ??
-        new _$LoginResponse._(
+        _$LoginResponse._(
           accessToken: accessToken,
           oauth: oauth,
         );

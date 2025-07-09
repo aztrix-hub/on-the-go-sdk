@@ -26,7 +26,7 @@ class _$SiteColorsPatchRequest extends SiteColorsPatchRequest {
 
   factory _$SiteColorsPatchRequest(
           [void Function(SiteColorsPatchRequestBuilder)? updates]) =>
-      (new SiteColorsPatchRequestBuilder()..update(updates))._build();
+      (SiteColorsPatchRequestBuilder()..update(updates))._build();
 
   _$SiteColorsPatchRequest._(
       {this.primary100,
@@ -38,7 +38,6 @@ class _$SiteColorsPatchRequest extends SiteColorsPatchRequest {
       this.secondary500,
       this.secondary900})
       : super._();
-
   @override
   SiteColorsPatchRequest rebuild(
           void Function(SiteColorsPatchRequestBuilder) updates) =>
@@ -46,7 +45,7 @@ class _$SiteColorsPatchRequest extends SiteColorsPatchRequest {
 
   @override
   SiteColorsPatchRequestBuilder toBuilder() =>
-      new SiteColorsPatchRequestBuilder()..replace(this);
+      SiteColorsPatchRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -150,7 +149,6 @@ class SiteColorsPatchRequestBuilder
 
   @override
   void replace(SiteColorsPatchRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SiteColorsPatchRequest;
   }
 
@@ -164,7 +162,7 @@ class SiteColorsPatchRequestBuilder
 
   _$SiteColorsPatchRequest _build() {
     final _$result = _$v ??
-        new _$SiteColorsPatchRequest._(
+        _$SiteColorsPatchRequest._(
           primary100: primary100,
           primary300: primary300,
           primary500: primary500,

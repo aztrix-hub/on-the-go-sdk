@@ -660,12 +660,12 @@ DirectoryType _$valueOf(String name) {
     case 'LINKED_IN':
       return _$LINKED_IN;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<DirectoryType> _$values =
-    new BuiltSet<DirectoryType>(const <DirectoryType>[
+    BuiltSet<DirectoryType>(const <DirectoryType>[
   _$FOURSQUARE,
   _$UBER,
   _$GOOGLE,
@@ -1092,7 +1092,7 @@ abstract class _$DirectoryTypeMixin {
 }
 
 Serializer<DirectoryType> _$directoryTypeSerializer =
-    new _$DirectoryTypeSerializer();
+    _$DirectoryTypeSerializer();
 
 class _$DirectoryTypeSerializer implements PrimitiveSerializer<DirectoryType> {
   static const Map<String, Object> _toWire = const <String, Object>{

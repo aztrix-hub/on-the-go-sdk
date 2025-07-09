@@ -6,12 +6,12 @@ void main() {
   final instance = OnTheGoSdk().getPublishApi();
 
   group(PublishApi, () {
-    //Future<SocialPostsResponseWrapper> publishPostsGet() async
+    //Future<BuiltList<SocialPost>> publishPostsGet() async
     test('test publishPostsGet', () async {
       // TODO
     });
 
-    //Future<SocialPostWrapper> publishPostsPost(SocialPost body) async
+    //Future<SocialPost> publishPostsPost(SocialPost socialPost) async
     test('test publishPostsPost', () async {
       // TODO
     });

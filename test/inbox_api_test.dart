@@ -21,7 +21,7 @@ void main() {
       // TODO
     });
 
-    //Future<DataPointResponseWrapper> inboxReplyPost(String datapointId, InboxReplyPostRequest inboxReplyPostRequest) async
+    //Future<DataPoint> inboxReplyPost(String datapointId, InboxReplyPostRequest inboxReplyPostRequest) async
     test('test inboxReplyPost', () async {
       // TODO
     });

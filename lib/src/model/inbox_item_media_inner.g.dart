@@ -14,10 +14,9 @@ class _$InboxItemMediaInner extends InboxItemMediaInner {
 
   factory _$InboxItemMediaInner(
           [void Function(InboxItemMediaInnerBuilder)? updates]) =>
-      (new InboxItemMediaInnerBuilder()..update(updates))._build();
+      (InboxItemMediaInnerBuilder()..update(updates))._build();
 
   _$InboxItemMediaInner._({this.image, this.dataPointId}) : super._();
-
   @override
   InboxItemMediaInner rebuild(
           void Function(InboxItemMediaInnerBuilder) updates) =>
@@ -25,7 +24,7 @@ class _$InboxItemMediaInner extends InboxItemMediaInner {
 
   @override
   InboxItemMediaInnerBuilder toBuilder() =>
-      new InboxItemMediaInnerBuilder()..replace(this);
+      InboxItemMediaInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -81,7 +80,6 @@ class InboxItemMediaInnerBuilder
 
   @override
   void replace(InboxItemMediaInner other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxItemMediaInner;
   }
 
@@ -95,7 +93,7 @@ class InboxItemMediaInnerBuilder
 
   _$InboxItemMediaInner _build() {
     final _$result = _$v ??
-        new _$InboxItemMediaInner._(
+        _$InboxItemMediaInner._(
           image: image,
           dataPointId: dataPointId,
         );

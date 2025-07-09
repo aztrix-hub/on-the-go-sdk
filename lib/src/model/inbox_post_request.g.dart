@@ -95,13 +95,13 @@ InboxPostRequestChannelsEnum _$inboxPostRequestChannelsEnumValueOf(
     case 'wheretoComment':
       return _$inboxPostRequestChannelsEnum_wheretoComment;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<InboxPostRequestChannelsEnum>
-    _$inboxPostRequestChannelsEnumValues = new BuiltSet<
-        InboxPostRequestChannelsEnum>(const <InboxPostRequestChannelsEnum>[
+    _$inboxPostRequestChannelsEnumValues =
+    BuiltSet<InboxPostRequestChannelsEnum>(const <InboxPostRequestChannelsEnum>[
   _$inboxPostRequestChannelsEnum_cylexReview,
   _$inboxPostRequestChannelsEnum_googleReview,
   _$inboxPostRequestChannelsEnum_iglobalReview,
@@ -151,12 +151,12 @@ InboxPostRequestStatusEnum _$inboxPostRequestStatusEnumValueOf(String name) {
     case 'contentNonUpdated':
       return _$inboxPostRequestStatusEnum_contentNonUpdated;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<InboxPostRequestStatusEnum> _$inboxPostRequestStatusEnumValues =
-    new BuiltSet<InboxPostRequestStatusEnum>(const <InboxPostRequestStatusEnum>[
+    BuiltSet<InboxPostRequestStatusEnum>(const <InboxPostRequestStatusEnum>[
   _$inboxPostRequestStatusEnum_resolved,
   _$inboxPostRequestStatusEnum_unresolved,
   _$inboxPostRequestStatusEnum_replied,
@@ -177,25 +177,25 @@ InboxPostRequestSortDirEnum _$inboxPostRequestSortDirEnumValueOf(String name) {
     case 'desc':
       return _$inboxPostRequestSortDirEnum_desc;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<InboxPostRequestSortDirEnum>
-    _$inboxPostRequestSortDirEnumValues = new BuiltSet<
-        InboxPostRequestSortDirEnum>(const <InboxPostRequestSortDirEnum>[
+    _$inboxPostRequestSortDirEnumValues =
+    BuiltSet<InboxPostRequestSortDirEnum>(const <InboxPostRequestSortDirEnum>[
   _$inboxPostRequestSortDirEnum_asc,
   _$inboxPostRequestSortDirEnum_desc,
 ]);
 
 Serializer<InboxPostRequestChannelsEnum>
     _$inboxPostRequestChannelsEnumSerializer =
-    new _$InboxPostRequestChannelsEnumSerializer();
+    _$InboxPostRequestChannelsEnumSerializer();
 Serializer<InboxPostRequestStatusEnum> _$inboxPostRequestStatusEnumSerializer =
-    new _$InboxPostRequestStatusEnumSerializer();
+    _$InboxPostRequestStatusEnumSerializer();
 Serializer<InboxPostRequestSortDirEnum>
     _$inboxPostRequestSortDirEnumSerializer =
-    new _$InboxPostRequestSortDirEnumSerializer();
+    _$InboxPostRequestSortDirEnumSerializer();
 
 class _$InboxPostRequestChannelsEnumSerializer
     implements PrimitiveSerializer<InboxPostRequestChannelsEnum> {
@@ -344,7 +344,7 @@ class _$InboxPostRequest extends InboxPostRequest {
 
   factory _$InboxPostRequest(
           [void Function(InboxPostRequestBuilder)? updates]) =>
-      (new InboxPostRequestBuilder()..update(updates))._build();
+      (InboxPostRequestBuilder()..update(updates))._build();
 
   _$InboxPostRequest._(
       {this.channels,
@@ -356,14 +356,13 @@ class _$InboxPostRequest extends InboxPostRequest {
       this.sort,
       this.sortDir})
       : super._();
-
   @override
   InboxPostRequest rebuild(void Function(InboxPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   InboxPostRequestBuilder toBuilder() =>
-      new InboxPostRequestBuilder()..replace(this);
+      InboxPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -428,7 +427,7 @@ class InboxPostRequestBuilder
 
   ListBuilder<InboxPostRequestStatusEnum>? _status;
   ListBuilder<InboxPostRequestStatusEnum> get status =>
-      _$this._status ??= new ListBuilder<InboxPostRequestStatusEnum>();
+      _$this._status ??= ListBuilder<InboxPostRequestStatusEnum>();
   set status(ListBuilder<InboxPostRequestStatusEnum>? status) =>
       _$this._status = status;
 
@@ -471,7 +470,6 @@ class InboxPostRequestBuilder
 
   @override
   void replace(InboxPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxPostRequest;
   }
 
@@ -487,7 +485,7 @@ class InboxPostRequestBuilder
     _$InboxPostRequest _$result;
     try {
       _$result = _$v ??
-          new _$InboxPostRequest._(
+          _$InboxPostRequest._(
             channels: channels,
             startDate: startDate,
             endDate: endDate,
@@ -503,7 +501,7 @@ class InboxPostRequestBuilder
         _$failedField = 'status';
         _status?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'InboxPostRequest', _$failedField, e.toString());
       }
       rethrow;

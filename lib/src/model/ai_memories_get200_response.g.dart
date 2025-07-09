@@ -18,12 +18,11 @@ class _$AiMemoriesGet200Response extends AiMemoriesGet200Response {
 
   factory _$AiMemoriesGet200Response(
           [void Function(AiMemoriesGet200ResponseBuilder)? updates]) =>
-      (new AiMemoriesGet200ResponseBuilder()..update(updates))._build();
+      (AiMemoriesGet200ResponseBuilder()..update(updates))._build();
 
   _$AiMemoriesGet200Response._(
       {this.count, this.next, this.previous, this.memories})
       : super._();
-
   @override
   AiMemoriesGet200Response rebuild(
           void Function(AiMemoriesGet200ResponseBuilder) updates) =>
@@ -31,7 +30,7 @@ class _$AiMemoriesGet200Response extends AiMemoriesGet200Response {
 
   @override
   AiMemoriesGet200ResponseBuilder toBuilder() =>
-      new AiMemoriesGet200ResponseBuilder()..replace(this);
+      AiMemoriesGet200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -84,8 +83,7 @@ class AiMemoriesGet200ResponseBuilder
 
   ListBuilder<AiMemoriesGet200ResponseMemoriesInner>? _memories;
   ListBuilder<AiMemoriesGet200ResponseMemoriesInner> get memories =>
-      _$this._memories ??=
-          new ListBuilder<AiMemoriesGet200ResponseMemoriesInner>();
+      _$this._memories ??= ListBuilder<AiMemoriesGet200ResponseMemoriesInner>();
   set memories(ListBuilder<AiMemoriesGet200ResponseMemoriesInner>? memories) =>
       _$this._memories = memories;
 
@@ -107,7 +105,6 @@ class AiMemoriesGet200ResponseBuilder
 
   @override
   void replace(AiMemoriesGet200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiMemoriesGet200Response;
   }
 
@@ -123,7 +120,7 @@ class AiMemoriesGet200ResponseBuilder
     _$AiMemoriesGet200Response _$result;
     try {
       _$result = _$v ??
-          new _$AiMemoriesGet200Response._(
+          _$AiMemoriesGet200Response._(
             count: count,
             next: next,
             previous: previous,
@@ -135,7 +132,7 @@ class AiMemoriesGet200ResponseBuilder
         _$failedField = 'memories';
         _memories?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiMemoriesGet200Response', _$failedField, e.toString());
       }
       rethrow;

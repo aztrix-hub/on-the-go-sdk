@@ -27,6 +27,7 @@ import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/brand_data_point.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
+import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
@@ -51,6 +52,7 @@ import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dar
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
+import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/social_profile.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
@@ -74,6 +76,7 @@ part 'serializers.g.dart';
   AiSystemGet200Response,
   BrandDataPoint,
   Category,
+  DataPoint,
   DirectoryType,
   InboxItem,
   InboxItemAuthor,
@@ -98,6 +101,7 @@ part 'serializers.g.dart';
   OpeningHour,
   ResetPassword,
   SiteColorsPatchRequest,
+  SocialPost,
   SocialProfile,
   SpecialOpeningHour,
   User,
@@ -117,6 +121,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Category)]),
         () => ListBuilder<Category>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(SocialPost)]),
+        () => ListBuilder<SocialPost>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

@@ -38,12 +38,12 @@ ListingSyncStatusEnum _$listingSyncStatusEnumValueOf(String name) {
     case 'LINK_ONLY':
       return _$listingSyncStatusEnum_LINK_ONLY;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ListingSyncStatusEnum> _$listingSyncStatusEnumValues =
-    new BuiltSet<ListingSyncStatusEnum>(const <ListingSyncStatusEnum>[
+    BuiltSet<ListingSyncStatusEnum>(const <ListingSyncStatusEnum>[
   _$listingSyncStatusEnum_IN_SYNC,
   _$listingSyncStatusEnum_NOT_IN_SYNC,
   _$listingSyncStatusEnum_NOT_FOUND,
@@ -85,12 +85,12 @@ ListingClaimStatusEnum _$listingClaimStatusEnumValueOf(String name) {
     case 'UNKNOWN':
       return _$listingClaimStatusEnum_UNKNOWN;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ListingClaimStatusEnum> _$listingClaimStatusEnumValues =
-    new BuiltSet<ListingClaimStatusEnum>(const <ListingClaimStatusEnum>[
+    BuiltSet<ListingClaimStatusEnum>(const <ListingClaimStatusEnum>[
   _$listingClaimStatusEnum_CLAIMABLE,
   _$listingClaimStatusEnum_NOT_CLAIMABLE,
   _$listingClaimStatusEnum_CLAIMED_BY_US,
@@ -116,12 +116,12 @@ ListingConnectStatusEnum _$listingConnectStatusEnumValueOf(String name) {
     case 'NOT_NEEDED':
       return _$listingConnectStatusEnum_NOT_NEEDED;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ListingConnectStatusEnum> _$listingConnectStatusEnumValues =
-    new BuiltSet<ListingConnectStatusEnum>(const <ListingConnectStatusEnum>[
+    BuiltSet<ListingConnectStatusEnum>(const <ListingConnectStatusEnum>[
   _$listingConnectStatusEnum_CONNECTED,
   _$listingConnectStatusEnum_NOT_CONNECTED,
   _$listingConnectStatusEnum_NOT_NEEDED,
@@ -143,25 +143,25 @@ ListingStatusEnum _$listingStatusEnumValueOf(String name) {
     case 'MANUAL':
       return _$listingStatusEnum_MANUAL;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<ListingStatusEnum> _$listingStatusEnumValues =
-    new BuiltSet<ListingStatusEnum>(const <ListingStatusEnum>[
+    BuiltSet<ListingStatusEnum>(const <ListingStatusEnum>[
   _$listingStatusEnum_ACTIVE,
   _$listingStatusEnum_INACTIVE,
   _$listingStatusEnum_MANUAL,
 ]);
 
 Serializer<ListingSyncStatusEnum> _$listingSyncStatusEnumSerializer =
-    new _$ListingSyncStatusEnumSerializer();
+    _$ListingSyncStatusEnumSerializer();
 Serializer<ListingClaimStatusEnum> _$listingClaimStatusEnumSerializer =
-    new _$ListingClaimStatusEnumSerializer();
+    _$ListingClaimStatusEnumSerializer();
 Serializer<ListingConnectStatusEnum> _$listingConnectStatusEnumSerializer =
-    new _$ListingConnectStatusEnumSerializer();
+    _$ListingConnectStatusEnumSerializer();
 Serializer<ListingStatusEnum> _$listingStatusEnumSerializer =
-    new _$ListingStatusEnumSerializer();
+    _$ListingStatusEnumSerializer();
 
 class _$ListingSyncStatusEnumSerializer
     implements PrimitiveSerializer<ListingSyncStatusEnum> {
@@ -331,7 +331,7 @@ class _$Listing extends Listing {
   final String? typeName;
 
   factory _$Listing([void Function(ListingBuilder)? updates]) =>
-      (new ListingBuilder()..update(updates))._build();
+      (ListingBuilder()..update(updates))._build();
 
   _$Listing._(
       {this.id,
@@ -349,13 +349,12 @@ class _$Listing extends Listing {
       this.status,
       this.typeName})
       : super._();
-
   @override
   Listing rebuild(void Function(ListingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  ListingBuilder toBuilder() => new ListingBuilder()..replace(this);
+  ListingBuilder toBuilder() => ListingBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -450,7 +449,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
 
   MapBuilder<String, JsonObject>? _data;
   MapBuilder<String, JsonObject> get data =>
-      _$this._data ??= new MapBuilder<String, JsonObject>();
+      _$this._data ??= MapBuilder<String, JsonObject>();
   set data(MapBuilder<String, JsonObject>? data) => _$this._data = data;
 
   DateTime? _lastChecked;
@@ -512,7 +511,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
 
   @override
   void replace(Listing other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$Listing;
   }
 
@@ -528,7 +526,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
     _$Listing _$result;
     try {
       _$result = _$v ??
-          new _$Listing._(
+          _$Listing._(
             id: id,
             type: type,
             syncStatus: syncStatus,
@@ -550,7 +548,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
         _$failedField = 'data';
         _data?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'Listing', _$failedField, e.toString());
       }
       rethrow;

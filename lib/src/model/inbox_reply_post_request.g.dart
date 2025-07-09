@@ -12,10 +12,9 @@ class _$InboxReplyPostRequest extends InboxReplyPostRequest {
 
   factory _$InboxReplyPostRequest(
           [void Function(InboxReplyPostRequestBuilder)? updates]) =>
-      (new InboxReplyPostRequestBuilder()..update(updates))._build();
+      (InboxReplyPostRequestBuilder()..update(updates))._build();
 
   _$InboxReplyPostRequest._({this.reply}) : super._();
-
   @override
   InboxReplyPostRequest rebuild(
           void Function(InboxReplyPostRequestBuilder) updates) =>
@@ -23,7 +22,7 @@ class _$InboxReplyPostRequest extends InboxReplyPostRequest {
 
   @override
   InboxReplyPostRequestBuilder toBuilder() =>
-      new InboxReplyPostRequestBuilder()..replace(this);
+      InboxReplyPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -70,7 +69,6 @@ class InboxReplyPostRequestBuilder
 
   @override
   void replace(InboxReplyPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxReplyPostRequest;
   }
 
@@ -84,7 +82,7 @@ class InboxReplyPostRequestBuilder
 
   _$InboxReplyPostRequest _build() {
     final _$result = _$v ??
-        new _$InboxReplyPostRequest._(
+        _$InboxReplyPostRequest._(
           reply: reply,
         );
     replace(_$result);

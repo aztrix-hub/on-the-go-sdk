@@ -4,14 +4,13 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
-import 'package:on_the_go_sdk/src/model/insights_wrapper.dart';
+import 'package:on_the_go_sdk/src/model/insights.dart';
 
 class AnalyticsApi {
   final Dio _dio;
@@ -39,9 +38,9 @@ class AnalyticsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InsightsWrapper] as data
+  /// Returns a [Future] containing a [Response] with a [Insights] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InsightsWrapper>> analyticsGet({
+  Future<Response<Insights>> analyticsGet({
     required String type,
     BuiltList<int>? businessIds,
     BuiltList<int>? locationIds,
@@ -123,7 +122,7 @@ class AnalyticsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InsightsWrapper? _responseData;
+    Insights? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -131,8 +130,8 @@ class AnalyticsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(InsightsWrapper),
-            ) as InsightsWrapper;
+              specifiedType: const FullType(Insights),
+            ) as Insights;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -143,7 +142,7 @@ class AnalyticsApi {
       );
     }
 
-    return Response<InsightsWrapper>(
+    return Response<Insights>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

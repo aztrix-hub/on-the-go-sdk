@@ -46,12 +46,12 @@ SocialProfileTypeEnum _$socialProfileTypeEnumValueOf(String name) {
     case 'VIMEO':
       return _$socialProfileTypeEnum_VIMEO;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<SocialProfileTypeEnum> _$socialProfileTypeEnumValues =
-    new BuiltSet<SocialProfileTypeEnum>(const <SocialProfileTypeEnum>[
+    BuiltSet<SocialProfileTypeEnum>(const <SocialProfileTypeEnum>[
   _$socialProfileTypeEnum_FACEBOOK,
   _$socialProfileTypeEnum_LINKEDIN,
   _$socialProfileTypeEnum_TWITTER,
@@ -64,7 +64,7 @@ final BuiltSet<SocialProfileTypeEnum> _$socialProfileTypeEnumValues =
 ]);
 
 Serializer<SocialProfileTypeEnum> _$socialProfileTypeEnumSerializer =
-    new _$SocialProfileTypeEnumSerializer();
+    _$SocialProfileTypeEnumSerializer();
 
 class _$SocialProfileTypeEnumSerializer
     implements PrimitiveSerializer<SocialProfileTypeEnum> {
@@ -115,16 +115,15 @@ class _$SocialProfile extends SocialProfile {
   final SocialProfileTypeEnum? type;
 
   factory _$SocialProfile([void Function(SocialProfileBuilder)? updates]) =>
-      (new SocialProfileBuilder()..update(updates))._build();
+      (SocialProfileBuilder()..update(updates))._build();
 
   _$SocialProfile._({this.url, this.type}) : super._();
-
   @override
   SocialProfile rebuild(void Function(SocialProfileBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  SocialProfileBuilder toBuilder() => new SocialProfileBuilder()..replace(this);
+  SocialProfileBuilder toBuilder() => SocialProfileBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -178,7 +177,6 @@ class SocialProfileBuilder
 
   @override
   void replace(SocialProfile other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$SocialProfile;
   }
 
@@ -192,7 +190,7 @@ class SocialProfileBuilder
 
   _$SocialProfile _build() {
     final _$result = _$v ??
-        new _$SocialProfile._(
+        _$SocialProfile._(
           url: url,
           type: type,
         );

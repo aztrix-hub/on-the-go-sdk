@@ -35,12 +35,12 @@ InboxItemContentTypeEnum _$inboxItemContentTypeEnumValueOf(String name) {
     case 'photo':
       return _$inboxItemContentTypeEnum_photo;
     default:
-      throw new ArgumentError(name);
+      throw ArgumentError(name);
   }
 }
 
 final BuiltSet<InboxItemContentTypeEnum> _$inboxItemContentTypeEnumValues =
-    new BuiltSet<InboxItemContentTypeEnum>(const <InboxItemContentTypeEnum>[
+    BuiltSet<InboxItemContentTypeEnum>(const <InboxItemContentTypeEnum>[
   _$inboxItemContentTypeEnum_review,
   _$inboxItemContentTypeEnum_comment,
   _$inboxItemContentTypeEnum_recommendation,
@@ -50,7 +50,7 @@ final BuiltSet<InboxItemContentTypeEnum> _$inboxItemContentTypeEnumValues =
 ]);
 
 Serializer<InboxItemContentTypeEnum> _$inboxItemContentTypeEnumSerializer =
-    new _$InboxItemContentTypeEnumSerializer();
+    _$InboxItemContentTypeEnumSerializer();
 
 class _$InboxItemContentTypeEnumSerializer
     implements PrimitiveSerializer<InboxItemContentTypeEnum> {
@@ -146,7 +146,7 @@ class _$InboxItem extends InboxItem {
   final BuiltList<InboxItemMediaInner>? media;
 
   factory _$InboxItem([void Function(InboxItemBuilder)? updates]) =>
-      (new InboxItemBuilder()..update(updates))._build();
+      (InboxItemBuilder()..update(updates))._build();
 
   _$InboxItem._(
       {this.actionDate,
@@ -177,13 +177,12 @@ class _$InboxItem extends InboxItem {
       this.status,
       this.media})
       : super._();
-
   @override
   InboxItem rebuild(void Function(InboxItemBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  InboxItemBuilder toBuilder() => new InboxItemBuilder()..replace(this);
+  InboxItemBuilder toBuilder() => InboxItemBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -295,12 +294,12 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
 
   InboxItemAuthorBuilder? _author;
   InboxItemAuthorBuilder get author =>
-      _$this._author ??= new InboxItemAuthorBuilder();
+      _$this._author ??= InboxItemAuthorBuilder();
   set author(InboxItemAuthorBuilder? author) => _$this._author = author;
 
   ListBuilder<String>? _businessIds;
   ListBuilder<String> get businessIds =>
-      _$this._businessIds ??= new ListBuilder<String>();
+      _$this._businessIds ??= ListBuilder<String>();
   set businessIds(ListBuilder<String>? businessIds) =>
       _$this._businessIds = businessIds;
 
@@ -331,7 +330,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
       _$this._isExpandedReviewNetwork = isExpandedReviewNetwork;
 
   LocationBuilder? _location;
-  LocationBuilder get location => _$this._location ??= new LocationBuilder();
+  LocationBuilder get location => _$this._location ??= LocationBuilder();
   set location(LocationBuilder? location) => _$this._location = location;
 
   String? _locationId;
@@ -344,7 +343,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
 
   InboxItemMetricsBuilder? _metrics;
   InboxItemMetricsBuilder get metrics =>
-      _$this._metrics ??= new InboxItemMetricsBuilder();
+      _$this._metrics ??= InboxItemMetricsBuilder();
   set metrics(InboxItemMetricsBuilder? metrics) => _$this._metrics = metrics;
 
   String? _nativeId;
@@ -405,7 +404,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
 
   ListBuilder<InboxItemMediaInner>? _media;
   ListBuilder<InboxItemMediaInner> get media =>
-      _$this._media ??= new ListBuilder<InboxItemMediaInner>();
+      _$this._media ??= ListBuilder<InboxItemMediaInner>();
   set media(ListBuilder<InboxItemMediaInner>? media) => _$this._media = media;
 
   InboxItemBuilder() {
@@ -449,7 +448,6 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
 
   @override
   void replace(InboxItem other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxItem;
   }
 
@@ -465,7 +463,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
     _$InboxItem _$result;
     try {
       _$result = _$v ??
-          new _$InboxItem._(
+          _$InboxItem._(
             actionDate: actionDate,
             author: _author?.build(),
             businessIds: _businessIds?.build(),
@@ -511,7 +509,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
         _$failedField = 'media';
         _media?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'InboxItem', _$failedField, e.toString());
       }
       rethrow;

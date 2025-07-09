@@ -12,10 +12,9 @@ class _$InboxPost200Response extends InboxPost200Response {
 
   factory _$InboxPost200Response(
           [void Function(InboxPost200ResponseBuilder)? updates]) =>
-      (new InboxPost200ResponseBuilder()..update(updates))._build();
+      (InboxPost200ResponseBuilder()..update(updates))._build();
 
   _$InboxPost200Response._({this.data}) : super._();
-
   @override
   InboxPost200Response rebuild(
           void Function(InboxPost200ResponseBuilder) updates) =>
@@ -23,7 +22,7 @@ class _$InboxPost200Response extends InboxPost200Response {
 
   @override
   InboxPost200ResponseBuilder toBuilder() =>
-      new InboxPost200ResponseBuilder()..replace(this);
+      InboxPost200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -52,8 +51,7 @@ class InboxPost200ResponseBuilder
   _$InboxPost200Response? _$v;
 
   ListBuilder<InboxItem>? _data;
-  ListBuilder<InboxItem> get data =>
-      _$this._data ??= new ListBuilder<InboxItem>();
+  ListBuilder<InboxItem> get data => _$this._data ??= ListBuilder<InboxItem>();
   set data(ListBuilder<InboxItem>? data) => _$this._data = data;
 
   InboxPost200ResponseBuilder() {
@@ -71,7 +69,6 @@ class InboxPost200ResponseBuilder
 
   @override
   void replace(InboxPost200Response other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxPost200Response;
   }
 
@@ -87,7 +84,7 @@ class InboxPost200ResponseBuilder
     _$InboxPost200Response _$result;
     try {
       _$result = _$v ??
-          new _$InboxPost200Response._(
+          _$InboxPost200Response._(
             data: _data?.build(),
           );
     } catch (_) {
@@ -96,7 +93,7 @@ class InboxPost200ResponseBuilder
         _$failedField = 'data';
         _data?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'InboxPost200Response', _$failedField, e.toString());
       }
       rethrow;

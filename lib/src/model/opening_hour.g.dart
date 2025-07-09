@@ -15,20 +15,16 @@ class _$OpeningHour extends OpeningHour {
   final BuiltList<JsonObject?>? intervals;
 
   factory _$OpeningHour([void Function(OpeningHourBuilder)? updates]) =>
-      (new OpeningHourBuilder()..update(updates))._build();
+      (OpeningHourBuilder()..update(updates))._build();
 
   _$OpeningHour._({required this.dayOfWeek, this.closed, this.intervals})
-      : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        dayOfWeek, r'OpeningHour', 'dayOfWeek');
-  }
-
+      : super._();
   @override
   OpeningHour rebuild(void Function(OpeningHourBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  OpeningHourBuilder toBuilder() => new OpeningHourBuilder()..replace(this);
+  OpeningHourBuilder toBuilder() => OpeningHourBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -72,7 +68,7 @@ class OpeningHourBuilder implements Builder<OpeningHour, OpeningHourBuilder> {
 
   ListBuilder<JsonObject?>? _intervals;
   ListBuilder<JsonObject?> get intervals =>
-      _$this._intervals ??= new ListBuilder<JsonObject?>();
+      _$this._intervals ??= ListBuilder<JsonObject?>();
   set intervals(ListBuilder<JsonObject?>? intervals) =>
       _$this._intervals = intervals;
 
@@ -93,7 +89,6 @@ class OpeningHourBuilder implements Builder<OpeningHour, OpeningHourBuilder> {
 
   @override
   void replace(OpeningHour other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$OpeningHour;
   }
 
@@ -109,7 +104,7 @@ class OpeningHourBuilder implements Builder<OpeningHour, OpeningHourBuilder> {
     _$OpeningHour _$result;
     try {
       _$result = _$v ??
-          new _$OpeningHour._(
+          _$OpeningHour._(
             dayOfWeek: BuiltValueNullFieldError.checkNotNull(
                 dayOfWeek, r'OpeningHour', 'dayOfWeek'),
             closed: closed,
@@ -121,7 +116,7 @@ class OpeningHourBuilder implements Builder<OpeningHour, OpeningHourBuilder> {
         _$failedField = 'intervals';
         _intervals?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'OpeningHour', _$failedField, e.toString());
       }
       rethrow;

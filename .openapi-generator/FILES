@@ -15,6 +15,7 @@ doc/AiSystemGet200Response.md
 doc/AnalyticsApi.md
 doc/BrandDataPoint.md
 doc/Category.md
+doc/DataPoint.md
 doc/DirectoryType.md
 doc/InboxApi.md
 doc/InboxItem.md
@@ -44,6 +45,7 @@ doc/PublishApi.md
 doc/ResetPassword.md
 doc/SiteColorsPatchRequest.md
 doc/SitesApi.md
+doc/SocialPost.md
 doc/SocialProfile.md
 doc/SpecialOpeningHour.md
 doc/User.md
@@ -83,6 +85,7 @@ lib/src/model/ai_memories_post_request.dart
 lib/src/model/ai_system_get200_response.dart
 lib/src/model/brand_data_point.dart
 lib/src/model/category.dart
+lib/src/model/data_point.dart
 lib/src/model/date.dart
 lib/src/model/directory_type.dart
 lib/src/model/inbox_item.dart
@@ -108,6 +111,7 @@ lib/src/model/notifications_config_get200_response.dart
 lib/src/model/opening_hour.dart
 lib/src/model/reset_password.dart
 lib/src/model/site_colors_patch_request.dart
+lib/src/model/social_post.dart
 lib/src/model/social_profile.dart
 lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart
@@ -130,6 +134,7 @@ test/ai_system_get200_response_test.dart
 test/analytics_api_test.dart
 test/brand_data_point_test.dart
 test/category_test.dart
+test/data_point_test.dart
 test/directory_type_test.dart
 test/inbox_api_test.dart
 test/inbox_item_author_test.dart
@@ -159,6 +164,7 @@ test/publish_api_test.dart
 test/reset_password_test.dart
 test/site_colors_patch_request_test.dart
 test/sites_api_test.dart
+test/social_post_test.dart
 test/social_profile_test.dart
 test/special_opening_hour_test.dart
 test/user_oauth_post200_response_test.dart

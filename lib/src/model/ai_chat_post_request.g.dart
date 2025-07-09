@@ -14,20 +14,16 @@ class _$AiChatPostRequest extends AiChatPostRequest {
 
   factory _$AiChatPostRequest(
           [void Function(AiChatPostRequestBuilder)? updates]) =>
-      (new AiChatPostRequestBuilder()..update(updates))._build();
+      (AiChatPostRequestBuilder()..update(updates))._build();
 
-  _$AiChatPostRequest._({required this.userId, this.messages}) : super._() {
-    BuiltValueNullFieldError.checkNotNull(
-        userId, r'AiChatPostRequest', 'userId');
-  }
-
+  _$AiChatPostRequest._({required this.userId, this.messages}) : super._();
   @override
   AiChatPostRequest rebuild(void Function(AiChatPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
   AiChatPostRequestBuilder toBuilder() =>
-      new AiChatPostRequestBuilder()..replace(this);
+      AiChatPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -66,7 +62,7 @@ class AiChatPostRequestBuilder
   ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
   ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          new ListBuilder<AiConversationPost200ResponseMessagesInner>();
+          ListBuilder<AiConversationPost200ResponseMessagesInner>();
   set messages(
           ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
       _$this._messages = messages;
@@ -87,7 +83,6 @@ class AiChatPostRequestBuilder
 
   @override
   void replace(AiChatPostRequest other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$AiChatPostRequest;
   }
 
@@ -103,7 +98,7 @@ class AiChatPostRequestBuilder
     _$AiChatPostRequest _$result;
     try {
       _$result = _$v ??
-          new _$AiChatPostRequest._(
+          _$AiChatPostRequest._(
             userId: BuiltValueNullFieldError.checkNotNull(
                 userId, r'AiChatPostRequest', 'userId'),
             messages: _messages?.build(),
@@ -114,7 +109,7 @@ class AiChatPostRequestBuilder
         _$failedField = 'messages';
         _messages?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
+        throw BuiltValueNestedFieldError(
             r'AiChatPostRequest', _$failedField, e.toString());
       }
       rethrow;

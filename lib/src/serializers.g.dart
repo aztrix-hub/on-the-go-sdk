@@ -6,7 +6,7 @@ part of 'serializers.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-Serializers _$serializers = (new Serializers().toBuilder()
+Serializers _$serializers = (Serializers().toBuilder()
       ..add(Address.serializer)
       ..add(AiChatPost200Response.serializer)
       ..add(AiChatPostRequest.serializer)
@@ -21,6 +21,8 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(BrandDataPoint.serializer)
       ..add(BrandDataPointTypeEnum.serializer)
       ..add(Category.serializer)
+      ..add(DataPoint.serializer)
+      ..add(DataPointTypeEnum.serializer)
       ..add(DirectoryType.serializer)
       ..add(InboxItem.serializer)
       ..add(InboxItemAuthor.serializer)
@@ -53,6 +55,10 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(OpeningHour.serializer)
       ..add(ResetPassword.serializer)
       ..add(SiteColorsPatchRequest.serializer)
+      ..add(SocialPost.serializer)
+      ..add(SocialPostAlertTypeEnum.serializer)
+      ..add(SocialPostStatusEnum.serializer)
+      ..add(SocialPostTypeEnum.serializer)
       ..add(SocialProfile.serializer)
       ..add(SocialProfileTypeEnum.serializer)
       ..add(SpecialOpeningHour.serializer)
@@ -68,100 +74,130 @@ Serializers _$serializers = (new Serializers().toBuilder()
           const FullType(BuiltList, const [
             const FullType(AiConversationPost200ResponseMessagesInner)
           ]),
-          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+          () => ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AiConversationPost200ResponseMessagesInner)
           ]),
-          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+          () => ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AiConversationPost200ResponseMessagesInner)
           ]),
-          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+          () => ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AiConversationPost200ResponseMessagesInner)
           ]),
-          () => new ListBuilder<AiConversationPost200ResponseMessagesInner>())
+          () => ListBuilder<AiConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AiMemoriesGet200ResponseMemoriesInner)]),
-          () => new ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
+          () => ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(DataPoint)]),
+          () => ListBuilder<DataPoint>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DirectoryType)]),
-          () => new ListBuilder<DirectoryType>())
+          () => ListBuilder<DirectoryType>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
+          () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(InboxItem)]),
-          () => new ListBuilder<InboxItem>())
+          () => ListBuilder<InboxItem>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
-          () => new ListBuilder<InboxPostRequestStatusEnum>())
+          () => ListBuilder<InboxPostRequestStatusEnum>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InsightsMetricsInner)]),
-          () => new ListBuilder<InsightsMetricsInner>())
+          () => ListBuilder<InsightsMetricsInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InsightsMetricsInnerDataInner)]),
-          () => new ListBuilder<InsightsMetricsInnerDataInner>())
+          () => ListBuilder<InsightsMetricsInnerDataInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
-          () => new ListBuilder<Location>())
+          () => ListBuilder<Location>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InboxItemMediaInner)]),
-          () => new ListBuilder<InboxItemMediaInner>())
+          () => ListBuilder<InboxItemMediaInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(OpeningHour)]),
-          () => new ListBuilder<OpeningHour>())
+          () => ListBuilder<OpeningHour>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SpecialOpeningHour)]),
-          () => new ListBuilder<SpecialOpeningHour>())
+          () => ListBuilder<SpecialOpeningHour>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(LocationPhoto)]),
-          () => new SetBuilder<LocationPhoto>())
+          () => SetBuilder<LocationPhoto>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
+          () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => new ListBuilder<JsonObject?>())
+          () => ListBuilder<JsonObject?>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => new ListBuilder<JsonObject?>())
+          () => ListBuilder<JsonObject?>())
       ..addBuilderFactory(
           const FullType(BuiltMap,
               const [const FullType(String), const FullType(JsonObject)]),
-          () => new MapBuilder<String, JsonObject>())
-      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(int)]),
-          () => new SetBuilder<int>())
-      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(num)]),
-          () => new SetBuilder<num>())
+          () => MapBuilder<String, JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
-          () => new SetBuilder<String>())
+          () => SetBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>())
+          () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
-          () => new ListBuilder<int>()))
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(int)]),
+          () => SetBuilder<int>())
+      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(num)]),
+          () => SetBuilder<num>())
+      ..addBuilderFactory(
+          const FullType(BuiltSet, const [const FullType(String)]),
+          () => SetBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(int)]),
+          () => ListBuilder<int>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

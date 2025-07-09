@@ -15,17 +15,15 @@ class _$InboxItemAuthor extends InboxItemAuthor {
   final String? name;
 
   factory _$InboxItemAuthor([void Function(InboxItemAuthorBuilder)? updates]) =>
-      (new InboxItemAuthorBuilder()..update(updates))._build();
+      (InboxItemAuthorBuilder()..update(updates))._build();
 
   _$InboxItemAuthor._({this.image, this.isClient, this.name}) : super._();
-
   @override
   InboxItemAuthor rebuild(void Function(InboxItemAuthorBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  InboxItemAuthorBuilder toBuilder() =>
-      new InboxItemAuthorBuilder()..replace(this);
+  InboxItemAuthorBuilder toBuilder() => InboxItemAuthorBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
@@ -89,7 +87,6 @@ class InboxItemAuthorBuilder
 
   @override
   void replace(InboxItemAuthor other) {
-    ArgumentError.checkNotNull(other, 'other');
     _$v = other as _$InboxItemAuthor;
   }
 
@@ -103,7 +100,7 @@ class InboxItemAuthorBuilder
 
   _$InboxItemAuthor _build() {
     final _$result = _$v ??
-        new _$InboxItemAuthor._(
+        _$InboxItemAuthor._(
           image: image,
           isClient: isClient,
           name: name,
