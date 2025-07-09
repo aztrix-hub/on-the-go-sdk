@@ -2093,20 +2093,7 @@
             "type": "array",
             "description": "A list of openinghours (time intervals), only required when `closed` is `false`",
             "items": {
-              "interval": {
-                "type": "object",
-                "description": "A time interval (e.g. 12:00-15:00)",
-                "properties": {
-                  "start": {
-                    "type": "string",
-                    "description": "the start time (format HH:mm)"
-                  },
-                  "end": {
-                    "type": "string",
-                    "description": "the end time (format HH:mm)"
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/OpeningHourInterval"
             }
           }
         },
@@ -2165,20 +2152,7 @@
             "type": "array",
             "description": "A list of hour ranges (time intervals), only required when `closed` is `false`",
             "items": {
-              "interval": {
-                "type": "object",
-                "description": "A time interval (e.g. 12:00-15:00). 24 hours opened => 00:00-23:59",
-                "properties": {
-                  "start": {
-                    "type": "string",
-                    "description": "the start time (format HH:mm)"
-                  },
-                  "end": {
-                    "type": "string",
-                    "description": "the end time (format HH:mm)"
-                  }
-                }
-              }
+              "$ref": "#/components/schemas/OpeningHourInterval"
             }
           }
         },
@@ -2198,6 +2172,20 @@
             ]
           }
         ]
+      },
+      "OpeningHourInterval": {
+        "type": "object",
+        "description": "A time interval (e.g. 12:00-15:00). 24 hours opened => 00:00-23:59",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "the start time (format HH:mm)"
+          },
+          "end": {
+            "type": "string",
+            "description": "the end time (format HH:mm)"
+          }
+        }
       },
       "SocialProfile": {
         "type": "object",

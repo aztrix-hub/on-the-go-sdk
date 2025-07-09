@@ -56,6 +56,7 @@ export 'package:on_the_go_sdk/src/model/login_body.dart';
 export 'package:on_the_go_sdk/src/model/login_response.dart';
 export 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/opening_hour.dart';
+export 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 export 'package:on_the_go_sdk/src/model/reset_password.dart';
 export 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 export 'package:on_the_go_sdk/src/model/social_post.dart';

@@ -53,6 +53,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(LoginResponse.serializer)
       ..add(NotificationsConfigGet200Response.serializer)
       ..add(OpeningHour.serializer)
+      ..add(OpeningHourInterval.serializer)
       ..add(ResetPassword.serializer)
       ..add(SiteColorsPatchRequest.serializer)
       ..add(SocialPost.serializer)
@@ -122,6 +123,14 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(OpeningHourInterval)]),
+          () => ListBuilder<OpeningHourInterval>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(OpeningHourInterval)]),
+          () => ListBuilder<OpeningHourInterval>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
       ..addBuilderFactory(
@@ -146,14 +155,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => ListBuilder<JsonObject?>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => ListBuilder<JsonObject?>())
       ..addBuilderFactory(
           const FullType(BuiltMap,
               const [const FullType(String), const FullType(JsonObject)]),

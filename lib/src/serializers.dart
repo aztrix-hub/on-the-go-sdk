@@ -50,6 +50,7 @@ import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
+import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
@@ -99,6 +100,7 @@ part 'serializers.g.dart';
   LoginResponse,
   NotificationsConfigGet200Response,
   OpeningHour,
+  OpeningHourInterval,
   ResetPassword,
   SiteColorsPatchRequest,
   SocialPost,

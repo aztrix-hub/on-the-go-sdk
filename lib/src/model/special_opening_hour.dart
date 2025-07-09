@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
+import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -29,7 +29,7 @@ abstract class SpecialOpeningHour
 
   /// A list of hour ranges (time intervals), only required when `closed` is `false`
   @BuiltValueField(wireName: r'intervals')
-  BuiltList<JsonObject?>? get intervals;
+  BuiltList<OpeningHourInterval>? get intervals;
 
   SpecialOpeningHour._();
 
@@ -74,7 +74,7 @@ class _$SpecialOpeningHourSerializer
       yield serializers.serialize(
         object.intervals,
         specifiedType:
-            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+            const FullType(BuiltList, [FullType(OpeningHourInterval)]),
       );
     }
   }
@@ -120,8 +120,8 @@ class _$SpecialOpeningHourSerializer
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(BuiltList, [FullType.nullable(JsonObject)]),
-          ) as BuiltList<JsonObject?>;
+                const FullType(BuiltList, [FullType(OpeningHourInterval)]),
+          ) as BuiltList<OpeningHourInterval>;
           result.intervals.replace(valueDes);
           break;
         default:

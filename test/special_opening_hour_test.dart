@@ -20,7 +20,7 @@ void main() {
     });
 
     // A list of hour ranges (time intervals), only required when `closed` is `false`
-    // BuiltList<JsonObject> intervals
+    // BuiltList<OpeningHourInterval> intervals
     test('to test the property `intervals`', () async {
       // TODO
     });

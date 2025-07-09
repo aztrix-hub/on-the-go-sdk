@@ -12,7 +12,7 @@ class _$SpecialOpeningHour extends SpecialOpeningHour {
   @override
   final bool? closed;
   @override
-  final BuiltList<JsonObject?>? intervals;
+  final BuiltList<OpeningHourInterval>? intervals;
 
   factory _$SpecialOpeningHour(
           [void Function(SpecialOpeningHourBuilder)? updates]) =>
@@ -70,10 +70,10 @@ class SpecialOpeningHourBuilder
   bool? get closed => _$this._closed;
   set closed(bool? closed) => _$this._closed = closed;
 
-  ListBuilder<JsonObject?>? _intervals;
-  ListBuilder<JsonObject?> get intervals =>
-      _$this._intervals ??= ListBuilder<JsonObject?>();
-  set intervals(ListBuilder<JsonObject?>? intervals) =>
+  ListBuilder<OpeningHourInterval>? _intervals;
+  ListBuilder<OpeningHourInterval> get intervals =>
+      _$this._intervals ??= ListBuilder<OpeningHourInterval>();
+  set intervals(ListBuilder<OpeningHourInterval>? intervals) =>
       _$this._intervals = intervals;
 
   SpecialOpeningHourBuilder() {
