@@ -269,8 +269,6 @@ class _$User extends User {
   final BuiltList<int>? locationGroupIds;
   @override
   final BuiltList<int>? managedLocationsViaGroups;
-  @override
-  final String? whitelabelInformationIdentifier;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (UserBuilder()..update(updates))._build();
@@ -291,8 +289,7 @@ class _$User extends User {
       this.features,
       this.featuresDetailed,
       this.locationGroupIds,
-      this.managedLocationsViaGroups,
-      this.whitelabelInformationIdentifier})
+      this.managedLocationsViaGroups})
       : super._();
   @override
   User rebuild(void Function(UserBuilder) updates) =>
@@ -320,9 +317,7 @@ class _$User extends User {
         features == other.features &&
         featuresDetailed == other.featuresDetailed &&
         locationGroupIds == other.locationGroupIds &&
-        managedLocationsViaGroups == other.managedLocationsViaGroups &&
-        whitelabelInformationIdentifier ==
-            other.whitelabelInformationIdentifier;
+        managedLocationsViaGroups == other.managedLocationsViaGroups;
   }
 
   @override
@@ -344,7 +339,6 @@ class _$User extends User {
     _$hash = $jc(_$hash, featuresDetailed.hashCode);
     _$hash = $jc(_$hash, locationGroupIds.hashCode);
     _$hash = $jc(_$hash, managedLocationsViaGroups.hashCode);
-    _$hash = $jc(_$hash, whitelabelInformationIdentifier.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -367,9 +361,7 @@ class _$User extends User {
           ..add('features', features)
           ..add('featuresDetailed', featuresDetailed)
           ..add('locationGroupIds', locationGroupIds)
-          ..add('managedLocationsViaGroups', managedLocationsViaGroups)
-          ..add('whitelabelInformationIdentifier',
-              whitelabelInformationIdentifier))
+          ..add('managedLocationsViaGroups', managedLocationsViaGroups))
         .toString();
   }
 }
@@ -452,13 +444,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   set managedLocationsViaGroups(ListBuilder<int>? managedLocationsViaGroups) =>
       _$this._managedLocationsViaGroups = managedLocationsViaGroups;
 
-  String? _whitelabelInformationIdentifier;
-  String? get whitelabelInformationIdentifier =>
-      _$this._whitelabelInformationIdentifier;
-  set whitelabelInformationIdentifier(
-          String? whitelabelInformationIdentifier) =>
-      _$this._whitelabelInformationIdentifier = whitelabelInformationIdentifier;
-
   UserBuilder() {
     User._defaults(this);
   }
@@ -482,7 +467,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _featuresDetailed = $v.featuresDetailed;
       _locationGroupIds = $v.locationGroupIds?.toBuilder();
       _managedLocationsViaGroups = $v.managedLocationsViaGroups?.toBuilder();
-      _whitelabelInformationIdentifier = $v.whitelabelInformationIdentifier;
       _$v = null;
     }
     return this;
@@ -524,7 +508,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
             featuresDetailed: featuresDetailed,
             locationGroupIds: _locationGroupIds?.build(),
             managedLocationsViaGroups: _managedLocationsViaGroups?.build(),
-            whitelabelInformationIdentifier: whitelabelInformationIdentifier,
           );
     } catch (_) {
       late String _$failedField;

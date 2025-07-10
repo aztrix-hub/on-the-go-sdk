@@ -29,7 +29,6 @@ part 'user.g.dart';
 /// * [featuresDetailed] - Map containing the feature names and corresponding feature-specific parameters. \"featuresDetailed\" is supported for the features LOCATION_WRITE and ADVANCED_ANALYTICS.  For LOCATION_WRITE a list of fields that this user can update is expected.  For ADVANCED_ANALYTICS a list of dashboards the user has access to is expected. For example: <pre> \"featuresDetailed\": '{' '{'    \"featuresDetailed\":'{'       \"LOCATION_WRITE\":[          \"fax\",          \"openingHours\",          \"callTrackingNumbers\",          \"streetNo\",          \"openingHoursNotes\",          \"specialOpeningHours\",          \"street\",          \"languages\",          \"customFields\",          \"contentLists\",          \"photos\",          \"services\",          \"moreHours\",          \"descriptionLong\",          \"zip\",          \"lat\",          \"openingDate\",          \"email\",          \"addressDisplay\",          \"labels\",          \"taxNumber\",          \"city\",          \"cellphone\",          \"contentCollections\",          \"attributes\",          \"categories\",          \"imprint\",          \"phone\",          \"utms\",          \"addressExtra\",          \"keywords\",          \"legalIdent\",          \"lng\",          \"paymentOptions\",          \"descriptionShort\",          \"socialProfiles\",          \"identifier\",          \"website\",          \"country\",          \"province\",          \"name\",          \"videos\",          \"brands\",          \"serviceAreas\"       ],       \"ADVANCED_ANALYTICS\":[          \"overview\",          \"listings-google\",          \"customer-feedback\"       ]    '}' '}' </pre>
 /// * [locationGroupIds] - A list of all location IDs the user can manage because of assignment to certain group(s)
 /// * [managedLocationsViaGroups] - A list of all location IDs the user can manage because of assignment to certain group(s)
-/// * [whitelabelInformationIdentifier] - Mandatory If there is more than one whitelabel for the sales partner</br> Parameter not provided: If there is only one whitelabel for the sales partner we default to it</br> Parameter not provided: If a child sales partner does not have whitelabels and the father has only one we default to the father whitelabel</br>
 @BuiltValue()
 abstract class User implements Built<User, UserBuilder> {
   /// The uberall unique id for the user
@@ -98,10 +97,6 @@ abstract class User implements Built<User, UserBuilder> {
   /// A list of all location IDs the user can manage because of assignment to certain group(s)
   @BuiltValueField(wireName: r'managedLocationsViaGroups')
   BuiltList<int>? get managedLocationsViaGroups;
-
-  /// Mandatory If there is more than one whitelabel for the sales partner</br> Parameter not provided: If there is only one whitelabel for the sales partner we default to it</br> Parameter not provided: If a child sales partner does not have whitelabels and the father has only one we default to the father whitelabel</br>
-  @BuiltValueField(wireName: r'whitelabelInformationIdentifier')
-  String? get whitelabelInformationIdentifier;
 
   User._();
 
@@ -230,13 +225,6 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield serializers.serialize(
         object.managedLocationsViaGroups,
         specifiedType: const FullType(BuiltList, [FullType(int)]),
-      );
-    }
-    if (object.whitelabelInformationIdentifier != null) {
-      yield r'whitelabelInformationIdentifier';
-      yield serializers.serialize(
-        object.whitelabelInformationIdentifier,
-        specifiedType: const FullType(String),
       );
     }
   }
@@ -375,13 +363,6 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
             specifiedType: const FullType(BuiltList, [FullType(int)]),
           ) as BuiltList<int>;
           result.managedLocationsViaGroups.replace(valueDes);
-          break;
-        case r'whitelabelInformationIdentifier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.whitelabelInformationIdentifier = valueDes;
           break;
         default:
           unhandled.add(key);

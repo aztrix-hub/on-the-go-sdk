@@ -1908,10 +1908,6 @@
               "type": "integer",
               "format": "int64"
             }
-          },
-          "whitelabelInformationIdentifier": {
-            "type": "string",
-            "description": "Mandatory If there is more than one whitelabel for the sales partner</br>\nParameter not provided: If there is only one whitelabel for the sales partner we default to it</br>\nParameter not provided: If a child sales partner does not have whitelabels and the father has only one we default to the father whitelabel</br>"
           }
         },
         "description": "User Model"
@@ -2014,6 +2010,11 @@
       "Address": {
         "type": "object",
         "properties": {
+          "country": {
+            "minLength": 0,
+            "maxLength": 255,
+            "type": "string"
+          },
           "countryCode": {
             "minLength": 0,
             "pattern": "^[a-zA-Z]{2}$",

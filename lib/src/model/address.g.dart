@@ -8,6 +8,8 @@ part of 'address.dart';
 
 class _$Address extends Address {
   @override
+  final String? country;
+  @override
   final String? countryCode;
   @override
   final String? city;
@@ -30,7 +32,8 @@ class _$Address extends Address {
       (AddressBuilder()..update(updates))._build();
 
   _$Address._(
-      {this.countryCode,
+      {this.country,
+      this.countryCode,
       this.city,
       this.streetAndNo,
       this.postalCode,
@@ -51,6 +54,7 @@ class _$Address extends Address {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Address &&
+        country == other.country &&
         countryCode == other.countryCode &&
         city == other.city &&
         streetAndNo == other.streetAndNo &&
@@ -65,6 +69,7 @@ class _$Address extends Address {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, country.hashCode);
     _$hash = $jc(_$hash, countryCode.hashCode);
     _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, streetAndNo.hashCode);
@@ -81,6 +86,7 @@ class _$Address extends Address {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Address')
+          ..add('country', country)
           ..add('countryCode', countryCode)
           ..add('city', city)
           ..add('streetAndNo', streetAndNo)
@@ -96,6 +102,10 @@ class _$Address extends Address {
 
 class AddressBuilder implements Builder<Address, AddressBuilder> {
   _$Address? _$v;
+
+  String? _country;
+  String? get country => _$this._country;
+  set country(String? country) => _$this._country = country;
 
   String? _countryCode;
   String? get countryCode => _$this._countryCode;
@@ -141,6 +151,7 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   AddressBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _country = $v.country;
       _countryCode = $v.countryCode;
       _city = $v.city;
       _streetAndNo = $v.streetAndNo;
@@ -171,6 +182,7 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   _$Address _build() {
     final _$result = _$v ??
         _$Address._(
+          country: country,
           countryCode: countryCode,
           city: city,
           streetAndNo: streetAndNo,
