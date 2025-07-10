@@ -126,7 +126,7 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
-final String locationId = locationId_example; // String | The unique id of the location
+final String locationId = locationId_example; // String | The id of the location
 
 try {
     final response = api.locationListingsGet(locationId);
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationId** | **String**| The unique id of the location | 
+ **locationId** | **String**| The id of the location | 
 
 ### Return type
 

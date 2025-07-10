@@ -1595,7 +1595,7 @@
           {
             "name": "locationId",
             "in": "query",
-            "description": "The unique id of the location",
+            "description": "The id of the location",
             "required": true,
             "schema": {
               "type": "string"
@@ -2217,98 +2217,122 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "The id of the listing.",
+            "description": "The id of the listing details",
             "format": "int64"
           },
           "type": {
-            "description": "The directory where this listing appears.",
+            "description": "The directory where this listing appears",
             "$ref": "#/components/schemas/DirectoryType"
           },
-          "syncStatus": {
+          "typeName": {
             "type": "string",
-            "description": "The listing''s sync status.",
-            "enum": [
-              "IN_SYNC",
-              "NOT_IN_SYNC",
-              "NOT_FOUND",
-              "TECHNICAL_PROBLEMS",
-              "NOT_SUPPORTED",
-              "NO_ONLINE_LISTING",
-              "LINK_ONLY"
-            ]
-          },
-          "claimStatus": {
-            "type": "string",
-            "description": "Claim status of the listing.",
-            "enum": [
-              "CLAIMABLE",
-              "NOT_CLAIMABLE",
-              "CLAIMED_BY_US",
-              "CLAIMED_BY_OTHERS",
-              "CLAIMED_BY_ANOTHER_US",
-              "CLAIMING_IN_PROGRESS",
-              "UNKNOWN"
-            ]
-          },
-          "listingId": {
-            "type": "string",
-            "description": "The listing''s id in the directory''s database."
+            "description": "Listing type / Publisher name"
           },
           "listingUrl": {
             "type": "string",
-            "description": "The listing''s URL on the directory''s website."
+            "description": "Listing URL"
           },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object",
-              "description": "A map containing optional information about the listing",
-              "example": "latestVisibilityIndex"
-            },
-            "description": "A map containing optional information about the listing, e.g. latestVisibilityIndex.",
-            "example": "latestVisibilityIndex"
-          },
-          "lastChecked": {
+          "category": {
             "type": "string",
-            "description": "The last time the listing was sync-checked.",
-            "format": "date-time"
+            "description": "The category of the directory of this listing",
+            "example": "social, search"
           },
-          "lastSuccessfulUpdate": {
+          "mandatoryFieldsMissing": {
+            "type": "array",
+            "description": "Mandatory field missing on the location which prevents the data to be submitted to the publisher",
+            "items": {
+              "type": "string",
+              "description": "Mandatory field missing on the location which prevents the data to be submitted to the publisher"
+            }
+          },
+          "directoryContactDetails": {
+            "$ref": "#/components/schemas/DirectoryContactDetails"
+          },
+          "directoryConnectInfo": {
+            "$ref": "#/components/schemas/DirectoryConnectInfo"
+          },
+          "status": {
             "type": "string",
-            "description": "The last time the listing was successfully updated.",
-            "format": "date-time"
+            "description": "Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]",
+            "enum": [
+              "SYNCED",
+              "SUBMITTED",
+              "UPDATING",
+              "LINKED",
+              "ACTION_REQUIRED"
+            ]
           },
-          "accountInfo": {
-            "type": "object",
-            "description": "A map consisting of the name and pageId of the connected account if the listing is either Google or Facebook."
-          },
-          "connectSecret": {
-            "type": "string"
-          },
-          "connectStatus": {
+          "action": {
             "type": "string",
-            "description": "Connect status of the listing.",
+            "description": "Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]",
+            "enum": [
+              "CONNECT",
+              "VERIFY",
+              "CLAIM",
+              "ADD_MANDATORY_FIELDS",
+              "ACCESS"
+            ]
+          }
+        }
+      },
+      "DirectoryConnectInfo": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "description": "Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]",
             "enum": [
               "CONNECTED",
               "NOT_CONNECTED",
               "NOT_NEEDED"
             ]
           },
-          "status": {
-            "type": "string",
-            "description": "The listing''s status.",
-            "enum": [
-              "ACTIVE",
-              "INACTIVE",
-              "MANUAL"
-            ]
-          },
-          "typeName": {
-            "type": "string",
-            "description": "The directory''s name in the language of the current locale."
+          "userDetails": {
+            "$ref": "#/components/schemas/ConnectFlowUserDetails"
           }
         },
-        "description": "Listing"
+        "description": "Directory Connect Info model"
+      },
+      "ConnectFlowUserDetails": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Connected account detail (Account name)"
+          },
+          "email": {
+            "type": "string",
+            "description": "Connected account detail (email)"
+          },
+          "dateConnected": {
+            "type": "string",
+            "description": "his should indicate the date that this user made the connection",
+            "format": "date-time"
+          },
+          "defaultForSalesPartner": {
+            "type": "boolean",
+            "description": "This should indicate whether the connection in place has been produced by a salesPartner level connection"
+          },
+          "defaultForBusiness": {
+            "type": "boolean",
+            "description": "This should indicate whether the connection in place has been produced by a business level connection"
+          }
+        },
+        "description": "Connect Flow User Details model"
+      },
+      "DirectoryContactDetails": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "description": "Email address to be used to release a claim from another provider"
+          },
+          "website": {
+            "type": "string",
+            "description": "Contact website address to be used to release a claim from another provider"
+          }
+        },
+        "description": "Directory contact details model"
       },
       "LocationPhoto": {
         "required": [

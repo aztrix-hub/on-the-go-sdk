@@ -208,7 +208,7 @@ class LocationsApi {
   ///
   ///
   /// Parameters:
-  /// * [locationId] - The unique id of the location
+  /// * [locationId] - The id of the location
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

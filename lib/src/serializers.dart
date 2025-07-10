@@ -27,7 +27,10 @@ import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/brand_data_point.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
+import 'package:on_the_go_sdk/src/model/connect_flow_user_details.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
+import 'package:on_the_go_sdk/src/model/directory_connect_info.dart';
+import 'package:on_the_go_sdk/src/model/directory_contact_details.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
@@ -77,7 +80,10 @@ part 'serializers.g.dart';
   AiSystemGet200Response,
   BrandDataPoint,
   Category,
+  ConnectFlowUserDetails,
   DataPoint,
+  DirectoryConnectInfo,
+  DirectoryContactDetails,
   DirectoryType,
   InboxItem,
   InboxItemAuthor,

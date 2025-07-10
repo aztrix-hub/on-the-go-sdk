@@ -8,20 +8,16 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The id of the listing. | [optional] 
+**id** | **int** | The id of the listing details | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
-**syncStatus** | **String** | The listing''s sync status. | [optional] 
-**claimStatus** | **String** | Claim status of the listing. | [optional] 
-**listingId** | **String** | The listing''s id in the directory''s database. | [optional] 
-**listingUrl** | **String** | The listing''s URL on the directory''s website. | [optional] 
-**data** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) | A map containing optional information about the listing, e.g. latestVisibilityIndex. | [optional] 
-**lastChecked** | [**DateTime**](DateTime.md) | The last time the listing was sync-checked. | [optional] 
-**lastSuccessfulUpdate** | [**DateTime**](DateTime.md) | The last time the listing was successfully updated. | [optional] 
-**accountInfo** | [**JsonObject**](.md) | A map consisting of the name and pageId of the connected account if the listing is either Google or Facebook. | [optional] 
-**connectSecret** | **String** |  | [optional] 
-**connectStatus** | **String** | Connect status of the listing. | [optional] 
-**status** | **String** | The listing''s status. | [optional] 
-**typeName** | **String** | The directory''s name in the language of the current locale. | [optional] 
+**typeName** | **String** | Listing type / Publisher name | [optional] 
+**listingUrl** | **String** | Listing URL | [optional] 
+**category** | **String** | The category of the directory of this listing | [optional] 
+**mandatoryFieldsMissing** | **BuiltList&lt;String&gt;** | Mandatory field missing on the location which prevents the data to be submitted to the publisher | [optional] 
+**directoryContactDetails** | [**DirectoryContactDetails**](DirectoryContactDetails.md) |  | [optional] 
+**directoryConnectInfo** | [**DirectoryConnectInfo**](DirectoryConnectInfo.md) |  | [optional] 
+**status** | **String** | Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED] | [optional] 
+**action** | **String** | Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS] | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

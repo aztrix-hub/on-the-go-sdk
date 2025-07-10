@@ -21,8 +21,12 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(BrandDataPoint.serializer)
       ..add(BrandDataPointTypeEnum.serializer)
       ..add(Category.serializer)
+      ..add(ConnectFlowUserDetails.serializer)
       ..add(DataPoint.serializer)
       ..add(DataPointTypeEnum.serializer)
+      ..add(DirectoryConnectInfo.serializer)
+      ..add(DirectoryConnectInfoStatusEnum.serializer)
+      ..add(DirectoryContactDetails.serializer)
       ..add(DirectoryType.serializer)
       ..add(InboxItem.serializer)
       ..add(InboxItemAuthor.serializer)
@@ -39,10 +43,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(InsightsMetricsInner.serializer)
       ..add(InsightsMetricsInnerDataInner.serializer)
       ..add(Listing.serializer)
-      ..add(ListingClaimStatusEnum.serializer)
-      ..add(ListingConnectStatusEnum.serializer)
+      ..add(ListingActionEnum.serializer)
       ..add(ListingStatusEnum.serializer)
-      ..add(ListingSyncStatusEnum.serializer)
       ..add(Location.serializer)
       ..add(LocationPhoto.serializer)
       ..add(LocationPhotoPostRequest.serializer)
@@ -137,6 +139,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InboxItemMediaInner)]),
           () => ListBuilder<InboxItemMediaInner>())
@@ -155,10 +160,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltMap,
-              const [const FullType(String), const FullType(JsonObject)]),
-          () => MapBuilder<String, JsonObject>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
           () => SetBuilder<String>())
