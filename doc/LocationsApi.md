@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationListingsGet**
-> JsonObject locationListingsGet(locationId)
+> BuiltList<Listing> locationListingsGet(locationId)
 
 
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+[**BuiltList&lt;Listing&gt;**](Listing.md)
 
 ### Authorization
 

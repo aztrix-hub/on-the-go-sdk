@@ -1608,11 +1608,9 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "listings": {
-                    "type": "array",
-                    "items": {
-                      "$ref": "#/components/schemas/Listing"
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Listing"
                   }
                 }
               }

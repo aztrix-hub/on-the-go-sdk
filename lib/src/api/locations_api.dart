@@ -4,13 +4,13 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
+import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
@@ -216,9 +216,9 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Listing>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<JsonObject>> locationListingsGet({
+  Future<Response<BuiltList<Listing>>> locationListingsGet({
     required String locationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -261,7 +261,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    JsonObject? _responseData;
+    BuiltList<Listing>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -269,8 +269,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(JsonObject),
-            ) as JsonObject;
+              specifiedType: const FullType(BuiltList, [FullType(Listing)]),
+            ) as BuiltList<Listing>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -281,7 +281,7 @@ class LocationsApi {
       );
     }
 
-    return Response<JsonObject>(
+    return Response<BuiltList<Listing>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
