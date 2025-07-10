@@ -4,9 +4,6 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/directory_contact_details.dart';
-import 'package:on_the_go_sdk/src/model/directory_connect_info.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,56 +13,25 @@ part 'listing.g.dart';
 ///
 /// Properties:
 /// * [id] - The id of the listing details
-/// * [type]
-/// * [typeName] - Listing type / Publisher name
-/// * [listingUrl] - Listing URL
-/// * [category] - The category of the directory of this listing
-/// * [mandatoryFieldsMissing] - Mandatory field missing on the location which prevents the data to be submitted to the publisher
-/// * [directoryContactDetails]
-/// * [directoryConnectInfo]
-/// * [status] - Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
-/// * [action] - Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
+/// * [status]
+/// * [url] - Listing URL
+/// * [connected]
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
   /// The id of the listing details
   @BuiltValueField(wireName: r'id')
   int? get id;
 
-  @BuiltValueField(wireName: r'type')
-  DirectoryType? get type;
-  // enum typeEnum {  FOURSQUARE,  UBER,  GOOGLE,  WAZE,  GOOGLE_MAPS,  YELP,  YELP_API,  MEINESTADT,  YELLOW_MAP,  FOCUS,  LOKALEAUSKUNFT,  WEB_DE,  GMX,  ONE_AND_ONE,  FREIEAUSKUNFT,  POINTOO,  NOKIA_HERE,  FACEBOOK,  TOMTOM,  STADTBRANCHENBUCH,  CYLEX,  UNTERNEHMENSAUSKUNFT,  ACOMPIO,  BUSINESSBRANCHENBUCH,  YALWA,  THE_PHONEBOOK,  SCOOT,  CENTRAL_INDEX,  CITIPAGES,  ONE_NINE_TWO,  ONE_ONE_EIGHT,  THE_DAILY_RECORD,  THE_EVENING_STANDARD,  THE_SCOTSMAN,  LIVERPOOL_ECHO,  THE_SUN,  THE_INDEPENDENT,  TOUCH_LOCAL,  THE_MIRROR,  ANNUAIRE,  INFOBEL,  US_INFO_COM,  GARMIN,  FACTUAL,  BING,  WO_GIBTS_WAS,  KOOMIO,  ABCLOCAL,  YELLBO,  JELLOO,  GUIDELOCAL,  OEFFNUNGSZEITENBUCH,  APPLE_MAPS,  LOOCAL,  REGIONAL_DE,  WHERE_TO,  TUPALO,  GELBE_SEITEN,  DAS_OERTLICHE,  DIALO,  BUNDES_TELEFONBUCH,  BRANCHENBUCH_DEUTSCHLAND,  MARKTPLATZ_MITTELSTAND,  BUSQUEDA_LOCAL,  RICERCARE_IMPRESE,  PAGES24,  NAVMII,  AUDI,  BMW,  MERCEDES,  VW,  TOYOTA,  FORD,  FIAT,  GM,  ETRUSTED,  INSTAGRAM,  SHOPPING_TIME_NETWORK,  CITY_SQUARES,  SHOWMELOCAL,  LOCALSTACK,  CHAMBER_OF_COMMERCE,  JUDYS_BOOK,  BROWNBOOK,  MY_LOCAL_SERVICES,  YA_SABE,  UNIVISION,  AL_DIA_TX,  LA_VOZ_TX,  CHRON,  STATESMAN,  PALM_BEACH_POST,  MUNDO_HISPANICO,  EL_TIEMPO_LATINO,  LATINOS_US,  HOTFROG,  INFO_IS_INFO,  MANTA,  US_CITY,  GO_YELLOW,  N49,  PRATIQUE,  JUSTACOTE,  EZLOCAL,  ELOCAL,  TRUE_LOCAL,  START_LOCAL,  WOMO,  AUSSIE_WEB,  YELLOW_PAGES,  SUPER_PAGES,  WHITE_PAGES,  DEX_KNOWS,  KAUFDA_MANUAL,  I_GLOBAL,  BRANCHEN_INFO_MANUAL,  GUTE_BANKEN_MANUAL,  D_11880_COM_MANUAL,  BANKOEFFNUNGSZEITEN_DE_MANUAL,  BANK_OEFFNUNGSZEITEN_DE_MANUAL,  CYLEX_MANUAL,  FINDE_OFFEN_MANUAL,  MEIN_PROSPEKT_MANUAL,  DAS_SCHNELLE,  SENSIS_WHITE_PAGES,  SENSIS_TRUE_LOCAL,  SENSIS_YELLOW_PAGES,  FIND_OPEN,  WAND,  BELL_CA,  GO_LOCAL,  MEINUNGSMEISTER,  YANDEX,  YAHOO_MANUAL,  HOLIDAY_CHECK,  TRIP_ADVISOR,  BONIAL_FR,  ZIP_CH,  PAGES_JAUNES,  YELLOW_PAGES_SINGAPORE,  INFOGROUP,  WAZE_NEW,  UBER_NEW,  NEUSTAR,  TRUSTPILOT,  AUSKUNFT,  BAIDU,  NEXT_DOOR,  MICROSOFT_CORTANA,  GOOGLE_ASSISTANT,  CBANQUE,  ORANGE_118_712,  SIRI,  HUAWEI,  DOCTOR_COM,  CARE_DASH,  DENTAL_PLANS,  DOC_SPOT,  HEALTHGRADES,  SHARE_CARE,  VITALS,  WEB_MD,  WELLNESS,  ZOC_DOC,  ZWIVEL,  YP_COM_HEALTH,  BING_HEALTH,  NPPES,  RATE_MDS,  CITYSEARCH,  INSIDER_PAGES,  TWITTER,  ALEXA,  MAP_QUEST,  WEBSITE_WIDGETS,  ECO_MOVEMENT,  GOOGLE_EV,  APPLE_EV,  TESLA_EV,  EUROWAG_EV,  OPIS_EV,  TOMTOM_EV,  HERE_EV,  YELLOW_PAGES_CANADA,  BBB,  UBERALL_SOCIAL_ADS,  APPLE_APPS,  CONSUMER_AFFAIRS,  CREDIT_KARMA,  DELIVERY,  GLASSDOOR,  PLAY_GOOGLE,  GRUBHUB,  INDEED,  LENDING_TREE,  MENUISM,  OPEN_TABLE,  OPEN_TABLE_USA,  WALLET_HUB,  ZILLOW,  ZOMATO,  WHATS_APP,  FOUR_SCREEN,  AND_CHARGE,  LINKED_IN,  };
-
-  /// Listing type / Publisher name
-  @BuiltValueField(wireName: r'typeName')
-  String? get typeName;
-
-  /// Listing URL
-  @BuiltValueField(wireName: r'listingUrl')
-  String? get listingUrl;
-
-  /// The category of the directory of this listing
-  @BuiltValueField(wireName: r'category')
-  String? get category;
-
-  /// Mandatory field missing on the location which prevents the data to be submitted to the publisher
-  @BuiltValueField(wireName: r'mandatoryFieldsMissing')
-  BuiltList<String>? get mandatoryFieldsMissing;
-
-  @BuiltValueField(wireName: r'directoryContactDetails')
-  DirectoryContactDetails? get directoryContactDetails;
-
-  @BuiltValueField(wireName: r'directoryConnectInfo')
-  DirectoryConnectInfo? get directoryConnectInfo;
-
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueField(wireName: r'status')
   ListingStatusEnum? get status;
-  // enum statusEnum {  SYNCED,  SUBMITTED,  UPDATING,  LINKED,  ACTION_REQUIRED,  };
+  // enum statusEnum {  SYNCED,  SUBMITTED,  UPDATING,  LINKED,  ACTION_REQUIRED,  WAITING_ON_YEXT,  WAITING_ON_CUSTOMER,  WAITING_ON_PUBLISHER,  LIVE,  UNAVAILABLE,  OPTED_OUT,  };
 
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueField(wireName: r'action')
-  ListingActionEnum? get action;
-  // enum actionEnum {  CONNECT,  VERIFY,  CLAIM,  ADD_MANDATORY_FIELDS,  ACCESS,  };
+  /// Listing URL
+  @BuiltValueField(wireName: r'url')
+  String? get url;
+
+  @BuiltValueField(wireName: r'connected')
+  bool? get connected;
 
   Listing._();
 
@@ -97,55 +63,6 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
-    if (object.typeName != null) {
-      yield r'typeName';
-      yield serializers.serialize(
-        object.typeName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.listingUrl != null) {
-      yield r'listingUrl';
-      yield serializers.serialize(
-        object.listingUrl,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.category != null) {
-      yield r'category';
-      yield serializers.serialize(
-        object.category,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.mandatoryFieldsMissing != null) {
-      yield r'mandatoryFieldsMissing';
-      yield serializers.serialize(
-        object.mandatoryFieldsMissing,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.directoryContactDetails != null) {
-      yield r'directoryContactDetails';
-      yield serializers.serialize(
-        object.directoryContactDetails,
-        specifiedType: const FullType(DirectoryContactDetails),
-      );
-    }
-    if (object.directoryConnectInfo != null) {
-      yield r'directoryConnectInfo';
-      yield serializers.serialize(
-        object.directoryConnectInfo,
-        specifiedType: const FullType(DirectoryConnectInfo),
-      );
-    }
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -153,11 +70,18 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
         specifiedType: const FullType(ListingStatusEnum),
       );
     }
-    if (object.action != null) {
-      yield r'action';
+    if (object.url != null) {
+      yield r'url';
       yield serializers.serialize(
-        object.action,
-        specifiedType: const FullType(ListingActionEnum),
+        object.url,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.connected != null) {
+      yield r'connected';
+      yield serializers.serialize(
+        object.connected,
+        specifiedType: const FullType(bool),
       );
     }
   }
@@ -192,55 +116,6 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
           ) as int;
           result.id = valueDes;
           break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DirectoryType),
-          ) as DirectoryType;
-          result.type = valueDes;
-          break;
-        case r'typeName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeName = valueDes;
-          break;
-        case r'listingUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.listingUrl = valueDes;
-          break;
-        case r'category':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.category = valueDes;
-          break;
-        case r'mandatoryFieldsMissing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.mandatoryFieldsMissing.replace(valueDes);
-          break;
-        case r'directoryContactDetails':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DirectoryContactDetails),
-          ) as DirectoryContactDetails;
-          result.directoryContactDetails.replace(valueDes);
-          break;
-        case r'directoryConnectInfo':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DirectoryConnectInfo),
-          ) as DirectoryConnectInfo;
-          result.directoryConnectInfo.replace(valueDes);
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -248,12 +123,19 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
           ) as ListingStatusEnum;
           result.status = valueDes;
           break;
-        case r'action':
+        case r'url':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(ListingActionEnum),
-          ) as ListingActionEnum;
-          result.action = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
+        case r'connected':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.connected = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -285,26 +167,32 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
 }
 
 class ListingStatusEnum extends EnumClass {
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'SYNCED')
   static const ListingStatusEnum SYNCED = _$listingStatusEnum_SYNCED;
-
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'SUBMITTED')
   static const ListingStatusEnum SUBMITTED = _$listingStatusEnum_SUBMITTED;
-
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'UPDATING')
   static const ListingStatusEnum UPDATING = _$listingStatusEnum_UPDATING;
-
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'LINKED')
   static const ListingStatusEnum LINKED = _$listingStatusEnum_LINKED;
-
-  /// Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]
   @BuiltValueEnumConst(wireName: r'ACTION_REQUIRED')
   static const ListingStatusEnum ACTION_REQUIRED =
       _$listingStatusEnum_ACTION_REQUIRED;
+  @BuiltValueEnumConst(wireName: r'WAITING_ON_YEXT')
+  static const ListingStatusEnum WAITING_ON_YEXT =
+      _$listingStatusEnum_WAITING_ON_YEXT;
+  @BuiltValueEnumConst(wireName: r'WAITING_ON_CUSTOMER')
+  static const ListingStatusEnum WAITING_ON_CUSTOMER =
+      _$listingStatusEnum_WAITING_ON_CUSTOMER;
+  @BuiltValueEnumConst(wireName: r'WAITING_ON_PUBLISHER')
+  static const ListingStatusEnum WAITING_ON_PUBLISHER =
+      _$listingStatusEnum_WAITING_ON_PUBLISHER;
+  @BuiltValueEnumConst(wireName: r'LIVE')
+  static const ListingStatusEnum LIVE = _$listingStatusEnum_LIVE;
+  @BuiltValueEnumConst(wireName: r'UNAVAILABLE')
+  static const ListingStatusEnum UNAVAILABLE = _$listingStatusEnum_UNAVAILABLE;
+  @BuiltValueEnumConst(wireName: r'OPTED_OUT')
+  static const ListingStatusEnum OPTED_OUT = _$listingStatusEnum_OPTED_OUT;
 
   static Serializer<ListingStatusEnum> get serializer =>
       _$listingStatusEnumSerializer;
@@ -314,36 +202,4 @@ class ListingStatusEnum extends EnumClass {
   static BuiltSet<ListingStatusEnum> get values => _$listingStatusEnumValues;
   static ListingStatusEnum valueOf(String name) =>
       _$listingStatusEnumValueOf(name);
-}
-
-class ListingActionEnum extends EnumClass {
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueEnumConst(wireName: r'CONNECT')
-  static const ListingActionEnum CONNECT = _$listingActionEnum_CONNECT;
-
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueEnumConst(wireName: r'VERIFY')
-  static const ListingActionEnum VERIFY = _$listingActionEnum_VERIFY;
-
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueEnumConst(wireName: r'CLAIM')
-  static const ListingActionEnum CLAIM = _$listingActionEnum_CLAIM;
-
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueEnumConst(wireName: r'ADD_MANDATORY_FIELDS')
-  static const ListingActionEnum ADD_MANDATORY_FIELDS =
-      _$listingActionEnum_ADD_MANDATORY_FIELDS;
-
-  /// Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]
-  @BuiltValueEnumConst(wireName: r'ACCESS')
-  static const ListingActionEnum ACCESS = _$listingActionEnum_ACCESS;
-
-  static Serializer<ListingActionEnum> get serializer =>
-      _$listingActionEnumSerializer;
-
-  const ListingActionEnum._(String name) : super(name);
-
-  static BuiltSet<ListingActionEnum> get values => _$listingActionEnumValues;
-  static ListingActionEnum valueOf(String name) =>
-      _$listingActionEnumValueOf(name);
 }

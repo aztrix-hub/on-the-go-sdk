@@ -21,12 +21,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(BrandDataPoint.serializer)
       ..add(BrandDataPointTypeEnum.serializer)
       ..add(Category.serializer)
-      ..add(ConnectFlowUserDetails.serializer)
       ..add(DataPoint.serializer)
       ..add(DataPointTypeEnum.serializer)
-      ..add(DirectoryConnectInfo.serializer)
-      ..add(DirectoryConnectInfoStatusEnum.serializer)
-      ..add(DirectoryContactDetails.serializer)
       ..add(DirectoryType.serializer)
       ..add(InboxItem.serializer)
       ..add(InboxItemAuthor.serializer)
@@ -43,7 +39,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(InsightsMetricsInner.serializer)
       ..add(InsightsMetricsInnerDataInner.serializer)
       ..add(Listing.serializer)
-      ..add(ListingActionEnum.serializer)
       ..add(ListingStatusEnum.serializer)
       ..add(Location.serializer)
       ..add(LocationPhoto.serializer)
@@ -132,9 +127,6 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

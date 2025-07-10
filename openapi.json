@@ -2220,119 +2220,30 @@
             "description": "The id of the listing details",
             "format": "int64"
           },
-          "type": {
-            "description": "The directory where this listing appears",
-            "$ref": "#/components/schemas/DirectoryType"
-          },
-          "typeName": {
-            "type": "string",
-            "description": "Listing type / Publisher name"
-          },
-          "listingUrl": {
-            "type": "string",
-            "description": "Listing URL"
-          },
-          "category": {
-            "type": "string",
-            "description": "The category of the directory of this listing",
-            "example": "social, search"
-          },
-          "mandatoryFieldsMissing": {
-            "type": "array",
-            "description": "Mandatory field missing on the location which prevents the data to be submitted to the publisher",
-            "items": {
-              "type": "string",
-              "description": "Mandatory field missing on the location which prevents the data to be submitted to the publisher"
-            }
-          },
-          "directoryContactDetails": {
-            "$ref": "#/components/schemas/DirectoryContactDetails"
-          },
-          "directoryConnectInfo": {
-            "$ref": "#/components/schemas/DirectoryConnectInfo"
-          },
           "status": {
             "type": "string",
-            "description": "Listing Status [SYNCED, SUBMITTED, UPDATING, ACTION_REQUIRED, LINKED]",
             "enum": [
               "SYNCED",
               "SUBMITTED",
               "UPDATING",
               "LINKED",
-              "ACTION_REQUIRED"
+              "ACTION_REQUIRED",
+              "WAITING_ON_YEXT",
+              "WAITING_ON_CUSTOMER",
+              "WAITING_ON_PUBLISHER",
+              "LIVE",
+              "UNAVAILABLE",
+              "OPTED_OUT"
             ]
           },
-          "action": {
+          "url": {
             "type": "string",
-            "description": "Action Required [CONNECT, VERIFY, CLAIM, ADD_MANDATORY_FIELDS, ACCESS]",
-            "enum": [
-              "CONNECT",
-              "VERIFY",
-              "CLAIM",
-              "ADD_MANDATORY_FIELDS",
-              "ACCESS"
-            ]
+            "description": "Listing URL"
+          },
+          "connected": {
+            "type": "boolean"
           }
         }
-      },
-      "DirectoryConnectInfo": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "Listing Connect Status [CONNECTED, NOT_CONNECTED, NOT_NEEDED]",
-            "enum": [
-              "CONNECTED",
-              "NOT_CONNECTED",
-              "NOT_NEEDED"
-            ]
-          },
-          "userDetails": {
-            "$ref": "#/components/schemas/ConnectFlowUserDetails"
-          }
-        },
-        "description": "Directory Connect Info model"
-      },
-      "ConnectFlowUserDetails": {
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "description": "Connected account detail (Account name)"
-          },
-          "email": {
-            "type": "string",
-            "description": "Connected account detail (email)"
-          },
-          "dateConnected": {
-            "type": "string",
-            "description": "his should indicate the date that this user made the connection",
-            "format": "date-time"
-          },
-          "defaultForSalesPartner": {
-            "type": "boolean",
-            "description": "This should indicate whether the connection in place has been produced by a salesPartner level connection"
-          },
-          "defaultForBusiness": {
-            "type": "boolean",
-            "description": "This should indicate whether the connection in place has been produced by a business level connection"
-          }
-        },
-        "description": "Connect Flow User Details model"
-      },
-      "DirectoryContactDetails": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "Email address to be used to release a claim from another provider"
-          },
-          "website": {
-            "type": "string",
-            "description": "Contact website address to be used to release a claim from another provider"
-          }
-        },
-        "description": "Directory contact details model"
       },
       "LocationPhoto": {
         "required": [
