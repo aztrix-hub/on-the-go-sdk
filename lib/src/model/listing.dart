@@ -13,6 +13,7 @@ part 'listing.g.dart';
 ///
 /// Properties:
 /// * [id] - The id of the listing details
+/// * [locationId] - The id of the listing details
 /// * [status]
 /// * [url] - Listing URL
 /// * [connected]
@@ -21,6 +22,10 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   /// The id of the listing details
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  /// The id of the listing details
+  @BuiltValueField(wireName: r'locationId')
+  int? get locationId;
 
   @BuiltValueField(wireName: r'status')
   ListingStatusEnum? get status;
@@ -60,6 +65,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield r'id';
       yield serializers.serialize(
         object.id,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.locationId != null) {
+      yield r'locationId';
+      yield serializers.serialize(
+        object.locationId,
         specifiedType: const FullType(int),
       );
     }
@@ -115,6 +127,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'locationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.locationId = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

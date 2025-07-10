@@ -2220,6 +2220,11 @@
             "description": "The id of the listing details",
             "format": "int64"
           },
+          "locationId": {
+            "type": "integer",
+            "description": "The id of the listing details",
+            "format": "int64"
+          },
           "status": {
             "type": "string",
             "enum": [
