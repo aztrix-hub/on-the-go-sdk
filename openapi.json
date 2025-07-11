@@ -276,16 +276,13 @@
           "locations"
         ],
         "summary": "Get a Location",
-        "description": "Get all information about a specific location, including listing statuses",
         "parameters": [
           {
             "name": "id",
             "in": "query",
-            "description": "The unique id of the location",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           }
         ],

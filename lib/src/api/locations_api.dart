@@ -117,10 +117,10 @@ class LocationsApi {
   }
 
   /// Get a Location
-  /// Get all information about a specific location, including listing statuses
+  ///
   ///
   /// Parameters:
-  /// * [id] - The unique id of the location
+  /// * [id]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -131,7 +131,7 @@ class LocationsApi {
   /// Returns a [Future] containing a [Response] with a [Location] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Location>> locationGet({
-    required int id,
+    required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -160,7 +160,7 @@ class LocationsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'id': encodeQueryParameter(_serializers, id, const FullType(int)),
+      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

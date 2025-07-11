@@ -70,8 +70,6 @@ Name | Type | Description  | Notes
 
 Get a Location
 
-Get all information about a specific location, including listing statuses
-
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
@@ -81,7 +79,7 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
-final int id = 789; // int | The unique id of the location
+final String id = id_example; // String | 
 
 try {
     final response = api.locationGet(id);
@@ -95,7 +93,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| The unique id of the location | 
+ **id** | **String**|  | 
 
 ### Return type
 
