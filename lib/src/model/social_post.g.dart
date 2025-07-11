@@ -278,13 +278,13 @@ class _$SocialPost extends SocialPost {
   @override
   final BuiltList<int>? businessIds;
   @override
-  final BuiltList<int>? locationIds;
+  final BuiltList<String>? locationIds;
   @override
   final BuiltList<int>? listingPageIds;
   @override
   final BuiltList<int>? businessPageIds;
   @override
-  final BuiltList<int>? excludedLocationIds;
+  final BuiltList<String>? excludedLocationIds;
   @override
   final BuiltList<String> directories;
   @override
@@ -484,10 +484,10 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   set businessIds(ListBuilder<int>? businessIds) =>
       _$this._businessIds = businessIds;
 
-  ListBuilder<int>? _locationIds;
-  ListBuilder<int> get locationIds =>
-      _$this._locationIds ??= ListBuilder<int>();
-  set locationIds(ListBuilder<int>? locationIds) =>
+  ListBuilder<String>? _locationIds;
+  ListBuilder<String> get locationIds =>
+      _$this._locationIds ??= ListBuilder<String>();
+  set locationIds(ListBuilder<String>? locationIds) =>
       _$this._locationIds = locationIds;
 
   ListBuilder<int>? _listingPageIds;
@@ -502,10 +502,10 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   set businessPageIds(ListBuilder<int>? businessPageIds) =>
       _$this._businessPageIds = businessPageIds;
 
-  ListBuilder<int>? _excludedLocationIds;
-  ListBuilder<int> get excludedLocationIds =>
-      _$this._excludedLocationIds ??= ListBuilder<int>();
-  set excludedLocationIds(ListBuilder<int>? excludedLocationIds) =>
+  ListBuilder<String>? _excludedLocationIds;
+  ListBuilder<String> get excludedLocationIds =>
+      _$this._excludedLocationIds ??= ListBuilder<String>();
+  set excludedLocationIds(ListBuilder<String>? excludedLocationIds) =>
       _$this._excludedLocationIds = excludedLocationIds;
 
   ListBuilder<String>? _directories;

@@ -150,7 +150,7 @@ class _$DataPoint extends DataPoint {
   @override
   final int? countLikes;
   @override
-  final int? locationId;
+  final String? locationId;
   @override
   final DateTime? actionDate;
   @override
@@ -318,9 +318,9 @@ class DataPointBuilder implements Builder<DataPoint, DataPointBuilder> {
   int? get countLikes => _$this._countLikes;
   set countLikes(int? countLikes) => _$this._countLikes = countLikes;
 
-  int? _locationId;
-  int? get locationId => _$this._locationId;
-  set locationId(int? locationId) => _$this._locationId = locationId;
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
 
   DateTime? _actionDate;
   DateTime? get actionDate => _$this._actionDate;

@@ -128,7 +128,7 @@ class _$Listing extends Listing {
   @override
   final DirectoryType? type;
   @override
-  final int? locationId;
+  final String? locationId;
   @override
   final ListingStatusEnum? status;
   @override
@@ -203,9 +203,9 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
 
-  int? _locationId;
-  int? get locationId => _$this._locationId;
-  set locationId(int? locationId) => _$this._locationId = locationId;
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
 
   ListingStatusEnum? _status;
   ListingStatusEnum? get status => _$this._status;

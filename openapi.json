@@ -517,9 +517,7 @@
                     "description": "A description for the photo - max 255 chars"
                   },
                   "locationId": {
-                    "type": "integer",
-                    "format": "int64",
-                    "description": "Location ID"
+                    "type": "string"
                   },
                   "photo": {
                     "type": "string",
@@ -1638,8 +1636,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "integer",
-                "format": "int64"
+                "type": "string"
               }
             }
           },
@@ -2086,9 +2083,7 @@
             "$ref": "#/components/schemas/DirectoryType"
           },
           "locationId": {
-            "type": "integer",
-            "description": "The id of the listing details",
-            "format": "int64"
+            "type": "string"
           },
           "status": {
             "type": "string",
@@ -2238,9 +2233,7 @@
             "format": "int32"
           },
           "locationId": {
-            "type": "integer",
-            "description": "The Location ID associated with this datapoint",
-            "format": "int64"
+            "type": "string"
           },
           "actionDate": {
             "type": "string",
@@ -2913,8 +2906,7 @@
             "type": "array",
             "description": "The list of location group IDs as entered when creating/updating the Social Post.",
             "items": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           },
           "listingPageIds": {
@@ -2937,8 +2929,7 @@
             "type": "array",
             "description": "The list of location group IDs as entered when creating/updating the Social Post.",
             "items": {
-              "type": "integer",
-              "format": "int64"
+              "type": "string"
             }
           },
           "directories": {

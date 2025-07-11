@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | The id of the listing details | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
-**locationId** | **int** | The id of the listing details | [optional] 
+**locationId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **url** | **String** | Listing URL | [optional] 
 **connected** | **bool** |  | [optional] 

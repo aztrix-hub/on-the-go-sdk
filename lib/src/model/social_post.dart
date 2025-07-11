@@ -98,7 +98,7 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
 
   /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'locationIds')
-  BuiltList<int>? get locationIds;
+  BuiltList<String>? get locationIds;
 
   /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'listingPageIds')
@@ -110,7 +110,7 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
 
   /// The list of location group IDs as entered when creating/updating the Social Post.
   @BuiltValueField(wireName: r'excludedLocationIds')
-  BuiltList<int>? get excludedLocationIds;
+  BuiltList<String>? get excludedLocationIds;
 
   /// The video of the social post (can only be one)
   @BuiltValueField(wireName: r'directories')
@@ -253,7 +253,7 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield r'locationIds';
       yield serializers.serialize(
         object.locationIds,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.listingPageIds != null) {
@@ -274,7 +274,7 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield r'excludedLocationIds';
       yield serializers.serialize(
         object.excludedLocationIds,
-        specifiedType: const FullType(BuiltList, [FullType(int)]),
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     yield r'directories';
@@ -436,8 +436,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         case r'locationIds':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
           result.locationIds.replace(valueDes);
           break;
         case r'listingPageIds':
@@ -457,8 +457,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         case r'excludedLocationIds':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
           result.excludedLocationIds.replace(valueDes);
           break;
         case r'directories':

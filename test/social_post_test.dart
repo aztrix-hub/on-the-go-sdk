@@ -92,7 +92,7 @@ void main() {
     });
 
     // The list of location group IDs as entered when creating/updating the Social Post.
-    // BuiltList<int> locationIds
+    // BuiltList<String> locationIds
     test('to test the property `locationIds`', () async {
       // TODO
     });
@@ -110,7 +110,7 @@ void main() {
     });
 
     // The list of location group IDs as entered when creating/updating the Social Post.
-    // BuiltList<int> excludedLocationIds
+    // BuiltList<String> excludedLocationIds
     test('to test the property `excludedLocationIds`', () async {
       // TODO
     });

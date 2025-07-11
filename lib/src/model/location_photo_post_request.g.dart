@@ -10,7 +10,7 @@ class _$LocationPhotoPostRequest extends LocationPhotoPostRequest {
   @override
   final String? description;
   @override
-  final int locationId;
+  final String locationId;
   @override
   final String photo;
   @override
@@ -76,9 +76,9 @@ class LocationPhotoPostRequestBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
-  int? _locationId;
-  int? get locationId => _$this._locationId;
-  set locationId(int? locationId) => _$this._locationId = locationId;
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
 
   String? _photo;
   String? get photo => _$this._photo;

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **data** | **String** | Content of the datapoint (text of the review, url of the photo, count of checkins...) | [optional] 
 **type** | **String** | Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION] | [optional] 
 **countLikes** | **int** | Number of likes to this item | [optional] 
-**locationId** | **int** | The Location ID associated with this datapoint | [optional] 
+**locationId** | **String** |  | [optional] 
 **actionDate** | [**DateTime**](DateTime.md) | The date when the review/photo/... was published in the online directory | [optional] 
 **author** | **String** | Username of the datapoint's author | [optional] 
 **authorImage** | **String** | Author profile picture url | [optional] 

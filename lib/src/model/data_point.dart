@@ -19,7 +19,7 @@ part 'data_point.g.dart';
 /// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
 /// * [type] - Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]
 /// * [countLikes] - Number of likes to this item
-/// * [locationId] - The Location ID associated with this datapoint
+/// * [locationId]
 /// * [actionDate] - The date when the review/photo/... was published in the online directory
 /// * [author] - Username of the datapoint's author
 /// * [authorImage] - Author profile picture url
@@ -59,9 +59,8 @@ abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
   @BuiltValueField(wireName: r'countLikes')
   int? get countLikes;
 
-  /// The Location ID associated with this datapoint
   @BuiltValueField(wireName: r'locationId')
-  int? get locationId;
+  String? get locationId;
 
   /// The date when the review/photo/... was published in the online directory
   @BuiltValueField(wireName: r'actionDate')
@@ -184,7 +183,7 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
       yield r'locationId';
       yield serializers.serialize(
         object.locationId,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(String),
       );
     }
     if (object.actionDate != null) {
@@ -348,8 +347,8 @@ class _$DataPointSerializer implements PrimitiveSerializer<DataPoint> {
         case r'locationId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.locationId = valueDes;
           break;
         case r'actionDate':

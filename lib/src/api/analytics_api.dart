@@ -43,7 +43,7 @@ class AnalyticsApi {
   Future<Response<Insights>> analyticsGet({
     required String type,
     BuiltList<int>? businessIds,
-    BuiltList<int>? locationIds,
+    BuiltList<String>? locationIds,
     String? textFilter,
     Date? startDate,
     Date? endDate,
@@ -85,10 +85,10 @@ class AnalyticsApi {
           format: ListFormat.multi,
         ),
       if (locationIds != null)
-        r'locationIds': encodeCollectionQueryParameter<int>(
+        r'locationIds': encodeCollectionQueryParameter<String>(
           _serializers,
           locationIds,
-          const FullType(BuiltList, [FullType(int)]),
+          const FullType(BuiltList, [FullType(String)]),
           format: ListFormat.multi,
         ),
       if (textFilter != null)

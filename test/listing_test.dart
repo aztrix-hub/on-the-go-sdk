@@ -18,8 +18,7 @@ void main() {
       // TODO
     });
 
-    // The id of the listing details
-    // int locationId
+    // String locationId
     test('to test the property `locationId`', () async {
       // TODO
     });

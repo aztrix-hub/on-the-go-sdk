@@ -28,7 +28,7 @@ import 'package:on_the_go_sdk/api.dart';
 final api = OnTheGoSdk().getAnalyticsApi();
 final String type = type_example; // String | The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API
 final BuiltList<int> businessIds = ; // BuiltList<int> | The ids of the businesses you want insights data for
-final BuiltList<int> locationIds = ; // BuiltList<int> | The ids of the locations you want insights data for
+final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want insights data for
 final String textFilter = Berlin; // String | Filter locations to get insights data for by name, zip, street, city, label
 final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
 final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **String**| The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API | 
  **businessIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the businesses you want insights data for | [optional] 
- **locationIds** | [**BuiltList&lt;int&gt;**](int.md)| The ids of the locations you want insights data for | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want insights data for | [optional] 
  **textFilter** | **String**| Filter locations to get insights data for by name, zip, street, city, label | [optional] 
  **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
  **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 

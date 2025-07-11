@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **description** | **String** | A description for the photo - max 255 chars | [optional] 
-**locationId** | **int** | Location ID | 
+**locationId** | **String** |  | 
 **photo** | **String** | file or base64 | 
 **type** | [**LocationPhotoType**](LocationPhotoType.md) |  | 
 

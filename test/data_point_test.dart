@@ -42,8 +42,7 @@ void main() {
       // TODO
     });
 
-    // The Location ID associated with this datapoint
-    // int locationId
+    // String locationId
     test('to test the property `locationId`', () async {
       // TODO
     });

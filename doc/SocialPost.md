@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **labels** | **BuiltSet&lt;String&gt;** | The list of location labels as entered when creating/updating the Social Post. | [optional] 
 **firstComment** | **String** | The first comment to be posted after a post creation. Only available for INSTAGRAM | [optional] 
 **businessIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
-**locationIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**locationIds** | **BuiltList&lt;String&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
 **listingPageIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
 **businessPageIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
-**excludedLocationIds** | **BuiltList&lt;int&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
+**excludedLocationIds** | **BuiltList&lt;String&gt;** | The list of location group IDs as entered when creating/updating the Social Post. | [optional] 
 **directories** | **BuiltList&lt;String&gt;** | The video of the social post (can only be one) | 
 **couponCode** | **String** | A couponCode for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts. | [optional] 
 **termsAndConditions** | **String** | Terms and Conditions for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts. | [optional] 

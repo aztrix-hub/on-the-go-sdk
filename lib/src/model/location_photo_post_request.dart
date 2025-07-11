@@ -13,7 +13,7 @@ part 'location_photo_post_request.g.dart';
 ///
 /// Properties:
 /// * [description] - A description for the photo - max 255 chars
-/// * [locationId] - Location ID
+/// * [locationId]
 /// * [photo] - file or base64
 /// * [type]
 @BuiltValue()
@@ -24,9 +24,8 @@ abstract class LocationPhotoPostRequest
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  /// Location ID
   @BuiltValueField(wireName: r'locationId')
-  int get locationId;
+  String get locationId;
 
   /// file or base64
   @BuiltValueField(wireName: r'photo')
@@ -76,7 +75,7 @@ class _$LocationPhotoPostRequestSerializer
     yield r'locationId';
     yield serializers.serialize(
       object.locationId,
-      specifiedType: const FullType(int),
+      specifiedType: const FullType(String),
     );
     yield r'photo';
     yield serializers.serialize(
@@ -123,8 +122,8 @@ class _$LocationPhotoPostRequestSerializer
         case r'locationId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.locationId = valueDes;
           break;
         case r'photo':

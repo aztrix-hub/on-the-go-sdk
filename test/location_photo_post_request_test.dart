@@ -13,8 +13,7 @@ void main() {
       // TODO
     });
 
-    // Location ID
-    // int locationId
+    // String locationId
     test('to test the property `locationId`', () async {
       // TODO
     });
