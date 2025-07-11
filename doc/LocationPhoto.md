@@ -9,6 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** | The uberall unique id for the photo | [optional] 
+**type** | [**LocationPhotoType**](LocationPhotoType.md) |  | [optional] 
 **description** | **String** | A description for the photo - max 255 chars | [optional] 
 **url** | **String** | url of the photo | 
 **thumbnailUrl** | **String** | Url for the image thumbnail | [optional] 

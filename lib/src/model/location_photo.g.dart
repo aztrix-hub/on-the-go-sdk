@@ -10,6 +10,8 @@ class _$LocationPhoto extends LocationPhoto {
   @override
   final int? id;
   @override
+  final LocationPhotoType? type;
+  @override
   final String? description;
   @override
   final String url;
@@ -20,7 +22,11 @@ class _$LocationPhoto extends LocationPhoto {
       (LocationPhotoBuilder()..update(updates))._build();
 
   _$LocationPhoto._(
-      {this.id, this.description, required this.url, this.thumbnailUrl})
+      {this.id,
+      this.type,
+      this.description,
+      required this.url,
+      this.thumbnailUrl})
       : super._();
   @override
   LocationPhoto rebuild(void Function(LocationPhotoBuilder) updates) =>
@@ -34,6 +40,7 @@ class _$LocationPhoto extends LocationPhoto {
     if (identical(other, this)) return true;
     return other is LocationPhoto &&
         id == other.id &&
+        type == other.type &&
         description == other.description &&
         url == other.url &&
         thumbnailUrl == other.thumbnailUrl;
@@ -43,6 +50,7 @@ class _$LocationPhoto extends LocationPhoto {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, thumbnailUrl.hashCode);
@@ -54,6 +62,7 @@ class _$LocationPhoto extends LocationPhoto {
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationPhoto')
           ..add('id', id)
+          ..add('type', type)
           ..add('description', description)
           ..add('url', url)
           ..add('thumbnailUrl', thumbnailUrl))
@@ -68,6 +77,10 @@ class LocationPhotoBuilder
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  LocationPhotoType? _type;
+  LocationPhotoType? get type => _$this._type;
+  set type(LocationPhotoType? type) => _$this._type = type;
 
   String? _description;
   String? get description => _$this._description;
@@ -89,6 +102,7 @@ class LocationPhotoBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _type = $v.type;
       _description = $v.description;
       _url = $v.url;
       _thumbnailUrl = $v.thumbnailUrl;
@@ -114,6 +128,7 @@ class LocationPhotoBuilder
     final _$result = _$v ??
         _$LocationPhoto._(
           id: id,
+          type: type,
           description: description,
           url: BuiltValueNullFieldError.checkNotNull(
               url, r'LocationPhoto', 'url'),

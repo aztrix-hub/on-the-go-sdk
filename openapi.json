@@ -2186,31 +2186,6 @@
           }
         }
       },
-      "SocialProfile": {
-        "type": "object",
-        "properties": {
-          "url": {
-            "type": "string",
-            "description": "Url of the Social Profile"
-          },
-          "type": {
-            "type": "string",
-            "description": "Social Profile Type. Values: [FACEBOOK, LINKEDIN, TWITTER, YOUTUBE, XING, INSTAGRAM, FOURSQUARE, PINTEREST]",
-            "enum": [
-              "FACEBOOK",
-              "LINKEDIN",
-              "TWITTER",
-              "YOUTUBE",
-              "XING",
-              "INSTAGRAM",
-              "FOURSQUARE",
-              "PINTEREST",
-              "VIMEO"
-            ]
-          }
-        },
-        "description": "Social Profile"
-      },
       "Listing": {
         "type": "object",
         "properties": {
@@ -2218,6 +2193,9 @@
             "type": "integer",
             "description": "The id of the listing details",
             "format": "int64"
+          },
+          "type": {
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "locationId": {
             "type": "integer",
@@ -2259,6 +2237,9 @@
             "type": "integer",
             "description": "The uberall unique id for the photo",
             "format": "int64"
+          },
+          "type": {
+            "$ref": "#/components/schemas/LocationPhotoType"
           },
           "description": {
             "type": "string",

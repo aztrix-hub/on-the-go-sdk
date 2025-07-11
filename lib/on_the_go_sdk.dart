@@ -60,7 +60,6 @@ export 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 export 'package:on_the_go_sdk/src/model/reset_password.dart';
 export 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 export 'package:on_the_go_sdk/src/model/social_post.dart';
-export 'package:on_the_go_sdk/src/model/social_profile.dart';
 export 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 export 'package:on_the_go_sdk/src/model/user.dart';
 export 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';

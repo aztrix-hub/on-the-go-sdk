@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,6 +13,7 @@ part 'location_photo.g.dart';
 ///
 /// Properties:
 /// * [id] - The uberall unique id for the photo
+/// * [type]
 /// * [description] - A description for the photo - max 255 chars
 /// * [url] - url of the photo
 /// * [thumbnailUrl] - Url for the image thumbnail
@@ -21,6 +23,10 @@ abstract class LocationPhoto
   /// The uberall unique id for the photo
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'type')
+  LocationPhotoType? get type;
+  // enum typeEnum {  MAIN,  DOCTOR_COM_PORTRAIT,  LOGO,  STOREFINDER_LOGO,  SQUARED_LOGO,  LANDSCAPE,  STOREFINDER_COVER,  FACEBOOK_LANDSCAPE,  MENU,  PHOTO,  ROOMS,  TEAMS,  AT_WORK,  PRODUCT,  EXTERIOR,  INTERIOR,  COMMON_AREA,  FOOD_AND_DRINK,  };
 
   /// A description for the photo - max 255 chars
   @BuiltValueField(wireName: r'description')
@@ -64,6 +70,13 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(LocationPhotoType),
       );
     }
     if (object.description != null) {
@@ -116,6 +129,13 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LocationPhotoType),
+          ) as LocationPhotoType;
+          result.type = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

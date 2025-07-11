@@ -126,6 +126,8 @@ class _$Listing extends Listing {
   @override
   final int? id;
   @override
+  final DirectoryType? type;
+  @override
   final int? locationId;
   @override
   final ListingStatusEnum? status;
@@ -137,7 +139,13 @@ class _$Listing extends Listing {
   factory _$Listing([void Function(ListingBuilder)? updates]) =>
       (ListingBuilder()..update(updates))._build();
 
-  _$Listing._({this.id, this.locationId, this.status, this.url, this.connected})
+  _$Listing._(
+      {this.id,
+      this.type,
+      this.locationId,
+      this.status,
+      this.url,
+      this.connected})
       : super._();
   @override
   Listing rebuild(void Function(ListingBuilder) updates) =>
@@ -151,6 +159,7 @@ class _$Listing extends Listing {
     if (identical(other, this)) return true;
     return other is Listing &&
         id == other.id &&
+        type == other.type &&
         locationId == other.locationId &&
         status == other.status &&
         url == other.url &&
@@ -161,6 +170,7 @@ class _$Listing extends Listing {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
@@ -173,6 +183,7 @@ class _$Listing extends Listing {
   String toString() {
     return (newBuiltValueToStringHelper(r'Listing')
           ..add('id', id)
+          ..add('type', type)
           ..add('locationId', locationId)
           ..add('status', status)
           ..add('url', url)
@@ -187,6 +198,10 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
+
+  DirectoryType? _type;
+  DirectoryType? get type => _$this._type;
+  set type(DirectoryType? type) => _$this._type = type;
 
   int? _locationId;
   int? get locationId => _$this._locationId;
@@ -212,6 +227,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _type = $v.type;
       _locationId = $v.locationId;
       _status = $v.status;
       _url = $v.url;
@@ -238,6 +254,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
     final _$result = _$v ??
         _$Listing._(
           id: id,
+          type: type,
           locationId: locationId,
           status: status,
           url: url,
