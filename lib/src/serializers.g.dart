@@ -61,9 +61,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(User.serializer)
       ..add(UserOauthPost200Response.serializer)
       ..add(UserOauthPostRequest.serializer)
-      ..add(UserRoleEnum.serializer)
       ..add(UserSalutationEnum.serializer)
-      ..add(UserStatusEnum.serializer)
       ..add(WhitelabelData.serializer)
       ..add(WhitelabelDataThemeEnum.serializer)
       ..addBuilderFactory(
@@ -176,20 +174,7 @@ Serializers _$serializers = (Serializers().toBuilder()
           () => ListBuilder<int>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(int)]),
-          () => SetBuilder<int>())
-      ..addBuilderFactory(const FullType(BuiltSet, const [const FullType(num)]),
-          () => SetBuilder<num>())
-      ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(String)]),
-          () => SetBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>()))
+          () => ListBuilder<String>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

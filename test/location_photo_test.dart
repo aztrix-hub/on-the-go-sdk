@@ -13,6 +13,11 @@ void main() {
       // TODO
     });
 
+    // LocationPhotoType type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
     // A description for the photo - max 255 chars
     // String description
     test('to test the property `description`', () async {

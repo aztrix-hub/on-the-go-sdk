@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Address, () {
+    // String country
+    test('to test the property `country`', () async {
+      // TODO
+    });
+
     // String countryCode
     test('to test the property `countryCode`', () async {
       // TODO

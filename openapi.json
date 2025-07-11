@@ -1802,12 +1802,10 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "The uberall unique id for the user",
             "format": "int64"
           },
           "salutation": {
             "type": "string",
-            "description": "One of MALE, FEMALE or OTHER",
             "enum": [
               "MALE",
               "FEMALE",
@@ -1827,87 +1825,10 @@
             "description": "Last name"
           },
           "phone": {
-            "type": "string",
-            "description": "The user''s phone number"
+            "type": "string"
           },
-          "status": {
-            "type": "string",
-            "description": "The status of the current user. One of CREATED, VERIFIED, UNVERIFIED, INVITED, INACTIVE, NO_LOGIN",
-            "enum": [
-              "INVITED",
-              "CREATED",
-              "VERIFIED",
-              "UNVERIFIED",
-              "INACTIVE",
-              "DELETED",
-              "NO_LOGIN"
-            ]
-          },
-          "role": {
-            "type": "string",
-            "description": "User Role",
-            "enum": [
-              "UBER_API_ADMIN",
-              "API_ADMIN",
-              "ADMIN",
-              "ACCOUNT_MANAGER",
-              "BUSINESS_MANAGER",
-              "LOCATION_MANAGER",
-              "BUSINESS_MANAGER_INBOX"
-            ]
-          },
-          "managedLocations": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "A list of locations managed by this user",
-            "items": {
-              "type": "integer"
-            }
-          },
-          "managedBusinesses": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "A list of business ids managed by this user",
-            "items": {
-              "type": "number"
-            }
-          },
-          "preferredLanguage": {
-            "type": "string",
-            "description": "Preferred language of a user. If not set, this will default to the language in context, e.g., location''s for e-mails and browser language for our applications."
-          },
-          "identifier": {
-            "type": "string",
-            "description": "The unique user identifier based on your internal identification system"
-          },
-          "features": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "A list of features this user can work with. Values: \n<pre>ADS_READ\nADS_WRITE\nADVANCED_ANALYTICS\nAI_SUGGESTED_REPLIES\nAPPLE_POSTING_WRITE\nAUTO_RESPONSE_WRITE\nBULK_UPDATES\nBUSINESS_LEVEL_CONNECT\nCAN_PAY_INVOICE\nCAN_SEE_HELP_SECTION\nCHAT_READ\nCHAT_WRITE\nCHATBOT_READ\nCHATBOT_WRITE\nDAM\nENTERPRISE_ONBOARDING\nFIRST_PARTY_REVIEW_APPROVAL\nFORMS\nINBOX_2_0_BETA_READ\nINBOX_2_0_BETA_WRITE\nINBOX_APPROVAL\nINBOX_READ\nINBOX_WRITE\nINSTAGRAM_POSTING_WRITE\nLISTINGS_PAGE_NEW\nLISTINGS\nLIVE_CHAT\nLOCATION_GROUP\nLOCATION_READ\nLOCATION_SCHEDULED_UPDATES\nLOCATION_STATUS_CHANGE\nLOCATION_WRITE\nPOSTING_APPROVAL\nPOSTING_READ\nPOSTING_WRITE\nPRICE_INFO\nRESPONSE_LIBRARY_READ\nRESPONSE_LIBRARY_WRITE\nREVIEW_GENERATION_CREATE\nREVIEW_GENERATION_SEND\nSINGLE_SIGN_ON\nSOCIAL_ADS\nSUPPRESSION\nTRACKING\nUPGRADE\nUSER_OTHERS_EDIT\nUSER_SELF_EDIT</pre>",
-            "items": {
-              "type": "string",
-              "description": "A list of features this user can work with"
-            }
-          },
-          "featuresDetailed": {
-            "type": "object",
-            "description": "Map containing the feature names and corresponding feature-specific parameters. \"featuresDetailed\" is supported for the features LOCATION_WRITE and ADVANCED_ANALYTICS. \nFor LOCATION_WRITE a list of fields that this user can update is expected. \nFor ADVANCED_ANALYTICS a list of dashboards the user has access to is expected.\nFor example:\n<pre>\n\"featuresDetailed\": '{'\n'{'\n   \"featuresDetailed\":'{'\n      \"LOCATION_WRITE\":[\n         \"fax\",\n         \"openingHours\",\n         \"callTrackingNumbers\",\n         \"streetNo\",\n         \"openingHoursNotes\",\n         \"specialOpeningHours\",\n         \"street\",\n         \"languages\",\n         \"customFields\",\n         \"contentLists\",\n         \"photos\",\n         \"services\",\n         \"moreHours\",\n         \"descriptionLong\",\n         \"zip\",\n         \"lat\",\n         \"openingDate\",\n         \"email\",\n         \"addressDisplay\",\n         \"labels\",\n         \"taxNumber\",\n         \"city\",\n         \"cellphone\",\n         \"contentCollections\",\n         \"attributes\",\n         \"categories\",\n         \"imprint\",\n         \"phone\",\n         \"utms\",\n         \"addressExtra\",\n         \"keywords\",\n         \"legalIdent\",\n         \"lng\",\n         \"paymentOptions\",\n         \"descriptionShort\",\n         \"socialProfiles\",\n         \"identifier\",\n         \"website\",\n         \"country\",\n         \"province\",\n         \"name\",\n         \"videos\",\n         \"brands\",\n         \"serviceAreas\"\n      ],\n      \"ADVANCED_ANALYTICS\":[\n         \"overview\",\n         \"listings-google\",\n         \"customer-feedback\"\n      ]\n   '}'\n'}'\n</pre>"
-          },
-          "locationGroupIds": {
-            "type": "array",
-            "description": "A list of all location IDs the user can manage because of assignment to certain group(s)",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "managedLocationsViaGroups": {
-            "type": "array",
-            "description": "A list of all location IDs the user can manage because of assignment to certain group(s)",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
+          "language": {
+            "type": "string"
           }
         },
         "description": "User Model"

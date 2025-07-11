@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<JsonObject> locationListingsGet(String locationId) async
+    //Future<BuiltList<Listing>> locationListingsGet(String locationId) async
     test('test locationListingsGet', () async {
       // TODO
     });
