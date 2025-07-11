@@ -13,6 +13,7 @@ import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
+import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 
 class LocationsApi {
   final Dio _dio;
@@ -548,9 +549,9 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Location>] as data
+  /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Location>>> locationsGet({
+  Future<Response<LocationsGet200Response>> locationsGet({
     BuiltList<String>? locationIds,
     String? query,
     CancelToken? cancelToken,
@@ -602,7 +603,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Location>? _responseData;
+    LocationsGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -610,8 +611,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Location)]),
-            ) as BuiltList<Location>;
+              specifiedType: const FullType(LocationsGet200Response),
+            ) as LocationsGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -622,7 +623,7 @@ class LocationsApi {
       );
     }
 
-    return Response<BuiltList<Location>>(
+    return Response<LocationsGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

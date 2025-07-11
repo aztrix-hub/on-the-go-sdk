@@ -50,6 +50,7 @@ export 'package:on_the_go_sdk/src/model/location.dart';
 export 'package:on_the_go_sdk/src/model/location_photo.dart';
 export 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 export 'package:on_the_go_sdk/src/model/location_photo_type.dart';
+export 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/login_body.dart';
 export 'package:on_the_go_sdk/src/model/login_response.dart';
 export 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
