@@ -132,8 +132,6 @@ Class | Method | HTTP request | Description
  - [LocationPhoto](doc/LocationPhoto.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)
- - [LocationsGet200Response](doc/LocationsGet200Response.md)
- - [LocationsGet200ResponseResponse](doc/LocationsGet200ResponseResponse.md)
  - [LoginBody](doc/LoginBody.md)
  - [LoginResponse](doc/LoginResponse.md)
  - [NotificationsConfigGet200Response](doc/NotificationsConfigGet200Response.md)

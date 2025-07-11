@@ -407,34 +407,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "message": {
-                      "type": "string"
-                    },
-                    "response": {
-                      "type": "object",
-                      "properties": {
-                        "offset": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "max": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "count": {
-                          "type": "integer",
-                          "format": "int32"
-                        },
-                        "locations": {
-                          "type": "array",
-                          "items": {
-                            "$ref": "#/components/schemas/Location"
-                          }
-                        }
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
                   }
                 }
               }

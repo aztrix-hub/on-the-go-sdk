@@ -295,7 +295,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsGet**
-> LocationsGet200Response locationsGet(locationIds, query)
+> BuiltList<Location> locationsGet(locationIds, query)
 
 Get locations
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LocationsGet200Response**](LocationsGet200Response.md)
+[**BuiltList&lt;Location&gt;**](Location.md)
 
 ### Authorization
 

@@ -44,8 +44,6 @@ import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_photo.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
-import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/locations_get200_response_response.dart';
 import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
@@ -93,8 +91,6 @@ part 'serializers.g.dart';
   LocationPhoto,
   LocationPhotoPostRequest,
   LocationPhotoType,
-  LocationsGet200Response,
-  LocationsGet200ResponseResponse,
   LoginBody,
   LoginResponse,
   NotificationsConfigGet200Response,
@@ -117,6 +113,10 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(int)]),
         () => ListBuilder<int>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Location)]),
+        () => ListBuilder<Location>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),

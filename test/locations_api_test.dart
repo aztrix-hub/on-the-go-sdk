@@ -48,7 +48,7 @@ void main() {
 
     // Get locations
     //
-    //Future<LocationsGet200Response> locationsGet({ BuiltList<String> locationIds, String query }) async
+    //Future<BuiltList<Location>> locationsGet({ BuiltList<String> locationIds, String query }) async
     test('test locationsGet', () async {
       // TODO
     });

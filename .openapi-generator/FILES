@@ -34,8 +34,6 @@ doc/LocationPhoto.md
 doc/LocationPhotoPostRequest.md
 doc/LocationPhotoType.md
 doc/LocationsApi.md
-doc/LocationsGet200Response.md
-doc/LocationsGet200ResponseResponse.md
 doc/LoginBody.md
 doc/LoginResponse.md
 doc/NotificationsApi.md
@@ -103,8 +101,6 @@ lib/src/model/location.dart
 lib/src/model/location_photo.dart
 lib/src/model/location_photo_post_request.dart
 lib/src/model/location_photo_type.dart
-lib/src/model/locations_get200_response.dart
-lib/src/model/locations_get200_response_response.dart
 lib/src/model/login_body.dart
 lib/src/model/login_response.dart
 lib/src/model/notifications_config_get200_response.dart
@@ -153,8 +149,6 @@ test/location_photo_test.dart
 test/location_photo_type_test.dart
 test/location_test.dart
 test/locations_api_test.dart
-test/locations_get200_response_response_test.dart
-test/locations_get200_response_test.dart
 test/login_body_test.dart
 test/login_response_test.dart
 test/notifications_api_test.dart
