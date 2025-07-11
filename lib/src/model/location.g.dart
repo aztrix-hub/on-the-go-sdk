@@ -8,7 +8,7 @@ part of 'location.dart';
 
 class _$Location extends Location {
   @override
-  final int? id;
+  final String? id;
   @override
   final String name;
   @override
@@ -151,9 +151,9 @@ class _$Location extends Location {
 class LocationBuilder implements Builder<Location, LocationBuilder> {
   _$Location? _$v;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _name;
   String? get name => _$this._name;

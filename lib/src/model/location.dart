@@ -16,54 +16,47 @@ part 'location.g.dart';
 /// Location
 ///
 /// Properties:
-/// * [id] - The uberall unique id for the location.
-/// * [name] - The location''s name.
+/// * [id]
+/// * [name]
 /// * [address]
-/// * [cellphone] - A contact mobile phone number
-/// * [phone] - The location''s contact phone number.
-/// * [fax] - The location fax number
-/// * [email] - A contact email for the location
-/// * [description] - A description of the location
+/// * [cellphone]
+/// * [phone]
+/// * [fax]
+/// * [email]
+/// * [description]
 /// * [keywords]
 /// * [openingHours] - Opening hours
 /// * [specialOpeningHours] - Special opening hours
 /// * [coverPhoto]
-/// * [photos] - The location''s photos.
+/// * [photos]
 /// * [timezone]
 /// * [website]
-/// * [categories] - A list of category IDs describing the location
-/// * [averageRating] - The average rating of all Google Reviews
-/// * [reviewCount] - How many Google Reviews this location has in total
+/// * [categories]
+/// * [averageRating]
+/// * [reviewCount]
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
-  /// The uberall unique id for the location.
   @BuiltValueField(wireName: r'id')
-  int? get id;
+  String? get id;
 
-  /// The location''s name.
   @BuiltValueField(wireName: r'name')
   String get name;
 
   @BuiltValueField(wireName: r'address')
   Address? get address;
 
-  /// A contact mobile phone number
   @BuiltValueField(wireName: r'cellphone')
   String? get cellphone;
 
-  /// The location''s contact phone number.
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  /// The location fax number
   @BuiltValueField(wireName: r'fax')
   String? get fax;
 
-  /// A contact email for the location
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  /// A description of the location
   @BuiltValueField(wireName: r'description')
   String? get description;
 
@@ -81,7 +74,6 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'coverPhoto')
   LocationPhoto? get coverPhoto;
 
-  /// The location''s photos.
   @BuiltValueField(wireName: r'photos')
   BuiltSet<LocationPhoto>? get photos;
 
@@ -91,15 +83,12 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'website')
   String? get website;
 
-  /// A list of category IDs describing the location
   @BuiltValueField(wireName: r'categories')
   BuiltList<int> get categories;
 
-  /// The average rating of all Google Reviews
   @BuiltValueField(wireName: r'averageRating')
   double? get averageRating;
 
-  /// How many Google Reviews this location has in total
   @BuiltValueField(wireName: r'reviewCount')
   int? get reviewCount;
 
@@ -130,7 +119,7 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(String),
       );
     }
     yield r'name';
@@ -277,8 +266,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'name':

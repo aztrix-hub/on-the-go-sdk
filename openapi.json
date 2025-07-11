@@ -1824,36 +1824,28 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "description": "The uberall unique id for the location.",
-            "format": "int64"
+            "type": "string"
           },
           "name": {
-            "type": "string",
-            "description": "The location''s name."
+            "type": "string"
           },
           "address": {
             "$ref": "#/components/schemas/Address"
           },
           "cellphone": {
-            "type": "string",
-            "description": "A contact mobile phone number"
+            "type": "string"
           },
           "phone": {
-            "type": "string",
-            "description": "The location''s contact phone number."
+            "type": "string"
           },
           "fax": {
-            "type": "string",
-            "description": "The location fax number"
+            "type": "string"
           },
           "email": {
-            "type": "string",
-            "description": "A contact email for the location"
+            "type": "string"
           },
           "description": {
-            "type": "string",
-            "description": "A description of the location"
+            "type": "string"
           },
           "keywords": {
             "type": "array",
@@ -1874,10 +1866,8 @@
           "photos": {
             "uniqueItems": true,
             "type": "array",
-            "description": "The location''s photos.",
             "items": {
               "type": "object",
-              "description": "The location's photos",
               "$ref": "#/components/schemas/LocationPhoto"
             }
           },
@@ -1889,7 +1879,6 @@
           },
           "categories": {
             "type": "array",
-            "description": "A list of category IDs describing the location",
             "items": {
               "type": "integer",
               "format": "int32"
@@ -1897,12 +1886,10 @@
           },
           "averageRating": {
             "type": "number",
-            "description": "The average rating of all Google Reviews",
             "format": "float"
           },
           "reviewCount": {
             "type": "integer",
-            "description": "How many Google Reviews this location has in total",
             "format": "int32"
           }
         },
