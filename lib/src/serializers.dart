@@ -121,6 +121,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<String>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Category)]),
+        () => ListBuilder<Category>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SocialPost)]),
         () => ListBuilder<SocialPost>(),
       )

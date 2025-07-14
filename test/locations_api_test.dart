@@ -6,6 +6,13 @@ void main() {
   final instance = OnTheGoSdk().getLocationsApi();
 
   group(LocationsApi, () {
+    // Get categories
+    //
+    //Future<BuiltList<Category>> categoriesGet(String language, { String query }) async
+    test('test categoriesGet', () async {
+      // TODO
+    });
+
     // Get a Location
     //
     //Future<Location> locationGet(String id) async
@@ -39,7 +46,7 @@ void main() {
 
     // Get locations
     //
-    //Future<LocationsGet200Response> locationsGet({ BuiltList<String> locationIds, String query }) async
+    //Future<LocationsGet200Response> locationsGet(String language, { BuiltList<String> locationIds, String query }) async
     test('test locationsGet', () async {
       // TODO
     });
