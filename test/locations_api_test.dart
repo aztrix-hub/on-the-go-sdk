@@ -6,18 +6,9 @@ void main() {
   final instance = OnTheGoSdk().getLocationsApi();
 
   group(LocationsApi, () {
-    // Get categories
-    //
-    //Future<BuiltList<Category>> categoriesGet(String language, { String query }) async
-    test('test categoriesGet', () async {
-      // TODO
-    });
-
     // Get a Location
     //
-    // Get all information about a specific location, including listing statuses
-    //
-    //Future<Location> locationGet(int id) async
+    //Future<Location> locationGet(String id) async
     test('test locationGet', () async {
       // TODO
     });

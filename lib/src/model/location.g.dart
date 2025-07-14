@@ -10,7 +10,7 @@ class _$Location extends Location {
   @override
   final String? id;
   @override
-  final String name;
+  final String? name;
   @override
   final Address? address;
   @override
@@ -38,7 +38,7 @@ class _$Location extends Location {
   @override
   final String? website;
   @override
-  final BuiltList<int> categories;
+  final BuiltList<Category>? categories;
   @override
   final double? averageRating;
   @override
@@ -49,7 +49,7 @@ class _$Location extends Location {
 
   _$Location._(
       {this.id,
-      required this.name,
+      this.name,
       this.address,
       this.cellphone,
       this.phone,
@@ -63,7 +63,7 @@ class _$Location extends Location {
       this.photos,
       this.timezone,
       this.website,
-      required this.categories,
+      this.categories,
       this.averageRating,
       this.reviewCount})
       : super._();
@@ -220,9 +220,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   String? get website => _$this._website;
   set website(String? website) => _$this._website = website;
 
-  ListBuilder<int>? _categories;
-  ListBuilder<int> get categories => _$this._categories ??= ListBuilder<int>();
-  set categories(ListBuilder<int>? categories) =>
+  ListBuilder<Category>? _categories;
+  ListBuilder<Category> get categories =>
+      _$this._categories ??= ListBuilder<Category>();
+  set categories(ListBuilder<Category>? categories) =>
       _$this._categories = categories;
 
   double? _averageRating;
@@ -256,7 +257,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _photos = $v.photos?.toBuilder();
       _timezone = $v.timezone;
       _website = $v.website;
-      _categories = $v.categories.toBuilder();
+      _categories = $v.categories?.toBuilder();
       _averageRating = $v.averageRating;
       _reviewCount = $v.reviewCount;
       _$v = null;
@@ -283,8 +284,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _$result = _$v ??
           _$Location._(
             id: id,
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Location', 'name'),
+            name: name,
             address: _address?.build(),
             cellphone: cellphone,
             phone: phone,
@@ -298,7 +298,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             photos: _photos?.build(),
             timezone: timezone,
             website: website,
-            categories: categories.build(),
+            categories: _categories?.build(),
             averageRating: averageRating,
             reviewCount: reviewCount,
           );
@@ -320,7 +320,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _photos?.build();
 
         _$failedField = 'categories';
-        categories.build();
+        _categories?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

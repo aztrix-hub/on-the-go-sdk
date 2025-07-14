@@ -9,7 +9,6 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
 [**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
@@ -17,53 +16,6 @@ Method | HTTP request | Description
 [**locationPhotoPost**](LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
 
-
-# **categoriesGet**
-> BuiltList<Category> categoriesGet(language, query)
-
-Get categories
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getLocationsApi();
-final String language = language_example; // String | Show categories in the specified language. One of de, en, es, fr
-final String query = Auto; // String | Filter categories by a search query
-
-try {
-    final response = api.categoriesGet(language, query);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling LocationsApi->categoriesGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **language** | **String**| Show categories in the specified language. One of de, en, es, fr | 
- **query** | **String**| Filter categories by a search query | [optional] 
-
-### Return type
-
-[**BuiltList&lt;Category&gt;**](Category.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationGet**
 > Location locationGet(id)

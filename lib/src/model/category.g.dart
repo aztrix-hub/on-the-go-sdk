@@ -9,17 +9,11 @@ part of 'category.dart';
 class _$Category extends Category {
   @override
   final int? id;
-  @override
-  final String? name;
-  @override
-  final int? parent;
-  @override
-  final bool? selectable;
 
   factory _$Category([void Function(CategoryBuilder)? updates]) =>
       (CategoryBuilder()..update(updates))._build();
 
-  _$Category._({this.id, this.name, this.parent, this.selectable}) : super._();
+  _$Category._({this.id}) : super._();
   @override
   Category rebuild(void Function(CategoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -30,32 +24,20 @@ class _$Category extends Category {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Category &&
-        id == other.id &&
-        name == other.name &&
-        parent == other.parent &&
-        selectable == other.selectable;
+    return other is Category && id == other.id;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, name.hashCode);
-    _$hash = $jc(_$hash, parent.hashCode);
-    _$hash = $jc(_$hash, selectable.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Category')
-          ..add('id', id)
-          ..add('name', name)
-          ..add('parent', parent)
-          ..add('selectable', selectable))
-        .toString();
+    return (newBuiltValueToStringHelper(r'Category')..add('id', id)).toString();
   }
 }
 
@@ -66,18 +48,6 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  int? _parent;
-  int? get parent => _$this._parent;
-  set parent(int? parent) => _$this._parent = parent;
-
-  bool? _selectable;
-  bool? get selectable => _$this._selectable;
-  set selectable(bool? selectable) => _$this._selectable = selectable;
-
   CategoryBuilder() {
     Category._defaults(this);
   }
@@ -86,9 +56,6 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _name = $v.name;
-      _parent = $v.parent;
-      _selectable = $v.selectable;
       _$v = null;
     }
     return this;
@@ -111,9 +78,6 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
     final _$result = _$v ??
         _$Category._(
           id: id,
-          name: name,
-          parent: parent,
-          selectable: selectable,
         );
     replace(_$result);
     return _$result;

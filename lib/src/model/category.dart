@@ -8,30 +8,14 @@ import 'package:built_value/serializer.dart';
 
 part 'category.g.dart';
 
-/// Represents one of uberall's categories
+/// Category
 ///
 /// Properties:
-/// * [id] - The uberall unique id for the category
-/// * [name] - The category description
-/// * [parent] - The uberall unique id for the parent category
-/// * [selectable] - Boolean indicating whether the category can be used
+/// * [id]
 @BuiltValue()
 abstract class Category implements Built<Category, CategoryBuilder> {
-  /// The uberall unique id for the category
   @BuiltValueField(wireName: r'id')
   int? get id;
-
-  /// The category description
-  @BuiltValueField(wireName: r'name')
-  String? get name;
-
-  /// The uberall unique id for the parent category
-  @BuiltValueField(wireName: r'parent')
-  int? get parent;
-
-  /// Boolean indicating whether the category can be used
-  @BuiltValueField(wireName: r'selectable')
-  bool? get selectable;
 
   Category._();
 
@@ -61,27 +45,6 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.parent != null) {
-      yield r'parent';
-      yield serializers.serialize(
-        object.parent,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.selectable != null) {
-      yield r'selectable';
-      yield serializers.serialize(
-        object.selectable,
-        specifiedType: const FullType(bool),
       );
     }
   }
@@ -115,27 +78,6 @@ class _$CategorySerializer implements PrimitiveSerializer<Category> {
             specifiedType: const FullType(int),
           ) as int;
           result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'parent':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.parent = valueDes;
-          break;
-        case r'selectable':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.selectable = valueDes;
           break;
         default:
           unhandled.add(key);

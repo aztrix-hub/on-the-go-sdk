@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**name** | **String** |  | 
+**name** | **String** |  | [optional] 
 **address** | [**Address**](Address.md) |  | [optional] 
 **cellphone** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **photos** | [**BuiltSet&lt;LocationPhoto&gt;**](LocationPhoto.md) |  | [optional] 
 **timezone** | **String** |  | [optional] 
 **website** | **String** |  | [optional] 
-**categories** | **BuiltList&lt;int&gt;** |  | 
+**categories** | [**BuiltList&lt;Category&gt;**](Category.md) |  | [optional] 
 **averageRating** | **double** |  | [optional] 
 **reviewCount** | **int** |  | [optional] 
 

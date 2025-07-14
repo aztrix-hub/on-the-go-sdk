@@ -434,64 +434,6 @@
         ]
       }
     },
-    "/categories": {
-      "get": {
-        "tags": [
-          "locations"
-        ],
-        "summary": "Get categories",
-        "parameters": [
-          {
-            "name": "query",
-            "in": "query",
-            "description": "Filter categories by a search query",
-            "schema": {
-              "type": "string"
-            },
-            "example": "Auto"
-          },
-          {
-            "name": "language",
-            "in": "query",
-            "description": "Show categories in the specified language. One of de, en, es, fr",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successfully retrieved categories",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "description": "A list of categories",
-                  "items": {
-                    "$ref": "#/components/schemas/Category"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid or missing parameter"
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
-      }
-    },
     "location/photo": {
       "post": {
         "tags": [
@@ -1808,13 +1750,6 @@
         "description": "User Model"
       },
       "Location": {
-        "required": [
-          "categories",
-          "city",
-          "country",
-          "name",
-          "street"
-        ],
         "type": "object",
         "properties": {
           "id": {
@@ -1874,8 +1809,7 @@
           "categories": {
             "type": "array",
             "items": {
-              "type": "integer",
-              "format": "int32"
+              "$ref": "#/components/schemas/Category"
             }
           },
           "averageRating": {
@@ -1944,6 +1878,18 @@
             "type": "number",
             "format": "double"
           }
+        }
+      },
+      "Category": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "name": {
+          "type": "string"
         }
       },
       "OpeningHours": {
@@ -2158,30 +2104,6 @@
           "COMMON_AREA",
           "FOOD_AND_DRINK"
         ]
-      },
-      "Category": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "The uberall unique id for the category",
-            "format": "int64"
-          },
-          "name": {
-            "type": "string",
-            "description": "The category description"
-          },
-          "parent": {
-            "type": "integer",
-            "description": "The uberall unique id for the parent category",
-            "format": "int64"
-          },
-          "selectable": {
-            "type": "boolean",
-            "description": "Boolean indicating whether the category can be used"
-          }
-        },
-        "description": "Represents one of uberall's categories"
       },
       "DataPoint": {
         "type": "object",

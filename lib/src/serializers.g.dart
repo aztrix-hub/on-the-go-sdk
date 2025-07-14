@@ -145,8 +145,8 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltSet, const [const FullType(LocationPhoto)]),
           () => SetBuilder<LocationPhoto>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
+          const FullType(BuiltList, const [const FullType(Category)]),
+          () => ListBuilder<Category>())
       ..addBuilderFactory(
           const FullType(BuiltSet, const [const FullType(String)]),
           () => SetBuilder<String>())

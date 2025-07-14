@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/location_photo.dart';
@@ -40,7 +41,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   String? get id;
 
   @BuiltValueField(wireName: r'name')
-  String get name;
+  String? get name;
 
   @BuiltValueField(wireName: r'address')
   Address? get address;
@@ -84,7 +85,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   String? get website;
 
   @BuiltValueField(wireName: r'categories')
-  BuiltList<int> get categories;
+  BuiltList<Category>? get categories;
 
   @BuiltValueField(wireName: r'averageRating')
   double? get averageRating;
@@ -122,11 +123,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.address != null) {
       yield r'address';
       yield serializers.serialize(
@@ -219,11 +222,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'categories';
-    yield serializers.serialize(
-      object.categories,
-      specifiedType: const FullType(BuiltList, [FullType(int)]),
-    );
+    if (object.categories != null) {
+      yield r'categories';
+      yield serializers.serialize(
+        object.categories,
+        specifiedType: const FullType(BuiltList, [FullType(Category)]),
+      );
+    }
     if (object.averageRating != null) {
       yield r'averageRating';
       yield serializers.serialize(
@@ -372,8 +377,8 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         case r'categories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(int)]),
-          ) as BuiltList<int>;
+            specifiedType: const FullType(BuiltList, [FullType(Category)]),
+          ) as BuiltList<Category>;
           result.categories.replace(valueDes);
           break;
         case r'averageRating':

@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Location, () {
-    // int id
+    // String id
     test('to test the property `id`', () async {
       // TODO
     });
@@ -84,7 +84,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<int> categories
+    // BuiltList<Category> categories
     test('to test the property `categories`', () async {
       // TODO
     });
