@@ -9,11 +9,13 @@ part of 'category.dart';
 class _$Category extends Category {
   @override
   final int? id;
+  @override
+  final String? name;
 
   factory _$Category([void Function(CategoryBuilder)? updates]) =>
       (CategoryBuilder()..update(updates))._build();
 
-  _$Category._({this.id}) : super._();
+  _$Category._({this.id, this.name}) : super._();
   @override
   Category rebuild(void Function(CategoryBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -24,20 +26,24 @@ class _$Category extends Category {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Category && id == other.id;
+    return other is Category && id == other.id && name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'Category')..add('id', id)).toString();
+    return (newBuiltValueToStringHelper(r'Category')
+          ..add('id', id)
+          ..add('name', name))
+        .toString();
   }
 }
 
@@ -48,6 +54,10 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
 
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
   CategoryBuilder() {
     Category._defaults(this);
   }
@@ -56,6 +66,7 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _name = $v.name;
       _$v = null;
     }
     return this;
@@ -78,6 +89,7 @@ class CategoryBuilder implements Builder<Category, CategoryBuilder> {
     final _$result = _$v ??
         _$Category._(
           id: id,
+          name: name,
         );
     replace(_$result);
     return _$result;
