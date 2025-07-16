@@ -13,7 +13,7 @@ part 'listing.g.dart';
 /// Listing
 ///
 /// Properties:
-/// * [id] - The id of the listing details
+/// * [id]
 /// * [type]
 /// * [locationId]
 /// * [status]
@@ -21,9 +21,8 @@ part 'listing.g.dart';
 /// * [connected]
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
-  /// The id of the listing details
   @BuiltValueField(wireName: r'id')
-  int? get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
@@ -70,7 +69,7 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(String),
       );
     }
     if (object.type != null) {
@@ -136,8 +135,8 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'type':

@@ -10,13 +10,16 @@ class _$LocationListingConnectGet200Response
     extends LocationListingConnectGet200Response {
   @override
   final String? connectUrl;
+  @override
+  final String? oauthUrl;
 
   factory _$LocationListingConnectGet200Response(
           [void Function(LocationListingConnectGet200ResponseBuilder)?
               updates]) =>
       (LocationListingConnectGet200ResponseBuilder()..update(updates))._build();
 
-  _$LocationListingConnectGet200Response._({this.connectUrl}) : super._();
+  _$LocationListingConnectGet200Response._({this.connectUrl, this.oauthUrl})
+      : super._();
   @override
   LocationListingConnectGet200Response rebuild(
           void Function(LocationListingConnectGet200ResponseBuilder) updates) =>
@@ -30,13 +33,15 @@ class _$LocationListingConnectGet200Response
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LocationListingConnectGet200Response &&
-        connectUrl == other.connectUrl;
+        connectUrl == other.connectUrl &&
+        oauthUrl == other.oauthUrl;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, connectUrl.hashCode);
+    _$hash = $jc(_$hash, oauthUrl.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -44,7 +49,8 @@ class _$LocationListingConnectGet200Response
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationListingConnectGet200Response')
-          ..add('connectUrl', connectUrl))
+          ..add('connectUrl', connectUrl)
+          ..add('oauthUrl', oauthUrl))
         .toString();
   }
 }
@@ -59,6 +65,10 @@ class LocationListingConnectGet200ResponseBuilder
   String? get connectUrl => _$this._connectUrl;
   set connectUrl(String? connectUrl) => _$this._connectUrl = connectUrl;
 
+  String? _oauthUrl;
+  String? get oauthUrl => _$this._oauthUrl;
+  set oauthUrl(String? oauthUrl) => _$this._oauthUrl = oauthUrl;
+
   LocationListingConnectGet200ResponseBuilder() {
     LocationListingConnectGet200Response._defaults(this);
   }
@@ -67,6 +77,7 @@ class LocationListingConnectGet200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _connectUrl = $v.connectUrl;
+      _oauthUrl = $v.oauthUrl;
       _$v = null;
     }
     return this;
@@ -90,6 +101,7 @@ class LocationListingConnectGet200ResponseBuilder
     final _$result = _$v ??
         _$LocationListingConnectGet200Response._(
           connectUrl: connectUrl,
+          oauthUrl: oauthUrl,
         );
     replace(_$result);
     return _$result;

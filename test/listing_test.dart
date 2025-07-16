@@ -7,8 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Listing, () {
-    // The id of the listing details
-    // int id
+    // String id
     test('to test the property `id`', () async {
       // TODO
     });

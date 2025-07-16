@@ -12,6 +12,7 @@ part 'location_listing_connect_get200_response.g.dart';
 ///
 /// Properties:
 /// * [connectUrl]
+/// * [oauthUrl]
 @BuiltValue()
 abstract class LocationListingConnectGet200Response
     implements
@@ -19,6 +20,9 @@ abstract class LocationListingConnectGet200Response
             LocationListingConnectGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'connectUrl')
   String? get connectUrl;
+
+  @BuiltValueField(wireName: r'oauthUrl')
+  String? get oauthUrl;
 
   LocationListingConnectGet200Response._();
 
@@ -57,6 +61,13 @@ class _$LocationListingConnectGet200ResponseSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.oauthUrl != null) {
+      yield r'oauthUrl';
+      yield serializers.serialize(
+        object.oauthUrl,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -88,6 +99,13 @@ class _$LocationListingConnectGet200ResponseSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.connectUrl = valueDes;
+          break;
+        case r'oauthUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.oauthUrl = valueDes;
           break;
         default:
           unhandled.add(key);

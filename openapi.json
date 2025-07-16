@@ -1654,6 +1654,9 @@
                   "properties": {
                     "connectUrl": {
                       "type": "string"
+                    },
+                    "oauthUrl": {
+                      "type": "string"
                     }
                   }
                 }
@@ -2143,9 +2146,7 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer",
-            "description": "The id of the listing details",
-            "format": "int64"
+            "type": "string"
           },
           "type": {
             "$ref": "#/components/schemas/DirectoryType"

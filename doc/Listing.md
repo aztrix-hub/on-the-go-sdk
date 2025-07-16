@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The id of the listing details | [optional] 
+**id** | **String** |  | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
 **locationId** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 

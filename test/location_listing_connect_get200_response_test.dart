@@ -11,5 +11,10 @@ void main() {
     test('to test the property `connectUrl`', () async {
       // TODO
     });
+
+    // String oauthUrl
+    test('to test the property `oauthUrl`', () async {
+      // TODO
+    });
   });
 }
