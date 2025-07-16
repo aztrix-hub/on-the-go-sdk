@@ -78,6 +78,7 @@ Class | Method | HTTP request | Description
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingConnectGet**](doc/LocationsApi.md#locationlistingconnectget) | **GET** /location/listing/connect | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingsGet**](doc/LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -129,6 +130,8 @@ Class | Method | HTTP request | Description
  - [InsightsMetricsInnerDataInner](doc/InsightsMetricsInnerDataInner.md)
  - [Listing](doc/Listing.md)
  - [Location](doc/Location.md)
+ - [LocationListingConnectGet200Response](doc/LocationListingConnectGet200Response.md)
+ - [LocationListingsGet200Response](doc/LocationListingsGet200Response.md)
  - [LocationPhoto](doc/LocationPhoto.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)

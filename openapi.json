@@ -1591,9 +1591,70 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Listing"
+                  "type": "object",
+                  "properties": {
+                    "listings": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Listing"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request Forbidden"
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/location/listing/connect": {
+      "get": {
+        "tags": [
+          "locations"
+        ],
+        "parameters": [
+          {
+            "name": "locationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "listingId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Listing details successfully retrieved",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "connectUrl": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -1896,11 +1957,6 @@
       "Address": {
         "type": "object",
         "properties": {
-          "country": {
-            "minLength": 0,
-            "maxLength": 255,
-            "type": "string"
-          },
           "countryCode": {
             "minLength": 0,
             "pattern": "^[a-zA-Z]{2}$",
@@ -2115,7 +2171,7 @@
           },
           "url": {
             "type": "string",
-            "description": "Listing URL"
+            "description": "listing URL"
           },
           "connected": {
             "type": "boolean"

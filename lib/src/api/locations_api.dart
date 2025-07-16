@@ -10,8 +10,9 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
-import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/location_listings_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 
@@ -204,6 +205,101 @@ class LocationsApi {
     );
   }
 
+  /// locationListingConnectGet
+  ///
+  ///
+  /// Parameters:
+  /// * [locationId]
+  /// * [listingId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [LocationListingConnectGet200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<LocationListingConnectGet200Response>>
+      locationListingConnectGet({
+    required String locationId,
+    required String listingId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/location/listing/connect';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authToken',
+            'keyName': 'authToken',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'locationId': encodeQueryParameter(
+          _serializers, locationId, const FullType(String)),
+      r'listingId':
+          encodeQueryParameter(_serializers, listingId, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    LocationListingConnectGet200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(LocationListingConnectGet200Response),
+            ) as LocationListingConnectGet200Response;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<LocationListingConnectGet200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// locationListingsGet
   ///
   ///
@@ -216,9 +312,9 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Listing>] as data
+  /// Returns a [Future] containing a [Response] with a [LocationListingsGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Listing>>> locationListingsGet({
+  Future<Response<LocationListingsGet200Response>> locationListingsGet({
     required String locationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -261,7 +357,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Listing>? _responseData;
+    LocationListingsGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -269,8 +365,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Listing)]),
-            ) as BuiltList<Listing>;
+              specifiedType: const FullType(LocationListingsGet200Response),
+            ) as LocationListingsGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -281,7 +377,7 @@ class LocationsApi {
       );
     }
 
-    return Response<BuiltList<Listing>>(
+    return Response<LocationListingsGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

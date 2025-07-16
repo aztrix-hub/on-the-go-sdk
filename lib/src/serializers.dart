@@ -41,6 +41,8 @@ import 'package:on_the_go_sdk/src/model/insights_metrics_inner.dart';
 import 'package:on_the_go_sdk/src/model/insights_metrics_inner_data_inner.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/location_listings_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
@@ -89,6 +91,8 @@ part 'serializers.g.dart';
   InsightsMetricsInnerDataInner,
   Listing,
   Location,
+  LocationListingConnectGet200Response,
+  LocationListingsGet200Response,
   LocationPhoto,
   LocationPhotoPostRequest,
   LocationPhotoType,
@@ -108,10 +112,6 @@ part 'serializers.g.dart';
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Listing)]),
-        () => ListBuilder<Listing>(),
-      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(int)]),
         () => ListBuilder<int>(),

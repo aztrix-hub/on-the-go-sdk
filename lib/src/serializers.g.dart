@@ -41,6 +41,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(Listing.serializer)
       ..add(ListingStatusEnum.serializer)
       ..add(Location.serializer)
+      ..add(LocationListingConnectGet200Response.serializer)
+      ..add(LocationListingsGet200Response.serializer)
       ..add(LocationPhoto.serializer)
       ..add(LocationPhotoPostRequest.serializer)
       ..add(LocationPhotoType.serializer)
@@ -111,6 +113,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(InsightsMetricsInnerDataInner)]),
           () => ListBuilder<InsightsMetricsInnerDataInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Listing)]),
+          () => ListBuilder<Listing>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())

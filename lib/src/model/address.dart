@@ -11,7 +11,6 @@ part 'address.g.dart';
 /// Address
 ///
 /// Properties:
-/// * [country]
 /// * [countryCode]
 /// * [city]
 /// * [streetAndNo]
@@ -23,9 +22,6 @@ part 'address.g.dart';
 /// * [longitude]
 @BuiltValue()
 abstract class Address implements Built<Address, AddressBuilder> {
-  @BuiltValueField(wireName: r'country')
-  String? get country;
-
   @BuiltValueField(wireName: r'countryCode')
   String? get countryCode;
 
@@ -76,13 +72,6 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
     Address object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.country != null) {
-      yield r'country';
-      yield serializers.serialize(
-        object.country,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.countryCode != null) {
       yield r'countryCode';
       yield serializers.serialize(
@@ -171,13 +160,6 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'country':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.country = valueDes;
-          break;
         case r'countryCode':
           final valueDes = serializers.deserialize(
             value,

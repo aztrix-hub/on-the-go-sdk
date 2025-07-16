@@ -20,7 +20,12 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Listing>> locationListingsGet(String locationId) async
+    //Future<LocationListingConnectGet200Response> locationListingConnectGet(String locationId, String listingId) async
+    test('test locationListingConnectGet', () async {
+      // TODO
+    });
+
+    //Future<LocationListingsGet200Response> locationListingsGet(String locationId) async
     test('test locationListingsGet', () async {
       // TODO
     });

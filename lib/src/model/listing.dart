@@ -17,7 +17,7 @@ part 'listing.g.dart';
 /// * [type]
 /// * [locationId]
 /// * [status]
-/// * [url] - Listing URL
+/// * [url] - listing URL
 /// * [connected]
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
@@ -36,7 +36,7 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   ListingStatusEnum? get status;
   // enum statusEnum {  SYNCED,  SUBMITTED,  UPDATING,  LINKED,  ACTION_REQUIRED,  WAITING_ON_YEXT,  WAITING_ON_CUSTOMER,  WAITING_ON_PUBLISHER,  LIVE,  UNAVAILABLE,  OPTED_OUT,  };
 
-  /// Listing URL
+  /// listing URL
   @BuiltValueField(wireName: r'url')
   String? get url;
 
