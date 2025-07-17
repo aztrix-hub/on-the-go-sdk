@@ -13,6 +13,7 @@ doc/AiMemoriesGet200ResponseMemoriesInner.md
 doc/AiMemoriesPostRequest.md
 doc/AiSystemGet200Response.md
 doc/AnalyticsApi.md
+doc/AnalyticsGet200Response.md
 doc/BrandDataPoint.md
 doc/Category.md
 doc/DataPoint.md
@@ -25,9 +26,6 @@ doc/InboxItemMetrics.md
 doc/InboxPost200Response.md
 doc/InboxPostRequest.md
 doc/InboxReplyPostRequest.md
-doc/Insights.md
-doc/InsightsMetricsInner.md
-doc/InsightsMetricsInnerDataInner.md
 doc/Listing.md
 doc/Location.md
 doc/LocationListingConnectGet200Response.md
@@ -39,6 +37,8 @@ doc/LocationsApi.md
 doc/LocationsGet200Response.md
 doc/LoginBody.md
 doc/LoginResponse.md
+doc/Metric.md
+doc/MetricDataInner.md
 doc/NotificationsApi.md
 doc/NotificationsConfigGet200Response.md
 doc/OpeningHour.md
@@ -84,6 +84,7 @@ lib/src/model/ai_memories_get200_response.dart
 lib/src/model/ai_memories_get200_response_memories_inner.dart
 lib/src/model/ai_memories_post_request.dart
 lib/src/model/ai_system_get200_response.dart
+lib/src/model/analytics_get200_response.dart
 lib/src/model/brand_data_point.dart
 lib/src/model/category.dart
 lib/src/model/data_point.dart
@@ -96,9 +97,6 @@ lib/src/model/inbox_item_metrics.dart
 lib/src/model/inbox_post200_response.dart
 lib/src/model/inbox_post_request.dart
 lib/src/model/inbox_reply_post_request.dart
-lib/src/model/insights.dart
-lib/src/model/insights_metrics_inner.dart
-lib/src/model/insights_metrics_inner_data_inner.dart
 lib/src/model/listing.dart
 lib/src/model/location.dart
 lib/src/model/location_listing_connect_get200_response.dart
@@ -109,6 +107,8 @@ lib/src/model/location_photo_type.dart
 lib/src/model/locations_get200_response.dart
 lib/src/model/login_body.dart
 lib/src/model/login_response.dart
+lib/src/model/metric.dart
+lib/src/model/metric_data_inner.dart
 lib/src/model/notifications_config_get200_response.dart
 lib/src/model/opening_hour.dart
 lib/src/model/opening_hour_interval.dart
@@ -134,6 +134,7 @@ test/ai_memories_get200_response_test.dart
 test/ai_memories_post_request_test.dart
 test/ai_system_get200_response_test.dart
 test/analytics_api_test.dart
+test/analytics_get200_response_test.dart
 test/brand_data_point_test.dart
 test/category_test.dart
 test/data_point_test.dart
@@ -146,9 +147,6 @@ test/inbox_item_test.dart
 test/inbox_post200_response_test.dart
 test/inbox_post_request_test.dart
 test/inbox_reply_post_request_test.dart
-test/insights_metrics_inner_data_inner_test.dart
-test/insights_metrics_inner_test.dart
-test/insights_test.dart
 test/listing_test.dart
 test/location_listing_connect_get200_response_test.dart
 test/location_listings_get200_response_test.dart
@@ -160,6 +158,8 @@ test/locations_api_test.dart
 test/locations_get200_response_test.dart
 test/login_body_test.dart
 test/login_response_test.dart
+test/metric_data_inner_test.dart
+test/metric_test.dart
 test/notifications_api_test.dart
 test/notifications_config_get200_response_test.dart
 test/opening_hour_interval_test.dart

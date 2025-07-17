@@ -9,8 +9,8 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
+import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
-import 'package:on_the_go_sdk/src/model/insights.dart';
 
 class AnalyticsApi {
   final Dio _dio;
@@ -23,13 +23,9 @@ class AnalyticsApi {
   ///
   ///
   /// Parameters:
-  /// * [type] - The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API
-  /// * [businessIds] - The ids of the businesses you want insights data for
   /// * [locationIds] - The ids of the locations you want insights data for
-  /// * [textFilter] - Filter locations to get insights data for by name, zip, street, city, label
   /// * [startDate] - The start date YYYY-MM-DD
   /// * [endDate] - The end date YYYY-MM-DD
-  /// * [group] - How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR
   /// * [metrics] - The types of metrics you want to get
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -38,16 +34,12 @@ class AnalyticsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Insights] as data
+  /// Returns a [Future] containing a [Response] with a [AnalyticsGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Insights>> analyticsGet({
-    required String type,
-    BuiltList<int>? businessIds,
+  Future<Response<AnalyticsGet200Response>> analyticsGet({
     BuiltList<String>? locationIds,
-    String? textFilter,
     Date? startDate,
     Date? endDate,
-    String? group,
     BuiltList<String>? metrics,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -77,13 +69,6 @@ class AnalyticsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (businessIds != null)
-        r'businessIds': encodeCollectionQueryParameter<int>(
-          _serializers,
-          businessIds,
-          const FullType(BuiltList, [FullType(int)]),
-          format: ListFormat.multi,
-        ),
       if (locationIds != null)
         r'locationIds': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -91,19 +76,12 @@ class AnalyticsApi {
           const FullType(BuiltList, [FullType(String)]),
           format: ListFormat.multi,
         ),
-      if (textFilter != null)
-        r'textFilter': encodeQueryParameter(
-            _serializers, textFilter, const FullType(String)),
-      r'type': encodeQueryParameter(_serializers, type, const FullType(String)),
       if (startDate != null)
         r'startDate':
             encodeQueryParameter(_serializers, startDate, const FullType(Date)),
       if (endDate != null)
         r'endDate':
             encodeQueryParameter(_serializers, endDate, const FullType(Date)),
-      if (group != null)
-        r'group':
-            encodeQueryParameter(_serializers, group, const FullType(String)),
       if (metrics != null)
         r'metrics': encodeCollectionQueryParameter<String>(
           _serializers,
@@ -122,7 +100,7 @@ class AnalyticsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Insights? _responseData;
+    AnalyticsGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -130,8 +108,8 @@ class AnalyticsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Insights),
-            ) as Insights;
+              specifiedType: const FullType(AnalyticsGet200Response),
+            ) as AnalyticsGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -142,7 +120,7 @@ class AnalyticsApi {
       );
     }
 
-    return Response<Insights>(
+    return Response<AnalyticsGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -18,6 +18,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiMemoriesGet200ResponseMemoriesInner.serializer)
       ..add(AiMemoriesPostRequest.serializer)
       ..add(AiSystemGet200Response.serializer)
+      ..add(AnalyticsGet200Response.serializer)
       ..add(BrandDataPoint.serializer)
       ..add(BrandDataPointTypeEnum.serializer)
       ..add(Category.serializer)
@@ -35,9 +36,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(InboxPostRequestSortDirEnum.serializer)
       ..add(InboxPostRequestStatusEnum.serializer)
       ..add(InboxReplyPostRequest.serializer)
-      ..add(Insights.serializer)
-      ..add(InsightsMetricsInner.serializer)
-      ..add(InsightsMetricsInnerDataInner.serializer)
       ..add(Listing.serializer)
       ..add(ListingStatusEnum.serializer)
       ..add(Location.serializer)
@@ -49,6 +47,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(LocationsGet200Response.serializer)
       ..add(LoginBody.serializer)
       ..add(LoginResponse.serializer)
+      ..add(Metric.serializer)
+      ..add(MetricDataInner.serializer)
+      ..add(MetricNameEnum.serializer)
       ..add(NotificationsConfigGet200Response.serializer)
       ..add(OpeningHour.serializer)
       ..add(OpeningHourInterval.serializer)
@@ -106,19 +107,17 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
           () => ListBuilder<InboxPostRequestStatusEnum>())
       ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(InsightsMetricsInner)]),
-          () => ListBuilder<InsightsMetricsInner>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(InsightsMetricsInnerDataInner)]),
-          () => ListBuilder<InsightsMetricsInnerDataInner>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Listing)]),
           () => ListBuilder<Listing>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Metric)]),
+          () => ListBuilder<Metric>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricDataInner)]),
+          () => ListBuilder<MetricDataInner>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(OpeningHourInterval)]),

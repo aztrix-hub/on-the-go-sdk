@@ -1,35 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'insights_metrics_inner_data_inner.dart';
+part of 'metric_data_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$InsightsMetricsInnerDataInner extends InsightsMetricsInnerDataInner {
+class _$MetricDataInner extends MetricDataInner {
   @override
   final DateTime? period;
   @override
   final int? count;
 
-  factory _$InsightsMetricsInnerDataInner(
-          [void Function(InsightsMetricsInnerDataInnerBuilder)? updates]) =>
-      (InsightsMetricsInnerDataInnerBuilder()..update(updates))._build();
+  factory _$MetricDataInner([void Function(MetricDataInnerBuilder)? updates]) =>
+      (MetricDataInnerBuilder()..update(updates))._build();
 
-  _$InsightsMetricsInnerDataInner._({this.period, this.count}) : super._();
+  _$MetricDataInner._({this.period, this.count}) : super._();
   @override
-  InsightsMetricsInnerDataInner rebuild(
-          void Function(InsightsMetricsInnerDataInnerBuilder) updates) =>
+  MetricDataInner rebuild(void Function(MetricDataInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  InsightsMetricsInnerDataInnerBuilder toBuilder() =>
-      InsightsMetricsInnerDataInnerBuilder()..replace(this);
+  MetricDataInnerBuilder toBuilder() => MetricDataInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InsightsMetricsInnerDataInner &&
+    return other is MetricDataInner &&
         period == other.period &&
         count == other.count;
   }
@@ -45,18 +42,16 @@ class _$InsightsMetricsInnerDataInner extends InsightsMetricsInnerDataInner {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'InsightsMetricsInnerDataInner')
+    return (newBuiltValueToStringHelper(r'MetricDataInner')
           ..add('period', period)
           ..add('count', count))
         .toString();
   }
 }
 
-class InsightsMetricsInnerDataInnerBuilder
-    implements
-        Builder<InsightsMetricsInnerDataInner,
-            InsightsMetricsInnerDataInnerBuilder> {
-  _$InsightsMetricsInnerDataInner? _$v;
+class MetricDataInnerBuilder
+    implements Builder<MetricDataInner, MetricDataInnerBuilder> {
+  _$MetricDataInner? _$v;
 
   DateTime? _period;
   DateTime? get period => _$this._period;
@@ -66,11 +61,11 @@ class InsightsMetricsInnerDataInnerBuilder
   int? get count => _$this._count;
   set count(int? count) => _$this._count = count;
 
-  InsightsMetricsInnerDataInnerBuilder() {
-    InsightsMetricsInnerDataInner._defaults(this);
+  MetricDataInnerBuilder() {
+    MetricDataInner._defaults(this);
   }
 
-  InsightsMetricsInnerDataInnerBuilder get _$this {
+  MetricDataInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _period = $v.period;
@@ -81,21 +76,21 @@ class InsightsMetricsInnerDataInnerBuilder
   }
 
   @override
-  void replace(InsightsMetricsInnerDataInner other) {
-    _$v = other as _$InsightsMetricsInnerDataInner;
+  void replace(MetricDataInner other) {
+    _$v = other as _$MetricDataInner;
   }
 
   @override
-  void update(void Function(InsightsMetricsInnerDataInnerBuilder)? updates) {
+  void update(void Function(MetricDataInnerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  InsightsMetricsInnerDataInner build() => _build();
+  MetricDataInner build() => _build();
 
-  _$InsightsMetricsInnerDataInner _build() {
+  _$MetricDataInner _build() {
     final _$result = _$v ??
-        _$InsightsMetricsInnerDataInner._(
+        _$MetricDataInner._(
           period: period,
           count: count,
         );

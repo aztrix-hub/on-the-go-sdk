@@ -1687,18 +1687,6 @@
         ],
         "parameters": [
           {
-            "name": "businessIds",
-            "in": "query",
-            "description": "The ids of the businesses you want insights data for",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          },
-          {
             "name": "locationIds",
             "in": "query",
             "description": "The ids of the locations you want insights data for",
@@ -1707,24 +1695,6 @@
               "items": {
                 "type": "string"
               }
-            }
-          },
-          {
-            "name": "textFilter",
-            "in": "query",
-            "description": "Filter locations to get insights data for by name, zip, street, city, label",
-            "schema": {
-              "type": "string"
-            },
-            "example": "Berlin"
-          },
-          {
-            "name": "type",
-            "in": "query",
-            "description": "The directory you want insights for. Can be GOOGLE, FACEBOOK, BING or YELP_API",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           },
           {
@@ -1746,21 +1716,21 @@
             }
           },
           {
-            "name": "group",
-            "in": "query",
-            "description": "How to group the results, one of: HOUR (only for ACTIONS-PHONE), DAY, WEEK, MONTH, YEAR",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
             "name": "metrics",
             "in": "query",
             "description": "The types of metrics you want to get",
             "schema": {
               "type": "array",
               "items": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "TOTAL_INTERACTIONS",
+                  "TOTAL_IMPRESSIONS",
+                  "GOOGLE_INTERACTIONS",
+                  "GOOGLE_IMPRESSIONS",
+                  "FACEBOOK_INTERACTIONS",
+                  "FACEBOOK_IMPRESSIONS"
+                ]
               }
             }
           }
@@ -1771,7 +1741,12 @@
             "content": {
               "*/*": {
                 "schema": {
-                  "$ref": "#/components/schemas/Insights"
+                  "type": "object",
+                  "properties": {
+                    "metrics": {
+                      "$ref": "#/components/schemas/Metrics"
+                    }
+                  }
                 }
               }
             }
@@ -2800,43 +2775,43 @@
           "LINKED_IN"
         ]
       },
-      "Insights": {
+      "Metrics": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Metric"
+        }
+      },
+      "Metric": {
         "type": "object",
         "properties": {
-          "metrics": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "TOTAL_INTERACTIONS",
+              "TOTAL_IMPRESSIONS",
+              "GOOGLE_INTERACTIONS",
+              "GOOGLE_IMPRESSIONS",
+              "FACEBOOK_INTERACTIONS",
+              "FACEBOOK_IMPRESSIONS"
+            ]
+          },
+          "data": {
             "type": "array",
             "items": {
               "type": "object",
               "properties": {
-                "name": {
-                  "type": "string"
+                "period": {
+                  "type": "string",
+                  "format": "date-time"
                 },
-                "data": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "period": {
-                        "type": "string",
-                        "format": "date-time"
-                      },
-                      "count": {
-                        "type": "integer",
-                        "format": "int32"
-                      }
-                    }
-                  }
+                "count": {
+                  "type": "integer",
+                  "format": "int32"
                 }
               }
             }
-          },
-          "matchedLocationsCount": {
-            "type": "integer",
-            "description": "The number of locations matching the filter which the insights are returned for",
-            "format": "int32"
           }
-        },
-        "description": "Insights Model"
+        }
       },
       "SocialPosts": {
         "type": "array",

@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for InsightsMetricsInnerDataInner
+// tests for MetricDataInner
 void main() {
-  final instance = InsightsMetricsInnerDataInnerBuilder();
+  final instance = MetricDataInnerBuilder();
   // TODO add properties to the builder and call build()
 
-  group(InsightsMetricsInnerDataInner, () {
+  group(MetricDataInner, () {
     // DateTime period
     test('to test the property `period`', () async {
       // TODO

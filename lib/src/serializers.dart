@@ -25,6 +25,7 @@ import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/brand_data_point.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
@@ -36,9 +37,6 @@ import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
-import 'package:on_the_go_sdk/src/model/insights.dart';
-import 'package:on_the_go_sdk/src/model/insights_metrics_inner.dart';
-import 'package:on_the_go_sdk/src/model/insights_metrics_inner_data_inner.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
@@ -49,6 +47,8 @@ import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
+import 'package:on_the_go_sdk/src/model/metric.dart';
+import 'package:on_the_go_sdk/src/model/metric_data_inner.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
@@ -75,6 +75,7 @@ part 'serializers.g.dart';
   AiMemoriesGet200ResponseMemoriesInner,
   AiMemoriesPostRequest,
   AiSystemGet200Response,
+  AnalyticsGet200Response,
   BrandDataPoint,
   Category,
   DataPoint,
@@ -86,9 +87,6 @@ part 'serializers.g.dart';
   InboxPost200Response,
   InboxPostRequest,
   InboxReplyPostRequest,
-  Insights,
-  InsightsMetricsInner,
-  InsightsMetricsInnerDataInner,
   Listing,
   Location,
   LocationListingConnectGet200Response,
@@ -99,6 +97,8 @@ part 'serializers.g.dart';
   LocationsGet200Response,
   LoginBody,
   LoginResponse,
+  Metric,
+  MetricDataInner,
   NotificationsConfigGet200Response,
   OpeningHour,
   OpeningHourInterval,
@@ -112,10 +112,6 @@ part 'serializers.g.dart';
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(int)]),
-        () => ListBuilder<int>(),
-      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),

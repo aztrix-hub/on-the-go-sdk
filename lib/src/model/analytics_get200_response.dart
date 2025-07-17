@@ -3,63 +3,58 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/insights_metrics_inner.dart';
+import 'package:on_the_go_sdk/src/model/metric.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'insights.g.dart';
+part 'analytics_get200_response.g.dart';
 
-/// Insights Model
+/// AnalyticsGet200Response
 ///
 /// Properties:
 /// * [metrics]
-/// * [matchedLocationsCount] - The number of locations matching the filter which the insights are returned for
 @BuiltValue()
-abstract class Insights implements Built<Insights, InsightsBuilder> {
+abstract class AnalyticsGet200Response
+    implements Built<AnalyticsGet200Response, AnalyticsGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'metrics')
-  BuiltList<InsightsMetricsInner>? get metrics;
+  BuiltList<Metric>? get metrics;
 
-  /// The number of locations matching the filter which the insights are returned for
-  @BuiltValueField(wireName: r'matchedLocationsCount')
-  int? get matchedLocationsCount;
+  AnalyticsGet200Response._();
 
-  Insights._();
-
-  factory Insights([void updates(InsightsBuilder b)]) = _$Insights;
+  factory AnalyticsGet200Response(
+          [void updates(AnalyticsGet200ResponseBuilder b)]) =
+      _$AnalyticsGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InsightsBuilder b) => b;
+  static void _defaults(AnalyticsGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Insights> get serializer => _$InsightsSerializer();
+  static Serializer<AnalyticsGet200Response> get serializer =>
+      _$AnalyticsGet200ResponseSerializer();
 }
 
-class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
+class _$AnalyticsGet200ResponseSerializer
+    implements PrimitiveSerializer<AnalyticsGet200Response> {
   @override
-  final Iterable<Type> types = const [Insights, _$Insights];
+  final Iterable<Type> types = const [
+    AnalyticsGet200Response,
+    _$AnalyticsGet200Response
+  ];
 
   @override
-  final String wireName = r'Insights';
+  final String wireName = r'AnalyticsGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Insights object, {
+    AnalyticsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.metrics != null) {
       yield r'metrics';
       yield serializers.serialize(
         object.metrics,
-        specifiedType:
-            const FullType(BuiltList, [FullType(InsightsMetricsInner)]),
-      );
-    }
-    if (object.matchedLocationsCount != null) {
-      yield r'matchedLocationsCount';
-      yield serializers.serialize(
-        object.matchedLocationsCount,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(BuiltList, [FullType(Metric)]),
       );
     }
   }
@@ -67,7 +62,7 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
   @override
   Object serialize(
     Serializers serializers,
-    Insights object, {
+    AnalyticsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -80,7 +75,7 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required InsightsBuilder result,
+    required AnalyticsGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -90,17 +85,9 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
         case r'metrics':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(InsightsMetricsInner)]),
-          ) as BuiltList<InsightsMetricsInner>;
+            specifiedType: const FullType(BuiltList, [FullType(Metric)]),
+          ) as BuiltList<Metric>;
           result.metrics.replace(valueDes);
-          break;
-        case r'matchedLocationsCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.matchedLocationsCount = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -111,12 +98,12 @@ class _$InsightsSerializer implements PrimitiveSerializer<Insights> {
   }
 
   @override
-  Insights deserialize(
+  AnalyticsGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = InsightsBuilder();
+    final result = AnalyticsGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
