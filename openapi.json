@@ -1722,15 +1722,7 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "string",
-                "enum": [
-                  "TOTAL_INTERACTIONS",
-                  "TOTAL_IMPRESSIONS",
-                  "GOOGLE_INTERACTIONS",
-                  "GOOGLE_IMPRESSIONS",
-                  "FACEBOOK_INTERACTIONS",
-                  "FACEBOOK_IMPRESSIONS"
-                ]
+                "$ref": "#/components/schemas/MetricType"
               }
             }
           }
@@ -2784,16 +2776,8 @@
       "Metric": {
         "type": "object",
         "properties": {
-          "name": {
-            "type": "string",
-            "enum": [
-              "TOTAL_INTERACTIONS",
-              "TOTAL_IMPRESSIONS",
-              "GOOGLE_INTERACTIONS",
-              "GOOGLE_IMPRESSIONS",
-              "FACEBOOK_INTERACTIONS",
-              "FACEBOOK_IMPRESSIONS"
-            ]
+          "type": {
+            "$ref": "#/components/schemas/MetricType"
           },
           "data": {
             "type": "array",
@@ -2812,6 +2796,17 @@
             }
           }
         }
+      },
+      "MetricType": {
+        "type": "string",
+        "enum": [
+          "TOTAL_INTERACTIONS",
+          "TOTAL_IMPRESSIONS",
+          "GOOGLE_INTERACTIONS",
+          "GOOGLE_IMPRESSIONS",
+          "FACEBOOK_INTERACTIONS",
+          "FACEBOOK_IMPRESSIONS"
+        ]
       },
       "SocialPosts": {
         "type": "array",

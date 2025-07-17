@@ -6,7 +6,7 @@ void main() {
   final instance = OnTheGoSdk().getAnalyticsApi();
 
   group(AnalyticsApi, () {
-    //Future<AnalyticsGet200Response> analyticsGet({ BuiltList<String> locationIds, Date startDate, Date endDate, BuiltList<String> metrics }) async
+    //Future<AnalyticsGet200Response> analyticsGet({ BuiltList<String> locationIds, Date startDate, Date endDate, BuiltList<MetricType> metrics }) async
     test('test analyticsGet', () async {
       // TODO
     });

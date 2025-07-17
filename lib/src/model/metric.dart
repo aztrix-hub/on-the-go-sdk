@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/metric_data_inner.dart';
 import 'package:built_value/built_value.dart';
@@ -13,13 +14,13 @@ part 'metric.g.dart';
 /// Metric
 ///
 /// Properties:
-/// * [name]
+/// * [type]
 /// * [data]
 @BuiltValue()
 abstract class Metric implements Built<Metric, MetricBuilder> {
-  @BuiltValueField(wireName: r'name')
-  MetricNameEnum? get name;
-  // enum nameEnum {  TOTAL_INTERACTIONS,  TOTAL_IMPRESSIONS,  GOOGLE_INTERACTIONS,  GOOGLE_IMPRESSIONS,  FACEBOOK_INTERACTIONS,  FACEBOOK_IMPRESSIONS,  };
+  @BuiltValueField(wireName: r'type')
+  MetricType? get type;
+  // enum typeEnum {  TOTAL_INTERACTIONS,  TOTAL_IMPRESSIONS,  GOOGLE_INTERACTIONS,  GOOGLE_IMPRESSIONS,  FACEBOOK_INTERACTIONS,  FACEBOOK_IMPRESSIONS,  };
 
   @BuiltValueField(wireName: r'data')
   BuiltList<MetricDataInner>? get data;
@@ -47,11 +48,11 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
     Metric object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.name != null) {
-      yield r'name';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(MetricNameEnum),
+        object.type,
+        specifiedType: const FullType(MetricType),
       );
     }
     if (object.data != null) {
@@ -86,12 +87,12 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
+        case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MetricNameEnum),
-          ) as MetricNameEnum;
-          result.name = valueDes;
+            specifiedType: const FullType(MetricType),
+          ) as MetricType;
+          result.type = valueDes;
           break;
         case r'data':
           final valueDes = serializers.deserialize(
@@ -128,33 +129,4 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
     );
     return result.build();
   }
-}
-
-class MetricNameEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'TOTAL_INTERACTIONS')
-  static const MetricNameEnum TOTAL_INTERACTIONS =
-      _$metricNameEnum_TOTAL_INTERACTIONS;
-  @BuiltValueEnumConst(wireName: r'TOTAL_IMPRESSIONS')
-  static const MetricNameEnum TOTAL_IMPRESSIONS =
-      _$metricNameEnum_TOTAL_IMPRESSIONS;
-  @BuiltValueEnumConst(wireName: r'GOOGLE_INTERACTIONS')
-  static const MetricNameEnum GOOGLE_INTERACTIONS =
-      _$metricNameEnum_GOOGLE_INTERACTIONS;
-  @BuiltValueEnumConst(wireName: r'GOOGLE_IMPRESSIONS')
-  static const MetricNameEnum GOOGLE_IMPRESSIONS =
-      _$metricNameEnum_GOOGLE_IMPRESSIONS;
-  @BuiltValueEnumConst(wireName: r'FACEBOOK_INTERACTIONS')
-  static const MetricNameEnum FACEBOOK_INTERACTIONS =
-      _$metricNameEnum_FACEBOOK_INTERACTIONS;
-  @BuiltValueEnumConst(wireName: r'FACEBOOK_IMPRESSIONS')
-  static const MetricNameEnum FACEBOOK_IMPRESSIONS =
-      _$metricNameEnum_FACEBOOK_IMPRESSIONS;
-
-  static Serializer<MetricNameEnum> get serializer =>
-      _$metricNameEnumSerializer;
-
-  const MetricNameEnum._(String name) : super(name);
-
-  static BuiltSet<MetricNameEnum> get values => _$metricNameEnumValues;
-  static MetricNameEnum valueOf(String name) => _$metricNameEnumValueOf(name);
 }

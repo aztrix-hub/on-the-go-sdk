@@ -11,6 +11,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
+import 'package:on_the_go_sdk/src/model/metric_type.dart';
 
 class AnalyticsApi {
   final Dio _dio;
@@ -40,7 +41,7 @@ class AnalyticsApi {
     BuiltList<String>? locationIds,
     Date? startDate,
     Date? endDate,
-    BuiltList<String>? metrics,
+    BuiltList<MetricType>? metrics,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -83,10 +84,10 @@ class AnalyticsApi {
         r'endDate':
             encodeQueryParameter(_serializers, endDate, const FullType(Date)),
       if (metrics != null)
-        r'metrics': encodeCollectionQueryParameter<String>(
+        r'metrics': encodeCollectionQueryParameter<MetricType>(
           _serializers,
           metrics,
-          const FullType(BuiltList, [FullType(String)]),
+          const FullType(BuiltList, [FullType(MetricType)]),
           format: ListFormat.multi,
         ),
     };

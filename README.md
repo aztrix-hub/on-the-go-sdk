@@ -138,6 +138,7 @@ Class | Method | HTTP request | Description
  - [LoginResponse](doc/LoginResponse.md)
  - [Metric](doc/Metric.md)
  - [MetricDataInner](doc/MetricDataInner.md)
+ - [MetricType](doc/MetricType.md)
  - [NotificationsConfigGet200Response](doc/NotificationsConfigGet200Response.md)
  - [OpeningHour](doc/OpeningHour.md)
  - [OpeningHourInterval](doc/OpeningHourInterval.md)

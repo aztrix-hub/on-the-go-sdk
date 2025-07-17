@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Metric, () {
-    // String name
-    test('to test the property `name`', () async {
+    // MetricType type
+    test('to test the property `type`', () async {
       // TODO
     });
 

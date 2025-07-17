@@ -29,7 +29,7 @@ final api = OnTheGoSdk().getAnalyticsApi();
 final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want insights data for
 final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
 final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
-final BuiltList<String> metrics = ; // BuiltList<String> | The types of metrics you want to get
+final BuiltList<MetricType> metrics = ; // BuiltList<MetricType> | The types of metrics you want to get
 
 try {
     final response = api.analyticsGet(locationIds, startDate, endDate, metrics);
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
  **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want insights data for | [optional] 
  **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
  **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
- **metrics** | [**BuiltList&lt;String&gt;**](String.md)| The types of metrics you want to get | [optional] 
+ **metrics** | [**BuiltList&lt;MetricType&gt;**](MetricType.md)| The types of metrics you want to get | [optional] 
 
 ### Return type
 
