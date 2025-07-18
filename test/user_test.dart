@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    // String salutation
-    test('to test the property `salutation`', () async {
-      // TODO
-    });
-
     // User email
     // String email
     test('to test the property `email`', () async {

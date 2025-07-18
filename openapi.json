@@ -1689,7 +1689,6 @@
           {
             "name": "locationIds",
             "in": "query",
-            "description": "The ids of the locations you want insights data for",
             "schema": {
               "type": "array",
               "items": {
@@ -1729,7 +1728,6 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved insights data",
             "content": {
               "*/*": {
                 "schema": {
@@ -1816,14 +1814,6 @@
           "id": {
             "type": "integer",
             "format": "int64"
-          },
-          "salutation": {
-            "type": "string",
-            "enum": [
-              "MALE",
-              "FEMALE",
-              "OTHER"
-            ]
           },
           "email": {
             "type": "string",

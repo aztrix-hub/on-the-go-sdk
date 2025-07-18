@@ -24,7 +24,7 @@ class AnalyticsApi {
   ///
   ///
   /// Parameters:
-  /// * [locationIds] - The ids of the locations you want insights data for
+  /// * [locationIds]
   /// * [startDate] - The start date YYYY-MM-DD
   /// * [endDate] - The end date YYYY-MM-DD
   /// * [metrics] - The types of metrics you want to get

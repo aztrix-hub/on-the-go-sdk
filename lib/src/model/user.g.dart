@@ -6,71 +6,9 @@ part of 'user.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const UserSalutationEnum _$userSalutationEnum_MALE =
-    const UserSalutationEnum._('MALE');
-const UserSalutationEnum _$userSalutationEnum_FEMALE =
-    const UserSalutationEnum._('FEMALE');
-const UserSalutationEnum _$userSalutationEnum_OTHER =
-    const UserSalutationEnum._('OTHER');
-
-UserSalutationEnum _$userSalutationEnumValueOf(String name) {
-  switch (name) {
-    case 'MALE':
-      return _$userSalutationEnum_MALE;
-    case 'FEMALE':
-      return _$userSalutationEnum_FEMALE;
-    case 'OTHER':
-      return _$userSalutationEnum_OTHER;
-    default:
-      throw ArgumentError(name);
-  }
-}
-
-final BuiltSet<UserSalutationEnum> _$userSalutationEnumValues =
-    BuiltSet<UserSalutationEnum>(const <UserSalutationEnum>[
-  _$userSalutationEnum_MALE,
-  _$userSalutationEnum_FEMALE,
-  _$userSalutationEnum_OTHER,
-]);
-
-Serializer<UserSalutationEnum> _$userSalutationEnumSerializer =
-    _$UserSalutationEnumSerializer();
-
-class _$UserSalutationEnumSerializer
-    implements PrimitiveSerializer<UserSalutationEnum> {
-  static const Map<String, Object> _toWire = const <String, Object>{
-    'MALE': 'MALE',
-    'FEMALE': 'FEMALE',
-    'OTHER': 'OTHER',
-  };
-  static const Map<Object, String> _fromWire = const <Object, String>{
-    'MALE': 'MALE',
-    'FEMALE': 'FEMALE',
-    'OTHER': 'OTHER',
-  };
-
-  @override
-  final Iterable<Type> types = const <Type>[UserSalutationEnum];
-  @override
-  final String wireName = 'UserSalutationEnum';
-
-  @override
-  Object serialize(Serializers serializers, UserSalutationEnum object,
-          {FullType specifiedType = FullType.unspecified}) =>
-      _toWire[object.name] ?? object.name;
-
-  @override
-  UserSalutationEnum deserialize(Serializers serializers, Object serialized,
-          {FullType specifiedType = FullType.unspecified}) =>
-      UserSalutationEnum.valueOf(
-          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
-}
-
 class _$User extends User {
   @override
   final int? id;
-  @override
-  final UserSalutationEnum? salutation;
   @override
   final String? email;
   @override
@@ -87,7 +25,6 @@ class _$User extends User {
 
   _$User._(
       {this.id,
-      this.salutation,
       this.email,
       required this.firstname,
       required this.lastname,
@@ -106,7 +43,6 @@ class _$User extends User {
     if (identical(other, this)) return true;
     return other is User &&
         id == other.id &&
-        salutation == other.salutation &&
         email == other.email &&
         firstname == other.firstname &&
         lastname == other.lastname &&
@@ -118,7 +54,6 @@ class _$User extends User {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, salutation.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
@@ -132,7 +67,6 @@ class _$User extends User {
   String toString() {
     return (newBuiltValueToStringHelper(r'User')
           ..add('id', id)
-          ..add('salutation', salutation)
           ..add('email', email)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
@@ -148,11 +82,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
   int? _id;
   int? get id => _$this._id;
   set id(int? id) => _$this._id = id;
-
-  UserSalutationEnum? _salutation;
-  UserSalutationEnum? get salutation => _$this._salutation;
-  set salutation(UserSalutationEnum? salutation) =>
-      _$this._salutation = salutation;
 
   String? _email;
   String? get email => _$this._email;
@@ -182,7 +111,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _salutation = $v.salutation;
       _email = $v.email;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
@@ -210,7 +138,6 @@ class UserBuilder implements Builder<User, UserBuilder> {
     final _$result = _$v ??
         _$User._(
           id: id,
-          salutation: salutation,
           email: email,
           firstname: BuiltValueNullFieldError.checkNotNull(
               firstname, r'User', 'firstname'),

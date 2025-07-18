@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,7 +12,6 @@ part 'user.g.dart';
 ///
 /// Properties:
 /// * [id]
-/// * [salutation]
 /// * [email] - User email
 /// * [firstname] - First Name
 /// * [lastname] - Last name
@@ -23,10 +21,6 @@ part 'user.g.dart';
 abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'id')
   int? get id;
-
-  @BuiltValueField(wireName: r'salutation')
-  UserSalutationEnum? get salutation;
-  // enum salutationEnum {  MALE,  FEMALE,  OTHER,  };
 
   /// User email
   @BuiltValueField(wireName: r'email')
@@ -74,13 +68,6 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(int),
-      );
-    }
-    if (object.salutation != null) {
-      yield r'salutation';
-      yield serializers.serialize(
-        object.salutation,
-        specifiedType: const FullType(UserSalutationEnum),
       );
     }
     if (object.email != null) {
@@ -146,13 +133,6 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as int;
           result.id = valueDes;
           break;
-        case r'salutation':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UserSalutationEnum),
-          ) as UserSalutationEnum;
-          result.salutation = valueDes;
-          break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
@@ -215,22 +195,4 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
     );
     return result.build();
   }
-}
-
-class UserSalutationEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'MALE')
-  static const UserSalutationEnum MALE = _$userSalutationEnum_MALE;
-  @BuiltValueEnumConst(wireName: r'FEMALE')
-  static const UserSalutationEnum FEMALE = _$userSalutationEnum_FEMALE;
-  @BuiltValueEnumConst(wireName: r'OTHER')
-  static const UserSalutationEnum OTHER = _$userSalutationEnum_OTHER;
-
-  static Serializer<UserSalutationEnum> get serializer =>
-      _$userSalutationEnumSerializer;
-
-  const UserSalutationEnum._(String name) : super(name);
-
-  static BuiltSet<UserSalutationEnum> get values => _$userSalutationEnumValues;
-  static UserSalutationEnum valueOf(String name) =>
-      _$userSalutationEnumValueOf(name);
 }

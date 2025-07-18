@@ -26,7 +26,7 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAnalyticsApi();
-final BuiltList<String> locationIds = ; // BuiltList<String> | The ids of the locations you want insights data for
+final BuiltList<String> locationIds = ; // BuiltList<String> | 
 final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
 final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
 final BuiltList<MetricType> metrics = ; // BuiltList<MetricType> | The types of metrics you want to get
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| The ids of the locations you want insights data for | [optional] 
+ **locationIds** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
  **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
  **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
  **metrics** | [**BuiltList&lt;MetricType&gt;**](MetricType.md)| The types of metrics you want to get | [optional] 
