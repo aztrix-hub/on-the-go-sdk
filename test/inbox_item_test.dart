@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // String locationId
+    test('to test the property `locationId`', () async {
+      // TODO
+    });
+
     // String rootId
     test('to test the property `rootId`', () async {
       // TODO
@@ -34,11 +39,6 @@ void main() {
 
     // String type
     test('to test the property `type`', () async {
-      // TODO
-    });
-
-    // Location location
-    test('to test the property `location`', () async {
       // TODO
     });
 

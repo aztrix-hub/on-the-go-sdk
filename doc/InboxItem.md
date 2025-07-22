@@ -9,12 +9,12 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
+**locationId** | **String** |  | [optional] 
 **rootId** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
 **date** | [**DateTime**](DateTime.md) |  | [optional] 
 **author** | [**InboxItemAuthor**](InboxItemAuthor.md) |  | [optional] 
 **type** | **String** |  | [optional] 
-**location** | [**Location**](Location.md) |  | [optional] 
 **message** | **String** |  | [optional] 
 **likes** | **int** |  | [optional] 
 **directoryType** | [**DirectoryType**](DirectoryType.md) |  | [optional] 

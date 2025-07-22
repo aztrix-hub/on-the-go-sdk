@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -16,12 +15,12 @@ part 'inbox_item.g.dart';
 ///
 /// Properties:
 /// * [id]
+/// * [locationId]
 /// * [rootId]
 /// * [parentId]
 /// * [date]
 /// * [author]
 /// * [type]
-/// * [location]
 /// * [message]
 /// * [likes]
 /// * [directoryType]
@@ -32,6 +31,9 @@ part 'inbox_item.g.dart';
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
+
+  @BuiltValueField(wireName: r'locationId')
+  String? get locationId;
 
   @BuiltValueField(wireName: r'rootId')
   String? get rootId;
@@ -48,9 +50,6 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'type')
   InboxItemTypeEnum? get type;
   // enum typeEnum {  review,  comment,  recommendation,  recommendationcomment,  post,  photo,  };
-
-  @BuiltValueField(wireName: r'location')
-  Location? get location;
 
   @BuiltValueField(wireName: r'message')
   String? get message;
@@ -101,6 +100,13 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.locationId != null) {
+      yield r'locationId';
+      yield serializers.serialize(
+        object.locationId,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.rootId != null) {
       yield r'rootId';
       yield serializers.serialize(
@@ -134,13 +140,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(InboxItemTypeEnum),
-      );
-    }
-    if (object.location != null) {
-      yield r'location';
-      yield serializers.serialize(
-        object.location,
-        specifiedType: const FullType(Location),
       );
     }
     if (object.message != null) {
@@ -217,6 +216,13 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as String;
           result.id = valueDes;
           break;
+        case r'locationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.locationId = valueDes;
+          break;
         case r'rootId':
           final valueDes = serializers.deserialize(
             value,
@@ -251,13 +257,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
             specifiedType: const FullType(InboxItemTypeEnum),
           ) as InboxItemTypeEnum;
           result.type = valueDes;
-          break;
-        case r'location':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Location),
-          ) as Location;
-          result.location.replace(valueDes);
           break;
         case r'message':
           final valueDes = serializers.deserialize(

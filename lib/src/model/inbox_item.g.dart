@@ -91,6 +91,8 @@ class _$InboxItem extends InboxItem {
   @override
   final String? id;
   @override
+  final String? locationId;
+  @override
   final String? rootId;
   @override
   final String? parentId;
@@ -100,8 +102,6 @@ class _$InboxItem extends InboxItem {
   final InboxItemAuthor? author;
   @override
   final InboxItemTypeEnum? type;
-  @override
-  final Location? location;
   @override
   final String? message;
   @override
@@ -120,12 +120,12 @@ class _$InboxItem extends InboxItem {
 
   _$InboxItem._(
       {this.id,
+      this.locationId,
       this.rootId,
       this.parentId,
       this.date,
       this.author,
       this.type,
-      this.location,
       this.message,
       this.likes,
       this.directoryType,
@@ -145,12 +145,12 @@ class _$InboxItem extends InboxItem {
     if (identical(other, this)) return true;
     return other is InboxItem &&
         id == other.id &&
+        locationId == other.locationId &&
         rootId == other.rootId &&
         parentId == other.parentId &&
         date == other.date &&
         author == other.author &&
         type == other.type &&
-        location == other.location &&
         message == other.message &&
         likes == other.likes &&
         directoryType == other.directoryType &&
@@ -163,12 +163,12 @@ class _$InboxItem extends InboxItem {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, rootId.hashCode);
     _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jc(_$hash, date.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
-    _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
     _$hash = $jc(_$hash, directoryType.hashCode);
@@ -183,12 +183,12 @@ class _$InboxItem extends InboxItem {
   String toString() {
     return (newBuiltValueToStringHelper(r'InboxItem')
           ..add('id', id)
+          ..add('locationId', locationId)
           ..add('rootId', rootId)
           ..add('parentId', parentId)
           ..add('date', date)
           ..add('author', author)
           ..add('type', type)
-          ..add('location', location)
           ..add('message', message)
           ..add('likes', likes)
           ..add('directoryType', directoryType)
@@ -205,6 +205,10 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
 
   String? _rootId;
   String? get rootId => _$this._rootId;
@@ -226,10 +230,6 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   InboxItemTypeEnum? _type;
   InboxItemTypeEnum? get type => _$this._type;
   set type(InboxItemTypeEnum? type) => _$this._type = type;
-
-  LocationBuilder? _location;
-  LocationBuilder get location => _$this._location ??= LocationBuilder();
-  set location(LocationBuilder? location) => _$this._location = location;
 
   String? _message;
   String? get message => _$this._message;
@@ -264,12 +264,12 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _locationId = $v.locationId;
       _rootId = $v.rootId;
       _parentId = $v.parentId;
       _date = $v.date;
       _author = $v.author?.toBuilder();
       _type = $v.type;
-      _location = $v.location?.toBuilder();
       _message = $v.message;
       _likes = $v.likes;
       _directoryType = $v.directoryType;
@@ -300,12 +300,12 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
       _$result = _$v ??
           _$InboxItem._(
             id: id,
+            locationId: locationId,
             rootId: rootId,
             parentId: parentId,
             date: date,
             author: _author?.build(),
             type: type,
-            location: _location?.build(),
             message: message,
             likes: likes,
             directoryType: directoryType,
@@ -318,9 +318,6 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
       try {
         _$failedField = 'author';
         _author?.build();
-
-        _$failedField = 'location';
-        _location?.build();
 
         _$failedField = 'images';
         _images?.build();

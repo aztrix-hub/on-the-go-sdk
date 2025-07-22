@@ -2256,6 +2256,9 @@
           "id": {
             "type": "string"
           },
+          "locationId": {
+            "type": "string"
+          },
           "rootId": {
             "type": "string"
           },
@@ -2290,9 +2293,6 @@
               "post",
               "photo"
             ]
-          },
-          "location": {
-            "$ref": "#/components/schemas/Location"
           },
           "message": {
             "type": "string"
