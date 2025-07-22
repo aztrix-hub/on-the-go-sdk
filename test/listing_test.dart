@@ -22,11 +22,6 @@ void main() {
       // TODO
     });
 
-    // String status
-    test('to test the property `status`', () async {
-      // TODO
-    });
-
     // listing URL
     // String url
     test('to test the property `url`', () async {

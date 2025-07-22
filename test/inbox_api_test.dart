@@ -6,7 +6,7 @@ void main() {
   final instance = OnTheGoSdk().getInboxApi();
 
   group(InboxApi, () {
-    //Future<InboxPost200Response> inboxItemChildrenGet(String id) async
+    //Future<InboxItemChildrenGet200Response> inboxItemChildrenGet(String id) async
     test('test inboxItemChildrenGet', () async {
       // TODO
     });

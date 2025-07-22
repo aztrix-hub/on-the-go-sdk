@@ -1033,29 +1033,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "channels": {
-                    "type": "string",
-                    "enum": [
-                      "cylex-review",
-                      "google-review",
-                      "iglobal-review",
-                      "stadtbranchenbuch-review",
-                      "whereto-review",
-                      "cylex-comment",
-                      "facebook-comment",
-                      "facebook-recommendation",
-                      "facebook-post",
-                      "facebook-recommendationcomment",
-                      "google-comment",
-                      "google-question",
-                      "google-photo",
-                      "google-answer",
-                      "instagram-comment",
-                      "instagram-post",
-                      "iglobal-comment",
-                      "whereto-comment"
-                    ]
-                  },
                   "startDate": {
                     "type": "string",
                     "format": "date-time"
@@ -1085,18 +1062,6 @@
                   "pageSize": {
                     "type": "number",
                     "default": 20
-                  },
-                  "sort": {
-                    "type": "string",
-                    "default": "date"
-                  },
-                  "sortDir": {
-                    "type": "string",
-                    "enum": [
-                      "asc",
-                      "desc"
-                    ],
-                    "default": "desc"
                   }
                 }
               }
@@ -1111,11 +1076,8 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/InboxItem"
-                      }
+                    "inbox": {
+                      "$ref": "#/components/schemas/InboxItems"
                     }
                   }
                 }
@@ -2111,22 +2073,6 @@
           "locationId": {
             "type": "string"
           },
-          "status": {
-            "type": "string",
-            "enum": [
-              "SYNCED",
-              "SUBMITTED",
-              "UPDATING",
-              "LINKED",
-              "ACTION_REQUIRED",
-              "WAITING_ON_YEXT",
-              "WAITING_ON_CUSTOMER",
-              "WAITING_ON_PUBLISHER",
-              "LIVE",
-              "UNAVAILABLE",
-              "OPTED_OUT"
-            ]
-          },
           "url": {
             "type": "string",
             "description": "listing URL"
@@ -2298,10 +2244,25 @@
         },
         "description": "Data Point Model"
       },
+      "InboxItems": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/InboxItem"
+        }
+      },
       "InboxItem": {
         "type": "object",
         "properties": {
-          "actionDate": {
+          "id": {
+            "type": "string"
+          },
+          "rootId": {
+            "type": "string"
+          },
+          "parentId": {
+            "type": "string"
+          },
+          "date": {
             "type": "string",
             "format": "date-time"
           },
@@ -2319,13 +2280,7 @@
               }
             }
           },
-          "businessIds": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "contentType": {
+          "type": {
             "type": "string",
             "enum": [
               "review",
@@ -2336,192 +2291,32 @@
               "photo"
             ]
           },
-          "dataPointId": {
-            "type": "string"
-          },
-          "id": {
-            "type": "string"
-          },
-          "indexedDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isBrand": {
-            "type": "boolean"
-          },
-          "isExpandedReviewNetwork": {
-            "type": "boolean"
-          },
           "location": {
             "$ref": "#/components/schemas/Location"
-          },
-          "locationId": {
-            "type": "string"
           },
           "message": {
             "type": "string"
           },
-          "metrics": {
-            "type": "object",
-            "properties": {
-              "likes": {
-                "type": "integer"
-              }
-            }
+          "likes": {
+            "type": "integer"
           },
-          "nativeId": {
-            "type": "string"
-          },
-          "nativeLink": {
-            "type": "string"
-          },
-          "nativeVenueLink": {
-            "type": "string"
-          },
-          "parentDataPointId": {
-            "type": "string"
-          },
-          "parentIdLink": {
-            "type": "string"
-          },
-          "priority": {
-            "type": "number",
-            "format": "double"
-          },
-          "provider": {
-            "type": "string"
+          "directoryType": {
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "rating": {
             "type": "number",
             "format": "double"
-          },
-          "rootDataPointId": {
-            "type": "string"
-          },
-          "rootIdLink": {
-            "type": "string"
-          },
-          "salesPartnerId": {
-            "type": "string"
-          },
-          "sortDate": {
-            "type": "string",
-            "format": "date-time"
           },
           "status": {
             "type": "string"
           },
-          "media": {
+          "images": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "image": {
-                  "type": "string"
-                },
-                "dataPointId": {
-                  "type": "string"
-                }
-              }
+              "type": "string"
             }
           }
         }
-      },
-      "BrandDataPoint": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "description": "The uberall unique id of the data point",
-            "format": "int64"
-          },
-          "liked": {
-            "type": "boolean",
-            "description": "Whether this datapoint has been liked or not"
-          },
-          "data": {
-            "type": "string",
-            "description": "Content of the datapoint (text of the review, url of the photo, count of checkins...)"
-          },
-          "type": {
-            "type": "string",
-            "description": "Datapoint Type. Values: [PHOTO, REVIEW, CHECKIN, CONVERSATION, QUESTION]",
-            "enum": [
-              "REVIEW",
-              "PHOTO",
-              "CHECKIN",
-              "CONVERSATION",
-              "COMMENT",
-              "QUESTION",
-              "POST",
-              "IMAGE",
-              "VIDEO",
-              "CAROUSEL_ALBUM",
-              "LINK",
-              "EXPANDEDREVIEW",
-              "AD_POST"
-            ]
-          },
-          "actionDate": {
-            "type": "string",
-            "description": "The date when the review/photo/... was published in the online directory",
-            "format": "date-time"
-          },
-          "author": {
-            "type": "string",
-            "description": "Username of the datapoints author"
-          },
-          "authorImage": {
-            "type": "string",
-            "description": "Author profile picture url"
-          },
-          "countComments": {
-            "type": "integer",
-            "description": "Number of comments to this item.",
-            "format": "int32"
-          },
-          "dateCreated": {
-            "type": "string",
-            "description": "The date the datapoint was found",
-            "format": "date-time"
-          },
-          "directLink": {
-            "type": "string",
-            "description": "A link to the online profile"
-          },
-          "directoryType": {
-            "description": "Online directory reference name",
-            "$ref": "#/components/schemas/DirectoryType"
-          },
-          "flagged": {
-            "type": "boolean",
-            "description": "Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\""
-          },
-          "lastUpdated": {
-            "type": "string",
-            "description": "Date of last update",
-            "format": "date-time"
-          },
-          "rating": {
-            "type": "number",
-            "description": "Rating given by the user. Float value, max: 5.",
-            "format": "float"
-          },
-          "repliedByOwner": {
-            "type": "boolean",
-            "description": "True if the owner of the business has replied"
-          },
-          "secondaryData": {
-            "type": "string",
-            "description": "Additional info about the datapoint (eg. text content on instagram pictures)"
-          },
-          "threadActionDate": {
-            "type": "string",
-            "description": "The date of the last interaction in that thread. When a review receives a new comment, the parent will update.",
-            "format": "date-time"
-          }
-        },
-        "description": "Brand Data Point Model"
       },
       "WhitelabelData": {
         "type": "object",
@@ -2550,211 +2345,9 @@
       "DirectoryType": {
         "type": "string",
         "enum": [
-          "FOURSQUARE",
-          "UBER",
           "GOOGLE",
-          "WAZE",
-          "GOOGLE_MAPS",
-          "YELP",
-          "YELP_API",
-          "MEINESTADT",
-          "YELLOW_MAP",
-          "FOCUS",
-          "LOKALEAUSKUNFT",
-          "WEB_DE",
-          "GMX",
-          "ONE_AND_ONE",
-          "FREIEAUSKUNFT",
-          "POINTOO",
-          "NOKIA_HERE",
           "FACEBOOK",
-          "TOMTOM",
-          "STADTBRANCHENBUCH",
-          "CYLEX",
-          "UNTERNEHMENSAUSKUNFT",
-          "ACOMPIO",
-          "BUSINESSBRANCHENBUCH",
-          "YALWA",
-          "THE_PHONEBOOK",
-          "SCOOT",
-          "CENTRAL_INDEX",
-          "CITIPAGES",
-          "ONE_NINE_TWO",
-          "ONE_ONE_EIGHT",
-          "THE_DAILY_RECORD",
-          "THE_EVENING_STANDARD",
-          "THE_SCOTSMAN",
-          "LIVERPOOL_ECHO",
-          "THE_SUN",
-          "THE_INDEPENDENT",
-          "TOUCH_LOCAL",
-          "THE_MIRROR",
-          "ANNUAIRE",
-          "INFOBEL",
-          "US_INFO_COM",
-          "GARMIN",
-          "FACTUAL",
-          "BING",
-          "WO_GIBTS_WAS",
-          "KOOMIO",
-          "ABCLOCAL",
-          "YELLBO",
-          "JELLOO",
-          "GUIDELOCAL",
-          "OEFFNUNGSZEITENBUCH",
-          "APPLE_MAPS",
-          "LOOCAL",
-          "REGIONAL_DE",
-          "WHERE_TO",
-          "TUPALO",
-          "GELBE_SEITEN",
-          "DAS_OERTLICHE",
-          "DIALO",
-          "BUNDES_TELEFONBUCH",
-          "BRANCHENBUCH_DEUTSCHLAND",
-          "MARKTPLATZ_MITTELSTAND",
-          "BUSQUEDA_LOCAL",
-          "RICERCARE_IMPRESE",
-          "PAGES24",
-          "NAVMII",
-          "AUDI",
-          "BMW",
-          "MERCEDES",
-          "VW",
-          "TOYOTA",
-          "FORD",
-          "FIAT",
-          "GM",
-          "ETRUSTED",
-          "INSTAGRAM",
-          "SHOPPING_TIME_NETWORK",
-          "CITY_SQUARES",
-          "SHOWMELOCAL",
-          "LOCALSTACK",
-          "CHAMBER_OF_COMMERCE",
-          "JUDYS_BOOK",
-          "BROWNBOOK",
-          "MY_LOCAL_SERVICES",
-          "YA_SABE",
-          "UNIVISION",
-          "AL_DIA_TX",
-          "LA_VOZ_TX",
-          "CHRON",
-          "STATESMAN",
-          "PALM_BEACH_POST",
-          "MUNDO_HISPANICO",
-          "EL_TIEMPO_LATINO",
-          "LATINOS_US",
-          "HOTFROG",
-          "INFO_IS_INFO",
-          "MANTA",
-          "US_CITY",
-          "GO_YELLOW",
-          "N49",
-          "PRATIQUE",
-          "JUSTACOTE",
-          "EZLOCAL",
-          "ELOCAL",
-          "TRUE_LOCAL",
-          "START_LOCAL",
-          "WOMO",
-          "AUSSIE_WEB",
-          "YELLOW_PAGES",
-          "SUPER_PAGES",
-          "WHITE_PAGES",
-          "DEX_KNOWS",
-          "KAUFDA_MANUAL",
-          "I_GLOBAL",
-          "BRANCHEN_INFO_MANUAL",
-          "GUTE_BANKEN_MANUAL",
-          "D_11880_COM_MANUAL",
-          "BANKOEFFNUNGSZEITEN_DE_MANUAL",
-          "BANK_OEFFNUNGSZEITEN_DE_MANUAL",
-          "CYLEX_MANUAL",
-          "FINDE_OFFEN_MANUAL",
-          "MEIN_PROSPEKT_MANUAL",
-          "DAS_SCHNELLE",
-          "SENSIS_WHITE_PAGES",
-          "SENSIS_TRUE_LOCAL",
-          "SENSIS_YELLOW_PAGES",
-          "FIND_OPEN",
-          "WAND",
-          "BELL_CA",
-          "GO_LOCAL",
-          "MEINUNGSMEISTER",
-          "YANDEX",
-          "YAHOO_MANUAL",
-          "HOLIDAY_CHECK",
-          "TRIP_ADVISOR",
-          "BONIAL_FR",
-          "ZIP_CH",
-          "PAGES_JAUNES",
-          "YELLOW_PAGES_SINGAPORE",
-          "INFOGROUP",
-          "WAZE_NEW",
-          "UBER_NEW",
-          "NEUSTAR",
-          "TRUSTPILOT",
-          "AUSKUNFT",
-          "BAIDU",
-          "NEXT_DOOR",
-          "MICROSOFT_CORTANA",
-          "GOOGLE_ASSISTANT",
-          "CBANQUE",
-          "ORANGE_118_712",
-          "SIRI",
-          "HUAWEI",
-          "DOCTOR_COM",
-          "CARE_DASH",
-          "DENTAL_PLANS",
-          "DOC_SPOT",
-          "HEALTHGRADES",
-          "SHARE_CARE",
-          "VITALS",
-          "WEB_MD",
-          "WELLNESS",
-          "ZOC_DOC",
-          "ZWIVEL",
-          "YP_COM_HEALTH",
-          "BING_HEALTH",
-          "NPPES",
-          "RATE_MDS",
-          "CITYSEARCH",
-          "INSIDER_PAGES",
-          "TWITTER",
-          "ALEXA",
-          "MAP_QUEST",
-          "WEBSITE_WIDGETS",
-          "ECO_MOVEMENT",
-          "GOOGLE_EV",
-          "APPLE_EV",
-          "TESLA_EV",
-          "EUROWAG_EV",
-          "OPIS_EV",
-          "TOMTOM_EV",
-          "HERE_EV",
-          "YELLOW_PAGES_CANADA",
-          "BBB",
-          "UBERALL_SOCIAL_ADS",
-          "APPLE_APPS",
-          "CONSUMER_AFFAIRS",
-          "CREDIT_KARMA",
-          "DELIVERY",
-          "GLASSDOOR",
-          "PLAY_GOOGLE",
-          "GRUBHUB",
-          "INDEED",
-          "LENDING_TREE",
-          "MENUISM",
-          "OPEN_TABLE",
-          "OPEN_TABLE_USA",
-          "WALLET_HUB",
-          "ZILLOW",
-          "ZOMATO",
-          "WHATS_APP",
-          "FOUR_SCREEN",
-          "AND_CHARGE",
-          "LINKED_IN"
+          "INSTAGRAM"
         ]
       },
       "Metrics": {

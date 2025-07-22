@@ -13,12 +13,12 @@ part 'inbox_post200_response.g.dart';
 /// InboxPost200Response
 ///
 /// Properties:
-/// * [data]
+/// * [inbox]
 @BuiltValue()
 abstract class InboxPost200Response
     implements Built<InboxPost200Response, InboxPost200ResponseBuilder> {
-  @BuiltValueField(wireName: r'data')
-  BuiltList<InboxItem>? get data;
+  @BuiltValueField(wireName: r'inbox')
+  BuiltList<InboxItem>? get inbox;
 
   InboxPost200Response._();
 
@@ -49,10 +49,10 @@ class _$InboxPost200ResponseSerializer
     InboxPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.data != null) {
-      yield r'data';
+    if (object.inbox != null) {
+      yield r'inbox';
       yield serializers.serialize(
-        object.data,
+        object.inbox,
         specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
       );
     }
@@ -81,12 +81,12 @@ class _$InboxPost200ResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'data':
+        case r'inbox':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
           ) as BuiltList<InboxItem>;
-          result.data.replace(valueDes);
+          result.inbox.replace(valueDes);
           break;
         default:
           unhandled.add(key);

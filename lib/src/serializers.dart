@@ -26,14 +26,12 @@ import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inn
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/brand_data_point.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
-import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
-import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item_children_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
@@ -77,14 +75,12 @@ part 'serializers.g.dart';
   AiMemoriesPostRequest,
   AiSystemGet200Response,
   AnalyticsGet200Response,
-  BrandDataPoint,
   Category,
   DataPoint,
   DirectoryType,
   InboxItem,
   InboxItemAuthor,
-  InboxItemMediaInner,
-  InboxItemMetrics,
+  InboxItemChildrenGet200Response,
   InboxPost200Response,
   InboxPostRequest,
   InboxReplyPostRequest,

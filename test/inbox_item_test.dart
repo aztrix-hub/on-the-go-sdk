@@ -7,8 +7,23 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(InboxItem, () {
-    // DateTime actionDate
-    test('to test the property `actionDate`', () async {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // String rootId
+    test('to test the property `rootId`', () async {
+      // TODO
+    });
+
+    // String parentId
+    test('to test the property `parentId`', () async {
+      // TODO
+    });
+
+    // DateTime date
+    test('to test the property `date`', () async {
       // TODO
     });
 
@@ -17,38 +32,8 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> businessIds
-    test('to test the property `businessIds`', () async {
-      // TODO
-    });
-
-    // String contentType
-    test('to test the property `contentType`', () async {
-      // TODO
-    });
-
-    // String dataPointId
-    test('to test the property `dataPointId`', () async {
-      // TODO
-    });
-
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // DateTime indexedDate
-    test('to test the property `indexedDate`', () async {
-      // TODO
-    });
-
-    // bool isBrand
-    test('to test the property `isBrand`', () async {
-      // TODO
-    });
-
-    // bool isExpandedReviewNetwork
-    test('to test the property `isExpandedReviewNetwork`', () async {
+    // String type
+    test('to test the property `type`', () async {
       // TODO
     });
 
@@ -57,53 +42,18 @@ void main() {
       // TODO
     });
 
-    // String locationId
-    test('to test the property `locationId`', () async {
-      // TODO
-    });
-
     // String message
     test('to test the property `message`', () async {
       // TODO
     });
 
-    // InboxItemMetrics metrics
-    test('to test the property `metrics`', () async {
+    // int likes
+    test('to test the property `likes`', () async {
       // TODO
     });
 
-    // String nativeId
-    test('to test the property `nativeId`', () async {
-      // TODO
-    });
-
-    // String nativeLink
-    test('to test the property `nativeLink`', () async {
-      // TODO
-    });
-
-    // String nativeVenueLink
-    test('to test the property `nativeVenueLink`', () async {
-      // TODO
-    });
-
-    // String parentDataPointId
-    test('to test the property `parentDataPointId`', () async {
-      // TODO
-    });
-
-    // String parentIdLink
-    test('to test the property `parentIdLink`', () async {
-      // TODO
-    });
-
-    // double priority
-    test('to test the property `priority`', () async {
-      // TODO
-    });
-
-    // String provider
-    test('to test the property `provider`', () async {
+    // DirectoryType directoryType
+    test('to test the property `directoryType`', () async {
       // TODO
     });
 
@@ -112,33 +62,13 @@ void main() {
       // TODO
     });
 
-    // String rootDataPointId
-    test('to test the property `rootDataPointId`', () async {
-      // TODO
-    });
-
-    // String rootIdLink
-    test('to test the property `rootIdLink`', () async {
-      // TODO
-    });
-
-    // String salesPartnerId
-    test('to test the property `salesPartnerId`', () async {
-      // TODO
-    });
-
-    // DateTime sortDate
-    test('to test the property `sortDate`', () async {
-      // TODO
-    });
-
     // String status
     test('to test the property `status`', () async {
       // TODO
     });
 
-    // BuiltList<InboxItemMediaInner> media
-    test('to test the property `media`', () async {
+    // BuiltList<String> images
+    test('to test the property `images`', () async {
       // TODO
     });
   });

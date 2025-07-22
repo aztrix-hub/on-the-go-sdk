@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **inboxItemChildrenGet**
-> InboxPost200Response inboxItemChildrenGet(id)
+> InboxItemChildrenGet200Response inboxItemChildrenGet(id)
 
 
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InboxPost200Response**](InboxPost200Response.md)
+[**InboxItemChildrenGet200Response**](InboxItemChildrenGet200Response.md)
 
 ### Authorization
 

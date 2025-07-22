@@ -8,13 +8,13 @@ part of 'inbox_post200_response.dart';
 
 class _$InboxPost200Response extends InboxPost200Response {
   @override
-  final BuiltList<InboxItem>? data;
+  final BuiltList<InboxItem>? inbox;
 
   factory _$InboxPost200Response(
           [void Function(InboxPost200ResponseBuilder)? updates]) =>
       (InboxPost200ResponseBuilder()..update(updates))._build();
 
-  _$InboxPost200Response._({this.data}) : super._();
+  _$InboxPost200Response._({this.inbox}) : super._();
   @override
   InboxPost200Response rebuild(
           void Function(InboxPost200ResponseBuilder) updates) =>
@@ -27,13 +27,13 @@ class _$InboxPost200Response extends InboxPost200Response {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InboxPost200Response && data == other.data;
+    return other is InboxPost200Response && inbox == other.inbox;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, data.hashCode);
+    _$hash = $jc(_$hash, inbox.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -41,7 +41,7 @@ class _$InboxPost200Response extends InboxPost200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'InboxPost200Response')
-          ..add('data', data))
+          ..add('inbox', inbox))
         .toString();
   }
 }
@@ -50,9 +50,10 @@ class InboxPost200ResponseBuilder
     implements Builder<InboxPost200Response, InboxPost200ResponseBuilder> {
   _$InboxPost200Response? _$v;
 
-  ListBuilder<InboxItem>? _data;
-  ListBuilder<InboxItem> get data => _$this._data ??= ListBuilder<InboxItem>();
-  set data(ListBuilder<InboxItem>? data) => _$this._data = data;
+  ListBuilder<InboxItem>? _inbox;
+  ListBuilder<InboxItem> get inbox =>
+      _$this._inbox ??= ListBuilder<InboxItem>();
+  set inbox(ListBuilder<InboxItem>? inbox) => _$this._inbox = inbox;
 
   InboxPost200ResponseBuilder() {
     InboxPost200Response._defaults(this);
@@ -61,7 +62,7 @@ class InboxPost200ResponseBuilder
   InboxPost200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data?.toBuilder();
+      _inbox = $v.inbox?.toBuilder();
       _$v = null;
     }
     return this;
@@ -85,13 +86,13 @@ class InboxPost200ResponseBuilder
     try {
       _$result = _$v ??
           _$InboxPost200Response._(
-            data: _data?.build(),
+            inbox: _inbox?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'data';
-        _data?.build();
+        _$failedField = 'inbox';
+        _inbox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'InboxPost200Response', _$failedField, e.toString());

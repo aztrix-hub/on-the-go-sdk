@@ -7,11 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(InboxPostRequest, () {
-    // String channels
-    test('to test the property `channels`', () async {
-      // TODO
-    });
-
     // DateTime startDate
     test('to test the property `startDate`', () async {
       // TODO
@@ -34,16 +29,6 @@ void main() {
 
     // num pageSize (default value: 20)
     test('to test the property `pageSize`', () async {
-      // TODO
-    });
-
-    // String sort (default value: 'date')
-    test('to test the property `sort`', () async {
-      // TODO
-    });
-
-    // String sortDir (default value: 'desc')
-    test('to test the property `sortDir`', () async {
       // TODO
     });
   });

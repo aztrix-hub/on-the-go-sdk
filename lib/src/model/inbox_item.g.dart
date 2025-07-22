@@ -6,54 +6,53 @@ part of 'inbox_item.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const InboxItemContentTypeEnum _$inboxItemContentTypeEnum_review =
-    const InboxItemContentTypeEnum._('review');
-const InboxItemContentTypeEnum _$inboxItemContentTypeEnum_comment =
-    const InboxItemContentTypeEnum._('comment');
-const InboxItemContentTypeEnum _$inboxItemContentTypeEnum_recommendation =
-    const InboxItemContentTypeEnum._('recommendation');
-const InboxItemContentTypeEnum
-    _$inboxItemContentTypeEnum_recommendationcomment =
-    const InboxItemContentTypeEnum._('recommendationcomment');
-const InboxItemContentTypeEnum _$inboxItemContentTypeEnum_post =
-    const InboxItemContentTypeEnum._('post');
-const InboxItemContentTypeEnum _$inboxItemContentTypeEnum_photo =
-    const InboxItemContentTypeEnum._('photo');
+const InboxItemTypeEnum _$inboxItemTypeEnum_review =
+    const InboxItemTypeEnum._('review');
+const InboxItemTypeEnum _$inboxItemTypeEnum_comment =
+    const InboxItemTypeEnum._('comment');
+const InboxItemTypeEnum _$inboxItemTypeEnum_recommendation =
+    const InboxItemTypeEnum._('recommendation');
+const InboxItemTypeEnum _$inboxItemTypeEnum_recommendationcomment =
+    const InboxItemTypeEnum._('recommendationcomment');
+const InboxItemTypeEnum _$inboxItemTypeEnum_post =
+    const InboxItemTypeEnum._('post');
+const InboxItemTypeEnum _$inboxItemTypeEnum_photo =
+    const InboxItemTypeEnum._('photo');
 
-InboxItemContentTypeEnum _$inboxItemContentTypeEnumValueOf(String name) {
+InboxItemTypeEnum _$inboxItemTypeEnumValueOf(String name) {
   switch (name) {
     case 'review':
-      return _$inboxItemContentTypeEnum_review;
+      return _$inboxItemTypeEnum_review;
     case 'comment':
-      return _$inboxItemContentTypeEnum_comment;
+      return _$inboxItemTypeEnum_comment;
     case 'recommendation':
-      return _$inboxItemContentTypeEnum_recommendation;
+      return _$inboxItemTypeEnum_recommendation;
     case 'recommendationcomment':
-      return _$inboxItemContentTypeEnum_recommendationcomment;
+      return _$inboxItemTypeEnum_recommendationcomment;
     case 'post':
-      return _$inboxItemContentTypeEnum_post;
+      return _$inboxItemTypeEnum_post;
     case 'photo':
-      return _$inboxItemContentTypeEnum_photo;
+      return _$inboxItemTypeEnum_photo;
     default:
       throw ArgumentError(name);
   }
 }
 
-final BuiltSet<InboxItemContentTypeEnum> _$inboxItemContentTypeEnumValues =
-    BuiltSet<InboxItemContentTypeEnum>(const <InboxItemContentTypeEnum>[
-  _$inboxItemContentTypeEnum_review,
-  _$inboxItemContentTypeEnum_comment,
-  _$inboxItemContentTypeEnum_recommendation,
-  _$inboxItemContentTypeEnum_recommendationcomment,
-  _$inboxItemContentTypeEnum_post,
-  _$inboxItemContentTypeEnum_photo,
+final BuiltSet<InboxItemTypeEnum> _$inboxItemTypeEnumValues =
+    BuiltSet<InboxItemTypeEnum>(const <InboxItemTypeEnum>[
+  _$inboxItemTypeEnum_review,
+  _$inboxItemTypeEnum_comment,
+  _$inboxItemTypeEnum_recommendation,
+  _$inboxItemTypeEnum_recommendationcomment,
+  _$inboxItemTypeEnum_post,
+  _$inboxItemTypeEnum_photo,
 ]);
 
-Serializer<InboxItemContentTypeEnum> _$inboxItemContentTypeEnumSerializer =
-    _$InboxItemContentTypeEnumSerializer();
+Serializer<InboxItemTypeEnum> _$inboxItemTypeEnumSerializer =
+    _$InboxItemTypeEnumSerializer();
 
-class _$InboxItemContentTypeEnumSerializer
-    implements PrimitiveSerializer<InboxItemContentTypeEnum> {
+class _$InboxItemTypeEnumSerializer
+    implements PrimitiveSerializer<InboxItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'review': 'review',
     'comment': 'comment',
@@ -72,110 +71,67 @@ class _$InboxItemContentTypeEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[InboxItemContentTypeEnum];
+  final Iterable<Type> types = const <Type>[InboxItemTypeEnum];
   @override
-  final String wireName = 'InboxItemContentTypeEnum';
+  final String wireName = 'InboxItemTypeEnum';
 
   @override
-  Object serialize(Serializers serializers, InboxItemContentTypeEnum object,
+  Object serialize(Serializers serializers, InboxItemTypeEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  InboxItemContentTypeEnum deserialize(
-          Serializers serializers, Object serialized,
+  InboxItemTypeEnum deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      InboxItemContentTypeEnum.valueOf(
+      InboxItemTypeEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
 class _$InboxItem extends InboxItem {
   @override
-  final DateTime? actionDate;
+  final String? id;
+  @override
+  final String? rootId;
+  @override
+  final String? parentId;
+  @override
+  final DateTime? date;
   @override
   final InboxItemAuthor? author;
   @override
-  final BuiltList<String>? businessIds;
-  @override
-  final InboxItemContentTypeEnum? contentType;
-  @override
-  final String? dataPointId;
-  @override
-  final String? id;
-  @override
-  final DateTime? indexedDate;
-  @override
-  final bool? isBrand;
-  @override
-  final bool? isExpandedReviewNetwork;
+  final InboxItemTypeEnum? type;
   @override
   final Location? location;
   @override
-  final String? locationId;
-  @override
   final String? message;
   @override
-  final InboxItemMetrics? metrics;
+  final int? likes;
   @override
-  final String? nativeId;
-  @override
-  final String? nativeLink;
-  @override
-  final String? nativeVenueLink;
-  @override
-  final String? parentDataPointId;
-  @override
-  final String? parentIdLink;
-  @override
-  final double? priority;
-  @override
-  final String? provider;
+  final DirectoryType? directoryType;
   @override
   final double? rating;
   @override
-  final String? rootDataPointId;
-  @override
-  final String? rootIdLink;
-  @override
-  final String? salesPartnerId;
-  @override
-  final DateTime? sortDate;
-  @override
   final String? status;
   @override
-  final BuiltList<InboxItemMediaInner>? media;
+  final BuiltList<String>? images;
 
   factory _$InboxItem([void Function(InboxItemBuilder)? updates]) =>
       (InboxItemBuilder()..update(updates))._build();
 
   _$InboxItem._(
-      {this.actionDate,
+      {this.id,
+      this.rootId,
+      this.parentId,
+      this.date,
       this.author,
-      this.businessIds,
-      this.contentType,
-      this.dataPointId,
-      this.id,
-      this.indexedDate,
-      this.isBrand,
-      this.isExpandedReviewNetwork,
+      this.type,
       this.location,
-      this.locationId,
       this.message,
-      this.metrics,
-      this.nativeId,
-      this.nativeLink,
-      this.nativeVenueLink,
-      this.parentDataPointId,
-      this.parentIdLink,
-      this.priority,
-      this.provider,
+      this.likes,
+      this.directoryType,
       this.rating,
-      this.rootDataPointId,
-      this.rootIdLink,
-      this.salesPartnerId,
-      this.sortDate,
       this.status,
-      this.media})
+      this.images})
       : super._();
   @override
   InboxItem rebuild(void Function(InboxItemBuilder) updates) =>
@@ -188,65 +144,37 @@ class _$InboxItem extends InboxItem {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is InboxItem &&
-        actionDate == other.actionDate &&
-        author == other.author &&
-        businessIds == other.businessIds &&
-        contentType == other.contentType &&
-        dataPointId == other.dataPointId &&
         id == other.id &&
-        indexedDate == other.indexedDate &&
-        isBrand == other.isBrand &&
-        isExpandedReviewNetwork == other.isExpandedReviewNetwork &&
+        rootId == other.rootId &&
+        parentId == other.parentId &&
+        date == other.date &&
+        author == other.author &&
+        type == other.type &&
         location == other.location &&
-        locationId == other.locationId &&
         message == other.message &&
-        metrics == other.metrics &&
-        nativeId == other.nativeId &&
-        nativeLink == other.nativeLink &&
-        nativeVenueLink == other.nativeVenueLink &&
-        parentDataPointId == other.parentDataPointId &&
-        parentIdLink == other.parentIdLink &&
-        priority == other.priority &&
-        provider == other.provider &&
+        likes == other.likes &&
+        directoryType == other.directoryType &&
         rating == other.rating &&
-        rootDataPointId == other.rootDataPointId &&
-        rootIdLink == other.rootIdLink &&
-        salesPartnerId == other.salesPartnerId &&
-        sortDate == other.sortDate &&
         status == other.status &&
-        media == other.media;
+        images == other.images;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, actionDate.hashCode);
-    _$hash = $jc(_$hash, author.hashCode);
-    _$hash = $jc(_$hash, businessIds.hashCode);
-    _$hash = $jc(_$hash, contentType.hashCode);
-    _$hash = $jc(_$hash, dataPointId.hashCode);
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, indexedDate.hashCode);
-    _$hash = $jc(_$hash, isBrand.hashCode);
-    _$hash = $jc(_$hash, isExpandedReviewNetwork.hashCode);
+    _$hash = $jc(_$hash, rootId.hashCode);
+    _$hash = $jc(_$hash, parentId.hashCode);
+    _$hash = $jc(_$hash, date.hashCode);
+    _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
-    _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
-    _$hash = $jc(_$hash, metrics.hashCode);
-    _$hash = $jc(_$hash, nativeId.hashCode);
-    _$hash = $jc(_$hash, nativeLink.hashCode);
-    _$hash = $jc(_$hash, nativeVenueLink.hashCode);
-    _$hash = $jc(_$hash, parentDataPointId.hashCode);
-    _$hash = $jc(_$hash, parentIdLink.hashCode);
-    _$hash = $jc(_$hash, priority.hashCode);
-    _$hash = $jc(_$hash, provider.hashCode);
+    _$hash = $jc(_$hash, likes.hashCode);
+    _$hash = $jc(_$hash, directoryType.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
-    _$hash = $jc(_$hash, rootDataPointId.hashCode);
-    _$hash = $jc(_$hash, rootIdLink.hashCode);
-    _$hash = $jc(_$hash, salesPartnerId.hashCode);
-    _$hash = $jc(_$hash, sortDate.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, media.hashCode);
+    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -254,33 +182,19 @@ class _$InboxItem extends InboxItem {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'InboxItem')
-          ..add('actionDate', actionDate)
-          ..add('author', author)
-          ..add('businessIds', businessIds)
-          ..add('contentType', contentType)
-          ..add('dataPointId', dataPointId)
           ..add('id', id)
-          ..add('indexedDate', indexedDate)
-          ..add('isBrand', isBrand)
-          ..add('isExpandedReviewNetwork', isExpandedReviewNetwork)
+          ..add('rootId', rootId)
+          ..add('parentId', parentId)
+          ..add('date', date)
+          ..add('author', author)
+          ..add('type', type)
           ..add('location', location)
-          ..add('locationId', locationId)
           ..add('message', message)
-          ..add('metrics', metrics)
-          ..add('nativeId', nativeId)
-          ..add('nativeLink', nativeLink)
-          ..add('nativeVenueLink', nativeVenueLink)
-          ..add('parentDataPointId', parentDataPointId)
-          ..add('parentIdLink', parentIdLink)
-          ..add('priority', priority)
-          ..add('provider', provider)
+          ..add('likes', likes)
+          ..add('directoryType', directoryType)
           ..add('rating', rating)
-          ..add('rootDataPointId', rootDataPointId)
-          ..add('rootIdLink', rootIdLink)
-          ..add('salesPartnerId', salesPartnerId)
-          ..add('sortDate', sortDate)
           ..add('status', status)
-          ..add('media', media))
+          ..add('images', images))
         .toString();
   }
 }
@@ -288,124 +202,59 @@ class _$InboxItem extends InboxItem {
 class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   _$InboxItem? _$v;
 
-  DateTime? _actionDate;
-  DateTime? get actionDate => _$this._actionDate;
-  set actionDate(DateTime? actionDate) => _$this._actionDate = actionDate;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
+  String? _rootId;
+  String? get rootId => _$this._rootId;
+  set rootId(String? rootId) => _$this._rootId = rootId;
+
+  String? _parentId;
+  String? get parentId => _$this._parentId;
+  set parentId(String? parentId) => _$this._parentId = parentId;
+
+  DateTime? _date;
+  DateTime? get date => _$this._date;
+  set date(DateTime? date) => _$this._date = date;
 
   InboxItemAuthorBuilder? _author;
   InboxItemAuthorBuilder get author =>
       _$this._author ??= InboxItemAuthorBuilder();
   set author(InboxItemAuthorBuilder? author) => _$this._author = author;
 
-  ListBuilder<String>? _businessIds;
-  ListBuilder<String> get businessIds =>
-      _$this._businessIds ??= ListBuilder<String>();
-  set businessIds(ListBuilder<String>? businessIds) =>
-      _$this._businessIds = businessIds;
-
-  InboxItemContentTypeEnum? _contentType;
-  InboxItemContentTypeEnum? get contentType => _$this._contentType;
-  set contentType(InboxItemContentTypeEnum? contentType) =>
-      _$this._contentType = contentType;
-
-  String? _dataPointId;
-  String? get dataPointId => _$this._dataPointId;
-  set dataPointId(String? dataPointId) => _$this._dataPointId = dataPointId;
-
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
-
-  DateTime? _indexedDate;
-  DateTime? get indexedDate => _$this._indexedDate;
-  set indexedDate(DateTime? indexedDate) => _$this._indexedDate = indexedDate;
-
-  bool? _isBrand;
-  bool? get isBrand => _$this._isBrand;
-  set isBrand(bool? isBrand) => _$this._isBrand = isBrand;
-
-  bool? _isExpandedReviewNetwork;
-  bool? get isExpandedReviewNetwork => _$this._isExpandedReviewNetwork;
-  set isExpandedReviewNetwork(bool? isExpandedReviewNetwork) =>
-      _$this._isExpandedReviewNetwork = isExpandedReviewNetwork;
+  InboxItemTypeEnum? _type;
+  InboxItemTypeEnum? get type => _$this._type;
+  set type(InboxItemTypeEnum? type) => _$this._type = type;
 
   LocationBuilder? _location;
   LocationBuilder get location => _$this._location ??= LocationBuilder();
   set location(LocationBuilder? location) => _$this._location = location;
 
-  String? _locationId;
-  String? get locationId => _$this._locationId;
-  set locationId(String? locationId) => _$this._locationId = locationId;
-
   String? _message;
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  InboxItemMetricsBuilder? _metrics;
-  InboxItemMetricsBuilder get metrics =>
-      _$this._metrics ??= InboxItemMetricsBuilder();
-  set metrics(InboxItemMetricsBuilder? metrics) => _$this._metrics = metrics;
+  int? _likes;
+  int? get likes => _$this._likes;
+  set likes(int? likes) => _$this._likes = likes;
 
-  String? _nativeId;
-  String? get nativeId => _$this._nativeId;
-  set nativeId(String? nativeId) => _$this._nativeId = nativeId;
-
-  String? _nativeLink;
-  String? get nativeLink => _$this._nativeLink;
-  set nativeLink(String? nativeLink) => _$this._nativeLink = nativeLink;
-
-  String? _nativeVenueLink;
-  String? get nativeVenueLink => _$this._nativeVenueLink;
-  set nativeVenueLink(String? nativeVenueLink) =>
-      _$this._nativeVenueLink = nativeVenueLink;
-
-  String? _parentDataPointId;
-  String? get parentDataPointId => _$this._parentDataPointId;
-  set parentDataPointId(String? parentDataPointId) =>
-      _$this._parentDataPointId = parentDataPointId;
-
-  String? _parentIdLink;
-  String? get parentIdLink => _$this._parentIdLink;
-  set parentIdLink(String? parentIdLink) => _$this._parentIdLink = parentIdLink;
-
-  double? _priority;
-  double? get priority => _$this._priority;
-  set priority(double? priority) => _$this._priority = priority;
-
-  String? _provider;
-  String? get provider => _$this._provider;
-  set provider(String? provider) => _$this._provider = provider;
+  DirectoryType? _directoryType;
+  DirectoryType? get directoryType => _$this._directoryType;
+  set directoryType(DirectoryType? directoryType) =>
+      _$this._directoryType = directoryType;
 
   double? _rating;
   double? get rating => _$this._rating;
   set rating(double? rating) => _$this._rating = rating;
 
-  String? _rootDataPointId;
-  String? get rootDataPointId => _$this._rootDataPointId;
-  set rootDataPointId(String? rootDataPointId) =>
-      _$this._rootDataPointId = rootDataPointId;
-
-  String? _rootIdLink;
-  String? get rootIdLink => _$this._rootIdLink;
-  set rootIdLink(String? rootIdLink) => _$this._rootIdLink = rootIdLink;
-
-  String? _salesPartnerId;
-  String? get salesPartnerId => _$this._salesPartnerId;
-  set salesPartnerId(String? salesPartnerId) =>
-      _$this._salesPartnerId = salesPartnerId;
-
-  DateTime? _sortDate;
-  DateTime? get sortDate => _$this._sortDate;
-  set sortDate(DateTime? sortDate) => _$this._sortDate = sortDate;
-
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
 
-  ListBuilder<InboxItemMediaInner>? _media;
-  ListBuilder<InboxItemMediaInner> get media =>
-      _$this._media ??= ListBuilder<InboxItemMediaInner>();
-  set media(ListBuilder<InboxItemMediaInner>? media) => _$this._media = media;
+  ListBuilder<String>? _images;
+  ListBuilder<String> get images => _$this._images ??= ListBuilder<String>();
+  set images(ListBuilder<String>? images) => _$this._images = images;
 
   InboxItemBuilder() {
     InboxItem._defaults(this);
@@ -414,33 +263,19 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   InboxItemBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _actionDate = $v.actionDate;
-      _author = $v.author?.toBuilder();
-      _businessIds = $v.businessIds?.toBuilder();
-      _contentType = $v.contentType;
-      _dataPointId = $v.dataPointId;
       _id = $v.id;
-      _indexedDate = $v.indexedDate;
-      _isBrand = $v.isBrand;
-      _isExpandedReviewNetwork = $v.isExpandedReviewNetwork;
+      _rootId = $v.rootId;
+      _parentId = $v.parentId;
+      _date = $v.date;
+      _author = $v.author?.toBuilder();
+      _type = $v.type;
       _location = $v.location?.toBuilder();
-      _locationId = $v.locationId;
       _message = $v.message;
-      _metrics = $v.metrics?.toBuilder();
-      _nativeId = $v.nativeId;
-      _nativeLink = $v.nativeLink;
-      _nativeVenueLink = $v.nativeVenueLink;
-      _parentDataPointId = $v.parentDataPointId;
-      _parentIdLink = $v.parentIdLink;
-      _priority = $v.priority;
-      _provider = $v.provider;
+      _likes = $v.likes;
+      _directoryType = $v.directoryType;
       _rating = $v.rating;
-      _rootDataPointId = $v.rootDataPointId;
-      _rootIdLink = $v.rootIdLink;
-      _salesPartnerId = $v.salesPartnerId;
-      _sortDate = $v.sortDate;
       _status = $v.status;
-      _media = $v.media?.toBuilder();
+      _images = $v.images?.toBuilder();
       _$v = null;
     }
     return this;
@@ -464,50 +299,31 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
     try {
       _$result = _$v ??
           _$InboxItem._(
-            actionDate: actionDate,
-            author: _author?.build(),
-            businessIds: _businessIds?.build(),
-            contentType: contentType,
-            dataPointId: dataPointId,
             id: id,
-            indexedDate: indexedDate,
-            isBrand: isBrand,
-            isExpandedReviewNetwork: isExpandedReviewNetwork,
+            rootId: rootId,
+            parentId: parentId,
+            date: date,
+            author: _author?.build(),
+            type: type,
             location: _location?.build(),
-            locationId: locationId,
             message: message,
-            metrics: _metrics?.build(),
-            nativeId: nativeId,
-            nativeLink: nativeLink,
-            nativeVenueLink: nativeVenueLink,
-            parentDataPointId: parentDataPointId,
-            parentIdLink: parentIdLink,
-            priority: priority,
-            provider: provider,
+            likes: likes,
+            directoryType: directoryType,
             rating: rating,
-            rootDataPointId: rootDataPointId,
-            rootIdLink: rootIdLink,
-            salesPartnerId: salesPartnerId,
-            sortDate: sortDate,
             status: status,
-            media: _media?.build(),
+            images: _images?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'author';
         _author?.build();
-        _$failedField = 'businessIds';
-        _businessIds?.build();
 
         _$failedField = 'location';
         _location?.build();
 
-        _$failedField = 'metrics';
-        _metrics?.build();
-
-        _$failedField = 'media';
-        _media?.build();
+        _$failedField = 'images';
+        _images?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'InboxItem', _$failedField, e.toString());

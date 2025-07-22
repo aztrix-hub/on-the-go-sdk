@@ -32,14 +32,12 @@ export 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inn
 export 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
-export 'package:on_the_go_sdk/src/model/brand_data_point.dart';
 export 'package:on_the_go_sdk/src/model/category.dart';
 export 'package:on_the_go_sdk/src/model/data_point.dart';
 export 'package:on_the_go_sdk/src/model/directory_type.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
-export 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
-export 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
+export 'package:on_the_go_sdk/src/model/inbox_item_children_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';

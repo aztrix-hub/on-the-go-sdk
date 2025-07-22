@@ -3,10 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/inbox_item_media_inner.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
-import 'package:on_the_go_sdk/src/model/inbox_item_metrics.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -16,116 +15,61 @@ part 'inbox_item.g.dart';
 /// InboxItem
 ///
 /// Properties:
-/// * [actionDate]
-/// * [author]
-/// * [businessIds]
-/// * [contentType]
-/// * [dataPointId]
 /// * [id]
-/// * [indexedDate]
-/// * [isBrand]
-/// * [isExpandedReviewNetwork]
+/// * [rootId]
+/// * [parentId]
+/// * [date]
+/// * [author]
+/// * [type]
 /// * [location]
-/// * [locationId]
 /// * [message]
-/// * [metrics]
-/// * [nativeId]
-/// * [nativeLink]
-/// * [nativeVenueLink]
-/// * [parentDataPointId]
-/// * [parentIdLink]
-/// * [priority]
-/// * [provider]
+/// * [likes]
+/// * [directoryType]
 /// * [rating]
-/// * [rootDataPointId]
-/// * [rootIdLink]
-/// * [salesPartnerId]
-/// * [sortDate]
 /// * [status]
-/// * [media]
+/// * [images]
 @BuiltValue()
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
-  @BuiltValueField(wireName: r'actionDate')
-  DateTime? get actionDate;
+  @BuiltValueField(wireName: r'id')
+  String? get id;
+
+  @BuiltValueField(wireName: r'rootId')
+  String? get rootId;
+
+  @BuiltValueField(wireName: r'parentId')
+  String? get parentId;
+
+  @BuiltValueField(wireName: r'date')
+  DateTime? get date;
 
   @BuiltValueField(wireName: r'author')
   InboxItemAuthor? get author;
 
-  @BuiltValueField(wireName: r'businessIds')
-  BuiltList<String>? get businessIds;
-
-  @BuiltValueField(wireName: r'contentType')
-  InboxItemContentTypeEnum? get contentType;
-  // enum contentTypeEnum {  review,  comment,  recommendation,  recommendationcomment,  post,  photo,  };
-
-  @BuiltValueField(wireName: r'dataPointId')
-  String? get dataPointId;
-
-  @BuiltValueField(wireName: r'id')
-  String? get id;
-
-  @BuiltValueField(wireName: r'indexedDate')
-  DateTime? get indexedDate;
-
-  @BuiltValueField(wireName: r'isBrand')
-  bool? get isBrand;
-
-  @BuiltValueField(wireName: r'isExpandedReviewNetwork')
-  bool? get isExpandedReviewNetwork;
+  @BuiltValueField(wireName: r'type')
+  InboxItemTypeEnum? get type;
+  // enum typeEnum {  review,  comment,  recommendation,  recommendationcomment,  post,  photo,  };
 
   @BuiltValueField(wireName: r'location')
   Location? get location;
 
-  @BuiltValueField(wireName: r'locationId')
-  String? get locationId;
-
   @BuiltValueField(wireName: r'message')
   String? get message;
 
-  @BuiltValueField(wireName: r'metrics')
-  InboxItemMetrics? get metrics;
+  @BuiltValueField(wireName: r'likes')
+  int? get likes;
 
-  @BuiltValueField(wireName: r'nativeId')
-  String? get nativeId;
-
-  @BuiltValueField(wireName: r'nativeLink')
-  String? get nativeLink;
-
-  @BuiltValueField(wireName: r'nativeVenueLink')
-  String? get nativeVenueLink;
-
-  @BuiltValueField(wireName: r'parentDataPointId')
-  String? get parentDataPointId;
-
-  @BuiltValueField(wireName: r'parentIdLink')
-  String? get parentIdLink;
-
-  @BuiltValueField(wireName: r'priority')
-  double? get priority;
-
-  @BuiltValueField(wireName: r'provider')
-  String? get provider;
+  @BuiltValueField(wireName: r'directoryType')
+  DirectoryType? get directoryType;
+  // enum directoryTypeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'rating')
   double? get rating;
 
-  @BuiltValueField(wireName: r'rootDataPointId')
-  String? get rootDataPointId;
-
-  @BuiltValueField(wireName: r'rootIdLink')
-  String? get rootIdLink;
-
-  @BuiltValueField(wireName: r'salesPartnerId')
-  String? get salesPartnerId;
-
-  @BuiltValueField(wireName: r'sortDate')
-  DateTime? get sortDate;
-
   @BuiltValueField(wireName: r'status')
   String? get status;
 
-  @BuiltValueField(wireName: r'media')
-  BuiltList<InboxItemMediaInner>? get media;
+  @BuiltValueField(wireName: r'images')
+  BuiltList<String>? get images;
 
   InboxItem._();
 
@@ -150,10 +94,31 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
     InboxItem object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.actionDate != null) {
-      yield r'actionDate';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.actionDate,
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.rootId != null) {
+      yield r'rootId';
+      yield serializers.serialize(
+        object.rootId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.parentId != null) {
+      yield r'parentId';
+      yield serializers.serialize(
+        object.parentId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.date != null) {
+      yield r'date';
+      yield serializers.serialize(
+        object.date,
         specifiedType: const FullType(DateTime),
       );
     }
@@ -164,53 +129,11 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(InboxItemAuthor),
       );
     }
-    if (object.businessIds != null) {
-      yield r'businessIds';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.businessIds,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.contentType != null) {
-      yield r'contentType';
-      yield serializers.serialize(
-        object.contentType,
-        specifiedType: const FullType(InboxItemContentTypeEnum),
-      );
-    }
-    if (object.dataPointId != null) {
-      yield r'dataPointId';
-      yield serializers.serialize(
-        object.dataPointId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.indexedDate != null) {
-      yield r'indexedDate';
-      yield serializers.serialize(
-        object.indexedDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.isBrand != null) {
-      yield r'isBrand';
-      yield serializers.serialize(
-        object.isBrand,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.isExpandedReviewNetwork != null) {
-      yield r'isExpandedReviewNetwork';
-      yield serializers.serialize(
-        object.isExpandedReviewNetwork,
-        specifiedType: const FullType(bool),
+        object.type,
+        specifiedType: const FullType(InboxItemTypeEnum),
       );
     }
     if (object.location != null) {
@@ -220,13 +143,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(Location),
       );
     }
-    if (object.locationId != null) {
-      yield r'locationId';
-      yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.message != null) {
       yield r'message';
       yield serializers.serialize(
@@ -234,60 +150,18 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.metrics != null) {
-      yield r'metrics';
+    if (object.likes != null) {
+      yield r'likes';
       yield serializers.serialize(
-        object.metrics,
-        specifiedType: const FullType(InboxItemMetrics),
+        object.likes,
+        specifiedType: const FullType(int),
       );
     }
-    if (object.nativeId != null) {
-      yield r'nativeId';
+    if (object.directoryType != null) {
+      yield r'directoryType';
       yield serializers.serialize(
-        object.nativeId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nativeLink != null) {
-      yield r'nativeLink';
-      yield serializers.serialize(
-        object.nativeLink,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nativeVenueLink != null) {
-      yield r'nativeVenueLink';
-      yield serializers.serialize(
-        object.nativeVenueLink,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.parentDataPointId != null) {
-      yield r'parentDataPointId';
-      yield serializers.serialize(
-        object.parentDataPointId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.parentIdLink != null) {
-      yield r'parentIdLink';
-      yield serializers.serialize(
-        object.parentIdLink,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(double),
-      );
-    }
-    if (object.provider != null) {
-      yield r'provider';
-      yield serializers.serialize(
-        object.provider,
-        specifiedType: const FullType(String),
+        object.directoryType,
+        specifiedType: const FullType(DirectoryType),
       );
     }
     if (object.rating != null) {
@@ -297,34 +171,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(double),
       );
     }
-    if (object.rootDataPointId != null) {
-      yield r'rootDataPointId';
-      yield serializers.serialize(
-        object.rootDataPointId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.rootIdLink != null) {
-      yield r'rootIdLink';
-      yield serializers.serialize(
-        object.rootIdLink,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.salesPartnerId != null) {
-      yield r'salesPartnerId';
-      yield serializers.serialize(
-        object.salesPartnerId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sortDate != null) {
-      yield r'sortDate';
-      yield serializers.serialize(
-        object.sortDate,
-        specifiedType: const FullType(DateTime),
-      );
-    }
     if (object.status != null) {
       yield r'status';
       yield serializers.serialize(
@@ -332,12 +178,11 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.media != null) {
-      yield r'media';
+    if (object.images != null) {
+      yield r'images';
       yield serializers.serialize(
-        object.media,
-        specifiedType:
-            const FullType(BuiltList, [FullType(InboxItemMediaInner)]),
+        object.images,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
   }
@@ -365,12 +210,33 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'actionDate':
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'rootId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.rootId = valueDes;
+          break;
+        case r'parentId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.parentId = valueDes;
+          break;
+        case r'date':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
-          result.actionDate = valueDes;
+          result.date = valueDes;
           break;
         case r'author':
           final valueDes = serializers.deserialize(
@@ -379,54 +245,12 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as InboxItemAuthor;
           result.author.replace(valueDes);
           break;
-        case r'businessIds':
+        case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.businessIds.replace(valueDes);
-          break;
-        case r'contentType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(InboxItemContentTypeEnum),
-          ) as InboxItemContentTypeEnum;
-          result.contentType = valueDes;
-          break;
-        case r'dataPointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.dataPointId = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'indexedDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.indexedDate = valueDes;
-          break;
-        case r'isBrand':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isBrand = valueDes;
-          break;
-        case r'isExpandedReviewNetwork':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isExpandedReviewNetwork = valueDes;
+            specifiedType: const FullType(InboxItemTypeEnum),
+          ) as InboxItemTypeEnum;
+          result.type = valueDes;
           break;
         case r'location':
           final valueDes = serializers.deserialize(
@@ -435,13 +259,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as Location;
           result.location.replace(valueDes);
           break;
-        case r'locationId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.locationId = valueDes;
-          break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
@@ -449,61 +266,19 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as String;
           result.message = valueDes;
           break;
-        case r'metrics':
+        case r'likes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(InboxItemMetrics),
-          ) as InboxItemMetrics;
-          result.metrics.replace(valueDes);
+            specifiedType: const FullType(int),
+          ) as int;
+          result.likes = valueDes;
           break;
-        case r'nativeId':
+        case r'directoryType':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nativeId = valueDes;
-          break;
-        case r'nativeLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nativeLink = valueDes;
-          break;
-        case r'nativeVenueLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nativeVenueLink = valueDes;
-          break;
-        case r'parentDataPointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.parentDataPointId = valueDes;
-          break;
-        case r'parentIdLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.parentIdLink = valueDes;
-          break;
-        case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
-          result.priority = valueDes;
-          break;
-        case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.provider = valueDes;
+            specifiedType: const FullType(DirectoryType),
+          ) as DirectoryType;
+          result.directoryType = valueDes;
           break;
         case r'rating':
           final valueDes = serializers.deserialize(
@@ -512,34 +287,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as double;
           result.rating = valueDes;
           break;
-        case r'rootDataPointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rootDataPointId = valueDes;
-          break;
-        case r'rootIdLink':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rootIdLink = valueDes;
-          break;
-        case r'salesPartnerId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.salesPartnerId = valueDes;
-          break;
-        case r'sortDate':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.sortDate = valueDes;
-          break;
         case r'status':
           final valueDes = serializers.deserialize(
             value,
@@ -547,13 +294,12 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as String;
           result.status = valueDes;
           break;
-        case r'media':
+        case r'images':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(InboxItemMediaInner)]),
-          ) as BuiltList<InboxItemMediaInner>;
-          result.media.replace(valueDes);
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.images.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -584,32 +330,28 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
   }
 }
 
-class InboxItemContentTypeEnum extends EnumClass {
+class InboxItemTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'review')
-  static const InboxItemContentTypeEnum review =
-      _$inboxItemContentTypeEnum_review;
+  static const InboxItemTypeEnum review = _$inboxItemTypeEnum_review;
   @BuiltValueEnumConst(wireName: r'comment')
-  static const InboxItemContentTypeEnum comment =
-      _$inboxItemContentTypeEnum_comment;
+  static const InboxItemTypeEnum comment = _$inboxItemTypeEnum_comment;
   @BuiltValueEnumConst(wireName: r'recommendation')
-  static const InboxItemContentTypeEnum recommendation =
-      _$inboxItemContentTypeEnum_recommendation;
+  static const InboxItemTypeEnum recommendation =
+      _$inboxItemTypeEnum_recommendation;
   @BuiltValueEnumConst(wireName: r'recommendationcomment')
-  static const InboxItemContentTypeEnum recommendationcomment =
-      _$inboxItemContentTypeEnum_recommendationcomment;
+  static const InboxItemTypeEnum recommendationcomment =
+      _$inboxItemTypeEnum_recommendationcomment;
   @BuiltValueEnumConst(wireName: r'post')
-  static const InboxItemContentTypeEnum post = _$inboxItemContentTypeEnum_post;
+  static const InboxItemTypeEnum post = _$inboxItemTypeEnum_post;
   @BuiltValueEnumConst(wireName: r'photo')
-  static const InboxItemContentTypeEnum photo =
-      _$inboxItemContentTypeEnum_photo;
+  static const InboxItemTypeEnum photo = _$inboxItemTypeEnum_photo;
 
-  static Serializer<InboxItemContentTypeEnum> get serializer =>
-      _$inboxItemContentTypeEnumSerializer;
+  static Serializer<InboxItemTypeEnum> get serializer =>
+      _$inboxItemTypeEnumSerializer;
 
-  const InboxItemContentTypeEnum._(String name) : super(name);
+  const InboxItemTypeEnum._(String name) : super(name);
 
-  static BuiltSet<InboxItemContentTypeEnum> get values =>
-      _$inboxItemContentTypeEnumValues;
-  static InboxItemContentTypeEnum valueOf(String name) =>
-      _$inboxItemContentTypeEnumValueOf(name);
+  static BuiltSet<InboxItemTypeEnum> get values => _$inboxItemTypeEnumValues;
+  static InboxItemTypeEnum valueOf(String name) =>
+      _$inboxItemTypeEnumValueOf(name);
 }

@@ -3,66 +3,60 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'inbox_item_media_inner.g.dart';
+part 'inbox_item_children_get200_response.g.dart';
 
-/// InboxItemMediaInner
+/// InboxItemChildrenGet200Response
 ///
 /// Properties:
-/// * [image]
-/// * [dataPointId]
+/// * [data]
 @BuiltValue()
-abstract class InboxItemMediaInner
-    implements Built<InboxItemMediaInner, InboxItemMediaInnerBuilder> {
-  @BuiltValueField(wireName: r'image')
-  String? get image;
+abstract class InboxItemChildrenGet200Response
+    implements
+        Built<InboxItemChildrenGet200Response,
+            InboxItemChildrenGet200ResponseBuilder> {
+  @BuiltValueField(wireName: r'data')
+  BuiltList<InboxItem>? get data;
 
-  @BuiltValueField(wireName: r'dataPointId')
-  String? get dataPointId;
+  InboxItemChildrenGet200Response._();
 
-  InboxItemMediaInner._();
-
-  factory InboxItemMediaInner([void updates(InboxItemMediaInnerBuilder b)]) =
-      _$InboxItemMediaInner;
+  factory InboxItemChildrenGet200Response(
+          [void updates(InboxItemChildrenGet200ResponseBuilder b)]) =
+      _$InboxItemChildrenGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InboxItemMediaInnerBuilder b) => b;
+  static void _defaults(InboxItemChildrenGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<InboxItemMediaInner> get serializer =>
-      _$InboxItemMediaInnerSerializer();
+  static Serializer<InboxItemChildrenGet200Response> get serializer =>
+      _$InboxItemChildrenGet200ResponseSerializer();
 }
 
-class _$InboxItemMediaInnerSerializer
-    implements PrimitiveSerializer<InboxItemMediaInner> {
+class _$InboxItemChildrenGet200ResponseSerializer
+    implements PrimitiveSerializer<InboxItemChildrenGet200Response> {
   @override
   final Iterable<Type> types = const [
-    InboxItemMediaInner,
-    _$InboxItemMediaInner
+    InboxItemChildrenGet200Response,
+    _$InboxItemChildrenGet200Response
   ];
 
   @override
-  final String wireName = r'InboxItemMediaInner';
+  final String wireName = r'InboxItemChildrenGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    InboxItemMediaInner object, {
+    InboxItemChildrenGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.image != null) {
-      yield r'image';
+    if (object.data != null) {
+      yield r'data';
       yield serializers.serialize(
-        object.image,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.dataPointId != null) {
-      yield r'dataPointId';
-      yield serializers.serialize(
-        object.dataPointId,
-        specifiedType: const FullType(String),
+        object.data,
+        specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
       );
     }
   }
@@ -70,7 +64,7 @@ class _$InboxItemMediaInnerSerializer
   @override
   Object serialize(
     Serializers serializers,
-    InboxItemMediaInner object, {
+    InboxItemChildrenGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -83,26 +77,19 @@ class _$InboxItemMediaInnerSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required InboxItemMediaInnerBuilder result,
+    required InboxItemChildrenGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'image':
+        case r'data':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.image = valueDes;
-          break;
-        case r'dataPointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.dataPointId = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
+          ) as BuiltList<InboxItem>;
+          result.data.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -113,12 +100,12 @@ class _$InboxItemMediaInnerSerializer
   }
 
   @override
-  InboxItemMediaInner deserialize(
+  InboxItemChildrenGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = InboxItemMediaInnerBuilder();
+    final result = InboxItemChildrenGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

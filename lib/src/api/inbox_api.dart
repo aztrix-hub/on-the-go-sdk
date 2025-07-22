@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
+import 'package:on_the_go_sdk/src/model/inbox_item_children_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
@@ -33,9 +34,9 @@ class InboxApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InboxPost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [InboxItemChildrenGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InboxPost200Response>> inboxItemChildrenGet({
+  Future<Response<InboxItemChildrenGet200Response>> inboxItemChildrenGet({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -77,7 +78,7 @@ class InboxApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InboxPost200Response? _responseData;
+    InboxItemChildrenGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -85,8 +86,8 @@ class InboxApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(InboxPost200Response),
-            ) as InboxPost200Response;
+              specifiedType: const FullType(InboxItemChildrenGet200Response),
+            ) as InboxItemChildrenGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -97,7 +98,7 @@ class InboxApi {
       );
     }
 
-    return Response<InboxPost200Response>(
+    return Response<InboxItemChildrenGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(InboxPost200Response, () {
-    // BuiltList<InboxItem> data
-    test('to test the property `data`', () async {
+    // BuiltList<InboxItem> inbox
+    test('to test the property `inbox`', () async {
       // TODO
     });
   });

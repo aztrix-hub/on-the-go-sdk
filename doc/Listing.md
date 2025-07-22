@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
 **locationId** | **String** |  | [optional] 
-**status** | **String** |  | [optional] 
 **url** | **String** | listing URL | [optional] 
 **connected** | **bool** |  | [optional] 
 
