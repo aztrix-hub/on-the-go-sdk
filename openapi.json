@@ -2217,18 +2217,10 @@
             "format": "date-time"
           },
           "author": {
-            "type": "object",
-            "properties": {
-              "image": {
-                "type": "string"
-              },
-              "isClient": {
-                "type": "boolean"
-              },
-              "name": {
-                "type": "string"
-              }
-            }
+            "type": "string"
+          },
+          "authorImage": {
+            "type": "string"
           },
           "type": {
             "type": "string",
@@ -2247,7 +2239,7 @@
           "likes": {
             "type": "integer"
           },
-          "directoryType": {
+          "directory": {
             "$ref": "#/components/schemas/DirectoryType"
           },
           "rating": {
@@ -2256,12 +2248,6 @@
           },
           "status": {
             "type": "string"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "comments": {
             "type": "array",

@@ -118,7 +118,6 @@ Class | Method | HTTP request | Description
  - [DataPoint](doc/DataPoint.md)
  - [DirectoryType](doc/DirectoryType.md)
  - [InboxItem](doc/InboxItem.md)
- - [InboxItemAuthor](doc/InboxItemAuthor.md)
  - [InboxPost200Response](doc/InboxPost200Response.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
  - [InboxReplyPostRequest](doc/InboxReplyPostRequest.md)

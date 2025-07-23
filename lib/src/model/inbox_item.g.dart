@@ -99,7 +99,9 @@ class _$InboxItem extends InboxItem {
   @override
   final DateTime? date;
   @override
-  final InboxItemAuthor? author;
+  final String? author;
+  @override
+  final String? authorImage;
   @override
   final InboxItemTypeEnum? type;
   @override
@@ -107,13 +109,11 @@ class _$InboxItem extends InboxItem {
   @override
   final int? likes;
   @override
-  final DirectoryType? directoryType;
+  final DirectoryType? directory;
   @override
   final double? rating;
   @override
   final String? status;
-  @override
-  final BuiltList<String>? images;
   @override
   final BuiltList<InboxItem>? comments;
 
@@ -127,13 +127,13 @@ class _$InboxItem extends InboxItem {
       this.parentId,
       this.date,
       this.author,
+      this.authorImage,
       this.type,
       this.message,
       this.likes,
-      this.directoryType,
+      this.directory,
       this.rating,
       this.status,
-      this.images,
       this.comments})
       : super._();
   @override
@@ -153,13 +153,13 @@ class _$InboxItem extends InboxItem {
         parentId == other.parentId &&
         date == other.date &&
         author == other.author &&
+        authorImage == other.authorImage &&
         type == other.type &&
         message == other.message &&
         likes == other.likes &&
-        directoryType == other.directoryType &&
+        directory == other.directory &&
         rating == other.rating &&
         status == other.status &&
-        images == other.images &&
         comments == other.comments;
   }
 
@@ -172,13 +172,13 @@ class _$InboxItem extends InboxItem {
     _$hash = $jc(_$hash, parentId.hashCode);
     _$hash = $jc(_$hash, date.hashCode);
     _$hash = $jc(_$hash, author.hashCode);
+    _$hash = $jc(_$hash, authorImage.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, likes.hashCode);
-    _$hash = $jc(_$hash, directoryType.hashCode);
+    _$hash = $jc(_$hash, directory.hashCode);
     _$hash = $jc(_$hash, rating.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, images.hashCode);
     _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -193,13 +193,13 @@ class _$InboxItem extends InboxItem {
           ..add('parentId', parentId)
           ..add('date', date)
           ..add('author', author)
+          ..add('authorImage', authorImage)
           ..add('type', type)
           ..add('message', message)
           ..add('likes', likes)
-          ..add('directoryType', directoryType)
+          ..add('directory', directory)
           ..add('rating', rating)
           ..add('status', status)
-          ..add('images', images)
           ..add('comments', comments))
         .toString();
   }
@@ -228,10 +228,13 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   DateTime? get date => _$this._date;
   set date(DateTime? date) => _$this._date = date;
 
-  InboxItemAuthorBuilder? _author;
-  InboxItemAuthorBuilder get author =>
-      _$this._author ??= InboxItemAuthorBuilder();
-  set author(InboxItemAuthorBuilder? author) => _$this._author = author;
+  String? _author;
+  String? get author => _$this._author;
+  set author(String? author) => _$this._author = author;
+
+  String? _authorImage;
+  String? get authorImage => _$this._authorImage;
+  set authorImage(String? authorImage) => _$this._authorImage = authorImage;
 
   InboxItemTypeEnum? _type;
   InboxItemTypeEnum? get type => _$this._type;
@@ -245,10 +248,9 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   int? get likes => _$this._likes;
   set likes(int? likes) => _$this._likes = likes;
 
-  DirectoryType? _directoryType;
-  DirectoryType? get directoryType => _$this._directoryType;
-  set directoryType(DirectoryType? directoryType) =>
-      _$this._directoryType = directoryType;
+  DirectoryType? _directory;
+  DirectoryType? get directory => _$this._directory;
+  set directory(DirectoryType? directory) => _$this._directory = directory;
 
   double? _rating;
   double? get rating => _$this._rating;
@@ -257,10 +259,6 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   String? _status;
   String? get status => _$this._status;
   set status(String? status) => _$this._status = status;
-
-  ListBuilder<String>? _images;
-  ListBuilder<String> get images => _$this._images ??= ListBuilder<String>();
-  set images(ListBuilder<String>? images) => _$this._images = images;
 
   ListBuilder<InboxItem>? _comments;
   ListBuilder<InboxItem> get comments =>
@@ -279,14 +277,14 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
       _rootId = $v.rootId;
       _parentId = $v.parentId;
       _date = $v.date;
-      _author = $v.author?.toBuilder();
+      _author = $v.author;
+      _authorImage = $v.authorImage;
       _type = $v.type;
       _message = $v.message;
       _likes = $v.likes;
-      _directoryType = $v.directoryType;
+      _directory = $v.directory;
       _rating = $v.rating;
       _status = $v.status;
-      _images = $v.images?.toBuilder();
       _comments = $v.comments?.toBuilder();
       _$v = null;
     }
@@ -316,24 +314,19 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
             rootId: rootId,
             parentId: parentId,
             date: date,
-            author: _author?.build(),
+            author: author,
+            authorImage: authorImage,
             type: type,
             message: message,
             likes: likes,
-            directoryType: directoryType,
+            directory: directory,
             rating: rating,
             status: status,
-            images: _images?.build(),
             comments: _comments?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'author';
-        _author?.build();
-
-        _$failedField = 'images';
-        _images?.build();
         _$failedField = 'comments';
         _comments?.build();
       } catch (e) {

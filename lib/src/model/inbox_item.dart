@@ -5,7 +5,6 @@
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,13 +19,13 @@ part 'inbox_item.g.dart';
 /// * [parentId]
 /// * [date]
 /// * [author]
+/// * [authorImage]
 /// * [type]
 /// * [message]
 /// * [likes]
-/// * [directoryType]
+/// * [directory]
 /// * [rating]
 /// * [status]
-/// * [images]
 /// * [comments]
 @BuiltValue()
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
@@ -46,7 +45,10 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   DateTime? get date;
 
   @BuiltValueField(wireName: r'author')
-  InboxItemAuthor? get author;
+  String? get author;
+
+  @BuiltValueField(wireName: r'authorImage')
+  String? get authorImage;
 
   @BuiltValueField(wireName: r'type')
   InboxItemTypeEnum? get type;
@@ -58,18 +60,15 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'likes')
   int? get likes;
 
-  @BuiltValueField(wireName: r'directoryType')
-  DirectoryType? get directoryType;
-  // enum directoryTypeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  @BuiltValueField(wireName: r'directory')
+  DirectoryType? get directory;
+  // enum directoryEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'rating')
   double? get rating;
 
   @BuiltValueField(wireName: r'status')
   String? get status;
-
-  @BuiltValueField(wireName: r'images')
-  BuiltList<String>? get images;
 
   @BuiltValueField(wireName: r'comments')
   BuiltList<InboxItem>? get comments;
@@ -136,7 +135,14 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       yield r'author';
       yield serializers.serialize(
         object.author,
-        specifiedType: const FullType(InboxItemAuthor),
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.authorImage != null) {
+      yield r'authorImage';
+      yield serializers.serialize(
+        object.authorImage,
+        specifiedType: const FullType(String),
       );
     }
     if (object.type != null) {
@@ -160,10 +166,10 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.directoryType != null) {
-      yield r'directoryType';
+    if (object.directory != null) {
+      yield r'directory';
       yield serializers.serialize(
-        object.directoryType,
+        object.directory,
         specifiedType: const FullType(DirectoryType),
       );
     }
@@ -179,13 +185,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       yield serializers.serialize(
         object.status,
         specifiedType: const FullType(String),
-      );
-    }
-    if (object.images != null) {
-      yield r'images';
-      yield serializers.serialize(
-        object.images,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
     if (object.comments != null) {
@@ -258,9 +257,16 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         case r'author':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(InboxItemAuthor),
-          ) as InboxItemAuthor;
-          result.author.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.author = valueDes;
+          break;
+        case r'authorImage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.authorImage = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -283,12 +289,12 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
           ) as int;
           result.likes = valueDes;
           break;
-        case r'directoryType':
+        case r'directory':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
-          result.directoryType = valueDes;
+          result.directory = valueDes;
           break;
         case r'rating':
           final valueDes = serializers.deserialize(
@@ -303,13 +309,6 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
             specifiedType: const FullType(String),
           ) as String;
           result.status = valueDes;
-          break;
-        case r'images':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.images.replace(valueDes);
           break;
         case r'comments':
           final valueDes = serializers.deserialize(
