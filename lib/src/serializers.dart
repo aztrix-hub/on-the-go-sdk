@@ -31,7 +31,6 @@ import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
-import 'package:on_the_go_sdk/src/model/inbox_item_children_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
@@ -80,7 +79,6 @@ part 'serializers.g.dart';
   DirectoryType,
   InboxItem,
   InboxItemAuthor,
-  InboxItemChildrenGet200Response,
   InboxPost200Response,
   InboxPostRequest,
   InboxReplyPostRequest,

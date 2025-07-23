@@ -71,5 +71,10 @@ void main() {
     test('to test the property `images`', () async {
       // TODO
     });
+
+    // BuiltList<InboxItem> comments
+    test('to test the property `comments`', () async {
+      // TODO
+    });
   });
 }

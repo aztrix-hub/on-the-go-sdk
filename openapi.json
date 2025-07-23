@@ -1140,59 +1140,6 @@
         ]
       }
     },
-    "/inbox/item/children": {
-      "get": {
-        "tags": [
-          "inbox"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/InboxItem"
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden"
-          },
-          "401": {
-            "description": "Not Authorized"
-          },
-          "400": {
-            "description": "Invalid or Missing Parameter"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
-      }
-    },
     "/inbox/reply": {
       "post": {
         "tags": [
@@ -2314,6 +2261,12 @@
             "type": "array",
             "items": {
               "type": "string"
+            }
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InboxItem"
             }
           }
         }

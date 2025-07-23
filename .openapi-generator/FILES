@@ -20,7 +20,6 @@ doc/DirectoryType.md
 doc/InboxApi.md
 doc/InboxItem.md
 doc/InboxItemAuthor.md
-doc/InboxItemChildrenGet200Response.md
 doc/InboxPost200Response.md
 doc/InboxPostRequest.md
 doc/InboxReplyPostRequest.md
@@ -90,7 +89,6 @@ lib/src/model/date.dart
 lib/src/model/directory_type.dart
 lib/src/model/inbox_item.dart
 lib/src/model/inbox_item_author.dart
-lib/src/model/inbox_item_children_get200_response.dart
 lib/src/model/inbox_post200_response.dart
 lib/src/model/inbox_post_request.dart
 lib/src/model/inbox_reply_post_request.dart
@@ -138,7 +136,6 @@ test/data_point_test.dart
 test/directory_type_test.dart
 test/inbox_api_test.dart
 test/inbox_item_author_test.dart
-test/inbox_item_children_get200_response_test.dart
 test/inbox_item_test.dart
 test/inbox_post200_response_test.dart
 test/inbox_post_request_test.dart

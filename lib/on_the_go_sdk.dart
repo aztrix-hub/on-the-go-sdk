@@ -37,7 +37,6 @@ export 'package:on_the_go_sdk/src/model/data_point.dart';
 export 'package:on_the_go_sdk/src/model/directory_type.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item_author.dart';
-export 'package:on_the_go_sdk/src/model/inbox_item_children_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';

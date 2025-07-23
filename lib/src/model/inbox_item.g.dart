@@ -114,6 +114,8 @@ class _$InboxItem extends InboxItem {
   final String? status;
   @override
   final BuiltList<String>? images;
+  @override
+  final BuiltList<InboxItem>? comments;
 
   factory _$InboxItem([void Function(InboxItemBuilder)? updates]) =>
       (InboxItemBuilder()..update(updates))._build();
@@ -131,7 +133,8 @@ class _$InboxItem extends InboxItem {
       this.directoryType,
       this.rating,
       this.status,
-      this.images})
+      this.images,
+      this.comments})
       : super._();
   @override
   InboxItem rebuild(void Function(InboxItemBuilder) updates) =>
@@ -156,7 +159,8 @@ class _$InboxItem extends InboxItem {
         directoryType == other.directoryType &&
         rating == other.rating &&
         status == other.status &&
-        images == other.images;
+        images == other.images &&
+        comments == other.comments;
   }
 
   @override
@@ -175,6 +179,7 @@ class _$InboxItem extends InboxItem {
     _$hash = $jc(_$hash, rating.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, images.hashCode);
+    _$hash = $jc(_$hash, comments.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -194,7 +199,8 @@ class _$InboxItem extends InboxItem {
           ..add('directoryType', directoryType)
           ..add('rating', rating)
           ..add('status', status)
-          ..add('images', images))
+          ..add('images', images)
+          ..add('comments', comments))
         .toString();
   }
 }
@@ -256,6 +262,11 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
   ListBuilder<String> get images => _$this._images ??= ListBuilder<String>();
   set images(ListBuilder<String>? images) => _$this._images = images;
 
+  ListBuilder<InboxItem>? _comments;
+  ListBuilder<InboxItem> get comments =>
+      _$this._comments ??= ListBuilder<InboxItem>();
+  set comments(ListBuilder<InboxItem>? comments) => _$this._comments = comments;
+
   InboxItemBuilder() {
     InboxItem._defaults(this);
   }
@@ -276,6 +287,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
       _rating = $v.rating;
       _status = $v.status;
       _images = $v.images?.toBuilder();
+      _comments = $v.comments?.toBuilder();
       _$v = null;
     }
     return this;
@@ -312,6 +324,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
             rating: rating,
             status: status,
             images: _images?.build(),
+            comments: _comments?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -321,6 +334,8 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
 
         _$failedField = 'images';
         _images?.build();
+        _$failedField = 'comments';
+        _comments?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'InboxItem', _$failedField, e.toString());

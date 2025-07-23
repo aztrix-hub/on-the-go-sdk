@@ -72,7 +72,6 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiSystemGet**](doc/AiApi.md#aisystemget) | **GET** /ai/system | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
-[*InboxApi*](doc/InboxApi.md) | [**inboxItemChildrenGet**](doc/InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
@@ -120,7 +119,6 @@ Class | Method | HTTP request | Description
  - [DirectoryType](doc/DirectoryType.md)
  - [InboxItem](doc/InboxItem.md)
  - [InboxItemAuthor](doc/InboxItemAuthor.md)
- - [InboxItemChildrenGet200Response](doc/InboxItemChildrenGet200Response.md)
  - [InboxPost200Response](doc/InboxPost200Response.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
  - [InboxReplyPostRequest](doc/InboxReplyPostRequest.md)

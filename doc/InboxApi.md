@@ -9,56 +9,10 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**inboxItemChildrenGet**](InboxApi.md#inboxitemchildrenget) | **GET** /inbox/item/children | 
 [**inboxItemGet**](InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [**inboxPost**](InboxApi.md#inboxpost) | **POST** /inbox | 
 [**inboxReplyPost**](InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 
-
-# **inboxItemChildrenGet**
-> InboxItemChildrenGet200Response inboxItemChildrenGet(id)
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getInboxApi();
-final String id = id_example; // String | 
-
-try {
-    final response = api.inboxItemChildrenGet(id);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling InboxApi->inboxItemChildrenGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**InboxItemChildrenGet200Response**](InboxItemChildrenGet200Response.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inboxItemGet**
 > InboxItem inboxItemGet(id)

@@ -27,6 +27,7 @@ part 'inbox_item.g.dart';
 /// * [rating]
 /// * [status]
 /// * [images]
+/// * [comments]
 @BuiltValue()
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -69,6 +70,9 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
 
   @BuiltValueField(wireName: r'images')
   BuiltList<String>? get images;
+
+  @BuiltValueField(wireName: r'comments')
+  BuiltList<InboxItem>? get comments;
 
   InboxItem._();
 
@@ -182,6 +186,13 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
       yield serializers.serialize(
         object.images,
         specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.comments != null) {
+      yield r'comments';
+      yield serializers.serialize(
+        object.comments,
+        specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
       );
     }
   }
@@ -299,6 +310,13 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.images.replace(valueDes);
+          break;
+        case r'comments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
+          ) as BuiltList<InboxItem>;
+          result.comments.replace(valueDes);
           break;
         default:
           unhandled.add(key);
