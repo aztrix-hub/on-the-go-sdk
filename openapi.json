@@ -2225,12 +2225,16 @@
           "type": {
             "type": "string",
             "enum": [
-              "review",
-              "comment",
-              "recommendation",
-              "recommendationcomment",
-              "post",
-              "photo"
+              "REVIEW",
+              "PHOTO",
+              "CHECKIN",
+              "CONVERSATION",
+              "COMMENT",
+              "QUESTION",
+              "POST",
+              "IMAGE",
+              "VIDEO",
+              "LINK"
             ]
           },
           "message": {

@@ -6,33 +6,49 @@ part of 'inbox_item.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const InboxItemTypeEnum _$inboxItemTypeEnum_review =
-    const InboxItemTypeEnum._('review');
-const InboxItemTypeEnum _$inboxItemTypeEnum_comment =
-    const InboxItemTypeEnum._('comment');
-const InboxItemTypeEnum _$inboxItemTypeEnum_recommendation =
-    const InboxItemTypeEnum._('recommendation');
-const InboxItemTypeEnum _$inboxItemTypeEnum_recommendationcomment =
-    const InboxItemTypeEnum._('recommendationcomment');
-const InboxItemTypeEnum _$inboxItemTypeEnum_post =
-    const InboxItemTypeEnum._('post');
-const InboxItemTypeEnum _$inboxItemTypeEnum_photo =
-    const InboxItemTypeEnum._('photo');
+const InboxItemTypeEnum _$inboxItemTypeEnum_REVIEW =
+    const InboxItemTypeEnum._('REVIEW');
+const InboxItemTypeEnum _$inboxItemTypeEnum_PHOTO =
+    const InboxItemTypeEnum._('PHOTO');
+const InboxItemTypeEnum _$inboxItemTypeEnum_CHECKIN =
+    const InboxItemTypeEnum._('CHECKIN');
+const InboxItemTypeEnum _$inboxItemTypeEnum_CONVERSATION =
+    const InboxItemTypeEnum._('CONVERSATION');
+const InboxItemTypeEnum _$inboxItemTypeEnum_COMMENT =
+    const InboxItemTypeEnum._('COMMENT');
+const InboxItemTypeEnum _$inboxItemTypeEnum_QUESTION =
+    const InboxItemTypeEnum._('QUESTION');
+const InboxItemTypeEnum _$inboxItemTypeEnum_POST =
+    const InboxItemTypeEnum._('POST');
+const InboxItemTypeEnum _$inboxItemTypeEnum_IMAGE =
+    const InboxItemTypeEnum._('IMAGE');
+const InboxItemTypeEnum _$inboxItemTypeEnum_VIDEO =
+    const InboxItemTypeEnum._('VIDEO');
+const InboxItemTypeEnum _$inboxItemTypeEnum_LINK =
+    const InboxItemTypeEnum._('LINK');
 
 InboxItemTypeEnum _$inboxItemTypeEnumValueOf(String name) {
   switch (name) {
-    case 'review':
-      return _$inboxItemTypeEnum_review;
-    case 'comment':
-      return _$inboxItemTypeEnum_comment;
-    case 'recommendation':
-      return _$inboxItemTypeEnum_recommendation;
-    case 'recommendationcomment':
-      return _$inboxItemTypeEnum_recommendationcomment;
-    case 'post':
-      return _$inboxItemTypeEnum_post;
-    case 'photo':
-      return _$inboxItemTypeEnum_photo;
+    case 'REVIEW':
+      return _$inboxItemTypeEnum_REVIEW;
+    case 'PHOTO':
+      return _$inboxItemTypeEnum_PHOTO;
+    case 'CHECKIN':
+      return _$inboxItemTypeEnum_CHECKIN;
+    case 'CONVERSATION':
+      return _$inboxItemTypeEnum_CONVERSATION;
+    case 'COMMENT':
+      return _$inboxItemTypeEnum_COMMENT;
+    case 'QUESTION':
+      return _$inboxItemTypeEnum_QUESTION;
+    case 'POST':
+      return _$inboxItemTypeEnum_POST;
+    case 'IMAGE':
+      return _$inboxItemTypeEnum_IMAGE;
+    case 'VIDEO':
+      return _$inboxItemTypeEnum_VIDEO;
+    case 'LINK':
+      return _$inboxItemTypeEnum_LINK;
     default:
       throw ArgumentError(name);
   }
@@ -40,12 +56,16 @@ InboxItemTypeEnum _$inboxItemTypeEnumValueOf(String name) {
 
 final BuiltSet<InboxItemTypeEnum> _$inboxItemTypeEnumValues =
     BuiltSet<InboxItemTypeEnum>(const <InboxItemTypeEnum>[
-  _$inboxItemTypeEnum_review,
-  _$inboxItemTypeEnum_comment,
-  _$inboxItemTypeEnum_recommendation,
-  _$inboxItemTypeEnum_recommendationcomment,
-  _$inboxItemTypeEnum_post,
-  _$inboxItemTypeEnum_photo,
+  _$inboxItemTypeEnum_REVIEW,
+  _$inboxItemTypeEnum_PHOTO,
+  _$inboxItemTypeEnum_CHECKIN,
+  _$inboxItemTypeEnum_CONVERSATION,
+  _$inboxItemTypeEnum_COMMENT,
+  _$inboxItemTypeEnum_QUESTION,
+  _$inboxItemTypeEnum_POST,
+  _$inboxItemTypeEnum_IMAGE,
+  _$inboxItemTypeEnum_VIDEO,
+  _$inboxItemTypeEnum_LINK,
 ]);
 
 Serializer<InboxItemTypeEnum> _$inboxItemTypeEnumSerializer =
@@ -54,20 +74,28 @@ Serializer<InboxItemTypeEnum> _$inboxItemTypeEnumSerializer =
 class _$InboxItemTypeEnumSerializer
     implements PrimitiveSerializer<InboxItemTypeEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'review': 'review',
-    'comment': 'comment',
-    'recommendation': 'recommendation',
-    'recommendationcomment': 'recommendationcomment',
-    'post': 'post',
-    'photo': 'photo',
+    'REVIEW': 'REVIEW',
+    'PHOTO': 'PHOTO',
+    'CHECKIN': 'CHECKIN',
+    'CONVERSATION': 'CONVERSATION',
+    'COMMENT': 'COMMENT',
+    'QUESTION': 'QUESTION',
+    'POST': 'POST',
+    'IMAGE': 'IMAGE',
+    'VIDEO': 'VIDEO',
+    'LINK': 'LINK',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'review': 'review',
-    'comment': 'comment',
-    'recommendation': 'recommendation',
-    'recommendationcomment': 'recommendationcomment',
-    'post': 'post',
-    'photo': 'photo',
+    'REVIEW': 'REVIEW',
+    'PHOTO': 'PHOTO',
+    'CHECKIN': 'CHECKIN',
+    'CONVERSATION': 'CONVERSATION',
+    'COMMENT': 'COMMENT',
+    'QUESTION': 'QUESTION',
+    'POST': 'POST',
+    'IMAGE': 'IMAGE',
+    'VIDEO': 'VIDEO',
+    'LINK': 'LINK',
   };
 
   @override

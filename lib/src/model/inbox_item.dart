@@ -52,7 +52,7 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
 
   @BuiltValueField(wireName: r'type')
   InboxItemTypeEnum? get type;
-  // enum typeEnum {  review,  comment,  recommendation,  recommendationcomment,  post,  photo,  };
+  // enum typeEnum {  REVIEW,  PHOTO,  CHECKIN,  CONVERSATION,  COMMENT,  QUESTION,  POST,  IMAGE,  VIDEO,  LINK,  };
 
   @BuiltValueField(wireName: r'message')
   String? get message;
@@ -347,20 +347,27 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
 }
 
 class InboxItemTypeEnum extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'review')
-  static const InboxItemTypeEnum review = _$inboxItemTypeEnum_review;
-  @BuiltValueEnumConst(wireName: r'comment')
-  static const InboxItemTypeEnum comment = _$inboxItemTypeEnum_comment;
-  @BuiltValueEnumConst(wireName: r'recommendation')
-  static const InboxItemTypeEnum recommendation =
-      _$inboxItemTypeEnum_recommendation;
-  @BuiltValueEnumConst(wireName: r'recommendationcomment')
-  static const InboxItemTypeEnum recommendationcomment =
-      _$inboxItemTypeEnum_recommendationcomment;
-  @BuiltValueEnumConst(wireName: r'post')
-  static const InboxItemTypeEnum post = _$inboxItemTypeEnum_post;
-  @BuiltValueEnumConst(wireName: r'photo')
-  static const InboxItemTypeEnum photo = _$inboxItemTypeEnum_photo;
+  @BuiltValueEnumConst(wireName: r'REVIEW')
+  static const InboxItemTypeEnum REVIEW = _$inboxItemTypeEnum_REVIEW;
+  @BuiltValueEnumConst(wireName: r'PHOTO')
+  static const InboxItemTypeEnum PHOTO = _$inboxItemTypeEnum_PHOTO;
+  @BuiltValueEnumConst(wireName: r'CHECKIN')
+  static const InboxItemTypeEnum CHECKIN = _$inboxItemTypeEnum_CHECKIN;
+  @BuiltValueEnumConst(wireName: r'CONVERSATION')
+  static const InboxItemTypeEnum CONVERSATION =
+      _$inboxItemTypeEnum_CONVERSATION;
+  @BuiltValueEnumConst(wireName: r'COMMENT')
+  static const InboxItemTypeEnum COMMENT = _$inboxItemTypeEnum_COMMENT;
+  @BuiltValueEnumConst(wireName: r'QUESTION')
+  static const InboxItemTypeEnum QUESTION = _$inboxItemTypeEnum_QUESTION;
+  @BuiltValueEnumConst(wireName: r'POST')
+  static const InboxItemTypeEnum POST = _$inboxItemTypeEnum_POST;
+  @BuiltValueEnumConst(wireName: r'IMAGE')
+  static const InboxItemTypeEnum IMAGE = _$inboxItemTypeEnum_IMAGE;
+  @BuiltValueEnumConst(wireName: r'VIDEO')
+  static const InboxItemTypeEnum VIDEO = _$inboxItemTypeEnum_VIDEO;
+  @BuiltValueEnumConst(wireName: r'LINK')
+  static const InboxItemTypeEnum LINK = _$inboxItemTypeEnum_LINK;
 
   static Serializer<InboxItemTypeEnum> get serializer =>
       _$inboxItemTypeEnumSerializer;
