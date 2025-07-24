@@ -1408,7 +1408,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/SocialPosts"
+                  "type": "object",
+                  "properties": {
+                    "posts": {
+                      "$ref": "#/components/schemas/SocialPost"
+                    }
+                  }
                 }
               }
             }

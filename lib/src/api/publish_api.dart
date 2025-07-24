@@ -7,7 +7,7 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 
 class PublishApi {
@@ -28,9 +28,9 @@ class PublishApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<SocialPost>] as data
+  /// Returns a [Future] containing a [Response] with a [PublishPostsGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<SocialPost>>> publishPostsGet({
+  Future<Response<PublishPostsGet200Response>> publishPostsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class PublishApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<SocialPost>? _responseData;
+    PublishPostsGet200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -74,8 +74,8 @@ class PublishApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(SocialPost)]),
-            ) as BuiltList<SocialPost>;
+              specifiedType: const FullType(PublishPostsGet200Response),
+            ) as PublishPostsGet200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -86,7 +86,7 @@ class PublishApi {
       );
     }
 
-    return Response<BuiltList<SocialPost>>(
+    return Response<PublishPostsGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

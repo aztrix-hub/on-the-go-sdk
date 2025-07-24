@@ -137,6 +137,7 @@ Class | Method | HTTP request | Description
  - [NotificationsConfigGet200Response](doc/NotificationsConfigGet200Response.md)
  - [OpeningHour](doc/OpeningHour.md)
  - [OpeningHourInterval](doc/OpeningHourInterval.md)
+ - [PublishPostsGet200Response](doc/PublishPostsGet200Response.md)
  - [ResetPassword](doc/ResetPassword.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
  - [SocialPost](doc/SocialPost.md)

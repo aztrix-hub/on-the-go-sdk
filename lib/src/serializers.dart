@@ -49,6 +49,7 @@ import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
+import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
@@ -96,6 +97,7 @@ part 'serializers.g.dart';
   NotificationsConfigGet200Response,
   OpeningHour,
   OpeningHourInterval,
+  PublishPostsGet200Response,
   ResetPassword,
   SiteColorsPatchRequest,
   SocialPost,
@@ -117,10 +119,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Category)]),
         () => ListBuilder<Category>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(SocialPost)]),
-        () => ListBuilder<SocialPost>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

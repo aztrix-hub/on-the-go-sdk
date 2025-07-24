@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **publishPostsGet**
-> BuiltList<SocialPost> publishPostsGet()
+> PublishPostsGet200Response publishPostsGet()
 
 
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;SocialPost&gt;**](SocialPost.md)
+[**PublishPostsGet200Response**](PublishPostsGet200Response.md)
 
 ### Authorization
 
