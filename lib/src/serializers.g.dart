@@ -122,6 +122,9 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SocialPost)]),
+          () => ListBuilder<SocialPost>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
       ..addBuilderFactory(

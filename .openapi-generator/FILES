@@ -117,4 +117,3 @@ lib/src/model/user_oauth_post200_response.dart
 lib/src/model/user_oauth_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/publish_posts_get200_response_test.dart

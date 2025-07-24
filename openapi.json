@@ -1411,7 +1411,7 @@
                   "type": "object",
                   "properties": {
                     "posts": {
-                      "$ref": "#/components/schemas/SocialPost"
+                      "$ref": "#/components/schemas/SocialPosts"
                     }
                   }
                 }

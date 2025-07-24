@@ -8,7 +8,7 @@ part of 'publish_posts_get200_response.dart';
 
 class _$PublishPostsGet200Response extends PublishPostsGet200Response {
   @override
-  final SocialPost? posts;
+  final BuiltList<SocialPost>? posts;
 
   factory _$PublishPostsGet200Response(
           [void Function(PublishPostsGet200ResponseBuilder)? updates]) =>
@@ -51,9 +51,10 @@ class PublishPostsGet200ResponseBuilder
         Builder<PublishPostsGet200Response, PublishPostsGet200ResponseBuilder> {
   _$PublishPostsGet200Response? _$v;
 
-  SocialPostBuilder? _posts;
-  SocialPostBuilder get posts => _$this._posts ??= SocialPostBuilder();
-  set posts(SocialPostBuilder? posts) => _$this._posts = posts;
+  ListBuilder<SocialPost>? _posts;
+  ListBuilder<SocialPost> get posts =>
+      _$this._posts ??= ListBuilder<SocialPost>();
+  set posts(ListBuilder<SocialPost>? posts) => _$this._posts = posts;
 
   PublishPostsGet200ResponseBuilder() {
     PublishPostsGet200Response._defaults(this);
