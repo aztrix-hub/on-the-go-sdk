@@ -33,7 +33,7 @@ abstract class LocationPhotoPostRequest
 
   @BuiltValueField(wireName: r'type')
   LocationPhotoType get type;
-  // enum typeEnum {  MAIN,  DOCTOR_COM_PORTRAIT,  LOGO,  STOREFINDER_LOGO,  SQUARED_LOGO,  LANDSCAPE,  STOREFINDER_COVER,  FACEBOOK_LANDSCAPE,  MENU,  PHOTO,  ROOMS,  TEAMS,  AT_WORK,  PRODUCT,  EXTERIOR,  INTERIOR,  COMMON_AREA,  FOOD_AND_DRINK,  };
+  // enum typeEnum {  PROFILE,  COVER,  };
 
   LocationPhotoPostRequest._();
 

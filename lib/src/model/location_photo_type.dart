@@ -10,42 +10,10 @@ import 'package:built_value/serializer.dart';
 part 'location_photo_type.g.dart';
 
 class LocationPhotoType extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'MAIN')
-  static const LocationPhotoType MAIN = _$MAIN;
-  @BuiltValueEnumConst(wireName: r'DOCTOR_COM_PORTRAIT')
-  static const LocationPhotoType DOCTOR_COM_PORTRAIT = _$DOCTOR_COM_PORTRAIT;
-  @BuiltValueEnumConst(wireName: r'LOGO')
-  static const LocationPhotoType LOGO = _$LOGO;
-  @BuiltValueEnumConst(wireName: r'STOREFINDER_LOGO')
-  static const LocationPhotoType STOREFINDER_LOGO = _$STOREFINDER_LOGO;
-  @BuiltValueEnumConst(wireName: r'SQUARED_LOGO')
-  static const LocationPhotoType SQUARED_LOGO = _$SQUARED_LOGO;
-  @BuiltValueEnumConst(wireName: r'LANDSCAPE')
-  static const LocationPhotoType LANDSCAPE = _$LANDSCAPE;
-  @BuiltValueEnumConst(wireName: r'STOREFINDER_COVER')
-  static const LocationPhotoType STOREFINDER_COVER = _$STOREFINDER_COVER;
-  @BuiltValueEnumConst(wireName: r'FACEBOOK_LANDSCAPE')
-  static const LocationPhotoType FACEBOOK_LANDSCAPE = _$FACEBOOK_LANDSCAPE;
-  @BuiltValueEnumConst(wireName: r'MENU')
-  static const LocationPhotoType MENU = _$MENU;
-  @BuiltValueEnumConst(wireName: r'PHOTO')
-  static const LocationPhotoType PHOTO = _$PHOTO;
-  @BuiltValueEnumConst(wireName: r'ROOMS')
-  static const LocationPhotoType ROOMS = _$ROOMS;
-  @BuiltValueEnumConst(wireName: r'TEAMS')
-  static const LocationPhotoType TEAMS = _$TEAMS;
-  @BuiltValueEnumConst(wireName: r'AT_WORK')
-  static const LocationPhotoType AT_WORK = _$AT_WORK;
-  @BuiltValueEnumConst(wireName: r'PRODUCT')
-  static const LocationPhotoType PRODUCT = _$PRODUCT;
-  @BuiltValueEnumConst(wireName: r'EXTERIOR')
-  static const LocationPhotoType EXTERIOR = _$EXTERIOR;
-  @BuiltValueEnumConst(wireName: r'INTERIOR')
-  static const LocationPhotoType INTERIOR = _$INTERIOR;
-  @BuiltValueEnumConst(wireName: r'COMMON_AREA')
-  static const LocationPhotoType COMMON_AREA = _$COMMON_AREA;
-  @BuiltValueEnumConst(wireName: r'FOOD_AND_DRINK')
-  static const LocationPhotoType FOOD_AND_DRINK = _$FOOD_AND_DRINK;
+  @BuiltValueEnumConst(wireName: r'PROFILE')
+  static const LocationPhotoType PROFILE = _$PROFILE;
+  @BuiltValueEnumConst(wireName: r'COVER')
+  static const LocationPhotoType COVER = _$COVER;
 
   static Serializer<LocationPhotoType> get serializer =>
       _$locationPhotoTypeSerializer;
