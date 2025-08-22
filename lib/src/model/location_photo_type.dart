@@ -14,6 +14,8 @@ class LocationPhotoType extends EnumClass {
   static const LocationPhotoType PROFILE = _$PROFILE;
   @BuiltValueEnumConst(wireName: r'COVER')
   static const LocationPhotoType COVER = _$COVER;
+  @BuiltValueEnumConst(wireName: r'PHOTO')
+  static const LocationPhotoType PHOTO = _$PHOTO;
 
   static Serializer<LocationPhotoType> get serializer =>
       _$locationPhotoTypeSerializer;

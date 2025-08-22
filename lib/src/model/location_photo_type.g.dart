@@ -8,6 +8,7 @@ part of 'location_photo_type.dart';
 
 const LocationPhotoType _$PROFILE = const LocationPhotoType._('PROFILE');
 const LocationPhotoType _$COVER = const LocationPhotoType._('COVER');
+const LocationPhotoType _$PHOTO = const LocationPhotoType._('PHOTO');
 
 LocationPhotoType _$valueOf(String name) {
   switch (name) {
@@ -15,6 +16,8 @@ LocationPhotoType _$valueOf(String name) {
       return _$PROFILE;
     case 'COVER':
       return _$COVER;
+    case 'PHOTO':
+      return _$PHOTO;
     default:
       throw ArgumentError(name);
   }
@@ -24,12 +27,14 @@ final BuiltSet<LocationPhotoType> _$values =
     BuiltSet<LocationPhotoType>(const <LocationPhotoType>[
   _$PROFILE,
   _$COVER,
+  _$PHOTO,
 ]);
 
 class _$LocationPhotoTypeMeta {
   const _$LocationPhotoTypeMeta();
   LocationPhotoType get PROFILE => _$PROFILE;
   LocationPhotoType get COVER => _$COVER;
+  LocationPhotoType get PHOTO => _$PHOTO;
   LocationPhotoType valueOf(String name) => _$valueOf(name);
   BuiltSet<LocationPhotoType> get values => _$values;
 }
@@ -48,10 +53,12 @@ class _$LocationPhotoTypeSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'PROFILE': 'PROFILE',
     'COVER': 'COVER',
+    'PHOTO': 'PHOTO',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'PROFILE': 'PROFILE',
     'COVER': 'COVER',
+    'PHOTO': 'PHOTO',
   };
 
   @override

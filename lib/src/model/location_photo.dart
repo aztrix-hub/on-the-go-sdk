@@ -26,7 +26,7 @@ abstract class LocationPhoto
 
   @BuiltValueField(wireName: r'type')
   LocationPhotoType? get type;
-  // enum typeEnum {  PROFILE,  COVER,  };
+  // enum typeEnum {  PROFILE,  COVER,  PHOTO,  };
 
   /// A description for the photo - max 255 chars
   @BuiltValueField(wireName: r'description')

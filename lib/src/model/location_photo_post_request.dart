@@ -33,7 +33,7 @@ abstract class LocationPhotoPostRequest
 
   @BuiltValueField(wireName: r'type')
   LocationPhotoType get type;
-  // enum typeEnum {  PROFILE,  COVER,  };
+  // enum typeEnum {  PROFILE,  COVER,  PHOTO,  };
 
   LocationPhotoPostRequest._();
 

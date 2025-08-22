@@ -2067,7 +2067,8 @@
         "type": "string",
         "enum": [
           "PROFILE",
-          "COVER"
+          "COVER",
+          "PHOTO"
         ]
       },
       "DataPoint": {
