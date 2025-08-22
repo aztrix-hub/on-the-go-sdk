@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(PublishPostsGet200Response, () {
-    // SocialPost posts
+    // BuiltList<SocialPost> posts
     test('to test the property `posts`', () async {
       // TODO
     });

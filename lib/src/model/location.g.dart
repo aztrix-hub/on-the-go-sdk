@@ -30,9 +30,11 @@ class _$Location extends Location {
   @override
   final BuiltList<SpecialOpeningHour>? specialOpeningHours;
   @override
+  final LocationPhoto? logo;
+  @override
   final LocationPhoto? coverPhoto;
   @override
-  final BuiltSet<LocationPhoto>? photos;
+  final BuiltSet<LocationPhoto>? photoGallery;
   @override
   final String? timezone;
   @override
@@ -59,8 +61,9 @@ class _$Location extends Location {
       this.keywords,
       this.openingHours,
       this.specialOpeningHours,
+      this.logo,
       this.coverPhoto,
-      this.photos,
+      this.photoGallery,
       this.timezone,
       this.website,
       this.categories,
@@ -89,8 +92,9 @@ class _$Location extends Location {
         keywords == other.keywords &&
         openingHours == other.openingHours &&
         specialOpeningHours == other.specialOpeningHours &&
+        logo == other.logo &&
         coverPhoto == other.coverPhoto &&
-        photos == other.photos &&
+        photoGallery == other.photoGallery &&
         timezone == other.timezone &&
         website == other.website &&
         categories == other.categories &&
@@ -112,8 +116,9 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, openingHours.hashCode);
     _$hash = $jc(_$hash, specialOpeningHours.hashCode);
+    _$hash = $jc(_$hash, logo.hashCode);
     _$hash = $jc(_$hash, coverPhoto.hashCode);
-    _$hash = $jc(_$hash, photos.hashCode);
+    _$hash = $jc(_$hash, photoGallery.hashCode);
     _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
@@ -137,8 +142,9 @@ class _$Location extends Location {
           ..add('keywords', keywords)
           ..add('openingHours', openingHours)
           ..add('specialOpeningHours', specialOpeningHours)
+          ..add('logo', logo)
           ..add('coverPhoto', coverPhoto)
-          ..add('photos', photos)
+          ..add('photoGallery', photoGallery)
           ..add('timezone', timezone)
           ..add('website', website)
           ..add('categories', categories)
@@ -201,16 +207,21 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
           ListBuilder<SpecialOpeningHour>? specialOpeningHours) =>
       _$this._specialOpeningHours = specialOpeningHours;
 
+  LocationPhotoBuilder? _logo;
+  LocationPhotoBuilder get logo => _$this._logo ??= LocationPhotoBuilder();
+  set logo(LocationPhotoBuilder? logo) => _$this._logo = logo;
+
   LocationPhotoBuilder? _coverPhoto;
   LocationPhotoBuilder get coverPhoto =>
       _$this._coverPhoto ??= LocationPhotoBuilder();
   set coverPhoto(LocationPhotoBuilder? coverPhoto) =>
       _$this._coverPhoto = coverPhoto;
 
-  SetBuilder<LocationPhoto>? _photos;
-  SetBuilder<LocationPhoto> get photos =>
-      _$this._photos ??= SetBuilder<LocationPhoto>();
-  set photos(SetBuilder<LocationPhoto>? photos) => _$this._photos = photos;
+  SetBuilder<LocationPhoto>? _photoGallery;
+  SetBuilder<LocationPhoto> get photoGallery =>
+      _$this._photoGallery ??= SetBuilder<LocationPhoto>();
+  set photoGallery(SetBuilder<LocationPhoto>? photoGallery) =>
+      _$this._photoGallery = photoGallery;
 
   String? _timezone;
   String? get timezone => _$this._timezone;
@@ -253,8 +264,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _keywords = $v.keywords?.toBuilder();
       _openingHours = $v.openingHours?.toBuilder();
       _specialOpeningHours = $v.specialOpeningHours?.toBuilder();
+      _logo = $v.logo?.toBuilder();
       _coverPhoto = $v.coverPhoto?.toBuilder();
-      _photos = $v.photos?.toBuilder();
+      _photoGallery = $v.photoGallery?.toBuilder();
       _timezone = $v.timezone;
       _website = $v.website;
       _categories = $v.categories?.toBuilder();
@@ -295,8 +307,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             keywords: _keywords?.build(),
             openingHours: _openingHours?.build(),
             specialOpeningHours: _specialOpeningHours?.build(),
+            logo: _logo?.build(),
             coverPhoto: _coverPhoto?.build(),
-            photos: _photos?.build(),
+            photoGallery: _photoGallery?.build(),
             timezone: timezone,
             website: website,
             categories: _categories?.build(),
@@ -315,10 +328,12 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
         _openingHours?.build();
         _$failedField = 'specialOpeningHours';
         _specialOpeningHours?.build();
+        _$failedField = 'logo';
+        _logo?.build();
         _$failedField = 'coverPhoto';
         _coverPhoto?.build();
-        _$failedField = 'photos';
-        _photos?.build();
+        _$failedField = 'photoGallery';
+        _photoGallery?.build();
 
         _$failedField = 'categories';
         _categories?.build();

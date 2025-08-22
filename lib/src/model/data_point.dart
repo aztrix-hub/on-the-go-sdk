@@ -13,7 +13,7 @@ part 'data_point.g.dart';
 /// Data Point Model
 ///
 /// Properties:
-/// * [id] - The uberall unique id of the data point
+/// * [id] - The unique id of the data point
 /// * [comments]
 /// * [liked] - Whether this datapoint has been liked or not
 /// * [data] - Content of the datapoint (text of the review, url of the photo, count of checkins...)
@@ -35,7 +35,7 @@ part 'data_point.g.dart';
 /// * [threadActionDate] - The date of the last interaction in that thread. When a review receives a new comment, the parent will update.
 @BuiltValue()
 abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
-  /// The uberall unique id of the data point
+  /// The unique id of the data point
   @BuiltValueField(wireName: r'id')
   int? get id;
 

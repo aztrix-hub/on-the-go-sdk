@@ -219,7 +219,7 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
-final String id = id_example; // String | The uberall unique id for the location you want to update
+final String id = id_example; // String | The unique id for the location you want to update
 final Location location = ; // Location | Location object
 
 try {
@@ -234,7 +234,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The uberall unique id for the location you want to update | 
+ **id** | **String**| The unique id for the location you want to update | 
  **location** | [**Location**](Location.md)| Location object | 
 
 ### Return type

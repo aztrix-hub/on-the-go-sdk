@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(DataPoint, () {
-    // The uberall unique id of the data point
+    // The unique id of the data point
     // int id
     test('to test the property `id`', () async {
       // TODO

@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | The uberall unique id of the data point | [optional] 
+**id** | **int** | The unique id of the data point | [optional] 
 **comments** | [**BuiltList&lt;DataPoint&gt;**](DataPoint.md) |  | [optional] 
 **liked** | **bool** | Whether this datapoint has been liked or not | [optional] 
 **data** | **String** | Content of the datapoint (text of the review, url of the photo, count of checkins...) | [optional] 

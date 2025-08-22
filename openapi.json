@@ -323,7 +323,7 @@
           {
             "name": "id",
             "in": "query",
-            "description": "The uberall unique id for the location you want to update",
+            "description": "The unique id for the location you want to update",
             "required": true,
             "schema": {
               "type": "string"
@@ -1794,10 +1794,13 @@
           "specialOpeningHours": {
             "$ref": "#/components/schemas/SpecialOpeningHours"
           },
+          "logo": {
+            "$ref": "#/components/schemas/LocationPhoto"
+          },
           "coverPhoto": {
             "$ref": "#/components/schemas/LocationPhoto"
           },
-          "photos": {
+          "photoGallery": {
             "uniqueItems": true,
             "type": "array",
             "items": {
@@ -2042,11 +2045,8 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "The uberall unique id for the photo",
+            "description": "A unique id for the photo",
             "format": "int64"
-          },
-          "type": {
-            "$ref": "#/components/schemas/LocationPhotoType"
           },
           "description": {
             "type": "string",
@@ -2055,10 +2055,6 @@
           "url": {
             "type": "string",
             "description": "url of the photo"
-          },
-          "thumbnailUrl": {
-            "type": "string",
-            "description": "Url for the image thumbnail"
           }
         },
         "description": "Location Photo"
@@ -2076,7 +2072,7 @@
         "properties": {
           "id": {
             "type": "integer",
-            "description": "The uberall unique id of the data point",
+            "description": "The unique id of the data point",
             "format": "int64"
           },
           "comments": {

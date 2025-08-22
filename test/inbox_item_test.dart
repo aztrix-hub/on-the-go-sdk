@@ -32,8 +32,13 @@ void main() {
       // TODO
     });
 
-    // InboxItemAuthor author
+    // String author
     test('to test the property `author`', () async {
+      // TODO
+    });
+
+    // String authorImage
+    test('to test the property `authorImage`', () async {
       // TODO
     });
 
@@ -52,8 +57,8 @@ void main() {
       // TODO
     });
 
-    // DirectoryType directoryType
-    test('to test the property `directoryType`', () async {
+    // DirectoryType directory
+    test('to test the property `directory`', () async {
       // TODO
     });
 
@@ -64,11 +69,6 @@ void main() {
 
     // String status
     test('to test the property `status`', () async {
-      // TODO
-    });
-
-    // BuiltList<String> images
-    test('to test the property `images`', () async {
       // TODO
     });
 

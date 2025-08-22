@@ -64,13 +64,18 @@ void main() {
       // TODO
     });
 
+    // LocationPhoto logo
+    test('to test the property `logo`', () async {
+      // TODO
+    });
+
     // LocationPhoto coverPhoto
     test('to test the property `coverPhoto`', () async {
       // TODO
     });
 
-    // BuiltSet<LocationPhoto> photos
-    test('to test the property `photos`', () async {
+    // BuiltSet<LocationPhoto> photoGallery
+    test('to test the property `photoGallery`', () async {
       // TODO
     });
 

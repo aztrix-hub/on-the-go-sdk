@@ -393,7 +393,7 @@ class LocationsApi {
   /// Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing
   ///
   /// Parameters:
-  /// * [id] - The uberall unique id for the location you want to update
+  /// * [id] - The unique id for the location you want to update
   /// * [location] - Location object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request

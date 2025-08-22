@@ -28,8 +28,9 @@ part 'location.g.dart';
 /// * [keywords]
 /// * [openingHours] - Opening hours
 /// * [specialOpeningHours] - Special opening hours
+/// * [logo]
 /// * [coverPhoto]
-/// * [photos]
+/// * [photoGallery]
 /// * [timezone]
 /// * [website]
 /// * [categories]
@@ -72,11 +73,14 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'specialOpeningHours')
   BuiltList<SpecialOpeningHour>? get specialOpeningHours;
 
+  @BuiltValueField(wireName: r'logo')
+  LocationPhoto? get logo;
+
   @BuiltValueField(wireName: r'coverPhoto')
   LocationPhoto? get coverPhoto;
 
-  @BuiltValueField(wireName: r'photos')
-  BuiltSet<LocationPhoto>? get photos;
+  @BuiltValueField(wireName: r'photoGallery')
+  BuiltSet<LocationPhoto>? get photoGallery;
 
   @BuiltValueField(wireName: r'timezone')
   String? get timezone;
@@ -190,6 +194,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             const FullType(BuiltList, [FullType(SpecialOpeningHour)]),
       );
     }
+    if (object.logo != null) {
+      yield r'logo';
+      yield serializers.serialize(
+        object.logo,
+        specifiedType: const FullType(LocationPhoto),
+      );
+    }
     if (object.coverPhoto != null) {
       yield r'coverPhoto';
       yield serializers.serialize(
@@ -197,10 +208,10 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(LocationPhoto),
       );
     }
-    if (object.photos != null) {
-      yield r'photos';
+    if (object.photoGallery != null) {
+      yield r'photoGallery';
       yield serializers.serialize(
-        object.photos,
+        object.photoGallery,
         specifiedType: const FullType(BuiltSet, [FullType(LocationPhoto)]),
       );
     }
@@ -342,6 +353,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as BuiltList<SpecialOpeningHour>;
           result.specialOpeningHours.replace(valueDes);
           break;
+        case r'logo':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(LocationPhoto),
+          ) as LocationPhoto;
+          result.logo.replace(valueDes);
+          break;
         case r'coverPhoto':
           final valueDes = serializers.deserialize(
             value,
@@ -349,12 +367,12 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as LocationPhoto;
           result.coverPhoto.replace(valueDes);
           break;
-        case r'photos':
+        case r'photoGallery':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltSet, [FullType(LocationPhoto)]),
           ) as BuiltSet<LocationPhoto>;
-          result.photos.replace(valueDes);
+          result.photoGallery.replace(valueDes);
           break;
         case r'timezone':
           final valueDes = serializers.deserialize(
