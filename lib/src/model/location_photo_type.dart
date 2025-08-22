@@ -10,8 +10,8 @@ import 'package:built_value/serializer.dart';
 part 'location_photo_type.g.dart';
 
 class LocationPhotoType extends EnumClass {
-  @BuiltValueEnumConst(wireName: r'PROFILE')
-  static const LocationPhotoType PROFILE = _$PROFILE;
+  @BuiltValueEnumConst(wireName: r'LOGO')
+  static const LocationPhotoType LOGO = _$LOGO;
   @BuiltValueEnumConst(wireName: r'COVER')
   static const LocationPhotoType COVER = _$COVER;
   @BuiltValueEnumConst(wireName: r'PHOTO')

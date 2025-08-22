@@ -6,14 +6,14 @@ part of 'location_photo_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const LocationPhotoType _$PROFILE = const LocationPhotoType._('PROFILE');
+const LocationPhotoType _$LOGO = const LocationPhotoType._('LOGO');
 const LocationPhotoType _$COVER = const LocationPhotoType._('COVER');
 const LocationPhotoType _$PHOTO = const LocationPhotoType._('PHOTO');
 
 LocationPhotoType _$valueOf(String name) {
   switch (name) {
-    case 'PROFILE':
-      return _$PROFILE;
+    case 'LOGO':
+      return _$LOGO;
     case 'COVER':
       return _$COVER;
     case 'PHOTO':
@@ -25,14 +25,14 @@ LocationPhotoType _$valueOf(String name) {
 
 final BuiltSet<LocationPhotoType> _$values =
     BuiltSet<LocationPhotoType>(const <LocationPhotoType>[
-  _$PROFILE,
+  _$LOGO,
   _$COVER,
   _$PHOTO,
 ]);
 
 class _$LocationPhotoTypeMeta {
   const _$LocationPhotoTypeMeta();
-  LocationPhotoType get PROFILE => _$PROFILE;
+  LocationPhotoType get LOGO => _$LOGO;
   LocationPhotoType get COVER => _$COVER;
   LocationPhotoType get PHOTO => _$PHOTO;
   LocationPhotoType valueOf(String name) => _$valueOf(name);
@@ -51,12 +51,12 @@ Serializer<LocationPhotoType> _$locationPhotoTypeSerializer =
 class _$LocationPhotoTypeSerializer
     implements PrimitiveSerializer<LocationPhotoType> {
   static const Map<String, Object> _toWire = const <String, Object>{
-    'PROFILE': 'PROFILE',
+    'LOGO': 'LOGO',
     'COVER': 'COVER',
     'PHOTO': 'PHOTO',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
-    'PROFILE': 'PROFILE',
+    'LOGO': 'LOGO',
     'COVER': 'COVER',
     'PHOTO': 'PHOTO',
   };

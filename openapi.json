@@ -2062,7 +2062,7 @@
       "LocationPhotoType": {
         "type": "string",
         "enum": [
-          "PROFILE",
+          "LOGO",
           "COVER",
           "PHOTO"
         ]
