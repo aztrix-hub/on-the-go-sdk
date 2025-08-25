@@ -2331,8 +2331,10 @@
         "properties": {
           "required": [
             "id",
+            "title",
             "text",
-            "listingTypes"
+            "listingTypes",
+            "publicationDate"
           ],
           "id": {
             "type": "integer",
@@ -2345,6 +2347,9 @@
             }
           },
           "clickthroughUrl": {
+            "type": "string"
+          },
+          "title": {
             "type": "string"
           },
           "text": {

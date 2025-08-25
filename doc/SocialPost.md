@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **id** | **int** |  | [optional] 
 **locationIds** | **BuiltList&lt;String&gt;** |  | [optional] 
 **clickthroughUrl** | **String** |  | [optional] 
+**title** | **String** |  | [optional] 
 **text** | **String** |  | [optional] 
 **photos** | [**BuiltList&lt;Photo&gt;**](Photo.md) |  | [optional] 
 **publicationDate** | [**DateTime**](DateTime.md) |  | [optional] 

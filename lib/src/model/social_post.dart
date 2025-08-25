@@ -17,6 +17,7 @@ part 'social_post.g.dart';
 /// * [id]
 /// * [locationIds]
 /// * [clickthroughUrl]
+/// * [title]
 /// * [text]
 /// * [photos]
 /// * [publicationDate]
@@ -33,6 +34,9 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
 
   @BuiltValueField(wireName: r'clickthroughUrl')
   String? get clickthroughUrl;
+
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
   @BuiltValueField(wireName: r'text')
   String? get text;
@@ -93,6 +97,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield r'clickthroughUrl';
       yield serializers.serialize(
         object.clickthroughUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
         specifiedType: const FullType(String),
       );
     }
@@ -183,6 +194,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
             specifiedType: const FullType(String),
           ) as String;
           result.clickthroughUrl = valueDes;
+          break;
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.title = valueDes;
           break;
         case r'text':
           final valueDes = serializers.deserialize(

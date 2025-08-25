@@ -14,6 +14,8 @@ class _$SocialPost extends SocialPost {
   @override
   final String? clickthroughUrl;
   @override
+  final String? title;
+  @override
   final String? text;
   @override
   final BuiltList<Photo>? photos;
@@ -33,6 +35,7 @@ class _$SocialPost extends SocialPost {
       {this.id,
       this.locationIds,
       this.clickthroughUrl,
+      this.title,
       this.text,
       this.photos,
       this.publicationDate,
@@ -54,6 +57,7 @@ class _$SocialPost extends SocialPost {
         id == other.id &&
         locationIds == other.locationIds &&
         clickthroughUrl == other.clickthroughUrl &&
+        title == other.title &&
         text == other.text &&
         photos == other.photos &&
         publicationDate == other.publicationDate &&
@@ -68,6 +72,7 @@ class _$SocialPost extends SocialPost {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, locationIds.hashCode);
     _$hash = $jc(_$hash, clickthroughUrl.hashCode);
+    _$hash = $jc(_$hash, title.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
     _$hash = $jc(_$hash, publicationDate.hashCode);
@@ -84,6 +89,7 @@ class _$SocialPost extends SocialPost {
           ..add('id', id)
           ..add('locationIds', locationIds)
           ..add('clickthroughUrl', clickthroughUrl)
+          ..add('title', title)
           ..add('text', text)
           ..add('photos', photos)
           ..add('publicationDate', publicationDate)
@@ -111,6 +117,10 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   String? get clickthroughUrl => _$this._clickthroughUrl;
   set clickthroughUrl(String? clickthroughUrl) =>
       _$this._clickthroughUrl = clickthroughUrl;
+
+  String? _title;
+  String? get title => _$this._title;
+  set title(String? title) => _$this._title = title;
 
   String? _text;
   String? get text => _$this._text;
@@ -149,6 +159,7 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
       _id = $v.id;
       _locationIds = $v.locationIds?.toBuilder();
       _clickthroughUrl = $v.clickthroughUrl;
+      _title = $v.title;
       _text = $v.text;
       _photos = $v.photos?.toBuilder();
       _publicationDate = $v.publicationDate;
@@ -181,6 +192,7 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
             id: id,
             locationIds: _locationIds?.build(),
             clickthroughUrl: clickthroughUrl,
+            title: title,
             text: text,
             photos: _photos?.build(),
             publicationDate: publicationDate,
