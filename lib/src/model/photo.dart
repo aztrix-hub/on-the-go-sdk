@@ -6,52 +6,49 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'location_photo.g.dart';
+part 'photo.g.dart';
 
 /// Location Photo
 ///
 /// Properties:
 /// * [id] - A unique id for the photo
-/// * [description] - A description for the photo - max 255 chars
 /// * [url] - url of the photo
+/// * [description] - A description for the photo - max 255 chars
 @BuiltValue()
-abstract class LocationPhoto
-    implements Built<LocationPhoto, LocationPhotoBuilder> {
+abstract class Photo implements Built<Photo, PhotoBuilder> {
   /// A unique id for the photo
   @BuiltValueField(wireName: r'id')
   int? get id;
-
-  /// A description for the photo - max 255 chars
-  @BuiltValueField(wireName: r'description')
-  String? get description;
 
   /// url of the photo
   @BuiltValueField(wireName: r'url')
   String get url;
 
-  LocationPhoto._();
+  /// A description for the photo - max 255 chars
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
-  factory LocationPhoto([void updates(LocationPhotoBuilder b)]) =
-      _$LocationPhoto;
+  Photo._();
+
+  factory Photo([void updates(PhotoBuilder b)]) = _$Photo;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationPhotoBuilder b) => b;
+  static void _defaults(PhotoBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationPhoto> get serializer =>
-      _$LocationPhotoSerializer();
+  static Serializer<Photo> get serializer => _$PhotoSerializer();
 }
 
-class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
+class _$PhotoSerializer implements PrimitiveSerializer<Photo> {
   @override
-  final Iterable<Type> types = const [LocationPhoto, _$LocationPhoto];
+  final Iterable<Type> types = const [Photo, _$Photo];
 
   @override
-  final String wireName = r'LocationPhoto';
+  final String wireName = r'Photo';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationPhoto object, {
+    Photo object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -61,6 +58,11 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
         specifiedType: const FullType(int),
       );
     }
+    yield r'url';
+    yield serializers.serialize(
+      object.url,
+      specifiedType: const FullType(String),
+    );
     if (object.description != null) {
       yield r'description';
       yield serializers.serialize(
@@ -68,17 +70,12 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'url';
-    yield serializers.serialize(
-      object.url,
-      specifiedType: const FullType(String),
-    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    LocationPhoto object, {
+    Photo object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -91,7 +88,7 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationPhotoBuilder result,
+    required PhotoBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -105,19 +102,19 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
           ) as int;
           result.id = valueDes;
           break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
         case r'url':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.url = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -128,12 +125,12 @@ class _$LocationPhotoSerializer implements PrimitiveSerializer<LocationPhoto> {
   }
 
   @override
-  LocationPhoto deserialize(
+  Photo deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationPhotoBuilder();
+    final result = PhotoBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

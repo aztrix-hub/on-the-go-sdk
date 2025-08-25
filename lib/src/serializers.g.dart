@@ -33,7 +33,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(Location.serializer)
       ..add(LocationListingConnectGet200Response.serializer)
       ..add(LocationListingsGet200Response.serializer)
-      ..add(LocationPhoto.serializer)
       ..add(LocationPhotoPostRequest.serializer)
       ..add(LocationPhotoType.serializer)
       ..add(LocationsGet200Response.serializer)
@@ -45,9 +44,11 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(NotificationsConfigGet200Response.serializer)
       ..add(OpeningHour.serializer)
       ..add(OpeningHourInterval.serializer)
+      ..add(Photo.serializer)
       ..add(PublishPostsGet200Response.serializer)
       ..add(ResetPassword.serializer)
       ..add(SiteColorsPatchRequest.serializer)
+      ..add(SocialPost.serializer)
       ..add(SpecialOpeningHour.serializer)
       ..add(User.serializer)
       ..add(UserOauthPost200Response.serializer)
@@ -118,6 +119,15 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Photo)]),
+          () => ListBuilder<Photo>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(DirectoryType)]),
+          () => ListBuilder<DirectoryType>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(SocialPost)]),
+          () => ListBuilder<SocialPost>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
       ..addBuilderFactory(
@@ -130,15 +140,11 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(SpecialOpeningHour)]),
           () => ListBuilder<SpecialOpeningHour>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(LocationPhoto)]),
-          () => SetBuilder<LocationPhoto>())
+          const FullType(BuiltSet, const [const FullType(Photo)]),
+          () => SetBuilder<Photo>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Category)]),
-          () => ListBuilder<Category>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType.nullable(JsonObject)]),
-          () => ListBuilder<JsonObject?>()))
+          () => ListBuilder<Category>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

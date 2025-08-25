@@ -55,7 +55,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publishPostsPost**
-> JsonObject publishPostsPost(body)
+> SocialPost publishPostsPost(socialPost)
 
 
 
@@ -68,10 +68,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getPublishApi();
-final JsonObject body = ; // JsonObject | A SocialPost object
+final SocialPost socialPost = ; // SocialPost | A SocialPost object
 
 try {
-    final response = api.publishPostsPost(body);
+    final response = api.publishPostsPost(socialPost);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling PublishApi->publishPostsPost: $e\n');
@@ -82,11 +82,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **JsonObject**| A SocialPost object | 
+ **socialPost** | [**SocialPost**](SocialPost.md)| A SocialPost object | 
 
 ### Return type
 
-[**JsonObject**](JsonObject.md)
+[**SocialPost**](SocialPost.md)
 
 ### Authorization
 

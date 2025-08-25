@@ -37,7 +37,6 @@ import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_listings_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/location_photo.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
@@ -49,9 +48,11 @@ import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
+import 'package:on_the_go_sdk/src/model/photo.dart';
 import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
+import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
@@ -84,7 +85,6 @@ part 'serializers.g.dart';
   Location,
   LocationListingConnectGet200Response,
   LocationListingsGet200Response,
-  LocationPhoto,
   LocationPhotoPostRequest,
   LocationPhotoType,
   LocationsGet200Response,
@@ -96,9 +96,11 @@ part 'serializers.g.dart';
   NotificationsConfigGet200Response,
   OpeningHour,
   OpeningHourInterval,
+  Photo,
   PublishPostsGet200Response,
   ResetPassword,
   SiteColorsPatchRequest,
+  SocialPost,
   SpecialOpeningHour,
   User,
   UserOauthPost200Response,

@@ -30,11 +30,11 @@ class _$Location extends Location {
   @override
   final BuiltList<SpecialOpeningHour>? specialOpeningHours;
   @override
-  final LocationPhoto? logo;
+  final Photo? logo;
   @override
-  final LocationPhoto? coverPhoto;
+  final Photo? coverPhoto;
   @override
-  final BuiltSet<LocationPhoto>? photoGallery;
+  final BuiltSet<Photo>? photoGallery;
   @override
   final String? timezone;
   @override
@@ -207,20 +207,18 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
           ListBuilder<SpecialOpeningHour>? specialOpeningHours) =>
       _$this._specialOpeningHours = specialOpeningHours;
 
-  LocationPhotoBuilder? _logo;
-  LocationPhotoBuilder get logo => _$this._logo ??= LocationPhotoBuilder();
-  set logo(LocationPhotoBuilder? logo) => _$this._logo = logo;
+  PhotoBuilder? _logo;
+  PhotoBuilder get logo => _$this._logo ??= PhotoBuilder();
+  set logo(PhotoBuilder? logo) => _$this._logo = logo;
 
-  LocationPhotoBuilder? _coverPhoto;
-  LocationPhotoBuilder get coverPhoto =>
-      _$this._coverPhoto ??= LocationPhotoBuilder();
-  set coverPhoto(LocationPhotoBuilder? coverPhoto) =>
-      _$this._coverPhoto = coverPhoto;
+  PhotoBuilder? _coverPhoto;
+  PhotoBuilder get coverPhoto => _$this._coverPhoto ??= PhotoBuilder();
+  set coverPhoto(PhotoBuilder? coverPhoto) => _$this._coverPhoto = coverPhoto;
 
-  SetBuilder<LocationPhoto>? _photoGallery;
-  SetBuilder<LocationPhoto> get photoGallery =>
-      _$this._photoGallery ??= SetBuilder<LocationPhoto>();
-  set photoGallery(SetBuilder<LocationPhoto>? photoGallery) =>
+  SetBuilder<Photo>? _photoGallery;
+  SetBuilder<Photo> get photoGallery =>
+      _$this._photoGallery ??= SetBuilder<Photo>();
+  set photoGallery(SetBuilder<Photo>? photoGallery) =>
       _$this._photoGallery = photoGallery;
 
   String? _timezone;
