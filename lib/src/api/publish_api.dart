@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
+import 'package:built_value/json_object.dart';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/social_post.dart';
 
 class PublishApi {
   final Dio _dio;
@@ -102,7 +102,7 @@ class PublishApi {
   ///
   ///
   /// Parameters:
-  /// * [socialPost] - A SocialPost object
+  /// * [body] - A SocialPost object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -110,10 +110,10 @@ class PublishApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [SocialPost] as data
+  /// Returns a [Future] containing a [Response] with a [JsonObject] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SocialPost>> publishPostsPost({
-    required SocialPost socialPost,
+  Future<Response<JsonObject>> publishPostsPost({
+    JsonObject? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -145,8 +145,7 @@ class PublishApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SocialPost);
-      _bodyData = _serializers.serialize(socialPost, specifiedType: _type);
+      _bodyData = body;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -168,7 +167,7 @@ class PublishApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    SocialPost? _responseData;
+    JsonObject? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -176,8 +175,8 @@ class PublishApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(SocialPost),
-            ) as SocialPost;
+              specifiedType: const FullType(JsonObject),
+            ) as JsonObject;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -188,7 +187,7 @@ class PublishApi {
       );
     }
 
-    return Response<SocialPost>(
+    return Response<JsonObject>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -45,7 +45,6 @@ doc/PublishPostsGet200Response.md
 doc/ResetPassword.md
 doc/SiteColorsPatchRequest.md
 doc/SitesApi.md
-doc/SocialPost.md
 doc/SpecialOpeningHour.md
 doc/User.md
 doc/UserOauthPost200Response.md
@@ -110,7 +109,6 @@ lib/src/model/opening_hour_interval.dart
 lib/src/model/publish_posts_get200_response.dart
 lib/src/model/reset_password.dart
 lib/src/model/site_colors_patch_request.dart
-lib/src/model/social_post.dart
 lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart
 lib/src/model/user_oauth_post200_response.dart

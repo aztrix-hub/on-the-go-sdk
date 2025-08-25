@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +19,7 @@ abstract class PublishPostsGet200Response
     implements
         Built<PublishPostsGet200Response, PublishPostsGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'posts')
-  BuiltList<SocialPost>? get posts;
+  BuiltList<JsonObject?>? get posts;
 
   PublishPostsGet200Response._();
 
@@ -55,7 +55,8 @@ class _$PublishPostsGet200ResponseSerializer
       yield r'posts';
       yield serializers.serialize(
         object.posts,
-        specifiedType: const FullType(BuiltList, [FullType(SocialPost)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType.nullable(JsonObject)]),
       );
     }
   }
@@ -86,8 +87,9 @@ class _$PublishPostsGet200ResponseSerializer
         case r'posts':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(SocialPost)]),
-          ) as BuiltList<SocialPost>;
+            specifiedType:
+                const FullType(BuiltList, [FullType.nullable(JsonObject)]),
+          ) as BuiltList<JsonObject?>;
           result.posts.replace(valueDes);
           break;
         default:

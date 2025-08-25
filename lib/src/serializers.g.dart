@@ -48,10 +48,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(PublishPostsGet200Response.serializer)
       ..add(ResetPassword.serializer)
       ..add(SiteColorsPatchRequest.serializer)
-      ..add(SocialPost.serializer)
-      ..add(SocialPostAlertTypeEnum.serializer)
-      ..add(SocialPostStatusEnum.serializer)
-      ..add(SocialPostTypeEnum.serializer)
       ..add(SpecialOpeningHour.serializer)
       ..add(User.serializer)
       ..add(UserOauthPost200Response.serializer)
@@ -122,9 +118,6 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(SocialPost)]),
-          () => ListBuilder<SocialPost>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
       ..addBuilderFactory(
@@ -143,32 +136,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Category)]),
           () => ListBuilder<Category>())
       ..addBuilderFactory(
-          const FullType(BuiltSet, const [const FullType(String)]),
-          () => SetBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(int)]),
-          () => ListBuilder<int>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>()))
+          const FullType(
+              BuiltList, const [const FullType.nullable(JsonObject)]),
+          () => ListBuilder<JsonObject?>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

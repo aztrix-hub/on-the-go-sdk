@@ -140,7 +140,6 @@ Class | Method | HTTP request | Description
  - [PublishPostsGet200Response](doc/PublishPostsGet200Response.md)
  - [ResetPassword](doc/ResetPassword.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
- - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)

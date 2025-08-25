@@ -2327,170 +2327,37 @@
         }
       },
       "SocialPost": {
-        "required": [
-          "directories",
-          "publicationDate",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "description": "The title of the Social Post. For type QUESTION_AND_ANSWER this is going to be the question."
-          },
-          "description": {
-            "type": "string",
-            "description": "The description of the Social Post. For type QUESTION_AND_ANSWER this is going to be the answer."
-          },
-          "url": {
-            "type": "string",
-            "description": "A link for the Social Post. This is mandatory for a \"Special Offer\" and should point to a page concerning the offer."
-          },
-          "type": {
-            "type": "string",
-            "description": "The type of the Social Post. POST, OFFER, QUESTION_AND_ANSWER, EVENT or ALERT.",
-            "enum": [
-              "POST",
-              "OFFER",
-              "ALERT",
-              "EVENT",
-              "QUESTION_AND_ANSWER",
-              "REEL",
-              "STORY",
-              "CAROUSEL"
-            ]
-          },
-          "alertType": {
-            "type": "string",
-            "description": "A special type for Google ALERT posts. Possible values are COVID_19.",
-            "enum": [
-              "COVID_19"
-            ]
-          },
-          "status": {
-            "type": "string",
-            "description": "The current status of the Social Post (scheduled, active, inactive, deleted, not_published, published, impossible)",
-            "enum": [
-              "SCHEDULED",
-              "APPROVAL_NEEDED",
-              "ACTIVE",
-              "INACTIVE",
-              "DELETED",
-              "IMPOSSIBLE",
-              "INCOMPLETE",
-              "ENDED",
-              "REJECTED"
-            ]
-          },
-          "dateStart": {
-            "type": "string",
-            "description": "The starting date of EVENT and OFFER type Social Posts. It is used to indicate when an EVENT/OFFER will start. For API versions older than 20210804, it is used as publicationDate. ",
-            "format": "date-time"
-          },
-          "dateEnd": {
-            "type": "string",
-            "description": "The ending date of the Social Post (type=OFFER). The post will be removed from the listings at that date. It also determines when a special offer should end.",
-            "format": "date-time"
-          },
-          "publicationDate": {
-            "type": "string",
-            "description": "The date on which the Social Post will be published. It is used to schedule posts in the future. Format: YYYY-MM-dd''T''HH:mm:ssXXXXX  (Example: 2007-12-03T10:15:30+01:00)",
-            "format": "date-time",
-            "example": "2024-06-25T11:01:00Z"
-          },
-          "isStoreLocator": {
-            "type": "boolean",
-            "description": "When enabled, the SocialPost will be visible in StoreLocator."
-          },
-          "timeZone": {
-            "type": "string",
-            "description": "The timezone in which the Social Post should be created",
-            "example": "Europe/Berlin"
-          },
-          "labels": {
-            "uniqueItems": true,
-            "type": "array",
-            "description": "The list of location labels as entered when creating/updating the Social Post.",
-            "example": "[''Campaign2018'', ''EastCoast'']",
-            "items": {
-              "type": "string",
-              "description": "The list of location labels as entered when creating/updating the Social Post"
-            }
-          },
-          "firstComment": {
-            "type": "string",
-            "description": "The first comment to be posted after a post creation. Only available for INSTAGRAM"
-          },
-          "businessIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "locationIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "listingPageIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "businessPageIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "excludedLocationIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "string"
-            }
-          },
-          "directories": {
-            "type": "array",
-            "description": "The video of the social post (can only be one)",
-            "items": {
-              "type": "string"
-            }
-          },
-          "couponCode": {
-            "type": "string",
-            "description": "A couponCode for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts."
-          },
-          "termsAndConditions": {
-            "type": "string",
-            "description": "Terms and Conditions for redeeming a \"Special Offer\" (SocialPost.type=OFFER). Currently only supported for Google Posts."
-          },
-          "locationGroupIds": {
-            "type": "array",
-            "description": "The list of location group IDs as entered when creating/updating the Social Post.",
-            "items": {
-              "type": "integer",
-              "format": "int64"
-            }
-          },
-          "videos": {
-            "type": "array",
-            "description": "The video of the social post (can only be one)",
-            "items": {
-              "type": "string"
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "text": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "url": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              }
             }
           }
         },
-        "description": "A Social Post is a message for your customers that will be published on some of your listings. This can be a \"News\", a \"Special Offer\" or a \"Question and Answer\"."
+        "publicationDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "listingTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/DirectoryType"
+          }
+        }
       }
     },
     "securitySchemes": {
