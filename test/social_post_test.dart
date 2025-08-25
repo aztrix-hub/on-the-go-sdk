@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    // String clickthroughUrl
+    test('to test the property `clickthroughUrl`', () async {
+      // TODO
+    });
+
     // String text
     test('to test the property `text`', () async {
       // TODO

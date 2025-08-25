@@ -2344,6 +2344,9 @@
               "type": "string"
             }
           },
+          "clickthroughUrl": {
+            "type": "string"
+          },
           "text": {
             "type": "string"
           },

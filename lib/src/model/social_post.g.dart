@@ -12,6 +12,8 @@ class _$SocialPost extends SocialPost {
   @override
   final BuiltList<String>? locationIds;
   @override
+  final String? clickthroughUrl;
+  @override
   final String? text;
   @override
   final BuiltList<Photo>? photos;
@@ -30,6 +32,7 @@ class _$SocialPost extends SocialPost {
   _$SocialPost._(
       {this.id,
       this.locationIds,
+      this.clickthroughUrl,
       this.text,
       this.photos,
       this.publicationDate,
@@ -50,6 +53,7 @@ class _$SocialPost extends SocialPost {
     return other is SocialPost &&
         id == other.id &&
         locationIds == other.locationIds &&
+        clickthroughUrl == other.clickthroughUrl &&
         text == other.text &&
         photos == other.photos &&
         publicationDate == other.publicationDate &&
@@ -63,6 +67,7 @@ class _$SocialPost extends SocialPost {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, locationIds.hashCode);
+    _$hash = $jc(_$hash, clickthroughUrl.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, photos.hashCode);
     _$hash = $jc(_$hash, publicationDate.hashCode);
@@ -78,6 +83,7 @@ class _$SocialPost extends SocialPost {
     return (newBuiltValueToStringHelper(r'SocialPost')
           ..add('id', id)
           ..add('locationIds', locationIds)
+          ..add('clickthroughUrl', clickthroughUrl)
           ..add('text', text)
           ..add('photos', photos)
           ..add('publicationDate', publicationDate)
@@ -100,6 +106,11 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
       _$this._locationIds ??= ListBuilder<String>();
   set locationIds(ListBuilder<String>? locationIds) =>
       _$this._locationIds = locationIds;
+
+  String? _clickthroughUrl;
+  String? get clickthroughUrl => _$this._clickthroughUrl;
+  set clickthroughUrl(String? clickthroughUrl) =>
+      _$this._clickthroughUrl = clickthroughUrl;
 
   String? _text;
   String? get text => _$this._text;
@@ -137,6 +148,7 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
     if ($v != null) {
       _id = $v.id;
       _locationIds = $v.locationIds?.toBuilder();
+      _clickthroughUrl = $v.clickthroughUrl;
       _text = $v.text;
       _photos = $v.photos?.toBuilder();
       _publicationDate = $v.publicationDate;
@@ -168,6 +180,7 @@ class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
           _$SocialPost._(
             id: id,
             locationIds: _locationIds?.build(),
+            clickthroughUrl: clickthroughUrl,
             text: text,
             photos: _photos?.build(),
             publicationDate: publicationDate,
