@@ -2329,9 +2329,20 @@
       "SocialPost": {
         "type": "object",
         "properties": {
+          "required": [
+            "id",
+            "text",
+            "listingTypes"
+          ],
           "id": {
             "type": "integer",
             "format": "int64"
+          },
+          "locationIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "text": {
             "type": "string"
@@ -2351,6 +2362,14 @@
             "items": {
               "$ref": "#/components/schemas/DirectoryType"
             }
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       }

@@ -15,14 +15,20 @@ part 'social_post.g.dart';
 ///
 /// Properties:
 /// * [id]
+/// * [locationIds]
 /// * [text]
 /// * [photos]
 /// * [publicationDate]
 /// * [listingTypes]
+/// * [startTime]
+/// * [endTime]
 @BuiltValue()
 abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   @BuiltValueField(wireName: r'id')
   int? get id;
+
+  @BuiltValueField(wireName: r'locationIds')
+  BuiltList<String>? get locationIds;
 
   @BuiltValueField(wireName: r'text')
   String? get text;
@@ -35,6 +41,12 @@ abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
 
   @BuiltValueField(wireName: r'listingTypes')
   BuiltList<DirectoryType>? get listingTypes;
+
+  @BuiltValueField(wireName: r'startTime')
+  DateTime? get startTime;
+
+  @BuiltValueField(wireName: r'endTime')
+  DateTime? get endTime;
 
   SocialPost._();
 
@@ -66,6 +78,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         specifiedType: const FullType(int),
       );
     }
+    if (object.locationIds != null) {
+      yield r'locationIds';
+      yield serializers.serialize(
+        object.locationIds,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
     if (object.text != null) {
       yield r'text';
       yield serializers.serialize(
@@ -92,6 +111,20 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield serializers.serialize(
         object.listingTypes,
         specifiedType: const FullType(BuiltList, [FullType(DirectoryType)]),
+      );
+    }
+    if (object.startTime != null) {
+      yield r'startTime';
+      yield serializers.serialize(
+        object.startTime,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.endTime != null) {
+      yield r'endTime';
+      yield serializers.serialize(
+        object.endTime,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -126,6 +159,13 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
           ) as int;
           result.id = valueDes;
           break;
+        case r'locationIds':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.locationIds.replace(valueDes);
+          break;
         case r'text':
           final valueDes = serializers.deserialize(
             value,
@@ -153,6 +193,20 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
             specifiedType: const FullType(BuiltList, [FullType(DirectoryType)]),
           ) as BuiltList<DirectoryType>;
           result.listingTypes.replace(valueDes);
+          break;
+        case r'startTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.startTime = valueDes;
+          break;
+        case r'endTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.endTime = valueDes;
           break;
         default:
           unhandled.add(key);

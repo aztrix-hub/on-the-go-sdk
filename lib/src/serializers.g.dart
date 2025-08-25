@@ -119,12 +119,6 @@ Serializers _$serializers = (Serializers().toBuilder()
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Photo)]),
-          () => ListBuilder<Photo>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(DirectoryType)]),
-          () => ListBuilder<DirectoryType>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPost)]),
           () => ListBuilder<SocialPost>())
       ..addBuilderFactory(
@@ -144,7 +138,16 @@ Serializers _$serializers = (Serializers().toBuilder()
           () => SetBuilder<Photo>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Category)]),
-          () => ListBuilder<Category>()))
+          () => ListBuilder<Category>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Photo)]),
+          () => ListBuilder<Photo>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(DirectoryType)]),
+          () => ListBuilder<DirectoryType>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint
