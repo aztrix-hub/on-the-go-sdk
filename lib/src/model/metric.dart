@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/metric_data.dart';
 import 'package:built_value/built_value.dart';
@@ -13,31 +14,16 @@ part 'metric.g.dart';
 /// Metric
 ///
 /// Properties:
-/// * [TOTAL_INTERACTIONS]
-/// * [TOTAL_IMPRESSIONS]
-/// * [GOOGLE_INTERACTIONS]
-/// * [GOOGLE_IMPRESSIONS]
-/// * [FACEBOOK_INTERACTIONS]
-/// * [FACEBOOK_IMPRESSIONS]
+/// * [type]
+/// * [data]
 @BuiltValue()
 abstract class Metric implements Built<Metric, MetricBuilder> {
-  @BuiltValueField(wireName: r'TOTAL_INTERACTIONS')
-  BuiltList<MetricData>? get TOTAL_INTERACTIONS;
+  @BuiltValueField(wireName: r'type')
+  MetricType? get type;
+  // enum typeEnum {  TOTAL_INTERACTIONS,  TOTAL_IMPRESSIONS,  GOOGLE_INTERACTIONS,  GOOGLE_IMPRESSIONS,  FACEBOOK_INTERACTIONS,  FACEBOOK_IMPRESSIONS,  };
 
-  @BuiltValueField(wireName: r'TOTAL_IMPRESSIONS')
-  BuiltList<MetricData>? get TOTAL_IMPRESSIONS;
-
-  @BuiltValueField(wireName: r'GOOGLE_INTERACTIONS')
-  BuiltList<MetricData>? get GOOGLE_INTERACTIONS;
-
-  @BuiltValueField(wireName: r'GOOGLE_IMPRESSIONS')
-  BuiltList<MetricData>? get GOOGLE_IMPRESSIONS;
-
-  @BuiltValueField(wireName: r'FACEBOOK_INTERACTIONS')
-  BuiltList<MetricData>? get FACEBOOK_INTERACTIONS;
-
-  @BuiltValueField(wireName: r'FACEBOOK_IMPRESSIONS')
-  BuiltList<MetricData>? get FACEBOOK_IMPRESSIONS;
+  @BuiltValueField(wireName: r'data')
+  BuiltList<MetricData>? get data;
 
   Metric._();
 
@@ -62,45 +48,17 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
     Metric object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.TOTAL_INTERACTIONS != null) {
-      yield r'TOTAL_INTERACTIONS';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.TOTAL_INTERACTIONS,
-        specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
+        object.type,
+        specifiedType: const FullType(MetricType),
       );
     }
-    if (object.TOTAL_IMPRESSIONS != null) {
-      yield r'TOTAL_IMPRESSIONS';
+    if (object.data != null) {
+      yield r'data';
       yield serializers.serialize(
-        object.TOTAL_IMPRESSIONS,
-        specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-      );
-    }
-    if (object.GOOGLE_INTERACTIONS != null) {
-      yield r'GOOGLE_INTERACTIONS';
-      yield serializers.serialize(
-        object.GOOGLE_INTERACTIONS,
-        specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-      );
-    }
-    if (object.GOOGLE_IMPRESSIONS != null) {
-      yield r'GOOGLE_IMPRESSIONS';
-      yield serializers.serialize(
-        object.GOOGLE_IMPRESSIONS,
-        specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-      );
-    }
-    if (object.FACEBOOK_INTERACTIONS != null) {
-      yield r'FACEBOOK_INTERACTIONS';
-      yield serializers.serialize(
-        object.FACEBOOK_INTERACTIONS,
-        specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-      );
-    }
-    if (object.FACEBOOK_IMPRESSIONS != null) {
-      yield r'FACEBOOK_IMPRESSIONS';
-      yield serializers.serialize(
-        object.FACEBOOK_IMPRESSIONS,
+        object.data,
         specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
       );
     }
@@ -129,47 +87,19 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'TOTAL_INTERACTIONS':
+        case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-          ) as BuiltList<MetricData>;
-          result.TOTAL_INTERACTIONS.replace(valueDes);
+            specifiedType: const FullType(MetricType),
+          ) as MetricType;
+          result.type = valueDes;
           break;
-        case r'TOTAL_IMPRESSIONS':
+        case r'data':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
           ) as BuiltList<MetricData>;
-          result.TOTAL_IMPRESSIONS.replace(valueDes);
-          break;
-        case r'GOOGLE_INTERACTIONS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-          ) as BuiltList<MetricData>;
-          result.GOOGLE_INTERACTIONS.replace(valueDes);
-          break;
-        case r'GOOGLE_IMPRESSIONS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-          ) as BuiltList<MetricData>;
-          result.GOOGLE_IMPRESSIONS.replace(valueDes);
-          break;
-        case r'FACEBOOK_INTERACTIONS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-          ) as BuiltList<MetricData>;
-          result.FACEBOOK_INTERACTIONS.replace(valueDes);
-          break;
-        case r'FACEBOOK_IMPRESSIONS':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MetricData)]),
-          ) as BuiltList<MetricData>;
-          result.FACEBOOK_IMPRESSIONS.replace(valueDes);
+          result.data.replace(valueDes);
           break;
         default:
           unhandled.add(key);

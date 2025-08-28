@@ -2280,39 +2280,18 @@
         ]
       },
       "Metrics": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Metric"
+        }
+      },
+      "Metric": {
         "type": "object",
         "properties": {
-          "TOTAL_INTERACTIONS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricData"
-            }
+          "type": {
+            "$ref": "#/components/schemas/MetricType"
           },
-          "TOTAL_IMPRESSIONS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricData"
-            }
-          },
-          "GOOGLE_INTERACTIONS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricData"
-            }
-          },
-          "GOOGLE_IMPRESSIONS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricData"
-            }
-          },
-          "FACEBOOK_INTERACTIONS": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MetricData"
-            }
-          },
-          "FACEBOOK_IMPRESSIONS": {
+          "data": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/MetricData"

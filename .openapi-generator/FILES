@@ -32,9 +32,9 @@ doc/LocationsApi.md
 doc/LocationsGet200Response.md
 doc/LoginBody.md
 doc/LoginResponse.md
+doc/Metric.md
 doc/MetricData.md
 doc/MetricType.md
-doc/Metrics.md
 doc/NotificationsApi.md
 doc/NotificationsConfigGet200Response.md
 doc/OpeningHour.md
@@ -100,9 +100,9 @@ lib/src/model/location_photo_type.dart
 lib/src/model/locations_get200_response.dart
 lib/src/model/login_body.dart
 lib/src/model/login_response.dart
+lib/src/model/metric.dart
 lib/src/model/metric_data.dart
 lib/src/model/metric_type.dart
-lib/src/model/metrics.dart
 lib/src/model/notifications_config_get200_response.dart
 lib/src/model/opening_hour.dart
 lib/src/model/opening_hour_interval.dart
@@ -117,4 +117,3 @@ lib/src/model/user_oauth_post200_response.dart
 lib/src/model/user_oauth_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/metrics_test.dart

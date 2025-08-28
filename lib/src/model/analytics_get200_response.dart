@@ -3,7 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/metrics.dart';
+import 'package:on_the_go_sdk/src/model/metric.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +18,7 @@ part 'analytics_get200_response.g.dart';
 abstract class AnalyticsGet200Response
     implements Built<AnalyticsGet200Response, AnalyticsGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'metrics')
-  Metrics? get metrics;
+  BuiltList<Metric>? get metrics;
 
   AnalyticsGet200Response._();
 
@@ -53,7 +54,7 @@ class _$AnalyticsGet200ResponseSerializer
       yield r'metrics';
       yield serializers.serialize(
         object.metrics,
-        specifiedType: const FullType(Metrics),
+        specifiedType: const FullType(BuiltList, [FullType(Metric)]),
       );
     }
   }
@@ -84,8 +85,8 @@ class _$AnalyticsGet200ResponseSerializer
         case r'metrics':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Metrics),
-          ) as Metrics;
+            specifiedType: const FullType(BuiltList, [FullType(Metric)]),
+          ) as BuiltList<Metric>;
           result.metrics.replace(valueDes);
           break;
         default:

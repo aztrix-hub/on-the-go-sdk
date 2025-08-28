@@ -8,7 +8,7 @@ part of 'analytics_get200_response.dart';
 
 class _$AnalyticsGet200Response extends AnalyticsGet200Response {
   @override
-  final Metrics? metrics;
+  final BuiltList<Metric>? metrics;
 
   factory _$AnalyticsGet200Response(
           [void Function(AnalyticsGet200ResponseBuilder)? updates]) =>
@@ -51,9 +51,9 @@ class AnalyticsGet200ResponseBuilder
         Builder<AnalyticsGet200Response, AnalyticsGet200ResponseBuilder> {
   _$AnalyticsGet200Response? _$v;
 
-  MetricsBuilder? _metrics;
-  MetricsBuilder get metrics => _$this._metrics ??= MetricsBuilder();
-  set metrics(MetricsBuilder? metrics) => _$this._metrics = metrics;
+  ListBuilder<Metric>? _metrics;
+  ListBuilder<Metric> get metrics => _$this._metrics ??= ListBuilder<Metric>();
+  set metrics(ListBuilder<Metric>? metrics) => _$this._metrics = metrics;
 
   AnalyticsGet200ResponseBuilder() {
     AnalyticsGet200Response._defaults(this);
