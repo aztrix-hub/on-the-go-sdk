@@ -6,52 +6,48 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'metric_data_inner.g.dart';
+part 'metric_data.g.dart';
 
-/// MetricDataInner
+/// MetricData
 ///
 /// Properties:
-/// * [period]
+/// * [day]
 /// * [count]
 @BuiltValue()
-abstract class MetricDataInner
-    implements Built<MetricDataInner, MetricDataInnerBuilder> {
-  @BuiltValueField(wireName: r'period')
-  DateTime? get period;
+abstract class MetricData implements Built<MetricData, MetricDataBuilder> {
+  @BuiltValueField(wireName: r'day')
+  DateTime? get day;
 
   @BuiltValueField(wireName: r'count')
   int? get count;
 
-  MetricDataInner._();
+  MetricData._();
 
-  factory MetricDataInner([void updates(MetricDataInnerBuilder b)]) =
-      _$MetricDataInner;
+  factory MetricData([void updates(MetricDataBuilder b)]) = _$MetricData;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(MetricDataInnerBuilder b) => b;
+  static void _defaults(MetricDataBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<MetricDataInner> get serializer =>
-      _$MetricDataInnerSerializer();
+  static Serializer<MetricData> get serializer => _$MetricDataSerializer();
 }
 
-class _$MetricDataInnerSerializer
-    implements PrimitiveSerializer<MetricDataInner> {
+class _$MetricDataSerializer implements PrimitiveSerializer<MetricData> {
   @override
-  final Iterable<Type> types = const [MetricDataInner, _$MetricDataInner];
+  final Iterable<Type> types = const [MetricData, _$MetricData];
 
   @override
-  final String wireName = r'MetricDataInner';
+  final String wireName = r'MetricData';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    MetricDataInner object, {
+    MetricData object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.period != null) {
-      yield r'period';
+    if (object.day != null) {
+      yield r'day';
       yield serializers.serialize(
-        object.period,
+        object.day,
         specifiedType: const FullType(DateTime),
       );
     }
@@ -67,7 +63,7 @@ class _$MetricDataInnerSerializer
   @override
   Object serialize(
     Serializers serializers,
-    MetricDataInner object, {
+    MetricData object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -80,19 +76,19 @@ class _$MetricDataInnerSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required MetricDataInnerBuilder result,
+    required MetricDataBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'period':
+        case r'day':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
-          result.period = valueDes;
+          result.day = valueDes;
           break;
         case r'count':
           final valueDes = serializers.deserialize(
@@ -110,12 +106,12 @@ class _$MetricDataInnerSerializer
   }
 
   @override
-  MetricDataInner deserialize(
+  MetricData deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = MetricDataInnerBuilder();
+    final result = MetricDataBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -131,7 +131,7 @@ Class | Method | HTTP request | Description
  - [LoginBody](doc/LoginBody.md)
  - [LoginResponse](doc/LoginResponse.md)
  - [Metric](doc/Metric.md)
- - [MetricDataInner](doc/MetricDataInner.md)
+ - [MetricData](doc/MetricData.md)
  - [MetricType](doc/MetricType.md)
  - [NotificationsConfigGet200Response](doc/NotificationsConfigGet200Response.md)
  - [OpeningHour](doc/OpeningHour.md)

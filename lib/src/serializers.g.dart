@@ -39,7 +39,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(LoginBody.serializer)
       ..add(LoginResponse.serializer)
       ..add(Metric.serializer)
-      ..add(MetricDataInner.serializer)
+      ..add(MetricData.serializer)
       ..add(MetricType.serializer)
       ..add(NotificationsConfigGet200Response.serializer)
       ..add(OpeningHour.serializer)
@@ -108,8 +108,23 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Metric)]),
           () => ListBuilder<Metric>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(MetricDataInner)]),
-          () => ListBuilder<MetricDataInner>())
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(MetricData)]),
+          () => ListBuilder<MetricData>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(OpeningHourInterval)]),

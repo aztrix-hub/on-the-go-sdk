@@ -49,7 +49,7 @@ export 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/login_body.dart';
 export 'package:on_the_go_sdk/src/model/login_response.dart';
 export 'package:on_the_go_sdk/src/model/metric.dart';
-export 'package:on_the_go_sdk/src/model/metric_data_inner.dart';
+export 'package:on_the_go_sdk/src/model/metric_data.dart';
 export 'package:on_the_go_sdk/src/model/metric_type.dart';
 export 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/opening_hour.dart';

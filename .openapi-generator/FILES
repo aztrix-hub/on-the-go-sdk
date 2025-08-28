@@ -33,7 +33,7 @@ doc/LocationsGet200Response.md
 doc/LoginBody.md
 doc/LoginResponse.md
 doc/Metric.md
-doc/MetricDataInner.md
+doc/MetricData.md
 doc/MetricType.md
 doc/NotificationsApi.md
 doc/NotificationsConfigGet200Response.md
@@ -101,7 +101,7 @@ lib/src/model/locations_get200_response.dart
 lib/src/model/login_body.dart
 lib/src/model/login_response.dart
 lib/src/model/metric.dart
-lib/src/model/metric_data_inner.dart
+lib/src/model/metric_data.dart
 lib/src/model/metric_type.dart
 lib/src/model/notifications_config_get200_response.dart
 lib/src/model/opening_hour.dart
@@ -149,7 +149,7 @@ test/locations_api_test.dart
 test/locations_get200_response_test.dart
 test/login_body_test.dart
 test/login_response_test.dart
-test/metric_data_inner_test.dart
+test/metric_data_test.dart
 test/metric_test.dart
 test/metric_type_test.dart
 test/notifications_api_test.dart

@@ -2288,23 +2288,40 @@
       "Metric": {
         "type": "object",
         "properties": {
-          "type": {
-            "$ref": "#/components/schemas/MetricType"
-          },
-          "data": {
+          "TOTAL_INTERACTIONS": {
             "type": "array",
             "items": {
-              "type": "object",
-              "properties": {
-                "period": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "count": {
-                  "type": "integer",
-                  "format": "int32"
-                }
-              }
+              "$ref": "#/components/schemas/MetricData"
+            }
+          },
+          "TOTAL_IMPRESSIONS": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MetricData"
+            }
+          },
+          "GOOGLE_INTERACTIONS": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MetricData"
+            }
+          },
+          "GOOGLE_IMPRESSIONS": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MetricData"
+            }
+          },
+          "FACEBOOK_INTERACTIONS": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MetricData"
+            }
+          },
+          "FACEBOOK_IMPRESSIONS": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MetricData"
             }
           }
         }
@@ -2319,6 +2336,19 @@
           "FACEBOOK_INTERACTIONS",
           "FACEBOOK_IMPRESSIONS"
         ]
+      },
+      "MetricData": {
+        "type": "object",
+        "properties": {
+          "day": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "count": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
       },
       "SocialPosts": {
         "type": "array",

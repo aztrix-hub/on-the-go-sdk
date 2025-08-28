@@ -7,13 +7,33 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Metric, () {
-    // MetricType type
-    test('to test the property `type`', () async {
+    // BuiltList<MetricData> TOTAL_INTERACTIONS
+    test('to test the property `TOTAL_INTERACTIONS`', () async {
       // TODO
     });
 
-    // BuiltList<MetricDataInner> data
-    test('to test the property `data`', () async {
+    // BuiltList<MetricData> TOTAL_IMPRESSIONS
+    test('to test the property `TOTAL_IMPRESSIONS`', () async {
+      // TODO
+    });
+
+    // BuiltList<MetricData> GOOGLE_INTERACTIONS
+    test('to test the property `GOOGLE_INTERACTIONS`', () async {
+      // TODO
+    });
+
+    // BuiltList<MetricData> GOOGLE_IMPRESSIONS
+    test('to test the property `GOOGLE_IMPRESSIONS`', () async {
+      // TODO
+    });
+
+    // BuiltList<MetricData> FACEBOOK_INTERACTIONS
+    test('to test the property `FACEBOOK_INTERACTIONS`', () async {
+      // TODO
+    });
+
+    // BuiltList<MetricData> FACEBOOK_IMPRESSIONS
+    test('to test the property `FACEBOOK_IMPRESSIONS`', () async {
       // TODO
     });
   });

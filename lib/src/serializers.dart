@@ -43,7 +43,7 @@ import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
-import 'package:on_the_go_sdk/src/model/metric_data_inner.dart';
+import 'package:on_the_go_sdk/src/model/metric_data.dart';
 import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
@@ -91,7 +91,7 @@ part 'serializers.g.dart';
   LoginBody,
   LoginResponse,
   Metric,
-  MetricDataInner,
+  MetricData,
   MetricType,
   NotificationsConfigGet200Response,
   OpeningHour,
