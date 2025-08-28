@@ -2280,12 +2280,6 @@
         ]
       },
       "Metrics": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Metric"
-        }
-      },
-      "Metric": {
         "type": "object",
         "properties": {
           "TOTAL_INTERACTIONS": {
