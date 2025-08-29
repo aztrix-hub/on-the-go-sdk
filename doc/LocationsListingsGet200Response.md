@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.LocationListingsGet200Response
+# on_the_go_sdk.model.LocationsListingsGet200Response
 
 ## Load the model package
 ```dart

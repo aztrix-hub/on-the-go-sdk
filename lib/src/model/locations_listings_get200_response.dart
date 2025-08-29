@@ -8,48 +8,48 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'location_listings_get200_response.g.dart';
+part 'locations_listings_get200_response.g.dart';
 
-/// LocationListingsGet200Response
+/// LocationsListingsGet200Response
 ///
 /// Properties:
 /// * [listings]
 @BuiltValue()
-abstract class LocationListingsGet200Response
+abstract class LocationsListingsGet200Response
     implements
-        Built<LocationListingsGet200Response,
-            LocationListingsGet200ResponseBuilder> {
+        Built<LocationsListingsGet200Response,
+            LocationsListingsGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'listings')
   BuiltList<Listing>? get listings;
 
-  LocationListingsGet200Response._();
+  LocationsListingsGet200Response._();
 
-  factory LocationListingsGet200Response(
-          [void updates(LocationListingsGet200ResponseBuilder b)]) =
-      _$LocationListingsGet200Response;
+  factory LocationsListingsGet200Response(
+          [void updates(LocationsListingsGet200ResponseBuilder b)]) =
+      _$LocationsListingsGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationListingsGet200ResponseBuilder b) => b;
+  static void _defaults(LocationsListingsGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationListingsGet200Response> get serializer =>
-      _$LocationListingsGet200ResponseSerializer();
+  static Serializer<LocationsListingsGet200Response> get serializer =>
+      _$LocationsListingsGet200ResponseSerializer();
 }
 
-class _$LocationListingsGet200ResponseSerializer
-    implements PrimitiveSerializer<LocationListingsGet200Response> {
+class _$LocationsListingsGet200ResponseSerializer
+    implements PrimitiveSerializer<LocationsListingsGet200Response> {
   @override
   final Iterable<Type> types = const [
-    LocationListingsGet200Response,
-    _$LocationListingsGet200Response
+    LocationsListingsGet200Response,
+    _$LocationsListingsGet200Response
   ];
 
   @override
-  final String wireName = r'LocationListingsGet200Response';
+  final String wireName = r'LocationsListingsGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationListingsGet200Response object, {
+    LocationsListingsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.listings != null) {
@@ -64,7 +64,7 @@ class _$LocationListingsGet200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    LocationListingsGet200Response object, {
+    LocationsListingsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,7 +77,7 @@ class _$LocationListingsGet200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationListingsGet200ResponseBuilder result,
+    required LocationsListingsGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -100,12 +100,12 @@ class _$LocationListingsGet200ResponseSerializer
   }
 
   @override
-  LocationListingsGet200Response deserialize(
+  LocationsListingsGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationListingsGet200ResponseBuilder();
+    final result = LocationsListingsGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

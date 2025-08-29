@@ -1483,21 +1483,10 @@
         ]
       }
     },
-    "/location/listings": {
+    "/locations/listings": {
       "get": {
         "tags": [
           "locations"
-        ],
-        "parameters": [
-          {
-            "name": "locationId",
-            "in": "query",
-            "description": "The id of the location",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
         ],
         "responses": {
           "200": {

@@ -36,10 +36,10 @@ import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/location_listings_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/locations_listings_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
@@ -84,10 +84,10 @@ part 'serializers.g.dart';
   Listing,
   Location,
   LocationListingConnectGet200Response,
-  LocationListingsGet200Response,
   LocationPhotoPostRequest,
   LocationPhotoType,
   LocationsGet200Response,
+  LocationsListingsGet200Response,
   LoginBody,
   LoginResponse,
   Metric,

@@ -78,11 +78,11 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingConnectGet**](doc/LocationsApi.md#locationlistingconnectget) | **GET** /location/listing/connect | 
-[*LocationsApi*](doc/LocationsApi.md) | [**locationListingsGet**](doc/LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoPost**](doc/LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingsGet**](doc/LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigPost**](doc/NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
@@ -124,10 +124,10 @@ Class | Method | HTTP request | Description
  - [Listing](doc/Listing.md)
  - [Location](doc/Location.md)
  - [LocationListingConnectGet200Response](doc/LocationListingConnectGet200Response.md)
- - [LocationListingsGet200Response](doc/LocationListingsGet200Response.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)
  - [LocationsGet200Response](doc/LocationsGet200Response.md)
+ - [LocationsListingsGet200Response](doc/LocationsListingsGet200Response.md)
  - [LoginBody](doc/LoginBody.md)
  - [LoginResponse](doc/LoginResponse.md)
  - [Metric](doc/Metric.md)

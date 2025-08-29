@@ -25,11 +25,6 @@ void main() {
       // TODO
     });
 
-    //Future<LocationListingsGet200Response> locationListingsGet(String locationId) async
-    test('test locationListingsGet', () async {
-      // TODO
-    });
-
     // Update a Location
     //
     // Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing
@@ -53,6 +48,11 @@ void main() {
     //
     //Future<LocationsGet200Response> locationsGet(String language, { BuiltList<String> locationIds, String query }) async
     test('test locationsGet', () async {
+      // TODO
+    });
+
+    //Future<LocationsListingsGet200Response> locationsListingsGet() async
+    test('test locationsListingsGet', () async {
       // TODO
     });
   });
