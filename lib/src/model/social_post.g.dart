@@ -8,7 +8,7 @@ part of 'social_post.dart';
 
 class _$SocialPost extends SocialPost {
   @override
-  final int? id;
+  final String? id;
   @override
   final BuiltList<String>? locationIds;
   @override
@@ -103,9 +103,9 @@ class _$SocialPost extends SocialPost {
 class SocialPostBuilder implements Builder<SocialPost, SocialPostBuilder> {
   _$SocialPost? _$v;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   ListBuilder<String>? _locationIds;
   ListBuilder<String> get locationIds =>

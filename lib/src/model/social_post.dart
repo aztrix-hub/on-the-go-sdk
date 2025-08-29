@@ -27,7 +27,7 @@ part 'social_post.g.dart';
 @BuiltValue()
 abstract class SocialPost implements Built<SocialPost, SocialPostBuilder> {
   @BuiltValueField(wireName: r'id')
-  int? get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'locationIds')
   BuiltList<String>? get locationIds;
@@ -83,7 +83,7 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(String),
       );
     }
     if (object.locationIds != null) {
@@ -177,8 +177,8 @@ class _$SocialPostSerializer implements PrimitiveSerializer<SocialPost> {
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'locationIds':

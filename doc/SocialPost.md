@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **String** |  | [optional] 
 **locationIds** | **BuiltList&lt;String&gt;** |  | [optional] 
 **clickthroughUrl** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 

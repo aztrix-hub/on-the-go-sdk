@@ -2329,8 +2329,7 @@
             "publicationDate"
           ],
           "id": {
-            "type": "integer",
-            "format": "int64"
+            "type": "string"
           },
           "locationIds": {
             "type": "array",
