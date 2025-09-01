@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigPost**](doc/NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
+[*PublishApi*](doc/PublishApi.md) | [**publishPostsDelete**](doc/PublishApi.md#publishpostsdelete) | **DELETE** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsGet**](doc/PublishApi.md#publishpostsget) | **GET** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsPost**](doc/PublishApi.md#publishpostspost) | **POST** /publish/posts | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 

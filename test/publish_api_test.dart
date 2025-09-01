@@ -6,6 +6,11 @@ void main() {
   final instance = OnTheGoSdk().getPublishApi();
 
   group(PublishApi, () {
+    //Future publishPostsDelete(String id) async
+    test('test publishPostsDelete', () async {
+      // TODO
+    });
+
     //Future<PublishPostsGet200Response> publishPostsGet() async
     test('test publishPostsGet', () async {
       // TODO

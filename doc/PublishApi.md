@@ -9,9 +9,54 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**publishPostsDelete**](PublishApi.md#publishpostsdelete) | **DELETE** /publish/posts | 
 [**publishPostsGet**](PublishApi.md#publishpostsget) | **GET** /publish/posts | 
 [**publishPostsPost**](PublishApi.md#publishpostspost) | **POST** /publish/posts | 
 
+
+# **publishPostsDelete**
+> publishPostsDelete(id)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getPublishApi();
+final String id = id_example; // String | 
+
+try {
+    api.publishPostsDelete(id);
+} catch on DioException (e) {
+    print('Exception when calling PublishApi->publishPostsDelete: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publishPostsGet**
 > PublishPostsGet200Response publishPostsGet()
