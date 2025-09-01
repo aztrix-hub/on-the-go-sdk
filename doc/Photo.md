@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** | A unique id for the photo | [optional] 
+**id** | **String** | A unique id for the photo | [optional] 
 **url** | **String** | url of the photo | 
 **description** | **String** | A description for the photo - max 255 chars | [optional] 
 

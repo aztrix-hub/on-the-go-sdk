@@ -8,7 +8,7 @@ void main() {
 
   group(Photo, () {
     // A unique id for the photo
-    // int id
+    // String id
     test('to test the property `id`', () async {
       // TODO
     });

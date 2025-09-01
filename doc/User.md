@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **String** |  | [optional] 
 **email** | **String** | User email | [optional] 
 **firstname** | **String** | First Name | 
 **lastname** | **String** | Last name | 

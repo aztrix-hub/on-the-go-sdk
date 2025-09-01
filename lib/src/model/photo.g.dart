@@ -8,7 +8,7 @@ part of 'photo.dart';
 
 class _$Photo extends Photo {
   @override
-  final int? id;
+  final String? id;
   @override
   final String url;
   @override
@@ -57,9 +57,9 @@ class _$Photo extends Photo {
 class PhotoBuilder implements Builder<Photo, PhotoBuilder> {
   _$Photo? _$v;
 
-  int? _id;
-  int? get id => _$this._id;
-  set id(int? id) => _$this._id = id;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
   String? _url;
   String? get url => _$this._url;

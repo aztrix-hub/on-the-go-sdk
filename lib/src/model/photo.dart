@@ -18,7 +18,7 @@ part 'photo.g.dart';
 abstract class Photo implements Built<Photo, PhotoBuilder> {
   /// A unique id for the photo
   @BuiltValueField(wireName: r'id')
-  int? get id;
+  String? get id;
 
   /// url of the photo
   @BuiltValueField(wireName: r'url')
@@ -55,7 +55,7 @@ class _$PhotoSerializer implements PrimitiveSerializer<Photo> {
       yield r'id';
       yield serializers.serialize(
         object.id,
-        specifiedType: const FullType(int),
+        specifiedType: const FullType(String),
       );
     }
     yield r'url';
@@ -98,8 +98,8 @@ class _$PhotoSerializer implements PrimitiveSerializer<Photo> {
         case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(int),
-          ) as int;
+            specifiedType: const FullType(String),
+          ) as String;
           result.id = valueDes;
           break;
         case r'url':
