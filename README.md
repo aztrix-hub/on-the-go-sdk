@@ -70,6 +70,7 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
+[*AiApi*](doc/AiApi.md) | [**aiStreamPost**](doc/AiApi.md#aistreampost) | **POST** /ai/stream | 
 [*AiApi*](doc/AiApi.md) | [**aiSystemGet**](doc/AiApi.md#aisystemget) | **GET** /ai/system | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
@@ -113,6 +114,8 @@ Class | Method | HTTP request | Description
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
  - [AiMemoriesPostRequest](doc/AiMemoriesPostRequest.md)
+ - [AiStreamPost200Response](doc/AiStreamPost200Response.md)
+ - [AiStreamPostRequest](doc/AiStreamPostRequest.md)
  - [AiSystemGet200Response](doc/AiSystemGet200Response.md)
  - [AnalyticsGet200Response](doc/AnalyticsGet200Response.md)
  - [Category](doc/Category.md)
