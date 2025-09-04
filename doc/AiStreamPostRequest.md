@@ -9,8 +9,8 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userId** | **String** |  | [optional] 
-**sessionId** | **String** |  | [optional] 
-**message** | **String** |  | [optional] 
+**sessionId** | **String** |  | 
+**message** | **String** |  | 
 **userLocation** | [**AiConversationPostRequestUserLocation**](AiConversationPostRequestUserLocation.md) |  | [optional] 
 **dateTime** | **String** |  | [optional] 
 

@@ -231,6 +231,10 @@ No authorization required
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
 final AiStreamPostRequest aiStreamPostRequest = ; // AiStreamPostRequest | 
@@ -255,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 

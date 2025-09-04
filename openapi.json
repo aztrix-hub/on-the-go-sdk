@@ -841,6 +841,10 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "sessionId",
+                  "message"
+                ],
                 "properties": {
                   "userId": {
                     "type": "string"
@@ -900,7 +904,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/ai/memories": {

@@ -10,9 +10,9 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
   @override
   final String? userId;
   @override
-  final String? sessionId;
+  final String sessionId;
   @override
-  final String? message;
+  final String message;
   @override
   final AiConversationPostRequestUserLocation? userLocation;
   @override
@@ -24,8 +24,8 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
 
   _$AiStreamPostRequest._(
       {this.userId,
-      this.sessionId,
-      this.message,
+      required this.sessionId,
+      required this.message,
       this.userLocation,
       this.dateTime})
       : super._();
@@ -136,8 +136,10 @@ class AiStreamPostRequestBuilder
       _$result = _$v ??
           _$AiStreamPostRequest._(
             userId: userId,
-            sessionId: sessionId,
-            message: message,
+            sessionId: BuiltValueNullFieldError.checkNotNull(
+                sessionId, r'AiStreamPostRequest', 'sessionId'),
+            message: BuiltValueNullFieldError.checkNotNull(
+                message, r'AiStreamPostRequest', 'message'),
             userLocation: _userLocation?.build(),
             dateTime: dateTime,
           );

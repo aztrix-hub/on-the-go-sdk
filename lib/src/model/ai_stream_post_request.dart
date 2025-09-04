@@ -24,10 +24,10 @@ abstract class AiStreamPostRequest
   String? get userId;
 
   @BuiltValueField(wireName: r'sessionId')
-  String? get sessionId;
+  String get sessionId;
 
   @BuiltValueField(wireName: r'message')
-  String? get message;
+  String get message;
 
   @BuiltValueField(wireName: r'userLocation')
   AiConversationPostRequestUserLocation? get userLocation;
@@ -71,20 +71,16 @@ class _$AiStreamPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.sessionId != null) {
-      yield r'sessionId';
-      yield serializers.serialize(
-        object.sessionId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.message != null) {
-      yield r'message';
-      yield serializers.serialize(
-        object.message,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'sessionId';
+    yield serializers.serialize(
+      object.sessionId,
+      specifiedType: const FullType(String),
+    );
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
     if (object.userLocation != null) {
       yield r'userLocation';
       yield serializers.serialize(
