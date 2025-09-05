@@ -11,8 +11,8 @@ doc/AiConversationPostRequestUserLocation.md
 doc/AiMemoriesGet200Response.md
 doc/AiMemoriesGet200ResponseMemoriesInner.md
 doc/AiMemoriesPostRequest.md
-doc/AiStreamPost200Response.md
-doc/AiStreamPostRequest.md
+doc/AiSearchStreamPost200Response.md
+doc/AiSearchStreamPostRequest.md
 doc/AiSystemGet200Response.md
 doc/AnalyticsApi.md
 doc/AnalyticsGet200Response.md
@@ -83,8 +83,8 @@ lib/src/model/ai_conversation_post_request_user_location.dart
 lib/src/model/ai_memories_get200_response.dart
 lib/src/model/ai_memories_get200_response_memories_inner.dart
 lib/src/model/ai_memories_post_request.dart
-lib/src/model/ai_stream_post200_response.dart
-lib/src/model/ai_stream_post_request.dart
+lib/src/model/ai_search_stream_post200_response.dart
+lib/src/model/ai_search_stream_post_request.dart
 lib/src/model/ai_system_get200_response.dart
 lib/src/model/analytics_get200_response.dart
 lib/src/model/category.dart
@@ -132,8 +132,8 @@ test/ai_conversation_post_request_user_location_test.dart
 test/ai_memories_get200_response_memories_inner_test.dart
 test/ai_memories_get200_response_test.dart
 test/ai_memories_post_request_test.dart
-test/ai_stream_post200_response_test.dart
-test/ai_stream_post_request_test.dart
+test/ai_search_stream_post200_response_test.dart
+test/ai_search_stream_post_request_test.dart
 test/ai_system_get200_response_test.dart
 test/analytics_api_test.dart
 test/analytics_get200_response_test.dart

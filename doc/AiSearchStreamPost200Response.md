@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiStreamPost200Response
+# on_the_go_sdk.model.AiSearchStreamPost200Response
 
 ## Load the model package
 ```dart

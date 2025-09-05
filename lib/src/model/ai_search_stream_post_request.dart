@@ -7,9 +7,9 @@ import 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_locati
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_stream_post_request.g.dart';
+part 'ai_search_stream_post_request.g.dart';
 
-/// AiStreamPostRequest
+/// AiSearchStreamPostRequest
 ///
 /// Properties:
 /// * [userId]
@@ -18,8 +18,9 @@ part 'ai_stream_post_request.g.dart';
 /// * [userLocation]
 /// * [dateTime]
 @BuiltValue()
-abstract class AiStreamPostRequest
-    implements Built<AiStreamPostRequest, AiStreamPostRequestBuilder> {
+abstract class AiSearchStreamPostRequest
+    implements
+        Built<AiSearchStreamPostRequest, AiSearchStreamPostRequestBuilder> {
   @BuiltValueField(wireName: r'userId')
   String? get userId;
 
@@ -35,33 +36,34 @@ abstract class AiStreamPostRequest
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
 
-  AiStreamPostRequest._();
+  AiSearchStreamPostRequest._();
 
-  factory AiStreamPostRequest([void updates(AiStreamPostRequestBuilder b)]) =
-      _$AiStreamPostRequest;
+  factory AiSearchStreamPostRequest(
+          [void updates(AiSearchStreamPostRequestBuilder b)]) =
+      _$AiSearchStreamPostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiStreamPostRequestBuilder b) => b;
+  static void _defaults(AiSearchStreamPostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiStreamPostRequest> get serializer =>
-      _$AiStreamPostRequestSerializer();
+  static Serializer<AiSearchStreamPostRequest> get serializer =>
+      _$AiSearchStreamPostRequestSerializer();
 }
 
-class _$AiStreamPostRequestSerializer
-    implements PrimitiveSerializer<AiStreamPostRequest> {
+class _$AiSearchStreamPostRequestSerializer
+    implements PrimitiveSerializer<AiSearchStreamPostRequest> {
   @override
   final Iterable<Type> types = const [
-    AiStreamPostRequest,
-    _$AiStreamPostRequest
+    AiSearchStreamPostRequest,
+    _$AiSearchStreamPostRequest
   ];
 
   @override
-  final String wireName = r'AiStreamPostRequest';
+  final String wireName = r'AiSearchStreamPostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiStreamPostRequest object, {
+    AiSearchStreamPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.userId != null) {
@@ -100,7 +102,7 @@ class _$AiStreamPostRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiStreamPostRequest object, {
+    AiSearchStreamPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -113,7 +115,7 @@ class _$AiStreamPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiStreamPostRequestBuilder result,
+    required AiSearchStreamPostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -165,12 +167,12 @@ class _$AiStreamPostRequestSerializer
   }
 
   @override
-  AiStreamPostRequest deserialize(
+  AiSearchStreamPostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiStreamPostRequestBuilder();
+    final result = AiSearchStreamPostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

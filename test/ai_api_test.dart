@@ -31,8 +31,13 @@ void main() {
       // TODO
     });
 
-    //Future<AiStreamPost200Response> aiStreamPost({ AiStreamPostRequest aiStreamPostRequest }) async
-    test('test aiStreamPost', () async {
+    //Future<AiSearchStreamPost200Response> aiSearchPost({ AiSearchStreamPostRequest aiSearchStreamPostRequest }) async
+    test('test aiSearchPost', () async {
+      // TODO
+    });
+
+    //Future<AiSearchStreamPost200Response> aiSearchStreamPost({ AiSearchStreamPostRequest aiSearchStreamPostRequest }) async
+    test('test aiSearchStreamPost', () async {
       // TODO
     });
 

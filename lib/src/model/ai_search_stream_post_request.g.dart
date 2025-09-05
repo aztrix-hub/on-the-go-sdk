@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_stream_post_request.dart';
+part of 'ai_search_stream_post_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiStreamPostRequest extends AiStreamPostRequest {
+class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
   @override
   final String? userId;
   @override
@@ -18,11 +18,11 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
   @override
   final String? dateTime;
 
-  factory _$AiStreamPostRequest(
-          [void Function(AiStreamPostRequestBuilder)? updates]) =>
-      (AiStreamPostRequestBuilder()..update(updates))._build();
+  factory _$AiSearchStreamPostRequest(
+          [void Function(AiSearchStreamPostRequestBuilder)? updates]) =>
+      (AiSearchStreamPostRequestBuilder()..update(updates))._build();
 
-  _$AiStreamPostRequest._(
+  _$AiSearchStreamPostRequest._(
       {this.userId,
       required this.sessionId,
       required this.message,
@@ -30,18 +30,18 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
       this.dateTime})
       : super._();
   @override
-  AiStreamPostRequest rebuild(
-          void Function(AiStreamPostRequestBuilder) updates) =>
+  AiSearchStreamPostRequest rebuild(
+          void Function(AiSearchStreamPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiStreamPostRequestBuilder toBuilder() =>
-      AiStreamPostRequestBuilder()..replace(this);
+  AiSearchStreamPostRequestBuilder toBuilder() =>
+      AiSearchStreamPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiStreamPostRequest &&
+    return other is AiSearchStreamPostRequest &&
         userId == other.userId &&
         sessionId == other.sessionId &&
         message == other.message &&
@@ -63,7 +63,7 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AiStreamPostRequest')
+    return (newBuiltValueToStringHelper(r'AiSearchStreamPostRequest')
           ..add('userId', userId)
           ..add('sessionId', sessionId)
           ..add('message', message)
@@ -73,9 +73,10 @@ class _$AiStreamPostRequest extends AiStreamPostRequest {
   }
 }
 
-class AiStreamPostRequestBuilder
-    implements Builder<AiStreamPostRequest, AiStreamPostRequestBuilder> {
-  _$AiStreamPostRequest? _$v;
+class AiSearchStreamPostRequestBuilder
+    implements
+        Builder<AiSearchStreamPostRequest, AiSearchStreamPostRequestBuilder> {
+  _$AiSearchStreamPostRequest? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -100,11 +101,11 @@ class AiStreamPostRequestBuilder
   String? get dateTime => _$this._dateTime;
   set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
-  AiStreamPostRequestBuilder() {
-    AiStreamPostRequest._defaults(this);
+  AiSearchStreamPostRequestBuilder() {
+    AiSearchStreamPostRequest._defaults(this);
   }
 
-  AiStreamPostRequestBuilder get _$this {
+  AiSearchStreamPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -118,28 +119,28 @@ class AiStreamPostRequestBuilder
   }
 
   @override
-  void replace(AiStreamPostRequest other) {
-    _$v = other as _$AiStreamPostRequest;
+  void replace(AiSearchStreamPostRequest other) {
+    _$v = other as _$AiSearchStreamPostRequest;
   }
 
   @override
-  void update(void Function(AiStreamPostRequestBuilder)? updates) {
+  void update(void Function(AiSearchStreamPostRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiStreamPostRequest build() => _build();
+  AiSearchStreamPostRequest build() => _build();
 
-  _$AiStreamPostRequest _build() {
-    _$AiStreamPostRequest _$result;
+  _$AiSearchStreamPostRequest _build() {
+    _$AiSearchStreamPostRequest _$result;
     try {
       _$result = _$v ??
-          _$AiStreamPostRequest._(
+          _$AiSearchStreamPostRequest._(
             userId: userId,
             sessionId: BuiltValueNullFieldError.checkNotNull(
-                sessionId, r'AiStreamPostRequest', 'sessionId'),
+                sessionId, r'AiSearchStreamPostRequest', 'sessionId'),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'AiStreamPostRequest', 'message'),
+                message, r'AiSearchStreamPostRequest', 'message'),
             userLocation: _userLocation?.build(),
             dateTime: dateTime,
           );
@@ -150,7 +151,7 @@ class AiStreamPostRequestBuilder
         _userLocation?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AiStreamPostRequest', _$failedField, e.toString());
+            r'AiSearchStreamPostRequest', _$failedField, e.toString());
       }
       rethrow;
     }

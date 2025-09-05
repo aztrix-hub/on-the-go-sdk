@@ -24,8 +24,8 @@ import 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_locati
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_stream_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_stream_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_search_stream_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_search_stream_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
@@ -74,8 +74,8 @@ part 'serializers.g.dart';
   AiMemoriesGet200Response,
   AiMemoriesGet200ResponseMemoriesInner,
   AiMemoriesPostRequest,
-  AiStreamPost200Response,
-  AiStreamPostRequest,
+  AiSearchStreamPost200Response,
+  AiSearchStreamPostRequest,
   AiSystemGet200Response,
   AnalyticsGet200Response,
   Category,

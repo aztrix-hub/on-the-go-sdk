@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiStreamPostRequest
+// tests for AiSearchStreamPostRequest
 void main() {
-  final instance = AiStreamPostRequestBuilder();
+  final instance = AiSearchStreamPostRequestBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiStreamPostRequest, () {
+  group(AiSearchStreamPostRequest, () {
     // String userId
     test('to test the property `userId`', () async {
       // TODO

@@ -14,7 +14,8 @@ Method | HTTP request | Description
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [**aiMemoriesGet**](AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [**aiMemoriesPost**](AiApi.md#aimemoriespost) | **POST** /ai/memories | 
-[**aiStreamPost**](AiApi.md#aistreampost) | **POST** /ai/stream | 
+[**aiSearchPost**](AiApi.md#aisearchpost) | **POST** /ai/search | 
+[**aiSearchStreamPost**](AiApi.md#aisearchstreampost) | **POST** /ai/search/stream | 
 [**aiSystemGet**](AiApi.md#aisystemget) | **GET** /ai/system | 
 
 
@@ -223,8 +224,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **aiStreamPost**
-> AiStreamPost200Response aiStreamPost(aiStreamPostRequest)
+# **aiSearchPost**
+> AiSearchStreamPost200Response aiSearchPost(aiSearchStreamPostRequest)
 
 
 
@@ -237,13 +238,13 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiStreamPostRequest aiStreamPostRequest = ; // AiStreamPostRequest | 
+final AiSearchStreamPostRequest aiSearchStreamPostRequest = ; // AiSearchStreamPostRequest | 
 
 try {
-    final response = api.aiStreamPost(aiStreamPostRequest);
+    final response = api.aiSearchPost(aiSearchStreamPostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AiApi->aiStreamPost: $e\n');
+    print('Exception when calling AiApi->aiSearchPost: $e\n');
 }
 ```
 
@@ -251,11 +252,56 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiStreamPostRequest** | [**AiStreamPostRequest**](AiStreamPostRequest.md)|  | [optional] 
+ **aiSearchStreamPostRequest** | [**AiSearchStreamPostRequest**](AiSearchStreamPostRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AiStreamPost200Response**](AiStreamPost200Response.md)
+[**AiSearchStreamPost200Response**](AiSearchStreamPost200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiSearchStreamPost**
+> AiSearchStreamPost200Response aiSearchStreamPost(aiSearchStreamPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+final AiSearchStreamPostRequest aiSearchStreamPostRequest = ; // AiSearchStreamPostRequest | 
+
+try {
+    final response = api.aiSearchStreamPost(aiSearchStreamPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiSearchStreamPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiSearchStreamPostRequest** | [**AiSearchStreamPostRequest**](AiSearchStreamPostRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiSearchStreamPost200Response**](AiSearchStreamPost200Response.md)
 
 ### Authorization
 

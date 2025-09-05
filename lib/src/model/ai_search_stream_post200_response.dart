@@ -6,17 +6,19 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_stream_post200_response.g.dart';
+part 'ai_search_stream_post200_response.g.dart';
 
-/// AiStreamPost200Response
+/// AiSearchStreamPost200Response
 ///
 /// Properties:
 /// * [userId]
 /// * [sessionId]
 /// * [response]
 @BuiltValue()
-abstract class AiStreamPost200Response
-    implements Built<AiStreamPost200Response, AiStreamPost200ResponseBuilder> {
+abstract class AiSearchStreamPost200Response
+    implements
+        Built<AiSearchStreamPost200Response,
+            AiSearchStreamPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'userId')
   String? get userId;
 
@@ -26,34 +28,34 @@ abstract class AiStreamPost200Response
   @BuiltValueField(wireName: r'response')
   String? get response;
 
-  AiStreamPost200Response._();
+  AiSearchStreamPost200Response._();
 
-  factory AiStreamPost200Response(
-          [void updates(AiStreamPost200ResponseBuilder b)]) =
-      _$AiStreamPost200Response;
+  factory AiSearchStreamPost200Response(
+          [void updates(AiSearchStreamPost200ResponseBuilder b)]) =
+      _$AiSearchStreamPost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiStreamPost200ResponseBuilder b) => b;
+  static void _defaults(AiSearchStreamPost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiStreamPost200Response> get serializer =>
-      _$AiStreamPost200ResponseSerializer();
+  static Serializer<AiSearchStreamPost200Response> get serializer =>
+      _$AiSearchStreamPost200ResponseSerializer();
 }
 
-class _$AiStreamPost200ResponseSerializer
-    implements PrimitiveSerializer<AiStreamPost200Response> {
+class _$AiSearchStreamPost200ResponseSerializer
+    implements PrimitiveSerializer<AiSearchStreamPost200Response> {
   @override
   final Iterable<Type> types = const [
-    AiStreamPost200Response,
-    _$AiStreamPost200Response
+    AiSearchStreamPost200Response,
+    _$AiSearchStreamPost200Response
   ];
 
   @override
-  final String wireName = r'AiStreamPost200Response';
+  final String wireName = r'AiSearchStreamPost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiStreamPost200Response object, {
+    AiSearchStreamPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.userId != null) {
@@ -82,7 +84,7 @@ class _$AiStreamPost200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiStreamPost200Response object, {
+    AiSearchStreamPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -95,7 +97,7 @@ class _$AiStreamPost200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiStreamPost200ResponseBuilder result,
+    required AiSearchStreamPost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -132,12 +134,12 @@ class _$AiStreamPost200ResponseSerializer
   }
 
   @override
-  AiStreamPost200Response deserialize(
+  AiSearchStreamPost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiStreamPost200ResponseBuilder();
+    final result = AiSearchStreamPost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
