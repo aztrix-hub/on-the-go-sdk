@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiSearchStreamPostRequest
+# on_the_go_sdk.model.AiChat2PostRequest
 
 ## Load the model package
 ```dart

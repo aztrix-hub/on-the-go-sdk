@@ -9,15 +9,105 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aiChat2DataPost**](AiApi.md#aichat2datapost) | **POST** /ai/chat2/data | 
+[**aiChat2Post**](AiApi.md#aichat2post) | **POST** /ai/chat2 | 
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
 [**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [**aiMemoriesGet**](AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [**aiMemoriesPost**](AiApi.md#aimemoriespost) | **POST** /ai/memories | 
-[**aiSearchPost**](AiApi.md#aisearchpost) | **POST** /ai/search | 
-[**aiSearchStreamPost**](AiApi.md#aisearchstreampost) | **POST** /ai/search/stream | 
 [**aiSystemGet**](AiApi.md#aisystemget) | **GET** /ai/system | 
 
+
+# **aiChat2DataPost**
+> LocationsGet200Response aiChat2DataPost(aiChat2PostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+final AiChat2PostRequest aiChat2PostRequest = ; // AiChat2PostRequest | 
+
+try {
+    final response = api.aiChat2DataPost(aiChat2PostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiChat2DataPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiChat2PostRequest** | [**AiChat2PostRequest**](AiChat2PostRequest.md)|  | [optional] 
+
+### Return type
+
+[**LocationsGet200Response**](LocationsGet200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiChat2Post**
+> AiChat2Post200Response aiChat2Post(aiChat2PostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+final AiChat2PostRequest aiChat2PostRequest = ; // AiChat2PostRequest | 
+
+try {
+    final response = api.aiChat2Post(aiChat2PostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiChat2Post: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiChat2PostRequest** | [**AiChat2PostRequest**](AiChat2PostRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiChat2Post200Response**](AiChat2Post200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiChatPost**
 > AiChatPost200Response aiChatPost(aiChatPostRequest)
@@ -221,96 +311,6 @@ No authorization required
 
  - **Content-Type**: application/json
  - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **aiSearchPost**
-> AiSearchStreamPost200Response aiSearchPost(aiSearchStreamPostRequest)
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getAiApi();
-final AiSearchStreamPostRequest aiSearchStreamPostRequest = ; // AiSearchStreamPostRequest | 
-
-try {
-    final response = api.aiSearchPost(aiSearchStreamPostRequest);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AiApi->aiSearchPost: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aiSearchStreamPostRequest** | [**AiSearchStreamPostRequest**](AiSearchStreamPostRequest.md)|  | [optional] 
-
-### Return type
-
-[**AiSearchStreamPost200Response**](AiSearchStreamPost200Response.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **aiSearchStreamPost**
-> AiSearchStreamPost200Response aiSearchStreamPost(aiSearchStreamPostRequest)
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getAiApi();
-final AiSearchStreamPostRequest aiSearchStreamPostRequest = ; // AiSearchStreamPostRequest | 
-
-try {
-    final response = api.aiSearchStreamPost(aiSearchStreamPostRequest);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AiApi->aiSearchStreamPost: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aiSearchStreamPostRequest** | [**AiSearchStreamPostRequest**](AiSearchStreamPostRequest.md)|  | [optional] 
-
-### Return type
-
-[**AiSearchStreamPost200Response**](AiSearchStreamPost200Response.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

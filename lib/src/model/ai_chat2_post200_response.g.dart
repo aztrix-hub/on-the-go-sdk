@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_search_stream_post200_response.dart';
+part of 'ai_chat2_post200_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiSearchStreamPost200Response extends AiSearchStreamPost200Response {
+class _$AiChat2Post200Response extends AiChat2Post200Response {
   @override
   final String? userId;
   @override
@@ -14,26 +14,25 @@ class _$AiSearchStreamPost200Response extends AiSearchStreamPost200Response {
   @override
   final String? response;
 
-  factory _$AiSearchStreamPost200Response(
-          [void Function(AiSearchStreamPost200ResponseBuilder)? updates]) =>
-      (AiSearchStreamPost200ResponseBuilder()..update(updates))._build();
+  factory _$AiChat2Post200Response(
+          [void Function(AiChat2Post200ResponseBuilder)? updates]) =>
+      (AiChat2Post200ResponseBuilder()..update(updates))._build();
 
-  _$AiSearchStreamPost200Response._(
-      {this.userId, this.sessionId, this.response})
+  _$AiChat2Post200Response._({this.userId, this.sessionId, this.response})
       : super._();
   @override
-  AiSearchStreamPost200Response rebuild(
-          void Function(AiSearchStreamPost200ResponseBuilder) updates) =>
+  AiChat2Post200Response rebuild(
+          void Function(AiChat2Post200ResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiSearchStreamPost200ResponseBuilder toBuilder() =>
-      AiSearchStreamPost200ResponseBuilder()..replace(this);
+  AiChat2Post200ResponseBuilder toBuilder() =>
+      AiChat2Post200ResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiSearchStreamPost200Response &&
+    return other is AiChat2Post200Response &&
         userId == other.userId &&
         sessionId == other.sessionId &&
         response == other.response;
@@ -51,7 +50,7 @@ class _$AiSearchStreamPost200Response extends AiSearchStreamPost200Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AiSearchStreamPost200Response')
+    return (newBuiltValueToStringHelper(r'AiChat2Post200Response')
           ..add('userId', userId)
           ..add('sessionId', sessionId)
           ..add('response', response))
@@ -59,11 +58,9 @@ class _$AiSearchStreamPost200Response extends AiSearchStreamPost200Response {
   }
 }
 
-class AiSearchStreamPost200ResponseBuilder
-    implements
-        Builder<AiSearchStreamPost200Response,
-            AiSearchStreamPost200ResponseBuilder> {
-  _$AiSearchStreamPost200Response? _$v;
+class AiChat2Post200ResponseBuilder
+    implements Builder<AiChat2Post200Response, AiChat2Post200ResponseBuilder> {
+  _$AiChat2Post200Response? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -77,11 +74,11 @@ class AiSearchStreamPost200ResponseBuilder
   String? get response => _$this._response;
   set response(String? response) => _$this._response = response;
 
-  AiSearchStreamPost200ResponseBuilder() {
-    AiSearchStreamPost200Response._defaults(this);
+  AiChat2Post200ResponseBuilder() {
+    AiChat2Post200Response._defaults(this);
   }
 
-  AiSearchStreamPost200ResponseBuilder get _$this {
+  AiChat2Post200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -93,21 +90,21 @@ class AiSearchStreamPost200ResponseBuilder
   }
 
   @override
-  void replace(AiSearchStreamPost200Response other) {
-    _$v = other as _$AiSearchStreamPost200Response;
+  void replace(AiChat2Post200Response other) {
+    _$v = other as _$AiChat2Post200Response;
   }
 
   @override
-  void update(void Function(AiSearchStreamPost200ResponseBuilder)? updates) {
+  void update(void Function(AiChat2Post200ResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiSearchStreamPost200Response build() => _build();
+  AiChat2Post200Response build() => _build();
 
-  _$AiSearchStreamPost200Response _build() {
+  _$AiChat2Post200Response _build() {
     final _$result = _$v ??
-        _$AiSearchStreamPost200Response._(
+        _$AiChat2Post200Response._(
           userId: userId,
           sessionId: sessionId,
           response: response,

@@ -831,7 +831,7 @@
         }
       }
     },
-    "/ai/search/stream": {
+    "/ai/chat2": {
       "post": {
         "tags": [
           "ai"
@@ -912,7 +912,7 @@
         ]
       }
     },
-    "/ai/search": {
+    "/ai/chat2/data": {
       "post": {
         "tags": [
           "ai"
@@ -968,14 +968,11 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "userId": {
-                      "type": "string"
-                    },
-                    "sessionId": {
-                      "type": "string"
-                    },
-                    "response": {
-                      "type": "string"
+                    "locations": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Location"
+                      }
                     }
                   }
                 }

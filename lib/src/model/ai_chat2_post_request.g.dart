@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_search_stream_post_request.dart';
+part of 'ai_chat2_post_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
+class _$AiChat2PostRequest extends AiChat2PostRequest {
   @override
   final String? userId;
   @override
@@ -18,11 +18,11 @@ class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
   @override
   final String? dateTime;
 
-  factory _$AiSearchStreamPostRequest(
-          [void Function(AiSearchStreamPostRequestBuilder)? updates]) =>
-      (AiSearchStreamPostRequestBuilder()..update(updates))._build();
+  factory _$AiChat2PostRequest(
+          [void Function(AiChat2PostRequestBuilder)? updates]) =>
+      (AiChat2PostRequestBuilder()..update(updates))._build();
 
-  _$AiSearchStreamPostRequest._(
+  _$AiChat2PostRequest._(
       {this.userId,
       required this.sessionId,
       required this.message,
@@ -30,18 +30,18 @@ class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
       this.dateTime})
       : super._();
   @override
-  AiSearchStreamPostRequest rebuild(
-          void Function(AiSearchStreamPostRequestBuilder) updates) =>
+  AiChat2PostRequest rebuild(
+          void Function(AiChat2PostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiSearchStreamPostRequestBuilder toBuilder() =>
-      AiSearchStreamPostRequestBuilder()..replace(this);
+  AiChat2PostRequestBuilder toBuilder() =>
+      AiChat2PostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiSearchStreamPostRequest &&
+    return other is AiChat2PostRequest &&
         userId == other.userId &&
         sessionId == other.sessionId &&
         message == other.message &&
@@ -63,7 +63,7 @@ class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AiSearchStreamPostRequest')
+    return (newBuiltValueToStringHelper(r'AiChat2PostRequest')
           ..add('userId', userId)
           ..add('sessionId', sessionId)
           ..add('message', message)
@@ -73,10 +73,9 @@ class _$AiSearchStreamPostRequest extends AiSearchStreamPostRequest {
   }
 }
 
-class AiSearchStreamPostRequestBuilder
-    implements
-        Builder<AiSearchStreamPostRequest, AiSearchStreamPostRequestBuilder> {
-  _$AiSearchStreamPostRequest? _$v;
+class AiChat2PostRequestBuilder
+    implements Builder<AiChat2PostRequest, AiChat2PostRequestBuilder> {
+  _$AiChat2PostRequest? _$v;
 
   String? _userId;
   String? get userId => _$this._userId;
@@ -101,11 +100,11 @@ class AiSearchStreamPostRequestBuilder
   String? get dateTime => _$this._dateTime;
   set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
-  AiSearchStreamPostRequestBuilder() {
-    AiSearchStreamPostRequest._defaults(this);
+  AiChat2PostRequestBuilder() {
+    AiChat2PostRequest._defaults(this);
   }
 
-  AiSearchStreamPostRequestBuilder get _$this {
+  AiChat2PostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
@@ -119,28 +118,28 @@ class AiSearchStreamPostRequestBuilder
   }
 
   @override
-  void replace(AiSearchStreamPostRequest other) {
-    _$v = other as _$AiSearchStreamPostRequest;
+  void replace(AiChat2PostRequest other) {
+    _$v = other as _$AiChat2PostRequest;
   }
 
   @override
-  void update(void Function(AiSearchStreamPostRequestBuilder)? updates) {
+  void update(void Function(AiChat2PostRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiSearchStreamPostRequest build() => _build();
+  AiChat2PostRequest build() => _build();
 
-  _$AiSearchStreamPostRequest _build() {
-    _$AiSearchStreamPostRequest _$result;
+  _$AiChat2PostRequest _build() {
+    _$AiChat2PostRequest _$result;
     try {
       _$result = _$v ??
-          _$AiSearchStreamPostRequest._(
+          _$AiChat2PostRequest._(
             userId: userId,
             sessionId: BuiltValueNullFieldError.checkNotNull(
-                sessionId, r'AiSearchStreamPostRequest', 'sessionId'),
+                sessionId, r'AiChat2PostRequest', 'sessionId'),
             message: BuiltValueNullFieldError.checkNotNull(
-                message, r'AiSearchStreamPostRequest', 'message'),
+                message, r'AiChat2PostRequest', 'message'),
             userLocation: _userLocation?.build(),
             dateTime: dateTime,
           );
@@ -151,7 +150,7 @@ class AiSearchStreamPostRequestBuilder
         _userLocation?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AiSearchStreamPostRequest', _$failedField, e.toString());
+            r'AiChat2PostRequest', _$failedField, e.toString());
       }
       rethrow;
     }

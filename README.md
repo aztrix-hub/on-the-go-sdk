@@ -48,13 +48,13 @@ import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
 final api = OnTheGoSdk().getAiApi();
-final AiChatPostRequest aiChatPostRequest = ; // AiChatPostRequest | 
+final AiChat2PostRequest aiChat2PostRequest = ; // AiChat2PostRequest | 
 
 try {
-    final response = await api.aiChatPost(aiChatPostRequest);
+    final response = await api.aiChat2DataPost(aiChat2PostRequest);
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AiApi->aiChatPost: $e\n");
+    print("Exception when calling AiApi->aiChat2DataPost: $e\n");
 }
 
 ```
@@ -65,13 +65,13 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+[*AiApi*](doc/AiApi.md) | [**aiChat2DataPost**](doc/AiApi.md#aichat2datapost) | **POST** /ai/chat2/data | 
+[*AiApi*](doc/AiApi.md) | [**aiChat2Post**](doc/AiApi.md#aichat2post) | **POST** /ai/chat2 | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
-[*AiApi*](doc/AiApi.md) | [**aiSearchPost**](doc/AiApi.md#aisearchpost) | **POST** /ai/search | 
-[*AiApi*](doc/AiApi.md) | [**aiSearchStreamPost**](doc/AiApi.md#aisearchstreampost) | **POST** /ai/search/stream | 
 [*AiApi*](doc/AiApi.md) | [**aiSystemGet**](doc/AiApi.md#aisystemget) | **GET** /ai/system | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
@@ -106,6 +106,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](doc/Address.md)
+ - [AiChat2Post200Response](doc/AiChat2Post200Response.md)
+ - [AiChat2PostRequest](doc/AiChat2PostRequest.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
@@ -115,8 +117,6 @@ Class | Method | HTTP request | Description
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
  - [AiMemoriesPostRequest](doc/AiMemoriesPostRequest.md)
- - [AiSearchStreamPost200Response](doc/AiSearchStreamPost200Response.md)
- - [AiSearchStreamPostRequest](doc/AiSearchStreamPostRequest.md)
  - [AiSystemGet200Response](doc/AiSystemGet200Response.md)
  - [AnalyticsGet200Response](doc/AnalyticsGet200Response.md)
  - [Category](doc/Category.md)

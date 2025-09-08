@@ -6,6 +6,16 @@ void main() {
   final instance = OnTheGoSdk().getAiApi();
 
   group(AiApi, () {
+    //Future<LocationsGet200Response> aiChat2DataPost({ AiChat2PostRequest aiChat2PostRequest }) async
+    test('test aiChat2DataPost', () async {
+      // TODO
+    });
+
+    //Future<AiChat2Post200Response> aiChat2Post({ AiChat2PostRequest aiChat2PostRequest }) async
+    test('test aiChat2Post', () async {
+      // TODO
+    });
+
     //Future<AiChatPost200Response> aiChatPost({ AiChatPostRequest aiChatPostRequest }) async
     test('test aiChatPost', () async {
       // TODO
@@ -28,16 +38,6 @@ void main() {
 
     //Future aiMemoriesPost(String userId, { AiMemoriesPostRequest aiMemoriesPostRequest }) async
     test('test aiMemoriesPost', () async {
-      // TODO
-    });
-
-    //Future<AiSearchStreamPost200Response> aiSearchPost({ AiSearchStreamPostRequest aiSearchStreamPostRequest }) async
-    test('test aiSearchPost', () async {
-      // TODO
-    });
-
-    //Future<AiSearchStreamPost200Response> aiSearchStreamPost({ AiSearchStreamPostRequest aiSearchStreamPostRequest }) async
-    test('test aiSearchStreamPost', () async {
       // TODO
     });
 

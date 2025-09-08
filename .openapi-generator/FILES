@@ -2,6 +2,8 @@ README.md
 analysis_options.yaml
 doc/Address.md
 doc/AiApi.md
+doc/AiChat2Post200Response.md
+doc/AiChat2PostRequest.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiConversationPost200Response.md
@@ -11,8 +13,6 @@ doc/AiConversationPostRequestUserLocation.md
 doc/AiMemoriesGet200Response.md
 doc/AiMemoriesGet200ResponseMemoriesInner.md
 doc/AiMemoriesPostRequest.md
-doc/AiSearchStreamPost200Response.md
-doc/AiSearchStreamPostRequest.md
 doc/AiSystemGet200Response.md
 doc/AnalyticsApi.md
 doc/AnalyticsGet200Response.md
@@ -74,6 +74,8 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/address.dart
+lib/src/model/ai_chat2_post200_response.dart
+lib/src/model/ai_chat2_post_request.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
@@ -83,8 +85,6 @@ lib/src/model/ai_conversation_post_request_user_location.dart
 lib/src/model/ai_memories_get200_response.dart
 lib/src/model/ai_memories_get200_response_memories_inner.dart
 lib/src/model/ai_memories_post_request.dart
-lib/src/model/ai_search_stream_post200_response.dart
-lib/src/model/ai_search_stream_post_request.dart
 lib/src/model/ai_system_get200_response.dart
 lib/src/model/analytics_get200_response.dart
 lib/src/model/category.dart
@@ -123,6 +123,8 @@ lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
 test/address_test.dart
 test/ai_api_test.dart
+test/ai_chat2_post200_response_test.dart
+test/ai_chat2_post_request_test.dart
 test/ai_chat_post200_response_test.dart
 test/ai_chat_post_request_test.dart
 test/ai_conversation_post200_response_messages_inner_test.dart
@@ -132,8 +134,6 @@ test/ai_conversation_post_request_user_location_test.dart
 test/ai_memories_get200_response_memories_inner_test.dart
 test/ai_memories_get200_response_test.dart
 test/ai_memories_post_request_test.dart
-test/ai_search_stream_post200_response_test.dart
-test/ai_search_stream_post_request_test.dart
 test/ai_system_get200_response_test.dart
 test/analytics_api_test.dart
 test/analytics_get200_response_test.dart

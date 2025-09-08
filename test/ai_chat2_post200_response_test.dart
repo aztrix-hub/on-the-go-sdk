@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiSearchStreamPost200Response
+// tests for AiChat2Post200Response
 void main() {
-  final instance = AiSearchStreamPost200ResponseBuilder();
+  final instance = AiChat2Post200ResponseBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiSearchStreamPost200Response, () {
+  group(AiChat2Post200Response, () {
     // String userId
     test('to test the property `userId`', () async {
       // TODO
