@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **categories** | [**BuiltList&lt;Category&gt;**](Category.md) |  | [optional] 
 **averageRating** | **double** |  | [optional] 
 **reviewCount** | **int** |  | [optional] 
+**sponsored** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

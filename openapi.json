@@ -2011,6 +2011,9 @@
           "reviewCount": {
             "type": "integer",
             "format": "int32"
+          },
+          "sponsored": {
+            "type": "boolean"
           }
         },
         "description": "Location"

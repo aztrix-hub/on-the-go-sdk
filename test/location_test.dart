@@ -103,5 +103,10 @@ void main() {
     test('to test the property `reviewCount`', () async {
       // TODO
     });
+
+    // bool sponsored
+    test('to test the property `sponsored`', () async {
+      // TODO
+    });
   });
 }

@@ -45,6 +45,8 @@ class _$Location extends Location {
   final double? averageRating;
   @override
   final int? reviewCount;
+  @override
+  final bool? sponsored;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (LocationBuilder()..update(updates))._build();
@@ -68,7 +70,8 @@ class _$Location extends Location {
       this.website,
       this.categories,
       this.averageRating,
-      this.reviewCount})
+      this.reviewCount,
+      this.sponsored})
       : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
@@ -99,7 +102,8 @@ class _$Location extends Location {
         website == other.website &&
         categories == other.categories &&
         averageRating == other.averageRating &&
-        reviewCount == other.reviewCount;
+        reviewCount == other.reviewCount &&
+        sponsored == other.sponsored;
   }
 
   @override
@@ -124,6 +128,7 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, categories.hashCode);
     _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jc(_$hash, reviewCount.hashCode);
+    _$hash = $jc(_$hash, sponsored.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -149,7 +154,8 @@ class _$Location extends Location {
           ..add('website', website)
           ..add('categories', categories)
           ..add('averageRating', averageRating)
-          ..add('reviewCount', reviewCount))
+          ..add('reviewCount', reviewCount)
+          ..add('sponsored', sponsored))
         .toString();
   }
 }
@@ -244,6 +250,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   int? get reviewCount => _$this._reviewCount;
   set reviewCount(int? reviewCount) => _$this._reviewCount = reviewCount;
 
+  bool? _sponsored;
+  bool? get sponsored => _$this._sponsored;
+  set sponsored(bool? sponsored) => _$this._sponsored = sponsored;
+
   LocationBuilder() {
     Location._defaults(this);
   }
@@ -270,6 +280,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _categories = $v.categories?.toBuilder();
       _averageRating = $v.averageRating;
       _reviewCount = $v.reviewCount;
+      _sponsored = $v.sponsored;
       _$v = null;
     }
     return this;
@@ -313,6 +324,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             categories: _categories?.build(),
             averageRating: averageRating,
             reviewCount: reviewCount,
+            sponsored: sponsored,
           );
     } catch (_) {
       late String _$failedField;
