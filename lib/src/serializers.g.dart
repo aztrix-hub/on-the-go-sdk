@@ -8,6 +8,8 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (Serializers().toBuilder()
       ..add(Address.serializer)
+      ..add(AiChat2DataPostRequest.serializer)
+      ..add(AiChat2DataPostRequestUserLocation.serializer)
       ..add(AiChat2Post200Response.serializer)
       ..add(AiChat2PostRequest.serializer)
       ..add(AiChatPost200Response.serializer)

@@ -2,6 +2,8 @@ README.md
 analysis_options.yaml
 doc/Address.md
 doc/AiApi.md
+doc/AiChat2DataPostRequest.md
+doc/AiChat2DataPostRequestUserLocation.md
 doc/AiChat2Post200Response.md
 doc/AiChat2PostRequest.md
 doc/AiChatPost200Response.md
@@ -74,6 +76,8 @@ lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/address.dart
+lib/src/model/ai_chat2_data_post_request.dart
+lib/src/model/ai_chat2_data_post_request_user_location.dart
 lib/src/model/ai_chat2_post200_response.dart
 lib/src/model/ai_chat2_post_request.dart
 lib/src/model/ai_chat_post200_response.dart
@@ -123,6 +127,8 @@ lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
 test/address_test.dart
 test/ai_api_test.dart
+test/ai_chat2_data_post_request_test.dart
+test/ai_chat2_data_post_request_user_location_test.dart
 test/ai_chat2_post200_response_test.dart
 test/ai_chat2_post_request_test.dart
 test/ai_chat_post200_response_test.dart

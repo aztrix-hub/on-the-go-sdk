@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/api_util.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
@@ -30,7 +31,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
-  /// * [aiChat2PostRequest]
+  /// * [aiChat2DataPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -41,7 +42,7 @@ class AiApi {
   /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LocationsGet200Response>> aiChat2DataPost({
-    AiChat2PostRequest? aiChat2PostRequest,
+    AiChat2DataPostRequest? aiChat2DataPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -73,10 +74,11 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiChat2PostRequest);
-      _bodyData = aiChat2PostRequest == null
+      const _type = FullType(AiChat2DataPostRequest);
+      _bodyData = aiChat2DataPostRequest == null
           ? null
-          : _serializers.serialize(aiChat2PostRequest, specifiedType: _type);
+          : _serializers.serialize(aiChat2DataPostRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

@@ -9,9 +9,9 @@ part of 'ai_conversation_post_request_user_location.dart';
 class _$AiConversationPostRequestUserLocation
     extends AiConversationPostRequestUserLocation {
   @override
-  final double? lat;
+  final double? latitude;
   @override
-  final double? lng;
+  final double? longitude;
   @override
   final String? freeform;
 
@@ -21,7 +21,8 @@ class _$AiConversationPostRequestUserLocation
       (AiConversationPostRequestUserLocationBuilder()..update(updates))
           ._build();
 
-  _$AiConversationPostRequestUserLocation._({this.lat, this.lng, this.freeform})
+  _$AiConversationPostRequestUserLocation._(
+      {this.latitude, this.longitude, this.freeform})
       : super._();
   @override
   AiConversationPostRequestUserLocation rebuild(
@@ -37,16 +38,16 @@ class _$AiConversationPostRequestUserLocation
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiConversationPostRequestUserLocation &&
-        lat == other.lat &&
-        lng == other.lng &&
+        latitude == other.latitude &&
+        longitude == other.longitude &&
         freeform == other.freeform;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, lat.hashCode);
-    _$hash = $jc(_$hash, lng.hashCode);
+    _$hash = $jc(_$hash, latitude.hashCode);
+    _$hash = $jc(_$hash, longitude.hashCode);
     _$hash = $jc(_$hash, freeform.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -56,8 +57,8 @@ class _$AiConversationPostRequestUserLocation
   String toString() {
     return (newBuiltValueToStringHelper(
             r'AiConversationPostRequestUserLocation')
-          ..add('lat', lat)
-          ..add('lng', lng)
+          ..add('latitude', latitude)
+          ..add('longitude', longitude)
           ..add('freeform', freeform))
         .toString();
   }
@@ -69,13 +70,13 @@ class AiConversationPostRequestUserLocationBuilder
             AiConversationPostRequestUserLocationBuilder> {
   _$AiConversationPostRequestUserLocation? _$v;
 
-  double? _lat;
-  double? get lat => _$this._lat;
-  set lat(double? lat) => _$this._lat = lat;
+  double? _latitude;
+  double? get latitude => _$this._latitude;
+  set latitude(double? latitude) => _$this._latitude = latitude;
 
-  double? _lng;
-  double? get lng => _$this._lng;
-  set lng(double? lng) => _$this._lng = lng;
+  double? _longitude;
+  double? get longitude => _$this._longitude;
+  set longitude(double? longitude) => _$this._longitude = longitude;
 
   String? _freeform;
   String? get freeform => _$this._freeform;
@@ -88,8 +89,8 @@ class AiConversationPostRequestUserLocationBuilder
   AiConversationPostRequestUserLocationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _lat = $v.lat;
-      _lng = $v.lng;
+      _latitude = $v.latitude;
+      _longitude = $v.longitude;
       _freeform = $v.freeform;
       _$v = null;
     }
@@ -113,8 +114,8 @@ class AiConversationPostRequestUserLocationBuilder
   _$AiConversationPostRequestUserLocation _build() {
     final _$result = _$v ??
         _$AiConversationPostRequestUserLocation._(
-          lat: lat,
-          lng: lng,
+          latitude: latitude,
+          longitude: longitude,
           freeform: freeform,
         );
     replace(_$result);

@@ -48,10 +48,10 @@ import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
 final api = OnTheGoSdk().getAiApi();
-final AiChat2PostRequest aiChat2PostRequest = ; // AiChat2PostRequest | 
+final AiChat2DataPostRequest aiChat2DataPostRequest = ; // AiChat2DataPostRequest | 
 
 try {
-    final response = await api.aiChat2DataPost(aiChat2PostRequest);
+    final response = await api.aiChat2DataPost(aiChat2DataPostRequest);
     print(response);
 } catch on DioException (e) {
     print("Exception when calling AiApi->aiChat2DataPost: $e\n");
@@ -106,6 +106,8 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](doc/Address.md)
+ - [AiChat2DataPostRequest](doc/AiChat2DataPostRequest.md)
+ - [AiChat2DataPostRequestUserLocation](doc/AiChat2DataPostRequestUserLocation.md)
  - [AiChat2Post200Response](doc/AiChat2Post200Response.md)
  - [AiChat2PostRequest](doc/AiChat2PostRequest.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)

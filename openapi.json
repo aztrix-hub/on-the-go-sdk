@@ -697,11 +697,15 @@
                   "userLocation": {
                     "type": "object",
                     "properties": {
-                      "lat": {
+                      "latitude": {
+                        "minimum": -90,
+                        "maximum": 90,
                         "type": "number",
                         "format": "double"
                       },
-                      "lng": {
+                      "longitude": {
+                        "minimum": -180,
+                        "maximum": 180,
                         "type": "number",
                         "format": "double"
                       },
@@ -858,11 +862,15 @@
                   "userLocation": {
                     "type": "object",
                     "properties": {
-                      "lat": {
+                      "latitude": {
+                        "minimum": -90,
+                        "maximum": 90,
                         "type": "number",
                         "format": "double"
                       },
-                      "lng": {
+                      "longitude": {
+                        "minimum": -180,
+                        "maximum": 180,
                         "type": "number",
                         "format": "double"
                       },

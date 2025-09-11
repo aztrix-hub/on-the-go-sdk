@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **aiChat2DataPost**
-> LocationsGet200Response aiChat2DataPost(aiChat2PostRequest)
+> LocationsGet200Response aiChat2DataPost(aiChat2DataPostRequest)
 
 
 
@@ -33,10 +33,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiChat2PostRequest aiChat2PostRequest = ; // AiChat2PostRequest | 
+final AiChat2DataPostRequest aiChat2DataPostRequest = ; // AiChat2DataPostRequest | 
 
 try {
-    final response = api.aiChat2DataPost(aiChat2PostRequest);
+    final response = api.aiChat2DataPost(aiChat2DataPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiChat2DataPost: $e\n');
@@ -47,7 +47,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiChat2PostRequest** | [**AiChat2PostRequest**](AiChat2PostRequest.md)|  | [optional] 
+ **aiChat2DataPostRequest** | [**AiChat2DataPostRequest**](AiChat2DataPostRequest.md)|  | [optional] 
 
 ### Return type
 

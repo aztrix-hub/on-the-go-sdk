@@ -7,13 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiConversationPostRequestUserLocation, () {
-    // double lat
-    test('to test the property `lat`', () async {
+    // double latitude
+    test('to test the property `latitude`', () async {
       // TODO
     });
 
-    // double lng
-    test('to test the property `lng`', () async {
+    // double longitude
+    test('to test the property `longitude`', () async {
       // TODO
     });
 

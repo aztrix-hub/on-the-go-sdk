@@ -6,7 +6,7 @@ void main() {
   final instance = OnTheGoSdk().getAiApi();
 
   group(AiApi, () {
-    //Future<LocationsGet200Response> aiChat2DataPost({ AiChat2PostRequest aiChat2PostRequest }) async
+    //Future<LocationsGet200Response> aiChat2DataPost({ AiChat2DataPostRequest aiChat2DataPostRequest }) async
     test('test aiChat2DataPost', () async {
       // TODO
     });
