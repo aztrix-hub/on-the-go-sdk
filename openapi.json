@@ -947,11 +947,11 @@
                   "userLocation": {
                     "type": "object",
                     "properties": {
-                      "lat": {
+                      "latitude": {
                         "type": "number",
                         "format": "double"
                       },
-                      "lng": {
+                      "longitude": {
                         "type": "number",
                         "format": "double"
                       },

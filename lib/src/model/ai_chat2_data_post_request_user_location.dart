@@ -11,19 +11,19 @@ part 'ai_chat2_data_post_request_user_location.g.dart';
 /// AiChat2DataPostRequestUserLocation
 ///
 /// Properties:
-/// * [lat]
-/// * [lng]
+/// * [latitude]
+/// * [longitude]
 /// * [freeform]
 @BuiltValue()
 abstract class AiChat2DataPostRequestUserLocation
     implements
         Built<AiChat2DataPostRequestUserLocation,
             AiChat2DataPostRequestUserLocationBuilder> {
-  @BuiltValueField(wireName: r'lat')
-  double? get lat;
+  @BuiltValueField(wireName: r'latitude')
+  double? get latitude;
 
-  @BuiltValueField(wireName: r'lng')
-  double? get lng;
+  @BuiltValueField(wireName: r'longitude')
+  double? get longitude;
 
   @BuiltValueField(wireName: r'freeform')
   String? get freeform;
@@ -58,17 +58,17 @@ class _$AiChat2DataPostRequestUserLocationSerializer
     AiChat2DataPostRequestUserLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.lat != null) {
-      yield r'lat';
+    if (object.latitude != null) {
+      yield r'latitude';
       yield serializers.serialize(
-        object.lat,
+        object.latitude,
         specifiedType: const FullType(double),
       );
     }
-    if (object.lng != null) {
-      yield r'lng';
+    if (object.longitude != null) {
+      yield r'longitude';
       yield serializers.serialize(
-        object.lng,
+        object.longitude,
         specifiedType: const FullType(double),
       );
     }
@@ -104,19 +104,19 @@ class _$AiChat2DataPostRequestUserLocationSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'lat':
+        case r'latitude':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(double),
           ) as double;
-          result.lat = valueDes;
+          result.latitude = valueDes;
           break;
-        case r'lng':
+        case r'longitude':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(double),
           ) as double;
-          result.lng = valueDes;
+          result.longitude = valueDes;
           break;
         case r'freeform':
           final valueDes = serializers.deserialize(
