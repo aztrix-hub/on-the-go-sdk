@@ -1,0 +1,138 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/location.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
+
+part 'ai_chat2_data_post200_response.g.dart';
+
+/// AiChat2DataPost200Response
+///
+/// Properties:
+/// * [locations]
+/// * [keywords]
+@BuiltValue()
+abstract class AiChat2DataPost200Response
+    implements
+        Built<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
+  @BuiltValueField(wireName: r'locations')
+  BuiltList<Location>? get locations;
+
+  @BuiltValueField(wireName: r'keywords')
+  BuiltList<String>? get keywords;
+
+  AiChat2DataPost200Response._();
+
+  factory AiChat2DataPost200Response(
+          [void updates(AiChat2DataPost200ResponseBuilder b)]) =
+      _$AiChat2DataPost200Response;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AiChat2DataPost200ResponseBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<AiChat2DataPost200Response> get serializer =>
+      _$AiChat2DataPost200ResponseSerializer();
+}
+
+class _$AiChat2DataPost200ResponseSerializer
+    implements PrimitiveSerializer<AiChat2DataPost200Response> {
+  @override
+  final Iterable<Type> types = const [
+    AiChat2DataPost200Response,
+    _$AiChat2DataPost200Response
+  ];
+
+  @override
+  final String wireName = r'AiChat2DataPost200Response';
+
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    AiChat2DataPost200Response object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.locations != null) {
+      yield r'locations';
+      yield serializers.serialize(
+        object.locations,
+        specifiedType: const FullType(BuiltList, [FullType(Location)]),
+      );
+    }
+    if (object.keywords != null) {
+      yield r'keywords';
+      yield serializers.serialize(
+        object.keywords,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+  }
+
+  @override
+  Object serialize(
+    Serializers serializers,
+    AiChat2DataPost200Response object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object,
+            specifiedType: specifiedType)
+        .toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required AiChat2DataPost200ResponseBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'locations':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(Location)]),
+          ) as BuiltList<Location>;
+          result.locations.replace(valueDes);
+          break;
+        case r'keywords':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.keywords.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  AiChat2DataPost200Response deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = AiChat2DataPost200ResponseBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
+}

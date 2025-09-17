@@ -8,15 +8,15 @@ part of 'address.dart';
 
 class _$Address extends Address {
   @override
-  final String? streetAndNo;
+  final String streetAndNo;
   @override
-  final String? postalCode;
+  final String postalCode;
   @override
-  final String? city;
+  final String city;
   @override
   final String? region;
   @override
-  final String? countryCode;
+  final String countryCode;
   @override
   final String? extraDescription;
   @override
@@ -28,11 +28,11 @@ class _$Address extends Address {
       (AddressBuilder()..update(updates))._build();
 
   _$Address._(
-      {this.streetAndNo,
-      this.postalCode,
-      this.city,
+      {required this.streetAndNo,
+      required this.postalCode,
+      required this.city,
       this.region,
-      this.countryCode,
+      required this.countryCode,
       this.extraDescription,
       this.latitude,
       this.longitude})
@@ -160,11 +160,14 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   _$Address _build() {
     final _$result = _$v ??
         _$Address._(
-          streetAndNo: streetAndNo,
-          postalCode: postalCode,
-          city: city,
+          streetAndNo: BuiltValueNullFieldError.checkNotNull(
+              streetAndNo, r'Address', 'streetAndNo'),
+          postalCode: BuiltValueNullFieldError.checkNotNull(
+              postalCode, r'Address', 'postalCode'),
+          city: BuiltValueNullFieldError.checkNotNull(city, r'Address', 'city'),
           region: region,
-          countryCode: countryCode,
+          countryCode: BuiltValueNullFieldError.checkNotNull(
+              countryCode, r'Address', 'countryCode'),
           extraDescription: extraDescription,
           latitude: latitude,
           longitude: longitude,

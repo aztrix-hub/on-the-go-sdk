@@ -15,6 +15,7 @@ import 'package:on_the_go_sdk/src/date_serializer.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
 
 import 'package:on_the_go_sdk/src/model/address.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
@@ -67,6 +68,7 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   Address,
+  AiChat2DataPost200Response,
   AiChat2DataPostRequest,
   AiChat2DataPostRequestUserLocation,
   AiChat2Post200Response,

@@ -22,19 +22,19 @@ part 'address.g.dart';
 @BuiltValue()
 abstract class Address implements Built<Address, AddressBuilder> {
   @BuiltValueField(wireName: r'streetAndNo')
-  String? get streetAndNo;
+  String get streetAndNo;
 
   @BuiltValueField(wireName: r'postalCode')
-  String? get postalCode;
+  String get postalCode;
 
   @BuiltValueField(wireName: r'city')
-  String? get city;
+  String get city;
 
   @BuiltValueField(wireName: r'region')
   String? get region;
 
   @BuiltValueField(wireName: r'countryCode')
-  String? get countryCode;
+  String get countryCode;
 
   @BuiltValueField(wireName: r'extraDescription')
   String? get extraDescription;
@@ -68,27 +68,21 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
     Address object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.streetAndNo != null) {
-      yield r'streetAndNo';
-      yield serializers.serialize(
-        object.streetAndNo,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.postalCode != null) {
-      yield r'postalCode';
-      yield serializers.serialize(
-        object.postalCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.city != null) {
-      yield r'city';
-      yield serializers.serialize(
-        object.city,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'streetAndNo';
+    yield serializers.serialize(
+      object.streetAndNo,
+      specifiedType: const FullType(String),
+    );
+    yield r'postalCode';
+    yield serializers.serialize(
+      object.postalCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'city';
+    yield serializers.serialize(
+      object.city,
+      specifiedType: const FullType(String),
+    );
     if (object.region != null) {
       yield r'region';
       yield serializers.serialize(
@@ -96,13 +90,11 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.countryCode != null) {
-      yield r'countryCode';
-      yield serializers.serialize(
-        object.countryCode,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'countryCode';
+    yield serializers.serialize(
+      object.countryCode,
+      specifiedType: const FullType(String),
+    );
     if (object.extraDescription != null) {
       yield r'extraDescription';
       yield serializers.serialize(

@@ -8,6 +8,7 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/api_util.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_post_request.dart';
@@ -18,7 +19,6 @@ import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 
 class AiApi {
   final Dio _dio;
@@ -39,9 +39,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiChat2DataPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationsGet200Response>> aiChat2DataPost({
+  Future<Response<AiChat2DataPost200Response>> aiChat2DataPost({
     AiChat2DataPostRequest? aiChat2DataPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -100,7 +100,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LocationsGet200Response? _responseData;
+    AiChat2DataPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -108,8 +108,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(LocationsGet200Response),
-            ) as LocationsGet200Response;
+              specifiedType: const FullType(AiChat2DataPost200Response),
+            ) as AiChat2DataPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -120,7 +120,7 @@ class AiApi {
       );
     }
 
-    return Response<LocationsGet200Response>(
+    return Response<AiChat2DataPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

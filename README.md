@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](doc/Address.md)
+ - [AiChat2DataPost200Response](doc/AiChat2DataPost200Response.md)
  - [AiChat2DataPostRequest](doc/AiChat2DataPostRequest.md)
  - [AiChat2DataPostRequestUserLocation](doc/AiChat2DataPostRequestUserLocation.md)
  - [AiChat2Post200Response](doc/AiChat2Post200Response.md)

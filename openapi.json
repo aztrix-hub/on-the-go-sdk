@@ -1024,6 +1024,12 @@
                       "items": {
                         "$ref": "#/components/schemas/Location"
                       }
+                    },
+                    "keywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     }
                   }
                 }
@@ -2070,6 +2076,12 @@
         "description": "Location"
       },
       "Address": {
+        "required": [
+          "streetAndNo",
+          "city",
+          "postalCode",
+          "countryCode"
+        ],
         "type": "object",
         "properties": {
           "streetAndNo": {

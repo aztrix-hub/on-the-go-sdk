@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **aiChat2DataPost**
-> LocationsGet200Response aiChat2DataPost(aiChat2DataPostRequest)
+> AiChat2DataPost200Response aiChat2DataPost(aiChat2DataPostRequest)
 
 
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LocationsGet200Response**](LocationsGet200Response.md)
+[**AiChat2DataPost200Response**](AiChat2DataPost200Response.md)
 
 ### Authorization
 

@@ -8,6 +8,7 @@ part of 'serializers.dart';
 
 Serializers _$serializers = (Serializers().toBuilder()
       ..add(Address.serializer)
+      ..add(AiChat2DataPost200Response.serializer)
       ..add(AiChat2DataPostRequest.serializer)
       ..add(AiChat2DataPostRequestUserLocation.serializer)
       ..add(AiChat2Post200Response.serializer)
@@ -108,6 +109,12 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Location)]),
+          () => ListBuilder<Location>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Metric)]),
           () => ListBuilder<Metric>())
