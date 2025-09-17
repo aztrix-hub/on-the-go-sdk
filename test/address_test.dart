@@ -7,16 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Address, () {
-    // String countryCode
-    test('to test the property `countryCode`', () async {
-      // TODO
-    });
-
-    // String city
-    test('to test the property `city`', () async {
-      // TODO
-    });
-
     // String streetAndNo
     test('to test the property `streetAndNo`', () async {
       // TODO
@@ -27,13 +17,18 @@ void main() {
       // TODO
     });
 
+    // String city
+    test('to test the property `city`', () async {
+      // TODO
+    });
+
     // String region
     test('to test the property `region`', () async {
       // TODO
     });
 
-    // String sublocality
-    test('to test the property `sublocality`', () async {
+    // String countryCode
+    test('to test the property `countryCode`', () async {
       // TODO
     });
 

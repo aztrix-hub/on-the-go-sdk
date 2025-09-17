@@ -8,12 +8,11 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countryCode** | **String** |  | [optional] 
-**city** | **String** |  | [optional] 
 **streetAndNo** | **String** |  | [optional] 
 **postalCode** | **String** |  | [optional] 
+**city** | **String** |  | [optional] 
 **region** | **String** |  | [optional] 
-**sublocality** | **String** |  | [optional] 
+**countryCode** | **String** |  | [optional] 
 **extraDescription** | **String** |  | [optional] 
 **latitude** | **double** |  | [optional] 
 **longitude** | **double** |  | [optional] 

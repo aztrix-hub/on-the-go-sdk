@@ -8,17 +8,15 @@ part of 'address.dart';
 
 class _$Address extends Address {
   @override
-  final String? countryCode;
-  @override
-  final String? city;
-  @override
   final String? streetAndNo;
   @override
   final String? postalCode;
   @override
+  final String? city;
+  @override
   final String? region;
   @override
-  final String? sublocality;
+  final String? countryCode;
   @override
   final String? extraDescription;
   @override
@@ -30,12 +28,11 @@ class _$Address extends Address {
       (AddressBuilder()..update(updates))._build();
 
   _$Address._(
-      {this.countryCode,
-      this.city,
-      this.streetAndNo,
+      {this.streetAndNo,
       this.postalCode,
+      this.city,
       this.region,
-      this.sublocality,
+      this.countryCode,
       this.extraDescription,
       this.latitude,
       this.longitude})
@@ -51,12 +48,11 @@ class _$Address extends Address {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Address &&
-        countryCode == other.countryCode &&
-        city == other.city &&
         streetAndNo == other.streetAndNo &&
         postalCode == other.postalCode &&
+        city == other.city &&
         region == other.region &&
-        sublocality == other.sublocality &&
+        countryCode == other.countryCode &&
         extraDescription == other.extraDescription &&
         latitude == other.latitude &&
         longitude == other.longitude;
@@ -65,12 +61,11 @@ class _$Address extends Address {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, countryCode.hashCode);
-    _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, streetAndNo.hashCode);
     _$hash = $jc(_$hash, postalCode.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
     _$hash = $jc(_$hash, region.hashCode);
-    _$hash = $jc(_$hash, sublocality.hashCode);
+    _$hash = $jc(_$hash, countryCode.hashCode);
     _$hash = $jc(_$hash, extraDescription.hashCode);
     _$hash = $jc(_$hash, latitude.hashCode);
     _$hash = $jc(_$hash, longitude.hashCode);
@@ -81,12 +76,11 @@ class _$Address extends Address {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Address')
-          ..add('countryCode', countryCode)
-          ..add('city', city)
           ..add('streetAndNo', streetAndNo)
           ..add('postalCode', postalCode)
+          ..add('city', city)
           ..add('region', region)
-          ..add('sublocality', sublocality)
+          ..add('countryCode', countryCode)
           ..add('extraDescription', extraDescription)
           ..add('latitude', latitude)
           ..add('longitude', longitude))
@@ -97,14 +91,6 @@ class _$Address extends Address {
 class AddressBuilder implements Builder<Address, AddressBuilder> {
   _$Address? _$v;
 
-  String? _countryCode;
-  String? get countryCode => _$this._countryCode;
-  set countryCode(String? countryCode) => _$this._countryCode = countryCode;
-
-  String? _city;
-  String? get city => _$this._city;
-  set city(String? city) => _$this._city = city;
-
   String? _streetAndNo;
   String? get streetAndNo => _$this._streetAndNo;
   set streetAndNo(String? streetAndNo) => _$this._streetAndNo = streetAndNo;
@@ -113,13 +99,17 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   String? get postalCode => _$this._postalCode;
   set postalCode(String? postalCode) => _$this._postalCode = postalCode;
 
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
+
   String? _region;
   String? get region => _$this._region;
   set region(String? region) => _$this._region = region;
 
-  String? _sublocality;
-  String? get sublocality => _$this._sublocality;
-  set sublocality(String? sublocality) => _$this._sublocality = sublocality;
+  String? _countryCode;
+  String? get countryCode => _$this._countryCode;
+  set countryCode(String? countryCode) => _$this._countryCode = countryCode;
 
   String? _extraDescription;
   String? get extraDescription => _$this._extraDescription;
@@ -141,12 +131,11 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   AddressBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _countryCode = $v.countryCode;
-      _city = $v.city;
       _streetAndNo = $v.streetAndNo;
       _postalCode = $v.postalCode;
+      _city = $v.city;
       _region = $v.region;
-      _sublocality = $v.sublocality;
+      _countryCode = $v.countryCode;
       _extraDescription = $v.extraDescription;
       _latitude = $v.latitude;
       _longitude = $v.longitude;
@@ -171,12 +160,11 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
   _$Address _build() {
     final _$result = _$v ??
         _$Address._(
-          countryCode: countryCode,
-          city: city,
           streetAndNo: streetAndNo,
           postalCode: postalCode,
+          city: city,
           region: region,
-          sublocality: sublocality,
+          countryCode: countryCode,
           extraDescription: extraDescription,
           latitude: latitude,
           longitude: longitude,

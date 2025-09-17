@@ -44,6 +44,13 @@ void main() {
       // TODO
     });
 
+    // Create a Location
+    //
+    //Future<Location> locationPost(Location location) async
+    test('test locationPost', () async {
+      // TODO
+    });
+
     // Get locations
     //
     //Future<LocationsGet200Response> locationsGet(String language, { BuiltList<String> locationIds, String query }) async

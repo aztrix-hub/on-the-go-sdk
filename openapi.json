@@ -367,6 +367,49 @@
             "authToken": []
           }
         ]
+      },
+      "post": {
+        "tags": [
+          "locations"
+        ],
+        "summary": "Create a Location",
+        "requestBody": {
+          "description": "Location object",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Location successfully edited",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request Forbidden"
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/locations": {
@@ -2029,16 +2072,6 @@
       "Address": {
         "type": "object",
         "properties": {
-          "countryCode": {
-            "minLength": 0,
-            "pattern": "^[a-zA-Z]{2}$",
-            "type": "string"
-          },
-          "city": {
-            "minLength": 0,
-            "maxLength": 255,
-            "type": "string"
-          },
           "streetAndNo": {
             "minLength": 0,
             "maxLength": 255,
@@ -2049,14 +2082,19 @@
             "maxLength": 10,
             "type": "string"
           },
+          "city": {
+            "minLength": 0,
+            "maxLength": 255,
+            "type": "string"
+          },
           "region": {
             "minLength": 0,
             "maxLength": 255,
             "type": "string"
           },
-          "sublocality": {
+          "countryCode": {
             "minLength": 0,
-            "maxLength": 255,
+            "pattern": "^[a-zA-Z]{2}$",
             "type": "string"
           },
           "extraDescription": {
