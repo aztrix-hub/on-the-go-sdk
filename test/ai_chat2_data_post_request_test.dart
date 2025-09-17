@@ -31,5 +31,10 @@ void main() {
     test('to test the property `dateTime`', () async {
       // TODO
     });
+
+    // String locationId
+    test('to test the property `locationId`', () async {
+      // TODO
+    });
   });
 }

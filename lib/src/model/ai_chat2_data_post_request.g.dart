@@ -17,6 +17,8 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
   final AiChat2DataPostRequestUserLocation? userLocation;
   @override
   final String? dateTime;
+  @override
+  final String? locationId;
 
   factory _$AiChat2DataPostRequest(
           [void Function(AiChat2DataPostRequestBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
       required this.sessionId,
       required this.message,
       this.userLocation,
-      this.dateTime})
+      this.dateTime,
+      this.locationId})
       : super._();
   @override
   AiChat2DataPostRequest rebuild(
@@ -46,7 +49,8 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
         sessionId == other.sessionId &&
         message == other.message &&
         userLocation == other.userLocation &&
-        dateTime == other.dateTime;
+        dateTime == other.dateTime &&
+        locationId == other.locationId;
   }
 
   @override
@@ -57,6 +61,7 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, userLocation.hashCode);
     _$hash = $jc(_$hash, dateTime.hashCode);
+    _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,7 +73,8 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
           ..add('sessionId', sessionId)
           ..add('message', message)
           ..add('userLocation', userLocation)
-          ..add('dateTime', dateTime))
+          ..add('dateTime', dateTime)
+          ..add('locationId', locationId))
         .toString();
   }
 }
@@ -99,6 +105,10 @@ class AiChat2DataPostRequestBuilder
   String? get dateTime => _$this._dateTime;
   set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
+
   AiChat2DataPostRequestBuilder() {
     AiChat2DataPostRequest._defaults(this);
   }
@@ -111,6 +121,7 @@ class AiChat2DataPostRequestBuilder
       _message = $v.message;
       _userLocation = $v.userLocation?.toBuilder();
       _dateTime = $v.dateTime;
+      _locationId = $v.locationId;
       _$v = null;
     }
     return this;
@@ -141,6 +152,7 @@ class AiChat2DataPostRequestBuilder
                 message, r'AiChat2DataPostRequest', 'message'),
             userLocation: _userLocation?.build(),
             dateTime: dateTime,
+            locationId: locationId,
           );
     } catch (_) {
       late String _$failedField;

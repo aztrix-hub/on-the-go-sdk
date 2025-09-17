@@ -17,6 +17,7 @@ part 'ai_chat2_data_post_request.g.dart';
 /// * [message]
 /// * [userLocation]
 /// * [dateTime]
+/// * [locationId]
 @BuiltValue()
 abstract class AiChat2DataPostRequest
     implements Built<AiChat2DataPostRequest, AiChat2DataPostRequestBuilder> {
@@ -34,6 +35,9 @@ abstract class AiChat2DataPostRequest
 
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
+
+  @BuiltValueField(wireName: r'locationId')
+  String? get locationId;
 
   AiChat2DataPostRequest._();
 
@@ -96,6 +100,13 @@ class _$AiChat2DataPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.locationId != null) {
+      yield r'locationId';
+      yield serializers.serialize(
+        object.locationId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -155,6 +166,13 @@ class _$AiChat2DataPostRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.dateTime = valueDes;
+          break;
+        case r'locationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.locationId = valueDes;
           break;
         default:
           unhandled.add(key);
