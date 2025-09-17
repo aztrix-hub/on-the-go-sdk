@@ -15,6 +15,7 @@ part 'ai_chat2_data_post200_response.g.dart';
 /// Properties:
 /// * [locations]
 /// * [keywords]
+/// * [description]
 @BuiltValue()
 abstract class AiChat2DataPost200Response
     implements
@@ -24,6 +25,9 @@ abstract class AiChat2DataPost200Response
 
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
+
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
   AiChat2DataPost200Response._();
 
@@ -69,6 +73,13 @@ class _$AiChat2DataPost200ResponseSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -107,6 +118,13 @@ class _$AiChat2DataPost200ResponseSerializer
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.keywords.replace(valueDes);
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
+**description** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

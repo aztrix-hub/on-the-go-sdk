@@ -11,12 +11,16 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   final BuiltList<Location>? locations;
   @override
   final BuiltList<String>? keywords;
+  @override
+  final String? description;
 
   factory _$AiChat2DataPost200Response(
           [void Function(AiChat2DataPost200ResponseBuilder)? updates]) =>
       (AiChat2DataPost200ResponseBuilder()..update(updates))._build();
 
-  _$AiChat2DataPost200Response._({this.locations, this.keywords}) : super._();
+  _$AiChat2DataPost200Response._(
+      {this.locations, this.keywords, this.description})
+      : super._();
   @override
   AiChat2DataPost200Response rebuild(
           void Function(AiChat2DataPost200ResponseBuilder) updates) =>
@@ -31,7 +35,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
     if (identical(other, this)) return true;
     return other is AiChat2DataPost200Response &&
         locations == other.locations &&
-        keywords == other.keywords;
+        keywords == other.keywords &&
+        description == other.description;
   }
 
   @override
@@ -39,6 +44,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
     var _$hash = 0;
     _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
+    _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,7 +53,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChat2DataPost200Response')
           ..add('locations', locations)
-          ..add('keywords', keywords))
+          ..add('keywords', keywords)
+          ..add('description', description))
         .toString();
   }
 }
@@ -68,6 +75,10 @@ class AiChat2DataPost200ResponseBuilder
       _$this._keywords ??= ListBuilder<String>();
   set keywords(ListBuilder<String>? keywords) => _$this._keywords = keywords;
 
+  String? _description;
+  String? get description => _$this._description;
+  set description(String? description) => _$this._description = description;
+
   AiChat2DataPost200ResponseBuilder() {
     AiChat2DataPost200Response._defaults(this);
   }
@@ -77,6 +88,7 @@ class AiChat2DataPost200ResponseBuilder
     if ($v != null) {
       _locations = $v.locations?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
+      _description = $v.description;
       _$v = null;
     }
     return this;
@@ -102,6 +114,7 @@ class AiChat2DataPost200ResponseBuilder
           _$AiChat2DataPost200Response._(
             locations: _locations?.build(),
             keywords: _keywords?.build(),
+            description: description,
           );
     } catch (_) {
       late String _$failedField;
