@@ -8,7 +8,6 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userId** | **String** |  | [optional] 
 **sessionId** | **String** |  | 
 **message** | **String** |  | 
 **userLocation** | [**AiChat2DataPostRequestUserLocation**](AiChat2DataPostRequestUserLocation.md) |  | [optional] 

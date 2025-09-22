@@ -13,6 +13,7 @@ part 'ai_chat2_data_post200_response.g.dart';
 /// AiChat2DataPost200Response
 ///
 /// Properties:
+/// * [sessionId]
 /// * [locations]
 /// * [keywords]
 /// * [description]
@@ -20,6 +21,9 @@ part 'ai_chat2_data_post200_response.g.dart';
 abstract class AiChat2DataPost200Response
     implements
         Built<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
+  @BuiltValueField(wireName: r'sessionId')
+  String? get sessionId;
+
   @BuiltValueField(wireName: r'locations')
   BuiltList<Location>? get locations;
 
@@ -59,6 +63,13 @@ class _$AiChat2DataPost200ResponseSerializer
     AiChat2DataPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.sessionId != null) {
+      yield r'sessionId';
+      yield serializers.serialize(
+        object.sessionId,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.locations != null) {
       yield r'locations';
       yield serializers.serialize(
@@ -105,6 +116,13 @@ class _$AiChat2DataPost200ResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'sessionId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionId = valueDes;
+          break;
         case r'locations':
           final valueDes = serializers.deserialize(
             value,

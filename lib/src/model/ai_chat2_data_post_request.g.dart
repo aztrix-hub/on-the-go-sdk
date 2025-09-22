@@ -8,8 +8,6 @@ part of 'ai_chat2_data_post_request.dart';
 
 class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
   @override
-  final String? userId;
-  @override
   final String sessionId;
   @override
   final String message;
@@ -25,8 +23,7 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
       (AiChat2DataPostRequestBuilder()..update(updates))._build();
 
   _$AiChat2DataPostRequest._(
-      {this.userId,
-      required this.sessionId,
+      {required this.sessionId,
       required this.message,
       this.userLocation,
       this.dateTime,
@@ -45,7 +42,6 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiChat2DataPostRequest &&
-        userId == other.userId &&
         sessionId == other.sessionId &&
         message == other.message &&
         userLocation == other.userLocation &&
@@ -56,7 +52,6 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, sessionId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, userLocation.hashCode);
@@ -69,7 +64,6 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChat2DataPostRequest')
-          ..add('userId', userId)
           ..add('sessionId', sessionId)
           ..add('message', message)
           ..add('userLocation', userLocation)
@@ -82,10 +76,6 @@ class _$AiChat2DataPostRequest extends AiChat2DataPostRequest {
 class AiChat2DataPostRequestBuilder
     implements Builder<AiChat2DataPostRequest, AiChat2DataPostRequestBuilder> {
   _$AiChat2DataPostRequest? _$v;
-
-  String? _userId;
-  String? get userId => _$this._userId;
-  set userId(String? userId) => _$this._userId = userId;
 
   String? _sessionId;
   String? get sessionId => _$this._sessionId;
@@ -116,7 +106,6 @@ class AiChat2DataPostRequestBuilder
   AiChat2DataPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _userId = $v.userId;
       _sessionId = $v.sessionId;
       _message = $v.message;
       _userLocation = $v.userLocation?.toBuilder();
@@ -145,7 +134,6 @@ class AiChat2DataPostRequestBuilder
     try {
       _$result = _$v ??
           _$AiChat2DataPostRequest._(
-            userId: userId,
             sessionId: BuiltValueNullFieldError.checkNotNull(
                 sessionId, r'AiChat2DataPostRequest', 'sessionId'),
             message: BuiltValueNullFieldError.checkNotNull(

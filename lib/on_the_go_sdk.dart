@@ -26,6 +26,7 @@ export 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request_user_location.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat2_post_request.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat2_post_request_user_location.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';

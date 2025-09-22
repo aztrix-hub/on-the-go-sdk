@@ -6,52 +6,52 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_chat2_data_post_request_user_location.g.dart';
+part 'ai_chat2_post_request_user_location.g.dart';
 
-/// AiChat2DataPostRequestUserLocation
+/// AiChat2PostRequestUserLocation
 ///
 /// Properties:
 /// * [latitude]
 /// * [longitude]
 @BuiltValue()
-abstract class AiChat2DataPostRequestUserLocation
+abstract class AiChat2PostRequestUserLocation
     implements
-        Built<AiChat2DataPostRequestUserLocation,
-            AiChat2DataPostRequestUserLocationBuilder> {
+        Built<AiChat2PostRequestUserLocation,
+            AiChat2PostRequestUserLocationBuilder> {
   @BuiltValueField(wireName: r'latitude')
   double? get latitude;
 
   @BuiltValueField(wireName: r'longitude')
   double? get longitude;
 
-  AiChat2DataPostRequestUserLocation._();
+  AiChat2PostRequestUserLocation._();
 
-  factory AiChat2DataPostRequestUserLocation(
-          [void updates(AiChat2DataPostRequestUserLocationBuilder b)]) =
-      _$AiChat2DataPostRequestUserLocation;
+  factory AiChat2PostRequestUserLocation(
+          [void updates(AiChat2PostRequestUserLocationBuilder b)]) =
+      _$AiChat2PostRequestUserLocation;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiChat2DataPostRequestUserLocationBuilder b) => b;
+  static void _defaults(AiChat2PostRequestUserLocationBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiChat2DataPostRequestUserLocation> get serializer =>
-      _$AiChat2DataPostRequestUserLocationSerializer();
+  static Serializer<AiChat2PostRequestUserLocation> get serializer =>
+      _$AiChat2PostRequestUserLocationSerializer();
 }
 
-class _$AiChat2DataPostRequestUserLocationSerializer
-    implements PrimitiveSerializer<AiChat2DataPostRequestUserLocation> {
+class _$AiChat2PostRequestUserLocationSerializer
+    implements PrimitiveSerializer<AiChat2PostRequestUserLocation> {
   @override
   final Iterable<Type> types = const [
-    AiChat2DataPostRequestUserLocation,
-    _$AiChat2DataPostRequestUserLocation
+    AiChat2PostRequestUserLocation,
+    _$AiChat2PostRequestUserLocation
   ];
 
   @override
-  final String wireName = r'AiChat2DataPostRequestUserLocation';
+  final String wireName = r'AiChat2PostRequestUserLocation';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiChat2DataPostRequestUserLocation object, {
+    AiChat2PostRequestUserLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.latitude != null) {
@@ -73,7 +73,7 @@ class _$AiChat2DataPostRequestUserLocationSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiChat2DataPostRequestUserLocation object, {
+    AiChat2PostRequestUserLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,7 +86,7 @@ class _$AiChat2DataPostRequestUserLocationSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiChat2DataPostRequestUserLocationBuilder result,
+    required AiChat2PostRequestUserLocationBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -116,12 +116,12 @@ class _$AiChat2DataPostRequestUserLocationSerializer
   }
 
   @override
-  AiChat2DataPostRequestUserLocation deserialize(
+  AiChat2PostRequestUserLocation deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiChat2DataPostRequestUserLocationBuilder();
+    final result = AiChat2PostRequestUserLocationBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

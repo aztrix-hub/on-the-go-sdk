@@ -14,7 +14,7 @@ class _$AiChat2PostRequest extends AiChat2PostRequest {
   @override
   final String message;
   @override
-  final AiConversationPostRequestUserLocation? userLocation;
+  final AiChat2PostRequestUserLocation? userLocation;
   @override
   final String? dateTime;
 
@@ -89,11 +89,10 @@ class AiChat2PostRequestBuilder
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
-  AiConversationPostRequestUserLocationBuilder? _userLocation;
-  AiConversationPostRequestUserLocationBuilder get userLocation =>
-      _$this._userLocation ??= AiConversationPostRequestUserLocationBuilder();
-  set userLocation(
-          AiConversationPostRequestUserLocationBuilder? userLocation) =>
+  AiChat2PostRequestUserLocationBuilder? _userLocation;
+  AiChat2PostRequestUserLocationBuilder get userLocation =>
+      _$this._userLocation ??= AiChat2PostRequestUserLocationBuilder();
+  set userLocation(AiChat2PostRequestUserLocationBuilder? userLocation) =>
       _$this._userLocation = userLocation;
 
   String? _dateTime;

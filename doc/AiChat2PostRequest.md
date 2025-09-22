@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **userId** | **String** |  | [optional] 
 **sessionId** | **String** |  | 
 **message** | **String** |  | 
-**userLocation** | [**AiConversationPostRequestUserLocation**](AiConversationPostRequestUserLocation.md) |  | [optional] 
+**userLocation** | [**AiChat2PostRequestUserLocation**](AiChat2PostRequestUserLocation.md) |  | [optional] 
 **dateTime** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

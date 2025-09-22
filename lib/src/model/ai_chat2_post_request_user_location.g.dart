@@ -1,38 +1,36 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_chat2_data_post_request_user_location.dart';
+part of 'ai_chat2_post_request_user_location.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiChat2DataPostRequestUserLocation
-    extends AiChat2DataPostRequestUserLocation {
+class _$AiChat2PostRequestUserLocation extends AiChat2PostRequestUserLocation {
   @override
   final double? latitude;
   @override
   final double? longitude;
 
-  factory _$AiChat2DataPostRequestUserLocation(
-          [void Function(AiChat2DataPostRequestUserLocationBuilder)?
-              updates]) =>
-      (AiChat2DataPostRequestUserLocationBuilder()..update(updates))._build();
+  factory _$AiChat2PostRequestUserLocation(
+          [void Function(AiChat2PostRequestUserLocationBuilder)? updates]) =>
+      (AiChat2PostRequestUserLocationBuilder()..update(updates))._build();
 
-  _$AiChat2DataPostRequestUserLocation._({this.latitude, this.longitude})
+  _$AiChat2PostRequestUserLocation._({this.latitude, this.longitude})
       : super._();
   @override
-  AiChat2DataPostRequestUserLocation rebuild(
-          void Function(AiChat2DataPostRequestUserLocationBuilder) updates) =>
+  AiChat2PostRequestUserLocation rebuild(
+          void Function(AiChat2PostRequestUserLocationBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiChat2DataPostRequestUserLocationBuilder toBuilder() =>
-      AiChat2DataPostRequestUserLocationBuilder()..replace(this);
+  AiChat2PostRequestUserLocationBuilder toBuilder() =>
+      AiChat2PostRequestUserLocationBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiChat2DataPostRequestUserLocation &&
+    return other is AiChat2PostRequestUserLocation &&
         latitude == other.latitude &&
         longitude == other.longitude;
   }
@@ -48,18 +46,18 @@ class _$AiChat2DataPostRequestUserLocation
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AiChat2DataPostRequestUserLocation')
+    return (newBuiltValueToStringHelper(r'AiChat2PostRequestUserLocation')
           ..add('latitude', latitude)
           ..add('longitude', longitude))
         .toString();
   }
 }
 
-class AiChat2DataPostRequestUserLocationBuilder
+class AiChat2PostRequestUserLocationBuilder
     implements
-        Builder<AiChat2DataPostRequestUserLocation,
-            AiChat2DataPostRequestUserLocationBuilder> {
-  _$AiChat2DataPostRequestUserLocation? _$v;
+        Builder<AiChat2PostRequestUserLocation,
+            AiChat2PostRequestUserLocationBuilder> {
+  _$AiChat2PostRequestUserLocation? _$v;
 
   double? _latitude;
   double? get latitude => _$this._latitude;
@@ -69,11 +67,11 @@ class AiChat2DataPostRequestUserLocationBuilder
   double? get longitude => _$this._longitude;
   set longitude(double? longitude) => _$this._longitude = longitude;
 
-  AiChat2DataPostRequestUserLocationBuilder() {
-    AiChat2DataPostRequestUserLocation._defaults(this);
+  AiChat2PostRequestUserLocationBuilder() {
+    AiChat2PostRequestUserLocation._defaults(this);
   }
 
-  AiChat2DataPostRequestUserLocationBuilder get _$this {
+  AiChat2PostRequestUserLocationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _latitude = $v.latitude;
@@ -84,22 +82,21 @@ class AiChat2DataPostRequestUserLocationBuilder
   }
 
   @override
-  void replace(AiChat2DataPostRequestUserLocation other) {
-    _$v = other as _$AiChat2DataPostRequestUserLocation;
+  void replace(AiChat2PostRequestUserLocation other) {
+    _$v = other as _$AiChat2PostRequestUserLocation;
   }
 
   @override
-  void update(
-      void Function(AiChat2DataPostRequestUserLocationBuilder)? updates) {
+  void update(void Function(AiChat2PostRequestUserLocationBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiChat2DataPostRequestUserLocation build() => _build();
+  AiChat2PostRequestUserLocation build() => _build();
 
-  _$AiChat2DataPostRequestUserLocation _build() {
+  _$AiChat2PostRequestUserLocation _build() {
     final _$result = _$v ??
-        _$AiChat2DataPostRequestUserLocation._(
+        _$AiChat2PostRequestUserLocation._(
           latitude: latitude,
           longitude: longitude,
         );

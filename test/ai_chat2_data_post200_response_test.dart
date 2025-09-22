@@ -16,5 +16,10 @@ void main() {
     test('to test the property `keywords`', () async {
       // TODO
     });
+
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
   });
 }

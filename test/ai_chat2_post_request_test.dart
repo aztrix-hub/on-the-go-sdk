@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // AiConversationPostRequestUserLocation userLocation
+    // AiChat2PostRequestUserLocation userLocation
     test('to test the property `userLocation`', () async {
       // TODO
     });

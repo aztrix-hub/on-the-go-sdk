@@ -8,6 +8,8 @@ part of 'ai_chat2_data_post200_response.dart';
 
 class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
+  final String? sessionId;
+  @override
   final BuiltList<Location>? locations;
   @override
   final BuiltList<String>? keywords;
@@ -19,7 +21,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
       (AiChat2DataPost200ResponseBuilder()..update(updates))._build();
 
   _$AiChat2DataPost200Response._(
-      {this.locations, this.keywords, this.description})
+      {this.sessionId, this.locations, this.keywords, this.description})
       : super._();
   @override
   AiChat2DataPost200Response rebuild(
@@ -34,6 +36,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiChat2DataPost200Response &&
+        sessionId == other.sessionId &&
         locations == other.locations &&
         keywords == other.keywords &&
         description == other.description;
@@ -42,6 +45,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, sessionId.hashCode);
     _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
@@ -52,6 +56,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChat2DataPost200Response')
+          ..add('sessionId', sessionId)
           ..add('locations', locations)
           ..add('keywords', keywords)
           ..add('description', description))
@@ -63,6 +68,10 @@ class AiChat2DataPost200ResponseBuilder
     implements
         Builder<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
   _$AiChat2DataPost200Response? _$v;
+
+  String? _sessionId;
+  String? get sessionId => _$this._sessionId;
+  set sessionId(String? sessionId) => _$this._sessionId = sessionId;
 
   ListBuilder<Location>? _locations;
   ListBuilder<Location> get locations =>
@@ -86,6 +95,7 @@ class AiChat2DataPost200ResponseBuilder
   AiChat2DataPost200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _sessionId = $v.sessionId;
       _locations = $v.locations?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _description = $v.description;
@@ -112,6 +122,7 @@ class AiChat2DataPost200ResponseBuilder
     try {
       _$result = _$v ??
           _$AiChat2DataPost200Response._(
+            sessionId: sessionId,
             locations: _locations?.build(),
             keywords: _keywords?.build(),
             description: description,

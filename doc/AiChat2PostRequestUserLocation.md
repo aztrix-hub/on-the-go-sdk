@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiChat2DataPost200Response
+# on_the_go_sdk.model.AiChat2PostRequestUserLocation
 
 ## Load the model package
 ```dart
@@ -8,10 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sessionId** | **String** |  | [optional] 
-**locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
-**keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
-**description** | **String** |  | [optional] 
+**latitude** | **double** |  | [optional] 
+**longitude** | **double** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

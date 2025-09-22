@@ -7,6 +7,7 @@ doc/AiChat2DataPostRequest.md
 doc/AiChat2DataPostRequestUserLocation.md
 doc/AiChat2Post200Response.md
 doc/AiChat2PostRequest.md
+doc/AiChat2PostRequestUserLocation.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiConversationPost200Response.md
@@ -82,6 +83,7 @@ lib/src/model/ai_chat2_data_post_request.dart
 lib/src/model/ai_chat2_data_post_request_user_location.dart
 lib/src/model/ai_chat2_post200_response.dart
 lib/src/model/ai_chat2_post_request.dart
+lib/src/model/ai_chat2_post_request_user_location.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart

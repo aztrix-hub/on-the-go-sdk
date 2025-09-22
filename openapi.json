@@ -916,9 +916,6 @@
                         "maximum": 180,
                         "type": "number",
                         "format": "double"
-                      },
-                      "freeform": {
-                        "type": "string"
                       }
                     }
                   },
@@ -978,9 +975,6 @@
                   "message"
                 ],
                 "properties": {
-                  "userId": {
-                    "type": "string"
-                  },
                   "sessionId": {
                     "type": "string"
                   },
@@ -997,9 +991,6 @@
                       "longitude": {
                         "type": "number",
                         "format": "double"
-                      },
-                      "freeform": {
-                        "type": "string"
                       }
                     }
                   },
@@ -1022,6 +1013,9 @@
                 "schema": {
                   "type": "object",
                   "properties": {
+                    "sessionId": {
+                      "type": "string"
+                    },
                     "locations": {
                       "type": "array",
                       "items": {

@@ -112,6 +112,7 @@ Class | Method | HTTP request | Description
  - [AiChat2DataPostRequestUserLocation](doc/AiChat2DataPostRequestUserLocation.md)
  - [AiChat2Post200Response](doc/AiChat2Post200Response.md)
  - [AiChat2PostRequest](doc/AiChat2PostRequest.md)
+ - [AiChat2PostRequestUserLocation](doc/AiChat2PostRequestUserLocation.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)

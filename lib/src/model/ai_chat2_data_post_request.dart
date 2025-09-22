@@ -12,7 +12,6 @@ part 'ai_chat2_data_post_request.g.dart';
 /// AiChat2DataPostRequest
 ///
 /// Properties:
-/// * [userId]
 /// * [sessionId]
 /// * [message]
 /// * [userLocation]
@@ -21,9 +20,6 @@ part 'ai_chat2_data_post_request.g.dart';
 @BuiltValue()
 abstract class AiChat2DataPostRequest
     implements Built<AiChat2DataPostRequest, AiChat2DataPostRequestBuilder> {
-  @BuiltValueField(wireName: r'userId')
-  String? get userId;
-
   @BuiltValueField(wireName: r'sessionId')
   String get sessionId;
 
@@ -69,13 +65,6 @@ class _$AiChat2DataPostRequestSerializer
     AiChat2DataPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
     yield r'sessionId';
     yield serializers.serialize(
       object.sessionId,
@@ -132,13 +121,6 @@ class _$AiChat2DataPostRequestSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
-          break;
         case r'sessionId':
           final valueDes = serializers.deserialize(
             value,
