@@ -8,20 +8,22 @@ part of 'ai_chat2_data_post200_response.dart';
 
 class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
-  final String? sessionId;
-  @override
   final BuiltList<Location>? locations;
   @override
   final BuiltList<String>? keywords;
   @override
   final String? description;
+  @override
+  final AiChat2DataPost200ResponseCall? call;
+  @override
+  final AiChat2DataPost200ResponseText? text;
 
   factory _$AiChat2DataPost200Response(
           [void Function(AiChat2DataPost200ResponseBuilder)? updates]) =>
       (AiChat2DataPost200ResponseBuilder()..update(updates))._build();
 
   _$AiChat2DataPost200Response._(
-      {this.sessionId, this.locations, this.keywords, this.description})
+      {this.locations, this.keywords, this.description, this.call, this.text})
       : super._();
   @override
   AiChat2DataPost200Response rebuild(
@@ -36,19 +38,21 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiChat2DataPost200Response &&
-        sessionId == other.sessionId &&
         locations == other.locations &&
         keywords == other.keywords &&
-        description == other.description;
+        description == other.description &&
+        call == other.call &&
+        text == other.text;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, sessionId.hashCode);
     _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, call.hashCode);
+    _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -56,10 +60,11 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChat2DataPost200Response')
-          ..add('sessionId', sessionId)
           ..add('locations', locations)
           ..add('keywords', keywords)
-          ..add('description', description))
+          ..add('description', description)
+          ..add('call', call)
+          ..add('text', text))
         .toString();
   }
 }
@@ -68,10 +73,6 @@ class AiChat2DataPost200ResponseBuilder
     implements
         Builder<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
   _$AiChat2DataPost200Response? _$v;
-
-  String? _sessionId;
-  String? get sessionId => _$this._sessionId;
-  set sessionId(String? sessionId) => _$this._sessionId = sessionId;
 
   ListBuilder<Location>? _locations;
   ListBuilder<Location> get locations =>
@@ -88,6 +89,16 @@ class AiChat2DataPost200ResponseBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  AiChat2DataPost200ResponseCallBuilder? _call;
+  AiChat2DataPost200ResponseCallBuilder get call =>
+      _$this._call ??= AiChat2DataPost200ResponseCallBuilder();
+  set call(AiChat2DataPost200ResponseCallBuilder? call) => _$this._call = call;
+
+  AiChat2DataPost200ResponseTextBuilder? _text;
+  AiChat2DataPost200ResponseTextBuilder get text =>
+      _$this._text ??= AiChat2DataPost200ResponseTextBuilder();
+  set text(AiChat2DataPost200ResponseTextBuilder? text) => _$this._text = text;
+
   AiChat2DataPost200ResponseBuilder() {
     AiChat2DataPost200Response._defaults(this);
   }
@@ -95,10 +106,11 @@ class AiChat2DataPost200ResponseBuilder
   AiChat2DataPost200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _sessionId = $v.sessionId;
       _locations = $v.locations?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _description = $v.description;
+      _call = $v.call?.toBuilder();
+      _text = $v.text?.toBuilder();
       _$v = null;
     }
     return this;
@@ -122,10 +134,11 @@ class AiChat2DataPost200ResponseBuilder
     try {
       _$result = _$v ??
           _$AiChat2DataPost200Response._(
-            sessionId: sessionId,
             locations: _locations?.build(),
             keywords: _keywords?.build(),
             description: description,
+            call: _call?.build(),
+            text: _text?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -134,6 +147,11 @@ class AiChat2DataPost200ResponseBuilder
         _locations?.build();
         _$failedField = 'keywords';
         _keywords?.build();
+
+        _$failedField = 'call';
+        _call?.build();
+        _$failedField = 'text';
+        _text?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiChat2DataPost200Response', _$failedField, e.toString());

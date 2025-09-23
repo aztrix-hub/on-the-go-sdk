@@ -3,8 +3,10 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,17 +15,15 @@ part 'ai_chat2_data_post200_response.g.dart';
 /// AiChat2DataPost200Response
 ///
 /// Properties:
-/// * [sessionId]
 /// * [locations]
 /// * [keywords]
 /// * [description]
+/// * [call]
+/// * [text]
 @BuiltValue()
 abstract class AiChat2DataPost200Response
     implements
         Built<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
-  @BuiltValueField(wireName: r'sessionId')
-  String? get sessionId;
-
   @BuiltValueField(wireName: r'locations')
   BuiltList<Location>? get locations;
 
@@ -32,6 +32,12 @@ abstract class AiChat2DataPost200Response
 
   @BuiltValueField(wireName: r'description')
   String? get description;
+
+  @BuiltValueField(wireName: r'call')
+  AiChat2DataPost200ResponseCall? get call;
+
+  @BuiltValueField(wireName: r'text')
+  AiChat2DataPost200ResponseText? get text;
 
   AiChat2DataPost200Response._();
 
@@ -63,13 +69,6 @@ class _$AiChat2DataPost200ResponseSerializer
     AiChat2DataPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.sessionId != null) {
-      yield r'sessionId';
-      yield serializers.serialize(
-        object.sessionId,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.locations != null) {
       yield r'locations';
       yield serializers.serialize(
@@ -89,6 +88,20 @@ class _$AiChat2DataPost200ResponseSerializer
       yield serializers.serialize(
         object.description,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.call != null) {
+      yield r'call';
+      yield serializers.serialize(
+        object.call,
+        specifiedType: const FullType(AiChat2DataPost200ResponseCall),
+      );
+    }
+    if (object.text != null) {
+      yield r'text';
+      yield serializers.serialize(
+        object.text,
+        specifiedType: const FullType(AiChat2DataPost200ResponseText),
       );
     }
   }
@@ -116,13 +129,6 @@ class _$AiChat2DataPost200ResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'sessionId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sessionId = valueDes;
-          break;
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
@@ -143,6 +149,20 @@ class _$AiChat2DataPost200ResponseSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.description = valueDes;
+          break;
+        case r'call':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiChat2DataPost200ResponseCall),
+          ) as AiChat2DataPost200ResponseCall;
+          result.call.replace(valueDes);
+          break;
+        case r'text':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiChat2DataPost200ResponseText),
+          ) as AiChat2DataPost200ResponseText;
+          result.text.replace(valueDes);
           break;
         default:
           unhandled.add(key);

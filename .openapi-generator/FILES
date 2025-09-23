@@ -3,6 +3,8 @@ analysis_options.yaml
 doc/Address.md
 doc/AiApi.md
 doc/AiChat2DataPost200Response.md
+doc/AiChat2DataPost200ResponseCall.md
+doc/AiChat2DataPost200ResponseText.md
 doc/AiChat2DataPostRequest.md
 doc/AiChat2DataPostRequestUserLocation.md
 doc/AiChat2Post200Response.md
@@ -79,6 +81,8 @@ lib/src/auth/oauth.dart
 lib/src/date_serializer.dart
 lib/src/model/address.dart
 lib/src/model/ai_chat2_data_post200_response.dart
+lib/src/model/ai_chat2_data_post200_response_call.dart
+lib/src/model/ai_chat2_data_post200_response_text.dart
 lib/src/model/ai_chat2_data_post_request.dart
 lib/src/model/ai_chat2_data_post_request_user_location.dart
 lib/src/model/ai_chat2_post200_response.dart
@@ -129,3 +133,5 @@ lib/src/model/user_oauth_post200_response.dart
 lib/src/model/user_oauth_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
+test/ai_chat2_data_post200_response_call_test.dart
+test/ai_chat2_data_post200_response_text_test.dart

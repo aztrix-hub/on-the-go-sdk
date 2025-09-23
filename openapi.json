@@ -1013,9 +1013,6 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "sessionId": {
-                      "type": "string"
-                    },
                     "locations": {
                       "type": "array",
                       "items": {
@@ -1030,6 +1027,25 @@
                     },
                     "description": {
                       "type": "string"
+                    },
+                    "call": {
+                      "type": "object",
+                      "properties": {
+                        "phone": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "text": {
+                      "type": "object",
+                      "properties": {
+                        "phone": {
+                          "type": "string"
+                        },
+                        "content": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }
