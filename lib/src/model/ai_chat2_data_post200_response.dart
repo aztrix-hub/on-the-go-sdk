@@ -7,6 +7,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -20,6 +21,7 @@ part 'ai_chat2_data_post200_response.g.dart';
 /// * [description]
 /// * [call]
 /// * [text]
+/// * [email]
 @BuiltValue()
 abstract class AiChat2DataPost200Response
     implements
@@ -38,6 +40,9 @@ abstract class AiChat2DataPost200Response
 
   @BuiltValueField(wireName: r'text')
   AiChat2DataPost200ResponseText? get text;
+
+  @BuiltValueField(wireName: r'email')
+  AiChat2DataPost200ResponseEmail? get email;
 
   AiChat2DataPost200Response._();
 
@@ -104,6 +109,13 @@ class _$AiChat2DataPost200ResponseSerializer
         specifiedType: const FullType(AiChat2DataPost200ResponseText),
       );
     }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(AiChat2DataPost200ResponseEmail),
+      );
+    }
   }
 
   @override
@@ -163,6 +175,13 @@ class _$AiChat2DataPost200ResponseSerializer
             specifiedType: const FullType(AiChat2DataPost200ResponseText),
           ) as AiChat2DataPost200ResponseText;
           result.text.replace(valueDes);
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiChat2DataPost200ResponseEmail),
+          ) as AiChat2DataPost200ResponseEmail;
+          result.email.replace(valueDes);
           break;
         default:
           unhandled.add(key);

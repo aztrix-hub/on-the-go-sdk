@@ -1046,6 +1046,20 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "email": {
+                      "type": "object",
+                      "properties": {
+                        "address": {
+                          "type": "string"
+                        },
+                        "subject": {
+                          "type": "string"
+                        },
+                        "body": {
+                          "type": "string"
+                        }
+                      }
                     }
                   }
                 }

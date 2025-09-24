@@ -17,13 +17,20 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   final AiChat2DataPost200ResponseCall? call;
   @override
   final AiChat2DataPost200ResponseText? text;
+  @override
+  final AiChat2DataPost200ResponseEmail? email;
 
   factory _$AiChat2DataPost200Response(
           [void Function(AiChat2DataPost200ResponseBuilder)? updates]) =>
       (AiChat2DataPost200ResponseBuilder()..update(updates))._build();
 
   _$AiChat2DataPost200Response._(
-      {this.locations, this.keywords, this.description, this.call, this.text})
+      {this.locations,
+      this.keywords,
+      this.description,
+      this.call,
+      this.text,
+      this.email})
       : super._();
   @override
   AiChat2DataPost200Response rebuild(
@@ -42,7 +49,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
         keywords == other.keywords &&
         description == other.description &&
         call == other.call &&
-        text == other.text;
+        text == other.text &&
+        email == other.email;
   }
 
   @override
@@ -53,6 +61,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, call.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,7 +73,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
           ..add('keywords', keywords)
           ..add('description', description)
           ..add('call', call)
-          ..add('text', text))
+          ..add('text', text)
+          ..add('email', email))
         .toString();
   }
 }
@@ -99,6 +109,12 @@ class AiChat2DataPost200ResponseBuilder
       _$this._text ??= AiChat2DataPost200ResponseTextBuilder();
   set text(AiChat2DataPost200ResponseTextBuilder? text) => _$this._text = text;
 
+  AiChat2DataPost200ResponseEmailBuilder? _email;
+  AiChat2DataPost200ResponseEmailBuilder get email =>
+      _$this._email ??= AiChat2DataPost200ResponseEmailBuilder();
+  set email(AiChat2DataPost200ResponseEmailBuilder? email) =>
+      _$this._email = email;
+
   AiChat2DataPost200ResponseBuilder() {
     AiChat2DataPost200Response._defaults(this);
   }
@@ -111,6 +127,7 @@ class AiChat2DataPost200ResponseBuilder
       _description = $v.description;
       _call = $v.call?.toBuilder();
       _text = $v.text?.toBuilder();
+      _email = $v.email?.toBuilder();
       _$v = null;
     }
     return this;
@@ -139,6 +156,7 @@ class AiChat2DataPost200ResponseBuilder
             description: description,
             call: _call?.build(),
             text: _text?.build(),
+            email: _email?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -152,6 +170,8 @@ class AiChat2DataPost200ResponseBuilder
         _call?.build();
         _$failedField = 'text';
         _text?.build();
+        _$failedField = 'email';
+        _email?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiChat2DataPost200Response', _$failedField, e.toString());

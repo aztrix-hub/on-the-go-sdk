@@ -17,6 +17,7 @@ import 'package:on_the_go_sdk/src/model/date.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request_user_location.dart';
@@ -73,6 +74,7 @@ part 'serializers.g.dart';
   Address,
   AiChat2DataPost200Response,
   AiChat2DataPost200ResponseCall,
+  AiChat2DataPost200ResponseEmail,
   AiChat2DataPost200ResponseText,
   AiChat2DataPostRequest,
   AiChat2DataPostRequestUserLocation,

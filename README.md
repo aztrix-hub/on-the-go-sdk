@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
  - [Address](doc/Address.md)
  - [AiChat2DataPost200Response](doc/AiChat2DataPost200Response.md)
  - [AiChat2DataPost200ResponseCall](doc/AiChat2DataPost200ResponseCall.md)
+ - [AiChat2DataPost200ResponseEmail](doc/AiChat2DataPost200ResponseEmail.md)
  - [AiChat2DataPost200ResponseText](doc/AiChat2DataPost200ResponseText.md)
  - [AiChat2DataPostRequest](doc/AiChat2DataPostRequest.md)
  - [AiChat2DataPostRequestUserLocation](doc/AiChat2DataPostRequestUserLocation.md)
