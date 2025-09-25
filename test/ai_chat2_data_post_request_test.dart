@@ -7,11 +7,6 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiChat2DataPostRequest, () {
-    // String userId
-    test('to test the property `userId`', () async {
-      // TODO
-    });
-
     // String sessionId
     test('to test the property `sessionId`', () async {
       // TODO

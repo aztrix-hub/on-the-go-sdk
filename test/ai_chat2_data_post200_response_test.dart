@@ -21,5 +21,26 @@ void main() {
     test('to test the property `description`', () async {
       // TODO
     });
+
+    // Opening hours
+    // BuiltList<OpeningHour> openingHours
+    test('to test the property `openingHours`', () async {
+      // TODO
+    });
+
+    // AiChat2DataPost200ResponseCall call
+    test('to test the property `call`', () async {
+      // TODO
+    });
+
+    // AiChat2DataPost200ResponseText text
+    test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // AiChat2DataPost200ResponseEmail email
+    test('to test the property `email`', () async {
+      // TODO
+    });
   });
 }

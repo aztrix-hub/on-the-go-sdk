@@ -14,6 +14,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   final String? description;
   @override
+  final BuiltList<OpeningHour>? openingHours;
+  @override
   final AiChat2DataPost200ResponseCall? call;
   @override
   final AiChat2DataPost200ResponseText? text;
@@ -28,6 +30,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
       {this.locations,
       this.keywords,
       this.description,
+      this.openingHours,
       this.call,
       this.text,
       this.email})
@@ -48,6 +51,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
         locations == other.locations &&
         keywords == other.keywords &&
         description == other.description &&
+        openingHours == other.openingHours &&
         call == other.call &&
         text == other.text &&
         email == other.email;
@@ -59,6 +63,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
     _$hash = $jc(_$hash, locations.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
+    _$hash = $jc(_$hash, openingHours.hashCode);
     _$hash = $jc(_$hash, call.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
@@ -72,6 +77,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
           ..add('locations', locations)
           ..add('keywords', keywords)
           ..add('description', description)
+          ..add('openingHours', openingHours)
           ..add('call', call)
           ..add('text', text)
           ..add('email', email))
@@ -99,6 +105,12 @@ class AiChat2DataPost200ResponseBuilder
   String? get description => _$this._description;
   set description(String? description) => _$this._description = description;
 
+  ListBuilder<OpeningHour>? _openingHours;
+  ListBuilder<OpeningHour> get openingHours =>
+      _$this._openingHours ??= ListBuilder<OpeningHour>();
+  set openingHours(ListBuilder<OpeningHour>? openingHours) =>
+      _$this._openingHours = openingHours;
+
   AiChat2DataPost200ResponseCallBuilder? _call;
   AiChat2DataPost200ResponseCallBuilder get call =>
       _$this._call ??= AiChat2DataPost200ResponseCallBuilder();
@@ -125,6 +137,7 @@ class AiChat2DataPost200ResponseBuilder
       _locations = $v.locations?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _description = $v.description;
+      _openingHours = $v.openingHours?.toBuilder();
       _call = $v.call?.toBuilder();
       _text = $v.text?.toBuilder();
       _email = $v.email?.toBuilder();
@@ -154,6 +167,7 @@ class AiChat2DataPost200ResponseBuilder
             locations: _locations?.build(),
             keywords: _keywords?.build(),
             description: description,
+            openingHours: _openingHours?.build(),
             call: _call?.build(),
             text: _text?.build(),
             email: _email?.build(),
@@ -166,6 +180,8 @@ class AiChat2DataPost200ResponseBuilder
         _$failedField = 'keywords';
         _keywords?.build();
 
+        _$failedField = 'openingHours';
+        _openingHours?.build();
         _$failedField = 'call';
         _call?.build();
         _$failedField = 'text';

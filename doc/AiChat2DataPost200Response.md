@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **description** | **String** |  | [optional] 
+**openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 
 **call** | [**AiChat2DataPost200ResponseCall**](AiChat2DataPost200ResponseCall.md) |  | [optional] 
 **text** | [**AiChat2DataPost200ResponseText**](AiChat2DataPost200ResponseText.md) |  | [optional] 
 **email** | [**AiChat2DataPost200ResponseEmail**](AiChat2DataPost200ResponseEmail.md) |  | [optional] 

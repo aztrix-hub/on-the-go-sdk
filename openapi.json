@@ -1028,6 +1028,9 @@
                     "description": {
                       "type": "string"
                     },
+                    "openingHours": {
+                      "$ref": "#/components/schemas/OpeningHours"
+                    },
                     "call": {
                       "type": "object",
                       "properties": {

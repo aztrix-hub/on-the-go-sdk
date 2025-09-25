@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
@@ -19,6 +20,7 @@ part 'ai_chat2_data_post200_response.g.dart';
 /// * [locations]
 /// * [keywords]
 /// * [description]
+/// * [openingHours] - Opening hours
 /// * [call]
 /// * [text]
 /// * [email]
@@ -34,6 +36,10 @@ abstract class AiChat2DataPost200Response
 
   @BuiltValueField(wireName: r'description')
   String? get description;
+
+  /// Opening hours
+  @BuiltValueField(wireName: r'openingHours')
+  BuiltList<OpeningHour>? get openingHours;
 
   @BuiltValueField(wireName: r'call')
   AiChat2DataPost200ResponseCall? get call;
@@ -93,6 +99,13 @@ class _$AiChat2DataPost200ResponseSerializer
       yield serializers.serialize(
         object.description,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.openingHours != null) {
+      yield r'openingHours';
+      yield serializers.serialize(
+        object.openingHours,
+        specifiedType: const FullType(BuiltList, [FullType(OpeningHour)]),
       );
     }
     if (object.call != null) {
@@ -161,6 +174,13 @@ class _$AiChat2DataPost200ResponseSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.description = valueDes;
+          break;
+        case r'openingHours':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(OpeningHour)]),
+          ) as BuiltList<OpeningHour>;
+          result.openingHours.replace(valueDes);
           break;
         case r'call':
           final valueDes = serializers.deserialize(
