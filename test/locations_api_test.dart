@@ -53,13 +53,20 @@ void main() {
 
     // Get locations
     //
-    //Future<LocationsGet200Response> locationsGet(String language, { BuiltList<String> locationIds, String query }) async
+    //Future<LocationsGet200Response> locationsGet(String language) async
     test('test locationsGet', () async {
       // TODO
     });
 
     //Future<LocationsListingsGet200Response> locationsListingsGet() async
     test('test locationsListingsGet', () async {
+      // TODO
+    });
+
+    // Search for locations
+    //
+    //Future<LocationsGet200Response> locationsSearchGet(String countryCode, { String name }) async
+    test('test locationsSearchGet', () async {
       // TODO
     });
   });

@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPost**](doc/LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsListingsGet**](doc/LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsSearchGet**](doc/LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigPost**](doc/NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 

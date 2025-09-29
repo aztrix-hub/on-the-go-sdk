@@ -650,8 +650,6 @@ class LocationsApi {
   ///
   /// Parameters:
   /// * [language]
-  /// * [locationIds] - Only return locations identified by ids listed in locationIds
-  /// * [query] - Filter by name, zip, street, city, label
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -663,8 +661,6 @@ class LocationsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<LocationsGet200Response>> locationsGet({
     required String language,
-    BuiltList<String>? locationIds,
-    String? query,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -693,16 +689,6 @@ class LocationsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (locationIds != null)
-        r'locationIds': encodeCollectionQueryParameter<String>(
-          _serializers,
-          locationIds,
-          const FullType(BuiltList, [FullType(String)]),
-          format: ListFormat.multi,
-        ),
-      if (query != null)
-        r'query':
-            encodeQueryParameter(_serializers, query, const FullType(String)),
       r'language':
           encodeQueryParameter(_serializers, language, const FullType(String)),
     };
@@ -818,6 +804,100 @@ class LocationsApi {
     }
 
     return Response<LocationsListingsGet200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// Search for locations
+  ///
+  ///
+  /// Parameters:
+  /// * [countryCode]
+  /// * [name] - search by name
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<LocationsGet200Response>> locationsSearchGet({
+    required String countryCode,
+    String? name,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/locations/search';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authToken',
+            'keyName': 'authToken',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (name != null)
+        r'name':
+            encodeQueryParameter(_serializers, name, const FullType(String)),
+      r'countryCode': encodeQueryParameter(
+          _serializers, countryCode, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    LocationsGet200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(LocationsGet200Response),
+            ) as LocationsGet200Response;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<LocationsGet200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -420,31 +420,72 @@
         "summary": "Get locations",
         "parameters": [
           {
-            "name": "locationIds",
-            "in": "query",
-            "description": "Only return locations identified by ids listed in locationIds",
-            "schema": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            },
-            "example": "?locationIds=20&locationIds=22 for multiple locations"
-          },
-          {
-            "name": "query",
-            "in": "query",
-            "description": "Filter by name, zip, street, city, label",
-            "schema": {
-              "type": "string"
-            },
-            "example": "Berlin"
-          },
-          {
             "name": "language",
             "in": "query",
             "required": true,
             "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Locations successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "locations": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Location"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Request Forbidden"
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/locations/search": {
+      "get": {
+        "tags": [
+          "locations"
+        ],
+        "summary": "Search for locations",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "search by name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "countryCode",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z]{2}$",
               "type": "string"
             }
           }

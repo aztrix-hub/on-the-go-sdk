@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**locationPost**](LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [**locationsListingsGet**](LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
+[**locationsSearchGet**](LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 
 
 # **categoriesGet**
@@ -342,7 +343,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsGet**
-> LocationsGet200Response locationsGet(language, locationIds, query)
+> LocationsGet200Response locationsGet(language)
 
 Get locations
 
@@ -356,11 +357,9 @@ import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getLocationsApi();
 final String language = language_example; // String | 
-final BuiltList<String> locationIds = ?locationIds=20&locationIds=22 for multiple locations; // BuiltList<String> | Only return locations identified by ids listed in locationIds
-final String query = Berlin; // String | Filter by name, zip, street, city, label
 
 try {
-    final response = api.locationsGet(language, locationIds, query);
+    final response = api.locationsGet(language);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationsGet: $e\n');
@@ -372,8 +371,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **language** | **String**|  | 
- **locationIds** | [**BuiltList&lt;String&gt;**](String.md)| Only return locations identified by ids listed in locationIds | [optional] 
- **query** | **String**| Filter by name, zip, street, city, label | [optional] 
 
 ### Return type
 
@@ -428,6 +425,53 @@ This endpoint does not need any parameter.
 
  - **Content-Type**: Not defined
  - **Accept**: */*
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationsSearchGet**
+> LocationsGet200Response locationsSearchGet(countryCode, name)
+
+Search for locations
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String countryCode = countryCode_example; // String | 
+final String name = name_example; // String | search by name
+
+try {
+    final response = api.locationsSearchGet(countryCode, name);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationsSearchGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **countryCode** | **String**|  | 
+ **name** | **String**| search by name | [optional] 
+
+### Return type
+
+[**LocationsGet200Response**](LocationsGet200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
