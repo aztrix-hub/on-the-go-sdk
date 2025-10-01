@@ -5,6 +5,7 @@ doc/AiApi.md
 doc/AiChat2DataPost200Response.md
 doc/AiChat2DataPost200ResponseCall.md
 doc/AiChat2DataPost200ResponseEmail.md
+doc/AiChat2DataPost200ResponseSearchInner.md
 doc/AiChat2DataPost200ResponseText.md
 doc/AiChat2DataPostRequest.md
 doc/AiChat2DataPostRequestUserLocation.md
@@ -31,6 +32,7 @@ doc/InboxItem.md
 doc/InboxPost200Response.md
 doc/InboxPostRequest.md
 doc/InboxReplyPostRequest.md
+doc/Individual.md
 doc/Listing.md
 doc/Location.md
 doc/LocationListingConnectGet200Response.md
@@ -84,6 +86,7 @@ lib/src/model/address.dart
 lib/src/model/ai_chat2_data_post200_response.dart
 lib/src/model/ai_chat2_data_post200_response_call.dart
 lib/src/model/ai_chat2_data_post200_response_email.dart
+lib/src/model/ai_chat2_data_post200_response_search_inner.dart
 lib/src/model/ai_chat2_data_post200_response_text.dart
 lib/src/model/ai_chat2_data_post_request.dart
 lib/src/model/ai_chat2_data_post_request_user_location.dart
@@ -109,6 +112,7 @@ lib/src/model/inbox_item.dart
 lib/src/model/inbox_post200_response.dart
 lib/src/model/inbox_post_request.dart
 lib/src/model/inbox_reply_post_request.dart
+lib/src/model/individual.dart
 lib/src/model/listing.dart
 lib/src/model/location.dart
 lib/src/model/location_listing_connect_get200_response.dart
@@ -139,6 +143,7 @@ test/address_test.dart
 test/ai_api_test.dart
 test/ai_chat2_data_post200_response_call_test.dart
 test/ai_chat2_data_post200_response_email_test.dart
+test/ai_chat2_data_post200_response_search_inner_test.dart
 test/ai_chat2_data_post200_response_test.dart
 test/ai_chat2_data_post200_response_text_test.dart
 test/ai_chat2_data_post_request_test.dart
@@ -166,6 +171,7 @@ test/inbox_item_test.dart
 test/inbox_post200_response_test.dart
 test/inbox_post_request_test.dart
 test/inbox_reply_post_request_test.dart
+test/individual_test.dart
 test/listing_test.dart
 test/location_listing_connect_get200_response_test.dart
 test/location_photo_post_request_test.dart

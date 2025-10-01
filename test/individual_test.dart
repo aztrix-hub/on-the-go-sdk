@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for User
+// tests for Individual
 void main() {
-  final instance = UserBuilder();
+  final instance = IndividualBuilder();
   // TODO add properties to the builder and call build()
 
-  group(User, () {
+  group(Individual, () {
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -32,11 +32,6 @@ void main() {
 
     // String phone
     test('to test the property `phone`', () async {
-      // TODO
-    });
-
-    // String language
-    test('to test the property `language`', () async {
       // TODO
     });
   });

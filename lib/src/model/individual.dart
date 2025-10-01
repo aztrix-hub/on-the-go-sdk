@@ -6,7 +6,7 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user.g.dart';
+part 'individual.g.dart';
 
 /// User Model
 ///
@@ -16,9 +16,8 @@ part 'user.g.dart';
 /// * [lastname] - Last name
 /// * [email] - User email
 /// * [phone]
-/// * [language]
 @BuiltValue()
-abstract class User implements Built<User, UserBuilder> {
+abstract class Individual implements Built<Individual, IndividualBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
@@ -37,30 +36,27 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  @BuiltValueField(wireName: r'language')
-  String? get language;
+  Individual._();
 
-  User._();
-
-  factory User([void updates(UserBuilder b)]) = _$User;
+  factory Individual([void updates(IndividualBuilder b)]) = _$Individual;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserBuilder b) => b;
+  static void _defaults(IndividualBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<User> get serializer => _$UserSerializer();
+  static Serializer<Individual> get serializer => _$IndividualSerializer();
 }
 
-class _$UserSerializer implements PrimitiveSerializer<User> {
+class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
   @override
-  final Iterable<Type> types = const [User, _$User];
+  final Iterable<Type> types = const [Individual, _$Individual];
 
   @override
-  final String wireName = r'User';
+  final String wireName = r'Individual';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    User object, {
+    Individual object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -94,19 +90,12 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.language != null) {
-      yield r'language';
-      yield serializers.serialize(
-        object.language,
-        specifiedType: const FullType(String),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    User object, {
+    Individual object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -119,7 +108,7 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserBuilder result,
+    required IndividualBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -161,13 +150,6 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as String;
           result.phone = valueDes;
           break;
-        case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.language = valueDes;
-          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -177,12 +159,12 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
   }
 
   @override
-  User deserialize(
+  Individual deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserBuilder();
+    final result = IndividualBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

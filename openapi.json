@@ -1060,6 +1060,19 @@
                         "$ref": "#/components/schemas/Location"
                       }
                     },
+                    "search": {
+                      "type": "array",
+                      "items": {
+                        "anyOf": [
+                          {
+                            "$ref": "#/components/schemas/Location"
+                          },
+                          {
+                            "$ref": "#/components/schemas/Individual"
+                          }
+                        ]
+                      }
+                    },
                     "keywords": {
                       "type": "array",
                       "items": {
@@ -2044,9 +2057,37 @@
           "id": {
             "type": "string"
           },
+          "firstname": {
+            "type": "string",
+            "description": "First Name"
+          },
+          "lastname": {
+            "type": "string",
+            "description": "Last name"
+          },
           "email": {
             "type": "string",
             "description": "User email"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "language": {
+            "type": "string"
+          }
+        },
+        "description": "User Model"
+      },
+      "Individual": {
+        "required": [
+          "firstname",
+          "lastname",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
           },
           "firstname": {
             "type": "string",
@@ -2056,10 +2097,11 @@
             "type": "string",
             "description": "Last name"
           },
-          "phone": {
-            "type": "string"
+          "email": {
+            "type": "string",
+            "description": "User email"
           },
-          "language": {
+          "phone": {
             "type": "string"
           }
         },

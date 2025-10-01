@@ -9,6 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
+**search** | [**BuiltList&lt;AiChat2DataPost200ResponseSearchInner&gt;**](AiChat2DataPost200ResponseSearchInner.md) |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **description** | **String** |  | [optional] 
 **openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 

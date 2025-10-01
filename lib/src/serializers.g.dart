@@ -11,6 +11,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiChat2DataPost200Response.serializer)
       ..add(AiChat2DataPost200ResponseCall.serializer)
       ..add(AiChat2DataPost200ResponseEmail.serializer)
+      ..add(AiChat2DataPost200ResponseSearchInner.serializer)
       ..add(AiChat2DataPost200ResponseText.serializer)
       ..add(AiChat2DataPostRequest.serializer)
       ..add(AiChat2DataPostRequestUserLocation.serializer)
@@ -38,6 +39,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(InboxPostRequest.serializer)
       ..add(InboxPostRequestStatusEnum.serializer)
       ..add(InboxReplyPostRequest.serializer)
+      ..add(Individual.serializer)
       ..add(Listing.serializer)
       ..add(Location.serializer)
       ..add(LocationListingConnectGet200Response.serializer)
@@ -116,6 +118,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(AiChat2DataPost200ResponseSearchInner)]),
+          () => ListBuilder<AiChat2DataPost200ResponseSearchInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user.dart';
+part of 'individual.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$User extends User {
+class _$Individual extends Individual {
   @override
   final String? id;
   @override
@@ -17,37 +17,33 @@ class _$User extends User {
   final String? email;
   @override
   final String? phone;
-  @override
-  final String? language;
 
-  factory _$User([void Function(UserBuilder)? updates]) =>
-      (UserBuilder()..update(updates))._build();
+  factory _$Individual([void Function(IndividualBuilder)? updates]) =>
+      (IndividualBuilder()..update(updates))._build();
 
-  _$User._(
+  _$Individual._(
       {this.id,
       required this.firstname,
       required this.lastname,
       this.email,
-      this.phone,
-      this.language})
+      this.phone})
       : super._();
   @override
-  User rebuild(void Function(UserBuilder) updates) =>
+  Individual rebuild(void Function(IndividualBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserBuilder toBuilder() => UserBuilder()..replace(this);
+  IndividualBuilder toBuilder() => IndividualBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is User &&
+    return other is Individual &&
         id == other.id &&
         firstname == other.firstname &&
         lastname == other.lastname &&
         email == other.email &&
-        phone == other.phone &&
-        language == other.language;
+        phone == other.phone;
   }
 
   @override
@@ -58,26 +54,24 @@ class _$User extends User {
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, language.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'User')
+    return (newBuiltValueToStringHelper(r'Individual')
           ..add('id', id)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
           ..add('email', email)
-          ..add('phone', phone)
-          ..add('language', language))
+          ..add('phone', phone))
         .toString();
   }
 }
 
-class UserBuilder implements Builder<User, UserBuilder> {
-  _$User? _$v;
+class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
+  _$Individual? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -99,15 +93,11 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  String? _language;
-  String? get language => _$this._language;
-  set language(String? language) => _$this._language = language;
-
-  UserBuilder() {
-    User._defaults(this);
+  IndividualBuilder() {
+    Individual._defaults(this);
   }
 
-  UserBuilder get _$this {
+  IndividualBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -115,36 +105,34 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _lastname = $v.lastname;
       _email = $v.email;
       _phone = $v.phone;
-      _language = $v.language;
       _$v = null;
     }
     return this;
   }
 
   @override
-  void replace(User other) {
-    _$v = other as _$User;
+  void replace(Individual other) {
+    _$v = other as _$Individual;
   }
 
   @override
-  void update(void Function(UserBuilder)? updates) {
+  void update(void Function(IndividualBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  User build() => _build();
+  Individual build() => _build();
 
-  _$User _build() {
+  _$Individual _build() {
     final _$result = _$v ??
-        _$User._(
+        _$Individual._(
           id: id,
           firstname: BuiltValueNullFieldError.checkNotNull(
-              firstname, r'User', 'firstname'),
+              firstname, r'Individual', 'firstname'),
           lastname: BuiltValueNullFieldError.checkNotNull(
-              lastname, r'User', 'lastname'),
+              lastname, r'Individual', 'lastname'),
           email: email,
           phone: phone,
-          language: language,
         );
     replace(_$result);
     return _$result;

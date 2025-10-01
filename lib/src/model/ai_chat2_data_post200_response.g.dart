@@ -10,6 +10,8 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   final BuiltList<Location>? locations;
   @override
+  final BuiltList<AiChat2DataPost200ResponseSearchInner>? search;
+  @override
   final BuiltList<String>? keywords;
   @override
   final String? description;
@@ -28,6 +30,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
 
   _$AiChat2DataPost200Response._(
       {this.locations,
+      this.search,
       this.keywords,
       this.description,
       this.openingHours,
@@ -49,6 +52,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
     if (identical(other, this)) return true;
     return other is AiChat2DataPost200Response &&
         locations == other.locations &&
+        search == other.search &&
         keywords == other.keywords &&
         description == other.description &&
         openingHours == other.openingHours &&
@@ -61,6 +65,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, locations.hashCode);
+    _$hash = $jc(_$hash, search.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, openingHours.hashCode);
@@ -75,6 +80,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChat2DataPost200Response')
           ..add('locations', locations)
+          ..add('search', search)
           ..add('keywords', keywords)
           ..add('description', description)
           ..add('openingHours', openingHours)
@@ -95,6 +101,12 @@ class AiChat2DataPost200ResponseBuilder
       _$this._locations ??= ListBuilder<Location>();
   set locations(ListBuilder<Location>? locations) =>
       _$this._locations = locations;
+
+  ListBuilder<AiChat2DataPost200ResponseSearchInner>? _search;
+  ListBuilder<AiChat2DataPost200ResponseSearchInner> get search =>
+      _$this._search ??= ListBuilder<AiChat2DataPost200ResponseSearchInner>();
+  set search(ListBuilder<AiChat2DataPost200ResponseSearchInner>? search) =>
+      _$this._search = search;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -135,6 +147,7 @@ class AiChat2DataPost200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _locations = $v.locations?.toBuilder();
+      _search = $v.search?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _description = $v.description;
       _openingHours = $v.openingHours?.toBuilder();
@@ -165,6 +178,7 @@ class AiChat2DataPost200ResponseBuilder
       _$result = _$v ??
           _$AiChat2DataPost200Response._(
             locations: _locations?.build(),
+            search: _search?.build(),
             keywords: _keywords?.build(),
             description: description,
             openingHours: _openingHours?.build(),
@@ -177,6 +191,8 @@ class AiChat2DataPost200ResponseBuilder
       try {
         _$failedField = 'locations';
         _locations?.build();
+        _$failedField = 'search';
+        _search?.build();
         _$failedField = 'keywords';
         _keywords?.build();
 

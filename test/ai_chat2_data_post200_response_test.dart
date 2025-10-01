@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // BuiltList<AiChat2DataPost200ResponseSearchInner> search
+    test('to test the property `search`', () async {
+      // TODO
+    });
+
     // BuiltList<String> keywords
     test('to test the property `keywords`', () async {
       // TODO

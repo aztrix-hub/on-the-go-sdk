@@ -8,6 +8,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_search_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -18,6 +19,7 @@ part 'ai_chat2_data_post200_response.g.dart';
 ///
 /// Properties:
 /// * [locations]
+/// * [search]
 /// * [keywords]
 /// * [description]
 /// * [openingHours] - Opening hours
@@ -30,6 +32,9 @@ abstract class AiChat2DataPost200Response
         Built<AiChat2DataPost200Response, AiChat2DataPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'locations')
   BuiltList<Location>? get locations;
+
+  @BuiltValueField(wireName: r'search')
+  BuiltList<AiChat2DataPost200ResponseSearchInner>? get search;
 
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
@@ -85,6 +90,14 @@ class _$AiChat2DataPost200ResponseSerializer
       yield serializers.serialize(
         object.locations,
         specifiedType: const FullType(BuiltList, [FullType(Location)]),
+      );
+    }
+    if (object.search != null) {
+      yield r'search';
+      yield serializers.serialize(
+        object.search,
+        specifiedType: const FullType(
+            BuiltList, [FullType(AiChat2DataPost200ResponseSearchInner)]),
       );
     }
     if (object.keywords != null) {
@@ -160,6 +173,14 @@ class _$AiChat2DataPost200ResponseSerializer
             specifiedType: const FullType(BuiltList, [FullType(Location)]),
           ) as BuiltList<Location>;
           result.locations.replace(valueDes);
+          break;
+        case r'search':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(
+                BuiltList, [FullType(AiChat2DataPost200ResponseSearchInner)]),
+          ) as BuiltList<AiChat2DataPost200ResponseSearchInner>;
+          result.search.replace(valueDes);
           break;
         case r'keywords':
           final valueDes = serializers.deserialize(
