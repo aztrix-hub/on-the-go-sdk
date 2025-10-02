@@ -8,7 +8,7 @@ void main() {
 
   group(AiMemoriesPostRequest, () {
     // The conversation where memories should be retrieved from
-    // BuiltList<AiConversationPost200ResponseMessagesInner> messages
+    // BuiltList<AiLegacyConversationPost200ResponseMessagesInner> messages
     test('to test the property `messages`', () async {
       // TODO
     });

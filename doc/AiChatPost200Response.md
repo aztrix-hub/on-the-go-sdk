@@ -9,7 +9,8 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **userId** | **String** |  | [optional] 
-**messages** | [**BuiltList&lt;AiConversationPost200ResponseMessagesInner&gt;**](AiConversationPost200ResponseMessagesInner.md) | All messages in the conversation including the assistant response | [optional] 
+**sessionId** | **String** |  | [optional] 
+**response** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

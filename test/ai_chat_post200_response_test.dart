@@ -12,9 +12,13 @@ void main() {
       // TODO
     });
 
-    // All messages in the conversation including the assistant response
-    // BuiltList<AiConversationPost200ResponseMessagesInner> messages
-    test('to test the property `messages`', () async {
+    // String sessionId
+    test('to test the property `sessionId`', () async {
+      // TODO
+    });
+
+    // String response
+    test('to test the property `response`', () async {
       // TODO
     });
   });

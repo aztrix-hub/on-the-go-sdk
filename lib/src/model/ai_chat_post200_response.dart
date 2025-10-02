@@ -3,8 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,16 +12,19 @@ part 'ai_chat_post200_response.g.dart';
 ///
 /// Properties:
 /// * [userId]
-/// * [messages] - All messages in the conversation including the assistant response
+/// * [sessionId]
+/// * [response]
 @BuiltValue()
 abstract class AiChatPost200Response
     implements Built<AiChatPost200Response, AiChatPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'userId')
   String? get userId;
 
-  /// All messages in the conversation including the assistant response
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<AiConversationPost200ResponseMessagesInner>? get messages;
+  @BuiltValueField(wireName: r'sessionId')
+  String? get sessionId;
+
+  @BuiltValueField(wireName: r'response')
+  String? get response;
 
   AiChatPost200Response._();
 
@@ -61,12 +62,18 @@ class _$AiChatPost200ResponseSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.messages != null) {
-      yield r'messages';
+    if (object.sessionId != null) {
+      yield r'sessionId';
       yield serializers.serialize(
-        object.messages,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AiConversationPost200ResponseMessagesInner)]),
+        object.sessionId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.response != null) {
+      yield r'response';
+      yield serializers.serialize(
+        object.response,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -101,13 +108,19 @@ class _$AiChatPost200ResponseSerializer
           ) as String;
           result.userId = valueDes;
           break;
-        case r'messages':
+        case r'sessionId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(AiConversationPost200ResponseMessagesInner)]),
-          ) as BuiltList<AiConversationPost200ResponseMessagesInner>;
-          result.messages.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionId = valueDes;
+          break;
+        case r'response':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.response = valueDes;
           break;
         default:
           unhandled.add(key);

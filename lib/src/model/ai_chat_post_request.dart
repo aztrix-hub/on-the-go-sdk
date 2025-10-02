@@ -3,8 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_post_request_user_location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,15 +13,27 @@ part 'ai_chat_post_request.g.dart';
 ///
 /// Properties:
 /// * [userId]
-/// * [messages]
+/// * [sessionId]
+/// * [message]
+/// * [userLocation]
+/// * [dateTime]
 @BuiltValue()
 abstract class AiChatPostRequest
     implements Built<AiChatPostRequest, AiChatPostRequestBuilder> {
   @BuiltValueField(wireName: r'userId')
-  String get userId;
+  String? get userId;
 
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<AiConversationPost200ResponseMessagesInner>? get messages;
+  @BuiltValueField(wireName: r'sessionId')
+  String get sessionId;
+
+  @BuiltValueField(wireName: r'message')
+  String get message;
+
+  @BuiltValueField(wireName: r'userLocation')
+  AiChatPostRequestUserLocation? get userLocation;
+
+  @BuiltValueField(wireName: r'dateTime')
+  String? get dateTime;
 
   AiChatPostRequest._();
 
@@ -50,17 +61,35 @@ class _$AiChatPostRequestSerializer
     AiChatPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'userId';
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'sessionId';
     yield serializers.serialize(
-      object.userId,
+      object.sessionId,
       specifiedType: const FullType(String),
     );
-    if (object.messages != null) {
-      yield r'messages';
+    yield r'message';
+    yield serializers.serialize(
+      object.message,
+      specifiedType: const FullType(String),
+    );
+    if (object.userLocation != null) {
+      yield r'userLocation';
       yield serializers.serialize(
-        object.messages,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AiConversationPost200ResponseMessagesInner)]),
+        object.userLocation,
+        specifiedType: const FullType(AiChatPostRequestUserLocation),
+      );
+    }
+    if (object.dateTime != null) {
+      yield r'dateTime';
+      yield serializers.serialize(
+        object.dateTime,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -95,13 +124,33 @@ class _$AiChatPostRequestSerializer
           ) as String;
           result.userId = valueDes;
           break;
-        case r'messages':
+        case r'sessionId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(AiConversationPost200ResponseMessagesInner)]),
-          ) as BuiltList<AiConversationPost200ResponseMessagesInner>;
-          result.messages.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.sessionId = valueDes;
+          break;
+        case r'message':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.message = valueDes;
+          break;
+        case r'userLocation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiChatPostRequestUserLocation),
+          ) as AiChatPostRequestUserLocation;
+          result.userLocation.replace(valueDes);
+          break;
+        case r'dateTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dateTime = valueDes;
           break;
         default:
           unhandled.add(key);

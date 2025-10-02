@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response_messages_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +19,7 @@ abstract class AiMemoriesPostRequest
     implements Built<AiMemoriesPostRequest, AiMemoriesPostRequestBuilder> {
   /// The conversation where memories should be retrieved from
   @BuiltValueField(wireName: r'messages')
-  BuiltList<AiConversationPost200ResponseMessagesInner> get messages;
+  BuiltList<AiLegacyConversationPost200ResponseMessagesInner> get messages;
 
   AiMemoriesPostRequest._();
 
@@ -53,8 +53,8 @@ class _$AiMemoriesPostRequestSerializer
     yield r'messages';
     yield serializers.serialize(
       object.messages,
-      specifiedType: const FullType(
-          BuiltList, [FullType(AiConversationPost200ResponseMessagesInner)]),
+      specifiedType: const FullType(BuiltList,
+          [FullType(AiLegacyConversationPost200ResponseMessagesInner)]),
     );
   }
 
@@ -85,8 +85,8 @@ class _$AiMemoriesPostRequestSerializer
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(BuiltList,
-                [FullType(AiConversationPost200ResponseMessagesInner)]),
-          ) as BuiltList<AiConversationPost200ResponseMessagesInner>;
+                [FullType(AiLegacyConversationPost200ResponseMessagesInner)]),
+          ) as BuiltList<AiLegacyConversationPost200ResponseMessagesInner>;
           result.messages.replace(valueDes);
           break;
         default:

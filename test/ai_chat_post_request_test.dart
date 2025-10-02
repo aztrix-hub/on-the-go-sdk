@@ -12,8 +12,23 @@ void main() {
       // TODO
     });
 
-    // BuiltList<AiConversationPost200ResponseMessagesInner> messages
-    test('to test the property `messages`', () async {
+    // String sessionId
+    test('to test the property `sessionId`', () async {
+      // TODO
+    });
+
+    // String message
+    test('to test the property `message`', () async {
+      // TODO
+    });
+
+    // AiChatPostRequestUserLocation userLocation
+    test('to test the property `userLocation`', () async {
+      // TODO
+    });
+
+    // String dateTime
+    test('to test the property `dateTime`', () async {
       // TODO
     });
   });

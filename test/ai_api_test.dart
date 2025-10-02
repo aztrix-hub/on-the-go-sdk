@@ -6,13 +6,8 @@ void main() {
   final instance = OnTheGoSdk().getAiApi();
 
   group(AiApi, () {
-    //Future<AiChat2DataPost200Response> aiChat2DataPost({ AiChat2DataPostRequest aiChat2DataPostRequest }) async
-    test('test aiChat2DataPost', () async {
-      // TODO
-    });
-
-    //Future<AiChat2Post200Response> aiChat2Post({ AiChat2PostRequest aiChat2PostRequest }) async
-    test('test aiChat2Post', () async {
+    //Future<AiChatDataPost200Response> aiChatDataPost({ AiChatDataPostRequest aiChatDataPostRequest }) async
+    test('test aiChatDataPost', () async {
       // TODO
     });
 
@@ -21,8 +16,13 @@ void main() {
       // TODO
     });
 
-    //Future<AiConversationPost200Response> aiConversationPost({ AiConversationPostRequest aiConversationPostRequest }) async
-    test('test aiConversationPost', () async {
+    //Future<AiLegacyChatPost200Response> aiLegacyChatPost({ AiLegacyChatPostRequest aiLegacyChatPostRequest }) async
+    test('test aiLegacyChatPost', () async {
+      // TODO
+    });
+
+    //Future<AiLegacyConversationPost200Response> aiLegacyConversationPost({ AiLegacyConversationPostRequest aiLegacyConversationPostRequest }) async
+    test('test aiLegacyConversationPost', () async {
       // TODO
     });
 

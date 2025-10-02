@@ -8,7 +8,7 @@ part of 'ai_memories_post_request.dart';
 
 class _$AiMemoriesPostRequest extends AiMemoriesPostRequest {
   @override
-  final BuiltList<AiConversationPost200ResponseMessagesInner> messages;
+  final BuiltList<AiLegacyConversationPost200ResponseMessagesInner> messages;
 
   factory _$AiMemoriesPostRequest(
           [void Function(AiMemoriesPostRequestBuilder)? updates]) =>
@@ -50,12 +50,13 @@ class AiMemoriesPostRequestBuilder
     implements Builder<AiMemoriesPostRequest, AiMemoriesPostRequestBuilder> {
   _$AiMemoriesPostRequest? _$v;
 
-  ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
-  ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
+  ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>? _messages;
+  ListBuilder<AiLegacyConversationPost200ResponseMessagesInner> get messages =>
       _$this._messages ??=
-          ListBuilder<AiConversationPost200ResponseMessagesInner>();
+          ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>();
   set messages(
-          ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
+          ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>?
+              messages) =>
       _$this._messages = messages;
 
   AiMemoriesPostRequestBuilder() {

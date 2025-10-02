@@ -758,7 +758,7 @@
         }
       }
     },
-    "/ai/conversation": {
+    "/ai/legacy/conversation": {
       "post": {
         "tags": [
           "ai"
@@ -846,7 +846,7 @@
         }
       }
     },
-    "/ai/chat": {
+    "/ai/legacy/chat": {
       "post": {
         "tags": [
           "ai"
@@ -919,7 +919,7 @@
         }
       }
     },
-    "/ai/chat2": {
+    "/ai/chat": {
       "post": {
         "tags": [
           "ai"
@@ -1001,7 +1001,7 @@
         ]
       }
     },
-    "/ai/chat2/data": {
+    "/ai/chat/data": {
       "post": {
         "tags": [
           "ai"
@@ -1054,16 +1054,27 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "locations": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Location"
-                      }
-                    },
                     "search": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/LocationOrIndividual"
+                      "type": "object",
+                      "properties": {
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "phone": {
+                          "type": "string"
+                        },
+                        "results": {
+                          "type": "array",
+                          "items": {
+                            "$ref": "#/components/schemas/LocationOrIndividual"
+                          }
+                        }
                       }
                     },
                     "keywords": {

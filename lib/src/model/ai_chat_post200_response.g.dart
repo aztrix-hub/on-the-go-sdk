@@ -10,13 +10,16 @@ class _$AiChatPost200Response extends AiChatPost200Response {
   @override
   final String? userId;
   @override
-  final BuiltList<AiConversationPost200ResponseMessagesInner>? messages;
+  final String? sessionId;
+  @override
+  final String? response;
 
   factory _$AiChatPost200Response(
           [void Function(AiChatPost200ResponseBuilder)? updates]) =>
       (AiChatPost200ResponseBuilder()..update(updates))._build();
 
-  _$AiChatPost200Response._({this.userId, this.messages}) : super._();
+  _$AiChatPost200Response._({this.userId, this.sessionId, this.response})
+      : super._();
   @override
   AiChatPost200Response rebuild(
           void Function(AiChatPost200ResponseBuilder) updates) =>
@@ -31,14 +34,16 @@ class _$AiChatPost200Response extends AiChatPost200Response {
     if (identical(other, this)) return true;
     return other is AiChatPost200Response &&
         userId == other.userId &&
-        messages == other.messages;
+        sessionId == other.sessionId &&
+        response == other.response;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, userId.hashCode);
-    _$hash = $jc(_$hash, messages.hashCode);
+    _$hash = $jc(_$hash, sessionId.hashCode);
+    _$hash = $jc(_$hash, response.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,7 +52,8 @@ class _$AiChatPost200Response extends AiChatPost200Response {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiChatPost200Response')
           ..add('userId', userId)
-          ..add('messages', messages))
+          ..add('sessionId', sessionId)
+          ..add('response', response))
         .toString();
   }
 }
@@ -60,13 +66,13 @@ class AiChatPost200ResponseBuilder
   String? get userId => _$this._userId;
   set userId(String? userId) => _$this._userId = userId;
 
-  ListBuilder<AiConversationPost200ResponseMessagesInner>? _messages;
-  ListBuilder<AiConversationPost200ResponseMessagesInner> get messages =>
-      _$this._messages ??=
-          ListBuilder<AiConversationPost200ResponseMessagesInner>();
-  set messages(
-          ListBuilder<AiConversationPost200ResponseMessagesInner>? messages) =>
-      _$this._messages = messages;
+  String? _sessionId;
+  String? get sessionId => _$this._sessionId;
+  set sessionId(String? sessionId) => _$this._sessionId = sessionId;
+
+  String? _response;
+  String? get response => _$this._response;
+  set response(String? response) => _$this._response = response;
 
   AiChatPost200ResponseBuilder() {
     AiChatPost200Response._defaults(this);
@@ -76,7 +82,8 @@ class AiChatPost200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _userId = $v.userId;
-      _messages = $v.messages?.toBuilder();
+      _sessionId = $v.sessionId;
+      _response = $v.response;
       _$v = null;
     }
     return this;
@@ -96,24 +103,12 @@ class AiChatPost200ResponseBuilder
   AiChatPost200Response build() => _build();
 
   _$AiChatPost200Response _build() {
-    _$AiChatPost200Response _$result;
-    try {
-      _$result = _$v ??
-          _$AiChatPost200Response._(
-            userId: userId,
-            messages: _messages?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'messages';
-        _messages?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'AiChatPost200Response', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$AiChatPost200Response._(
+          userId: userId,
+          sessionId: sessionId,
+          response: response,
+        );
     replace(_$result);
     return _$result;
   }

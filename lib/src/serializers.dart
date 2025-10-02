@@ -15,21 +15,22 @@ import 'package:on_the_go_sdk/src/date_serializer.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
 
 import 'package:on_the_go_sdk/src/model/address.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request_user_location.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_post_request_user_location.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_call.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_email.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_search.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response_messages_inner.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post_request_user_location.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_post_request_user_location.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response_messages_inner.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
@@ -74,21 +75,22 @@ part 'serializers.g.dart';
 
 @SerializersFor([
   Address,
-  AiChat2DataPost200Response,
-  AiChat2DataPost200ResponseCall,
-  AiChat2DataPost200ResponseEmail,
-  AiChat2DataPost200ResponseText,
-  AiChat2DataPostRequest,
-  AiChat2DataPostRequestUserLocation,
-  AiChat2Post200Response,
-  AiChat2PostRequest,
-  AiChat2PostRequestUserLocation,
+  AiChatDataPost200Response,
+  AiChatDataPost200ResponseCall,
+  AiChatDataPost200ResponseEmail,
+  AiChatDataPost200ResponseSearch,
+  AiChatDataPost200ResponseText,
+  AiChatDataPostRequest,
+  AiChatDataPostRequestUserLocation,
   AiChatPost200Response,
   AiChatPostRequest,
-  AiConversationPost200Response,
-  AiConversationPost200ResponseMessagesInner,
-  AiConversationPostRequest,
-  AiConversationPostRequestUserLocation,
+  AiChatPostRequestUserLocation,
+  AiLegacyChatPost200Response,
+  AiLegacyChatPostRequest,
+  AiLegacyConversationPost200Response,
+  AiLegacyConversationPost200ResponseMessagesInner,
+  AiLegacyConversationPostRequest,
+  AiLegacyConversationPostRequestUserLocation,
   AiMemoriesGet200Response,
   AiMemoriesGet200ResponseMemoriesInner,
   AiMemoriesPostRequest,

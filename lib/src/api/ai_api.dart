@@ -8,14 +8,14 @@ import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:on_the_go_sdk/src/api_util.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
@@ -27,11 +27,11 @@ class AiApi {
 
   const AiApi(this._dio, this._serializers);
 
-  /// aiChat2DataPost
+  /// aiChatDataPost
   ///
   ///
   /// Parameters:
-  /// * [aiChat2DataPostRequest]
+  /// * [aiChatDataPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -39,10 +39,10 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiChat2DataPost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiChatDataPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiChat2DataPost200Response>> aiChat2DataPost({
-    AiChat2DataPostRequest? aiChat2DataPostRequest,
+  Future<Response<AiChatDataPost200Response>> aiChatDataPost({
+    AiChatDataPostRequest? aiChatDataPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -50,7 +50,7 @@ class AiApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/ai/chat2/data';
+    final _path = r'/ai/chat/data';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -74,11 +74,10 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiChat2DataPostRequest);
-      _bodyData = aiChat2DataPostRequest == null
+      const _type = FullType(AiChatDataPostRequest);
+      _bodyData = aiChatDataPostRequest == null
           ? null
-          : _serializers.serialize(aiChat2DataPostRequest,
-              specifiedType: _type);
+          : _serializers.serialize(aiChatDataPostRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -100,7 +99,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiChat2DataPost200Response? _responseData;
+    AiChatDataPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -108,8 +107,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiChat2DataPost200Response),
-            ) as AiChat2DataPost200Response;
+              specifiedType: const FullType(AiChatDataPost200Response),
+            ) as AiChatDataPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -120,111 +119,7 @@ class AiApi {
       );
     }
 
-    return Response<AiChat2DataPost200Response>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// aiChat2Post
-  ///
-  ///
-  /// Parameters:
-  /// * [aiChat2PostRequest]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [AiChat2Post200Response] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiChat2Post200Response>> aiChat2Post({
-    AiChat2PostRequest? aiChat2PostRequest,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/ai/chat2';
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'authToken',
-            'keyName': 'authToken',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(AiChat2PostRequest);
-      _bodyData = aiChat2PostRequest == null
-          ? null
-          : _serializers.serialize(aiChat2PostRequest, specifiedType: _type);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    AiChat2Post200Response? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(AiChat2Post200Response),
-            ) as AiChat2Post200Response;
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<AiChat2Post200Response>(
+    return Response<AiChatDataPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -266,7 +161,14 @@ class AiApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[],
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authToken',
+            'keyName': 'authToken',
+            'where': 'header',
+          },
+        ],
         ...?extra,
       },
       contentType: 'application/json',
@@ -333,11 +235,11 @@ class AiApi {
     );
   }
 
-  /// aiConversationPost
+  /// aiLegacyChatPost
   ///
   ///
   /// Parameters:
-  /// * [aiConversationPostRequest]
+  /// * [aiLegacyChatPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -345,10 +247,10 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiConversationPost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiLegacyChatPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiConversationPost200Response>> aiConversationPost({
-    AiConversationPostRequest? aiConversationPostRequest,
+  Future<Response<AiLegacyChatPost200Response>> aiLegacyChatPost({
+    AiLegacyChatPostRequest? aiLegacyChatPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -356,7 +258,7 @@ class AiApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/ai/conversation';
+    final _path = r'/ai/legacy/chat';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -373,10 +275,10 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiConversationPostRequest);
-      _bodyData = aiConversationPostRequest == null
+      const _type = FullType(AiLegacyChatPostRequest);
+      _bodyData = aiLegacyChatPostRequest == null
           ? null
-          : _serializers.serialize(aiConversationPostRequest,
+          : _serializers.serialize(aiLegacyChatPostRequest,
               specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
@@ -399,7 +301,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiConversationPost200Response? _responseData;
+    AiLegacyChatPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -407,8 +309,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiConversationPost200Response),
-            ) as AiConversationPost200Response;
+              specifiedType: const FullType(AiLegacyChatPost200Response),
+            ) as AiLegacyChatPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -419,7 +321,107 @@ class AiApi {
       );
     }
 
-    return Response<AiConversationPost200Response>(
+    return Response<AiLegacyChatPost200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// aiLegacyConversationPost
+  ///
+  ///
+  /// Parameters:
+  /// * [aiLegacyConversationPostRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AiLegacyConversationPost200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<AiLegacyConversationPost200Response>>
+      aiLegacyConversationPost({
+    AiLegacyConversationPostRequest? aiLegacyConversationPostRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/ai/legacy/conversation';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(AiLegacyConversationPostRequest);
+      _bodyData = aiLegacyConversationPostRequest == null
+          ? null
+          : _serializers.serialize(aiLegacyConversationPostRequest,
+              specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AiLegacyConversationPost200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType:
+                  const FullType(AiLegacyConversationPost200Response),
+            ) as AiLegacyConversationPost200Response;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AiLegacyConversationPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

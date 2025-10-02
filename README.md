@@ -48,13 +48,13 @@ import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
 final api = OnTheGoSdk().getAiApi();
-final AiChat2DataPostRequest aiChat2DataPostRequest = ; // AiChat2DataPostRequest | 
+final AiChatDataPostRequest aiChatDataPostRequest = ; // AiChatDataPostRequest | 
 
 try {
-    final response = await api.aiChat2DataPost(aiChat2DataPostRequest);
+    final response = await api.aiChatDataPost(aiChatDataPostRequest);
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AiApi->aiChat2DataPost: $e\n");
+    print("Exception when calling AiApi->aiChatDataPost: $e\n");
 }
 
 ```
@@ -65,10 +65,10 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-[*AiApi*](doc/AiApi.md) | [**aiChat2DataPost**](doc/AiApi.md#aichat2datapost) | **POST** /ai/chat2/data | 
-[*AiApi*](doc/AiApi.md) | [**aiChat2Post**](doc/AiApi.md#aichat2post) | **POST** /ai/chat2 | 
+[*AiApi*](doc/AiApi.md) | [**aiChatDataPost**](doc/AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
-[*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[*AiApi*](doc/AiApi.md) | [**aiLegacyChatPost**](doc/AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
+[*AiApi*](doc/AiApi.md) | [**aiLegacyConversationPost**](doc/AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
@@ -108,21 +108,22 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](doc/Address.md)
- - [AiChat2DataPost200Response](doc/AiChat2DataPost200Response.md)
- - [AiChat2DataPost200ResponseCall](doc/AiChat2DataPost200ResponseCall.md)
- - [AiChat2DataPost200ResponseEmail](doc/AiChat2DataPost200ResponseEmail.md)
- - [AiChat2DataPost200ResponseText](doc/AiChat2DataPost200ResponseText.md)
- - [AiChat2DataPostRequest](doc/AiChat2DataPostRequest.md)
- - [AiChat2DataPostRequestUserLocation](doc/AiChat2DataPostRequestUserLocation.md)
- - [AiChat2Post200Response](doc/AiChat2Post200Response.md)
- - [AiChat2PostRequest](doc/AiChat2PostRequest.md)
- - [AiChat2PostRequestUserLocation](doc/AiChat2PostRequestUserLocation.md)
+ - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
+ - [AiChatDataPost200ResponseCall](doc/AiChatDataPost200ResponseCall.md)
+ - [AiChatDataPost200ResponseEmail](doc/AiChatDataPost200ResponseEmail.md)
+ - [AiChatDataPost200ResponseSearch](doc/AiChatDataPost200ResponseSearch.md)
+ - [AiChatDataPost200ResponseText](doc/AiChatDataPost200ResponseText.md)
+ - [AiChatDataPostRequest](doc/AiChatDataPostRequest.md)
+ - [AiChatDataPostRequestUserLocation](doc/AiChatDataPostRequestUserLocation.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
- - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
- - [AiConversationPost200ResponseMessagesInner](doc/AiConversationPost200ResponseMessagesInner.md)
- - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
- - [AiConversationPostRequestUserLocation](doc/AiConversationPostRequestUserLocation.md)
+ - [AiChatPostRequestUserLocation](doc/AiChatPostRequestUserLocation.md)
+ - [AiLegacyChatPost200Response](doc/AiLegacyChatPost200Response.md)
+ - [AiLegacyChatPostRequest](doc/AiLegacyChatPostRequest.md)
+ - [AiLegacyConversationPost200Response](doc/AiLegacyConversationPost200Response.md)
+ - [AiLegacyConversationPost200ResponseMessagesInner](doc/AiLegacyConversationPost200ResponseMessagesInner.md)
+ - [AiLegacyConversationPostRequest](doc/AiLegacyConversationPostRequest.md)
+ - [AiLegacyConversationPostRequestUserLocation](doc/AiLegacyConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
  - [AiMemoriesPostRequest](doc/AiMemoriesPostRequest.md)
