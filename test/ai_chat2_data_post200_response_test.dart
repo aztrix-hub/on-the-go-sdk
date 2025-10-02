@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<AiChat2DataPost200ResponseSearchInner> search
+    // BuiltList<LocationOrIndividual> search
     test('to test the property `search`', () async {
       // TODO
     });

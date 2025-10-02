@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_search_inner.dart';
+import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -34,7 +34,7 @@ abstract class AiChat2DataPost200Response
   BuiltList<Location>? get locations;
 
   @BuiltValueField(wireName: r'search')
-  BuiltList<AiChat2DataPost200ResponseSearchInner>? get search;
+  BuiltList<LocationOrIndividual>? get search;
 
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
@@ -96,8 +96,8 @@ class _$AiChat2DataPost200ResponseSerializer
       yield r'search';
       yield serializers.serialize(
         object.search,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AiChat2DataPost200ResponseSearchInner)]),
+        specifiedType:
+            const FullType(BuiltList, [FullType(LocationOrIndividual)]),
       );
     }
     if (object.keywords != null) {
@@ -177,9 +177,9 @@ class _$AiChat2DataPost200ResponseSerializer
         case r'search':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AiChat2DataPost200ResponseSearchInner)]),
-          ) as BuiltList<AiChat2DataPost200ResponseSearchInner>;
+            specifiedType:
+                const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+          ) as BuiltList<LocationOrIndividual>;
           result.search.replace(valueDes);
           break;
         case r'keywords':

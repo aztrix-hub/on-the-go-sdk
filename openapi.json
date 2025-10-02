@@ -1063,14 +1063,7 @@
                     "search": {
                       "type": "array",
                       "items": {
-                        "anyOf": [
-                          {
-                            "$ref": "#/components/schemas/Location"
-                          },
-                          {
-                            "$ref": "#/components/schemas/Individual"
-                          }
-                        ]
+                        "$ref": "#/components/schemas/LocationOrIndividual"
                       }
                     },
                     "keywords": {
@@ -2193,6 +2186,16 @@
           }
         },
         "description": "Location"
+      },
+      "LocationOrIndividual": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/Location"
+          },
+          {
+            "$ref": "#/components/schemas/Individual"
+          }
+        ]
       },
       "Address": {
         "required": [

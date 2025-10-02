@@ -18,7 +18,6 @@ import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_call.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_email.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_search_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post200_response_text.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat2_data_post_request_user_location.dart';
@@ -47,6 +46,7 @@ import 'package:on_the_go_sdk/src/model/individual.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
@@ -77,7 +77,6 @@ part 'serializers.g.dart';
   AiChat2DataPost200Response,
   AiChat2DataPost200ResponseCall,
   AiChat2DataPost200ResponseEmail,
-  AiChat2DataPost200ResponseSearchInner,
   AiChat2DataPost200ResponseText,
   AiChat2DataPostRequest,
   AiChat2DataPostRequestUserLocation,
@@ -106,6 +105,7 @@ part 'serializers.g.dart';
   Listing,
   Location,
   LocationListingConnectGet200Response,
+  LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,
   LocationsGet200Response,

@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiChat2DataPost200ResponseSearchInner
+# on_the_go_sdk.model.LocationOrIndividual
 
 ## Load the model package
 ```dart

@@ -10,7 +10,7 @@ class _$AiChat2DataPost200Response extends AiChat2DataPost200Response {
   @override
   final BuiltList<Location>? locations;
   @override
-  final BuiltList<AiChat2DataPost200ResponseSearchInner>? search;
+  final BuiltList<LocationOrIndividual>? search;
   @override
   final BuiltList<String>? keywords;
   @override
@@ -102,10 +102,10 @@ class AiChat2DataPost200ResponseBuilder
   set locations(ListBuilder<Location>? locations) =>
       _$this._locations = locations;
 
-  ListBuilder<AiChat2DataPost200ResponseSearchInner>? _search;
-  ListBuilder<AiChat2DataPost200ResponseSearchInner> get search =>
-      _$this._search ??= ListBuilder<AiChat2DataPost200ResponseSearchInner>();
-  set search(ListBuilder<AiChat2DataPost200ResponseSearchInner>? search) =>
+  ListBuilder<LocationOrIndividual>? _search;
+  ListBuilder<LocationOrIndividual> get search =>
+      _$this._search ??= ListBuilder<LocationOrIndividual>();
+  set search(ListBuilder<LocationOrIndividual>? search) =>
       _$this._search = search;
 
   ListBuilder<String>? _keywords;

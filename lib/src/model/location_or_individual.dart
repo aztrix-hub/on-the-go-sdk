@@ -9,9 +9,9 @@ import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 import 'package:one_of/any_of.dart';
 
-part 'ai_chat2_data_post200_response_search_inner.g.dart';
+part 'location_or_individual.g.dart';
 
-/// AiChat2DataPost200ResponseSearchInner
+/// LocationOrIndividual
 ///
 /// Properties:
 /// * [id]
@@ -38,45 +38,42 @@ part 'ai_chat2_data_post200_response_search_inner.g.dart';
 /// * [lastname] - Last name
 /// * [birthDate]
 @BuiltValue()
-abstract class AiChat2DataPost200ResponseSearchInner
-    implements
-        Built<AiChat2DataPost200ResponseSearchInner,
-            AiChat2DataPost200ResponseSearchInnerBuilder> {
+abstract class LocationOrIndividual
+    implements Built<LocationOrIndividual, LocationOrIndividualBuilder> {
   /// Any Of [Individual], [Location]
   AnyOf get anyOf;
 
-  AiChat2DataPost200ResponseSearchInner._();
+  LocationOrIndividual._();
 
-  factory AiChat2DataPost200ResponseSearchInner(
-          [void updates(AiChat2DataPost200ResponseSearchInnerBuilder b)]) =
-      _$AiChat2DataPost200ResponseSearchInner;
+  factory LocationOrIndividual([void updates(LocationOrIndividualBuilder b)]) =
+      _$LocationOrIndividual;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiChat2DataPost200ResponseSearchInnerBuilder b) => b;
+  static void _defaults(LocationOrIndividualBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiChat2DataPost200ResponseSearchInner> get serializer =>
-      _$AiChat2DataPost200ResponseSearchInnerSerializer();
+  static Serializer<LocationOrIndividual> get serializer =>
+      _$LocationOrIndividualSerializer();
 }
 
-class _$AiChat2DataPost200ResponseSearchInnerSerializer
-    implements PrimitiveSerializer<AiChat2DataPost200ResponseSearchInner> {
+class _$LocationOrIndividualSerializer
+    implements PrimitiveSerializer<LocationOrIndividual> {
   @override
   final Iterable<Type> types = const [
-    AiChat2DataPost200ResponseSearchInner,
-    _$AiChat2DataPost200ResponseSearchInner
+    LocationOrIndividual,
+    _$LocationOrIndividual
   ];
 
   @override
-  final String wireName = r'AiChat2DataPost200ResponseSearchInner';
+  final String wireName = r'LocationOrIndividual';
 
-  Iterable<Object?> _serializeProperties(Serializers serializers,
-      AiChat2DataPost200ResponseSearchInner object) sync* {}
+  Iterable<Object?> _serializeProperties(
+      Serializers serializers, LocationOrIndividual object) sync* {}
 
   @override
   Object serialize(
     Serializers serializers,
-    AiChat2DataPost200ResponseSearchInner object, {
+    LocationOrIndividual object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     final anyOf = object.anyOf;
@@ -86,12 +83,12 @@ class _$AiChat2DataPost200ResponseSearchInnerSerializer
   }
 
   @override
-  AiChat2DataPost200ResponseSearchInner deserialize(
+  LocationOrIndividual deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiChat2DataPost200ResponseSearchInnerBuilder();
+    final result = LocationOrIndividualBuilder();
     Object? anyOfDataSrc;
     final targetType = const FullType(AnyOf, [
       FullType(Location),

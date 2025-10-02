@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiChat2DataPost200ResponseSearchInner
+// tests for LocationOrIndividual
 void main() {
-  final instance = AiChat2DataPost200ResponseSearchInnerBuilder();
+  final instance = LocationOrIndividualBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiChat2DataPost200ResponseSearchInner, () {
+  group(LocationOrIndividual, () {
     // String id
     test('to test the property `id`', () async {
       // TODO
