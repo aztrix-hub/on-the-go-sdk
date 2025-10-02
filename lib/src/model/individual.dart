@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/address.dart';
+import 'package:on_the_go_sdk/src/model/date.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -14,8 +16,9 @@ part 'individual.g.dart';
 /// * [id]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
-/// * [email] - User email
+/// * [address]
 /// * [phone]
+/// * [birthDate]
 @BuiltValue()
 abstract class Individual implements Built<Individual, IndividualBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -29,12 +32,14 @@ abstract class Individual implements Built<Individual, IndividualBuilder> {
   @BuiltValueField(wireName: r'lastname')
   String get lastname;
 
-  /// User email
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+  @BuiltValueField(wireName: r'address')
+  Address? get address;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
+
+  @BuiltValueField(wireName: r'birthDate')
+  Date? get birthDate;
 
   Individual._();
 
@@ -76,11 +81,11 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
       object.lastname,
       specifiedType: const FullType(String),
     );
-    if (object.email != null) {
-      yield r'email';
+    if (object.address != null) {
+      yield r'address';
       yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
+        object.address,
+        specifiedType: const FullType(Address),
       );
     }
     if (object.phone != null) {
@@ -88,6 +93,13 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
       yield serializers.serialize(
         object.phone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.birthDate != null) {
+      yield r'birthDate';
+      yield serializers.serialize(
+        object.birthDate,
+        specifiedType: const FullType(Date),
       );
     }
   }
@@ -136,12 +148,12 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
           ) as String;
           result.lastname = valueDes;
           break;
-        case r'email':
+        case r'address':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
+            specifiedType: const FullType(Address),
+          ) as Address;
+          result.address.replace(valueDes);
           break;
         case r'phone':
           final valueDes = serializers.deserialize(
@@ -149,6 +161,13 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
             specifiedType: const FullType(String),
           ) as String;
           result.phone = valueDes;
+          break;
+        case r'birthDate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Date),
+          ) as Date;
+          result.birthDate = valueDes;
           break;
         default:
           unhandled.add(key);

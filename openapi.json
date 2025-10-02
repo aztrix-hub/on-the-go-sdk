@@ -2097,12 +2097,15 @@
             "type": "string",
             "description": "Last name"
           },
-          "email": {
-            "type": "string",
-            "description": "User email"
+          "address": {
+            "$ref": "#/components/schemas/Address"
           },
           "phone": {
             "type": "string"
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date"
           }
         },
         "description": "User Model"
@@ -2123,6 +2126,9 @@
           "address": {
             "$ref": "#/components/schemas/Address"
           },
+          "email": {
+            "type": "string"
+          },
           "cellphone": {
             "type": "string"
           },
@@ -2130,9 +2136,6 @@
             "type": "string"
           },
           "fax": {
-            "type": "string"
-          },
-          "email": {
             "type": "string"
           },
           "description": {

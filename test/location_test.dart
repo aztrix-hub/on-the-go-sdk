@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
     // String cellphone
     test('to test the property `cellphone`', () async {
       // TODO
@@ -34,11 +39,6 @@ void main() {
 
     // String fax
     test('to test the property `fax`', () async {
-      // TODO
-    });
-
-    // String email
-    test('to test the property `email`', () async {
       // TODO
     });
 

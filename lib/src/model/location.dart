@@ -20,10 +20,10 @@ part 'location.g.dart';
 /// * [id]
 /// * [name]
 /// * [address]
+/// * [email]
 /// * [cellphone]
 /// * [phone]
 /// * [fax]
-/// * [email]
 /// * [description]
 /// * [keywords]
 /// * [openingHours] - Opening hours
@@ -48,6 +48,9 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'address')
   Address? get address;
 
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
   @BuiltValueField(wireName: r'cellphone')
   String? get cellphone;
 
@@ -56,9 +59,6 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'fax')
   String? get fax;
-
-  @BuiltValueField(wireName: r'email')
-  String? get email;
 
   @BuiltValueField(wireName: r'description')
   String? get description;
@@ -141,6 +141,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(Address),
       );
     }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.cellphone != null) {
       yield r'cellphone';
       yield serializers.serialize(
@@ -159,13 +166,6 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'fax';
       yield serializers.serialize(
         object.fax,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
         specifiedType: const FullType(String),
       );
     }
@@ -307,6 +307,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as Address;
           result.address.replace(valueDes);
           break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
         case r'cellphone':
           final valueDes = serializers.deserialize(
             value,
@@ -327,13 +334,6 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(String),
           ) as String;
           result.fax = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
           break;
         case r'description':
           final valueDes = serializers.deserialize(

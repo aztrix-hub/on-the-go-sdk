@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **name** | **String** |  | 
 **address** | [**Address**](Address.md) |  | [optional] 
+**email** | **String** |  | [optional] 
 **cellphone** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **fax** | **String** |  | [optional] 
-**email** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 

@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **name** | **String** |  | 
 **address** | [**Address**](Address.md) |  | [optional] 
+**email** | **String** |  | [optional] 
 **cellphone** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **fax** | **String** |  | [optional] 
-**email** | **String** | User email | [optional] 
 **description** | **String** |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 
@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **sponsored** | **bool** |  | [optional] 
 **firstname** | **String** | First Name | 
 **lastname** | **String** | Last name | 
+**birthDate** | [**Date**](Date.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

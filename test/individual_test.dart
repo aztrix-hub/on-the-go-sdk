@@ -24,14 +24,18 @@ void main() {
       // TODO
     });
 
-    // User email
-    // String email
-    test('to test the property `email`', () async {
+    // Address address
+    test('to test the property `address`', () async {
       // TODO
     });
 
     // String phone
     test('to test the property `phone`', () async {
+      // TODO
+    });
+
+    // Date birthDate
+    test('to test the property `birthDate`', () async {
       // TODO
     });
   });

@@ -17,10 +17,10 @@ part 'ai_chat2_data_post200_response_search_inner.g.dart';
 /// * [id]
 /// * [name]
 /// * [address]
+/// * [email]
 /// * [cellphone]
 /// * [phone]
 /// * [fax]
-/// * [email] - User email
 /// * [description]
 /// * [keywords]
 /// * [openingHours] - Opening hours
@@ -36,6 +36,7 @@ part 'ai_chat2_data_post200_response_search_inner.g.dart';
 /// * [sponsored]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
+/// * [birthDate]
 @BuiltValue()
 abstract class AiChat2DataPost200ResponseSearchInner
     implements

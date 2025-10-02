@@ -14,9 +14,11 @@ class _$Individual extends Individual {
   @override
   final String lastname;
   @override
-  final String? email;
+  final Address? address;
   @override
   final String? phone;
+  @override
+  final Date? birthDate;
 
   factory _$Individual([void Function(IndividualBuilder)? updates]) =>
       (IndividualBuilder()..update(updates))._build();
@@ -25,8 +27,9 @@ class _$Individual extends Individual {
       {this.id,
       required this.firstname,
       required this.lastname,
-      this.email,
-      this.phone})
+      this.address,
+      this.phone,
+      this.birthDate})
       : super._();
   @override
   Individual rebuild(void Function(IndividualBuilder) updates) =>
@@ -42,8 +45,9 @@ class _$Individual extends Individual {
         id == other.id &&
         firstname == other.firstname &&
         lastname == other.lastname &&
-        email == other.email &&
-        phone == other.phone;
+        address == other.address &&
+        phone == other.phone &&
+        birthDate == other.birthDate;
   }
 
   @override
@@ -52,8 +56,9 @@ class _$Individual extends Individual {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -64,8 +69,9 @@ class _$Individual extends Individual {
           ..add('id', id)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
-          ..add('email', email)
-          ..add('phone', phone))
+          ..add('address', address)
+          ..add('phone', phone)
+          ..add('birthDate', birthDate))
         .toString();
   }
 }
@@ -85,13 +91,17 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
+  AddressBuilder? _address;
+  AddressBuilder get address => _$this._address ??= AddressBuilder();
+  set address(AddressBuilder? address) => _$this._address = address;
 
   String? _phone;
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
+
+  Date? _birthDate;
+  Date? get birthDate => _$this._birthDate;
+  set birthDate(Date? birthDate) => _$this._birthDate = birthDate;
 
   IndividualBuilder() {
     Individual._defaults(this);
@@ -103,8 +113,9 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
       _id = $v.id;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
-      _email = $v.email;
+      _address = $v.address?.toBuilder();
       _phone = $v.phone;
+      _birthDate = $v.birthDate;
       _$v = null;
     }
     return this;
@@ -124,16 +135,30 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
   Individual build() => _build();
 
   _$Individual _build() {
-    final _$result = _$v ??
-        _$Individual._(
-          id: id,
-          firstname: BuiltValueNullFieldError.checkNotNull(
-              firstname, r'Individual', 'firstname'),
-          lastname: BuiltValueNullFieldError.checkNotNull(
-              lastname, r'Individual', 'lastname'),
-          email: email,
-          phone: phone,
-        );
+    _$Individual _$result;
+    try {
+      _$result = _$v ??
+          _$Individual._(
+            id: id,
+            firstname: BuiltValueNullFieldError.checkNotNull(
+                firstname, r'Individual', 'firstname'),
+            lastname: BuiltValueNullFieldError.checkNotNull(
+                lastname, r'Individual', 'lastname'),
+            address: _address?.build(),
+            phone: phone,
+            birthDate: birthDate,
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'address';
+        _address?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'Individual', _$failedField, e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

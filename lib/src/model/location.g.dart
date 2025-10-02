@@ -14,13 +14,13 @@ class _$Location extends Location {
   @override
   final Address? address;
   @override
+  final String? email;
+  @override
   final String? cellphone;
   @override
   final String? phone;
   @override
   final String? fax;
-  @override
-  final String? email;
   @override
   final String? description;
   @override
@@ -55,10 +55,10 @@ class _$Location extends Location {
       {required this.id,
       required this.name,
       this.address,
+      this.email,
       this.cellphone,
       this.phone,
       this.fax,
-      this.email,
       this.description,
       this.keywords,
       this.openingHours,
@@ -87,10 +87,10 @@ class _$Location extends Location {
         id == other.id &&
         name == other.name &&
         address == other.address &&
+        email == other.email &&
         cellphone == other.cellphone &&
         phone == other.phone &&
         fax == other.fax &&
-        email == other.email &&
         description == other.description &&
         keywords == other.keywords &&
         openingHours == other.openingHours &&
@@ -112,10 +112,10 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, cellphone.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, fax.hashCode);
-    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, openingHours.hashCode);
@@ -139,10 +139,10 @@ class _$Location extends Location {
           ..add('id', id)
           ..add('name', name)
           ..add('address', address)
+          ..add('email', email)
           ..add('cellphone', cellphone)
           ..add('phone', phone)
           ..add('fax', fax)
-          ..add('email', email)
           ..add('description', description)
           ..add('keywords', keywords)
           ..add('openingHours', openingHours)
@@ -175,6 +175,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   AddressBuilder get address => _$this._address ??= AddressBuilder();
   set address(AddressBuilder? address) => _$this._address = address;
 
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
   String? _cellphone;
   String? get cellphone => _$this._cellphone;
   set cellphone(String? cellphone) => _$this._cellphone = cellphone;
@@ -186,10 +190,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   String? _fax;
   String? get fax => _$this._fax;
   set fax(String? fax) => _$this._fax = fax;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
 
   String? _description;
   String? get description => _$this._description;
@@ -264,10 +264,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _id = $v.id;
       _name = $v.name;
       _address = $v.address?.toBuilder();
+      _email = $v.email;
       _cellphone = $v.cellphone;
       _phone = $v.phone;
       _fax = $v.fax;
-      _email = $v.email;
       _description = $v.description;
       _keywords = $v.keywords?.toBuilder();
       _openingHours = $v.openingHours?.toBuilder();
@@ -308,10 +308,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'Location', 'name'),
             address: _address?.build(),
+            email: email,
             cellphone: cellphone,
             phone: phone,
             fax: fax,
-            email: email,
             description: description,
             keywords: _keywords?.build(),
             openingHours: _openingHours?.build(),
