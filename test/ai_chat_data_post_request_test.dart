@@ -31,5 +31,10 @@ void main() {
     test('to test the property `locationId`', () async {
       // TODO
     });
+
+    // AiChatDataPostRequestToolResponses toolResponses
+    test('to test the property `toolResponses`', () async {
+      // TODO
+    });
   });
 }

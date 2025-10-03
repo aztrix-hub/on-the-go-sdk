@@ -16,11 +16,10 @@ import 'package:on_the_go_sdk/src/model/date.dart';
 
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_call.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_email.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_search.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
@@ -76,11 +75,10 @@ part 'serializers.g.dart';
 @SerializersFor([
   Address,
   AiChatDataPost200Response,
-  AiChatDataPost200ResponseCall,
-  AiChatDataPost200ResponseEmail,
-  AiChatDataPost200ResponseSearch,
-  AiChatDataPost200ResponseText,
+  AiChatDataPost200ResponseToolCalls,
+  AiChatDataPost200ResponseToolCallsGetContact,
   AiChatDataPostRequest,
+  AiChatDataPostRequestToolResponses,
   AiChatDataPostRequestUserLocation,
   AiChatPost200Response,
   AiChatPostRequest,

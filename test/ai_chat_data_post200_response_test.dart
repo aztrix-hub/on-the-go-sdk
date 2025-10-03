@@ -7,39 +7,18 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiChatDataPost200Response, () {
-    // AiChatDataPost200ResponseSearch search
-    test('to test the property `search`', () async {
+    // JsonObject attributes
+    test('to test the property `attributes`', () async {
       // TODO
     });
 
-    // BuiltList<String> keywords
-    test('to test the property `keywords`', () async {
+    // JsonObject actions
+    test('to test the property `actions`', () async {
       // TODO
     });
 
-    // String description
-    test('to test the property `description`', () async {
-      // TODO
-    });
-
-    // Opening hours
-    // BuiltList<OpeningHour> openingHours
-    test('to test the property `openingHours`', () async {
-      // TODO
-    });
-
-    // AiChatDataPost200ResponseCall call
-    test('to test the property `call`', () async {
-      // TODO
-    });
-
-    // AiChatDataPost200ResponseText text
-    test('to test the property `text`', () async {
-      // TODO
-    });
-
-    // AiChatDataPost200ResponseEmail email
-    test('to test the property `email`', () async {
+    // AiChatDataPost200ResponseToolCalls toolCalls
+    test('to test the property `toolCalls`', () async {
       // TODO
     });
   });

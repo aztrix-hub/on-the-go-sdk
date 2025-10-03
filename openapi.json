@@ -1040,6 +1040,14 @@
                   },
                   "locationId": {
                     "type": "string"
+                  },
+                  "toolResponses": {
+                    "type": "object",
+                    "properties": {
+                      "getContact": {
+                        "$ref": "#/components/schemas/LocationOrIndividual"
+                      }
+                    }
                   }
                 }
               }
@@ -1054,71 +1062,103 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "search": {
-                      "type": "object",
-                      "properties": {
-                        "keywords": {
-                          "type": "array",
-                          "items": {
+                    "attributes": {
+                      "location": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "phone": {
+                        "type": "string"
+                      },
+                      "keywords": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "actions": {
+                      "search": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/LocationOrIndividual"
+                        }
+                      },
+                      "keywords": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "openingHours": {
+                        "$ref": "#/components/schemas/OpeningHours"
+                      },
+                      "call": {
+                        "type": "object",
+                        "properties": {
+                          "phone": {
                             "type": "string"
                           }
-                        },
-                        "name": {
-                          "type": "string"
-                        },
-                        "phone": {
-                          "type": "string"
-                        },
-                        "results": {
-                          "type": "array",
-                          "items": {
+                        }
+                      },
+                      "text": {
+                        "type": "object",
+                        "properties": {
+                          "phone": {
+                            "type": "string"
+                          },
+                          "content": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "email": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string"
+                          },
+                          "subject": {
+                            "type": "string"
+                          },
+                          "body": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "updateContact": {
+                        "type": "object",
+                        "properties": {
+                          "contact": {
                             "$ref": "#/components/schemas/LocationOrIndividual"
+                          },
+                          "results": {
+                            "type": "array",
+                            "items": {
+                              "$ref": "#/components/schemas/LocationOrIndividual"
+                            }
                           }
                         }
                       }
                     },
-                    "keywords": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    },
-                    "description": {
-                      "type": "string"
-                    },
-                    "openingHours": {
-                      "$ref": "#/components/schemas/OpeningHours"
-                    },
-                    "call": {
+                    "toolCalls": {
                       "type": "object",
                       "properties": {
-                        "phone": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "text": {
-                      "type": "object",
-                      "properties": {
-                        "phone": {
-                          "type": "string"
-                        },
-                        "content": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "email": {
-                      "type": "object",
-                      "properties": {
-                        "address": {
-                          "type": "string"
-                        },
-                        "subject": {
-                          "type": "string"
-                        },
-                        "body": {
-                          "type": "string"
+                        "getContact": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "phone": {
+                              "type": "string"
+                            }
+                          }
                         }
                       }
                     }

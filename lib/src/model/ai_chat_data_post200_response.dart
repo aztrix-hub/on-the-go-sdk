@@ -3,12 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/opening_hour.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_call.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_text.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_email.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_search.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,38 +13,21 @@ part 'ai_chat_data_post200_response.g.dart';
 /// AiChatDataPost200Response
 ///
 /// Properties:
-/// * [search]
-/// * [keywords]
-/// * [description]
-/// * [openingHours] - Opening hours
-/// * [call]
-/// * [text]
-/// * [email]
+/// * [attributes]
+/// * [actions]
+/// * [toolCalls]
 @BuiltValue()
 abstract class AiChatDataPost200Response
     implements
         Built<AiChatDataPost200Response, AiChatDataPost200ResponseBuilder> {
-  @BuiltValueField(wireName: r'search')
-  AiChatDataPost200ResponseSearch? get search;
+  @BuiltValueField(wireName: r'attributes')
+  JsonObject? get attributes;
 
-  @BuiltValueField(wireName: r'keywords')
-  BuiltList<String>? get keywords;
+  @BuiltValueField(wireName: r'actions')
+  JsonObject? get actions;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
-
-  /// Opening hours
-  @BuiltValueField(wireName: r'openingHours')
-  BuiltList<OpeningHour>? get openingHours;
-
-  @BuiltValueField(wireName: r'call')
-  AiChatDataPost200ResponseCall? get call;
-
-  @BuiltValueField(wireName: r'text')
-  AiChatDataPost200ResponseText? get text;
-
-  @BuiltValueField(wireName: r'email')
-  AiChatDataPost200ResponseEmail? get email;
+  @BuiltValueField(wireName: r'toolCalls')
+  AiChatDataPost200ResponseToolCalls? get toolCalls;
 
   AiChatDataPost200Response._();
 
@@ -80,53 +59,25 @@ class _$AiChatDataPost200ResponseSerializer
     AiChatDataPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.search != null) {
-      yield r'search';
+    if (object.attributes != null) {
+      yield r'attributes';
       yield serializers.serialize(
-        object.search,
-        specifiedType: const FullType(AiChatDataPost200ResponseSearch),
+        object.attributes,
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
-    if (object.keywords != null) {
-      yield r'keywords';
+    if (object.actions != null) {
+      yield r'actions';
       yield serializers.serialize(
-        object.keywords,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
+        object.actions,
+        specifiedType: const FullType.nullable(JsonObject),
       );
     }
-    if (object.description != null) {
-      yield r'description';
+    if (object.toolCalls != null) {
+      yield r'toolCalls';
       yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.openingHours != null) {
-      yield r'openingHours';
-      yield serializers.serialize(
-        object.openingHours,
-        specifiedType: const FullType(BuiltList, [FullType(OpeningHour)]),
-      );
-    }
-    if (object.call != null) {
-      yield r'call';
-      yield serializers.serialize(
-        object.call,
-        specifiedType: const FullType(AiChatDataPost200ResponseCall),
-      );
-    }
-    if (object.text != null) {
-      yield r'text';
-      yield serializers.serialize(
-        object.text,
-        specifiedType: const FullType(AiChatDataPost200ResponseText),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(AiChatDataPost200ResponseEmail),
+        object.toolCalls,
+        specifiedType: const FullType(AiChatDataPost200ResponseToolCalls),
       );
     }
   }
@@ -154,54 +105,28 @@ class _$AiChatDataPost200ResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'search':
+        case r'attributes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiChatDataPost200ResponseSearch),
-          ) as AiChatDataPost200ResponseSearch;
-          result.search.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.attributes = valueDes;
           break;
-        case r'keywords':
+        case r'actions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.keywords.replace(valueDes);
+            specifiedType: const FullType.nullable(JsonObject),
+          ) as JsonObject?;
+          if (valueDes == null) continue;
+          result.actions = valueDes;
           break;
-        case r'description':
+        case r'toolCalls':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'openingHours':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(OpeningHour)]),
-          ) as BuiltList<OpeningHour>;
-          result.openingHours.replace(valueDes);
-          break;
-        case r'call':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AiChatDataPost200ResponseCall),
-          ) as AiChatDataPost200ResponseCall;
-          result.call.replace(valueDes);
-          break;
-        case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AiChatDataPost200ResponseText),
-          ) as AiChatDataPost200ResponseText;
-          result.text.replace(valueDes);
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AiChatDataPost200ResponseEmail),
-          ) as AiChatDataPost200ResponseEmail;
-          result.email.replace(valueDes);
+            specifiedType: const FullType(AiChatDataPost200ResponseToolCalls),
+          ) as AiChatDataPost200ResponseToolCalls;
+          result.toolCalls.replace(valueDes);
           break;
         default:
           unhandled.add(key);

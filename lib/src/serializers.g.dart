@@ -9,11 +9,10 @@ part of 'serializers.dart';
 Serializers _$serializers = (Serializers().toBuilder()
       ..add(Address.serializer)
       ..add(AiChatDataPost200Response.serializer)
-      ..add(AiChatDataPost200ResponseCall.serializer)
-      ..add(AiChatDataPost200ResponseEmail.serializer)
-      ..add(AiChatDataPost200ResponseSearch.serializer)
-      ..add(AiChatDataPost200ResponseText.serializer)
+      ..add(AiChatDataPost200ResponseToolCalls.serializer)
+      ..add(AiChatDataPost200ResponseToolCallsGetContact.serializer)
       ..add(AiChatDataPostRequest.serializer)
+      ..add(AiChatDataPostRequestToolResponses.serializer)
       ..add(AiChatDataPostRequestUserLocation.serializer)
       ..add(AiChatPost200Response.serializer)
       ..add(AiChatPostRequest.serializer)
@@ -136,19 +135,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(
-              BuiltList, const [const FullType(LocationOrIndividual)]),
-          () => ListBuilder<LocationOrIndividual>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(OpeningHour)]),
-          () => ListBuilder<OpeningHour>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

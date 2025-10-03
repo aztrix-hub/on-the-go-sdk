@@ -17,6 +17,8 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
   final String? dateTime;
   @override
   final String? locationId;
+  @override
+  final AiChatDataPostRequestToolResponses? toolResponses;
 
   factory _$AiChatDataPostRequest(
           [void Function(AiChatDataPostRequestBuilder)? updates]) =>
@@ -27,7 +29,8 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
       required this.message,
       this.userLocation,
       this.dateTime,
-      this.locationId})
+      this.locationId,
+      this.toolResponses})
       : super._();
   @override
   AiChatDataPostRequest rebuild(
@@ -46,7 +49,8 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
         message == other.message &&
         userLocation == other.userLocation &&
         dateTime == other.dateTime &&
-        locationId == other.locationId;
+        locationId == other.locationId &&
+        toolResponses == other.toolResponses;
   }
 
   @override
@@ -57,6 +61,7 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
     _$hash = $jc(_$hash, userLocation.hashCode);
     _$hash = $jc(_$hash, dateTime.hashCode);
     _$hash = $jc(_$hash, locationId.hashCode);
+    _$hash = $jc(_$hash, toolResponses.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -68,7 +73,8 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
           ..add('message', message)
           ..add('userLocation', userLocation)
           ..add('dateTime', dateTime)
-          ..add('locationId', locationId))
+          ..add('locationId', locationId)
+          ..add('toolResponses', toolResponses))
         .toString();
   }
 }
@@ -99,6 +105,12 @@ class AiChatDataPostRequestBuilder
   String? get locationId => _$this._locationId;
   set locationId(String? locationId) => _$this._locationId = locationId;
 
+  AiChatDataPostRequestToolResponsesBuilder? _toolResponses;
+  AiChatDataPostRequestToolResponsesBuilder get toolResponses =>
+      _$this._toolResponses ??= AiChatDataPostRequestToolResponsesBuilder();
+  set toolResponses(AiChatDataPostRequestToolResponsesBuilder? toolResponses) =>
+      _$this._toolResponses = toolResponses;
+
   AiChatDataPostRequestBuilder() {
     AiChatDataPostRequest._defaults(this);
   }
@@ -111,6 +123,7 @@ class AiChatDataPostRequestBuilder
       _userLocation = $v.userLocation?.toBuilder();
       _dateTime = $v.dateTime;
       _locationId = $v.locationId;
+      _toolResponses = $v.toolResponses?.toBuilder();
       _$v = null;
     }
     return this;
@@ -141,12 +154,16 @@ class AiChatDataPostRequestBuilder
             userLocation: _userLocation?.build(),
             dateTime: dateTime,
             locationId: locationId,
+            toolResponses: _toolResponses?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'userLocation';
         _userLocation?.build();
+
+        _$failedField = 'toolResponses';
+        _toolResponses?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiChatDataPostRequest', _$failedField, e.toString());
