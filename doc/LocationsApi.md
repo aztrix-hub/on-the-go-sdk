@@ -10,6 +10,7 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get categories
+[**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
 [**locationListingConnectGet**](LocationsApi.md#locationlistingconnectget) | **GET** /location/listing/connect | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
@@ -64,6 +65,51 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationDelete**
+> LocationDelete200Response locationDelete(locationDeleteRequest)
+
+Delete a Location
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final LocationDeleteRequest locationDeleteRequest = ; // LocationDeleteRequest | 
+
+try {
+    final response = api.locationDelete(locationDeleteRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationDelete: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationDeleteRequest** | [**LocationDeleteRequest**](LocationDeleteRequest.md)|  | 
+
+### Return type
+
+[**LocationDelete200Response**](LocationDelete200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

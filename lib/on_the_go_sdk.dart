@@ -57,6 +57,8 @@ export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 export 'package:on_the_go_sdk/src/model/individual.dart';
 export 'package:on_the_go_sdk/src/model/listing.dart';
 export 'package:on_the_go_sdk/src/model/location.dart';
+export 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
+export 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 export 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 export 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
