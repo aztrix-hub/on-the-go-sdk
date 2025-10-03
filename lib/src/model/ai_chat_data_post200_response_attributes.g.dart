@@ -16,6 +16,14 @@ class _$AiChatDataPost200ResponseAttributes
   final String? phone;
   @override
   final BuiltList<String>? keywords;
+  @override
+  final String? email;
+  @override
+  final String? emailBody;
+  @override
+  final String? emailSubject;
+  @override
+  final String? textBody;
 
   factory _$AiChatDataPost200ResponseAttributes(
           [void Function(AiChatDataPost200ResponseAttributesBuilder)?
@@ -23,7 +31,14 @@ class _$AiChatDataPost200ResponseAttributes
       (AiChatDataPost200ResponseAttributesBuilder()..update(updates))._build();
 
   _$AiChatDataPost200ResponseAttributes._(
-      {this.location, this.name, this.phone, this.keywords})
+      {this.location,
+      this.name,
+      this.phone,
+      this.keywords,
+      this.email,
+      this.emailBody,
+      this.emailSubject,
+      this.textBody})
       : super._();
   @override
   AiChatDataPost200ResponseAttributes rebuild(
@@ -41,7 +56,11 @@ class _$AiChatDataPost200ResponseAttributes
         location == other.location &&
         name == other.name &&
         phone == other.phone &&
-        keywords == other.keywords;
+        keywords == other.keywords &&
+        email == other.email &&
+        emailBody == other.emailBody &&
+        emailSubject == other.emailSubject &&
+        textBody == other.textBody;
   }
 
   @override
@@ -51,6 +70,10 @@ class _$AiChatDataPost200ResponseAttributes
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, emailBody.hashCode);
+    _$hash = $jc(_$hash, emailSubject.hashCode);
+    _$hash = $jc(_$hash, textBody.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -61,7 +84,11 @@ class _$AiChatDataPost200ResponseAttributes
           ..add('location', location)
           ..add('name', name)
           ..add('phone', phone)
-          ..add('keywords', keywords))
+          ..add('keywords', keywords)
+          ..add('email', email)
+          ..add('emailBody', emailBody)
+          ..add('emailSubject', emailSubject)
+          ..add('textBody', textBody))
         .toString();
   }
 }
@@ -89,6 +116,22 @@ class AiChatDataPost200ResponseAttributesBuilder
       _$this._keywords ??= ListBuilder<String>();
   set keywords(ListBuilder<String>? keywords) => _$this._keywords = keywords;
 
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
+  String? _emailBody;
+  String? get emailBody => _$this._emailBody;
+  set emailBody(String? emailBody) => _$this._emailBody = emailBody;
+
+  String? _emailSubject;
+  String? get emailSubject => _$this._emailSubject;
+  set emailSubject(String? emailSubject) => _$this._emailSubject = emailSubject;
+
+  String? _textBody;
+  String? get textBody => _$this._textBody;
+  set textBody(String? textBody) => _$this._textBody = textBody;
+
   AiChatDataPost200ResponseAttributesBuilder() {
     AiChatDataPost200ResponseAttributes._defaults(this);
   }
@@ -100,6 +143,10 @@ class AiChatDataPost200ResponseAttributesBuilder
       _name = $v.name;
       _phone = $v.phone;
       _keywords = $v.keywords?.toBuilder();
+      _email = $v.email;
+      _emailBody = $v.emailBody;
+      _emailSubject = $v.emailSubject;
+      _textBody = $v.textBody;
       _$v = null;
     }
     return this;
@@ -128,6 +175,10 @@ class AiChatDataPost200ResponseAttributesBuilder
             name: name,
             phone: phone,
             keywords: _keywords?.build(),
+            email: email,
+            emailBody: emailBody,
+            emailSubject: emailSubject,
+            textBody: textBody,
           );
     } catch (_) {
       late String _$failedField;

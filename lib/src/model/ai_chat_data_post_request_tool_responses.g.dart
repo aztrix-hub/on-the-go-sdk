@@ -9,7 +9,7 @@ part of 'ai_chat_data_post_request_tool_responses.dart';
 class _$AiChatDataPostRequestToolResponses
     extends AiChatDataPostRequestToolResponses {
   @override
-  final LocationOrIndividual? getContact;
+  final Individual? getContact;
 
   factory _$AiChatDataPostRequestToolResponses(
           [void Function(AiChatDataPostRequestToolResponsesBuilder)?
@@ -55,10 +55,10 @@ class AiChatDataPostRequestToolResponsesBuilder
             AiChatDataPostRequestToolResponsesBuilder> {
   _$AiChatDataPostRequestToolResponses? _$v;
 
-  LocationOrIndividualBuilder? _getContact;
-  LocationOrIndividualBuilder get getContact =>
-      _$this._getContact ??= LocationOrIndividualBuilder();
-  set getContact(LocationOrIndividualBuilder? getContact) =>
+  IndividualBuilder? _getContact;
+  IndividualBuilder get getContact =>
+      _$this._getContact ??= IndividualBuilder();
+  set getContact(IndividualBuilder? getContact) =>
       _$this._getContact = getContact;
 
   AiChatDataPostRequestToolResponsesBuilder() {

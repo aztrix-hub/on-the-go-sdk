@@ -26,5 +26,25 @@ void main() {
     test('to test the property `keywords`', () async {
       // TODO
     });
+
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
+
+    // String emailBody
+    test('to test the property `emailBody`', () async {
+      // TODO
+    });
+
+    // String emailSubject
+    test('to test the property `emailSubject`', () async {
+      // TODO
+    });
+
+    // String textBody
+    test('to test the property `textBody`', () async {
+      // TODO
+    });
   });
 }

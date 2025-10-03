@@ -16,6 +16,10 @@ part 'ai_chat_data_post200_response_attributes.g.dart';
 /// * [name]
 /// * [phone]
 /// * [keywords]
+/// * [email]
+/// * [emailBody]
+/// * [emailSubject]
+/// * [textBody]
 @BuiltValue()
 abstract class AiChatDataPost200ResponseAttributes
     implements
@@ -32,6 +36,18 @@ abstract class AiChatDataPost200ResponseAttributes
 
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
+
+  @BuiltValueField(wireName: r'email')
+  String? get email;
+
+  @BuiltValueField(wireName: r'emailBody')
+  String? get emailBody;
+
+  @BuiltValueField(wireName: r'emailSubject')
+  String? get emailSubject;
+
+  @BuiltValueField(wireName: r'textBody')
+  String? get textBody;
 
   AiChatDataPost200ResponseAttributes._();
 
@@ -91,6 +107,34 @@ class _$AiChatDataPost200ResponseAttributesSerializer
         specifiedType: const FullType(BuiltList, [FullType(String)]),
       );
     }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.emailBody != null) {
+      yield r'emailBody';
+      yield serializers.serialize(
+        object.emailBody,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.emailSubject != null) {
+      yield r'emailSubject';
+      yield serializers.serialize(
+        object.emailSubject,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.textBody != null) {
+      yield r'textBody';
+      yield serializers.serialize(
+        object.textBody,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -143,6 +187,34 @@ class _$AiChatDataPost200ResponseAttributesSerializer
             specifiedType: const FullType(BuiltList, [FullType(String)]),
           ) as BuiltList<String>;
           result.keywords.replace(valueDes);
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'emailBody':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.emailBody = valueDes;
+          break;
+        case r'emailSubject':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.emailSubject = valueDes;
+          break;
+        case r'textBody':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.textBody = valueDes;
           break;
         default:
           unhandled.add(key);
