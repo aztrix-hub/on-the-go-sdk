@@ -22,6 +22,12 @@ export 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
 
 export 'package:on_the_go_sdk/src/model/address.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
+export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_attributes.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';

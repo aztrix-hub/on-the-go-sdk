@@ -9,6 +9,12 @@ part of 'serializers.dart';
 Serializers _$serializers = (Serializers().toBuilder()
       ..add(Address.serializer)
       ..add(AiChatDataPost200Response.serializer)
+      ..add(AiChatDataPost200ResponseActions.serializer)
+      ..add(AiChatDataPost200ResponseActionsCall.serializer)
+      ..add(AiChatDataPost200ResponseActionsEmail.serializer)
+      ..add(AiChatDataPost200ResponseActionsText.serializer)
+      ..add(AiChatDataPost200ResponseActionsUpdateContact.serializer)
+      ..add(AiChatDataPost200ResponseAttributes.serializer)
       ..add(AiChatDataPost200ResponseToolCalls.serializer)
       ..add(AiChatDataPost200ResponseToolCallsGetContact.serializer)
       ..add(AiChatDataPostRequest.serializer)
@@ -116,6 +122,20 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(LocationOrIndividual)]),
+          () => ListBuilder<LocationOrIndividual>())
+      ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(LocationOrIndividual)]),
+          () => ListBuilder<LocationOrIndividual>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(OpeningHour)]),
+          () => ListBuilder<OpeningHour>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Metric)]),
           () => ListBuilder<Metric>())
       ..addBuilderFactory(
@@ -132,6 +152,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPost)]),
           () => ListBuilder<SocialPost>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

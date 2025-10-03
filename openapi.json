@@ -1063,84 +1063,90 @@
                   "type": "object",
                   "properties": {
                     "attributes": {
-                      "location": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "phone": {
-                        "type": "string"
-                      },
-                      "keywords": {
-                        "type": "array",
-                        "items": {
+                      "type": "object",
+                      "properties": {
+                        "location": {
                           "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "phone": {
+                          "type": "string"
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
                         }
                       }
                     },
                     "actions": {
-                      "search": {
-                        "type": "array",
-                        "items": {
-                          "$ref": "#/components/schemas/LocationOrIndividual"
-                        }
-                      },
-                      "keywords": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "openingHours": {
-                        "$ref": "#/components/schemas/OpeningHours"
-                      },
-                      "call": {
-                        "type": "object",
-                        "properties": {
-                          "phone": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "text": {
-                        "type": "object",
-                        "properties": {
-                          "phone": {
-                            "type": "string"
-                          },
-                          "content": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "email": {
-                        "type": "object",
-                        "properties": {
-                          "address": {
-                            "type": "string"
-                          },
-                          "subject": {
-                            "type": "string"
-                          },
-                          "body": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "updateContact": {
-                        "type": "object",
-                        "properties": {
-                          "contact": {
+                      "type": "object",
+                      "properties": {
+                        "search": {
+                          "type": "array",
+                          "items": {
                             "$ref": "#/components/schemas/LocationOrIndividual"
-                          },
-                          "results": {
-                            "type": "array",
-                            "items": {
+                          }
+                        },
+                        "keywords": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "description": {
+                          "type": "string"
+                        },
+                        "openingHours": {
+                          "$ref": "#/components/schemas/OpeningHours"
+                        },
+                        "call": {
+                          "type": "object",
+                          "properties": {
+                            "phone": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "text": {
+                          "type": "object",
+                          "properties": {
+                            "phone": {
+                              "type": "string"
+                            },
+                            "content": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "email": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            },
+                            "subject": {
+                              "type": "string"
+                            },
+                            "body": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "updateContact": {
+                          "type": "object",
+                          "properties": {
+                            "contact": {
                               "$ref": "#/components/schemas/LocationOrIndividual"
+                            },
+                            "results": {
+                              "type": "array",
+                              "items": {
+                                "$ref": "#/components/schemas/LocationOrIndividual"
+                              }
                             }
                           }
                         }

@@ -109,6 +109,12 @@ Class | Method | HTTP request | Description
 
  - [Address](doc/Address.md)
  - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
+ - [AiChatDataPost200ResponseActions](doc/AiChatDataPost200ResponseActions.md)
+ - [AiChatDataPost200ResponseActionsCall](doc/AiChatDataPost200ResponseActionsCall.md)
+ - [AiChatDataPost200ResponseActionsEmail](doc/AiChatDataPost200ResponseActionsEmail.md)
+ - [AiChatDataPost200ResponseActionsText](doc/AiChatDataPost200ResponseActionsText.md)
+ - [AiChatDataPost200ResponseActionsUpdateContact](doc/AiChatDataPost200ResponseActionsUpdateContact.md)
+ - [AiChatDataPost200ResponseAttributes](doc/AiChatDataPost200ResponseAttributes.md)
  - [AiChatDataPost200ResponseToolCalls](doc/AiChatDataPost200ResponseToolCalls.md)
  - [AiChatDataPost200ResponseToolCallsGetContact](doc/AiChatDataPost200ResponseToolCallsGetContact.md)
  - [AiChatDataPostRequest](doc/AiChatDataPostRequest.md)

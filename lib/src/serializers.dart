@@ -16,6 +16,12 @@ import 'package:on_the_go_sdk/src/model/date.dart';
 
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
@@ -75,6 +81,12 @@ part 'serializers.g.dart';
 @SerializersFor([
   Address,
   AiChatDataPost200Response,
+  AiChatDataPost200ResponseActions,
+  AiChatDataPost200ResponseActionsCall,
+  AiChatDataPost200ResponseActionsEmail,
+  AiChatDataPost200ResponseActionsText,
+  AiChatDataPost200ResponseActionsUpdateContact,
+  AiChatDataPost200ResponseAttributes,
   AiChatDataPost200ResponseToolCalls,
   AiChatDataPost200ResponseToolCallsGetContact,
   AiChatDataPostRequest,

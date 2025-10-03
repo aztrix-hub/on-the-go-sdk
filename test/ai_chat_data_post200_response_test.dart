@@ -7,12 +7,12 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiChatDataPost200Response, () {
-    // JsonObject attributes
+    // AiChatDataPost200ResponseAttributes attributes
     test('to test the property `attributes`', () async {
       // TODO
     });
 
-    // JsonObject actions
+    // AiChatDataPost200ResponseActions actions
     test('to test the property `actions`', () async {
       // TODO
     });

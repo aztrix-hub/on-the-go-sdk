@@ -3,8 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
-import 'package:built_value/json_object.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,10 +22,10 @@ abstract class AiChatDataPost200Response
     implements
         Built<AiChatDataPost200Response, AiChatDataPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'attributes')
-  JsonObject? get attributes;
+  AiChatDataPost200ResponseAttributes? get attributes;
 
   @BuiltValueField(wireName: r'actions')
-  JsonObject? get actions;
+  AiChatDataPost200ResponseActions? get actions;
 
   @BuiltValueField(wireName: r'toolCalls')
   AiChatDataPost200ResponseToolCalls? get toolCalls;
@@ -63,14 +64,14 @@ class _$AiChatDataPost200ResponseSerializer
       yield r'attributes';
       yield serializers.serialize(
         object.attributes,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(AiChatDataPost200ResponseAttributes),
       );
     }
     if (object.actions != null) {
       yield r'actions';
       yield serializers.serialize(
         object.actions,
-        specifiedType: const FullType.nullable(JsonObject),
+        specifiedType: const FullType(AiChatDataPost200ResponseActions),
       );
     }
     if (object.toolCalls != null) {
@@ -108,18 +109,16 @@ class _$AiChatDataPost200ResponseSerializer
         case r'attributes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.attributes = valueDes;
+            specifiedType: const FullType(AiChatDataPost200ResponseAttributes),
+          ) as AiChatDataPost200ResponseAttributes;
+          result.attributes.replace(valueDes);
           break;
         case r'actions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType.nullable(JsonObject),
-          ) as JsonObject?;
-          if (valueDes == null) continue;
-          result.actions = valueDes;
+            specifiedType: const FullType(AiChatDataPost200ResponseActions),
+          ) as AiChatDataPost200ResponseActions;
+          result.actions.replace(valueDes);
           break;
         case r'toolCalls':
           final valueDes = serializers.deserialize(

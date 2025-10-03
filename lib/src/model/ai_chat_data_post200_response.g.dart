@@ -8,9 +8,9 @@ part of 'ai_chat_data_post200_response.dart';
 
 class _$AiChatDataPost200Response extends AiChatDataPost200Response {
   @override
-  final JsonObject? attributes;
+  final AiChatDataPost200ResponseAttributes? attributes;
   @override
-  final JsonObject? actions;
+  final AiChatDataPost200ResponseActions? actions;
   @override
   final AiChatDataPost200ResponseToolCalls? toolCalls;
 
@@ -63,13 +63,17 @@ class AiChatDataPost200ResponseBuilder
         Builder<AiChatDataPost200Response, AiChatDataPost200ResponseBuilder> {
   _$AiChatDataPost200Response? _$v;
 
-  JsonObject? _attributes;
-  JsonObject? get attributes => _$this._attributes;
-  set attributes(JsonObject? attributes) => _$this._attributes = attributes;
+  AiChatDataPost200ResponseAttributesBuilder? _attributes;
+  AiChatDataPost200ResponseAttributesBuilder get attributes =>
+      _$this._attributes ??= AiChatDataPost200ResponseAttributesBuilder();
+  set attributes(AiChatDataPost200ResponseAttributesBuilder? attributes) =>
+      _$this._attributes = attributes;
 
-  JsonObject? _actions;
-  JsonObject? get actions => _$this._actions;
-  set actions(JsonObject? actions) => _$this._actions = actions;
+  AiChatDataPost200ResponseActionsBuilder? _actions;
+  AiChatDataPost200ResponseActionsBuilder get actions =>
+      _$this._actions ??= AiChatDataPost200ResponseActionsBuilder();
+  set actions(AiChatDataPost200ResponseActionsBuilder? actions) =>
+      _$this._actions = actions;
 
   AiChatDataPost200ResponseToolCallsBuilder? _toolCalls;
   AiChatDataPost200ResponseToolCallsBuilder get toolCalls =>
@@ -84,8 +88,8 @@ class AiChatDataPost200ResponseBuilder
   AiChatDataPost200ResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _attributes = $v.attributes;
-      _actions = $v.actions;
+      _attributes = $v.attributes?.toBuilder();
+      _actions = $v.actions?.toBuilder();
       _toolCalls = $v.toolCalls?.toBuilder();
       _$v = null;
     }
@@ -110,13 +114,17 @@ class AiChatDataPost200ResponseBuilder
     try {
       _$result = _$v ??
           _$AiChatDataPost200Response._(
-            attributes: attributes,
-            actions: actions,
+            attributes: _attributes?.build(),
+            actions: _actions?.build(),
             toolCalls: _toolCalls?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
+        _$failedField = 'attributes';
+        _attributes?.build();
+        _$failedField = 'actions';
+        _actions?.build();
         _$failedField = 'toolCalls';
         _toolCalls?.build();
       } catch (e) {
