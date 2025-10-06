@@ -1084,6 +1084,9 @@
                       "longitude": {
                         "type": "number",
                         "format": "double"
+                      },
+                      "freeform": {
+                        "type": "string"
                       }
                     }
                   },

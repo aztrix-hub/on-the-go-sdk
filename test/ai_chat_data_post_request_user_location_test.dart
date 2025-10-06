@@ -16,5 +16,10 @@ void main() {
     test('to test the property `longitude`', () async {
       // TODO
     });
+
+    // String freeform
+    test('to test the property `freeform`', () async {
+      // TODO
+    });
   });
 }

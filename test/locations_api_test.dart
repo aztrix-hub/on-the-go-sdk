@@ -13,6 +13,13 @@ void main() {
       // TODO
     });
 
+    // Delete a Location
+    //
+    //Future<LocationDelete200Response> locationDelete(LocationDeleteRequest locationDeleteRequest) async
+    test('test locationDelete', () async {
+      // TODO
+    });
+
     // Get a Location
     //
     //Future<Location> locationGet(String id) async
