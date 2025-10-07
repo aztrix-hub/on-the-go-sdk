@@ -38,5 +38,11 @@ void main() {
     test('to test the property `birthDate`', () async {
       // TODO
     });
+
+    // Email
+    // String email
+    test('to test the property `email`', () async {
+      // TODO
+    });
   });
 }

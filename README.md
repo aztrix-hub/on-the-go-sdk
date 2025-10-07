@@ -123,7 +123,6 @@ Class | Method | HTTP request | Description
  - [AiChatDataPostRequestUserLocation](doc/AiChatDataPostRequestUserLocation.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
- - [AiChatPostRequestUserLocation](doc/AiChatPostRequestUserLocation.md)
  - [AiLegacyChatPost200Response](doc/AiLegacyChatPost200Response.md)
  - [AiLegacyChatPostRequest](doc/AiLegacyChatPostRequest.md)
  - [AiLegacyConversationPost200Response](doc/AiLegacyConversationPost200Response.md)

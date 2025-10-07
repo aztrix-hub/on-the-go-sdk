@@ -19,6 +19,7 @@ part 'individual.g.dart';
 /// * [address]
 /// * [phone]
 /// * [birthDate]
+/// * [email] - Email
 @BuiltValue()
 abstract class Individual implements Built<Individual, IndividualBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -40,6 +41,10 @@ abstract class Individual implements Built<Individual, IndividualBuilder> {
 
   @BuiltValueField(wireName: r'birthDate')
   Date? get birthDate;
+
+  /// Email
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
   Individual._();
 
@@ -100,6 +105,13 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
       yield serializers.serialize(
         object.birthDate,
         specifiedType: const FullType(Date),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -168,6 +180,13 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
             specifiedType: const FullType(Date),
           ) as Date;
           result.birthDate = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         default:
           unhandled.add(key);

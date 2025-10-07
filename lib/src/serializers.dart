@@ -29,7 +29,6 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
@@ -96,7 +95,6 @@ part 'serializers.g.dart';
   AiChatDataPostRequestUserLocation,
   AiChatPost200Response,
   AiChatPostRequest,
-  AiChatPostRequestUserLocation,
   AiLegacyChatPost200Response,
   AiLegacyChatPostRequest,
   AiLegacyConversationPost200Response,

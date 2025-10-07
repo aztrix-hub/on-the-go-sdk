@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | 
 **name** | **String** |  | 
 **address** | [**Address**](Address.md) |  | [optional] 
-**email** | **String** |  | [optional] 
+**email** | **String** | Email | [optional] 
 **cellphone** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **fax** | **String** |  | [optional] 

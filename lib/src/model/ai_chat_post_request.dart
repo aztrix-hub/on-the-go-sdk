@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/ai_chat_post_request_user_location.dart';
+import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request_user_location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -30,7 +30,7 @@ abstract class AiChatPostRequest
   String get message;
 
   @BuiltValueField(wireName: r'userLocation')
-  AiChatPostRequestUserLocation? get userLocation;
+  AiLegacyConversationPostRequestUserLocation? get userLocation;
 
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
@@ -82,7 +82,8 @@ class _$AiChatPostRequestSerializer
       yield r'userLocation';
       yield serializers.serialize(
         object.userLocation,
-        specifiedType: const FullType(AiChatPostRequestUserLocation),
+        specifiedType:
+            const FullType(AiLegacyConversationPostRequestUserLocation),
       );
     }
     if (object.dateTime != null) {
@@ -141,8 +142,9 @@ class _$AiChatPostRequestSerializer
         case r'userLocation':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiChatPostRequestUserLocation),
-          ) as AiChatPostRequestUserLocation;
+            specifiedType:
+                const FullType(AiLegacyConversationPostRequestUserLocation),
+          ) as AiLegacyConversationPostRequestUserLocation;
           result.userLocation.replace(valueDes);
           break;
         case r'dateTime':

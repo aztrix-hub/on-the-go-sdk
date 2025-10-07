@@ -17,7 +17,7 @@ part 'location_or_individual.g.dart';
 /// * [id]
 /// * [name]
 /// * [address]
-/// * [email]
+/// * [email] - Email
 /// * [cellphone]
 /// * [phone]
 /// * [fax]

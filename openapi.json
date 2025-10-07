@@ -1009,6 +1009,9 @@
                         "maximum": 180,
                         "type": "number",
                         "format": "double"
+                      },
+                      "freeform": {
+                        "type": "string"
                       }
                     }
                   },
@@ -2223,6 +2226,10 @@
           "birthDate": {
             "type": "string",
             "format": "date"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email"
           }
         },
         "description": "User Model"

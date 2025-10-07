@@ -22,6 +22,7 @@ void main() {
       // TODO
     });
 
+    // Email
     // String email
     test('to test the property `email`', () async {
       // TODO
