@@ -7,6 +7,16 @@ part of 'serializers.dart';
 // **************************************************************************
 
 Serializers _$serializers = (Serializers().toBuilder()
+      ..add(AIActions.serializer)
+      ..add(AIMessage.serializer)
+      ..add(AIMessageAttributes.serializer)
+      ..add(AIMessageCurrentContext.serializer)
+      ..add(AIMessageCurrentContextTypeEnum.serializer)
+      ..add(AIMessageLocationAttribute.serializer)
+      ..add(AIMessageLocationAttributeBoundingBox.serializer)
+      ..add(AIMessageLocationAttributeCoordinates.serializer)
+      ..add(AIMessageMessage.serializer)
+      ..add(AIMessageRoleEnum.serializer)
       ..add(Address.serializer)
       ..add(AiChatDataPost200Response.serializer)
       ..add(AiChatDataPost200ResponseActions.serializer)
@@ -22,6 +32,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiChatDataPostRequestUserLocation.serializer)
       ..add(AiChatPost200Response.serializer)
       ..add(AiChatPostRequest.serializer)
+      ..add(AiConversationDataPost200Response.serializer)
+      ..add(AiConversationDataPostRequest.serializer)
+      ..add(AiConversationPost200Response.serializer)
+      ..add(AiConversationPostRequest.serializer)
       ..add(AiLegacyChatPost200Response.serializer)
       ..add(AiLegacyChatPostRequest.serializer)
       ..add(AiLegacyConversationPost200Response.serializer)
@@ -73,6 +87,15 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(UserOauthPostRequest.serializer)
       ..add(WhitelabelData.serializer)
       ..add(WhitelabelDataThemeEnum.serializer)
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AIMessage)]),
+          () => ListBuilder<AIMessage>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AIMessage)]),
+          () => ListBuilder<AIMessage>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AIMessage)]),
+          () => ListBuilder<AIMessage>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [
             const FullType(AiLegacyConversationPost200ResponseMessagesInner)
@@ -137,6 +160,16 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(OpeningHour)]),
           () => ListBuilder<OpeningHour>())
       ..addBuilderFactory(
+          const FullType(
+              BuiltList, const [const FullType(LocationOrIndividual)]),
+          () => ListBuilder<LocationOrIndividual>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(OpeningHour)]),
+          () => ListBuilder<OpeningHour>())
+      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Metric)]),
           () => ListBuilder<Metric>())
       ..addBuilderFactory(
@@ -153,6 +186,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPost)]),
           () => ListBuilder<SocialPost>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

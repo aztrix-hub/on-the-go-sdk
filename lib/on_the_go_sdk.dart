@@ -20,6 +20,14 @@ export 'package:on_the_go_sdk/src/api/sites_api.dart';
 export 'package:on_the_go_sdk/src/api/users_api.dart';
 export 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
 
+export 'package:on_the_go_sdk/src/model/ai_actions.dart';
+export 'package:on_the_go_sdk/src/model/ai_message.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_attributes.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_current_context.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_location_attribute_bounding_box.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
+export 'package:on_the_go_sdk/src/model/ai_message_message.dart';
 export 'package:on_the_go_sdk/src/model/address.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';
@@ -35,6 +43,10 @@ export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
+export 'package:on_the_go_sdk/src/model/ai_conversation_data_post200_response.dart';
+export 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
+export 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
+export 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_legacy_chat_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';

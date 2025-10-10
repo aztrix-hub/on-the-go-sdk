@@ -11,6 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aiChatDataPost**](AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
+[**aiConversationDataPost**](AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
+[**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [**aiLegacyChatPost**](AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
 [**aiLegacyConversationPost**](AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
@@ -97,6 +99,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AiChatPost200Response**](AiChatPost200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiConversationDataPost**
+> AiConversationDataPost200Response aiConversationDataPost(aiConversationDataPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+final AiConversationDataPostRequest aiConversationDataPostRequest = ; // AiConversationDataPostRequest | 
+
+try {
+    final response = api.aiConversationDataPost(aiConversationDataPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiConversationDataPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiConversationDataPostRequest** | [**AiConversationDataPostRequest**](AiConversationDataPostRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiConversationDataPost200Response**](AiConversationDataPost200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiConversationPost**
+> AiConversationPost200Response aiConversationPost(aiConversationPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+final AiConversationPostRequest aiConversationPostRequest = ; // AiConversationPostRequest | 
+
+try {
+    final response = api.aiConversationPost(aiConversationPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiConversationPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiConversationPostRequest** | [**AiConversationPostRequest**](AiConversationPostRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiConversationPost200Response**](AiConversationPost200Response.md)
 
 ### Authorization
 

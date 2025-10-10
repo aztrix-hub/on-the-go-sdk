@@ -67,6 +67,8 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatDataPost**](doc/AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationDataPost**](doc/AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyChatPost**](doc/AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyConversationPost**](doc/AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
@@ -108,6 +110,14 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AIActions](doc/AIActions.md)
+ - [AIMessage](doc/AIMessage.md)
+ - [AIMessageAttributes](doc/AIMessageAttributes.md)
+ - [AIMessageCurrentContext](doc/AIMessageCurrentContext.md)
+ - [AIMessageLocationAttribute](doc/AIMessageLocationAttribute.md)
+ - [AIMessageLocationAttributeBoundingBox](doc/AIMessageLocationAttributeBoundingBox.md)
+ - [AIMessageLocationAttributeCoordinates](doc/AIMessageLocationAttributeCoordinates.md)
+ - [AIMessageMessage](doc/AIMessageMessage.md)
  - [Address](doc/Address.md)
  - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
  - [AiChatDataPost200ResponseActions](doc/AiChatDataPost200ResponseActions.md)
@@ -123,6 +133,10 @@ Class | Method | HTTP request | Description
  - [AiChatDataPostRequestUserLocation](doc/AiChatDataPostRequestUserLocation.md)
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
+ - [AiConversationDataPost200Response](doc/AiConversationDataPost200Response.md)
+ - [AiConversationDataPostRequest](doc/AiConversationDataPostRequest.md)
+ - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
+ - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
  - [AiLegacyChatPost200Response](doc/AiLegacyChatPost200Response.md)
  - [AiLegacyChatPostRequest](doc/AiLegacyChatPostRequest.md)
  - [AiLegacyConversationPost200Response](doc/AiLegacyConversationPost200Response.md)

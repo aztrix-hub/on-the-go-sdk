@@ -1254,6 +1254,104 @@
         ]
       }
     },
+    "/ai/conversation": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messages": {
+                    "$ref": "#/components/schemas/AIMessages"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/ai/conversation/data": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "messages"
+                ],
+                "properties": {
+                  "messages": {
+                    "$ref": "#/components/schemas/AIMessages"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "messages": {
+                      "$ref": "#/components/schemas/AIMessages"
+                    },
+                    "actions": {
+                      "$ref": "#/components/schemas/AIActions"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/ai/memories": {
       "get": {
         "tags": [
@@ -2169,8 +2267,7 @@
       "User": {
         "required": [
           "firstname",
-          "lastname",
-          "role"
+          "lastname"
         ],
         "type": "object",
         "properties": {
@@ -2201,8 +2298,7 @@
       "Individual": {
         "required": [
           "firstname",
-          "lastname",
-          "role"
+          "lastname"
         ],
         "type": "object",
         "properties": {
@@ -2877,6 +2973,258 @@
           "endTime": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "AIMessages": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/AIMessage"
+        }
+      },
+      "AIMessage": {
+        "type": "object",
+        "required": [
+          "role"
+        ],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant",
+              "system",
+              "tool"
+            ]
+          },
+          "message": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              },
+              "attributes": {
+                "$ref": "#/components/schemas/AIMessageAttributes"
+              }
+            }
+          },
+          "dateTime": {
+            "type": "string"
+          },
+          "adressbookContact": {
+            "$ref": "#/components/schemas/Individual"
+          },
+          "currentContext": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": [
+                  "anonymous",
+                  "user",
+                  "organisation"
+                ]
+              },
+              "value": {
+                "$ref": "#/components/schemas/LocationOrIndividual"
+              }
+            }
+          },
+          "currentAddress": {
+            "$ref": "#/components/schemas/Address"
+          },
+          "toolCalls": {
+            "type": "object",
+            "properties": {
+              "getContact": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "phone": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "toolResponses": {
+            "type": "object",
+            "properties": {
+              "getContact": {
+                "$ref": "#/components/schemas/Individual"
+              }
+            }
+          }
+        }
+      },
+      "AIMessageAttributes": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "$ref": "#/components/schemas/AIMessageLocationAttribute"
+          },
+          "name": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "email": {
+            "type": "string"
+          },
+          "emailBody": {
+            "type": "string"
+          },
+          "emailSubject": {
+            "type": "string"
+          },
+          "textBody": {
+            "type": "string"
+          }
+        }
+      },
+      "AIMessageLocationAttribute": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "minimum": -90,
+                "maximum": 90,
+                "type": "number",
+                "format": "double"
+              },
+              "longitude": {
+                "minimum": -180,
+                "maximum": 180,
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "boundingBox": {
+            "type": "object",
+            "properties": {
+              "topLeft": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "minimum": -90,
+                    "maximum": 90,
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "longitude": {
+                    "minimum": -180,
+                    "maximum": 180,
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              },
+              "bottomRight": {
+                "type": "object",
+                "properties": {
+                  "latitude": {
+                    "minimum": -90,
+                    "maximum": 90,
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "longitude": {
+                    "minimum": -180,
+                    "maximum": 180,
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          },
+          "countryCode": {
+            "type": "string"
+          }
+        }
+      },
+      "AIActions": {
+        "type": "object",
+        "properties": {
+          "search": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationOrIndividual"
+            }
+          },
+          "keywords": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "description": {
+            "type": "string"
+          },
+          "openingHours": {
+            "$ref": "#/components/schemas/OpeningHours"
+          },
+          "call": {
+            "type": "object",
+            "properties": {
+              "phone": {
+                "type": "string"
+              }
+            }
+          },
+          "text": {
+            "type": "object",
+            "properties": {
+              "phone": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          },
+          "email": {
+            "type": "object",
+            "properties": {
+              "address": {
+                "type": "string"
+              },
+              "subject": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string"
+              }
+            }
+          },
+          "updateContact": {
+            "type": "object",
+            "properties": {
+              "contact": {
+                "$ref": "#/components/schemas/LocationOrIndividual"
+              },
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LocationOrIndividual"
+                }
+              }
+            }
           }
         }
       }

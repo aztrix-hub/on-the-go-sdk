@@ -16,6 +16,16 @@ void main() {
       // TODO
     });
 
+    //Future<AiConversationDataPost200Response> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
+    test('test aiConversationDataPost', () async {
+      // TODO
+    });
+
+    //Future<AiConversationPost200Response> aiConversationPost({ AiConversationPostRequest aiConversationPostRequest }) async
+    test('test aiConversationPost', () async {
+      // TODO
+    });
+
     //Future<AiLegacyChatPost200Response> aiLegacyChatPost({ AiLegacyChatPostRequest aiLegacyChatPostRequest }) async
     test('test aiLegacyChatPost', () async {
       // TODO
