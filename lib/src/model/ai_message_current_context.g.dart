@@ -75,7 +75,7 @@ class _$AIMessageCurrentContextTypeEnumSerializer
 
 class _$AIMessageCurrentContext extends AIMessageCurrentContext {
   @override
-  final AIMessageCurrentContextTypeEnum? type;
+  final AIMessageCurrentContextTypeEnum type;
   @override
   final LocationOrIndividual? value;
 
@@ -83,7 +83,7 @@ class _$AIMessageCurrentContext extends AIMessageCurrentContext {
           [void Function(AIMessageCurrentContextBuilder)? updates]) =>
       (AIMessageCurrentContextBuilder()..update(updates))._build();
 
-  _$AIMessageCurrentContext._({this.type, this.value}) : super._();
+  _$AIMessageCurrentContext._({required this.type, this.value}) : super._();
   @override
   AIMessageCurrentContext rebuild(
           void Function(AIMessageCurrentContextBuilder) updates) =>
@@ -165,7 +165,8 @@ class AIMessageCurrentContextBuilder
     try {
       _$result = _$v ??
           _$AIMessageCurrentContext._(
-            type: type,
+            type: BuiltValueNullFieldError.checkNotNull(
+                type, r'AIMessageCurrentContext', 'type'),
             value: _value?.build(),
           );
     } catch (_) {

@@ -3,13 +3,12 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_message.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
+import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_current_context.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses.dart';
-import 'package:on_the_go_sdk/src/model/individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -21,7 +20,6 @@ part 'ai_message.g.dart';
 /// * [role]
 /// * [message]
 /// * [dateTime]
-/// * [adressbookContact]
 /// * [currentContext]
 /// * [currentAddress]
 /// * [toolCalls]
@@ -38,9 +36,6 @@ abstract class AIMessage implements Built<AIMessage, AIMessageBuilder> {
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
 
-  @BuiltValueField(wireName: r'adressbookContact')
-  Individual? get adressbookContact;
-
   @BuiltValueField(wireName: r'currentContext')
   AIMessageCurrentContext? get currentContext;
 
@@ -48,10 +43,10 @@ abstract class AIMessage implements Built<AIMessage, AIMessageBuilder> {
   Address? get currentAddress;
 
   @BuiltValueField(wireName: r'toolCalls')
-  AiChatDataPost200ResponseToolCalls? get toolCalls;
+  AIToolCalls? get toolCalls;
 
   @BuiltValueField(wireName: r'toolResponses')
-  AiChatDataPostRequestToolResponses? get toolResponses;
+  AIToolResponses? get toolResponses;
 
   AIMessage._();
 
@@ -95,13 +90,6 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.adressbookContact != null) {
-      yield r'adressbookContact';
-      yield serializers.serialize(
-        object.adressbookContact,
-        specifiedType: const FullType(Individual),
-      );
-    }
     if (object.currentContext != null) {
       yield r'currentContext';
       yield serializers.serialize(
@@ -120,14 +108,14 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
       yield r'toolCalls';
       yield serializers.serialize(
         object.toolCalls,
-        specifiedType: const FullType(AiChatDataPost200ResponseToolCalls),
+        specifiedType: const FullType(AIToolCalls),
       );
     }
     if (object.toolResponses != null) {
       yield r'toolResponses';
       yield serializers.serialize(
         object.toolResponses,
-        specifiedType: const FullType(AiChatDataPostRequestToolResponses),
+        specifiedType: const FullType(AIToolResponses),
       );
     }
   }
@@ -176,13 +164,6 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
           ) as String;
           result.dateTime = valueDes;
           break;
-        case r'adressbookContact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Individual),
-          ) as Individual;
-          result.adressbookContact.replace(valueDes);
-          break;
         case r'currentContext':
           final valueDes = serializers.deserialize(
             value,
@@ -200,15 +181,15 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
         case r'toolCalls':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiChatDataPost200ResponseToolCalls),
-          ) as AiChatDataPost200ResponseToolCalls;
+            specifiedType: const FullType(AIToolCalls),
+          ) as AIToolCalls;
           result.toolCalls.replace(valueDes);
           break;
         case r'toolResponses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiChatDataPostRequestToolResponses),
-          ) as AiChatDataPostRequestToolResponses;
+            specifiedType: const FullType(AIToolResponses),
+          ) as AIToolResponses;
           result.toolResponses.replace(valueDes);
           break;
         default:

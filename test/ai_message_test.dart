@@ -22,11 +22,6 @@ void main() {
       // TODO
     });
 
-    // Individual adressbookContact
-    test('to test the property `adressbookContact`', () async {
-      // TODO
-    });
-
     // AIMessageCurrentContext currentContext
     test('to test the property `currentContext`', () async {
       // TODO
@@ -37,12 +32,12 @@ void main() {
       // TODO
     });
 
-    // AiChatDataPost200ResponseToolCalls toolCalls
+    // AIToolCalls toolCalls
     test('to test the property `toolCalls`', () async {
       // TODO
     });
 
-    // AiChatDataPostRequestToolResponses toolResponses
+    // AIToolResponses toolResponses
     test('to test the property `toolResponses`', () async {
       // TODO
     });

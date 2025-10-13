@@ -19,7 +19,7 @@ part 'ai_message_current_context.g.dart';
 abstract class AIMessageCurrentContext
     implements Built<AIMessageCurrentContext, AIMessageCurrentContextBuilder> {
   @BuiltValueField(wireName: r'type')
-  AIMessageCurrentContextTypeEnum? get type;
+  AIMessageCurrentContextTypeEnum get type;
   // enum typeEnum {  anonymous,  user,  organisation,  };
 
   @BuiltValueField(wireName: r'value')
@@ -55,13 +55,11 @@ class _$AIMessageCurrentContextSerializer
     AIMessageCurrentContext object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(AIMessageCurrentContextTypeEnum),
-      );
-    }
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(AIMessageCurrentContextTypeEnum),
+    );
     if (object.value != null) {
       yield r'value';
       yield serializers.serialize(

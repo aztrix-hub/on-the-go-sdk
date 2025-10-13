@@ -3011,11 +3011,11 @@
           "dateTime": {
             "type": "string"
           },
-          "adressbookContact": {
-            "$ref": "#/components/schemas/Individual"
-          },
           "currentContext": {
             "type": "object",
+            "required": [
+              "type"
+            ],
             "properties": {
               "type": {
                 "type": "string",
@@ -3034,28 +3034,34 @@
             "$ref": "#/components/schemas/Address"
           },
           "toolCalls": {
-            "type": "object",
-            "properties": {
-              "getContact": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string"
-                  },
-                  "phone": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+            "$ref": "#/components/schemas/AIToolCalls"
           },
           "toolResponses": {
+            "$ref": "#/components/schemas/AIToolResponses"
+          }
+        }
+      },
+      "AIToolCalls": {
+        "type": "object",
+        "properties": {
+          "getContact": {
             "type": "object",
             "properties": {
-              "getContact": {
-                "$ref": "#/components/schemas/Individual"
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
               }
             }
+          }
+        }
+      },
+      "AIToolResponses": {
+        "type": "object",
+        "properties": {
+          "getContact": {
+            "$ref": "#/components/schemas/Individual"
           }
         }
       },

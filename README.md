@@ -118,6 +118,8 @@ Class | Method | HTTP request | Description
  - [AIMessageLocationAttributeBoundingBox](doc/AIMessageLocationAttributeBoundingBox.md)
  - [AIMessageLocationAttributeCoordinates](doc/AIMessageLocationAttributeCoordinates.md)
  - [AIMessageMessage](doc/AIMessageMessage.md)
+ - [AIToolCalls](doc/AIToolCalls.md)
+ - [AIToolResponses](doc/AIToolResponses.md)
  - [Address](doc/Address.md)
  - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
  - [AiChatDataPost200ResponseActions](doc/AiChatDataPost200ResponseActions.md)

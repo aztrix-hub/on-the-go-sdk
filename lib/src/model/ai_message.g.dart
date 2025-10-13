@@ -81,15 +81,13 @@ class _$AIMessage extends AIMessage {
   @override
   final String? dateTime;
   @override
-  final Individual? adressbookContact;
-  @override
   final AIMessageCurrentContext? currentContext;
   @override
   final Address? currentAddress;
   @override
-  final AiChatDataPost200ResponseToolCalls? toolCalls;
+  final AIToolCalls? toolCalls;
   @override
-  final AiChatDataPostRequestToolResponses? toolResponses;
+  final AIToolResponses? toolResponses;
 
   factory _$AIMessage([void Function(AIMessageBuilder)? updates]) =>
       (AIMessageBuilder()..update(updates))._build();
@@ -98,7 +96,6 @@ class _$AIMessage extends AIMessage {
       {required this.role,
       this.message,
       this.dateTime,
-      this.adressbookContact,
       this.currentContext,
       this.currentAddress,
       this.toolCalls,
@@ -118,7 +115,6 @@ class _$AIMessage extends AIMessage {
         role == other.role &&
         message == other.message &&
         dateTime == other.dateTime &&
-        adressbookContact == other.adressbookContact &&
         currentContext == other.currentContext &&
         currentAddress == other.currentAddress &&
         toolCalls == other.toolCalls &&
@@ -131,7 +127,6 @@ class _$AIMessage extends AIMessage {
     _$hash = $jc(_$hash, role.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jc(_$hash, dateTime.hashCode);
-    _$hash = $jc(_$hash, adressbookContact.hashCode);
     _$hash = $jc(_$hash, currentContext.hashCode);
     _$hash = $jc(_$hash, currentAddress.hashCode);
     _$hash = $jc(_$hash, toolCalls.hashCode);
@@ -146,7 +141,6 @@ class _$AIMessage extends AIMessage {
           ..add('role', role)
           ..add('message', message)
           ..add('dateTime', dateTime)
-          ..add('adressbookContact', adressbookContact)
           ..add('currentContext', currentContext)
           ..add('currentAddress', currentAddress)
           ..add('toolCalls', toolCalls)
@@ -171,12 +165,6 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
   String? get dateTime => _$this._dateTime;
   set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
-  IndividualBuilder? _adressbookContact;
-  IndividualBuilder get adressbookContact =>
-      _$this._adressbookContact ??= IndividualBuilder();
-  set adressbookContact(IndividualBuilder? adressbookContact) =>
-      _$this._adressbookContact = adressbookContact;
-
   AIMessageCurrentContextBuilder? _currentContext;
   AIMessageCurrentContextBuilder get currentContext =>
       _$this._currentContext ??= AIMessageCurrentContextBuilder();
@@ -189,16 +177,15 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
   set currentAddress(AddressBuilder? currentAddress) =>
       _$this._currentAddress = currentAddress;
 
-  AiChatDataPost200ResponseToolCallsBuilder? _toolCalls;
-  AiChatDataPost200ResponseToolCallsBuilder get toolCalls =>
-      _$this._toolCalls ??= AiChatDataPost200ResponseToolCallsBuilder();
-  set toolCalls(AiChatDataPost200ResponseToolCallsBuilder? toolCalls) =>
-      _$this._toolCalls = toolCalls;
+  AIToolCallsBuilder? _toolCalls;
+  AIToolCallsBuilder get toolCalls =>
+      _$this._toolCalls ??= AIToolCallsBuilder();
+  set toolCalls(AIToolCallsBuilder? toolCalls) => _$this._toolCalls = toolCalls;
 
-  AiChatDataPostRequestToolResponsesBuilder? _toolResponses;
-  AiChatDataPostRequestToolResponsesBuilder get toolResponses =>
-      _$this._toolResponses ??= AiChatDataPostRequestToolResponsesBuilder();
-  set toolResponses(AiChatDataPostRequestToolResponsesBuilder? toolResponses) =>
+  AIToolResponsesBuilder? _toolResponses;
+  AIToolResponsesBuilder get toolResponses =>
+      _$this._toolResponses ??= AIToolResponsesBuilder();
+  set toolResponses(AIToolResponsesBuilder? toolResponses) =>
       _$this._toolResponses = toolResponses;
 
   AIMessageBuilder() {
@@ -211,7 +198,6 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
       _role = $v.role;
       _message = $v.message?.toBuilder();
       _dateTime = $v.dateTime;
-      _adressbookContact = $v.adressbookContact?.toBuilder();
       _currentContext = $v.currentContext?.toBuilder();
       _currentAddress = $v.currentAddress?.toBuilder();
       _toolCalls = $v.toolCalls?.toBuilder();
@@ -243,7 +229,6 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
                 role, r'AIMessage', 'role'),
             message: _message?.build(),
             dateTime: dateTime,
-            adressbookContact: _adressbookContact?.build(),
             currentContext: _currentContext?.build(),
             currentAddress: _currentAddress?.build(),
             toolCalls: _toolCalls?.build(),
@@ -255,8 +240,6 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
         _$failedField = 'message';
         _message?.build();
 
-        _$failedField = 'adressbookContact';
-        _adressbookContact?.build();
         _$failedField = 'currentContext';
         _currentContext?.build();
         _$failedField = 'currentAddress';

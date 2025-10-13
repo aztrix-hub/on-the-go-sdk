@@ -28,6 +28,8 @@ export 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
 export 'package:on_the_go_sdk/src/model/ai_message_location_attribute_bounding_box.dart';
 export 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
 export 'package:on_the_go_sdk/src/model/ai_message_message.dart';
+export 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
+export 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 export 'package:on_the_go_sdk/src/model/address.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';

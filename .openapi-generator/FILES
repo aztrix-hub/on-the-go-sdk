@@ -8,6 +8,8 @@ doc/AIMessageLocationAttribute.md
 doc/AIMessageLocationAttributeBoundingBox.md
 doc/AIMessageLocationAttributeCoordinates.md
 doc/AIMessageMessage.md
+doc/AIToolCalls.md
+doc/AIToolResponses.md
 doc/Address.md
 doc/AiApi.md
 doc/AiChatDataPost200Response.md
@@ -138,6 +140,8 @@ lib/src/model/ai_message_location_attribute_bounding_box.dart
 lib/src/model/ai_message_location_attribute_coordinates.dart
 lib/src/model/ai_message_message.dart
 lib/src/model/ai_system_get200_response.dart
+lib/src/model/ai_tool_calls.dart
+lib/src/model/ai_tool_responses.dart
 lib/src/model/analytics_get200_response.dart
 lib/src/model/category.dart
 lib/src/model/data_point.dart
