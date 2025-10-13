@@ -15,7 +15,7 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_actions.g.dart';
 
-/// AIActions
+/// AiActions
 ///
 /// Properties:
 /// * [search]
@@ -27,7 +27,7 @@ part 'ai_actions.g.dart';
 /// * [email]
 /// * [updateContact]
 @BuiltValue()
-abstract class AIActions implements Built<AIActions, AIActionsBuilder> {
+abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'search')
   BuiltList<LocationOrIndividual>? get search;
 
@@ -53,27 +53,27 @@ abstract class AIActions implements Built<AIActions, AIActionsBuilder> {
   @BuiltValueField(wireName: r'updateContact')
   AiChatDataPost200ResponseActionsUpdateContact? get updateContact;
 
-  AIActions._();
+  AiActions._();
 
-  factory AIActions([void updates(AIActionsBuilder b)]) = _$AIActions;
+  factory AiActions([void updates(AiActionsBuilder b)]) = _$AiActions;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIActionsBuilder b) => b;
+  static void _defaults(AiActionsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIActions> get serializer => _$AIActionsSerializer();
+  static Serializer<AiActions> get serializer => _$AiActionsSerializer();
 }
 
-class _$AIActionsSerializer implements PrimitiveSerializer<AIActions> {
+class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
   @override
-  final Iterable<Type> types = const [AIActions, _$AIActions];
+  final Iterable<Type> types = const [AiActions, _$AiActions];
 
   @override
-  final String wireName = r'AIActions';
+  final String wireName = r'AiActions';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIActions object, {
+    AiActions object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.search != null) {
@@ -139,7 +139,7 @@ class _$AIActionsSerializer implements PrimitiveSerializer<AIActions> {
   @override
   Object serialize(
     Serializers serializers,
-    AIActions object, {
+    AiActions object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -152,7 +152,7 @@ class _$AIActionsSerializer implements PrimitiveSerializer<AIActions> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIActionsBuilder result,
+    required AiActionsBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -227,12 +227,12 @@ class _$AIActionsSerializer implements PrimitiveSerializer<AIActions> {
   }
 
   @override
-  AIActions deserialize(
+  AiActions deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIActionsBuilder();
+    final result = AiActionsBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

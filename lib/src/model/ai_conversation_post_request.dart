@@ -19,7 +19,7 @@ abstract class AiConversationPostRequest
     implements
         Built<AiConversationPostRequest, AiConversationPostRequestBuilder> {
   @BuiltValueField(wireName: r'messages')
-  BuiltList<AIMessage>? get messages;
+  BuiltList<AiMessage>? get messages;
 
   AiConversationPostRequest._();
 
@@ -55,7 +55,7 @@ class _$AiConversationPostRequestSerializer
       yield r'messages';
       yield serializers.serialize(
         object.messages,
-        specifiedType: const FullType(BuiltList, [FullType(AIMessage)]),
+        specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
       );
     }
   }
@@ -86,8 +86,8 @@ class _$AiConversationPostRequestSerializer
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AIMessage)]),
-          ) as BuiltList<AIMessage>;
+            specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+          ) as BuiltList<AiMessage>;
           result.messages.replace(valueDes);
           break;
         default:

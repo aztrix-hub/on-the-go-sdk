@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AIMessageAttributes
+# on_the_go_sdk.model.AiMessageAttributes
 
 ## Load the model package
 ```dart
@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**location** | [**AIMessageLocationAttribute**](AIMessageLocationAttribute.md) |  | [optional] 
+**location** | [**AiMessageLocationAttribute**](AiMessageLocationAttribute.md) |  | [optional] 
 **name** | **String** |  | [optional] 
 **phone** | **String** |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 

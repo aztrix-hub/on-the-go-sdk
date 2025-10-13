@@ -6,43 +6,43 @@ part of 'ai_message.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-const AIMessageRoleEnum _$aIMessageRoleEnum_user =
-    const AIMessageRoleEnum._('user');
-const AIMessageRoleEnum _$aIMessageRoleEnum_assistant =
-    const AIMessageRoleEnum._('assistant');
-const AIMessageRoleEnum _$aIMessageRoleEnum_system =
-    const AIMessageRoleEnum._('system');
-const AIMessageRoleEnum _$aIMessageRoleEnum_tool =
-    const AIMessageRoleEnum._('tool');
+const AiMessageRoleEnum _$aiMessageRoleEnum_user =
+    const AiMessageRoleEnum._('user');
+const AiMessageRoleEnum _$aiMessageRoleEnum_assistant =
+    const AiMessageRoleEnum._('assistant');
+const AiMessageRoleEnum _$aiMessageRoleEnum_system =
+    const AiMessageRoleEnum._('system');
+const AiMessageRoleEnum _$aiMessageRoleEnum_tool =
+    const AiMessageRoleEnum._('tool');
 
-AIMessageRoleEnum _$aIMessageRoleEnumValueOf(String name) {
+AiMessageRoleEnum _$aiMessageRoleEnumValueOf(String name) {
   switch (name) {
     case 'user':
-      return _$aIMessageRoleEnum_user;
+      return _$aiMessageRoleEnum_user;
     case 'assistant':
-      return _$aIMessageRoleEnum_assistant;
+      return _$aiMessageRoleEnum_assistant;
     case 'system':
-      return _$aIMessageRoleEnum_system;
+      return _$aiMessageRoleEnum_system;
     case 'tool':
-      return _$aIMessageRoleEnum_tool;
+      return _$aiMessageRoleEnum_tool;
     default:
       throw ArgumentError(name);
   }
 }
 
-final BuiltSet<AIMessageRoleEnum> _$aIMessageRoleEnumValues =
-    BuiltSet<AIMessageRoleEnum>(const <AIMessageRoleEnum>[
-  _$aIMessageRoleEnum_user,
-  _$aIMessageRoleEnum_assistant,
-  _$aIMessageRoleEnum_system,
-  _$aIMessageRoleEnum_tool,
+final BuiltSet<AiMessageRoleEnum> _$aiMessageRoleEnumValues =
+    BuiltSet<AiMessageRoleEnum>(const <AiMessageRoleEnum>[
+  _$aiMessageRoleEnum_user,
+  _$aiMessageRoleEnum_assistant,
+  _$aiMessageRoleEnum_system,
+  _$aiMessageRoleEnum_tool,
 ]);
 
-Serializer<AIMessageRoleEnum> _$aIMessageRoleEnumSerializer =
-    _$AIMessageRoleEnumSerializer();
+Serializer<AiMessageRoleEnum> _$aiMessageRoleEnumSerializer =
+    _$AiMessageRoleEnumSerializer();
 
-class _$AIMessageRoleEnumSerializer
-    implements PrimitiveSerializer<AIMessageRoleEnum> {
+class _$AiMessageRoleEnumSerializer
+    implements PrimitiveSerializer<AiMessageRoleEnum> {
   static const Map<String, Object> _toWire = const <String, Object>{
     'user': 'user',
     'assistant': 'assistant',
@@ -57,42 +57,42 @@ class _$AIMessageRoleEnumSerializer
   };
 
   @override
-  final Iterable<Type> types = const <Type>[AIMessageRoleEnum];
+  final Iterable<Type> types = const <Type>[AiMessageRoleEnum];
   @override
-  final String wireName = 'AIMessageRoleEnum';
+  final String wireName = 'AiMessageRoleEnum';
 
   @override
-  Object serialize(Serializers serializers, AIMessageRoleEnum object,
+  Object serialize(Serializers serializers, AiMessageRoleEnum object,
           {FullType specifiedType = FullType.unspecified}) =>
       _toWire[object.name] ?? object.name;
 
   @override
-  AIMessageRoleEnum deserialize(Serializers serializers, Object serialized,
+  AiMessageRoleEnum deserialize(Serializers serializers, Object serialized,
           {FullType specifiedType = FullType.unspecified}) =>
-      AIMessageRoleEnum.valueOf(
+      AiMessageRoleEnum.valueOf(
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
-class _$AIMessage extends AIMessage {
+class _$AiMessage extends AiMessage {
   @override
-  final AIMessageRoleEnum role;
+  final AiMessageRoleEnum role;
   @override
-  final AIMessageMessage? message;
+  final AiMessageMessage? message;
   @override
   final String? dateTime;
   @override
-  final AIMessageCurrentContext? currentContext;
+  final AiContext? currentContext;
   @override
   final Address? currentAddress;
   @override
-  final AIToolCalls? toolCalls;
+  final AiToolCalls? toolCalls;
   @override
-  final AIToolResponses? toolResponses;
+  final AiToolResponses? toolResponses;
 
-  factory _$AIMessage([void Function(AIMessageBuilder)? updates]) =>
-      (AIMessageBuilder()..update(updates))._build();
+  factory _$AiMessage([void Function(AiMessageBuilder)? updates]) =>
+      (AiMessageBuilder()..update(updates))._build();
 
-  _$AIMessage._(
+  _$AiMessage._(
       {required this.role,
       this.message,
       this.dateTime,
@@ -102,16 +102,16 @@ class _$AIMessage extends AIMessage {
       this.toolResponses})
       : super._();
   @override
-  AIMessage rebuild(void Function(AIMessageBuilder) updates) =>
+  AiMessage rebuild(void Function(AiMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageBuilder toBuilder() => AIMessageBuilder()..replace(this);
+  AiMessageBuilder toBuilder() => AiMessageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessage &&
+    return other is AiMessage &&
         role == other.role &&
         message == other.message &&
         dateTime == other.dateTime &&
@@ -137,7 +137,7 @@ class _$AIMessage extends AIMessage {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIMessage')
+    return (newBuiltValueToStringHelper(r'AiMessage')
           ..add('role', role)
           ..add('message', message)
           ..add('dateTime', dateTime)
@@ -149,26 +149,26 @@ class _$AIMessage extends AIMessage {
   }
 }
 
-class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
-  _$AIMessage? _$v;
+class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
+  _$AiMessage? _$v;
 
-  AIMessageRoleEnum? _role;
-  AIMessageRoleEnum? get role => _$this._role;
-  set role(AIMessageRoleEnum? role) => _$this._role = role;
+  AiMessageRoleEnum? _role;
+  AiMessageRoleEnum? get role => _$this._role;
+  set role(AiMessageRoleEnum? role) => _$this._role = role;
 
-  AIMessageMessageBuilder? _message;
-  AIMessageMessageBuilder get message =>
-      _$this._message ??= AIMessageMessageBuilder();
-  set message(AIMessageMessageBuilder? message) => _$this._message = message;
+  AiMessageMessageBuilder? _message;
+  AiMessageMessageBuilder get message =>
+      _$this._message ??= AiMessageMessageBuilder();
+  set message(AiMessageMessageBuilder? message) => _$this._message = message;
 
   String? _dateTime;
   String? get dateTime => _$this._dateTime;
   set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
-  AIMessageCurrentContextBuilder? _currentContext;
-  AIMessageCurrentContextBuilder get currentContext =>
-      _$this._currentContext ??= AIMessageCurrentContextBuilder();
-  set currentContext(AIMessageCurrentContextBuilder? currentContext) =>
+  AiContextBuilder? _currentContext;
+  AiContextBuilder get currentContext =>
+      _$this._currentContext ??= AiContextBuilder();
+  set currentContext(AiContextBuilder? currentContext) =>
       _$this._currentContext = currentContext;
 
   AddressBuilder? _currentAddress;
@@ -177,22 +177,22 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
   set currentAddress(AddressBuilder? currentAddress) =>
       _$this._currentAddress = currentAddress;
 
-  AIToolCallsBuilder? _toolCalls;
-  AIToolCallsBuilder get toolCalls =>
-      _$this._toolCalls ??= AIToolCallsBuilder();
-  set toolCalls(AIToolCallsBuilder? toolCalls) => _$this._toolCalls = toolCalls;
+  AiToolCallsBuilder? _toolCalls;
+  AiToolCallsBuilder get toolCalls =>
+      _$this._toolCalls ??= AiToolCallsBuilder();
+  set toolCalls(AiToolCallsBuilder? toolCalls) => _$this._toolCalls = toolCalls;
 
-  AIToolResponsesBuilder? _toolResponses;
-  AIToolResponsesBuilder get toolResponses =>
-      _$this._toolResponses ??= AIToolResponsesBuilder();
-  set toolResponses(AIToolResponsesBuilder? toolResponses) =>
+  AiToolResponsesBuilder? _toolResponses;
+  AiToolResponsesBuilder get toolResponses =>
+      _$this._toolResponses ??= AiToolResponsesBuilder();
+  set toolResponses(AiToolResponsesBuilder? toolResponses) =>
       _$this._toolResponses = toolResponses;
 
-  AIMessageBuilder() {
-    AIMessage._defaults(this);
+  AiMessageBuilder() {
+    AiMessage._defaults(this);
   }
 
-  AIMessageBuilder get _$this {
+  AiMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _role = $v.role;
@@ -208,25 +208,25 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
   }
 
   @override
-  void replace(AIMessage other) {
-    _$v = other as _$AIMessage;
+  void replace(AiMessage other) {
+    _$v = other as _$AiMessage;
   }
 
   @override
-  void update(void Function(AIMessageBuilder)? updates) {
+  void update(void Function(AiMessageBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessage build() => _build();
+  AiMessage build() => _build();
 
-  _$AIMessage _build() {
-    _$AIMessage _$result;
+  _$AiMessage _build() {
+    _$AiMessage _$result;
     try {
       _$result = _$v ??
-          _$AIMessage._(
+          _$AiMessage._(
             role: BuiltValueNullFieldError.checkNotNull(
-                role, r'AIMessage', 'role'),
+                role, r'AiMessage', 'role'),
             message: _message?.build(),
             dateTime: dateTime,
             currentContext: _currentContext?.build(),
@@ -250,7 +250,7 @@ class AIMessageBuilder implements Builder<AIMessage, AIMessageBuilder> {
         _toolResponses?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIMessage', _$failedField, e.toString());
+            r'AiMessage', _$failedField, e.toString());
       }
       rethrow;
     }

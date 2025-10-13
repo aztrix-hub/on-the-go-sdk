@@ -6,35 +6,35 @@ part of 'ai_message_location_attribute_bounding_box.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIMessageLocationAttributeBoundingBox
-    extends AIMessageLocationAttributeBoundingBox {
+class _$AiMessageLocationAttributeBoundingBox
+    extends AiMessageLocationAttributeBoundingBox {
   @override
-  final AIMessageLocationAttributeCoordinates? topLeft;
+  final AiMessageLocationAttributeCoordinates? topLeft;
   @override
-  final AIMessageLocationAttributeCoordinates? bottomRight;
+  final AiMessageLocationAttributeCoordinates? bottomRight;
 
-  factory _$AIMessageLocationAttributeBoundingBox(
-          [void Function(AIMessageLocationAttributeBoundingBoxBuilder)?
+  factory _$AiMessageLocationAttributeBoundingBox(
+          [void Function(AiMessageLocationAttributeBoundingBoxBuilder)?
               updates]) =>
-      (AIMessageLocationAttributeBoundingBoxBuilder()..update(updates))
+      (AiMessageLocationAttributeBoundingBoxBuilder()..update(updates))
           ._build();
 
-  _$AIMessageLocationAttributeBoundingBox._({this.topLeft, this.bottomRight})
+  _$AiMessageLocationAttributeBoundingBox._({this.topLeft, this.bottomRight})
       : super._();
   @override
-  AIMessageLocationAttributeBoundingBox rebuild(
-          void Function(AIMessageLocationAttributeBoundingBoxBuilder)
+  AiMessageLocationAttributeBoundingBox rebuild(
+          void Function(AiMessageLocationAttributeBoundingBoxBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageLocationAttributeBoundingBoxBuilder toBuilder() =>
-      AIMessageLocationAttributeBoundingBoxBuilder()..replace(this);
+  AiMessageLocationAttributeBoundingBoxBuilder toBuilder() =>
+      AiMessageLocationAttributeBoundingBoxBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessageLocationAttributeBoundingBox &&
+    return other is AiMessageLocationAttributeBoundingBox &&
         topLeft == other.topLeft &&
         bottomRight == other.bottomRight;
   }
@@ -51,36 +51,36 @@ class _$AIMessageLocationAttributeBoundingBox
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'AIMessageLocationAttributeBoundingBox')
+            r'AiMessageLocationAttributeBoundingBox')
           ..add('topLeft', topLeft)
           ..add('bottomRight', bottomRight))
         .toString();
   }
 }
 
-class AIMessageLocationAttributeBoundingBoxBuilder
+class AiMessageLocationAttributeBoundingBoxBuilder
     implements
-        Builder<AIMessageLocationAttributeBoundingBox,
-            AIMessageLocationAttributeBoundingBoxBuilder> {
-  _$AIMessageLocationAttributeBoundingBox? _$v;
+        Builder<AiMessageLocationAttributeBoundingBox,
+            AiMessageLocationAttributeBoundingBoxBuilder> {
+  _$AiMessageLocationAttributeBoundingBox? _$v;
 
-  AIMessageLocationAttributeCoordinatesBuilder? _topLeft;
-  AIMessageLocationAttributeCoordinatesBuilder get topLeft =>
-      _$this._topLeft ??= AIMessageLocationAttributeCoordinatesBuilder();
-  set topLeft(AIMessageLocationAttributeCoordinatesBuilder? topLeft) =>
+  AiMessageLocationAttributeCoordinatesBuilder? _topLeft;
+  AiMessageLocationAttributeCoordinatesBuilder get topLeft =>
+      _$this._topLeft ??= AiMessageLocationAttributeCoordinatesBuilder();
+  set topLeft(AiMessageLocationAttributeCoordinatesBuilder? topLeft) =>
       _$this._topLeft = topLeft;
 
-  AIMessageLocationAttributeCoordinatesBuilder? _bottomRight;
-  AIMessageLocationAttributeCoordinatesBuilder get bottomRight =>
-      _$this._bottomRight ??= AIMessageLocationAttributeCoordinatesBuilder();
-  set bottomRight(AIMessageLocationAttributeCoordinatesBuilder? bottomRight) =>
+  AiMessageLocationAttributeCoordinatesBuilder? _bottomRight;
+  AiMessageLocationAttributeCoordinatesBuilder get bottomRight =>
+      _$this._bottomRight ??= AiMessageLocationAttributeCoordinatesBuilder();
+  set bottomRight(AiMessageLocationAttributeCoordinatesBuilder? bottomRight) =>
       _$this._bottomRight = bottomRight;
 
-  AIMessageLocationAttributeBoundingBoxBuilder() {
-    AIMessageLocationAttributeBoundingBox._defaults(this);
+  AiMessageLocationAttributeBoundingBoxBuilder() {
+    AiMessageLocationAttributeBoundingBox._defaults(this);
   }
 
-  AIMessageLocationAttributeBoundingBoxBuilder get _$this {
+  AiMessageLocationAttributeBoundingBoxBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _topLeft = $v.topLeft?.toBuilder();
@@ -91,24 +91,24 @@ class AIMessageLocationAttributeBoundingBoxBuilder
   }
 
   @override
-  void replace(AIMessageLocationAttributeBoundingBox other) {
-    _$v = other as _$AIMessageLocationAttributeBoundingBox;
+  void replace(AiMessageLocationAttributeBoundingBox other) {
+    _$v = other as _$AiMessageLocationAttributeBoundingBox;
   }
 
   @override
   void update(
-      void Function(AIMessageLocationAttributeBoundingBoxBuilder)? updates) {
+      void Function(AiMessageLocationAttributeBoundingBoxBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessageLocationAttributeBoundingBox build() => _build();
+  AiMessageLocationAttributeBoundingBox build() => _build();
 
-  _$AIMessageLocationAttributeBoundingBox _build() {
-    _$AIMessageLocationAttributeBoundingBox _$result;
+  _$AiMessageLocationAttributeBoundingBox _build() {
+    _$AiMessageLocationAttributeBoundingBox _$result;
     try {
       _$result = _$v ??
-          _$AIMessageLocationAttributeBoundingBox._(
+          _$AiMessageLocationAttributeBoundingBox._(
             topLeft: _topLeft?.build(),
             bottomRight: _bottomRight?.build(),
           );
@@ -121,7 +121,7 @@ class AIMessageLocationAttributeBoundingBoxBuilder
         _bottomRight?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIMessageLocationAttributeBoundingBox',
+            r'AiMessageLocationAttributeBoundingBox',
             _$failedField,
             e.toString());
       }

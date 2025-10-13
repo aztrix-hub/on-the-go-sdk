@@ -6,7 +6,7 @@ part of 'ai_actions.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIActions extends AIActions {
+class _$AiActions extends AiActions {
   @override
   final BuiltList<LocationOrIndividual>? search;
   @override
@@ -24,10 +24,10 @@ class _$AIActions extends AIActions {
   @override
   final AiChatDataPost200ResponseActionsUpdateContact? updateContact;
 
-  factory _$AIActions([void Function(AIActionsBuilder)? updates]) =>
-      (AIActionsBuilder()..update(updates))._build();
+  factory _$AiActions([void Function(AiActionsBuilder)? updates]) =>
+      (AiActionsBuilder()..update(updates))._build();
 
-  _$AIActions._(
+  _$AiActions._(
       {this.search,
       this.keywords,
       this.description,
@@ -38,16 +38,16 @@ class _$AIActions extends AIActions {
       this.updateContact})
       : super._();
   @override
-  AIActions rebuild(void Function(AIActionsBuilder) updates) =>
+  AiActions rebuild(void Function(AiActionsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIActionsBuilder toBuilder() => AIActionsBuilder()..replace(this);
+  AiActionsBuilder toBuilder() => AiActionsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIActions &&
+    return other is AiActions &&
         search == other.search &&
         keywords == other.keywords &&
         description == other.description &&
@@ -75,7 +75,7 @@ class _$AIActions extends AIActions {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIActions')
+    return (newBuiltValueToStringHelper(r'AiActions')
           ..add('search', search)
           ..add('keywords', keywords)
           ..add('description', description)
@@ -88,8 +88,8 @@ class _$AIActions extends AIActions {
   }
 }
 
-class AIActionsBuilder implements Builder<AIActions, AIActionsBuilder> {
-  _$AIActions? _$v;
+class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
+  _$AiActions? _$v;
 
   ListBuilder<LocationOrIndividual>? _search;
   ListBuilder<LocationOrIndividual> get search =>
@@ -139,11 +139,11 @@ class AIActionsBuilder implements Builder<AIActions, AIActionsBuilder> {
               updateContact) =>
       _$this._updateContact = updateContact;
 
-  AIActionsBuilder() {
-    AIActions._defaults(this);
+  AiActionsBuilder() {
+    AiActions._defaults(this);
   }
 
-  AIActionsBuilder get _$this {
+  AiActionsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _search = $v.search?.toBuilder();
@@ -160,23 +160,23 @@ class AIActionsBuilder implements Builder<AIActions, AIActionsBuilder> {
   }
 
   @override
-  void replace(AIActions other) {
-    _$v = other as _$AIActions;
+  void replace(AiActions other) {
+    _$v = other as _$AiActions;
   }
 
   @override
-  void update(void Function(AIActionsBuilder)? updates) {
+  void update(void Function(AiActionsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIActions build() => _build();
+  AiActions build() => _build();
 
-  _$AIActions _build() {
-    _$AIActions _$result;
+  _$AiActions _build() {
+    _$AiActions _$result;
     try {
       _$result = _$v ??
-          _$AIActions._(
+          _$AiActions._(
             search: _search?.build(),
             keywords: _keywords?.build(),
             description: description,
@@ -206,7 +206,7 @@ class AIActionsBuilder implements Builder<AIActions, AIActionsBuilder> {
         _updateContact?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIActions', _$failedField, e.toString());
+            r'AiActions', _$failedField, e.toString());
       }
       rethrow;
     }

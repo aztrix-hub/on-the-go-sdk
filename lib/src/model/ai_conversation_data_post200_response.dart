@@ -22,10 +22,10 @@ abstract class AiConversationDataPost200Response
         Built<AiConversationDataPost200Response,
             AiConversationDataPost200ResponseBuilder> {
   @BuiltValueField(wireName: r'messages')
-  BuiltList<AIMessage>? get messages;
+  BuiltList<AiMessage>? get messages;
 
   @BuiltValueField(wireName: r'actions')
-  AIActions? get actions;
+  AiActions? get actions;
 
   AiConversationDataPost200Response._();
 
@@ -61,14 +61,14 @@ class _$AiConversationDataPost200ResponseSerializer
       yield r'messages';
       yield serializers.serialize(
         object.messages,
-        specifiedType: const FullType(BuiltList, [FullType(AIMessage)]),
+        specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
       );
     }
     if (object.actions != null) {
       yield r'actions';
       yield serializers.serialize(
         object.actions,
-        specifiedType: const FullType(AIActions),
+        specifiedType: const FullType(AiActions),
       );
     }
   }
@@ -99,15 +99,15 @@ class _$AiConversationDataPost200ResponseSerializer
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AIMessage)]),
-          ) as BuiltList<AIMessage>;
+            specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+          ) as BuiltList<AiMessage>;
           result.messages.replace(valueDes);
           break;
         case r'actions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIActions),
-          ) as AIActions;
+            specifiedType: const FullType(AiActions),
+          ) as AiActions;
           result.actions.replace(valueDes);
           break;
         default:

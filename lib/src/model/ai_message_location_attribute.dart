@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_message_location_attribute.g.dart';
 
-/// AIMessageLocationAttribute
+/// AiMessageLocationAttribute
 ///
 /// Properties:
 /// * [name]
@@ -18,49 +18,49 @@ part 'ai_message_location_attribute.g.dart';
 /// * [boundingBox]
 /// * [countryCode]
 @BuiltValue()
-abstract class AIMessageLocationAttribute
+abstract class AiMessageLocationAttribute
     implements
-        Built<AIMessageLocationAttribute, AIMessageLocationAttributeBuilder> {
+        Built<AiMessageLocationAttribute, AiMessageLocationAttributeBuilder> {
   @BuiltValueField(wireName: r'name')
   String? get name;
 
   @BuiltValueField(wireName: r'coordinates')
-  AIMessageLocationAttributeCoordinates? get coordinates;
+  AiMessageLocationAttributeCoordinates? get coordinates;
 
   @BuiltValueField(wireName: r'boundingBox')
-  AIMessageLocationAttributeBoundingBox? get boundingBox;
+  AiMessageLocationAttributeBoundingBox? get boundingBox;
 
   @BuiltValueField(wireName: r'countryCode')
   String? get countryCode;
 
-  AIMessageLocationAttribute._();
+  AiMessageLocationAttribute._();
 
-  factory AIMessageLocationAttribute(
-          [void updates(AIMessageLocationAttributeBuilder b)]) =
-      _$AIMessageLocationAttribute;
+  factory AiMessageLocationAttribute(
+          [void updates(AiMessageLocationAttributeBuilder b)]) =
+      _$AiMessageLocationAttribute;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageLocationAttributeBuilder b) => b;
+  static void _defaults(AiMessageLocationAttributeBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessageLocationAttribute> get serializer =>
-      _$AIMessageLocationAttributeSerializer();
+  static Serializer<AiMessageLocationAttribute> get serializer =>
+      _$AiMessageLocationAttributeSerializer();
 }
 
-class _$AIMessageLocationAttributeSerializer
-    implements PrimitiveSerializer<AIMessageLocationAttribute> {
+class _$AiMessageLocationAttributeSerializer
+    implements PrimitiveSerializer<AiMessageLocationAttribute> {
   @override
   final Iterable<Type> types = const [
-    AIMessageLocationAttribute,
-    _$AIMessageLocationAttribute
+    AiMessageLocationAttribute,
+    _$AiMessageLocationAttribute
   ];
 
   @override
-  final String wireName = r'AIMessageLocationAttribute';
+  final String wireName = r'AiMessageLocationAttribute';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessageLocationAttribute object, {
+    AiMessageLocationAttribute object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.name != null) {
@@ -74,14 +74,14 @@ class _$AIMessageLocationAttributeSerializer
       yield r'coordinates';
       yield serializers.serialize(
         object.coordinates,
-        specifiedType: const FullType(AIMessageLocationAttributeCoordinates),
+        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
       );
     }
     if (object.boundingBox != null) {
       yield r'boundingBox';
       yield serializers.serialize(
         object.boundingBox,
-        specifiedType: const FullType(AIMessageLocationAttributeBoundingBox),
+        specifiedType: const FullType(AiMessageLocationAttributeBoundingBox),
       );
     }
     if (object.countryCode != null) {
@@ -96,7 +96,7 @@ class _$AIMessageLocationAttributeSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIMessageLocationAttribute object, {
+    AiMessageLocationAttribute object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -109,7 +109,7 @@ class _$AIMessageLocationAttributeSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageLocationAttributeBuilder result,
+    required AiMessageLocationAttributeBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -127,16 +127,16 @@ class _$AIMessageLocationAttributeSerializer
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(AIMessageLocationAttributeCoordinates),
-          ) as AIMessageLocationAttributeCoordinates;
+                const FullType(AiMessageLocationAttributeCoordinates),
+          ) as AiMessageLocationAttributeCoordinates;
           result.coordinates.replace(valueDes);
           break;
         case r'boundingBox':
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(AIMessageLocationAttributeBoundingBox),
-          ) as AIMessageLocationAttributeBoundingBox;
+                const FullType(AiMessageLocationAttributeBoundingBox),
+          ) as AiMessageLocationAttributeBoundingBox;
           result.boundingBox.replace(valueDes);
           break;
         case r'countryCode':
@@ -155,12 +155,12 @@ class _$AIMessageLocationAttributeSerializer
   }
 
   @override
-  AIMessageLocationAttribute deserialize(
+  AiMessageLocationAttribute deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageLocationAttributeBuilder();
+    final result = AiMessageLocationAttributeBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

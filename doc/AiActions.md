@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AIActions
+# on_the_go_sdk.model.AiActions
 
 ## Load the model package
 ```dart

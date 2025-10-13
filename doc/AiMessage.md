@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AIMessage
+# on_the_go_sdk.model.AiMessage
 
 ## Load the model package
 ```dart
@@ -9,12 +9,12 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **role** | **String** |  | 
-**message** | [**AIMessageMessage**](AIMessageMessage.md) |  | [optional] 
+**message** | [**AiMessageMessage**](AiMessageMessage.md) |  | [optional] 
 **dateTime** | **String** |  | [optional] 
-**currentContext** | [**AIMessageCurrentContext**](AIMessageCurrentContext.md) |  | [optional] 
+**currentContext** | [**AiContext**](AiContext.md) |  | [optional] 
 **currentAddress** | [**Address**](Address.md) |  | [optional] 
-**toolCalls** | [**AIToolCalls**](AIToolCalls.md) |  | [optional] 
-**toolResponses** | [**AIToolResponses**](AIToolResponses.md) |  | [optional] 
+**toolCalls** | [**AiToolCalls**](AiToolCalls.md) |  | [optional] 
+**toolResponses** | [**AiToolResponses**](AiToolResponses.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

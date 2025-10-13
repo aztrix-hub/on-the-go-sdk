@@ -9,40 +9,40 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_tool_responses.g.dart';
 
-/// AIToolResponses
+/// AiToolResponses
 ///
 /// Properties:
 /// * [getContact]
 @BuiltValue()
-abstract class AIToolResponses
-    implements Built<AIToolResponses, AIToolResponsesBuilder> {
+abstract class AiToolResponses
+    implements Built<AiToolResponses, AiToolResponsesBuilder> {
   @BuiltValueField(wireName: r'getContact')
   Individual? get getContact;
 
-  AIToolResponses._();
+  AiToolResponses._();
 
-  factory AIToolResponses([void updates(AIToolResponsesBuilder b)]) =
-      _$AIToolResponses;
+  factory AiToolResponses([void updates(AiToolResponsesBuilder b)]) =
+      _$AiToolResponses;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIToolResponsesBuilder b) => b;
+  static void _defaults(AiToolResponsesBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIToolResponses> get serializer =>
-      _$AIToolResponsesSerializer();
+  static Serializer<AiToolResponses> get serializer =>
+      _$AiToolResponsesSerializer();
 }
 
-class _$AIToolResponsesSerializer
-    implements PrimitiveSerializer<AIToolResponses> {
+class _$AiToolResponsesSerializer
+    implements PrimitiveSerializer<AiToolResponses> {
   @override
-  final Iterable<Type> types = const [AIToolResponses, _$AIToolResponses];
+  final Iterable<Type> types = const [AiToolResponses, _$AiToolResponses];
 
   @override
-  final String wireName = r'AIToolResponses';
+  final String wireName = r'AiToolResponses';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIToolResponses object, {
+    AiToolResponses object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.getContact != null) {
@@ -57,7 +57,7 @@ class _$AIToolResponsesSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIToolResponses object, {
+    AiToolResponses object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -70,7 +70,7 @@ class _$AIToolResponsesSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIToolResponsesBuilder result,
+    required AiToolResponsesBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -93,12 +93,12 @@ class _$AIToolResponsesSerializer
   }
 
   @override
-  AIToolResponses deserialize(
+  AiToolResponses deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIToolResponsesBuilder();
+    final result = AiToolResponsesBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

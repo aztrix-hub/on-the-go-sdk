@@ -1,16 +1,7 @@
 README.md
 analysis_options.yaml
-doc/AIActions.md
-doc/AIMessage.md
-doc/AIMessageAttributes.md
-doc/AIMessageCurrentContext.md
-doc/AIMessageLocationAttribute.md
-doc/AIMessageLocationAttributeBoundingBox.md
-doc/AIMessageLocationAttributeCoordinates.md
-doc/AIMessageMessage.md
-doc/AIToolCalls.md
-doc/AIToolResponses.md
 doc/Address.md
+doc/AiActions.md
 doc/AiApi.md
 doc/AiChatDataPost200Response.md
 doc/AiChatDataPost200ResponseActions.md
@@ -26,6 +17,7 @@ doc/AiChatDataPostRequestToolResponses.md
 doc/AiChatDataPostRequestUserLocation.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
+doc/AiContext.md
 doc/AiConversationDataPost200Response.md
 doc/AiConversationDataPostRequest.md
 doc/AiConversationPost200Response.md
@@ -39,7 +31,15 @@ doc/AiLegacyConversationPostRequestUserLocation.md
 doc/AiMemoriesGet200Response.md
 doc/AiMemoriesGet200ResponseMemoriesInner.md
 doc/AiMemoriesPostRequest.md
+doc/AiMessage.md
+doc/AiMessageAttributes.md
+doc/AiMessageLocationAttribute.md
+doc/AiMessageLocationAttributeBoundingBox.md
+doc/AiMessageLocationAttributeCoordinates.md
+doc/AiMessageMessage.md
 doc/AiSystemGet200Response.md
+doc/AiToolCalls.md
+doc/AiToolResponses.md
 doc/AnalyticsApi.md
 doc/AnalyticsGet200Response.md
 doc/Category.md
@@ -119,6 +119,7 @@ lib/src/model/ai_chat_data_post_request_tool_responses.dart
 lib/src/model/ai_chat_data_post_request_user_location.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
+lib/src/model/ai_context.dart
 lib/src/model/ai_conversation_data_post200_response.dart
 lib/src/model/ai_conversation_data_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
@@ -134,7 +135,6 @@ lib/src/model/ai_memories_get200_response_memories_inner.dart
 lib/src/model/ai_memories_post_request.dart
 lib/src/model/ai_message.dart
 lib/src/model/ai_message_attributes.dart
-lib/src/model/ai_message_current_context.dart
 lib/src/model/ai_message_location_attribute.dart
 lib/src/model/ai_message_location_attribute_bounding_box.dart
 lib/src/model/ai_message_location_attribute_coordinates.dart

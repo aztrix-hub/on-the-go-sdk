@@ -1,18 +1,18 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AIMessageLocationAttributeBoundingBox
+// tests for AiMessageLocationAttributeBoundingBox
 void main() {
-  final instance = AIMessageLocationAttributeBoundingBoxBuilder();
+  final instance = AiMessageLocationAttributeBoundingBoxBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AIMessageLocationAttributeBoundingBox, () {
-    // AIMessageLocationAttributeCoordinates topLeft
+  group(AiMessageLocationAttributeBoundingBox, () {
+    // AiMessageLocationAttributeCoordinates topLeft
     test('to test the property `topLeft`', () async {
       // TODO
     });
 
-    // AIMessageLocationAttributeCoordinates bottomRight
+    // AiMessageLocationAttributeCoordinates bottomRight
     test('to test the property `bottomRight`', () async {
       // TODO
     });

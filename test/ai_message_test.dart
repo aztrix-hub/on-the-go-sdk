@@ -1,18 +1,18 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AIMessage
+// tests for AiMessage
 void main() {
-  final instance = AIMessageBuilder();
+  final instance = AiMessageBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AIMessage, () {
+  group(AiMessage, () {
     // String role
     test('to test the property `role`', () async {
       // TODO
     });
 
-    // AIMessageMessage message
+    // AiMessageMessage message
     test('to test the property `message`', () async {
       // TODO
     });
@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // AIMessageCurrentContext currentContext
+    // AiContext currentContext
     test('to test the property `currentContext`', () async {
       // TODO
     });
@@ -32,12 +32,12 @@ void main() {
       // TODO
     });
 
-    // AIToolCalls toolCalls
+    // AiToolCalls toolCalls
     test('to test the property `toolCalls`', () async {
       // TODO
     });
 
-    // AIToolResponses toolResponses
+    // AiToolResponses toolResponses
     test('to test the property `toolResponses`', () async {
       // TODO
     });

@@ -9,64 +9,64 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_message_location_attribute_bounding_box.g.dart';
 
-/// AIMessageLocationAttributeBoundingBox
+/// AiMessageLocationAttributeBoundingBox
 ///
 /// Properties:
 /// * [topLeft]
 /// * [bottomRight]
 @BuiltValue()
-abstract class AIMessageLocationAttributeBoundingBox
+abstract class AiMessageLocationAttributeBoundingBox
     implements
-        Built<AIMessageLocationAttributeBoundingBox,
-            AIMessageLocationAttributeBoundingBoxBuilder> {
+        Built<AiMessageLocationAttributeBoundingBox,
+            AiMessageLocationAttributeBoundingBoxBuilder> {
   @BuiltValueField(wireName: r'topLeft')
-  AIMessageLocationAttributeCoordinates? get topLeft;
+  AiMessageLocationAttributeCoordinates? get topLeft;
 
   @BuiltValueField(wireName: r'bottomRight')
-  AIMessageLocationAttributeCoordinates? get bottomRight;
+  AiMessageLocationAttributeCoordinates? get bottomRight;
 
-  AIMessageLocationAttributeBoundingBox._();
+  AiMessageLocationAttributeBoundingBox._();
 
-  factory AIMessageLocationAttributeBoundingBox(
-          [void updates(AIMessageLocationAttributeBoundingBoxBuilder b)]) =
-      _$AIMessageLocationAttributeBoundingBox;
+  factory AiMessageLocationAttributeBoundingBox(
+          [void updates(AiMessageLocationAttributeBoundingBoxBuilder b)]) =
+      _$AiMessageLocationAttributeBoundingBox;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageLocationAttributeBoundingBoxBuilder b) => b;
+  static void _defaults(AiMessageLocationAttributeBoundingBoxBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessageLocationAttributeBoundingBox> get serializer =>
-      _$AIMessageLocationAttributeBoundingBoxSerializer();
+  static Serializer<AiMessageLocationAttributeBoundingBox> get serializer =>
+      _$AiMessageLocationAttributeBoundingBoxSerializer();
 }
 
-class _$AIMessageLocationAttributeBoundingBoxSerializer
-    implements PrimitiveSerializer<AIMessageLocationAttributeBoundingBox> {
+class _$AiMessageLocationAttributeBoundingBoxSerializer
+    implements PrimitiveSerializer<AiMessageLocationAttributeBoundingBox> {
   @override
   final Iterable<Type> types = const [
-    AIMessageLocationAttributeBoundingBox,
-    _$AIMessageLocationAttributeBoundingBox
+    AiMessageLocationAttributeBoundingBox,
+    _$AiMessageLocationAttributeBoundingBox
   ];
 
   @override
-  final String wireName = r'AIMessageLocationAttributeBoundingBox';
+  final String wireName = r'AiMessageLocationAttributeBoundingBox';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessageLocationAttributeBoundingBox object, {
+    AiMessageLocationAttributeBoundingBox object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.topLeft != null) {
       yield r'topLeft';
       yield serializers.serialize(
         object.topLeft,
-        specifiedType: const FullType(AIMessageLocationAttributeCoordinates),
+        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
       );
     }
     if (object.bottomRight != null) {
       yield r'bottomRight';
       yield serializers.serialize(
         object.bottomRight,
-        specifiedType: const FullType(AIMessageLocationAttributeCoordinates),
+        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
       );
     }
   }
@@ -74,7 +74,7 @@ class _$AIMessageLocationAttributeBoundingBoxSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIMessageLocationAttributeBoundingBox object, {
+    AiMessageLocationAttributeBoundingBox object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -87,7 +87,7 @@ class _$AIMessageLocationAttributeBoundingBoxSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageLocationAttributeBoundingBoxBuilder result,
+    required AiMessageLocationAttributeBoundingBoxBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -98,16 +98,16 @@ class _$AIMessageLocationAttributeBoundingBoxSerializer
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(AIMessageLocationAttributeCoordinates),
-          ) as AIMessageLocationAttributeCoordinates;
+                const FullType(AiMessageLocationAttributeCoordinates),
+          ) as AiMessageLocationAttributeCoordinates;
           result.topLeft.replace(valueDes);
           break;
         case r'bottomRight':
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(AIMessageLocationAttributeCoordinates),
-          ) as AIMessageLocationAttributeCoordinates;
+                const FullType(AiMessageLocationAttributeCoordinates),
+          ) as AiMessageLocationAttributeCoordinates;
           result.bottomRight.replace(valueDes);
           break;
         default:
@@ -119,12 +119,12 @@ class _$AIMessageLocationAttributeBoundingBoxSerializer
   }
 
   @override
-  AIMessageLocationAttributeBoundingBox deserialize(
+  AiMessageLocationAttributeBoundingBox deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageLocationAttributeBoundingBoxBuilder();
+    final result = AiMessageLocationAttributeBoundingBoxBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

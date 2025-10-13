@@ -6,29 +6,29 @@ part of 'ai_message_message.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIMessageMessage extends AIMessageMessage {
+class _$AiMessageMessage extends AiMessageMessage {
   @override
   final String? text;
   @override
-  final AIMessageAttributes? attributes;
+  final AiMessageAttributes? attributes;
 
-  factory _$AIMessageMessage(
-          [void Function(AIMessageMessageBuilder)? updates]) =>
-      (AIMessageMessageBuilder()..update(updates))._build();
+  factory _$AiMessageMessage(
+          [void Function(AiMessageMessageBuilder)? updates]) =>
+      (AiMessageMessageBuilder()..update(updates))._build();
 
-  _$AIMessageMessage._({this.text, this.attributes}) : super._();
+  _$AiMessageMessage._({this.text, this.attributes}) : super._();
   @override
-  AIMessageMessage rebuild(void Function(AIMessageMessageBuilder) updates) =>
+  AiMessageMessage rebuild(void Function(AiMessageMessageBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageMessageBuilder toBuilder() =>
-      AIMessageMessageBuilder()..replace(this);
+  AiMessageMessageBuilder toBuilder() =>
+      AiMessageMessageBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessageMessage &&
+    return other is AiMessageMessage &&
         text == other.text &&
         attributes == other.attributes;
   }
@@ -44,32 +44,32 @@ class _$AIMessageMessage extends AIMessageMessage {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIMessageMessage')
+    return (newBuiltValueToStringHelper(r'AiMessageMessage')
           ..add('text', text)
           ..add('attributes', attributes))
         .toString();
   }
 }
 
-class AIMessageMessageBuilder
-    implements Builder<AIMessageMessage, AIMessageMessageBuilder> {
-  _$AIMessageMessage? _$v;
+class AiMessageMessageBuilder
+    implements Builder<AiMessageMessage, AiMessageMessageBuilder> {
+  _$AiMessageMessage? _$v;
 
   String? _text;
   String? get text => _$this._text;
   set text(String? text) => _$this._text = text;
 
-  AIMessageAttributesBuilder? _attributes;
-  AIMessageAttributesBuilder get attributes =>
-      _$this._attributes ??= AIMessageAttributesBuilder();
-  set attributes(AIMessageAttributesBuilder? attributes) =>
+  AiMessageAttributesBuilder? _attributes;
+  AiMessageAttributesBuilder get attributes =>
+      _$this._attributes ??= AiMessageAttributesBuilder();
+  set attributes(AiMessageAttributesBuilder? attributes) =>
       _$this._attributes = attributes;
 
-  AIMessageMessageBuilder() {
-    AIMessageMessage._defaults(this);
+  AiMessageMessageBuilder() {
+    AiMessageMessage._defaults(this);
   }
 
-  AIMessageMessageBuilder get _$this {
+  AiMessageMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _text = $v.text;
@@ -80,23 +80,23 @@ class AIMessageMessageBuilder
   }
 
   @override
-  void replace(AIMessageMessage other) {
-    _$v = other as _$AIMessageMessage;
+  void replace(AiMessageMessage other) {
+    _$v = other as _$AiMessageMessage;
   }
 
   @override
-  void update(void Function(AIMessageMessageBuilder)? updates) {
+  void update(void Function(AiMessageMessageBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessageMessage build() => _build();
+  AiMessageMessage build() => _build();
 
-  _$AIMessageMessage _build() {
-    _$AIMessageMessage _$result;
+  _$AiMessageMessage _build() {
+    _$AiMessageMessage _$result;
     try {
       _$result = _$v ??
-          _$AIMessageMessage._(
+          _$AiMessageMessage._(
             text: text,
             attributes: _attributes?.build(),
           );
@@ -107,7 +107,7 @@ class AIMessageMessageBuilder
         _attributes?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIMessageMessage', _$failedField, e.toString());
+            r'AiMessageMessage', _$failedField, e.toString());
       }
       rethrow;
     }

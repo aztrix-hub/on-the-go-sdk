@@ -6,25 +6,25 @@ part of 'ai_tool_responses.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIToolResponses extends AIToolResponses {
+class _$AiToolResponses extends AiToolResponses {
   @override
   final Individual? getContact;
 
-  factory _$AIToolResponses([void Function(AIToolResponsesBuilder)? updates]) =>
-      (AIToolResponsesBuilder()..update(updates))._build();
+  factory _$AiToolResponses([void Function(AiToolResponsesBuilder)? updates]) =>
+      (AiToolResponsesBuilder()..update(updates))._build();
 
-  _$AIToolResponses._({this.getContact}) : super._();
+  _$AiToolResponses._({this.getContact}) : super._();
   @override
-  AIToolResponses rebuild(void Function(AIToolResponsesBuilder) updates) =>
+  AiToolResponses rebuild(void Function(AiToolResponsesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIToolResponsesBuilder toBuilder() => AIToolResponsesBuilder()..replace(this);
+  AiToolResponsesBuilder toBuilder() => AiToolResponsesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIToolResponses && getContact == other.getContact;
+    return other is AiToolResponses && getContact == other.getContact;
   }
 
   @override
@@ -37,15 +37,15 @@ class _$AIToolResponses extends AIToolResponses {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIToolResponses')
+    return (newBuiltValueToStringHelper(r'AiToolResponses')
           ..add('getContact', getContact))
         .toString();
   }
 }
 
-class AIToolResponsesBuilder
-    implements Builder<AIToolResponses, AIToolResponsesBuilder> {
-  _$AIToolResponses? _$v;
+class AiToolResponsesBuilder
+    implements Builder<AiToolResponses, AiToolResponsesBuilder> {
+  _$AiToolResponses? _$v;
 
   IndividualBuilder? _getContact;
   IndividualBuilder get getContact =>
@@ -53,11 +53,11 @@ class AIToolResponsesBuilder
   set getContact(IndividualBuilder? getContact) =>
       _$this._getContact = getContact;
 
-  AIToolResponsesBuilder() {
-    AIToolResponses._defaults(this);
+  AiToolResponsesBuilder() {
+    AiToolResponses._defaults(this);
   }
 
-  AIToolResponsesBuilder get _$this {
+  AiToolResponsesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _getContact = $v.getContact?.toBuilder();
@@ -67,23 +67,23 @@ class AIToolResponsesBuilder
   }
 
   @override
-  void replace(AIToolResponses other) {
-    _$v = other as _$AIToolResponses;
+  void replace(AiToolResponses other) {
+    _$v = other as _$AiToolResponses;
   }
 
   @override
-  void update(void Function(AIToolResponsesBuilder)? updates) {
+  void update(void Function(AiToolResponsesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIToolResponses build() => _build();
+  AiToolResponses build() => _build();
 
-  _$AIToolResponses _build() {
-    _$AIToolResponses _$result;
+  _$AiToolResponses _build() {
+    _$AiToolResponses _$result;
     try {
       _$result = _$v ??
-          _$AIToolResponses._(
+          _$AiToolResponses._(
             getContact: _getContact?.build(),
           );
     } catch (_) {
@@ -93,7 +93,7 @@ class AIToolResponsesBuilder
         _getContact?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIToolResponses', _$failedField, e.toString());
+            r'AiToolResponses', _$failedField, e.toString());
       }
       rethrow;
     }

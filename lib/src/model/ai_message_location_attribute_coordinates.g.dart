@@ -6,35 +6,35 @@ part of 'ai_message_location_attribute_coordinates.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIMessageLocationAttributeCoordinates
-    extends AIMessageLocationAttributeCoordinates {
+class _$AiMessageLocationAttributeCoordinates
+    extends AiMessageLocationAttributeCoordinates {
   @override
   final double? latitude;
   @override
   final double? longitude;
 
-  factory _$AIMessageLocationAttributeCoordinates(
-          [void Function(AIMessageLocationAttributeCoordinatesBuilder)?
+  factory _$AiMessageLocationAttributeCoordinates(
+          [void Function(AiMessageLocationAttributeCoordinatesBuilder)?
               updates]) =>
-      (AIMessageLocationAttributeCoordinatesBuilder()..update(updates))
+      (AiMessageLocationAttributeCoordinatesBuilder()..update(updates))
           ._build();
 
-  _$AIMessageLocationAttributeCoordinates._({this.latitude, this.longitude})
+  _$AiMessageLocationAttributeCoordinates._({this.latitude, this.longitude})
       : super._();
   @override
-  AIMessageLocationAttributeCoordinates rebuild(
-          void Function(AIMessageLocationAttributeCoordinatesBuilder)
+  AiMessageLocationAttributeCoordinates rebuild(
+          void Function(AiMessageLocationAttributeCoordinatesBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageLocationAttributeCoordinatesBuilder toBuilder() =>
-      AIMessageLocationAttributeCoordinatesBuilder()..replace(this);
+  AiMessageLocationAttributeCoordinatesBuilder toBuilder() =>
+      AiMessageLocationAttributeCoordinatesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessageLocationAttributeCoordinates &&
+    return other is AiMessageLocationAttributeCoordinates &&
         latitude == other.latitude &&
         longitude == other.longitude;
   }
@@ -51,18 +51,18 @@ class _$AIMessageLocationAttributeCoordinates
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'AIMessageLocationAttributeCoordinates')
+            r'AiMessageLocationAttributeCoordinates')
           ..add('latitude', latitude)
           ..add('longitude', longitude))
         .toString();
   }
 }
 
-class AIMessageLocationAttributeCoordinatesBuilder
+class AiMessageLocationAttributeCoordinatesBuilder
     implements
-        Builder<AIMessageLocationAttributeCoordinates,
-            AIMessageLocationAttributeCoordinatesBuilder> {
-  _$AIMessageLocationAttributeCoordinates? _$v;
+        Builder<AiMessageLocationAttributeCoordinates,
+            AiMessageLocationAttributeCoordinatesBuilder> {
+  _$AiMessageLocationAttributeCoordinates? _$v;
 
   double? _latitude;
   double? get latitude => _$this._latitude;
@@ -72,11 +72,11 @@ class AIMessageLocationAttributeCoordinatesBuilder
   double? get longitude => _$this._longitude;
   set longitude(double? longitude) => _$this._longitude = longitude;
 
-  AIMessageLocationAttributeCoordinatesBuilder() {
-    AIMessageLocationAttributeCoordinates._defaults(this);
+  AiMessageLocationAttributeCoordinatesBuilder() {
+    AiMessageLocationAttributeCoordinates._defaults(this);
   }
 
-  AIMessageLocationAttributeCoordinatesBuilder get _$this {
+  AiMessageLocationAttributeCoordinatesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _latitude = $v.latitude;
@@ -87,22 +87,22 @@ class AIMessageLocationAttributeCoordinatesBuilder
   }
 
   @override
-  void replace(AIMessageLocationAttributeCoordinates other) {
-    _$v = other as _$AIMessageLocationAttributeCoordinates;
+  void replace(AiMessageLocationAttributeCoordinates other) {
+    _$v = other as _$AiMessageLocationAttributeCoordinates;
   }
 
   @override
   void update(
-      void Function(AIMessageLocationAttributeCoordinatesBuilder)? updates) {
+      void Function(AiMessageLocationAttributeCoordinatesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessageLocationAttributeCoordinates build() => _build();
+  AiMessageLocationAttributeCoordinates build() => _build();
 
-  _$AIMessageLocationAttributeCoordinates _build() {
+  _$AiMessageLocationAttributeCoordinates _build() {
     final _$result = _$v ??
-        _$AIMessageLocationAttributeCoordinates._(
+        _$AiMessageLocationAttributeCoordinates._(
           latitude: latitude,
           longitude: longitude,
         );

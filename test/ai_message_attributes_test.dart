@@ -1,13 +1,13 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AIMessageAttributes
+// tests for AiMessageAttributes
 void main() {
-  final instance = AIMessageAttributesBuilder();
+  final instance = AiMessageAttributesBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AIMessageAttributes, () {
-    // AIMessageLocationAttribute location
+  group(AiMessageAttributes, () {
+    // AiMessageLocationAttribute location
     test('to test the property `location`', () async {
       // TODO
     });

@@ -9,44 +9,44 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_message_message.g.dart';
 
-/// AIMessageMessage
+/// AiMessageMessage
 ///
 /// Properties:
 /// * [text]
 /// * [attributes]
 @BuiltValue()
-abstract class AIMessageMessage
-    implements Built<AIMessageMessage, AIMessageMessageBuilder> {
+abstract class AiMessageMessage
+    implements Built<AiMessageMessage, AiMessageMessageBuilder> {
   @BuiltValueField(wireName: r'text')
   String? get text;
 
   @BuiltValueField(wireName: r'attributes')
-  AIMessageAttributes? get attributes;
+  AiMessageAttributes? get attributes;
 
-  AIMessageMessage._();
+  AiMessageMessage._();
 
-  factory AIMessageMessage([void updates(AIMessageMessageBuilder b)]) =
-      _$AIMessageMessage;
+  factory AiMessageMessage([void updates(AiMessageMessageBuilder b)]) =
+      _$AiMessageMessage;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageMessageBuilder b) => b;
+  static void _defaults(AiMessageMessageBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessageMessage> get serializer =>
-      _$AIMessageMessageSerializer();
+  static Serializer<AiMessageMessage> get serializer =>
+      _$AiMessageMessageSerializer();
 }
 
-class _$AIMessageMessageSerializer
-    implements PrimitiveSerializer<AIMessageMessage> {
+class _$AiMessageMessageSerializer
+    implements PrimitiveSerializer<AiMessageMessage> {
   @override
-  final Iterable<Type> types = const [AIMessageMessage, _$AIMessageMessage];
+  final Iterable<Type> types = const [AiMessageMessage, _$AiMessageMessage];
 
   @override
-  final String wireName = r'AIMessageMessage';
+  final String wireName = r'AiMessageMessage';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessageMessage object, {
+    AiMessageMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.text != null) {
@@ -60,7 +60,7 @@ class _$AIMessageMessageSerializer
       yield r'attributes';
       yield serializers.serialize(
         object.attributes,
-        specifiedType: const FullType(AIMessageAttributes),
+        specifiedType: const FullType(AiMessageAttributes),
       );
     }
   }
@@ -68,7 +68,7 @@ class _$AIMessageMessageSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIMessageMessage object, {
+    AiMessageMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -81,7 +81,7 @@ class _$AIMessageMessageSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageMessageBuilder result,
+    required AiMessageMessageBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -98,8 +98,8 @@ class _$AIMessageMessageSerializer
         case r'attributes':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageAttributes),
-          ) as AIMessageAttributes;
+            specifiedType: const FullType(AiMessageAttributes),
+          ) as AiMessageAttributes;
           result.attributes.replace(valueDes);
           break;
         default:
@@ -111,12 +111,12 @@ class _$AIMessageMessageSerializer
   }
 
   @override
-  AIMessageMessage deserialize(
+  AiMessageMessage deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageMessageBuilder();
+    final result = AiMessageMessageBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

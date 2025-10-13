@@ -8,57 +8,49 @@ import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_message_current_context.g.dart';
+part 'ai_context.g.dart';
 
-/// AIMessageCurrentContext
+/// AiContext
 ///
 /// Properties:
 /// * [type]
 /// * [value]
 @BuiltValue()
-abstract class AIMessageCurrentContext
-    implements Built<AIMessageCurrentContext, AIMessageCurrentContextBuilder> {
+abstract class AiContext implements Built<AiContext, AiContextBuilder> {
   @BuiltValueField(wireName: r'type')
-  AIMessageCurrentContextTypeEnum get type;
+  AiContextTypeEnum get type;
   // enum typeEnum {  anonymous,  user,  organisation,  };
 
   @BuiltValueField(wireName: r'value')
   LocationOrIndividual? get value;
 
-  AIMessageCurrentContext._();
+  AiContext._();
 
-  factory AIMessageCurrentContext(
-          [void updates(AIMessageCurrentContextBuilder b)]) =
-      _$AIMessageCurrentContext;
+  factory AiContext([void updates(AiContextBuilder b)]) = _$AiContext;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageCurrentContextBuilder b) => b;
+  static void _defaults(AiContextBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessageCurrentContext> get serializer =>
-      _$AIMessageCurrentContextSerializer();
+  static Serializer<AiContext> get serializer => _$AiContextSerializer();
 }
 
-class _$AIMessageCurrentContextSerializer
-    implements PrimitiveSerializer<AIMessageCurrentContext> {
+class _$AiContextSerializer implements PrimitiveSerializer<AiContext> {
   @override
-  final Iterable<Type> types = const [
-    AIMessageCurrentContext,
-    _$AIMessageCurrentContext
-  ];
+  final Iterable<Type> types = const [AiContext, _$AiContext];
 
   @override
-  final String wireName = r'AIMessageCurrentContext';
+  final String wireName = r'AiContext';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessageCurrentContext object, {
+    AiContext object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'type';
     yield serializers.serialize(
       object.type,
-      specifiedType: const FullType(AIMessageCurrentContextTypeEnum),
+      specifiedType: const FullType(AiContextTypeEnum),
     );
     if (object.value != null) {
       yield r'value';
@@ -72,7 +64,7 @@ class _$AIMessageCurrentContextSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIMessageCurrentContext object, {
+    AiContext object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -85,7 +77,7 @@ class _$AIMessageCurrentContextSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageCurrentContextBuilder result,
+    required AiContextBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -95,8 +87,8 @@ class _$AIMessageCurrentContextSerializer
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageCurrentContextTypeEnum),
-          ) as AIMessageCurrentContextTypeEnum;
+            specifiedType: const FullType(AiContextTypeEnum),
+          ) as AiContextTypeEnum;
           result.type = valueDes;
           break;
         case r'value':
@@ -115,12 +107,12 @@ class _$AIMessageCurrentContextSerializer
   }
 
   @override
-  AIMessageCurrentContext deserialize(
+  AiContext deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageCurrentContextBuilder();
+    final result = AiContextBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -135,24 +127,21 @@ class _$AIMessageCurrentContextSerializer
   }
 }
 
-class AIMessageCurrentContextTypeEnum extends EnumClass {
+class AiContextTypeEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'anonymous')
-  static const AIMessageCurrentContextTypeEnum anonymous =
-      _$aIMessageCurrentContextTypeEnum_anonymous;
+  static const AiContextTypeEnum anonymous = _$aiContextTypeEnum_anonymous;
   @BuiltValueEnumConst(wireName: r'user')
-  static const AIMessageCurrentContextTypeEnum user =
-      _$aIMessageCurrentContextTypeEnum_user;
+  static const AiContextTypeEnum user = _$aiContextTypeEnum_user;
   @BuiltValueEnumConst(wireName: r'organisation')
-  static const AIMessageCurrentContextTypeEnum organisation =
-      _$aIMessageCurrentContextTypeEnum_organisation;
+  static const AiContextTypeEnum organisation =
+      _$aiContextTypeEnum_organisation;
 
-  static Serializer<AIMessageCurrentContextTypeEnum> get serializer =>
-      _$aIMessageCurrentContextTypeEnumSerializer;
+  static Serializer<AiContextTypeEnum> get serializer =>
+      _$aiContextTypeEnumSerializer;
 
-  const AIMessageCurrentContextTypeEnum._(String name) : super(name);
+  const AiContextTypeEnum._(String name) : super(name);
 
-  static BuiltSet<AIMessageCurrentContextTypeEnum> get values =>
-      _$aIMessageCurrentContextTypeEnumValues;
-  static AIMessageCurrentContextTypeEnum valueOf(String name) =>
-      _$aIMessageCurrentContextTypeEnumValueOf(name);
+  static BuiltSet<AiContextTypeEnum> get values => _$aiContextTypeEnumValues;
+  static AiContextTypeEnum valueOf(String name) =>
+      _$aiContextTypeEnumValueOf(name);
 }

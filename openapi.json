@@ -1266,7 +1266,7 @@
                 "type": "object",
                 "properties": {
                   "messages": {
-                    "$ref": "#/components/schemas/AIMessages"
+                    "$ref": "#/components/schemas/AiMessages"
                   }
                 }
               }
@@ -1315,7 +1315,7 @@
                 ],
                 "properties": {
                   "messages": {
-                    "$ref": "#/components/schemas/AIMessages"
+                    "$ref": "#/components/schemas/AiMessages"
                   }
                 }
               }
@@ -1331,10 +1331,10 @@
                   "type": "object",
                   "properties": {
                     "messages": {
-                      "$ref": "#/components/schemas/AIMessages"
+                      "$ref": "#/components/schemas/AiMessages"
                     },
                     "actions": {
-                      "$ref": "#/components/schemas/AIActions"
+                      "$ref": "#/components/schemas/AiActions"
                     }
                   }
                 }
@@ -2976,13 +2976,13 @@
           }
         }
       },
-      "AIMessages": {
+      "AiMessages": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/AIMessage"
+          "$ref": "#/components/schemas/AiMessage"
         }
       },
-      "AIMessage": {
+      "AiMessage": {
         "type": "object",
         "required": [
           "role"
@@ -3004,7 +3004,7 @@
                 "type": "string"
               },
               "attributes": {
-                "$ref": "#/components/schemas/AIMessageAttributes"
+                "$ref": "#/components/schemas/AiMessageAttributes"
               }
             }
           },
@@ -3012,36 +3012,20 @@
             "type": "string"
           },
           "currentContext": {
-            "type": "object",
-            "required": [
-              "type"
-            ],
-            "properties": {
-              "type": {
-                "type": "string",
-                "enum": [
-                  "anonymous",
-                  "user",
-                  "organisation"
-                ]
-              },
-              "value": {
-                "$ref": "#/components/schemas/LocationOrIndividual"
-              }
-            }
+            "$ref": "#/components/schemas/AiContext"
           },
           "currentAddress": {
             "$ref": "#/components/schemas/Address"
           },
           "toolCalls": {
-            "$ref": "#/components/schemas/AIToolCalls"
+            "$ref": "#/components/schemas/AiToolCalls"
           },
           "toolResponses": {
-            "$ref": "#/components/schemas/AIToolResponses"
+            "$ref": "#/components/schemas/AiToolResponses"
           }
         }
       },
-      "AIToolCalls": {
+      "AiToolCalls": {
         "type": "object",
         "properties": {
           "getContact": {
@@ -3057,7 +3041,7 @@
           }
         }
       },
-      "AIToolResponses": {
+      "AiToolResponses": {
         "type": "object",
         "properties": {
           "getContact": {
@@ -3065,11 +3049,11 @@
           }
         }
       },
-      "AIMessageAttributes": {
+      "AiMessageAttributes": {
         "type": "object",
         "properties": {
           "location": {
-            "$ref": "#/components/schemas/AIMessageLocationAttribute"
+            "$ref": "#/components/schemas/AiMessageLocationAttribute"
           },
           "name": {
             "type": "string"
@@ -3097,7 +3081,7 @@
           }
         }
       },
-      "AIMessageLocationAttribute": {
+      "AiMessageLocationAttribute": {
         "type": "object",
         "properties": {
           "name": {
@@ -3164,7 +3148,26 @@
           }
         }
       },
-      "AIActions": {
+      "AiContext": {
+        "type": "object",
+        "required": [
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "anonymous",
+              "user",
+              "organisation"
+            ]
+          },
+          "value": {
+            "$ref": "#/components/schemas/LocationOrIndividual"
+          }
+        }
+      },
+      "AiActions": {
         "type": "object",
         "properties": {
           "search": {

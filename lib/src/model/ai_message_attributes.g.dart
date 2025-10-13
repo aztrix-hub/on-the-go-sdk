@@ -6,9 +6,9 @@ part of 'ai_message_attributes.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIMessageAttributes extends AIMessageAttributes {
+class _$AiMessageAttributes extends AiMessageAttributes {
   @override
-  final AIMessageLocationAttribute? location;
+  final AiMessageLocationAttribute? location;
   @override
   final String? name;
   @override
@@ -24,11 +24,11 @@ class _$AIMessageAttributes extends AIMessageAttributes {
   @override
   final String? textBody;
 
-  factory _$AIMessageAttributes(
-          [void Function(AIMessageAttributesBuilder)? updates]) =>
-      (AIMessageAttributesBuilder()..update(updates))._build();
+  factory _$AiMessageAttributes(
+          [void Function(AiMessageAttributesBuilder)? updates]) =>
+      (AiMessageAttributesBuilder()..update(updates))._build();
 
-  _$AIMessageAttributes._(
+  _$AiMessageAttributes._(
       {this.location,
       this.name,
       this.phone,
@@ -39,18 +39,18 @@ class _$AIMessageAttributes extends AIMessageAttributes {
       this.textBody})
       : super._();
   @override
-  AIMessageAttributes rebuild(
-          void Function(AIMessageAttributesBuilder) updates) =>
+  AiMessageAttributes rebuild(
+          void Function(AiMessageAttributesBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageAttributesBuilder toBuilder() =>
-      AIMessageAttributesBuilder()..replace(this);
+  AiMessageAttributesBuilder toBuilder() =>
+      AiMessageAttributesBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessageAttributes &&
+    return other is AiMessageAttributes &&
         location == other.location &&
         name == other.name &&
         phone == other.phone &&
@@ -78,7 +78,7 @@ class _$AIMessageAttributes extends AIMessageAttributes {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIMessageAttributes')
+    return (newBuiltValueToStringHelper(r'AiMessageAttributes')
           ..add('location', location)
           ..add('name', name)
           ..add('phone', phone)
@@ -91,14 +91,14 @@ class _$AIMessageAttributes extends AIMessageAttributes {
   }
 }
 
-class AIMessageAttributesBuilder
-    implements Builder<AIMessageAttributes, AIMessageAttributesBuilder> {
-  _$AIMessageAttributes? _$v;
+class AiMessageAttributesBuilder
+    implements Builder<AiMessageAttributes, AiMessageAttributesBuilder> {
+  _$AiMessageAttributes? _$v;
 
-  AIMessageLocationAttributeBuilder? _location;
-  AIMessageLocationAttributeBuilder get location =>
-      _$this._location ??= AIMessageLocationAttributeBuilder();
-  set location(AIMessageLocationAttributeBuilder? location) =>
+  AiMessageLocationAttributeBuilder? _location;
+  AiMessageLocationAttributeBuilder get location =>
+      _$this._location ??= AiMessageLocationAttributeBuilder();
+  set location(AiMessageLocationAttributeBuilder? location) =>
       _$this._location = location;
 
   String? _name;
@@ -130,11 +130,11 @@ class AIMessageAttributesBuilder
   String? get textBody => _$this._textBody;
   set textBody(String? textBody) => _$this._textBody = textBody;
 
-  AIMessageAttributesBuilder() {
-    AIMessageAttributes._defaults(this);
+  AiMessageAttributesBuilder() {
+    AiMessageAttributes._defaults(this);
   }
 
-  AIMessageAttributesBuilder get _$this {
+  AiMessageAttributesBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _location = $v.location?.toBuilder();
@@ -151,23 +151,23 @@ class AIMessageAttributesBuilder
   }
 
   @override
-  void replace(AIMessageAttributes other) {
-    _$v = other as _$AIMessageAttributes;
+  void replace(AiMessageAttributes other) {
+    _$v = other as _$AiMessageAttributes;
   }
 
   @override
-  void update(void Function(AIMessageAttributesBuilder)? updates) {
+  void update(void Function(AiMessageAttributesBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessageAttributes build() => _build();
+  AiMessageAttributes build() => _build();
 
-  _$AIMessageAttributes _build() {
-    _$AIMessageAttributes _$result;
+  _$AiMessageAttributes _build() {
+    _$AiMessageAttributes _$result;
     try {
       _$result = _$v ??
-          _$AIMessageAttributes._(
+          _$AiMessageAttributes._(
             location: _location?.build(),
             name: name,
             phone: phone,
@@ -187,7 +187,7 @@ class AIMessageAttributesBuilder
         _keywords?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIMessageAttributes', _$failedField, e.toString());
+            r'AiMessageAttributes', _$failedField, e.toString());
       }
       rethrow;
     }

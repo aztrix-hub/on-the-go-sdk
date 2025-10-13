@@ -6,36 +6,36 @@ part of 'ai_message_location_attribute.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIMessageLocationAttribute extends AIMessageLocationAttribute {
+class _$AiMessageLocationAttribute extends AiMessageLocationAttribute {
   @override
   final String? name;
   @override
-  final AIMessageLocationAttributeCoordinates? coordinates;
+  final AiMessageLocationAttributeCoordinates? coordinates;
   @override
-  final AIMessageLocationAttributeBoundingBox? boundingBox;
+  final AiMessageLocationAttributeBoundingBox? boundingBox;
   @override
   final String? countryCode;
 
-  factory _$AIMessageLocationAttribute(
-          [void Function(AIMessageLocationAttributeBuilder)? updates]) =>
-      (AIMessageLocationAttributeBuilder()..update(updates))._build();
+  factory _$AiMessageLocationAttribute(
+          [void Function(AiMessageLocationAttributeBuilder)? updates]) =>
+      (AiMessageLocationAttributeBuilder()..update(updates))._build();
 
-  _$AIMessageLocationAttribute._(
+  _$AiMessageLocationAttribute._(
       {this.name, this.coordinates, this.boundingBox, this.countryCode})
       : super._();
   @override
-  AIMessageLocationAttribute rebuild(
-          void Function(AIMessageLocationAttributeBuilder) updates) =>
+  AiMessageLocationAttribute rebuild(
+          void Function(AiMessageLocationAttributeBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIMessageLocationAttributeBuilder toBuilder() =>
-      AIMessageLocationAttributeBuilder()..replace(this);
+  AiMessageLocationAttributeBuilder toBuilder() =>
+      AiMessageLocationAttributeBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIMessageLocationAttribute &&
+    return other is AiMessageLocationAttribute &&
         name == other.name &&
         coordinates == other.coordinates &&
         boundingBox == other.boundingBox &&
@@ -55,7 +55,7 @@ class _$AIMessageLocationAttribute extends AIMessageLocationAttribute {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIMessageLocationAttribute')
+    return (newBuiltValueToStringHelper(r'AiMessageLocationAttribute')
           ..add('name', name)
           ..add('coordinates', coordinates)
           ..add('boundingBox', boundingBox)
@@ -64,36 +64,36 @@ class _$AIMessageLocationAttribute extends AIMessageLocationAttribute {
   }
 }
 
-class AIMessageLocationAttributeBuilder
+class AiMessageLocationAttributeBuilder
     implements
-        Builder<AIMessageLocationAttribute, AIMessageLocationAttributeBuilder> {
-  _$AIMessageLocationAttribute? _$v;
+        Builder<AiMessageLocationAttribute, AiMessageLocationAttributeBuilder> {
+  _$AiMessageLocationAttribute? _$v;
 
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
 
-  AIMessageLocationAttributeCoordinatesBuilder? _coordinates;
-  AIMessageLocationAttributeCoordinatesBuilder get coordinates =>
-      _$this._coordinates ??= AIMessageLocationAttributeCoordinatesBuilder();
-  set coordinates(AIMessageLocationAttributeCoordinatesBuilder? coordinates) =>
+  AiMessageLocationAttributeCoordinatesBuilder? _coordinates;
+  AiMessageLocationAttributeCoordinatesBuilder get coordinates =>
+      _$this._coordinates ??= AiMessageLocationAttributeCoordinatesBuilder();
+  set coordinates(AiMessageLocationAttributeCoordinatesBuilder? coordinates) =>
       _$this._coordinates = coordinates;
 
-  AIMessageLocationAttributeBoundingBoxBuilder? _boundingBox;
-  AIMessageLocationAttributeBoundingBoxBuilder get boundingBox =>
-      _$this._boundingBox ??= AIMessageLocationAttributeBoundingBoxBuilder();
-  set boundingBox(AIMessageLocationAttributeBoundingBoxBuilder? boundingBox) =>
+  AiMessageLocationAttributeBoundingBoxBuilder? _boundingBox;
+  AiMessageLocationAttributeBoundingBoxBuilder get boundingBox =>
+      _$this._boundingBox ??= AiMessageLocationAttributeBoundingBoxBuilder();
+  set boundingBox(AiMessageLocationAttributeBoundingBoxBuilder? boundingBox) =>
       _$this._boundingBox = boundingBox;
 
   String? _countryCode;
   String? get countryCode => _$this._countryCode;
   set countryCode(String? countryCode) => _$this._countryCode = countryCode;
 
-  AIMessageLocationAttributeBuilder() {
-    AIMessageLocationAttribute._defaults(this);
+  AiMessageLocationAttributeBuilder() {
+    AiMessageLocationAttribute._defaults(this);
   }
 
-  AIMessageLocationAttributeBuilder get _$this {
+  AiMessageLocationAttributeBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _name = $v.name;
@@ -106,23 +106,23 @@ class AIMessageLocationAttributeBuilder
   }
 
   @override
-  void replace(AIMessageLocationAttribute other) {
-    _$v = other as _$AIMessageLocationAttribute;
+  void replace(AiMessageLocationAttribute other) {
+    _$v = other as _$AiMessageLocationAttribute;
   }
 
   @override
-  void update(void Function(AIMessageLocationAttributeBuilder)? updates) {
+  void update(void Function(AiMessageLocationAttributeBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIMessageLocationAttribute build() => _build();
+  AiMessageLocationAttribute build() => _build();
 
-  _$AIMessageLocationAttribute _build() {
-    _$AIMessageLocationAttribute _$result;
+  _$AiMessageLocationAttribute _build() {
+    _$AiMessageLocationAttribute _$result;
     try {
       _$result = _$v ??
-          _$AIMessageLocationAttribute._(
+          _$AiMessageLocationAttribute._(
             name: name,
             coordinates: _coordinates?.build(),
             boundingBox: _boundingBox?.build(),
@@ -137,7 +137,7 @@ class AIMessageLocationAttributeBuilder
         _boundingBox?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIMessageLocationAttribute', _$failedField, e.toString());
+            r'AiMessageLocationAttribute', _$failedField, e.toString());
       }
       rethrow;
     }

@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_message_attributes.g.dart';
 
-/// AIMessageAttributes
+/// AiMessageAttributes
 ///
 /// Properties:
 /// * [location]
@@ -22,10 +22,10 @@ part 'ai_message_attributes.g.dart';
 /// * [emailSubject]
 /// * [textBody]
 @BuiltValue()
-abstract class AIMessageAttributes
-    implements Built<AIMessageAttributes, AIMessageAttributesBuilder> {
+abstract class AiMessageAttributes
+    implements Built<AiMessageAttributes, AiMessageAttributesBuilder> {
   @BuiltValueField(wireName: r'location')
-  AIMessageLocationAttribute? get location;
+  AiMessageLocationAttribute? get location;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -48,40 +48,40 @@ abstract class AIMessageAttributes
   @BuiltValueField(wireName: r'textBody')
   String? get textBody;
 
-  AIMessageAttributes._();
+  AiMessageAttributes._();
 
-  factory AIMessageAttributes([void updates(AIMessageAttributesBuilder b)]) =
-      _$AIMessageAttributes;
+  factory AiMessageAttributes([void updates(AiMessageAttributesBuilder b)]) =
+      _$AiMessageAttributes;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageAttributesBuilder b) => b;
+  static void _defaults(AiMessageAttributesBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessageAttributes> get serializer =>
-      _$AIMessageAttributesSerializer();
+  static Serializer<AiMessageAttributes> get serializer =>
+      _$AiMessageAttributesSerializer();
 }
 
-class _$AIMessageAttributesSerializer
-    implements PrimitiveSerializer<AIMessageAttributes> {
+class _$AiMessageAttributesSerializer
+    implements PrimitiveSerializer<AiMessageAttributes> {
   @override
   final Iterable<Type> types = const [
-    AIMessageAttributes,
-    _$AIMessageAttributes
+    AiMessageAttributes,
+    _$AiMessageAttributes
   ];
 
   @override
-  final String wireName = r'AIMessageAttributes';
+  final String wireName = r'AiMessageAttributes';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessageAttributes object, {
+    AiMessageAttributes object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.location != null) {
       yield r'location';
       yield serializers.serialize(
         object.location,
-        specifiedType: const FullType(AIMessageLocationAttribute),
+        specifiedType: const FullType(AiMessageLocationAttribute),
       );
     }
     if (object.name != null) {
@@ -138,7 +138,7 @@ class _$AIMessageAttributesSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AIMessageAttributes object, {
+    AiMessageAttributes object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -151,7 +151,7 @@ class _$AIMessageAttributesSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageAttributesBuilder result,
+    required AiMessageAttributesBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -161,8 +161,8 @@ class _$AIMessageAttributesSerializer
         case r'location':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageLocationAttribute),
-          ) as AIMessageLocationAttribute;
+            specifiedType: const FullType(AiMessageLocationAttribute),
+          ) as AiMessageLocationAttribute;
           result.location.replace(valueDes);
           break;
         case r'name':
@@ -223,12 +223,12 @@ class _$AIMessageAttributesSerializer
   }
 
   @override
-  AIMessageAttributes deserialize(
+  AiMessageAttributes deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageAttributesBuilder();
+    final result = AiMessageAttributesBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

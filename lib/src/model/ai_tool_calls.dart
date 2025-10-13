@@ -9,36 +9,36 @@ import 'package:built_value/serializer.dart';
 
 part 'ai_tool_calls.g.dart';
 
-/// AIToolCalls
+/// AiToolCalls
 ///
 /// Properties:
 /// * [getContact]
 @BuiltValue()
-abstract class AIToolCalls implements Built<AIToolCalls, AIToolCallsBuilder> {
+abstract class AiToolCalls implements Built<AiToolCalls, AiToolCallsBuilder> {
   @BuiltValueField(wireName: r'getContact')
   AiChatDataPost200ResponseToolCallsGetContact? get getContact;
 
-  AIToolCalls._();
+  AiToolCalls._();
 
-  factory AIToolCalls([void updates(AIToolCallsBuilder b)]) = _$AIToolCalls;
+  factory AiToolCalls([void updates(AiToolCallsBuilder b)]) = _$AiToolCalls;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIToolCallsBuilder b) => b;
+  static void _defaults(AiToolCallsBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIToolCalls> get serializer => _$AIToolCallsSerializer();
+  static Serializer<AiToolCalls> get serializer => _$AiToolCallsSerializer();
 }
 
-class _$AIToolCallsSerializer implements PrimitiveSerializer<AIToolCalls> {
+class _$AiToolCallsSerializer implements PrimitiveSerializer<AiToolCalls> {
   @override
-  final Iterable<Type> types = const [AIToolCalls, _$AIToolCalls];
+  final Iterable<Type> types = const [AiToolCalls, _$AiToolCalls];
 
   @override
-  final String wireName = r'AIToolCalls';
+  final String wireName = r'AiToolCalls';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIToolCalls object, {
+    AiToolCalls object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.getContact != null) {
@@ -54,7 +54,7 @@ class _$AIToolCallsSerializer implements PrimitiveSerializer<AIToolCalls> {
   @override
   Object serialize(
     Serializers serializers,
-    AIToolCalls object, {
+    AiToolCalls object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -67,7 +67,7 @@ class _$AIToolCallsSerializer implements PrimitiveSerializer<AIToolCalls> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIToolCallsBuilder result,
+    required AiToolCallsBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -91,12 +91,12 @@ class _$AIToolCallsSerializer implements PrimitiveSerializer<AIToolCalls> {
   }
 
   @override
-  AIToolCalls deserialize(
+  AiToolCalls deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIToolCallsBuilder();
+    final result = AiToolCallsBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AIMessageLocationAttribute
+# on_the_go_sdk.model.AiMessageLocationAttribute
 
 ## Load the model package
 ```dart
@@ -9,8 +9,8 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**coordinates** | [**AIMessageLocationAttributeCoordinates**](AIMessageLocationAttributeCoordinates.md) |  | [optional] 
-**boundingBox** | [**AIMessageLocationAttributeBoundingBox**](AIMessageLocationAttributeBoundingBox.md) |  | [optional] 
+**coordinates** | [**AiMessageLocationAttributeCoordinates**](AiMessageLocationAttributeCoordinates.md) |  | [optional] 
+**boundingBox** | [**AiMessageLocationAttributeBoundingBox**](AiMessageLocationAttributeBoundingBox.md) |  | [optional] 
 **countryCode** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,16 +5,16 @@
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_message_message.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
+import 'package:on_the_go_sdk/src/model/ai_message_message.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
-import 'package:on_the_go_sdk/src/model/ai_message_current_context.dart';
+import 'package:on_the_go_sdk/src/model/ai_context.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
 part 'ai_message.g.dart';
 
-/// AIMessage
+/// AiMessage
 ///
 /// Properties:
 /// * [role]
@@ -25,62 +25,62 @@ part 'ai_message.g.dart';
 /// * [toolCalls]
 /// * [toolResponses]
 @BuiltValue()
-abstract class AIMessage implements Built<AIMessage, AIMessageBuilder> {
+abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
   @BuiltValueField(wireName: r'role')
-  AIMessageRoleEnum get role;
+  AiMessageRoleEnum get role;
   // enum roleEnum {  user,  assistant,  system,  tool,  };
 
   @BuiltValueField(wireName: r'message')
-  AIMessageMessage? get message;
+  AiMessageMessage? get message;
 
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
 
   @BuiltValueField(wireName: r'currentContext')
-  AIMessageCurrentContext? get currentContext;
+  AiContext? get currentContext;
 
   @BuiltValueField(wireName: r'currentAddress')
   Address? get currentAddress;
 
   @BuiltValueField(wireName: r'toolCalls')
-  AIToolCalls? get toolCalls;
+  AiToolCalls? get toolCalls;
 
   @BuiltValueField(wireName: r'toolResponses')
-  AIToolResponses? get toolResponses;
+  AiToolResponses? get toolResponses;
 
-  AIMessage._();
+  AiMessage._();
 
-  factory AIMessage([void updates(AIMessageBuilder b)]) = _$AIMessage;
+  factory AiMessage([void updates(AiMessageBuilder b)]) = _$AiMessage;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AIMessageBuilder b) => b;
+  static void _defaults(AiMessageBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AIMessage> get serializer => _$AIMessageSerializer();
+  static Serializer<AiMessage> get serializer => _$AiMessageSerializer();
 }
 
-class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
+class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
   @override
-  final Iterable<Type> types = const [AIMessage, _$AIMessage];
+  final Iterable<Type> types = const [AiMessage, _$AiMessage];
 
   @override
-  final String wireName = r'AIMessage';
+  final String wireName = r'AiMessage';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AIMessage object, {
+    AiMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     yield r'role';
     yield serializers.serialize(
       object.role,
-      specifiedType: const FullType(AIMessageRoleEnum),
+      specifiedType: const FullType(AiMessageRoleEnum),
     );
     if (object.message != null) {
       yield r'message';
       yield serializers.serialize(
         object.message,
-        specifiedType: const FullType(AIMessageMessage),
+        specifiedType: const FullType(AiMessageMessage),
       );
     }
     if (object.dateTime != null) {
@@ -94,7 +94,7 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
       yield r'currentContext';
       yield serializers.serialize(
         object.currentContext,
-        specifiedType: const FullType(AIMessageCurrentContext),
+        specifiedType: const FullType(AiContext),
       );
     }
     if (object.currentAddress != null) {
@@ -108,14 +108,14 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
       yield r'toolCalls';
       yield serializers.serialize(
         object.toolCalls,
-        specifiedType: const FullType(AIToolCalls),
+        specifiedType: const FullType(AiToolCalls),
       );
     }
     if (object.toolResponses != null) {
       yield r'toolResponses';
       yield serializers.serialize(
         object.toolResponses,
-        specifiedType: const FullType(AIToolResponses),
+        specifiedType: const FullType(AiToolResponses),
       );
     }
   }
@@ -123,7 +123,7 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
   @override
   Object serialize(
     Serializers serializers,
-    AIMessage object, {
+    AiMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -136,7 +136,7 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AIMessageBuilder result,
+    required AiMessageBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -146,15 +146,15 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
         case r'role':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageRoleEnum),
-          ) as AIMessageRoleEnum;
+            specifiedType: const FullType(AiMessageRoleEnum),
+          ) as AiMessageRoleEnum;
           result.role = valueDes;
           break;
         case r'message':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageMessage),
-          ) as AIMessageMessage;
+            specifiedType: const FullType(AiMessageMessage),
+          ) as AiMessageMessage;
           result.message.replace(valueDes);
           break;
         case r'dateTime':
@@ -167,8 +167,8 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
         case r'currentContext':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIMessageCurrentContext),
-          ) as AIMessageCurrentContext;
+            specifiedType: const FullType(AiContext),
+          ) as AiContext;
           result.currentContext.replace(valueDes);
           break;
         case r'currentAddress':
@@ -181,15 +181,15 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
         case r'toolCalls':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIToolCalls),
-          ) as AIToolCalls;
+            specifiedType: const FullType(AiToolCalls),
+          ) as AiToolCalls;
           result.toolCalls.replace(valueDes);
           break;
         case r'toolResponses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AIToolResponses),
-          ) as AIToolResponses;
+            specifiedType: const FullType(AiToolResponses),
+          ) as AiToolResponses;
           result.toolResponses.replace(valueDes);
           break;
         default:
@@ -201,12 +201,12 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
   }
 
   @override
-  AIMessage deserialize(
+  AiMessage deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AIMessageBuilder();
+    final result = AiMessageBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
@@ -221,22 +221,22 @@ class _$AIMessageSerializer implements PrimitiveSerializer<AIMessage> {
   }
 }
 
-class AIMessageRoleEnum extends EnumClass {
+class AiMessageRoleEnum extends EnumClass {
   @BuiltValueEnumConst(wireName: r'user')
-  static const AIMessageRoleEnum user = _$aIMessageRoleEnum_user;
+  static const AiMessageRoleEnum user = _$aiMessageRoleEnum_user;
   @BuiltValueEnumConst(wireName: r'assistant')
-  static const AIMessageRoleEnum assistant = _$aIMessageRoleEnum_assistant;
+  static const AiMessageRoleEnum assistant = _$aiMessageRoleEnum_assistant;
   @BuiltValueEnumConst(wireName: r'system')
-  static const AIMessageRoleEnum system = _$aIMessageRoleEnum_system;
+  static const AiMessageRoleEnum system = _$aiMessageRoleEnum_system;
   @BuiltValueEnumConst(wireName: r'tool')
-  static const AIMessageRoleEnum tool = _$aIMessageRoleEnum_tool;
+  static const AiMessageRoleEnum tool = _$aiMessageRoleEnum_tool;
 
-  static Serializer<AIMessageRoleEnum> get serializer =>
-      _$aIMessageRoleEnumSerializer;
+  static Serializer<AiMessageRoleEnum> get serializer =>
+      _$aiMessageRoleEnumSerializer;
 
-  const AIMessageRoleEnum._(String name) : super(name);
+  const AiMessageRoleEnum._(String name) : super(name);
 
-  static BuiltSet<AIMessageRoleEnum> get values => _$aIMessageRoleEnumValues;
-  static AIMessageRoleEnum valueOf(String name) =>
-      _$aIMessageRoleEnumValueOf(name);
+  static BuiltSet<AiMessageRoleEnum> get values => _$aiMessageRoleEnumValues;
+  static AiMessageRoleEnum valueOf(String name) =>
+      _$aiMessageRoleEnumValueOf(name);
 }

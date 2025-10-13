@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiConversationDataPostRequest, () {
-    // BuiltList<AIMessage> messages
+    // BuiltList<AiMessage> messages
     test('to test the property `messages`', () async {
       // TODO
     });

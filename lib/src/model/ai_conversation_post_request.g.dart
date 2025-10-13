@@ -8,7 +8,7 @@ part of 'ai_conversation_post_request.dart';
 
 class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
-  final BuiltList<AIMessage>? messages;
+  final BuiltList<AiMessage>? messages;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
@@ -51,10 +51,10 @@ class AiConversationPostRequestBuilder
         Builder<AiConversationPostRequest, AiConversationPostRequestBuilder> {
   _$AiConversationPostRequest? _$v;
 
-  ListBuilder<AIMessage>? _messages;
-  ListBuilder<AIMessage> get messages =>
-      _$this._messages ??= ListBuilder<AIMessage>();
-  set messages(ListBuilder<AIMessage>? messages) => _$this._messages = messages;
+  ListBuilder<AiMessage>? _messages;
+  ListBuilder<AiMessage> get messages =>
+      _$this._messages ??= ListBuilder<AiMessage>();
+  set messages(ListBuilder<AiMessage>? messages) => _$this._messages = messages;
 
   AiConversationPostRequestBuilder() {
     AiConversationPostRequest._defaults(this);

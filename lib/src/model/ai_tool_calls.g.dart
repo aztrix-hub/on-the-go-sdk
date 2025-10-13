@@ -6,25 +6,25 @@ part of 'ai_tool_calls.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AIToolCalls extends AIToolCalls {
+class _$AiToolCalls extends AiToolCalls {
   @override
   final AiChatDataPost200ResponseToolCallsGetContact? getContact;
 
-  factory _$AIToolCalls([void Function(AIToolCallsBuilder)? updates]) =>
-      (AIToolCallsBuilder()..update(updates))._build();
+  factory _$AiToolCalls([void Function(AiToolCallsBuilder)? updates]) =>
+      (AiToolCallsBuilder()..update(updates))._build();
 
-  _$AIToolCalls._({this.getContact}) : super._();
+  _$AiToolCalls._({this.getContact}) : super._();
   @override
-  AIToolCalls rebuild(void Function(AIToolCallsBuilder) updates) =>
+  AiToolCalls rebuild(void Function(AiToolCallsBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AIToolCallsBuilder toBuilder() => AIToolCallsBuilder()..replace(this);
+  AiToolCallsBuilder toBuilder() => AiToolCallsBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AIToolCalls && getContact == other.getContact;
+    return other is AiToolCalls && getContact == other.getContact;
   }
 
   @override
@@ -37,14 +37,14 @@ class _$AIToolCalls extends AIToolCalls {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AIToolCalls')
+    return (newBuiltValueToStringHelper(r'AiToolCalls')
           ..add('getContact', getContact))
         .toString();
   }
 }
 
-class AIToolCallsBuilder implements Builder<AIToolCalls, AIToolCallsBuilder> {
-  _$AIToolCalls? _$v;
+class AiToolCallsBuilder implements Builder<AiToolCalls, AiToolCallsBuilder> {
+  _$AiToolCalls? _$v;
 
   AiChatDataPost200ResponseToolCallsGetContactBuilder? _getContact;
   AiChatDataPost200ResponseToolCallsGetContactBuilder get getContact =>
@@ -54,11 +54,11 @@ class AIToolCallsBuilder implements Builder<AIToolCalls, AIToolCallsBuilder> {
           AiChatDataPost200ResponseToolCallsGetContactBuilder? getContact) =>
       _$this._getContact = getContact;
 
-  AIToolCallsBuilder() {
-    AIToolCalls._defaults(this);
+  AiToolCallsBuilder() {
+    AiToolCalls._defaults(this);
   }
 
-  AIToolCallsBuilder get _$this {
+  AiToolCallsBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _getContact = $v.getContact?.toBuilder();
@@ -68,23 +68,23 @@ class AIToolCallsBuilder implements Builder<AIToolCalls, AIToolCallsBuilder> {
   }
 
   @override
-  void replace(AIToolCalls other) {
-    _$v = other as _$AIToolCalls;
+  void replace(AiToolCalls other) {
+    _$v = other as _$AiToolCalls;
   }
 
   @override
-  void update(void Function(AIToolCallsBuilder)? updates) {
+  void update(void Function(AiToolCallsBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AIToolCalls build() => _build();
+  AiToolCalls build() => _build();
 
-  _$AIToolCalls _build() {
-    _$AIToolCalls _$result;
+  _$AiToolCalls _build() {
+    _$AiToolCalls _$result;
     try {
       _$result = _$v ??
-          _$AIToolCalls._(
+          _$AiToolCalls._(
             getContact: _getContact?.build(),
           );
     } catch (_) {
@@ -94,7 +94,7 @@ class AIToolCallsBuilder implements Builder<AIToolCalls, AIToolCallsBuilder> {
         _getContact?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AIToolCalls', _$failedField, e.toString());
+            r'AiToolCalls', _$failedField, e.toString());
       }
       rethrow;
     }

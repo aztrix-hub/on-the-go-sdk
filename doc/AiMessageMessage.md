@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AIMessageMessage
+# on_the_go_sdk.model.AiMessageMessage
 
 ## Load the model package
 ```dart
@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **String** |  | [optional] 
-**attributes** | [**AIMessageAttributes**](AIMessageAttributes.md) |  | [optional] 
+**attributes** | [**AiMessageAttributes**](AiMessageAttributes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
