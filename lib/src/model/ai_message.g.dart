@@ -77,7 +77,9 @@ class _$AiMessage extends AiMessage {
   @override
   final AiMessageRoleEnum role;
   @override
-  final AiMessageMessage? message;
+  final String? text;
+  @override
+  final AiMessageAttributes? attributes;
   @override
   final String? dateTime;
   @override
@@ -88,18 +90,22 @@ class _$AiMessage extends AiMessage {
   final AiToolCalls? toolCalls;
   @override
   final AiToolResponses? toolResponses;
+  @override
+  final AiActions? actions;
 
   factory _$AiMessage([void Function(AiMessageBuilder)? updates]) =>
       (AiMessageBuilder()..update(updates))._build();
 
   _$AiMessage._(
       {required this.role,
-      this.message,
+      this.text,
+      this.attributes,
       this.dateTime,
       this.currentContext,
       this.currentAddress,
       this.toolCalls,
-      this.toolResponses})
+      this.toolResponses,
+      this.actions})
       : super._();
   @override
   AiMessage rebuild(void Function(AiMessageBuilder) updates) =>
@@ -113,24 +119,28 @@ class _$AiMessage extends AiMessage {
     if (identical(other, this)) return true;
     return other is AiMessage &&
         role == other.role &&
-        message == other.message &&
+        text == other.text &&
+        attributes == other.attributes &&
         dateTime == other.dateTime &&
         currentContext == other.currentContext &&
         currentAddress == other.currentAddress &&
         toolCalls == other.toolCalls &&
-        toolResponses == other.toolResponses;
+        toolResponses == other.toolResponses &&
+        actions == other.actions;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, role.hashCode);
-    _$hash = $jc(_$hash, message.hashCode);
+    _$hash = $jc(_$hash, text.hashCode);
+    _$hash = $jc(_$hash, attributes.hashCode);
     _$hash = $jc(_$hash, dateTime.hashCode);
     _$hash = $jc(_$hash, currentContext.hashCode);
     _$hash = $jc(_$hash, currentAddress.hashCode);
     _$hash = $jc(_$hash, toolCalls.hashCode);
     _$hash = $jc(_$hash, toolResponses.hashCode);
+    _$hash = $jc(_$hash, actions.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -139,12 +149,14 @@ class _$AiMessage extends AiMessage {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiMessage')
           ..add('role', role)
-          ..add('message', message)
+          ..add('text', text)
+          ..add('attributes', attributes)
           ..add('dateTime', dateTime)
           ..add('currentContext', currentContext)
           ..add('currentAddress', currentAddress)
           ..add('toolCalls', toolCalls)
-          ..add('toolResponses', toolResponses))
+          ..add('toolResponses', toolResponses)
+          ..add('actions', actions))
         .toString();
   }
 }
@@ -156,10 +168,15 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
   AiMessageRoleEnum? get role => _$this._role;
   set role(AiMessageRoleEnum? role) => _$this._role = role;
 
-  AiMessageMessageBuilder? _message;
-  AiMessageMessageBuilder get message =>
-      _$this._message ??= AiMessageMessageBuilder();
-  set message(AiMessageMessageBuilder? message) => _$this._message = message;
+  String? _text;
+  String? get text => _$this._text;
+  set text(String? text) => _$this._text = text;
+
+  AiMessageAttributesBuilder? _attributes;
+  AiMessageAttributesBuilder get attributes =>
+      _$this._attributes ??= AiMessageAttributesBuilder();
+  set attributes(AiMessageAttributesBuilder? attributes) =>
+      _$this._attributes = attributes;
 
   String? _dateTime;
   String? get dateTime => _$this._dateTime;
@@ -188,6 +205,10 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
   set toolResponses(AiToolResponsesBuilder? toolResponses) =>
       _$this._toolResponses = toolResponses;
 
+  AiActionsBuilder? _actions;
+  AiActionsBuilder get actions => _$this._actions ??= AiActionsBuilder();
+  set actions(AiActionsBuilder? actions) => _$this._actions = actions;
+
   AiMessageBuilder() {
     AiMessage._defaults(this);
   }
@@ -196,12 +217,14 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
     final $v = _$v;
     if ($v != null) {
       _role = $v.role;
-      _message = $v.message?.toBuilder();
+      _text = $v.text;
+      _attributes = $v.attributes?.toBuilder();
       _dateTime = $v.dateTime;
       _currentContext = $v.currentContext?.toBuilder();
       _currentAddress = $v.currentAddress?.toBuilder();
       _toolCalls = $v.toolCalls?.toBuilder();
       _toolResponses = $v.toolResponses?.toBuilder();
+      _actions = $v.actions?.toBuilder();
       _$v = null;
     }
     return this;
@@ -227,18 +250,20 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
           _$AiMessage._(
             role: BuiltValueNullFieldError.checkNotNull(
                 role, r'AiMessage', 'role'),
-            message: _message?.build(),
+            text: text,
+            attributes: _attributes?.build(),
             dateTime: dateTime,
             currentContext: _currentContext?.build(),
             currentAddress: _currentAddress?.build(),
             toolCalls: _toolCalls?.build(),
             toolResponses: _toolResponses?.build(),
+            actions: _actions?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'message';
-        _message?.build();
+        _$failedField = 'attributes';
+        _attributes?.build();
 
         _$failedField = 'currentContext';
         _currentContext?.build();
@@ -248,6 +273,8 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
         _toolCalls?.build();
         _$failedField = 'toolResponses';
         _toolResponses?.build();
+        _$failedField = 'actions';
+        _actions?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiMessage', _$failedField, e.toString());

@@ -1332,9 +1332,6 @@
                   "properties": {
                     "messages": {
                       "$ref": "#/components/schemas/AiMessages"
-                    },
-                    "actions": {
-                      "$ref": "#/components/schemas/AiActions"
                     }
                   }
                 }
@@ -2997,16 +2994,11 @@
               "tool"
             ]
           },
-          "message": {
-            "type": "object",
-            "properties": {
-              "text": {
-                "type": "string"
-              },
-              "attributes": {
-                "$ref": "#/components/schemas/AiMessageAttributes"
-              }
-            }
+          "text": {
+            "type": "string"
+          },
+          "attributes": {
+            "$ref": "#/components/schemas/AiMessageAttributes"
           },
           "dateTime": {
             "type": "string"
@@ -3022,6 +3014,9 @@
           },
           "toolResponses": {
             "$ref": "#/components/schemas/AiToolResponses"
+          },
+          "actions": {
+            "$ref": "#/components/schemas/AiActions"
           }
         }
       },

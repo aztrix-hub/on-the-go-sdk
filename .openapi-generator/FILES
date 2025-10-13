@@ -18,7 +18,6 @@ doc/AiChatDataPostRequestUserLocation.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiContext.md
-doc/AiConversationDataPost200Response.md
 doc/AiConversationDataPostRequest.md
 doc/AiConversationPost200Response.md
 doc/AiConversationPostRequest.md
@@ -36,7 +35,6 @@ doc/AiMessageAttributes.md
 doc/AiMessageLocationAttribute.md
 doc/AiMessageLocationAttributeBoundingBox.md
 doc/AiMessageLocationAttributeCoordinates.md
-doc/AiMessageMessage.md
 doc/AiSystemGet200Response.md
 doc/AiToolCalls.md
 doc/AiToolResponses.md
@@ -120,7 +118,6 @@ lib/src/model/ai_chat_data_post_request_user_location.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_context.dart
-lib/src/model/ai_conversation_data_post200_response.dart
 lib/src/model/ai_conversation_data_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
 lib/src/model/ai_conversation_post_request.dart
@@ -138,7 +135,6 @@ lib/src/model/ai_message_attributes.dart
 lib/src/model/ai_message_location_attribute.dart
 lib/src/model/ai_message_location_attribute_bounding_box.dart
 lib/src/model/ai_message_location_attribute_coordinates.dart
-lib/src/model/ai_message_message.dart
 lib/src/model/ai_system_get200_response.dart
 lib/src/model/ai_tool_calls.dart
 lib/src/model/ai_tool_responses.dart

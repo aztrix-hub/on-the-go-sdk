@@ -3,10 +3,11 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_message_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/ai_actions.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
-import 'package:on_the_go_sdk/src/model/ai_message_message.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/ai_context.dart';
 import 'package:built_value/built_value.dart';
@@ -18,20 +19,25 @@ part 'ai_message.g.dart';
 ///
 /// Properties:
 /// * [role]
-/// * [message]
+/// * [text]
+/// * [attributes]
 /// * [dateTime]
 /// * [currentContext]
 /// * [currentAddress]
 /// * [toolCalls]
 /// * [toolResponses]
+/// * [actions]
 @BuiltValue()
 abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
   @BuiltValueField(wireName: r'role')
   AiMessageRoleEnum get role;
   // enum roleEnum {  user,  assistant,  system,  tool,  };
 
-  @BuiltValueField(wireName: r'message')
-  AiMessageMessage? get message;
+  @BuiltValueField(wireName: r'text')
+  String? get text;
+
+  @BuiltValueField(wireName: r'attributes')
+  AiMessageAttributes? get attributes;
 
   @BuiltValueField(wireName: r'dateTime')
   String? get dateTime;
@@ -47,6 +53,9 @@ abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
 
   @BuiltValueField(wireName: r'toolResponses')
   AiToolResponses? get toolResponses;
+
+  @BuiltValueField(wireName: r'actions')
+  AiActions? get actions;
 
   AiMessage._();
 
@@ -76,11 +85,18 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
       object.role,
       specifiedType: const FullType(AiMessageRoleEnum),
     );
-    if (object.message != null) {
-      yield r'message';
+    if (object.text != null) {
+      yield r'text';
       yield serializers.serialize(
-        object.message,
-        specifiedType: const FullType(AiMessageMessage),
+        object.text,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.attributes != null) {
+      yield r'attributes';
+      yield serializers.serialize(
+        object.attributes,
+        specifiedType: const FullType(AiMessageAttributes),
       );
     }
     if (object.dateTime != null) {
@@ -118,6 +134,13 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
         specifiedType: const FullType(AiToolResponses),
       );
     }
+    if (object.actions != null) {
+      yield r'actions';
+      yield serializers.serialize(
+        object.actions,
+        specifiedType: const FullType(AiActions),
+      );
+    }
   }
 
   @override
@@ -150,12 +173,19 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
           ) as AiMessageRoleEnum;
           result.role = valueDes;
           break;
-        case r'message':
+        case r'text':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiMessageMessage),
-          ) as AiMessageMessage;
-          result.message.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.text = valueDes;
+          break;
+        case r'attributes':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiMessageAttributes),
+          ) as AiMessageAttributes;
+          result.attributes.replace(valueDes);
           break;
         case r'dateTime':
           final valueDes = serializers.deserialize(
@@ -191,6 +221,13 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
             specifiedType: const FullType(AiToolResponses),
           ) as AiToolResponses;
           result.toolResponses.replace(valueDes);
+          break;
+        case r'actions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiActions),
+          ) as AiActions;
+          result.actions.replace(valueDes);
           break;
         default:
           unhandled.add(key);

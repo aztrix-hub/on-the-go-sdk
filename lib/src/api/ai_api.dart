@@ -12,7 +12,6 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -251,9 +250,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiConversationDataPost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiConversationPostRequest] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiConversationDataPost200Response>> aiConversationDataPost({
+  Future<Response<AiConversationPostRequest>> aiConversationDataPost({
     AiConversationDataPostRequest? aiConversationDataPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -312,7 +311,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiConversationDataPost200Response? _responseData;
+    AiConversationPostRequest? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -320,8 +319,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiConversationDataPost200Response),
-            ) as AiConversationDataPost200Response;
+              specifiedType: const FullType(AiConversationPostRequest),
+            ) as AiConversationPostRequest;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -332,7 +331,7 @@ class AiApi {
       );
     }
 
-    return Response<AiConversationDataPost200Response>(
+    return Response<AiConversationPostRequest>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

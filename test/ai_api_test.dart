@@ -16,7 +16,7 @@ void main() {
       // TODO
     });
 
-    //Future<AiConversationDataPost200Response> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
+    //Future<AiConversationPostRequest> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
     test('test aiConversationDataPost', () async {
       // TODO
     });

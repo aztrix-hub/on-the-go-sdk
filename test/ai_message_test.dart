@@ -12,8 +12,13 @@ void main() {
       // TODO
     });
 
-    // AiMessageMessage message
-    test('to test the property `message`', () async {
+    // String text
+    test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // AiMessageAttributes attributes
+    test('to test the property `attributes`', () async {
       // TODO
     });
 
@@ -39,6 +44,11 @@ void main() {
 
     // AiToolResponses toolResponses
     test('to test the property `toolResponses`', () async {
+      // TODO
+    });
+
+    // AiActions actions
+    test('to test the property `actions`', () async {
       // TODO
     });
   });
