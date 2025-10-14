@@ -14,6 +14,8 @@ const AiMessageRoleEnum _$aiMessageRoleEnum_system =
     const AiMessageRoleEnum._('system');
 const AiMessageRoleEnum _$aiMessageRoleEnum_tool =
     const AiMessageRoleEnum._('tool');
+const AiMessageRoleEnum _$aiMessageRoleEnum_action =
+    const AiMessageRoleEnum._('action');
 
 AiMessageRoleEnum _$aiMessageRoleEnumValueOf(String name) {
   switch (name) {
@@ -25,6 +27,8 @@ AiMessageRoleEnum _$aiMessageRoleEnumValueOf(String name) {
       return _$aiMessageRoleEnum_system;
     case 'tool':
       return _$aiMessageRoleEnum_tool;
+    case 'action':
+      return _$aiMessageRoleEnum_action;
     default:
       throw ArgumentError(name);
   }
@@ -36,6 +40,7 @@ final BuiltSet<AiMessageRoleEnum> _$aiMessageRoleEnumValues =
   _$aiMessageRoleEnum_assistant,
   _$aiMessageRoleEnum_system,
   _$aiMessageRoleEnum_tool,
+  _$aiMessageRoleEnum_action,
 ]);
 
 Serializer<AiMessageRoleEnum> _$aiMessageRoleEnumSerializer =
@@ -48,12 +53,14 @@ class _$AiMessageRoleEnumSerializer
     'assistant': 'assistant',
     'system': 'system',
     'tool': 'tool',
+    'action': 'action',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'user': 'user',
     'assistant': 'assistant',
     'system': 'system',
     'tool': 'tool',
+    'action': 'action',
   };
 
   @override

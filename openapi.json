@@ -2991,7 +2991,8 @@
               "user",
               "assistant",
               "system",
-              "tool"
+              "tool",
+              "action"
             ]
           },
           "text": {

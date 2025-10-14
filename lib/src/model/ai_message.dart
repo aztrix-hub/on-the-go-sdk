@@ -31,7 +31,7 @@ part 'ai_message.g.dart';
 abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
   @BuiltValueField(wireName: r'role')
   AiMessageRoleEnum get role;
-  // enum roleEnum {  user,  assistant,  system,  tool,  };
+  // enum roleEnum {  user,  assistant,  system,  tool,  action,  };
 
   @BuiltValueField(wireName: r'text')
   String? get text;
@@ -267,6 +267,8 @@ class AiMessageRoleEnum extends EnumClass {
   static const AiMessageRoleEnum system = _$aiMessageRoleEnum_system;
   @BuiltValueEnumConst(wireName: r'tool')
   static const AiMessageRoleEnum tool = _$aiMessageRoleEnum_tool;
+  @BuiltValueEnumConst(wireName: r'action')
+  static const AiMessageRoleEnum action = _$aiMessageRoleEnum_action;
 
   static Serializer<AiMessageRoleEnum> get serializer =>
       _$aiMessageRoleEnumSerializer;
