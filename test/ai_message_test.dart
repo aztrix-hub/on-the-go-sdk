@@ -7,6 +7,11 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiMessage, () {
+    // String dateTime
+    test('to test the property `dateTime`', () async {
+      // TODO
+    });
+
     // String role
     test('to test the property `role`', () async {
       // TODO
@@ -19,11 +24,6 @@ void main() {
 
     // AiMessageAttributes attributes
     test('to test the property `attributes`', () async {
-      // TODO
-    });
-
-    // String dateTime
-    test('to test the property `dateTime`', () async {
       // TODO
     });
 

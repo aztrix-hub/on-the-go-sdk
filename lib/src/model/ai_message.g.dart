@@ -82,13 +82,13 @@ class _$AiMessageRoleEnumSerializer
 
 class _$AiMessage extends AiMessage {
   @override
+  final String? dateTime;
+  @override
   final AiMessageRoleEnum role;
   @override
   final String? text;
   @override
   final AiMessageAttributes? attributes;
-  @override
-  final String? dateTime;
   @override
   final AiContext? currentContext;
   @override
@@ -104,10 +104,10 @@ class _$AiMessage extends AiMessage {
       (AiMessageBuilder()..update(updates))._build();
 
   _$AiMessage._(
-      {required this.role,
+      {this.dateTime,
+      required this.role,
       this.text,
       this.attributes,
-      this.dateTime,
       this.currentContext,
       this.currentAddress,
       this.toolCalls,
@@ -125,10 +125,10 @@ class _$AiMessage extends AiMessage {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiMessage &&
+        dateTime == other.dateTime &&
         role == other.role &&
         text == other.text &&
         attributes == other.attributes &&
-        dateTime == other.dateTime &&
         currentContext == other.currentContext &&
         currentAddress == other.currentAddress &&
         toolCalls == other.toolCalls &&
@@ -139,10 +139,10 @@ class _$AiMessage extends AiMessage {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, dateTime.hashCode);
     _$hash = $jc(_$hash, role.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, attributes.hashCode);
-    _$hash = $jc(_$hash, dateTime.hashCode);
     _$hash = $jc(_$hash, currentContext.hashCode);
     _$hash = $jc(_$hash, currentAddress.hashCode);
     _$hash = $jc(_$hash, toolCalls.hashCode);
@@ -155,10 +155,10 @@ class _$AiMessage extends AiMessage {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiMessage')
+          ..add('dateTime', dateTime)
           ..add('role', role)
           ..add('text', text)
           ..add('attributes', attributes)
-          ..add('dateTime', dateTime)
           ..add('currentContext', currentContext)
           ..add('currentAddress', currentAddress)
           ..add('toolCalls', toolCalls)
@@ -170,6 +170,10 @@ class _$AiMessage extends AiMessage {
 
 class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
   _$AiMessage? _$v;
+
+  String? _dateTime;
+  String? get dateTime => _$this._dateTime;
+  set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
   AiMessageRoleEnum? _role;
   AiMessageRoleEnum? get role => _$this._role;
@@ -184,10 +188,6 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
       _$this._attributes ??= AiMessageAttributesBuilder();
   set attributes(AiMessageAttributesBuilder? attributes) =>
       _$this._attributes = attributes;
-
-  String? _dateTime;
-  String? get dateTime => _$this._dateTime;
-  set dateTime(String? dateTime) => _$this._dateTime = dateTime;
 
   AiContextBuilder? _currentContext;
   AiContextBuilder get currentContext =>
@@ -223,10 +223,10 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
   AiMessageBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _dateTime = $v.dateTime;
       _role = $v.role;
       _text = $v.text;
       _attributes = $v.attributes?.toBuilder();
-      _dateTime = $v.dateTime;
       _currentContext = $v.currentContext?.toBuilder();
       _currentAddress = $v.currentAddress?.toBuilder();
       _toolCalls = $v.toolCalls?.toBuilder();
@@ -255,11 +255,11 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
     try {
       _$result = _$v ??
           _$AiMessage._(
+            dateTime: dateTime,
             role: BuiltValueNullFieldError.checkNotNull(
                 role, r'AiMessage', 'role'),
             text: text,
             attributes: _attributes?.build(),
-            dateTime: dateTime,
             currentContext: _currentContext?.build(),
             currentAddress: _currentAddress?.build(),
             toolCalls: _toolCalls?.build(),
@@ -271,7 +271,6 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
       try {
         _$failedField = 'attributes';
         _attributes?.build();
-
         _$failedField = 'currentContext';
         _currentContext?.build();
         _$failedField = 'currentAddress';

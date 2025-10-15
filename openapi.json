@@ -2985,6 +2985,9 @@
           "role"
         ],
         "properties": {
+          "dateTime": {
+            "type": "string"
+          },
           "role": {
             "type": "string",
             "enum": [
@@ -3000,9 +3003,6 @@
           },
           "attributes": {
             "$ref": "#/components/schemas/AiMessageAttributes"
-          },
-          "dateTime": {
-            "type": "string"
           },
           "currentContext": {
             "$ref": "#/components/schemas/AiContext"
@@ -3172,6 +3172,31 @@
               "$ref": "#/components/schemas/LocationOrIndividual"
             }
           },
+          "contact": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "phone": {
+                "type": "string"
+              }
+            }
+          },
+          "updateContact": {
+            "type": "object",
+            "properties": {
+              "contact": {
+                "$ref": "#/components/schemas/LocationOrIndividual"
+              },
+              "results": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/LocationOrIndividual"
+                }
+              }
+            }
+          },
           "keywords": {
             "type": "array",
             "items": {
@@ -3214,20 +3239,6 @@
               },
               "body": {
                 "type": "string"
-              }
-            }
-          },
-          "updateContact": {
-            "type": "object",
-            "properties": {
-              "contact": {
-                "$ref": "#/components/schemas/LocationOrIndividual"
-              },
-              "results": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/LocationOrIndividual"
-                }
               }
             }
           }

@@ -12,6 +12,16 @@ void main() {
       // TODO
     });
 
+    // AiChatDataPost200ResponseToolCallsGetContact contact
+    test('to test the property `contact`', () async {
+      // TODO
+    });
+
+    // AiChatDataPost200ResponseActionsUpdateContact updateContact
+    test('to test the property `updateContact`', () async {
+      // TODO
+    });
+
     // BuiltList<String> keywords
     test('to test the property `keywords`', () async {
       // TODO
@@ -40,11 +50,6 @@ void main() {
 
     // AiChatDataPost200ResponseActionsEmail email
     test('to test the property `email`', () async {
-      // TODO
-    });
-
-    // AiChatDataPost200ResponseActionsUpdateContact updateContact
-    test('to test the property `updateContact`', () async {
       // TODO
     });
   });

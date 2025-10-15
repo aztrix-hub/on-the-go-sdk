@@ -18,10 +18,10 @@ part 'ai_message.g.dart';
 /// AiMessage
 ///
 /// Properties:
+/// * [dateTime]
 /// * [role]
 /// * [text]
 /// * [attributes]
-/// * [dateTime]
 /// * [currentContext]
 /// * [currentAddress]
 /// * [toolCalls]
@@ -29,6 +29,9 @@ part 'ai_message.g.dart';
 /// * [actions]
 @BuiltValue()
 abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
+  @BuiltValueField(wireName: r'dateTime')
+  String? get dateTime;
+
   @BuiltValueField(wireName: r'role')
   AiMessageRoleEnum get role;
   // enum roleEnum {  user,  assistant,  system,  tool,  action,  };
@@ -38,9 +41,6 @@ abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
 
   @BuiltValueField(wireName: r'attributes')
   AiMessageAttributes? get attributes;
-
-  @BuiltValueField(wireName: r'dateTime')
-  String? get dateTime;
 
   @BuiltValueField(wireName: r'currentContext')
   AiContext? get currentContext;
@@ -80,6 +80,13 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
     AiMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.dateTime != null) {
+      yield r'dateTime';
+      yield serializers.serialize(
+        object.dateTime,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'role';
     yield serializers.serialize(
       object.role,
@@ -97,13 +104,6 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
       yield serializers.serialize(
         object.attributes,
         specifiedType: const FullType(AiMessageAttributes),
-      );
-    }
-    if (object.dateTime != null) {
-      yield r'dateTime';
-      yield serializers.serialize(
-        object.dateTime,
-        specifiedType: const FullType(String),
       );
     }
     if (object.currentContext != null) {
@@ -166,6 +166,13 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'dateTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dateTime = valueDes;
+          break;
         case r'role':
           final valueDes = serializers.deserialize(
             value,
@@ -186,13 +193,6 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
             specifiedType: const FullType(AiMessageAttributes),
           ) as AiMessageAttributes;
           result.attributes.replace(valueDes);
-          break;
-        case r'dateTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.dateTime = valueDes;
           break;
         case r'currentContext':
           final valueDes = serializers.deserialize(

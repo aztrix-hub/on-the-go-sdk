@@ -10,6 +10,10 @@ class _$AiActions extends AiActions {
   @override
   final BuiltList<LocationOrIndividual>? search;
   @override
+  final AiChatDataPost200ResponseToolCallsGetContact? contact;
+  @override
+  final AiChatDataPost200ResponseActionsUpdateContact? updateContact;
+  @override
   final BuiltList<String>? keywords;
   @override
   final String? description;
@@ -21,21 +25,20 @@ class _$AiActions extends AiActions {
   final AiChatDataPost200ResponseActionsText? text;
   @override
   final AiChatDataPost200ResponseActionsEmail? email;
-  @override
-  final AiChatDataPost200ResponseActionsUpdateContact? updateContact;
 
   factory _$AiActions([void Function(AiActionsBuilder)? updates]) =>
       (AiActionsBuilder()..update(updates))._build();
 
   _$AiActions._(
       {this.search,
+      this.contact,
+      this.updateContact,
       this.keywords,
       this.description,
       this.openingHours,
       this.call,
       this.text,
-      this.email,
-      this.updateContact})
+      this.email})
       : super._();
   @override
   AiActions rebuild(void Function(AiActionsBuilder) updates) =>
@@ -49,26 +52,28 @@ class _$AiActions extends AiActions {
     if (identical(other, this)) return true;
     return other is AiActions &&
         search == other.search &&
+        contact == other.contact &&
+        updateContact == other.updateContact &&
         keywords == other.keywords &&
         description == other.description &&
         openingHours == other.openingHours &&
         call == other.call &&
         text == other.text &&
-        email == other.email &&
-        updateContact == other.updateContact;
+        email == other.email;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, search.hashCode);
+    _$hash = $jc(_$hash, contact.hashCode);
+    _$hash = $jc(_$hash, updateContact.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
     _$hash = $jc(_$hash, description.hashCode);
     _$hash = $jc(_$hash, openingHours.hashCode);
     _$hash = $jc(_$hash, call.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, updateContact.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,13 +82,14 @@ class _$AiActions extends AiActions {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiActions')
           ..add('search', search)
+          ..add('contact', contact)
+          ..add('updateContact', updateContact)
           ..add('keywords', keywords)
           ..add('description', description)
           ..add('openingHours', openingHours)
           ..add('call', call)
           ..add('text', text)
-          ..add('email', email)
-          ..add('updateContact', updateContact))
+          ..add('email', email))
         .toString();
   }
 }
@@ -96,6 +102,21 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _$this._search ??= ListBuilder<LocationOrIndividual>();
   set search(ListBuilder<LocationOrIndividual>? search) =>
       _$this._search = search;
+
+  AiChatDataPost200ResponseToolCallsGetContactBuilder? _contact;
+  AiChatDataPost200ResponseToolCallsGetContactBuilder get contact =>
+      _$this._contact ??= AiChatDataPost200ResponseToolCallsGetContactBuilder();
+  set contact(AiChatDataPost200ResponseToolCallsGetContactBuilder? contact) =>
+      _$this._contact = contact;
+
+  AiChatDataPost200ResponseActionsUpdateContactBuilder? _updateContact;
+  AiChatDataPost200ResponseActionsUpdateContactBuilder get updateContact =>
+      _$this._updateContact ??=
+          AiChatDataPost200ResponseActionsUpdateContactBuilder();
+  set updateContact(
+          AiChatDataPost200ResponseActionsUpdateContactBuilder?
+              updateContact) =>
+      _$this._updateContact = updateContact;
 
   ListBuilder<String>? _keywords;
   ListBuilder<String> get keywords =>
@@ -130,15 +151,6 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
   set email(AiChatDataPost200ResponseActionsEmailBuilder? email) =>
       _$this._email = email;
 
-  AiChatDataPost200ResponseActionsUpdateContactBuilder? _updateContact;
-  AiChatDataPost200ResponseActionsUpdateContactBuilder get updateContact =>
-      _$this._updateContact ??=
-          AiChatDataPost200ResponseActionsUpdateContactBuilder();
-  set updateContact(
-          AiChatDataPost200ResponseActionsUpdateContactBuilder?
-              updateContact) =>
-      _$this._updateContact = updateContact;
-
   AiActionsBuilder() {
     AiActions._defaults(this);
   }
@@ -147,13 +159,14 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
     final $v = _$v;
     if ($v != null) {
       _search = $v.search?.toBuilder();
+      _contact = $v.contact?.toBuilder();
+      _updateContact = $v.updateContact?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
       _description = $v.description;
       _openingHours = $v.openingHours?.toBuilder();
       _call = $v.call?.toBuilder();
       _text = $v.text?.toBuilder();
       _email = $v.email?.toBuilder();
-      _updateContact = $v.updateContact?.toBuilder();
       _$v = null;
     }
     return this;
@@ -178,19 +191,24 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _$result = _$v ??
           _$AiActions._(
             search: _search?.build(),
+            contact: _contact?.build(),
+            updateContact: _updateContact?.build(),
             keywords: _keywords?.build(),
             description: description,
             openingHours: _openingHours?.build(),
             call: _call?.build(),
             text: _text?.build(),
             email: _email?.build(),
-            updateContact: _updateContact?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'search';
         _search?.build();
+        _$failedField = 'contact';
+        _contact?.build();
+        _$failedField = 'updateContact';
+        _updateContact?.build();
         _$failedField = 'keywords';
         _keywords?.build();
 
@@ -202,8 +220,6 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
         _text?.build();
         _$failedField = 'email';
         _email?.build();
-        _$failedField = 'updateContact';
-        _updateContact?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiActions', _$failedField, e.toString());

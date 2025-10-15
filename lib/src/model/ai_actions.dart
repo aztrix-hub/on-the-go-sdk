@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
+import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
 import 'package:built_collection/built_collection.dart';
@@ -19,17 +20,24 @@ part 'ai_actions.g.dart';
 ///
 /// Properties:
 /// * [search]
+/// * [contact]
+/// * [updateContact]
 /// * [keywords]
 /// * [description]
 /// * [openingHours] - Opening hours
 /// * [call]
 /// * [text]
 /// * [email]
-/// * [updateContact]
 @BuiltValue()
 abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'search')
   BuiltList<LocationOrIndividual>? get search;
+
+  @BuiltValueField(wireName: r'contact')
+  AiChatDataPost200ResponseToolCallsGetContact? get contact;
+
+  @BuiltValueField(wireName: r'updateContact')
+  AiChatDataPost200ResponseActionsUpdateContact? get updateContact;
 
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
@@ -49,9 +57,6 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
 
   @BuiltValueField(wireName: r'email')
   AiChatDataPost200ResponseActionsEmail? get email;
-
-  @BuiltValueField(wireName: r'updateContact')
-  AiChatDataPost200ResponseActionsUpdateContact? get updateContact;
 
   AiActions._();
 
@@ -82,6 +87,22 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
         object.search,
         specifiedType:
             const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+      );
+    }
+    if (object.contact != null) {
+      yield r'contact';
+      yield serializers.serialize(
+        object.contact,
+        specifiedType:
+            const FullType(AiChatDataPost200ResponseToolCallsGetContact),
+      );
+    }
+    if (object.updateContact != null) {
+      yield r'updateContact';
+      yield serializers.serialize(
+        object.updateContact,
+        specifiedType:
+            const FullType(AiChatDataPost200ResponseActionsUpdateContact),
       );
     }
     if (object.keywords != null) {
@@ -126,14 +147,6 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
         specifiedType: const FullType(AiChatDataPost200ResponseActionsEmail),
       );
     }
-    if (object.updateContact != null) {
-      yield r'updateContact';
-      yield serializers.serialize(
-        object.updateContact,
-        specifiedType:
-            const FullType(AiChatDataPost200ResponseActionsUpdateContact),
-      );
-    }
   }
 
   @override
@@ -166,6 +179,22 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
                 const FullType(BuiltList, [FullType(LocationOrIndividual)]),
           ) as BuiltList<LocationOrIndividual>;
           result.search.replace(valueDes);
+          break;
+        case r'contact':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(AiChatDataPost200ResponseToolCallsGetContact),
+          ) as AiChatDataPost200ResponseToolCallsGetContact;
+          result.contact.replace(valueDes);
+          break;
+        case r'updateContact':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(AiChatDataPost200ResponseActionsUpdateContact),
+          ) as AiChatDataPost200ResponseActionsUpdateContact;
+          result.updateContact.replace(valueDes);
           break;
         case r'keywords':
           final valueDes = serializers.deserialize(
@@ -209,14 +238,6 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
                 const FullType(AiChatDataPost200ResponseActionsEmail),
           ) as AiChatDataPost200ResponseActionsEmail;
           result.email.replace(valueDes);
-          break;
-        case r'updateContact':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType:
-                const FullType(AiChatDataPost200ResponseActionsUpdateContact),
-          ) as AiChatDataPost200ResponseActionsUpdateContact;
-          result.updateContact.replace(valueDes);
           break;
         default:
           unhandled.add(key);
