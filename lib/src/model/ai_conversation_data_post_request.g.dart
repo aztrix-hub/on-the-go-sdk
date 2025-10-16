@@ -8,13 +8,17 @@ part of 'ai_conversation_data_post_request.dart';
 
 class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
+  final String action;
+  @override
   final BuiltList<AiMessage> messages;
 
   factory _$AiConversationDataPostRequest(
           [void Function(AiConversationDataPostRequestBuilder)? updates]) =>
       (AiConversationDataPostRequestBuilder()..update(updates))._build();
 
-  _$AiConversationDataPostRequest._({required this.messages}) : super._();
+  _$AiConversationDataPostRequest._(
+      {required this.action, required this.messages})
+      : super._();
   @override
   AiConversationDataPostRequest rebuild(
           void Function(AiConversationDataPostRequestBuilder) updates) =>
@@ -27,12 +31,15 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiConversationDataPostRequest && messages == other.messages;
+    return other is AiConversationDataPostRequest &&
+        action == other.action &&
+        messages == other.messages;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -41,6 +48,7 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiConversationDataPostRequest')
+          ..add('action', action)
           ..add('messages', messages))
         .toString();
   }
@@ -51,6 +59,10 @@ class AiConversationDataPostRequestBuilder
         Builder<AiConversationDataPostRequest,
             AiConversationDataPostRequestBuilder> {
   _$AiConversationDataPostRequest? _$v;
+
+  String? _action;
+  String? get action => _$this._action;
+  set action(String? action) => _$this._action = action;
 
   ListBuilder<AiMessage>? _messages;
   ListBuilder<AiMessage> get messages =>
@@ -64,6 +76,7 @@ class AiConversationDataPostRequestBuilder
   AiConversationDataPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _action = $v.action;
       _messages = $v.messages.toBuilder();
       _$v = null;
     }
@@ -88,6 +101,8 @@ class AiConversationDataPostRequestBuilder
     try {
       _$result = _$v ??
           _$AiConversationDataPostRequest._(
+            action: BuiltValueNullFieldError.checkNotNull(
+                action, r'AiConversationDataPostRequest', 'action'),
             messages: messages.build(),
           );
     } catch (_) {

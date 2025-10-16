@@ -1254,6 +1254,47 @@
         ]
       }
     },
+    "/ai/conversation/action": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messages": {
+                    "$ref": "#/components/schemas/AiMessages"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "action": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/ai/conversation": {
       "post": {
         "tags": [
@@ -1311,9 +1352,13 @@
               "schema": {
                 "type": "object",
                 "required": [
+                  "action",
                   "messages"
                 ],
                 "properties": {
+                  "action": {
+                    "type": "string"
+                  },
                   "messages": {
                     "$ref": "#/components/schemas/AiMessages"
                   }
@@ -1341,12 +1386,7 @@
           "500": {
             "description": "Internal Server Error"
           }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
+        }
       }
     },
     "/ai/memories": {

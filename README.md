@@ -67,6 +67,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 [*AiApi*](doc/AiApi.md) | [**aiChatDataPost**](doc/AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationActionPost**](doc/AiApi.md#aiconversationactionpost) | **POST** /ai/conversation/action | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationDataPost**](doc/AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyChatPost**](doc/AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
@@ -127,9 +128,10 @@ Class | Method | HTTP request | Description
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiContext](doc/AiContext.md)
+ - [AiConversationActionPost200Response](doc/AiConversationActionPost200Response.md)
+ - [AiConversationActionPostRequest](doc/AiConversationActionPostRequest.md)
  - [AiConversationDataPostRequest](doc/AiConversationDataPostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
- - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
  - [AiLegacyChatPost200Response](doc/AiLegacyChatPost200Response.md)
  - [AiLegacyChatPostRequest](doc/AiLegacyChatPostRequest.md)
  - [AiLegacyConversationPost200Response](doc/AiLegacyConversationPost200Response.md)
