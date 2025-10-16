@@ -8,13 +8,13 @@ part of 'location_or_individual.dart';
 
 class _$LocationOrIndividual extends LocationOrIndividual {
   @override
-  final AnyOf anyOf;
+  final OneOf oneOf;
 
   factory _$LocationOrIndividual(
           [void Function(LocationOrIndividualBuilder)? updates]) =>
       (LocationOrIndividualBuilder()..update(updates))._build();
 
-  _$LocationOrIndividual._({required this.anyOf}) : super._();
+  _$LocationOrIndividual._({required this.oneOf}) : super._();
   @override
   LocationOrIndividual rebuild(
           void Function(LocationOrIndividualBuilder) updates) =>
@@ -27,13 +27,13 @@ class _$LocationOrIndividual extends LocationOrIndividual {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LocationOrIndividual && anyOf == other.anyOf;
+    return other is LocationOrIndividual && oneOf == other.oneOf;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, anyOf.hashCode);
+    _$hash = $jc(_$hash, oneOf.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -41,7 +41,7 @@ class _$LocationOrIndividual extends LocationOrIndividual {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationOrIndividual')
-          ..add('anyOf', anyOf))
+          ..add('oneOf', oneOf))
         .toString();
   }
 }
@@ -50,9 +50,9 @@ class LocationOrIndividualBuilder
     implements Builder<LocationOrIndividual, LocationOrIndividualBuilder> {
   _$LocationOrIndividual? _$v;
 
-  AnyOf? _anyOf;
-  AnyOf? get anyOf => _$this._anyOf;
-  set anyOf(AnyOf? anyOf) => _$this._anyOf = anyOf;
+  OneOf? _oneOf;
+  OneOf? get oneOf => _$this._oneOf;
+  set oneOf(OneOf? oneOf) => _$this._oneOf = oneOf;
 
   LocationOrIndividualBuilder() {
     LocationOrIndividual._defaults(this);
@@ -61,7 +61,7 @@ class LocationOrIndividualBuilder
   LocationOrIndividualBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _anyOf = $v.anyOf;
+      _oneOf = $v.oneOf;
       _$v = null;
     }
     return this;
@@ -83,8 +83,8 @@ class LocationOrIndividualBuilder
   _$LocationOrIndividual _build() {
     final _$result = _$v ??
         _$LocationOrIndividual._(
-          anyOf: BuiltValueNullFieldError.checkNotNull(
-              anyOf, r'LocationOrIndividual', 'anyOf'),
+          oneOf: BuiltValueNullFieldError.checkNotNull(
+              oneOf, r'LocationOrIndividual', 'oneOf'),
         );
     replace(_$result);
     return _$result;

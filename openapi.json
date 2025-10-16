@@ -2493,7 +2493,7 @@
         "description": "Location"
       },
       "LocationOrIndividual": {
-        "anyOf": [
+        "oneOf": [
           {
             "$ref": "#/components/schemas/Location"
           },

@@ -7,7 +7,7 @@ import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-import 'package:one_of/any_of.dart';
+import 'package:one_of/one_of.dart';
 
 part 'location_or_individual.g.dart';
 
@@ -40,8 +40,8 @@ part 'location_or_individual.g.dart';
 @BuiltValue()
 abstract class LocationOrIndividual
     implements Built<LocationOrIndividual, LocationOrIndividualBuilder> {
-  /// Any Of [Individual], [Location]
-  AnyOf get anyOf;
+  /// One Of [Individual], [Location]
+  OneOf get oneOf;
 
   LocationOrIndividual._();
 
@@ -76,10 +76,9 @@ class _$LocationOrIndividualSerializer
     LocationOrIndividual object, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final anyOf = object.anyOf;
-    return serializers.serialize(anyOf,
-        specifiedType: FullType(
-            AnyOf, anyOf.valueTypes.map((type) => FullType(type)).toList()))!;
+    final oneOf = object.oneOf;
+    return serializers.serialize(oneOf.value,
+        specifiedType: FullType(oneOf.valueType))!;
   }
 
   @override
@@ -89,14 +88,14 @@ class _$LocationOrIndividualSerializer
     FullType specifiedType = FullType.unspecified,
   }) {
     final result = LocationOrIndividualBuilder();
-    Object? anyOfDataSrc;
-    final targetType = const FullType(AnyOf, [
+    Object? oneOfDataSrc;
+    final targetType = const FullType(OneOf, [
       FullType(Location),
       FullType(Individual),
     ]);
-    anyOfDataSrc = serialized;
-    result.anyOf = serializers.deserialize(anyOfDataSrc,
-        specifiedType: targetType) as AnyOf;
+    oneOfDataSrc = serialized;
+    result.oneOf = serializers.deserialize(oneOfDataSrc,
+        specifiedType: targetType) as OneOf;
     return result.build();
   }
 }
