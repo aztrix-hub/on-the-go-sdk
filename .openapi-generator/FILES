@@ -18,8 +18,8 @@ doc/AiChatDataPostRequestUserLocation.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiContext.md
-doc/AiConversationActionPost200Response.md
-doc/AiConversationActionPostRequest.md
+doc/AiConversationActionGet200Response.md
+doc/AiConversationActionGetRequest.md
 doc/AiConversationDataPostRequest.md
 doc/AiConversationPost200Response.md
 doc/AiLegacyChatPost200Response.md
@@ -119,8 +119,8 @@ lib/src/model/ai_chat_data_post_request_user_location.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_context.dart
-lib/src/model/ai_conversation_action_post200_response.dart
-lib/src/model/ai_conversation_action_post_request.dart
+lib/src/model/ai_conversation_action_get200_response.dart
+lib/src/model/ai_conversation_action_get_request.dart
 lib/src/model/ai_conversation_data_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
 lib/src/model/ai_legacy_chat_post200_response.dart

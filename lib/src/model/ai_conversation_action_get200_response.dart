@@ -6,48 +6,48 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_conversation_action_post200_response.g.dart';
+part 'ai_conversation_action_get200_response.g.dart';
 
-/// AiConversationActionPost200Response
+/// AiConversationActionGet200Response
 ///
 /// Properties:
 /// * [action]
 @BuiltValue()
-abstract class AiConversationActionPost200Response
+abstract class AiConversationActionGet200Response
     implements
-        Built<AiConversationActionPost200Response,
-            AiConversationActionPost200ResponseBuilder> {
+        Built<AiConversationActionGet200Response,
+            AiConversationActionGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'action')
   String? get action;
 
-  AiConversationActionPost200Response._();
+  AiConversationActionGet200Response._();
 
-  factory AiConversationActionPost200Response(
-          [void updates(AiConversationActionPost200ResponseBuilder b)]) =
-      _$AiConversationActionPost200Response;
+  factory AiConversationActionGet200Response(
+          [void updates(AiConversationActionGet200ResponseBuilder b)]) =
+      _$AiConversationActionGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiConversationActionPost200ResponseBuilder b) => b;
+  static void _defaults(AiConversationActionGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiConversationActionPost200Response> get serializer =>
-      _$AiConversationActionPost200ResponseSerializer();
+  static Serializer<AiConversationActionGet200Response> get serializer =>
+      _$AiConversationActionGet200ResponseSerializer();
 }
 
-class _$AiConversationActionPost200ResponseSerializer
-    implements PrimitiveSerializer<AiConversationActionPost200Response> {
+class _$AiConversationActionGet200ResponseSerializer
+    implements PrimitiveSerializer<AiConversationActionGet200Response> {
   @override
   final Iterable<Type> types = const [
-    AiConversationActionPost200Response,
-    _$AiConversationActionPost200Response
+    AiConversationActionGet200Response,
+    _$AiConversationActionGet200Response
   ];
 
   @override
-  final String wireName = r'AiConversationActionPost200Response';
+  final String wireName = r'AiConversationActionGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiConversationActionPost200Response object, {
+    AiConversationActionGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.action != null) {
@@ -62,7 +62,7 @@ class _$AiConversationActionPost200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiConversationActionPost200Response object, {
+    AiConversationActionGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -75,7 +75,7 @@ class _$AiConversationActionPost200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiConversationActionPost200ResponseBuilder result,
+    required AiConversationActionGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -98,12 +98,12 @@ class _$AiConversationActionPost200ResponseSerializer
   }
 
   @override
-  AiConversationActionPost200Response deserialize(
+  AiConversationActionGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiConversationActionPost200ResponseBuilder();
+    final result = AiConversationActionGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

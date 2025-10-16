@@ -11,7 +11,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**aiChatDataPost**](AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
-[**aiConversationActionPost**](AiApi.md#aiconversationactionpost) | **POST** /ai/conversation/action | 
+[**aiConversationActionGet**](AiApi.md#aiconversationactionget) | **GET** /ai/conversation/action | 
+[**aiConversationAreaGet**](AiApi.md#aiconversationareaget) | **GET** /ai/conversation/area | 
 [**aiConversationDataPost**](AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
 [**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [**aiLegacyChatPost**](AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
@@ -112,8 +113,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **aiConversationActionPost**
-> AiConversationActionPost200Response aiConversationActionPost(aiConversationActionPostRequest)
+# **aiConversationActionGet**
+> AiConversationActionGet200Response aiConversationActionGet(aiConversationActionGetRequest)
 
 
 
@@ -122,13 +123,13 @@ Name | Type | Description  | Notes
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationActionPostRequest aiConversationActionPostRequest = ; // AiConversationActionPostRequest | 
+final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
 
 try {
-    final response = api.aiConversationActionPost(aiConversationActionPostRequest);
+    final response = api.aiConversationActionGet(aiConversationActionGetRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AiApi->aiConversationActionPost: $e\n');
+    print('Exception when calling AiApi->aiConversationActionGet: $e\n');
 }
 ```
 
@@ -136,11 +137,52 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationActionPostRequest** | [**AiConversationActionPostRequest**](AiConversationActionPostRequest.md)|  | [optional] 
+ **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
 
 ### Return type
 
-[**AiConversationActionPost200Response**](AiConversationActionPost200Response.md)
+[**AiConversationActionGet200Response**](AiConversationActionGet200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiConversationAreaGet**
+> AiConversationPost200Response aiConversationAreaGet(aiConversationActionGetRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getAiApi();
+final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
+
+try {
+    final response = api.aiConversationAreaGet(aiConversationActionGetRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiConversationAreaGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiConversationPost200Response**](AiConversationPost200Response.md)
 
 ### Authorization
 
@@ -154,7 +196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationDataPost**
-> AiConversationActionPostRequest aiConversationDataPost(aiConversationDataPostRequest)
+> AiConversationActionGetRequest aiConversationDataPost(aiConversationDataPostRequest)
 
 
 
@@ -181,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiConversationActionPostRequest**](AiConversationActionPostRequest.md)
+[**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)
 
 ### Authorization
 
@@ -195,7 +237,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationPost**
-> AiConversationPost200Response aiConversationPost(aiConversationActionPostRequest)
+> AiConversationPost200Response aiConversationPost(aiConversationActionGetRequest)
 
 
 
@@ -208,10 +250,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationActionPostRequest aiConversationActionPostRequest = ; // AiConversationActionPostRequest | 
+final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
 
 try {
-    final response = api.aiConversationPost(aiConversationActionPostRequest);
+    final response = api.aiConversationPost(aiConversationActionGetRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationPost: $e\n');
@@ -222,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationActionPostRequest** | [**AiConversationActionPostRequest**](AiConversationActionPostRequest.md)|  | [optional] 
+ **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
 
 ### Return type
 

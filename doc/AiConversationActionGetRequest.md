@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiConversationActionPostRequest
+# on_the_go_sdk.model.AiConversationActionGetRequest
 
 ## Load the model package
 ```dart

@@ -1,34 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_conversation_action_post_request.dart';
+part of 'ai_conversation_action_get_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiConversationActionPostRequest
-    extends AiConversationActionPostRequest {
+class _$AiConversationActionGetRequest extends AiConversationActionGetRequest {
   @override
   final BuiltList<AiMessage>? messages;
 
-  factory _$AiConversationActionPostRequest(
-          [void Function(AiConversationActionPostRequestBuilder)? updates]) =>
-      (AiConversationActionPostRequestBuilder()..update(updates))._build();
+  factory _$AiConversationActionGetRequest(
+          [void Function(AiConversationActionGetRequestBuilder)? updates]) =>
+      (AiConversationActionGetRequestBuilder()..update(updates))._build();
 
-  _$AiConversationActionPostRequest._({this.messages}) : super._();
+  _$AiConversationActionGetRequest._({this.messages}) : super._();
   @override
-  AiConversationActionPostRequest rebuild(
-          void Function(AiConversationActionPostRequestBuilder) updates) =>
+  AiConversationActionGetRequest rebuild(
+          void Function(AiConversationActionGetRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiConversationActionPostRequestBuilder toBuilder() =>
-      AiConversationActionPostRequestBuilder()..replace(this);
+  AiConversationActionGetRequestBuilder toBuilder() =>
+      AiConversationActionGetRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiConversationActionPostRequest &&
+    return other is AiConversationActionGetRequest &&
         messages == other.messages;
   }
 
@@ -42,28 +41,28 @@ class _$AiConversationActionPostRequest
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'AiConversationActionPostRequest')
+    return (newBuiltValueToStringHelper(r'AiConversationActionGetRequest')
           ..add('messages', messages))
         .toString();
   }
 }
 
-class AiConversationActionPostRequestBuilder
+class AiConversationActionGetRequestBuilder
     implements
-        Builder<AiConversationActionPostRequest,
-            AiConversationActionPostRequestBuilder> {
-  _$AiConversationActionPostRequest? _$v;
+        Builder<AiConversationActionGetRequest,
+            AiConversationActionGetRequestBuilder> {
+  _$AiConversationActionGetRequest? _$v;
 
   ListBuilder<AiMessage>? _messages;
   ListBuilder<AiMessage> get messages =>
       _$this._messages ??= ListBuilder<AiMessage>();
   set messages(ListBuilder<AiMessage>? messages) => _$this._messages = messages;
 
-  AiConversationActionPostRequestBuilder() {
-    AiConversationActionPostRequest._defaults(this);
+  AiConversationActionGetRequestBuilder() {
+    AiConversationActionGetRequest._defaults(this);
   }
 
-  AiConversationActionPostRequestBuilder get _$this {
+  AiConversationActionGetRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _messages = $v.messages?.toBuilder();
@@ -73,23 +72,23 @@ class AiConversationActionPostRequestBuilder
   }
 
   @override
-  void replace(AiConversationActionPostRequest other) {
-    _$v = other as _$AiConversationActionPostRequest;
+  void replace(AiConversationActionGetRequest other) {
+    _$v = other as _$AiConversationActionGetRequest;
   }
 
   @override
-  void update(void Function(AiConversationActionPostRequestBuilder)? updates) {
+  void update(void Function(AiConversationActionGetRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiConversationActionPostRequest build() => _build();
+  AiConversationActionGetRequest build() => _build();
 
-  _$AiConversationActionPostRequest _build() {
-    _$AiConversationActionPostRequest _$result;
+  _$AiConversationActionGetRequest _build() {
+    _$AiConversationActionGetRequest _$result;
     try {
       _$result = _$v ??
-          _$AiConversationActionPostRequest._(
+          _$AiConversationActionGetRequest._(
             messages: _messages?.build(),
           );
     } catch (_) {
@@ -99,7 +98,7 @@ class AiConversationActionPostRequestBuilder
         _messages?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AiConversationActionPostRequest', _$failedField, e.toString());
+            r'AiConversationActionGetRequest', _$failedField, e.toString());
       }
       rethrow;
     }

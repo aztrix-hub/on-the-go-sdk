@@ -1255,7 +1255,7 @@
       }
     },
     "/ai/conversation/action": {
-      "post": {
+      "get": {
         "tags": [
           "ai"
         ],
@@ -1339,6 +1339,47 @@
             "authToken": []
           }
         ]
+      }
+    },
+    "/ai/conversation/area": {
+      "get": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "messages": {
+                    "$ref": "#/components/schemas/AiMessages"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved messages",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
       }
     },
     "/ai/conversation/data": {

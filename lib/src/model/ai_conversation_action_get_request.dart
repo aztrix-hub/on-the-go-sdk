@@ -8,48 +8,48 @@ import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_conversation_action_post_request.g.dart';
+part 'ai_conversation_action_get_request.g.dart';
 
-/// AiConversationActionPostRequest
+/// AiConversationActionGetRequest
 ///
 /// Properties:
 /// * [messages]
 @BuiltValue()
-abstract class AiConversationActionPostRequest
+abstract class AiConversationActionGetRequest
     implements
-        Built<AiConversationActionPostRequest,
-            AiConversationActionPostRequestBuilder> {
+        Built<AiConversationActionGetRequest,
+            AiConversationActionGetRequestBuilder> {
   @BuiltValueField(wireName: r'messages')
   BuiltList<AiMessage>? get messages;
 
-  AiConversationActionPostRequest._();
+  AiConversationActionGetRequest._();
 
-  factory AiConversationActionPostRequest(
-          [void updates(AiConversationActionPostRequestBuilder b)]) =
-      _$AiConversationActionPostRequest;
+  factory AiConversationActionGetRequest(
+          [void updates(AiConversationActionGetRequestBuilder b)]) =
+      _$AiConversationActionGetRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiConversationActionPostRequestBuilder b) => b;
+  static void _defaults(AiConversationActionGetRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiConversationActionPostRequest> get serializer =>
-      _$AiConversationActionPostRequestSerializer();
+  static Serializer<AiConversationActionGetRequest> get serializer =>
+      _$AiConversationActionGetRequestSerializer();
 }
 
-class _$AiConversationActionPostRequestSerializer
-    implements PrimitiveSerializer<AiConversationActionPostRequest> {
+class _$AiConversationActionGetRequestSerializer
+    implements PrimitiveSerializer<AiConversationActionGetRequest> {
   @override
   final Iterable<Type> types = const [
-    AiConversationActionPostRequest,
-    _$AiConversationActionPostRequest
+    AiConversationActionGetRequest,
+    _$AiConversationActionGetRequest
   ];
 
   @override
-  final String wireName = r'AiConversationActionPostRequest';
+  final String wireName = r'AiConversationActionGetRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiConversationActionPostRequest object, {
+    AiConversationActionGetRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.messages != null) {
@@ -64,7 +64,7 @@ class _$AiConversationActionPostRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiConversationActionPostRequest object, {
+    AiConversationActionGetRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,7 +77,7 @@ class _$AiConversationActionPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiConversationActionPostRequestBuilder result,
+    required AiConversationActionGetRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -100,12 +100,12 @@ class _$AiConversationActionPostRequestSerializer
   }
 
   @override
-  AiConversationActionPostRequest deserialize(
+  AiConversationActionGetRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiConversationActionPostRequestBuilder();
+    final result = AiConversationActionGetRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

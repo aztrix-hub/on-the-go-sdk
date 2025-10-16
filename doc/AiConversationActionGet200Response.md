@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiConversationActionPost200Response
+# on_the_go_sdk.model.AiConversationActionGet200Response
 
 ## Load the model package
 ```dart
