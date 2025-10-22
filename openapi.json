@@ -3322,6 +3322,40 @@
                 "type": "string"
               }
             }
+          },
+          "directions": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "minimum": -90,
+                "maximum": 90,
+                "type": "number",
+                "format": "double"
+              },
+              "longitude": {
+                "minimum": -180,
+                "maximum": 180,
+                "type": "number",
+                "format": "double"
+              }
+            }
+          },
+          "map": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "minimum": -90,
+                "maximum": 90,
+                "type": "number",
+                "format": "double"
+              },
+              "longitude": {
+                "minimum": -180,
+                "maximum": 180,
+                "type": "number",
+                "format": "double"
+              }
+            }
           }
         }
       }

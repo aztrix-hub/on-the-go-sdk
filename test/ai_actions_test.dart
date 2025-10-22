@@ -52,5 +52,15 @@ void main() {
     test('to test the property `email`', () async {
       // TODO
     });
+
+    // AiMessageLocationAttributeCoordinates directions
+    test('to test the property `directions`', () async {
+      // TODO
+    });
+
+    // AiMessageLocationAttributeCoordinates map
+    test('to test the property `map`', () async {
+      // TODO
+    });
   });
 }

@@ -25,6 +25,10 @@ class _$AiActions extends AiActions {
   final AiChatDataPost200ResponseActionsText? text;
   @override
   final AiChatDataPost200ResponseActionsEmail? email;
+  @override
+  final AiMessageLocationAttributeCoordinates? directions;
+  @override
+  final AiMessageLocationAttributeCoordinates? map;
 
   factory _$AiActions([void Function(AiActionsBuilder)? updates]) =>
       (AiActionsBuilder()..update(updates))._build();
@@ -38,7 +42,9 @@ class _$AiActions extends AiActions {
       this.openingHours,
       this.call,
       this.text,
-      this.email})
+      this.email,
+      this.directions,
+      this.map})
       : super._();
   @override
   AiActions rebuild(void Function(AiActionsBuilder) updates) =>
@@ -59,7 +65,9 @@ class _$AiActions extends AiActions {
         openingHours == other.openingHours &&
         call == other.call &&
         text == other.text &&
-        email == other.email;
+        email == other.email &&
+        directions == other.directions &&
+        map == other.map;
   }
 
   @override
@@ -74,6 +82,8 @@ class _$AiActions extends AiActions {
     _$hash = $jc(_$hash, call.hashCode);
     _$hash = $jc(_$hash, text.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, directions.hashCode);
+    _$hash = $jc(_$hash, map.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -89,7 +99,9 @@ class _$AiActions extends AiActions {
           ..add('openingHours', openingHours)
           ..add('call', call)
           ..add('text', text)
-          ..add('email', email))
+          ..add('email', email)
+          ..add('directions', directions)
+          ..add('map', map))
         .toString();
   }
 }
@@ -151,6 +163,18 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
   set email(AiChatDataPost200ResponseActionsEmailBuilder? email) =>
       _$this._email = email;
 
+  AiMessageLocationAttributeCoordinatesBuilder? _directions;
+  AiMessageLocationAttributeCoordinatesBuilder get directions =>
+      _$this._directions ??= AiMessageLocationAttributeCoordinatesBuilder();
+  set directions(AiMessageLocationAttributeCoordinatesBuilder? directions) =>
+      _$this._directions = directions;
+
+  AiMessageLocationAttributeCoordinatesBuilder? _map;
+  AiMessageLocationAttributeCoordinatesBuilder get map =>
+      _$this._map ??= AiMessageLocationAttributeCoordinatesBuilder();
+  set map(AiMessageLocationAttributeCoordinatesBuilder? map) =>
+      _$this._map = map;
+
   AiActionsBuilder() {
     AiActions._defaults(this);
   }
@@ -167,6 +191,8 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _call = $v.call?.toBuilder();
       _text = $v.text?.toBuilder();
       _email = $v.email?.toBuilder();
+      _directions = $v.directions?.toBuilder();
+      _map = $v.map?.toBuilder();
       _$v = null;
     }
     return this;
@@ -199,6 +225,8 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
             call: _call?.build(),
             text: _text?.build(),
             email: _email?.build(),
+            directions: _directions?.build(),
+            map: _map?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -220,6 +248,10 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
         _text?.build();
         _$failedField = 'email';
         _email?.build();
+        _$failedField = 'directions';
+        _directions?.build();
+        _$failedField = 'map';
+        _map?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiActions', _$failedField, e.toString());

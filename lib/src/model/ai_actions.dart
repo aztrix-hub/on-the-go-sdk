@@ -10,6 +10,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_te
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
+import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -28,6 +29,8 @@ part 'ai_actions.g.dart';
 /// * [call]
 /// * [text]
 /// * [email]
+/// * [directions]
+/// * [map]
 @BuiltValue()
 abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'search')
@@ -57,6 +60,12 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
 
   @BuiltValueField(wireName: r'email')
   AiChatDataPost200ResponseActionsEmail? get email;
+
+  @BuiltValueField(wireName: r'directions')
+  AiMessageLocationAttributeCoordinates? get directions;
+
+  @BuiltValueField(wireName: r'map')
+  AiMessageLocationAttributeCoordinates? get map;
 
   AiActions._();
 
@@ -145,6 +154,20 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
       yield serializers.serialize(
         object.email,
         specifiedType: const FullType(AiChatDataPost200ResponseActionsEmail),
+      );
+    }
+    if (object.directions != null) {
+      yield r'directions';
+      yield serializers.serialize(
+        object.directions,
+        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
+      );
+    }
+    if (object.map != null) {
+      yield r'map';
+      yield serializers.serialize(
+        object.map,
+        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
       );
     }
   }
@@ -238,6 +261,22 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
                 const FullType(AiChatDataPost200ResponseActionsEmail),
           ) as AiChatDataPost200ResponseActionsEmail;
           result.email.replace(valueDes);
+          break;
+        case r'directions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(AiMessageLocationAttributeCoordinates),
+          ) as AiMessageLocationAttributeCoordinates;
+          result.directions.replace(valueDes);
+          break;
+        case r'map':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(AiMessageLocationAttributeCoordinates),
+          ) as AiMessageLocationAttributeCoordinates;
+          result.map.replace(valueDes);
           break;
         default:
           unhandled.add(key);
