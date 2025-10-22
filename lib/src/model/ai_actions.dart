@@ -7,10 +7,10 @@ import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
+import 'package:on_the_go_sdk/src/model/ai_action_map.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
-import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -62,10 +62,10 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   AiChatDataPost200ResponseActionsEmail? get email;
 
   @BuiltValueField(wireName: r'directions')
-  AiMessageLocationAttributeCoordinates? get directions;
+  AiActionMap? get directions;
 
   @BuiltValueField(wireName: r'map')
-  AiMessageLocationAttributeCoordinates? get map;
+  AiActionMap? get map;
 
   AiActions._();
 
@@ -160,14 +160,14 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
       yield r'directions';
       yield serializers.serialize(
         object.directions,
-        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
+        specifiedType: const FullType(AiActionMap),
       );
     }
     if (object.map != null) {
       yield r'map';
       yield serializers.serialize(
         object.map,
-        specifiedType: const FullType(AiMessageLocationAttributeCoordinates),
+        specifiedType: const FullType(AiActionMap),
       );
     }
   }
@@ -265,17 +265,15 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
         case r'directions':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(AiMessageLocationAttributeCoordinates),
-          ) as AiMessageLocationAttributeCoordinates;
+            specifiedType: const FullType(AiActionMap),
+          ) as AiActionMap;
           result.directions.replace(valueDes);
           break;
         case r'map':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(AiMessageLocationAttributeCoordinates),
-          ) as AiMessageLocationAttributeCoordinates;
+            specifiedType: const FullType(AiActionMap),
+          ) as AiActionMap;
           result.map.replace(valueDes);
           break;
         default:

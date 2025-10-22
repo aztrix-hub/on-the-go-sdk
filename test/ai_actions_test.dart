@@ -53,12 +53,12 @@ void main() {
       // TODO
     });
 
-    // AiMessageLocationAttributeCoordinates directions
+    // AiActionMap directions
     test('to test the property `directions`', () async {
       // TODO
     });
 
-    // AiMessageLocationAttributeCoordinates map
+    // AiActionMap map
     test('to test the property `map`', () async {
       // TODO
     });

@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Models
 
  - [Address](doc/Address.md)
+ - [AiActionMap](doc/AiActionMap.md)
  - [AiActions](doc/AiActions.md)
  - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
  - [AiChatDataPost200ResponseActions](doc/AiChatDataPost200ResponseActions.md)

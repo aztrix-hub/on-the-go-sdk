@@ -26,9 +26,9 @@ class _$AiActions extends AiActions {
   @override
   final AiChatDataPost200ResponseActionsEmail? email;
   @override
-  final AiMessageLocationAttributeCoordinates? directions;
+  final AiActionMap? directions;
   @override
-  final AiMessageLocationAttributeCoordinates? map;
+  final AiActionMap? map;
 
   factory _$AiActions([void Function(AiActionsBuilder)? updates]) =>
       (AiActionsBuilder()..update(updates))._build();
@@ -163,17 +163,15 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
   set email(AiChatDataPost200ResponseActionsEmailBuilder? email) =>
       _$this._email = email;
 
-  AiMessageLocationAttributeCoordinatesBuilder? _directions;
-  AiMessageLocationAttributeCoordinatesBuilder get directions =>
-      _$this._directions ??= AiMessageLocationAttributeCoordinatesBuilder();
-  set directions(AiMessageLocationAttributeCoordinatesBuilder? directions) =>
+  AiActionMapBuilder? _directions;
+  AiActionMapBuilder get directions =>
+      _$this._directions ??= AiActionMapBuilder();
+  set directions(AiActionMapBuilder? directions) =>
       _$this._directions = directions;
 
-  AiMessageLocationAttributeCoordinatesBuilder? _map;
-  AiMessageLocationAttributeCoordinatesBuilder get map =>
-      _$this._map ??= AiMessageLocationAttributeCoordinatesBuilder();
-  set map(AiMessageLocationAttributeCoordinatesBuilder? map) =>
-      _$this._map = map;
+  AiActionMapBuilder? _map;
+  AiActionMapBuilder get map => _$this._map ??= AiActionMapBuilder();
+  set map(AiActionMapBuilder? map) => _$this._map = map;
 
   AiActionsBuilder() {
     AiActions._defaults(this);
