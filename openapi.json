@@ -3337,7 +3337,7 @@
           "addLocation": {
             "type": "object",
             "properties": {
-              "content": {
+              "address": {
                 "$ref": "#/components/schemas/Address"
               },
               "name": {

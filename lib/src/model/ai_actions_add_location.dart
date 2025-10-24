@@ -12,13 +12,13 @@ part 'ai_actions_add_location.g.dart';
 /// AiActionsAddLocation
 ///
 /// Properties:
-/// * [content]
+/// * [address]
 /// * [name]
 @BuiltValue()
 abstract class AiActionsAddLocation
     implements Built<AiActionsAddLocation, AiActionsAddLocationBuilder> {
-  @BuiltValueField(wireName: r'content')
-  Address? get content;
+  @BuiltValueField(wireName: r'address')
+  Address? get address;
 
   @BuiltValueField(wireName: r'name')
   String? get name;
@@ -52,10 +52,10 @@ class _$AiActionsAddLocationSerializer
     AiActionsAddLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.content != null) {
-      yield r'content';
+    if (object.address != null) {
+      yield r'address';
       yield serializers.serialize(
-        object.content,
+        object.address,
         specifiedType: const FullType(Address),
       );
     }
@@ -91,12 +91,12 @@ class _$AiActionsAddLocationSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'content':
+        case r'address':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(Address),
           ) as Address;
-          result.content.replace(valueDes);
+          result.address.replace(valueDes);
           break;
         case r'name':
           final valueDes = serializers.deserialize(

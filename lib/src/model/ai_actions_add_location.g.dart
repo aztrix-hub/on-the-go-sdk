@@ -8,7 +8,7 @@ part of 'ai_actions_add_location.dart';
 
 class _$AiActionsAddLocation extends AiActionsAddLocation {
   @override
-  final Address? content;
+  final Address? address;
   @override
   final String? name;
 
@@ -16,7 +16,7 @@ class _$AiActionsAddLocation extends AiActionsAddLocation {
           [void Function(AiActionsAddLocationBuilder)? updates]) =>
       (AiActionsAddLocationBuilder()..update(updates))._build();
 
-  _$AiActionsAddLocation._({this.content, this.name}) : super._();
+  _$AiActionsAddLocation._({this.address, this.name}) : super._();
   @override
   AiActionsAddLocation rebuild(
           void Function(AiActionsAddLocationBuilder) updates) =>
@@ -30,14 +30,14 @@ class _$AiActionsAddLocation extends AiActionsAddLocation {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiActionsAddLocation &&
-        content == other.content &&
+        address == other.address &&
         name == other.name;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, content.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -46,7 +46,7 @@ class _$AiActionsAddLocation extends AiActionsAddLocation {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiActionsAddLocation')
-          ..add('content', content)
+          ..add('address', address)
           ..add('name', name))
         .toString();
   }
@@ -56,9 +56,9 @@ class AiActionsAddLocationBuilder
     implements Builder<AiActionsAddLocation, AiActionsAddLocationBuilder> {
   _$AiActionsAddLocation? _$v;
 
-  AddressBuilder? _content;
-  AddressBuilder get content => _$this._content ??= AddressBuilder();
-  set content(AddressBuilder? content) => _$this._content = content;
+  AddressBuilder? _address;
+  AddressBuilder get address => _$this._address ??= AddressBuilder();
+  set address(AddressBuilder? address) => _$this._address = address;
 
   String? _name;
   String? get name => _$this._name;
@@ -71,7 +71,7 @@ class AiActionsAddLocationBuilder
   AiActionsAddLocationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _content = $v.content?.toBuilder();
+      _address = $v.address?.toBuilder();
       _name = $v.name;
       _$v = null;
     }
@@ -96,14 +96,14 @@ class AiActionsAddLocationBuilder
     try {
       _$result = _$v ??
           _$AiActionsAddLocation._(
-            content: _content?.build(),
+            address: _address?.build(),
             name: name,
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'content';
-        _content?.build();
+        _$failedField = 'address';
+        _address?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiActionsAddLocation', _$failedField, e.toString());
