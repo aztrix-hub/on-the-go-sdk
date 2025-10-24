@@ -19,7 +19,7 @@ part 'ai_context.g.dart';
 abstract class AiContext implements Built<AiContext, AiContextBuilder> {
   @BuiltValueField(wireName: r'type')
   AiContextTypeEnum get type;
-  // enum typeEnum {  anonymous,  user,  organisation,  };
+  // enum typeEnum {  anonymous,  user,  location,  };
 
   @BuiltValueField(wireName: r'value')
   LocationOrIndividual? get value;
@@ -132,9 +132,8 @@ class AiContextTypeEnum extends EnumClass {
   static const AiContextTypeEnum anonymous = _$aiContextTypeEnum_anonymous;
   @BuiltValueEnumConst(wireName: r'user')
   static const AiContextTypeEnum user = _$aiContextTypeEnum_user;
-  @BuiltValueEnumConst(wireName: r'organisation')
-  static const AiContextTypeEnum organisation =
-      _$aiContextTypeEnum_organisation;
+  @BuiltValueEnumConst(wireName: r'location')
+  static const AiContextTypeEnum location = _$aiContextTypeEnum_location;
 
   static Serializer<AiContextTypeEnum> get serializer =>
       _$aiContextTypeEnumSerializer;

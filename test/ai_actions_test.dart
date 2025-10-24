@@ -62,5 +62,10 @@ void main() {
     test('to test the property `map`', () async {
       // TODO
     });
+
+    // AiActionsAddLocation addLocation
+    test('to test the property `addLocation`', () async {
+      // TODO
+    });
   });
 }

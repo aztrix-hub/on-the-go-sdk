@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **email** | [**AiChatDataPost200ResponseActionsEmail**](AiChatDataPost200ResponseActionsEmail.md) |  | [optional] 
 **directions** | [**AiActionMap**](AiActionMap.md) |  | [optional] 
 **map** | [**AiActionMap**](AiActionMap.md) |  | [optional] 
+**addLocation** | [**AiActionsAddLocation**](AiActionsAddLocation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,6 +3,7 @@ analysis_options.yaml
 doc/Address.md
 doc/AiActionMap.md
 doc/AiActions.md
+doc/AiActionsAddLocation.md
 doc/AiApi.md
 doc/AiChatDataPost200Response.md
 doc/AiChatDataPost200ResponseActions.md
@@ -106,6 +107,7 @@ lib/src/date_serializer.dart
 lib/src/model/address.dart
 lib/src/model/ai_action_map.dart
 lib/src/model/ai_actions.dart
+lib/src/model/ai_actions_add_location.dart
 lib/src/model/ai_chat_data_post200_response.dart
 lib/src/model/ai_chat_data_post200_response_actions.dart
 lib/src/model/ai_chat_data_post200_response_actions_call.dart
@@ -183,6 +185,7 @@ lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
 test/address_test.dart
 test/ai_action_map_test.dart
+test/ai_actions_add_location_test.dart
 test/ai_actions_test.dart
 test/ai_api_test.dart
 test/ai_chat_data_post200_response_actions_call_test.dart

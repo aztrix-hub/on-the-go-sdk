@@ -29,6 +29,8 @@ class _$AiActions extends AiActions {
   final AiActionMap? directions;
   @override
   final AiActionMap? map;
+  @override
+  final AiActionsAddLocation? addLocation;
 
   factory _$AiActions([void Function(AiActionsBuilder)? updates]) =>
       (AiActionsBuilder()..update(updates))._build();
@@ -44,7 +46,8 @@ class _$AiActions extends AiActions {
       this.text,
       this.email,
       this.directions,
-      this.map})
+      this.map,
+      this.addLocation})
       : super._();
   @override
   AiActions rebuild(void Function(AiActionsBuilder) updates) =>
@@ -67,7 +70,8 @@ class _$AiActions extends AiActions {
         text == other.text &&
         email == other.email &&
         directions == other.directions &&
-        map == other.map;
+        map == other.map &&
+        addLocation == other.addLocation;
   }
 
   @override
@@ -84,6 +88,7 @@ class _$AiActions extends AiActions {
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, directions.hashCode);
     _$hash = $jc(_$hash, map.hashCode);
+    _$hash = $jc(_$hash, addLocation.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,7 +106,8 @@ class _$AiActions extends AiActions {
           ..add('text', text)
           ..add('email', email)
           ..add('directions', directions)
-          ..add('map', map))
+          ..add('map', map)
+          ..add('addLocation', addLocation))
         .toString();
   }
 }
@@ -173,6 +179,12 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
   AiActionMapBuilder get map => _$this._map ??= AiActionMapBuilder();
   set map(AiActionMapBuilder? map) => _$this._map = map;
 
+  AiActionsAddLocationBuilder? _addLocation;
+  AiActionsAddLocationBuilder get addLocation =>
+      _$this._addLocation ??= AiActionsAddLocationBuilder();
+  set addLocation(AiActionsAddLocationBuilder? addLocation) =>
+      _$this._addLocation = addLocation;
+
   AiActionsBuilder() {
     AiActions._defaults(this);
   }
@@ -191,6 +203,7 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _email = $v.email?.toBuilder();
       _directions = $v.directions?.toBuilder();
       _map = $v.map?.toBuilder();
+      _addLocation = $v.addLocation?.toBuilder();
       _$v = null;
     }
     return this;
@@ -225,6 +238,7 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
             email: _email?.build(),
             directions: _directions?.build(),
             map: _map?.build(),
+            addLocation: _addLocation?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -250,6 +264,8 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
         _directions?.build();
         _$failedField = 'map';
         _map?.build();
+        _$failedField = 'addLocation';
+        _addLocation?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiActions', _$failedField, e.toString());

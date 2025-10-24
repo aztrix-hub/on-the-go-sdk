@@ -12,6 +12,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_em
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
+import 'package:on_the_go_sdk/src/model/ai_actions_add_location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -31,6 +32,7 @@ part 'ai_actions.g.dart';
 /// * [email]
 /// * [directions]
 /// * [map]
+/// * [addLocation]
 @BuiltValue()
 abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'search')
@@ -66,6 +68,9 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
 
   @BuiltValueField(wireName: r'map')
   AiActionMap? get map;
+
+  @BuiltValueField(wireName: r'addLocation')
+  AiActionsAddLocation? get addLocation;
 
   AiActions._();
 
@@ -168,6 +173,13 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
       yield serializers.serialize(
         object.map,
         specifiedType: const FullType(AiActionMap),
+      );
+    }
+    if (object.addLocation != null) {
+      yield r'addLocation';
+      yield serializers.serialize(
+        object.addLocation,
+        specifiedType: const FullType(AiActionsAddLocation),
       );
     }
   }
@@ -275,6 +287,13 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
             specifiedType: const FullType(AiActionMap),
           ) as AiActionMap;
           result.map.replace(valueDes);
+          break;
+        case r'addLocation':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AiActionsAddLocation),
+          ) as AiActionsAddLocation;
+          result.addLocation.replace(valueDes);
           break;
         default:
           unhandled.add(key);

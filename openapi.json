@@ -3236,7 +3236,7 @@
             "enum": [
               "anonymous",
               "user",
-              "organisation"
+              "location"
             ]
           },
           "value": {
@@ -3328,6 +3328,17 @@
           },
           "map": {
             "$ref": "#/components/schemas/AiActionMap"
+          },
+          "addLocation": {
+            "type": "object",
+            "properties": {
+              "content": {
+                "$ref": "#/components/schemas/Address"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
           }
         }
       },

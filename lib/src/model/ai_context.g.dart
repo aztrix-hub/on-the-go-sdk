@@ -10,8 +10,8 @@ const AiContextTypeEnum _$aiContextTypeEnum_anonymous =
     const AiContextTypeEnum._('anonymous');
 const AiContextTypeEnum _$aiContextTypeEnum_user =
     const AiContextTypeEnum._('user');
-const AiContextTypeEnum _$aiContextTypeEnum_organisation =
-    const AiContextTypeEnum._('organisation');
+const AiContextTypeEnum _$aiContextTypeEnum_location =
+    const AiContextTypeEnum._('location');
 
 AiContextTypeEnum _$aiContextTypeEnumValueOf(String name) {
   switch (name) {
@@ -19,8 +19,8 @@ AiContextTypeEnum _$aiContextTypeEnumValueOf(String name) {
       return _$aiContextTypeEnum_anonymous;
     case 'user':
       return _$aiContextTypeEnum_user;
-    case 'organisation':
-      return _$aiContextTypeEnum_organisation;
+    case 'location':
+      return _$aiContextTypeEnum_location;
     default:
       throw ArgumentError(name);
   }
@@ -30,7 +30,7 @@ final BuiltSet<AiContextTypeEnum> _$aiContextTypeEnumValues =
     BuiltSet<AiContextTypeEnum>(const <AiContextTypeEnum>[
   _$aiContextTypeEnum_anonymous,
   _$aiContextTypeEnum_user,
-  _$aiContextTypeEnum_organisation,
+  _$aiContextTypeEnum_location,
 ]);
 
 Serializer<AiContextTypeEnum> _$aiContextTypeEnumSerializer =
@@ -41,12 +41,12 @@ class _$AiContextTypeEnumSerializer
   static const Map<String, Object> _toWire = const <String, Object>{
     'anonymous': 'anonymous',
     'user': 'user',
-    'organisation': 'organisation',
+    'location': 'location',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
     'anonymous': 'anonymous',
     'user': 'user',
-    'organisation': 'organisation',
+    'location': 'location',
   };
 
   @override
