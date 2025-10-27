@@ -1289,6 +1289,21 @@
               }
             }
           },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -1423,6 +1438,21 @@
                   "properties": {
                     "messages": {
                       "$ref": "#/components/schemas/AiMessages"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
                     }
                   }
                 }
@@ -1783,7 +1813,7 @@
           "200": {
             "description": "Reply sent",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/DataPoint"
                 }
@@ -1890,7 +1920,7 @@
           "200": {
             "description": "Success",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -2133,7 +2163,7 @@
           "200": {
             "description": "Listing details successfully retrieved",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -2192,7 +2222,7 @@
           "200": {
             "description": "Listing details successfully retrieved",
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
@@ -2273,7 +2303,7 @@
         "responses": {
           "200": {
             "content": {
-              "*/*": {
+              "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
