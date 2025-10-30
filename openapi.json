@@ -1264,6 +1264,9 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "messages"
+                ],
                 "properties": {
                   "messages": {
                     "$ref": "#/components/schemas/AiMessages"
@@ -1315,7 +1318,7 @@
         ]
       }
     },
-    "/ai/conversation": {
+    "/ai/conversation/message": {
       "post": {
         "tags": [
           "ai"
@@ -1325,9 +1328,16 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "conversationId",
+                  "message"
+                ],
                 "properties": {
-                  "messages": {
-                    "$ref": "#/components/schemas/AiMessages"
+                  "conversationId": {
+                    "type": "string"
+                  },
+                  "message": {
+                    "$ref": "#/components/schemas/AiMessage"
                   }
                 }
               }
@@ -1336,13 +1346,28 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully retrieved messages",
+            "description": "Successfully added a message",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "response": {
+                    "messages": {
+                      "$ref": "#/components/schemas/AiMessages"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
                       "type": "string"
                     }
                   }
@@ -1361,8 +1386,8 @@
         ]
       }
     },
-    "/ai/conversation/area": {
-      "get": {
+    "/ai/conversation": {
+      "post": {
         "tags": [
           "ai"
         ],
@@ -1371,9 +1396,16 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "conversationId",
+                  "action"
+                ],
                 "properties": {
-                  "messages": {
-                    "$ref": "#/components/schemas/AiMessages"
+                  "conversationId": {
+                    "type": "string"
+                  },
+                  "action": {
+                    "type": "string"
                   }
                 }
               }
@@ -1384,11 +1416,20 @@
           "200": {
             "description": "Successfully retrieved messages",
             "content": {
-              "application/json": {
+              "application/jsonl": {
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "response": {
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "begin",
+                        "item",
+                        "end",
+                        "error"
+                      ]
+                    },
+                    "content": {
                       "type": "string"
                     }
                   }
@@ -1399,7 +1440,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/ai/conversation/data": {
@@ -1413,10 +1459,14 @@
               "schema": {
                 "type": "object",
                 "required": [
+                  "conversationId",
                   "action",
                   "messages"
                 ],
                 "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  },
                   "action": {
                     "type": "string"
                   },
@@ -1532,58 +1582,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "post": {
-        "tags": [
-          "ai"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "required": true
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "messages"
-                ],
-                "properties": {
-                  "messages": {
-                    "type": "array",
-                    "description": "The conversation where memories should be retrieved from",
-                    "items": {
-                      "type": "object",
-                      "properties": {
-                        "role": {
-                          "type": "string"
-                        },
-                        "content": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successfully updated"
           },
           "500": {
             "description": "Internal Server Error"
@@ -3098,6 +3096,7 @@
       "AiMessage": {
         "type": "object",
         "required": [
+          "dateTime",
           "role"
         ],
         "properties": {

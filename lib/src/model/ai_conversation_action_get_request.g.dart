@@ -8,13 +8,13 @@ part of 'ai_conversation_action_get_request.dart';
 
 class _$AiConversationActionGetRequest extends AiConversationActionGetRequest {
   @override
-  final BuiltList<AiMessage>? messages;
+  final BuiltList<AiMessage> messages;
 
   factory _$AiConversationActionGetRequest(
           [void Function(AiConversationActionGetRequestBuilder)? updates]) =>
       (AiConversationActionGetRequestBuilder()..update(updates))._build();
 
-  _$AiConversationActionGetRequest._({this.messages}) : super._();
+  _$AiConversationActionGetRequest._({required this.messages}) : super._();
   @override
   AiConversationActionGetRequest rebuild(
           void Function(AiConversationActionGetRequestBuilder) updates) =>
@@ -65,7 +65,7 @@ class AiConversationActionGetRequestBuilder
   AiConversationActionGetRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _messages = $v.messages?.toBuilder();
+      _messages = $v.messages.toBuilder();
       _$v = null;
     }
     return this;
@@ -89,13 +89,13 @@ class AiConversationActionGetRequestBuilder
     try {
       _$result = _$v ??
           _$AiConversationActionGetRequest._(
-            messages: _messages?.build(),
+            messages: messages.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'messages';
-        _messages?.build();
+        messages.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'AiConversationActionGetRequest', _$failedField, e.toString());

@@ -3,66 +3,66 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_conversation_action_get_request.g.dart';
+part 'ai_conversation_action_get400_response.g.dart';
 
-/// AiConversationActionGetRequest
+/// AiConversationActionGet400Response
 ///
 /// Properties:
-/// * [messages]
+/// * [error]
 @BuiltValue()
-abstract class AiConversationActionGetRequest
+abstract class AiConversationActionGet400Response
     implements
-        Built<AiConversationActionGetRequest,
-            AiConversationActionGetRequestBuilder> {
-  @BuiltValueField(wireName: r'messages')
-  BuiltList<AiMessage> get messages;
+        Built<AiConversationActionGet400Response,
+            AiConversationActionGet400ResponseBuilder> {
+  @BuiltValueField(wireName: r'error')
+  String? get error;
 
-  AiConversationActionGetRequest._();
+  AiConversationActionGet400Response._();
 
-  factory AiConversationActionGetRequest(
-          [void updates(AiConversationActionGetRequestBuilder b)]) =
-      _$AiConversationActionGetRequest;
+  factory AiConversationActionGet400Response(
+          [void updates(AiConversationActionGet400ResponseBuilder b)]) =
+      _$AiConversationActionGet400Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiConversationActionGetRequestBuilder b) => b;
+  static void _defaults(AiConversationActionGet400ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiConversationActionGetRequest> get serializer =>
-      _$AiConversationActionGetRequestSerializer();
+  static Serializer<AiConversationActionGet400Response> get serializer =>
+      _$AiConversationActionGet400ResponseSerializer();
 }
 
-class _$AiConversationActionGetRequestSerializer
-    implements PrimitiveSerializer<AiConversationActionGetRequest> {
+class _$AiConversationActionGet400ResponseSerializer
+    implements PrimitiveSerializer<AiConversationActionGet400Response> {
   @override
   final Iterable<Type> types = const [
-    AiConversationActionGetRequest,
-    _$AiConversationActionGetRequest
+    AiConversationActionGet400Response,
+    _$AiConversationActionGet400Response
   ];
 
   @override
-  final String wireName = r'AiConversationActionGetRequest';
+  final String wireName = r'AiConversationActionGet400Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiConversationActionGetRequest object, {
+    AiConversationActionGet400Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'messages';
-    yield serializers.serialize(
-      object.messages,
-      specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
-    );
+    if (object.error != null) {
+      yield r'error';
+      yield serializers.serialize(
+        object.error,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    AiConversationActionGetRequest object, {
+    AiConversationActionGet400Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -75,19 +75,19 @@ class _$AiConversationActionGetRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiConversationActionGetRequestBuilder result,
+    required AiConversationActionGet400ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'messages':
+        case r'error':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
-          ) as BuiltList<AiMessage>;
-          result.messages.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.error = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -98,12 +98,12 @@ class _$AiConversationActionGetRequestSerializer
   }
 
   @override
-  AiConversationActionGetRequest deserialize(
+  AiConversationActionGet400Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiConversationActionGetRequestBuilder();
+    final result = AiConversationActionGet400ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

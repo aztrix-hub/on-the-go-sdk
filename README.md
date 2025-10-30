@@ -68,14 +68,13 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiChatDataPost**](doc/AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationActionGet**](doc/AiApi.md#aiconversationactionget) | **GET** /ai/conversation/action | 
-[*AiApi*](doc/AiApi.md) | [**aiConversationAreaGet**](doc/AiApi.md#aiconversationareaget) | **GET** /ai/conversation/area | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationDataPost**](doc/AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationMessagePost**](doc/AiApi.md#aiconversationmessagepost) | **POST** /ai/conversation/message | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyChatPost**](doc/AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyConversationPost**](doc/AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
-[*AiApi*](doc/AiApi.md) | [**aiMemoriesPost**](doc/AiApi.md#aimemoriespost) | **POST** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiSystemGet**](doc/AiApi.md#aisystemget) | **GET** /ai/system | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
@@ -132,9 +131,13 @@ Class | Method | HTTP request | Description
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiContext](doc/AiContext.md)
  - [AiConversationActionGet200Response](doc/AiConversationActionGet200Response.md)
+ - [AiConversationActionGet400Response](doc/AiConversationActionGet400Response.md)
  - [AiConversationActionGetRequest](doc/AiConversationActionGetRequest.md)
  - [AiConversationDataPostRequest](doc/AiConversationDataPostRequest.md)
+ - [AiConversationMessagePost200Response](doc/AiConversationMessagePost200Response.md)
+ - [AiConversationMessagePostRequest](doc/AiConversationMessagePostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
+ - [AiConversationPostRequest](doc/AiConversationPostRequest.md)
  - [AiLegacyChatPost200Response](doc/AiLegacyChatPost200Response.md)
  - [AiLegacyChatPostRequest](doc/AiLegacyChatPostRequest.md)
  - [AiLegacyConversationPost200Response](doc/AiLegacyConversationPost200Response.md)
@@ -143,7 +146,6 @@ Class | Method | HTTP request | Description
  - [AiLegacyConversationPostRequestUserLocation](doc/AiLegacyConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
  - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
- - [AiMemoriesPostRequest](doc/AiMemoriesPostRequest.md)
  - [AiMessage](doc/AiMessage.md)
  - [AiMessageAttributes](doc/AiMessageAttributes.md)
  - [AiMessageLocationAttribute](doc/AiMessageLocationAttribute.md)

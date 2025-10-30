@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiActionsAddLocation, () {
-    // Address content
-    test('to test the property `content`', () async {
+    // Address address
+    test('to test the property `address`', () async {
       // TODO
     });
 

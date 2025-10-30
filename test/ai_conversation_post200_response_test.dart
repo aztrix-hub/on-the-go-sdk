@@ -7,8 +7,13 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiConversationPost200Response, () {
-    // String response
-    test('to test the property `response`', () async {
+    // String type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
+    // String content
+    test('to test the property `content`', () async {
       // TODO
     });
   });

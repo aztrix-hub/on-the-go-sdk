@@ -21,17 +21,17 @@ void main() {
       // TODO
     });
 
-    //Future<AiConversationPost200Response> aiConversationAreaGet({ AiConversationActionGetRequest aiConversationActionGetRequest }) async
-    test('test aiConversationAreaGet', () async {
-      // TODO
-    });
-
-    //Future<AiConversationActionGetRequest> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
+    //Future<AiConversationMessagePost200Response> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
     test('test aiConversationDataPost', () async {
       // TODO
     });
 
-    //Future<AiConversationPost200Response> aiConversationPost({ AiConversationActionGetRequest aiConversationActionGetRequest }) async
+    //Future<AiConversationMessagePost200Response> aiConversationMessagePost({ AiConversationMessagePostRequest aiConversationMessagePostRequest }) async
+    test('test aiConversationMessagePost', () async {
+      // TODO
+    });
+
+    //Future<AiConversationPost200Response> aiConversationPost({ AiConversationPostRequest aiConversationPostRequest }) async
     test('test aiConversationPost', () async {
       // TODO
     });
@@ -53,11 +53,6 @@ void main() {
 
     //Future<AiMemoriesGet200Response> aiMemoriesGet(String userId) async
     test('test aiMemoriesGet', () async {
-      // TODO
-    });
-
-    //Future aiMemoriesPost(String userId, { AiMemoriesPostRequest aiMemoriesPostRequest }) async
-    test('test aiMemoriesPost', () async {
       // TODO
     });
 

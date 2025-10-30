@@ -34,9 +34,13 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_context.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_action_get400_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_message_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
@@ -45,7 +49,6 @@ import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
-import 'package:on_the_go_sdk/src/model/ai_memories_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
@@ -115,9 +118,13 @@ part 'serializers.g.dart';
   AiChatPostRequest,
   AiContext,
   AiConversationActionGet200Response,
+  AiConversationActionGet400Response,
   AiConversationActionGetRequest,
   AiConversationDataPostRequest,
+  AiConversationMessagePost200Response,
+  AiConversationMessagePostRequest,
   AiConversationPost200Response,
+  AiConversationPostRequest,
   AiLegacyChatPost200Response,
   AiLegacyChatPostRequest,
   AiLegacyConversationPost200Response,
@@ -126,7 +133,6 @@ part 'serializers.g.dart';
   AiLegacyConversationPostRequestUserLocation,
   AiMemoriesGet200Response,
   AiMemoriesGet200ResponseMemoriesInner,
-  AiMemoriesPostRequest,
   AiMessage,
   AiMessageAttributes,
   AiMessageLocationAttribute,

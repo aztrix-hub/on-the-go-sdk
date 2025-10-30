@@ -8,6 +8,8 @@ part of 'ai_conversation_data_post_request.dart';
 
 class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
+  final String conversationId;
+  @override
   final String action;
   @override
   final BuiltList<AiMessage> messages;
@@ -17,7 +19,9 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
       (AiConversationDataPostRequestBuilder()..update(updates))._build();
 
   _$AiConversationDataPostRequest._(
-      {required this.action, required this.messages})
+      {required this.conversationId,
+      required this.action,
+      required this.messages})
       : super._();
   @override
   AiConversationDataPostRequest rebuild(
@@ -32,6 +36,7 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is AiConversationDataPostRequest &&
+        conversationId == other.conversationId &&
         action == other.action &&
         messages == other.messages;
   }
@@ -39,6 +44,7 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, conversationId.hashCode);
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jc(_$hash, messages.hashCode);
     _$hash = $jf(_$hash);
@@ -48,6 +54,7 @@ class _$AiConversationDataPostRequest extends AiConversationDataPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'AiConversationDataPostRequest')
+          ..add('conversationId', conversationId)
           ..add('action', action)
           ..add('messages', messages))
         .toString();
@@ -59,6 +66,11 @@ class AiConversationDataPostRequestBuilder
         Builder<AiConversationDataPostRequest,
             AiConversationDataPostRequestBuilder> {
   _$AiConversationDataPostRequest? _$v;
+
+  String? _conversationId;
+  String? get conversationId => _$this._conversationId;
+  set conversationId(String? conversationId) =>
+      _$this._conversationId = conversationId;
 
   String? _action;
   String? get action => _$this._action;
@@ -76,6 +88,7 @@ class AiConversationDataPostRequestBuilder
   AiConversationDataPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _conversationId = $v.conversationId;
       _action = $v.action;
       _messages = $v.messages.toBuilder();
       _$v = null;
@@ -101,6 +114,10 @@ class AiConversationDataPostRequestBuilder
     try {
       _$result = _$v ??
           _$AiConversationDataPostRequest._(
+            conversationId: BuiltValueNullFieldError.checkNotNull(
+                conversationId,
+                r'AiConversationDataPostRequest',
+                'conversationId'),
             action: BuiltValueNullFieldError.checkNotNull(
                 action, r'AiConversationDataPostRequest', 'action'),
             messages: messages.build(),

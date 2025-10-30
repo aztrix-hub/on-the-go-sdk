@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiConversationDataPostRequest
+# on_the_go_sdk.model.AiConversationMessagePostRequest
 
 ## Load the model package
 ```dart
@@ -9,8 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **conversationId** | **String** |  | 
-**action** | **String** |  | 
-**messages** | [**BuiltList&lt;AiMessage&gt;**](AiMessage.md) |  | 
+**message** | [**AiMessage**](AiMessage.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

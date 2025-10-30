@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiConversationDataPostRequest
+// tests for AiConversationPostRequest
 void main() {
-  final instance = AiConversationDataPostRequestBuilder();
+  final instance = AiConversationPostRequestBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiConversationDataPostRequest, () {
+  group(AiConversationPostRequest, () {
     // String conversationId
     test('to test the property `conversationId`', () async {
       // TODO
@@ -14,11 +14,6 @@ void main() {
 
     // String action
     test('to test the property `action`', () async {
-      // TODO
-    });
-
-    // BuiltList<AiMessage> messages
-    test('to test the property `messages`', () async {
       // TODO
     });
   });

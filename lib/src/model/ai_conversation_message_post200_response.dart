@@ -3,65 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response_messages_inner.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_memories_post_request.g.dart';
+part 'ai_conversation_message_post200_response.g.dart';
 
-/// AiMemoriesPostRequest
+/// AiConversationMessagePost200Response
 ///
 /// Properties:
-/// * [messages] - The conversation where memories should be retrieved from
+/// * [messages]
 @BuiltValue()
-abstract class AiMemoriesPostRequest
-    implements Built<AiMemoriesPostRequest, AiMemoriesPostRequestBuilder> {
-  /// The conversation where memories should be retrieved from
+abstract class AiConversationMessagePost200Response
+    implements
+        Built<AiConversationMessagePost200Response,
+            AiConversationMessagePost200ResponseBuilder> {
   @BuiltValueField(wireName: r'messages')
-  BuiltList<AiLegacyConversationPost200ResponseMessagesInner> get messages;
+  BuiltList<AiMessage>? get messages;
 
-  AiMemoriesPostRequest._();
+  AiConversationMessagePost200Response._();
 
-  factory AiMemoriesPostRequest(
-      [void updates(AiMemoriesPostRequestBuilder b)]) = _$AiMemoriesPostRequest;
+  factory AiConversationMessagePost200Response(
+          [void updates(AiConversationMessagePost200ResponseBuilder b)]) =
+      _$AiConversationMessagePost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiMemoriesPostRequestBuilder b) => b;
+  static void _defaults(AiConversationMessagePost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiMemoriesPostRequest> get serializer =>
-      _$AiMemoriesPostRequestSerializer();
+  static Serializer<AiConversationMessagePost200Response> get serializer =>
+      _$AiConversationMessagePost200ResponseSerializer();
 }
 
-class _$AiMemoriesPostRequestSerializer
-    implements PrimitiveSerializer<AiMemoriesPostRequest> {
+class _$AiConversationMessagePost200ResponseSerializer
+    implements PrimitiveSerializer<AiConversationMessagePost200Response> {
   @override
   final Iterable<Type> types = const [
-    AiMemoriesPostRequest,
-    _$AiMemoriesPostRequest
+    AiConversationMessagePost200Response,
+    _$AiConversationMessagePost200Response
   ];
 
   @override
-  final String wireName = r'AiMemoriesPostRequest';
+  final String wireName = r'AiConversationMessagePost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiMemoriesPostRequest object, {
+    AiConversationMessagePost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'messages';
-    yield serializers.serialize(
-      object.messages,
-      specifiedType: const FullType(BuiltList,
-          [FullType(AiLegacyConversationPost200ResponseMessagesInner)]),
-    );
+    if (object.messages != null) {
+      yield r'messages';
+      yield serializers.serialize(
+        object.messages,
+        specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    AiMemoriesPostRequest object, {
+    AiConversationMessagePost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -74,7 +77,7 @@ class _$AiMemoriesPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiMemoriesPostRequestBuilder result,
+    required AiConversationMessagePost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -84,9 +87,8 @@ class _$AiMemoriesPostRequestSerializer
         case r'messages':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(BuiltList,
-                [FullType(AiLegacyConversationPost200ResponseMessagesInner)]),
-          ) as BuiltList<AiLegacyConversationPost200ResponseMessagesInner>;
+            specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+          ) as BuiltList<AiMessage>;
           result.messages.replace(valueDes);
           break;
         default:
@@ -98,12 +100,12 @@ class _$AiMemoriesPostRequestSerializer
   }
 
   @override
-  AiMemoriesPostRequest deserialize(
+  AiConversationMessagePost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiMemoriesPostRequestBuilder();
+    final result = AiConversationMessagePost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

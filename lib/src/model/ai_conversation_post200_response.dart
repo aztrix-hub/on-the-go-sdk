@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -11,14 +12,19 @@ part 'ai_conversation_post200_response.g.dart';
 /// AiConversationPost200Response
 ///
 /// Properties:
-/// * [response]
+/// * [type]
+/// * [content]
 @BuiltValue()
 abstract class AiConversationPost200Response
     implements
         Built<AiConversationPost200Response,
             AiConversationPost200ResponseBuilder> {
-  @BuiltValueField(wireName: r'response')
-  String? get response;
+  @BuiltValueField(wireName: r'type')
+  AiConversationPost200ResponseTypeEnum? get type;
+  // enum typeEnum {  begin,  item,  end,  error,  };
+
+  @BuiltValueField(wireName: r'content')
+  String? get content;
 
   AiConversationPost200Response._();
 
@@ -50,10 +56,17 @@ class _$AiConversationPost200ResponseSerializer
     AiConversationPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.response != null) {
-      yield r'response';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.response,
+        object.type,
+        specifiedType: const FullType(AiConversationPost200ResponseTypeEnum),
+      );
+    }
+    if (object.content != null) {
+      yield r'content';
+      yield serializers.serialize(
+        object.content,
         specifiedType: const FullType(String),
       );
     }
@@ -82,12 +95,20 @@ class _$AiConversationPost200ResponseSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'response':
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(AiConversationPost200ResponseTypeEnum),
+          ) as AiConversationPost200ResponseTypeEnum;
+          result.type = valueDes;
+          break;
+        case r'content':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.response = valueDes;
+          result.content = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -116,4 +137,29 @@ class _$AiConversationPost200ResponseSerializer
     );
     return result.build();
   }
+}
+
+class AiConversationPost200ResponseTypeEnum extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'begin')
+  static const AiConversationPost200ResponseTypeEnum begin =
+      _$aiConversationPost200ResponseTypeEnum_begin;
+  @BuiltValueEnumConst(wireName: r'item')
+  static const AiConversationPost200ResponseTypeEnum item =
+      _$aiConversationPost200ResponseTypeEnum_item;
+  @BuiltValueEnumConst(wireName: r'end')
+  static const AiConversationPost200ResponseTypeEnum end =
+      _$aiConversationPost200ResponseTypeEnum_end;
+  @BuiltValueEnumConst(wireName: r'error')
+  static const AiConversationPost200ResponseTypeEnum error =
+      _$aiConversationPost200ResponseTypeEnum_error;
+
+  static Serializer<AiConversationPost200ResponseTypeEnum> get serializer =>
+      _$aiConversationPost200ResponseTypeEnumSerializer;
+
+  const AiConversationPost200ResponseTypeEnum._(String name) : super(name);
+
+  static BuiltSet<AiConversationPost200ResponseTypeEnum> get values =>
+      _$aiConversationPost200ResponseTypeEnumValues;
+  static AiConversationPost200ResponseTypeEnum valueOf(String name) =>
+      _$aiConversationPost200ResponseTypeEnumValueOf(name);
 }

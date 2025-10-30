@@ -28,9 +28,14 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiContext.serializer)
       ..add(AiContextTypeEnum.serializer)
       ..add(AiConversationActionGet200Response.serializer)
+      ..add(AiConversationActionGet400Response.serializer)
       ..add(AiConversationActionGetRequest.serializer)
       ..add(AiConversationDataPostRequest.serializer)
+      ..add(AiConversationMessagePost200Response.serializer)
+      ..add(AiConversationMessagePostRequest.serializer)
       ..add(AiConversationPost200Response.serializer)
+      ..add(AiConversationPost200ResponseTypeEnum.serializer)
+      ..add(AiConversationPostRequest.serializer)
       ..add(AiLegacyChatPost200Response.serializer)
       ..add(AiLegacyChatPostRequest.serializer)
       ..add(AiLegacyConversationPost200Response.serializer)
@@ -39,7 +44,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiLegacyConversationPostRequestUserLocation.serializer)
       ..add(AiMemoriesGet200Response.serializer)
       ..add(AiMemoriesGet200ResponseMemoriesInner.serializer)
-      ..add(AiMemoriesPostRequest.serializer)
       ..add(AiMessage.serializer)
       ..add(AiMessageAttributes.serializer)
       ..add(AiMessageLocationAttribute.serializer)
@@ -106,14 +110,12 @@ Serializers _$serializers = (Serializers().toBuilder()
           ]),
           () => ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [
-            const FullType(AiLegacyConversationPost200ResponseMessagesInner)
-          ]),
-          () => ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>())
-      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(AiMemoriesGet200ResponseMemoriesInner)]),
           () => ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(AiMessage)]),
+          () => ListBuilder<AiMessage>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())
