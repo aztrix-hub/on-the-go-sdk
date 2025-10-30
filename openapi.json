@@ -1379,6 +1379,58 @@
       }
     },
     "/ai/conversation": {
+      "get": {
+        "tags": [
+          "ai"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "conversationId"
+                ],
+                "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully added a message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AiMessagesResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
       "post": {
         "tags": [
           "ai"
@@ -3101,8 +3153,7 @@
               "user",
               "assistant",
               "system",
-              "tool",
-              "action"
+              "tool"
             ]
           },
           "text": {

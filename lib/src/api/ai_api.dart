@@ -14,6 +14,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -389,6 +390,104 @@ class AiApi {
       _bodyData = aiConversationPostRequest == null
           ? null
           : _serializers.serialize(aiConversationPostRequest,
+              specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AiMessagesResponse? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(AiMessagesResponse),
+            ) as AiMessagesResponse;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AiMessagesResponse>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// aiConversationGet
+  ///
+  ///
+  /// Parameters:
+  /// * [aiConversationGetRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<AiMessagesResponse>> aiConversationGet({
+    AiConversationGetRequest? aiConversationGetRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/ai/conversation';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(AiConversationGetRequest);
+      _bodyData = aiConversationGetRequest == null
+          ? null
+          : _serializers.serialize(aiConversationGetRequest,
               specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(

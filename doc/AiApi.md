@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
 [**aiConversationActionGet**](AiApi.md#aiconversationactionget) | **GET** /ai/conversation/action | 
 [**aiConversationDataPost**](AiApi.md#aiconversationdatapost) | **POST** /ai/conversation/data | 
+[**aiConversationGet**](AiApi.md#aiconversationget) | **GET** /ai/conversation | 
 [**aiConversationMessagePost**](AiApi.md#aiconversationmessagepost) | **POST** /ai/conversation/message | 
 [**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
 [**aiLegacyChatPost**](AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
@@ -182,6 +183,47 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aiConversationPostRequest** | [**AiConversationPostRequest**](AiConversationPostRequest.md)|  | [optional] 
+
+### Return type
+
+[**AiMessagesResponse**](AiMessagesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiConversationGet**
+> AiMessagesResponse aiConversationGet(aiConversationGetRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getAiApi();
+final AiConversationGetRequest aiConversationGetRequest = ; // AiConversationGetRequest | 
+
+try {
+    final response = api.aiConversationGet(aiConversationGetRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiConversationGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aiConversationGetRequest** | [**AiConversationGetRequest**](AiConversationGetRequest.md)|  | [optional] 
 
 ### Return type
 

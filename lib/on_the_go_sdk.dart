@@ -42,6 +42,7 @@ export 'package:on_the_go_sdk/src/model/ai_context.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_action_get400_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
+export 'package:on_the_go_sdk/src/model/ai_conversation_get_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
