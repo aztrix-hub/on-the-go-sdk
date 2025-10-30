@@ -29,7 +29,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiContextTypeEnum.serializer)
       ..add(AiConversationActionGet200Response.serializer)
       ..add(AiConversationActionGet400Response.serializer)
-      ..add(AiConversationDataPostRequest.serializer)
+      ..add(AiConversationActionGetRequest.serializer)
       ..add(AiConversationMessagePostRequest.serializer)
       ..add(AiConversationPost200Response.serializer)
       ..add(AiConversationPost200ResponseTypeEnum.serializer)
@@ -112,9 +112,6 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList,
               const [const FullType(AiMemoriesGet200ResponseMemoriesInner)]),
           () => ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(AiMessage)]),
-          () => ListBuilder<AiMessage>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())

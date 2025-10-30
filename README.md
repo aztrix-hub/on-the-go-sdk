@@ -132,7 +132,7 @@ Class | Method | HTTP request | Description
  - [AiContext](doc/AiContext.md)
  - [AiConversationActionGet200Response](doc/AiConversationActionGet200Response.md)
  - [AiConversationActionGet400Response](doc/AiConversationActionGet400Response.md)
- - [AiConversationDataPostRequest](doc/AiConversationDataPostRequest.md)
+ - [AiConversationActionGetRequest](doc/AiConversationActionGetRequest.md)
  - [AiConversationMessagePostRequest](doc/AiConversationMessagePostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)
  - [AiConversationPostRequest](doc/AiConversationPostRequest.md)

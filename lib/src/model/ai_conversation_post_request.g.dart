@@ -10,14 +10,13 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
   final String conversationId;
   @override
-  final String action;
+  final String? action;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
       (AiConversationPostRequestBuilder()..update(updates))._build();
 
-  _$AiConversationPostRequest._(
-      {required this.conversationId, required this.action})
+  _$AiConversationPostRequest._({required this.conversationId, this.action})
       : super._();
   @override
   AiConversationPostRequest rebuild(
@@ -100,8 +99,7 @@ class AiConversationPostRequestBuilder
         _$AiConversationPostRequest._(
           conversationId: BuiltValueNullFieldError.checkNotNull(
               conversationId, r'AiConversationPostRequest', 'conversationId'),
-          action: BuiltValueNullFieldError.checkNotNull(
-              action, r'AiConversationPostRequest', 'action'),
+          action: action,
         );
     replace(_$result);
     return _$result;

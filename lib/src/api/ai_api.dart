@@ -13,7 +13,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -244,7 +244,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
-  /// * [aiMessagesResponse]
+  /// * [aiConversationActionGetRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -255,7 +255,7 @@ class AiApi {
   /// Returns a [Future] containing a [Response] with a [AiConversationActionGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiConversationActionGet200Response>> aiConversationActionGet({
-    AiMessagesResponse? aiMessagesResponse,
+    AiConversationActionGetRequest? aiConversationActionGetRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -287,10 +287,11 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiMessagesResponse);
-      _bodyData = aiMessagesResponse == null
+      const _type = FullType(AiConversationActionGetRequest);
+      _bodyData = aiConversationActionGetRequest == null
           ? null
-          : _serializers.serialize(aiMessagesResponse, specifiedType: _type);
+          : _serializers.serialize(aiConversationActionGetRequest,
+              specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -348,7 +349,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
-  /// * [aiConversationDataPostRequest]
+  /// * [aiConversationPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -359,7 +360,7 @@ class AiApi {
   /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiMessagesResponse>> aiConversationDataPost({
-    AiConversationDataPostRequest? aiConversationDataPostRequest,
+    AiConversationPostRequest? aiConversationPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -384,10 +385,10 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiConversationDataPostRequest);
-      _bodyData = aiConversationDataPostRequest == null
+      const _type = FullType(AiConversationPostRequest);
+      _bodyData = aiConversationPostRequest == null
           ? null
-          : _serializers.serialize(aiConversationDataPostRequest,
+          : _serializers.serialize(aiConversationPostRequest,
               specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(

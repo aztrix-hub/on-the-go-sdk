@@ -35,7 +35,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_context.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get400_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -118,7 +118,7 @@ part 'serializers.g.dart';
   AiContext,
   AiConversationActionGet200Response,
   AiConversationActionGet400Response,
-  AiConversationDataPostRequest,
+  AiConversationActionGetRequest,
   AiConversationMessagePostRequest,
   AiConversationPost200Response,
   AiConversationPostRequest,

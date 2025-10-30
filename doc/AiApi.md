@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationActionGet**
-> AiConversationActionGet200Response aiConversationActionGet(aiMessagesResponse)
+> AiConversationActionGet200Response aiConversationActionGet(aiConversationActionGetRequest)
 
 
 
@@ -126,10 +126,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiMessagesResponse aiMessagesResponse = ; // AiMessagesResponse | 
+final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
 
 try {
-    final response = api.aiConversationActionGet(aiMessagesResponse);
+    final response = api.aiConversationActionGet(aiConversationActionGetRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationActionGet: $e\n');
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiMessagesResponse** | [**AiMessagesResponse**](AiMessagesResponse.md)|  | [optional] 
+ **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationDataPost**
-> AiMessagesResponse aiConversationDataPost(aiConversationDataPostRequest)
+> AiMessagesResponse aiConversationDataPost(aiConversationPostRequest)
 
 
 
@@ -167,10 +167,10 @@ Name | Type | Description  | Notes
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationDataPostRequest aiConversationDataPostRequest = ; // AiConversationDataPostRequest | 
+final AiConversationPostRequest aiConversationPostRequest = ; // AiConversationPostRequest | 
 
 try {
-    final response = api.aiConversationDataPost(aiConversationDataPostRequest);
+    final response = api.aiConversationDataPost(aiConversationPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationDataPost: $e\n');
@@ -181,7 +181,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationDataPostRequest** | [**AiConversationDataPostRequest**](AiConversationDataPostRequest.md)|  | [optional] 
+ **aiConversationPostRequest** | [**AiConversationPostRequest**](AiConversationPostRequest.md)|  | [optional] 
 
 ### Return type
 

@@ -1263,7 +1263,12 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AiMessagesResponse"
+                "type": "object",
+                "properties": {
+                  "conversationId": {
+                    "type": "string"
+                  }
+                }
               }
             }
           }
@@ -1384,8 +1389,7 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "conversationId",
-                  "action"
+                  "conversationId"
                 ],
                 "properties": {
                   "conversationId": {
@@ -1446,9 +1450,7 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "conversationId",
-                  "action",
-                  "messages"
+                  "conversationId"
                 ],
                 "properties": {
                   "conversationId": {
@@ -1456,9 +1458,6 @@
                   },
                   "action": {
                     "type": "string"
-                  },
-                  "messages": {
-                    "$ref": "#/components/schemas/AiMessages"
                   }
                 }
               }
