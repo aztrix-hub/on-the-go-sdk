@@ -1263,15 +1263,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "required": [
-                  "messages"
-                ],
-                "properties": {
-                  "messages": {
-                    "$ref": "#/components/schemas/AiMessages"
-                  }
-                }
+                "$ref": "#/components/schemas/AiMessagesResponse"
               }
             }
           }
@@ -1350,12 +1342,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "messages": {
-                      "$ref": "#/components/schemas/AiMessages"
-                    }
-                  }
+                  "$ref": "#/components/schemas/AiMessagesResponse"
                 }
               }
             }
@@ -1484,12 +1471,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "messages": {
-                      "$ref": "#/components/schemas/AiMessages"
-                    }
-                  }
+                  "$ref": "#/components/schemas/AiMessagesResponse"
                 }
               }
             }
@@ -3084,6 +3066,17 @@
           "endTime": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "AiMessagesResponse": {
+        "type": "object",
+        "required": [
+          "messages"
+        ],
+        "properties": {
+          "messages": {
+            "$ref": "#/components/schemas/AiMessages"
           }
         }
       },

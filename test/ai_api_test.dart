@@ -16,17 +16,17 @@ void main() {
       // TODO
     });
 
-    //Future<AiConversationActionGet200Response> aiConversationActionGet({ AiConversationActionGetRequest aiConversationActionGetRequest }) async
+    //Future<AiConversationActionGet200Response> aiConversationActionGet({ AiMessagesResponse aiMessagesResponse }) async
     test('test aiConversationActionGet', () async {
       // TODO
     });
 
-    //Future<AiConversationMessagePost200Response> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
+    //Future<AiMessagesResponse> aiConversationDataPost({ AiConversationDataPostRequest aiConversationDataPostRequest }) async
     test('test aiConversationDataPost', () async {
       // TODO
     });
 
-    //Future<AiConversationMessagePost200Response> aiConversationMessagePost({ AiConversationMessagePostRequest aiConversationMessagePostRequest }) async
+    //Future<AiMessagesResponse> aiConversationMessagePost({ AiConversationMessagePostRequest aiConversationMessagePostRequest }) async
     test('test aiConversationMessagePost', () async {
       // TODO
     });

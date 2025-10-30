@@ -13,9 +13,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_data_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_message_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -24,6 +22,7 @@ import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 
 class AiApi {
@@ -245,7 +244,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
-  /// * [aiConversationActionGetRequest]
+  /// * [aiMessagesResponse]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -256,7 +255,7 @@ class AiApi {
   /// Returns a [Future] containing a [Response] with a [AiConversationActionGet200Response] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiConversationActionGet200Response>> aiConversationActionGet({
-    AiConversationActionGetRequest? aiConversationActionGetRequest,
+    AiMessagesResponse? aiMessagesResponse,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -288,11 +287,10 @@ class AiApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AiConversationActionGetRequest);
-      _bodyData = aiConversationActionGetRequest == null
+      const _type = FullType(AiMessagesResponse);
+      _bodyData = aiMessagesResponse == null
           ? null
-          : _serializers.serialize(aiConversationActionGetRequest,
-              specifiedType: _type);
+          : _serializers.serialize(aiMessagesResponse, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -358,10 +356,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiConversationMessagePost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiConversationMessagePost200Response>>
-      aiConversationDataPost({
+  Future<Response<AiMessagesResponse>> aiConversationDataPost({
     AiConversationDataPostRequest? aiConversationDataPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -413,7 +410,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiConversationMessagePost200Response? _responseData;
+    AiMessagesResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -421,9 +418,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType:
-                  const FullType(AiConversationMessagePost200Response),
-            ) as AiConversationMessagePost200Response;
+              specifiedType: const FullType(AiMessagesResponse),
+            ) as AiMessagesResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -434,7 +430,7 @@ class AiApi {
       );
     }
 
-    return Response<AiConversationMessagePost200Response>(
+    return Response<AiMessagesResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -458,10 +454,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiConversationMessagePost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiConversationMessagePost200Response>>
-      aiConversationMessagePost({
+  Future<Response<AiMessagesResponse>> aiConversationMessagePost({
     AiConversationMessagePostRequest? aiConversationMessagePostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -520,7 +515,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiConversationMessagePost200Response? _responseData;
+    AiMessagesResponse? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -528,9 +523,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType:
-                  const FullType(AiConversationMessagePost200Response),
-            ) as AiConversationMessagePost200Response;
+              specifiedType: const FullType(AiMessagesResponse),
+            ) as AiMessagesResponse;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -541,7 +535,7 @@ class AiApi {
       );
     }
 
-    return Response<AiConversationMessagePost200Response>(
+    return Response<AiMessagesResponse>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

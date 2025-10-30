@@ -22,9 +22,7 @@ doc/AiChatPostRequest.md
 doc/AiContext.md
 doc/AiConversationActionGet200Response.md
 doc/AiConversationActionGet400Response.md
-doc/AiConversationActionGetRequest.md
 doc/AiConversationDataPostRequest.md
-doc/AiConversationMessagePost200Response.md
 doc/AiConversationMessagePostRequest.md
 doc/AiConversationPost200Response.md
 doc/AiConversationPostRequest.md
@@ -41,6 +39,7 @@ doc/AiMessageAttributes.md
 doc/AiMessageLocationAttribute.md
 doc/AiMessageLocationAttributeBoundingBox.md
 doc/AiMessageLocationAttributeCoordinates.md
+doc/AiMessagesResponse.md
 doc/AiSystemGet200Response.md
 doc/AiToolCalls.md
 doc/AiToolResponses.md
@@ -128,9 +127,7 @@ lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_context.dart
 lib/src/model/ai_conversation_action_get200_response.dart
 lib/src/model/ai_conversation_action_get400_response.dart
-lib/src/model/ai_conversation_action_get_request.dart
 lib/src/model/ai_conversation_data_post_request.dart
-lib/src/model/ai_conversation_message_post200_response.dart
 lib/src/model/ai_conversation_message_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
 lib/src/model/ai_conversation_post_request.dart
@@ -147,6 +144,7 @@ lib/src/model/ai_message_attributes.dart
 lib/src/model/ai_message_location_attribute.dart
 lib/src/model/ai_message_location_attribute_bounding_box.dart
 lib/src/model/ai_message_location_attribute_coordinates.dart
+lib/src/model/ai_messages_response.dart
 lib/src/model/ai_system_get200_response.dart
 lib/src/model/ai_tool_calls.dart
 lib/src/model/ai_tool_responses.dart
@@ -211,9 +209,7 @@ test/ai_chat_post_request_test.dart
 test/ai_context_test.dart
 test/ai_conversation_action_get200_response_test.dart
 test/ai_conversation_action_get400_response_test.dart
-test/ai_conversation_action_get_request_test.dart
 test/ai_conversation_data_post_request_test.dart
-test/ai_conversation_message_post200_response_test.dart
 test/ai_conversation_message_post_request_test.dart
 test/ai_conversation_post200_response_test.dart
 test/ai_conversation_post_request_test.dart
@@ -230,6 +226,7 @@ test/ai_message_location_attribute_bounding_box_test.dart
 test/ai_message_location_attribute_coordinates_test.dart
 test/ai_message_location_attribute_test.dart
 test/ai_message_test.dart
+test/ai_messages_response_test.dart
 test/ai_system_get200_response_test.dart
 test/ai_tool_calls_test.dart
 test/ai_tool_responses_test.dart

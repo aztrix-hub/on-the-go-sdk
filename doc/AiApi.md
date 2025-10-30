@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationActionGet**
-> AiConversationActionGet200Response aiConversationActionGet(aiConversationActionGetRequest)
+> AiConversationActionGet200Response aiConversationActionGet(aiMessagesResponse)
 
 
 
@@ -126,10 +126,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
+final AiMessagesResponse aiMessagesResponse = ; // AiMessagesResponse | 
 
 try {
-    final response = api.aiConversationActionGet(aiConversationActionGetRequest);
+    final response = api.aiConversationActionGet(aiMessagesResponse);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationActionGet: $e\n');
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
+ **aiMessagesResponse** | [**AiMessagesResponse**](AiMessagesResponse.md)|  | [optional] 
 
 ### Return type
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationDataPost**
-> AiConversationMessagePost200Response aiConversationDataPost(aiConversationDataPostRequest)
+> AiMessagesResponse aiConversationDataPost(aiConversationDataPostRequest)
 
 
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiConversationMessagePost200Response**](AiConversationMessagePost200Response.md)
+[**AiMessagesResponse**](AiMessagesResponse.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationMessagePost**
-> AiConversationMessagePost200Response aiConversationMessagePost(aiConversationMessagePostRequest)
+> AiMessagesResponse aiConversationMessagePost(aiConversationMessagePostRequest)
 
 
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiConversationMessagePost200Response**](AiConversationMessagePost200Response.md)
+[**AiMessagesResponse**](AiMessagesResponse.md)
 
 ### Authorization
 

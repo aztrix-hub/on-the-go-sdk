@@ -8,63 +8,55 @@ import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_conversation_message_post200_response.g.dart';
+part 'ai_messages_response.g.dart';
 
-/// AiConversationMessagePost200Response
+/// AiMessagesResponse
 ///
 /// Properties:
 /// * [messages]
 @BuiltValue()
-abstract class AiConversationMessagePost200Response
-    implements
-        Built<AiConversationMessagePost200Response,
-            AiConversationMessagePost200ResponseBuilder> {
+abstract class AiMessagesResponse
+    implements Built<AiMessagesResponse, AiMessagesResponseBuilder> {
   @BuiltValueField(wireName: r'messages')
-  BuiltList<AiMessage>? get messages;
+  BuiltList<AiMessage> get messages;
 
-  AiConversationMessagePost200Response._();
+  AiMessagesResponse._();
 
-  factory AiConversationMessagePost200Response(
-          [void updates(AiConversationMessagePost200ResponseBuilder b)]) =
-      _$AiConversationMessagePost200Response;
+  factory AiMessagesResponse([void updates(AiMessagesResponseBuilder b)]) =
+      _$AiMessagesResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiConversationMessagePost200ResponseBuilder b) => b;
+  static void _defaults(AiMessagesResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiConversationMessagePost200Response> get serializer =>
-      _$AiConversationMessagePost200ResponseSerializer();
+  static Serializer<AiMessagesResponse> get serializer =>
+      _$AiMessagesResponseSerializer();
 }
 
-class _$AiConversationMessagePost200ResponseSerializer
-    implements PrimitiveSerializer<AiConversationMessagePost200Response> {
+class _$AiMessagesResponseSerializer
+    implements PrimitiveSerializer<AiMessagesResponse> {
   @override
-  final Iterable<Type> types = const [
-    AiConversationMessagePost200Response,
-    _$AiConversationMessagePost200Response
-  ];
+  final Iterable<Type> types = const [AiMessagesResponse, _$AiMessagesResponse];
 
   @override
-  final String wireName = r'AiConversationMessagePost200Response';
+  final String wireName = r'AiMessagesResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiConversationMessagePost200Response object, {
+    AiMessagesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.messages != null) {
-      yield r'messages';
-      yield serializers.serialize(
-        object.messages,
-        specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
-      );
-    }
+    yield r'messages';
+    yield serializers.serialize(
+      object.messages,
+      specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    AiConversationMessagePost200Response object, {
+    AiMessagesResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,7 +69,7 @@ class _$AiConversationMessagePost200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiConversationMessagePost200ResponseBuilder result,
+    required AiMessagesResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -100,12 +92,12 @@ class _$AiConversationMessagePost200ResponseSerializer
   }
 
   @override
-  AiConversationMessagePost200Response deserialize(
+  AiMessagesResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiConversationMessagePost200ResponseBuilder();
+    final result = AiMessagesResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
