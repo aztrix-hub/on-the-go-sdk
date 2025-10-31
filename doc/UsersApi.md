@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
 [**userOauthPost**](UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
 [**userPatch**](UsersApi.md#userpatch) | **PATCH** /user | Update the current user
+[**userRegisterPost**](UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 
 
@@ -224,6 +225,46 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userRegisterPost**
+> userRegisterPost(userRegisterPostRequest)
+
+Registers a user
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserRegisterPostRequest userRegisterPostRequest = ; // UserRegisterPostRequest | 
+
+try {
+    api.userRegisterPost(userRegisterPostRequest);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userRegisterPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userRegisterPostRequest** | [**UserRegisterPostRequest**](UserRegisterPostRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

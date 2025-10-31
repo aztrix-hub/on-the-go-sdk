@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
 [*UsersApi*](doc/UsersApi.md) | [**userOauthPost**](doc/UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
 [*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
+[*UsersApi*](doc/UsersApi.md) | [**userRegisterPost**](doc/UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
@@ -191,6 +192,7 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
+ - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 
 

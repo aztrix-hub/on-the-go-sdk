@@ -160,6 +160,41 @@
         }
       }
     },
+    "/user/register": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Registers a user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "User email"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "User successfully authenticated"
+          },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/user/reset-password": {
       "post": {
         "tags": [

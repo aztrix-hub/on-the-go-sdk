@@ -41,6 +41,13 @@ void main() {
       // TODO
     });
 
+    // Registers a user
+    //
+    //Future userRegisterPost(UserRegisterPostRequest userRegisterPostRequest) async
+    test('test userRegisterPost', () async {
+      // TODO
+    });
+
     // Resets the user's password
     //
     // Changes the user's password to a new password

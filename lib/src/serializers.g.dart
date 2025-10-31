@@ -92,6 +92,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(User.serializer)
       ..add(UserOauthPost200Response.serializer)
       ..add(UserOauthPostRequest.serializer)
+      ..add(UserRegisterPostRequest.serializer)
       ..add(WhitelabelData.serializer)
       ..add(WhitelabelDataThemeEnum.serializer)
       ..addBuilderFactory(

@@ -99,4 +99,5 @@ export 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 export 'package:on_the_go_sdk/src/model/user.dart';
 export 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
+export 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
 export 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
