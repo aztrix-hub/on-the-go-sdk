@@ -133,7 +133,6 @@ Class | Method | HTTP request | Description
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiContext](doc/AiContext.md)
  - [AiConversationActionGet200Response](doc/AiConversationActionGet200Response.md)
- - [AiConversationActionGet400Response](doc/AiConversationActionGet400Response.md)
  - [AiConversationActionGetRequest](doc/AiConversationActionGetRequest.md)
  - [AiConversationGetRequest](doc/AiConversationGetRequest.md)
  - [AiConversationMessagePostRequest](doc/AiConversationMessagePostRequest.md)
@@ -192,6 +191,7 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
+ - [UserRegisterPost400Response](doc/UserRegisterPost400Response.md)
  - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 

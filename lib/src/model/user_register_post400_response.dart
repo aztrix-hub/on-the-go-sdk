@@ -3,51 +3,55 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_conversation_action_get400_response.g.dart';
+part 'user_register_post400_response.g.dart';
 
-/// AiConversationActionGet400Response
+/// UserRegisterPost400Response
 ///
 /// Properties:
 /// * [error]
+/// * [details]
 @BuiltValue()
-abstract class AiConversationActionGet400Response
+abstract class UserRegisterPost400Response
     implements
-        Built<AiConversationActionGet400Response,
-            AiConversationActionGet400ResponseBuilder> {
+        Built<UserRegisterPost400Response, UserRegisterPost400ResponseBuilder> {
   @BuiltValueField(wireName: r'error')
   String? get error;
 
-  AiConversationActionGet400Response._();
+  @BuiltValueField(wireName: r'details')
+  JsonObject? get details;
 
-  factory AiConversationActionGet400Response(
-          [void updates(AiConversationActionGet400ResponseBuilder b)]) =
-      _$AiConversationActionGet400Response;
+  UserRegisterPost400Response._();
+
+  factory UserRegisterPost400Response(
+          [void updates(UserRegisterPost400ResponseBuilder b)]) =
+      _$UserRegisterPost400Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiConversationActionGet400ResponseBuilder b) => b;
+  static void _defaults(UserRegisterPost400ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiConversationActionGet400Response> get serializer =>
-      _$AiConversationActionGet400ResponseSerializer();
+  static Serializer<UserRegisterPost400Response> get serializer =>
+      _$UserRegisterPost400ResponseSerializer();
 }
 
-class _$AiConversationActionGet400ResponseSerializer
-    implements PrimitiveSerializer<AiConversationActionGet400Response> {
+class _$UserRegisterPost400ResponseSerializer
+    implements PrimitiveSerializer<UserRegisterPost400Response> {
   @override
   final Iterable<Type> types = const [
-    AiConversationActionGet400Response,
-    _$AiConversationActionGet400Response
+    UserRegisterPost400Response,
+    _$UserRegisterPost400Response
   ];
 
   @override
-  final String wireName = r'AiConversationActionGet400Response';
+  final String wireName = r'UserRegisterPost400Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiConversationActionGet400Response object, {
+    UserRegisterPost400Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.error != null) {
@@ -57,12 +61,19 @@ class _$AiConversationActionGet400ResponseSerializer
         specifiedType: const FullType(String),
       );
     }
+    if (object.details != null) {
+      yield r'details';
+      yield serializers.serialize(
+        object.details,
+        specifiedType: const FullType(JsonObject),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    AiConversationActionGet400Response object, {
+    UserRegisterPost400Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -75,7 +86,7 @@ class _$AiConversationActionGet400ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiConversationActionGet400ResponseBuilder result,
+    required UserRegisterPost400ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -89,6 +100,13 @@ class _$AiConversationActionGet400ResponseSerializer
           ) as String;
           result.error = valueDes;
           break;
+        case r'details':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.details = valueDes;
+          break;
         default:
           unhandled.add(key);
           unhandled.add(value);
@@ -98,12 +116,12 @@ class _$AiConversationActionGet400ResponseSerializer
   }
 
   @override
-  AiConversationActionGet400Response deserialize(
+  UserRegisterPost400Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiConversationActionGet400ResponseBuilder();
+    final result = UserRegisterPost400ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

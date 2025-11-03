@@ -21,7 +21,6 @@ doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiContext.md
 doc/AiConversationActionGet200Response.md
-doc/AiConversationActionGet400Response.md
 doc/AiConversationActionGetRequest.md
 doc/AiConversationGetRequest.md
 doc/AiConversationMessagePostRequest.md
@@ -86,6 +85,7 @@ doc/SpecialOpeningHour.md
 doc/User.md
 doc/UserOauthPost200Response.md
 doc/UserOauthPostRequest.md
+doc/UserRegisterPost400Response.md
 doc/UserRegisterPostRequest.md
 doc/UsersApi.md
 doc/WhitelabelApi.md
@@ -128,7 +128,6 @@ lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_context.dart
 lib/src/model/ai_conversation_action_get200_response.dart
-lib/src/model/ai_conversation_action_get400_response.dart
 lib/src/model/ai_conversation_action_get_request.dart
 lib/src/model/ai_conversation_get_request.dart
 lib/src/model/ai_conversation_message_post_request.dart
@@ -188,6 +187,7 @@ lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart
 lib/src/model/user_oauth_post200_response.dart
 lib/src/model/user_oauth_post_request.dart
+lib/src/model/user_register_post400_response.dart
 lib/src/model/user_register_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
@@ -212,7 +212,6 @@ test/ai_chat_post200_response_test.dart
 test/ai_chat_post_request_test.dart
 test/ai_context_test.dart
 test/ai_conversation_action_get200_response_test.dart
-test/ai_conversation_action_get400_response_test.dart
 test/ai_conversation_action_get_request_test.dart
 test/ai_conversation_get_request_test.dart
 test/ai_conversation_message_post_request_test.dart
@@ -276,6 +275,7 @@ test/social_post_test.dart
 test/special_opening_hour_test.dart
 test/user_oauth_post200_response_test.dart
 test/user_oauth_post_request_test.dart
+test/user_register_post400_response_test.dart
 test/user_register_post_request_test.dart
 test/user_test.dart
 test/users_api_test.dart

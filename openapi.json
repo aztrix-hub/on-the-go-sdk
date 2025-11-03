@@ -187,7 +187,22 @@
             "description": "User successfully authenticated"
           },
           "400": {
-            "description": "Invalid or Missing Parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error"
@@ -1333,6 +1348,9 @@
                   "properties": {
                     "error": {
                       "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
                     }
                   }
                 }
@@ -1396,6 +1414,9 @@
                   "properties": {
                     "error": {
                       "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
                     }
                   }
                 }
@@ -1455,6 +1476,9 @@
                   "properties": {
                     "error": {
                       "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
                     }
                   }
                 }
@@ -1571,6 +1595,9 @@
                   "properties": {
                     "error": {
                       "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
                     }
                   }
                 }

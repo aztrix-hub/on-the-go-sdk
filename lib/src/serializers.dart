@@ -34,7 +34,6 @@ import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_context.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_action_get400_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
@@ -93,6 +92,7 @@ import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_register_post400_response.dart';
 import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 
@@ -119,7 +119,6 @@ part 'serializers.g.dart';
   AiChatPostRequest,
   AiContext,
   AiConversationActionGet200Response,
-  AiConversationActionGet400Response,
   AiConversationActionGetRequest,
   AiConversationGetRequest,
   AiConversationMessagePostRequest,
@@ -178,6 +177,7 @@ part 'serializers.g.dart';
   User,
   UserOauthPost200Response,
   UserOauthPostRequest,
+  UserRegisterPost400Response,
   UserRegisterPostRequest,
   WhitelabelData,
 ])
