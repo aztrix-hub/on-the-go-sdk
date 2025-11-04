@@ -133,7 +133,6 @@ Class | Method | HTTP request | Description
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiContext](doc/AiContext.md)
  - [AiConversationActionGet200Response](doc/AiConversationActionGet200Response.md)
- - [AiConversationActionGetRequest](doc/AiConversationActionGetRequest.md)
  - [AiConversationGetRequest](doc/AiConversationGetRequest.md)
  - [AiConversationMessagePostRequest](doc/AiConversationMessagePostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)

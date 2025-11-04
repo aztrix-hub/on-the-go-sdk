@@ -1309,20 +1309,16 @@
         "tags": [
           "ai"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "conversationId": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Successfully retrieved messages",

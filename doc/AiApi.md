@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationActionGet**
-> AiConversationActionGet200Response aiConversationActionGet(aiConversationActionGetRequest)
+> AiConversationActionGet200Response aiConversationActionGet(conversationId)
 
 
 
@@ -127,10 +127,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationActionGetRequest aiConversationActionGetRequest = ; // AiConversationActionGetRequest | 
+final String conversationId = conversationId_example; // String | 
 
 try {
-    final response = api.aiConversationActionGet(aiConversationActionGetRequest);
+    final response = api.aiConversationActionGet(conversationId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationActionGet: $e\n');
@@ -141,7 +141,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationActionGetRequest** | [**AiConversationActionGetRequest**](AiConversationActionGetRequest.md)|  | [optional] 
+ **conversationId** | **String**|  | 
 
 ### Return type
 
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

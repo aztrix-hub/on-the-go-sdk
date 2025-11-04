@@ -21,7 +21,6 @@ doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
 doc/AiContext.md
 doc/AiConversationActionGet200Response.md
-doc/AiConversationActionGetRequest.md
 doc/AiConversationGetRequest.md
 doc/AiConversationMessagePostRequest.md
 doc/AiConversationPost200Response.md
@@ -128,7 +127,6 @@ lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
 lib/src/model/ai_context.dart
 lib/src/model/ai_conversation_action_get200_response.dart
-lib/src/model/ai_conversation_action_get_request.dart
 lib/src/model/ai_conversation_get_request.dart
 lib/src/model/ai_conversation_message_post_request.dart
 lib/src/model/ai_conversation_post200_response.dart
@@ -212,7 +210,6 @@ test/ai_chat_post200_response_test.dart
 test/ai_chat_post_request_test.dart
 test/ai_context_test.dart
 test/ai_conversation_action_get200_response_test.dart
-test/ai_conversation_action_get_request_test.dart
 test/ai_conversation_get_request_test.dart
 test/ai_conversation_message_post_request_test.dart
 test/ai_conversation_post200_response_test.dart
