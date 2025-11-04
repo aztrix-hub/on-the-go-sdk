@@ -30,7 +30,7 @@ part 'ai_message.g.dart';
 @BuiltValue()
 abstract class AiMessage implements Built<AiMessage, AiMessageBuilder> {
   @BuiltValueField(wireName: r'dateTime')
-  String get dateTime;
+  String? get dateTime;
 
   @BuiltValueField(wireName: r'role')
   AiMessageRoleEnum get role;
@@ -80,11 +80,13 @@ class _$AiMessageSerializer implements PrimitiveSerializer<AiMessage> {
     AiMessage object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'dateTime';
-    yield serializers.serialize(
-      object.dateTime,
-      specifiedType: const FullType(String),
-    );
+    if (object.dateTime != null) {
+      yield r'dateTime';
+      yield serializers.serialize(
+        object.dateTime,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'role';
     yield serializers.serialize(
       object.role,

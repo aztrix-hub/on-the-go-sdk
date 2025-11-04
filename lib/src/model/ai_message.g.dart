@@ -75,7 +75,7 @@ class _$AiMessageRoleEnumSerializer
 
 class _$AiMessage extends AiMessage {
   @override
-  final String dateTime;
+  final String? dateTime;
   @override
   final AiMessageRoleEnum role;
   @override
@@ -97,7 +97,7 @@ class _$AiMessage extends AiMessage {
       (AiMessageBuilder()..update(updates))._build();
 
   _$AiMessage._(
-      {required this.dateTime,
+      {this.dateTime,
       required this.role,
       this.text,
       this.attributes,
@@ -248,8 +248,7 @@ class AiMessageBuilder implements Builder<AiMessage, AiMessageBuilder> {
     try {
       _$result = _$v ??
           _$AiMessage._(
-            dateTime: BuiltValueNullFieldError.checkNotNull(
-                dateTime, r'AiMessage', 'dateTime'),
+            dateTime: dateTime,
             role: BuiltValueNullFieldError.checkNotNull(
                 role, r'AiMessage', 'role'),
             text: text,

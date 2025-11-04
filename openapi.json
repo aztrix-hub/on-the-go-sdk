@@ -3198,7 +3198,6 @@
       "AiMessage": {
         "type": "object",
         "required": [
-          "dateTime",
           "role"
         ],
         "properties": {

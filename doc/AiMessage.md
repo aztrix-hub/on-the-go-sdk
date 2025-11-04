@@ -8,7 +8,7 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dateTime** | **String** |  | 
+**dateTime** | **String** |  | [optional] 
 **role** | **String** |  | 
 **text** | **String** |  | [optional] 
 **attributes** | [**AiMessageAttributes**](AiMessageAttributes.md) |  | [optional] 
