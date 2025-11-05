@@ -7,48 +7,48 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_autocomplete_keywords_get200_response.g.dart';
+part 'ai_suggestions_keywords_get200_response.g.dart';
 
-/// AiAutocompleteKeywordsGet200Response
+/// AiSuggestionsKeywordsGet200Response
 ///
 /// Properties:
 /// * [keywords]
 @BuiltValue()
-abstract class AiAutocompleteKeywordsGet200Response
+abstract class AiSuggestionsKeywordsGet200Response
     implements
-        Built<AiAutocompleteKeywordsGet200Response,
-            AiAutocompleteKeywordsGet200ResponseBuilder> {
+        Built<AiSuggestionsKeywordsGet200Response,
+            AiSuggestionsKeywordsGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
 
-  AiAutocompleteKeywordsGet200Response._();
+  AiSuggestionsKeywordsGet200Response._();
 
-  factory AiAutocompleteKeywordsGet200Response(
-          [void updates(AiAutocompleteKeywordsGet200ResponseBuilder b)]) =
-      _$AiAutocompleteKeywordsGet200Response;
+  factory AiSuggestionsKeywordsGet200Response(
+          [void updates(AiSuggestionsKeywordsGet200ResponseBuilder b)]) =
+      _$AiSuggestionsKeywordsGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiAutocompleteKeywordsGet200ResponseBuilder b) => b;
+  static void _defaults(AiSuggestionsKeywordsGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiAutocompleteKeywordsGet200Response> get serializer =>
-      _$AiAutocompleteKeywordsGet200ResponseSerializer();
+  static Serializer<AiSuggestionsKeywordsGet200Response> get serializer =>
+      _$AiSuggestionsKeywordsGet200ResponseSerializer();
 }
 
-class _$AiAutocompleteKeywordsGet200ResponseSerializer
-    implements PrimitiveSerializer<AiAutocompleteKeywordsGet200Response> {
+class _$AiSuggestionsKeywordsGet200ResponseSerializer
+    implements PrimitiveSerializer<AiSuggestionsKeywordsGet200Response> {
   @override
   final Iterable<Type> types = const [
-    AiAutocompleteKeywordsGet200Response,
-    _$AiAutocompleteKeywordsGet200Response
+    AiSuggestionsKeywordsGet200Response,
+    _$AiSuggestionsKeywordsGet200Response
   ];
 
   @override
-  final String wireName = r'AiAutocompleteKeywordsGet200Response';
+  final String wireName = r'AiSuggestionsKeywordsGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiAutocompleteKeywordsGet200Response object, {
+    AiSuggestionsKeywordsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.keywords != null) {
@@ -63,7 +63,7 @@ class _$AiAutocompleteKeywordsGet200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiAutocompleteKeywordsGet200Response object, {
+    AiSuggestionsKeywordsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -76,7 +76,7 @@ class _$AiAutocompleteKeywordsGet200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiAutocompleteKeywordsGet200ResponseBuilder result,
+    required AiSuggestionsKeywordsGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -99,12 +99,12 @@ class _$AiAutocompleteKeywordsGet200ResponseSerializer
   }
 
   @override
-  AiAutocompleteKeywordsGet200Response deserialize(
+  AiSuggestionsKeywordsGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiAutocompleteKeywordsGet200ResponseBuilder();
+    final result = AiSuggestionsKeywordsGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiAutocompleteKeywordsGet200Response
+# on_the_go_sdk.model.AiSuggestionsKeywordsGet200Response
 
 ## Load the model package
 ```dart

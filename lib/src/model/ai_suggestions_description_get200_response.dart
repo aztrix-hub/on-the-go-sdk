@@ -6,48 +6,48 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_autocomplete_description_get200_response.g.dart';
+part 'ai_suggestions_description_get200_response.g.dart';
 
-/// AiAutocompleteDescriptionGet200Response
+/// AiSuggestionsDescriptionGet200Response
 ///
 /// Properties:
 /// * [description]
 @BuiltValue()
-abstract class AiAutocompleteDescriptionGet200Response
+abstract class AiSuggestionsDescriptionGet200Response
     implements
-        Built<AiAutocompleteDescriptionGet200Response,
-            AiAutocompleteDescriptionGet200ResponseBuilder> {
+        Built<AiSuggestionsDescriptionGet200Response,
+            AiSuggestionsDescriptionGet200ResponseBuilder> {
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  AiAutocompleteDescriptionGet200Response._();
+  AiSuggestionsDescriptionGet200Response._();
 
-  factory AiAutocompleteDescriptionGet200Response(
-          [void updates(AiAutocompleteDescriptionGet200ResponseBuilder b)]) =
-      _$AiAutocompleteDescriptionGet200Response;
+  factory AiSuggestionsDescriptionGet200Response(
+          [void updates(AiSuggestionsDescriptionGet200ResponseBuilder b)]) =
+      _$AiSuggestionsDescriptionGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiAutocompleteDescriptionGet200ResponseBuilder b) => b;
+  static void _defaults(AiSuggestionsDescriptionGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiAutocompleteDescriptionGet200Response> get serializer =>
-      _$AiAutocompleteDescriptionGet200ResponseSerializer();
+  static Serializer<AiSuggestionsDescriptionGet200Response> get serializer =>
+      _$AiSuggestionsDescriptionGet200ResponseSerializer();
 }
 
-class _$AiAutocompleteDescriptionGet200ResponseSerializer
-    implements PrimitiveSerializer<AiAutocompleteDescriptionGet200Response> {
+class _$AiSuggestionsDescriptionGet200ResponseSerializer
+    implements PrimitiveSerializer<AiSuggestionsDescriptionGet200Response> {
   @override
   final Iterable<Type> types = const [
-    AiAutocompleteDescriptionGet200Response,
-    _$AiAutocompleteDescriptionGet200Response
+    AiSuggestionsDescriptionGet200Response,
+    _$AiSuggestionsDescriptionGet200Response
   ];
 
   @override
-  final String wireName = r'AiAutocompleteDescriptionGet200Response';
+  final String wireName = r'AiSuggestionsDescriptionGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiAutocompleteDescriptionGet200Response object, {
+    AiSuggestionsDescriptionGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.description != null) {
@@ -62,7 +62,7 @@ class _$AiAutocompleteDescriptionGet200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiAutocompleteDescriptionGet200Response object, {
+    AiSuggestionsDescriptionGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -75,7 +75,7 @@ class _$AiAutocompleteDescriptionGet200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiAutocompleteDescriptionGet200ResponseBuilder result,
+    required AiSuggestionsDescriptionGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -98,12 +98,12 @@ class _$AiAutocompleteDescriptionGet200ResponseSerializer
   }
 
   @override
-  AiAutocompleteDescriptionGet200Response deserialize(
+  AiSuggestionsDescriptionGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiAutocompleteDescriptionGet200ResponseBuilder();
+    final result = AiSuggestionsDescriptionGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

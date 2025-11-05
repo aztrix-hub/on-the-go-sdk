@@ -1656,7 +1656,7 @@
         }
       }
     },
-    "/ai/autocomplete/description": {
+    "/ai/suggestions/description": {
       "get": {
         "tags": [
           "ai"
@@ -1708,7 +1708,7 @@
         ]
       }
     },
-    "/ai/autocomplete/keywords": {
+    "/ai/suggestions/keywords": {
       "get": {
         "tags": [
           "ai"

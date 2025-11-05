@@ -6,16 +6,6 @@ void main() {
   final instance = OnTheGoSdk().getAiApi();
 
   group(AiApi, () {
-    //Future<AiAutocompleteDescriptionGet200Response> aiAutocompleteDescriptionGet() async
-    test('test aiAutocompleteDescriptionGet', () async {
-      // TODO
-    });
-
-    //Future<AiAutocompleteKeywordsGet200Response> aiAutocompleteKeywordsGet() async
-    test('test aiAutocompleteKeywordsGet', () async {
-      // TODO
-    });
-
     //Future<AiChatDataPost200Response> aiChatDataPost({ AiChatDataPostRequest aiChatDataPostRequest }) async
     test('test aiChatDataPost', () async {
       // TODO
@@ -68,6 +58,16 @@ void main() {
 
     //Future<AiMemoriesGet200Response> aiMemoriesGet(String userId) async
     test('test aiMemoriesGet', () async {
+      // TODO
+    });
+
+    //Future<AiSuggestionsDescriptionGet200Response> aiSuggestionsDescriptionGet() async
+    test('test aiSuggestionsDescriptionGet', () async {
+      // TODO
+    });
+
+    //Future<AiSuggestionsKeywordsGet200Response> aiSuggestionsKeywordsGet() async
+    test('test aiSuggestionsKeywordsGet', () async {
       // TODO
     });
   });
