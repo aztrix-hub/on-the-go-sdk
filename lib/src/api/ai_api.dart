@@ -1055,6 +1055,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
+  /// * [locationId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1066,6 +1067,7 @@ class AiApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiSuggestionsDescriptionGet200Response>>
       aiSuggestionsDescriptionGet({
+    required String locationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1093,9 +1095,15 @@ class AiApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'locationId': encodeQueryParameter(
+          _serializers, locationId, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -1138,6 +1146,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
+  /// * [locationId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1149,6 +1158,7 @@ class AiApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiSuggestionsKeywordsGet200Response>>
       aiSuggestionsKeywordsGet({
+    required String locationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -1176,9 +1186,15 @@ class AiApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      r'locationId': encodeQueryParameter(
+          _serializers, locationId, const FullType(String)),
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

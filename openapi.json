@@ -1663,8 +1663,8 @@
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "locationId",
+            "name": "locationId",
+            "in": "query",
             "schema": {
               "type": "string"
             },
@@ -1715,8 +1715,8 @@
         ],
         "parameters": [
           {
-            "name": "id",
-            "in": "locationId",
+            "name": "locationId",
+            "in": "query",
             "schema": {
               "type": "string"
             },

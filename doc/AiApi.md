@@ -495,7 +495,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiSuggestionsDescriptionGet**
-> AiSuggestionsDescriptionGet200Response aiSuggestionsDescriptionGet()
+> AiSuggestionsDescriptionGet200Response aiSuggestionsDescriptionGet(locationId)
 
 
 
@@ -508,9 +508,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
+final String locationId = locationId_example; // String | 
 
 try {
-    final response = api.aiSuggestionsDescriptionGet();
+    final response = api.aiSuggestionsDescriptionGet(locationId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiSuggestionsDescriptionGet: $e\n');
@@ -518,7 +519,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **String**|  | 
 
 ### Return type
 
@@ -536,7 +540,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiSuggestionsKeywordsGet**
-> AiSuggestionsKeywordsGet200Response aiSuggestionsKeywordsGet()
+> AiSuggestionsKeywordsGet200Response aiSuggestionsKeywordsGet(locationId)
 
 
 
@@ -549,9 +553,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAiApi();
+final String locationId = locationId_example; // String | 
 
 try {
-    final response = api.aiSuggestionsKeywordsGet();
+    final response = api.aiSuggestionsKeywordsGet(locationId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiSuggestionsKeywordsGet: $e\n');
@@ -559,7 +564,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **String**|  | 
 
 ### Return type
 

@@ -61,12 +61,12 @@ void main() {
       // TODO
     });
 
-    //Future<AiSuggestionsDescriptionGet200Response> aiSuggestionsDescriptionGet() async
+    //Future<AiSuggestionsDescriptionGet200Response> aiSuggestionsDescriptionGet(String locationId) async
     test('test aiSuggestionsDescriptionGet', () async {
       // TODO
     });
 
-    //Future<AiSuggestionsKeywordsGet200Response> aiSuggestionsKeywordsGet() async
+    //Future<AiSuggestionsKeywordsGet200Response> aiSuggestionsKeywordsGet(String locationId) async
     test('test aiSuggestionsKeywordsGet', () async {
       // TODO
     });
