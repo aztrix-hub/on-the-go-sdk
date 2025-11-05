@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.UserRegisterPost400Response
+# on_the_go_sdk.model.ErrorResponse
 
 ## Load the model package
 ```dart

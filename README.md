@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
  - [Category](doc/Category.md)
  - [DataPoint](doc/DataPoint.md)
  - [DirectoryType](doc/DirectoryType.md)
+ - [ErrorResponse](doc/ErrorResponse.md)
  - [InboxItem](doc/InboxItem.md)
  - [InboxPost200Response](doc/InboxPost200Response.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
@@ -190,7 +191,6 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
- - [UserRegisterPost400Response](doc/UserRegisterPost400Response.md)
  - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 

@@ -59,6 +59,7 @@ import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
+import 'package:on_the_go_sdk/src/model/error_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
@@ -91,7 +92,6 @@ import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_register_post400_response.dart';
 import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 
@@ -143,6 +143,7 @@ part 'serializers.g.dart';
   Category,
   DataPoint,
   DirectoryType,
+  ErrorResponse,
   InboxItem,
   InboxPost200Response,
   InboxPostRequest,
@@ -175,7 +176,6 @@ part 'serializers.g.dart';
   User,
   UserOauthPost200Response,
   UserOauthPostRequest,
-  UserRegisterPost400Response,
   UserRegisterPostRequest,
   WhitelabelData,
 ])

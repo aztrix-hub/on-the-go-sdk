@@ -1,35 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_register_post400_response.dart';
+part of 'error_response.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$UserRegisterPost400Response extends UserRegisterPost400Response {
+class _$ErrorResponse extends ErrorResponse {
   @override
   final String? error;
   @override
   final JsonObject? details;
 
-  factory _$UserRegisterPost400Response(
-          [void Function(UserRegisterPost400ResponseBuilder)? updates]) =>
-      (UserRegisterPost400ResponseBuilder()..update(updates))._build();
+  factory _$ErrorResponse([void Function(ErrorResponseBuilder)? updates]) =>
+      (ErrorResponseBuilder()..update(updates))._build();
 
-  _$UserRegisterPost400Response._({this.error, this.details}) : super._();
+  _$ErrorResponse._({this.error, this.details}) : super._();
   @override
-  UserRegisterPost400Response rebuild(
-          void Function(UserRegisterPost400ResponseBuilder) updates) =>
+  ErrorResponse rebuild(void Function(ErrorResponseBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserRegisterPost400ResponseBuilder toBuilder() =>
-      UserRegisterPost400ResponseBuilder()..replace(this);
+  ErrorResponseBuilder toBuilder() => ErrorResponseBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is UserRegisterPost400Response &&
+    return other is ErrorResponse &&
         error == other.error &&
         details == other.details;
   }
@@ -45,18 +42,16 @@ class _$UserRegisterPost400Response extends UserRegisterPost400Response {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'UserRegisterPost400Response')
+    return (newBuiltValueToStringHelper(r'ErrorResponse')
           ..add('error', error)
           ..add('details', details))
         .toString();
   }
 }
 
-class UserRegisterPost400ResponseBuilder
-    implements
-        Builder<UserRegisterPost400Response,
-            UserRegisterPost400ResponseBuilder> {
-  _$UserRegisterPost400Response? _$v;
+class ErrorResponseBuilder
+    implements Builder<ErrorResponse, ErrorResponseBuilder> {
+  _$ErrorResponse? _$v;
 
   String? _error;
   String? get error => _$this._error;
@@ -66,11 +61,11 @@ class UserRegisterPost400ResponseBuilder
   JsonObject? get details => _$this._details;
   set details(JsonObject? details) => _$this._details = details;
 
-  UserRegisterPost400ResponseBuilder() {
-    UserRegisterPost400Response._defaults(this);
+  ErrorResponseBuilder() {
+    ErrorResponse._defaults(this);
   }
 
-  UserRegisterPost400ResponseBuilder get _$this {
+  ErrorResponseBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _error = $v.error;
@@ -81,21 +76,21 @@ class UserRegisterPost400ResponseBuilder
   }
 
   @override
-  void replace(UserRegisterPost400Response other) {
-    _$v = other as _$UserRegisterPost400Response;
+  void replace(ErrorResponse other) {
+    _$v = other as _$ErrorResponse;
   }
 
   @override
-  void update(void Function(UserRegisterPost400ResponseBuilder)? updates) {
+  void update(void Function(ErrorResponseBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  UserRegisterPost400Response build() => _build();
+  ErrorResponse build() => _build();
 
-  _$UserRegisterPost400Response _build() {
+  _$ErrorResponse _build() {
     final _$result = _$v ??
-        _$UserRegisterPost400Response._(
+        _$ErrorResponse._(
           error: error,
           details: details,
         );

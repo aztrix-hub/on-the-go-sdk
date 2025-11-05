@@ -7,51 +7,45 @@ import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_register_post400_response.g.dart';
+part 'error_response.g.dart';
 
-/// UserRegisterPost400Response
+/// ErrorResponse
 ///
 /// Properties:
 /// * [error]
 /// * [details]
 @BuiltValue()
-abstract class UserRegisterPost400Response
-    implements
-        Built<UserRegisterPost400Response, UserRegisterPost400ResponseBuilder> {
+abstract class ErrorResponse
+    implements Built<ErrorResponse, ErrorResponseBuilder> {
   @BuiltValueField(wireName: r'error')
   String? get error;
 
   @BuiltValueField(wireName: r'details')
   JsonObject? get details;
 
-  UserRegisterPost400Response._();
+  ErrorResponse._();
 
-  factory UserRegisterPost400Response(
-          [void updates(UserRegisterPost400ResponseBuilder b)]) =
-      _$UserRegisterPost400Response;
+  factory ErrorResponse([void updates(ErrorResponseBuilder b)]) =
+      _$ErrorResponse;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserRegisterPost400ResponseBuilder b) => b;
+  static void _defaults(ErrorResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserRegisterPost400Response> get serializer =>
-      _$UserRegisterPost400ResponseSerializer();
+  static Serializer<ErrorResponse> get serializer =>
+      _$ErrorResponseSerializer();
 }
 
-class _$UserRegisterPost400ResponseSerializer
-    implements PrimitiveSerializer<UserRegisterPost400Response> {
+class _$ErrorResponseSerializer implements PrimitiveSerializer<ErrorResponse> {
   @override
-  final Iterable<Type> types = const [
-    UserRegisterPost400Response,
-    _$UserRegisterPost400Response
-  ];
+  final Iterable<Type> types = const [ErrorResponse, _$ErrorResponse];
 
   @override
-  final String wireName = r'UserRegisterPost400Response';
+  final String wireName = r'ErrorResponse';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserRegisterPost400Response object, {
+    ErrorResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.error != null) {
@@ -73,7 +67,7 @@ class _$UserRegisterPost400ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    UserRegisterPost400Response object, {
+    ErrorResponse object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,7 +80,7 @@ class _$UserRegisterPost400ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserRegisterPost400ResponseBuilder result,
+    required ErrorResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -116,12 +110,12 @@ class _$UserRegisterPost400ResponseSerializer
   }
 
   @override
-  UserRegisterPost400Response deserialize(
+  ErrorResponse deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserRegisterPost400ResponseBuilder();
+    final result = ErrorResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
