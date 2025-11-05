@@ -9,6 +9,8 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**aiAutocompleteDescriptionGet**](AiApi.md#aiautocompletedescriptionget) | **GET** /ai/autocomplete/description | 
+[**aiAutocompleteKeywordsGet**](AiApi.md#aiautocompletekeywordsget) | **GET** /ai/autocomplete/keywords | 
 [**aiChatDataPost**](AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [**aiChatPost**](AiApi.md#aichatpost) | **POST** /ai/chat | 
 [**aiConversationActionGet**](AiApi.md#aiconversationactionget) | **GET** /ai/conversation/action | 
@@ -20,8 +22,89 @@ Method | HTTP request | Description
 [**aiLegacyConversationPost**](AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [**aiMemoriesGet**](AiApi.md#aimemoriesget) | **GET** /ai/memories | 
-[**aiSystemGet**](AiApi.md#aisystemget) | **GET** /ai/system | 
 
+
+# **aiAutocompleteDescriptionGet**
+> AiAutocompleteDescriptionGet200Response aiAutocompleteDescriptionGet()
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+
+try {
+    final response = api.aiAutocompleteDescriptionGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiAutocompleteDescriptionGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AiAutocompleteDescriptionGet200Response**](AiAutocompleteDescriptionGet200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiAutocompleteKeywordsGet**
+> AiAutocompleteKeywordsGet200Response aiAutocompleteKeywordsGet()
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+
+try {
+    final response = api.aiAutocompleteKeywordsGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiAutocompleteKeywordsGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**AiAutocompleteKeywordsGet200Response**](AiAutocompleteKeywordsGet200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiChatDataPost**
 > AiChatDataPost200Response aiChatDataPost(aiChatDataPostRequest)
@@ -481,43 +564,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AiMemoriesGet200Response**](AiMemoriesGet200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **aiSystemGet**
-> AiSystemGet200Response aiSystemGet()
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-
-final api = OnTheGoSdk().getAiApi();
-
-try {
-    final response = api.aiSystemGet();
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AiApi->aiSystemGet: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**AiSystemGet200Response**](AiSystemGet200Response.md)
 
 ### Authorization
 

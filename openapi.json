@@ -1696,10 +1696,20 @@
         }
       }
     },
-    "/ai/system": {
+    "/ai/autocomplete/description": {
       "get": {
         "tags": [
           "ai"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "locationId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
         ],
         "responses": {
           "200": {
@@ -1709,23 +1719,26 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "task": {
+                    "description": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
                       "type": "string"
                     },
-                    "context": {
-                      "type": "string"
-                    },
-                    "exemplar": {
-                      "type": "string"
-                    },
-                    "persona": {
-                      "type": "string"
-                    },
-                    "format": {
-                      "type": "string"
-                    },
-                    "tone": {
-                      "type": "string"
+                    "details": {
+                      "type": "object"
                     }
                   }
                 }
@@ -1735,7 +1748,75 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/ai/autocomplete/keywords": {
+      "get": {
+        "tags": [
+          "ai"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "locationId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "keywords": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    },
+                    "details": {
+                      "type": "object"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/inbox": {

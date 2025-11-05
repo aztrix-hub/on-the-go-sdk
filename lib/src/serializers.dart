@@ -18,6 +18,8 @@ import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/ai_action_map.dart';
 import 'package:on_the_go_sdk/src/model/ai_actions.dart';
 import 'package:on_the_go_sdk/src/model/ai_actions_add_location.dart';
+import 'package:on_the_go_sdk/src/model/ai_autocomplete_description_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_autocomplete_keywords_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_call.dart';
@@ -51,7 +53,6 @@ import 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_bounding_box.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
 import 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_system_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
@@ -101,6 +102,8 @@ part 'serializers.g.dart';
   AiActionMap,
   AiActions,
   AiActionsAddLocation,
+  AiAutocompleteDescriptionGet200Response,
+  AiAutocompleteKeywordsGet200Response,
   AiChatDataPost200Response,
   AiChatDataPost200ResponseActions,
   AiChatDataPost200ResponseActionsCall,
@@ -134,7 +137,6 @@ part 'serializers.g.dart';
   AiMessageLocationAttributeBoundingBox,
   AiMessageLocationAttributeCoordinates,
   AiMessagesResponse,
-  AiSystemGet200Response,
   AiToolCalls,
   AiToolResponses,
   AnalyticsGet200Response,

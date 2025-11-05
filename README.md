@@ -48,13 +48,12 @@ import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
 
 final api = OnTheGoSdk().getAiApi();
-final AiChatDataPostRequest aiChatDataPostRequest = ; // AiChatDataPostRequest | 
 
 try {
-    final response = await api.aiChatDataPost(aiChatDataPostRequest);
+    final response = await api.aiAutocompleteDescriptionGet();
     print(response);
 } catch on DioException (e) {
-    print("Exception when calling AiApi->aiChatDataPost: $e\n");
+    print("Exception when calling AiApi->aiAutocompleteDescriptionGet: $e\n");
 }
 
 ```
@@ -65,6 +64,8 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+[*AiApi*](doc/AiApi.md) | [**aiAutocompleteDescriptionGet**](doc/AiApi.md#aiautocompletedescriptionget) | **GET** /ai/autocomplete/description | 
+[*AiApi*](doc/AiApi.md) | [**aiAutocompleteKeywordsGet**](doc/AiApi.md#aiautocompletekeywordsget) | **GET** /ai/autocomplete/keywords | 
 [*AiApi*](doc/AiApi.md) | [**aiChatDataPost**](doc/AiApi.md#aichatdatapost) | **POST** /ai/chat/data | 
 [*AiApi*](doc/AiApi.md) | [**aiChatPost**](doc/AiApi.md#aichatpost) | **POST** /ai/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationActionGet**](doc/AiApi.md#aiconversationactionget) | **GET** /ai/conversation/action | 
@@ -76,7 +77,6 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiLegacyConversationPost**](doc/AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesGet**](doc/AiApi.md#aimemoriesget) | **GET** /ai/memories | 
-[*AiApi*](doc/AiApi.md) | [**aiSystemGet**](doc/AiApi.md#aisystemget) | **GET** /ai/system | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
@@ -117,6 +117,8 @@ Class | Method | HTTP request | Description
  - [AiActionMap](doc/AiActionMap.md)
  - [AiActions](doc/AiActions.md)
  - [AiActionsAddLocation](doc/AiActionsAddLocation.md)
+ - [AiAutocompleteDescriptionGet200Response](doc/AiAutocompleteDescriptionGet200Response.md)
+ - [AiAutocompleteKeywordsGet200Response](doc/AiAutocompleteKeywordsGet200Response.md)
  - [AiChatDataPost200Response](doc/AiChatDataPost200Response.md)
  - [AiChatDataPost200ResponseActions](doc/AiChatDataPost200ResponseActions.md)
  - [AiChatDataPost200ResponseActionsCall](doc/AiChatDataPost200ResponseActionsCall.md)
@@ -150,7 +152,6 @@ Class | Method | HTTP request | Description
  - [AiMessageLocationAttributeBoundingBox](doc/AiMessageLocationAttributeBoundingBox.md)
  - [AiMessageLocationAttributeCoordinates](doc/AiMessageLocationAttributeCoordinates.md)
  - [AiMessagesResponse](doc/AiMessagesResponse.md)
- - [AiSystemGet200Response](doc/AiSystemGet200Response.md)
  - [AiToolCalls](doc/AiToolCalls.md)
  - [AiToolResponses](doc/AiToolResponses.md)
  - [AnalyticsGet200Response](doc/AnalyticsGet200Response.md)

@@ -11,6 +11,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiActionMap.serializer)
       ..add(AiActions.serializer)
       ..add(AiActionsAddLocation.serializer)
+      ..add(AiAutocompleteDescriptionGet200Response.serializer)
+      ..add(AiAutocompleteKeywordsGet200Response.serializer)
       ..add(AiChatDataPost200Response.serializer)
       ..add(AiChatDataPost200ResponseActions.serializer)
       ..add(AiChatDataPost200ResponseActionsCall.serializer)
@@ -47,7 +49,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiMessageLocationAttributeCoordinates.serializer)
       ..add(AiMessageRoleEnum.serializer)
       ..add(AiMessagesResponse.serializer)
-      ..add(AiSystemGet200Response.serializer)
       ..add(AiToolCalls.serializer)
       ..add(AiToolResponses.serializer)
       ..add(AnalyticsGet200Response.serializer)
@@ -181,6 +182,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(SocialPost)]),
           () => ListBuilder<SocialPost>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(String)]),
+          () => ListBuilder<String>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())
