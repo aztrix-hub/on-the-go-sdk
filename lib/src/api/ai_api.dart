@@ -13,7 +13,6 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_conversation_get_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post_request.dart';
@@ -431,7 +430,7 @@ class AiApi {
   ///
   ///
   /// Parameters:
-  /// * [aiConversationGetRequest]
+  /// * [conversationId]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -442,7 +441,7 @@ class AiApi {
   /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AiMessagesResponse>> aiConversationGet({
-    AiConversationGetRequest? aiConversationGetRequest,
+    required String conversationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -460,34 +459,18 @@ class AiApi {
         'secure': <Map<String, String>>[],
         ...?extra,
       },
-      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    dynamic _bodyData;
-
-    try {
-      const _type = FullType(AiConversationGetRequest);
-      _bodyData = aiConversationGetRequest == null
-          ? null
-          : _serializers.serialize(aiConversationGetRequest,
-              specifiedType: _type);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
+    final _queryParameters = <String, dynamic>{
+      r'conversationId': encodeQueryParameter(
+          _serializers, conversationId, const FullType(String)),
+    };
 
     final _response = await _dio.request<Object>(
       _path,
-      data: _bodyData,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

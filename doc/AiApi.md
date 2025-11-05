@@ -200,7 +200,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationGet**
-> AiMessagesResponse aiConversationGet(aiConversationGetRequest)
+> AiMessagesResponse aiConversationGet(conversationId)
 
 
 
@@ -209,10 +209,10 @@ No authorization required
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getAiApi();
-final AiConversationGetRequest aiConversationGetRequest = ; // AiConversationGetRequest | 
+final String conversationId = conversationId_example; // String | 
 
 try {
-    final response = api.aiConversationGet(aiConversationGetRequest);
+    final response = api.aiConversationGet(conversationId);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AiApi->aiConversationGet: $e\n');
@@ -223,7 +223,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aiConversationGetRequest** | [**AiConversationGetRequest**](AiConversationGetRequest.md)|  | [optional] 
+ **conversationId** | **String**|  | 
 
 ### Return type
 
@@ -235,7 +235,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

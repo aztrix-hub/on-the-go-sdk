@@ -26,7 +26,7 @@ void main() {
       // TODO
     });
 
-    //Future<AiMessagesResponse> aiConversationGet({ AiConversationGetRequest aiConversationGetRequest }) async
+    //Future<AiMessagesResponse> aiConversationGet(String conversationId) async
     test('test aiConversationGet', () async {
       // TODO
     });

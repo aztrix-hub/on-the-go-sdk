@@ -1435,23 +1435,16 @@
         "tags": [
           "ai"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "conversationId"
-                ],
-                "properties": {
-                  "conversationId": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
+        "parameters": [
+          {
+            "name": "conversationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Successfully added a message",
