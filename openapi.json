@@ -719,14 +719,15 @@
           "200": {
             "description": "Success"
           },
-          "403": {
-            "description": "Forbidden"
-          },
-          "401": {
-            "description": "Not Authorized"
-          },
           "400": {
-            "description": "Invalid or Missing Parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error"
