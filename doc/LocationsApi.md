@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationPhotoDelete**
-> locationPhotoDelete(id)
+> locationPhotoDelete(locationId, id)
 
 
 
@@ -269,10 +269,11 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
+final String locationId = locationId_example; // String | 
 final String id = id_example; // String | 
 
 try {
-    api.locationPhotoDelete(id);
+    api.locationPhotoDelete(locationId, id);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationPhotoDelete: $e\n');
 }
@@ -282,6 +283,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **locationId** | **String**|  | 
  **id** | **String**|  | 
 
 ### Return type
@@ -295,7 +297,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

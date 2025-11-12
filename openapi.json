@@ -745,6 +745,14 @@
         ],
         "parameters": [
           {
+            "name": "locationId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
             "name": "id",
             "in": "query",
             "schema": {
@@ -761,7 +769,14 @@
             "description": "Forbidden"
           },
           "400": {
-            "description": "Invalid or Missing parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "404": {
             "description": "Not found"

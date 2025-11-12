@@ -519,6 +519,7 @@ class LocationsApi {
   ///
   ///
   /// Parameters:
+  /// * [locationId]
   /// * [id]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -530,6 +531,7 @@ class LocationsApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> locationPhotoDelete({
+    required String locationId,
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -559,6 +561,8 @@ class LocationsApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      r'locationId': encodeQueryParameter(
+          _serializers, locationId, const FullType(String)),
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
     };
 
