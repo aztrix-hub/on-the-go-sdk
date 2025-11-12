@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationPhotoDelete**
-> locationPhotoDelete(locationId, id)
+> Location locationPhotoDelete(locationId, id)
 
 
 
@@ -273,7 +273,8 @@ final String locationId = locationId_example; // String |
 final String id = id_example; // String | 
 
 try {
-    api.locationPhotoDelete(locationId, id);
+    final response = api.locationPhotoDelete(locationId, id);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationPhotoDelete: $e\n');
 }
@@ -288,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Location**](Location.md)
 
 ### Authorization
 

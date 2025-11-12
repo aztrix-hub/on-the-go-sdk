@@ -763,7 +763,14 @@
         ],
         "responses": {
           "200": {
-            "description": "The photo has been deleted"
+            "description": "The photo has been deleted",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
           },
           "403": {
             "description": "Forbidden"
