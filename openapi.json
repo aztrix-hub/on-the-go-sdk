@@ -70,14 +70,15 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
-          "401": {
-            "description": "Not Authorized"
-          },
           "400": {
-            "description": "Invalid or Missing Parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error"
@@ -224,14 +225,15 @@
           "200": {
             "description": "User password succesfully changed"
           },
-          "403": {
-            "description": "Forbidden"
-          },
-          "401": {
-            "description": "Not Authorized"
-          },
           "400": {
-            "description": "Invalid or Missing Parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error"
@@ -717,7 +719,14 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
           },
           "400": {
             "description": "An error occured",

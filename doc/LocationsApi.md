@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationPhotoPost**
-> locationPhotoPost(locationPhotoPostRequest)
+> Location locationPhotoPost(locationPhotoPostRequest)
 
 
 
@@ -319,7 +319,8 @@ final api = OnTheGoSdk().getLocationsApi();
 final LocationPhotoPostRequest locationPhotoPostRequest = ; // LocationPhotoPostRequest | The photo data to upload
 
 try {
-    api.locationPhotoPost(locationPhotoPostRequest);
+    final response = api.locationPhotoPost(locationPhotoPostRequest);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationPhotoPost: $e\n');
 }
@@ -333,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Location**](Location.md)
 
 ### Authorization
 
