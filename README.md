@@ -79,6 +79,7 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsDescriptionGet**](doc/AiApi.md#aisuggestionsdescriptionget) | **GET** /ai/suggestions/description | 
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsKeywordsGet**](doc/AiApi.md#aisuggestionskeywordsget) | **GET** /ai/suggestions/keywords | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
+[*EniroApi*](doc/EniroApi.md) | [**searchContactGet**](doc/EniroApi.md#searchcontactget) | **GET** /search-contact | Get individuals
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 

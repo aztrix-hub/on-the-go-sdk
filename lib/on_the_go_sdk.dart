@@ -12,6 +12,7 @@ export 'package:on_the_go_sdk/src/model/date.dart';
 
 export 'package:on_the_go_sdk/src/api/ai_api.dart';
 export 'package:on_the_go_sdk/src/api/analytics_api.dart';
+export 'package:on_the_go_sdk/src/api/eniro_api.dart';
 export 'package:on_the_go_sdk/src/api/inbox_api.dart';
 export 'package:on_the_go_sdk/src/api/locations_api.dart';
 export 'package:on_the_go_sdk/src/api/notifications_api.dart';

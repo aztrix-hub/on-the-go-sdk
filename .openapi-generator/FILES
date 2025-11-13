@@ -47,6 +47,7 @@ doc/AnalyticsGet200Response.md
 doc/Category.md
 doc/DataPoint.md
 doc/DirectoryType.md
+doc/EniroApi.md
 doc/ErrorResponse.md
 doc/InboxApi.md
 doc/InboxItem.md
@@ -93,6 +94,7 @@ lib/on_the_go_sdk.dart
 lib/src/api.dart
 lib/src/api/ai_api.dart
 lib/src/api/analytics_api.dart
+lib/src/api/eniro_api.dart
 lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/notifications_api.dart
@@ -236,6 +238,7 @@ test/analytics_get200_response_test.dart
 test/category_test.dart
 test/data_point_test.dart
 test/directory_type_test.dart
+test/eniro_api_test.dart
 test/error_response_test.dart
 test/inbox_api_test.dart
 test/inbox_item_test.dart

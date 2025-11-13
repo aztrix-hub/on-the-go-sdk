@@ -192,6 +192,10 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(BuiltList, [FullType(Category)]),
         () => ListBuilder<Category>(),
       )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Individual)]),
+        () => ListBuilder<Individual>(),
+      )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())
       ..add(const DateSerializer())

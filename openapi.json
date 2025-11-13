@@ -808,6 +808,53 @@
         ]
       }
     },
+    "/search-contact": {
+      "get": {
+        "tags": [
+          "eniro"
+        ],
+        "summary": "Get individuals",
+        "parameters": [
+          {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved individuals",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "description": "A list of individuals",
+                  "items": {
+                    "$ref": "#/components/schemas/Individual"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/site/colors": {
       "get": {
         "tags": [
