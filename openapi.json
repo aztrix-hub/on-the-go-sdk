@@ -813,7 +813,7 @@
         "tags": [
           "eniro"
         ],
-        "summary": "Get individuals",
+        "summary": "Search individuals or locations",
         "parameters": [
           {
             "name": "phone",
@@ -833,14 +833,13 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully retrieved individuals",
+            "description": "Successfully retrieved search results",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
-                  "description": "A list of individuals",
                   "items": {
-                    "$ref": "#/components/schemas/Individual"
+                    "$ref": "#/components/schemas/LocationOrIndividual"
                   }
                 }
               }

@@ -9,7 +9,7 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
-import 'package:on_the_go_sdk/src/model/individual.dart';
+import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 
 class EniroApi {
   final Dio _dio;
@@ -18,7 +18,7 @@ class EniroApi {
 
   const EniroApi(this._dio, this._serializers);
 
-  /// Get individuals
+  /// Search individuals or locations
   ///
   ///
   /// Parameters:
@@ -31,9 +31,9 @@ class EniroApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Individual>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<LocationOrIndividual>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Individual>>> searchContactGet({
+  Future<Response<BuiltList<LocationOrIndividual>>> searchContactGet({
     required String name,
     String? phone,
     CancelToken? cancelToken,
@@ -72,7 +72,7 @@ class EniroApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Individual>? _responseData;
+    BuiltList<LocationOrIndividual>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -80,8 +80,9 @@ class EniroApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Individual)]),
-            ) as BuiltList<Individual>;
+              specifiedType:
+                  const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+            ) as BuiltList<LocationOrIndividual>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -92,7 +93,7 @@ class EniroApi {
       );
     }
 
-    return Response<BuiltList<Individual>>(
+    return Response<BuiltList<LocationOrIndividual>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

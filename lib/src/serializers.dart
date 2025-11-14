@@ -189,12 +189,12 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<String>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Category)]),
-        () => ListBuilder<Category>(),
+        const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+        () => ListBuilder<LocationOrIndividual>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Individual)]),
-        () => ListBuilder<Individual>(),
+        const FullType(BuiltList, [FullType(Category)]),
+        () => ListBuilder<Category>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

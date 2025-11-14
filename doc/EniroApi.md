@@ -9,13 +9,13 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**searchContactGet**](EniroApi.md#searchcontactget) | **GET** /search-contact | Get individuals
+[**searchContactGet**](EniroApi.md#searchcontactget) | **GET** /search-contact | Search individuals or locations
 
 
 # **searchContactGet**
-> BuiltList<Individual> searchContactGet(name, phone)
+> BuiltList<LocationOrIndividual> searchContactGet(name, phone)
 
-Get individuals
+Search individuals or locations
 
 ### Example
 ```dart
@@ -42,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;Individual&gt;**](Individual.md)
+[**BuiltList&lt;LocationOrIndividual&gt;**](LocationOrIndividual.md)
 
 ### Authorization
 
