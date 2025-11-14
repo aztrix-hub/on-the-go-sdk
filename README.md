@@ -79,7 +79,6 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsDescriptionGet**](doc/AiApi.md#aisuggestionsdescriptionget) | **GET** /ai/suggestions/description | 
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsKeywordsGet**](doc/AiApi.md#aisuggestionskeywordsget) | **GET** /ai/suggestions/keywords | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
-[*EniroApi*](doc/EniroApi.md) | [**searchContactGet**](doc/EniroApi.md#searchcontactget) | **GET** /search-contact | Search individuals or locations
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
@@ -100,6 +99,7 @@ Class | Method | HTTP request | Description
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsDelete**](doc/PublishApi.md#publishpostsdelete) | **DELETE** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsGet**](doc/PublishApi.md#publishpostsget) | **GET** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsPost**](doc/PublishApi.md#publishpostspost) | **POST** /publish/posts | 
+[*SearchApi*](doc/SearchApi.md) | [**searchPhoneGet**](doc/SearchApi.md#searchphoneget) | **GET** /search/phone | Search individuals or locations
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 

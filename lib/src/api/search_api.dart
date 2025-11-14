@@ -11,19 +11,19 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 
-class EniroApi {
+class SearchApi {
   final Dio _dio;
 
   final Serializers _serializers;
 
-  const EniroApi(this._dio, this._serializers);
+  const SearchApi(this._dio, this._serializers);
 
   /// Search individuals or locations
   ///
   ///
   /// Parameters:
-  /// * [name]
   /// * [phone]
+  /// * [name]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,9 +33,9 @@ class EniroApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BuiltList<LocationOrIndividual>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<LocationOrIndividual>>> searchContactGet({
-    required String name,
-    String? phone,
+  Future<Response<BuiltList<LocationOrIndividual>>> searchPhoneGet({
+    required String phone,
+    String? name,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -43,7 +43,7 @@ class EniroApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/search-contact';
+    final _path = r'/search/phone';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -57,10 +57,11 @@ class EniroApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (phone != null)
-        r'phone':
-            encodeQueryParameter(_serializers, phone, const FullType(String)),
-      r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      r'phone':
+          encodeQueryParameter(_serializers, phone, const FullType(String)),
+      if (name != null)
+        r'name':
+            encodeQueryParameter(_serializers, name, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

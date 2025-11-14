@@ -808,10 +808,10 @@
         ]
       }
     },
-    "/search-contact": {
+    "/search/phone": {
       "get": {
         "tags": [
-          "eniro"
+          "search"
         ],
         "summary": "Search individuals or locations",
         "parameters": [
@@ -820,12 +820,12 @@
             "in": "query",
             "schema": {
               "type": "string"
-            }
+            },
+            "required": true
           },
           {
             "name": "name",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "string"
             }
