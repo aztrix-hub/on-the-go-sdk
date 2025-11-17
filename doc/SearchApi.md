@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **countryCode** | **String**|  | 
+ **countryCode** | **String**|  | [optional] 
  **phone** | **String**|  | [optional] 
  **name** | **String**|  | [optional] 
  **keywords** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 

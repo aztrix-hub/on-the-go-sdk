@@ -40,7 +40,7 @@ class SearchApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LocationOrIndividual>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<LocationOrIndividual>>> searchPhoneGet({
-    required String countryCode,
+    String? countryCode,
     String? phone,
     String? name,
     BuiltList<String>? keywords,
@@ -68,8 +68,9 @@ class SearchApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'countryCode': encodeQueryParameter(
-          _serializers, countryCode, const FullType(String)),
+      if (countryCode != null)
+        r'countryCode': encodeQueryParameter(
+            _serializers, countryCode, const FullType(String)),
       if (phone != null)
         r'phone':
             encodeQueryParameter(_serializers, phone, const FullType(String)),
