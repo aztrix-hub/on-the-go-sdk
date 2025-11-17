@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **searchPhoneGet**
-> BuiltList<LocationOrIndividual> searchPhoneGet(phone, name)
+> BuiltList<LocationOrIndividual> searchPhoneGet(countryCode, phone, name, keywords, latitude, longitude, boundingBox)
 
 Search individuals or locations
 
@@ -22,11 +22,16 @@ Search individuals or locations
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getSearchApi();
+final String countryCode = countryCode_example; // String | 
 final String phone = phone_example; // String | 
 final String name = name_example; // String | 
+final BuiltList<String> keywords = ; // BuiltList<String> | 
+final String latitude = latitude_example; // String | 
+final String longitude = longitude_example; // String | 
+final SearchPhoneGetBoundingBoxParameter boundingBox = ; // SearchPhoneGetBoundingBoxParameter | 
 
 try {
-    final response = api.searchPhoneGet(phone, name);
+    final response = api.searchPhoneGet(countryCode, phone, name, keywords, latitude, longitude, boundingBox);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling SearchApi->searchPhoneGet: $e\n');
@@ -37,8 +42,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **phone** | **String**|  | 
+ **countryCode** | **String**|  | 
+ **phone** | **String**|  | [optional] 
  **name** | **String**|  | [optional] 
+ **keywords** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
+ **latitude** | **String**|  | [optional] 
+ **longitude** | **String**|  | [optional] 
+ **boundingBox** | [**SearchPhoneGetBoundingBoxParameter**](.md)|  | [optional] 
 
 ### Return type
 

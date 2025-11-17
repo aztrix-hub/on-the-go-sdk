@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
+import 'package:on_the_go_sdk/src/model/search_phone_get_bounding_box_parameter.dart';
 
 class SearchApi {
   final Dio _dio;
@@ -22,8 +23,13 @@ class SearchApi {
   ///
   ///
   /// Parameters:
+  /// * [countryCode]
   /// * [phone]
   /// * [name]
+  /// * [keywords]
+  /// * [latitude]
+  /// * [longitude]
+  /// * [boundingBox]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,8 +40,13 @@ class SearchApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<LocationOrIndividual>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<LocationOrIndividual>>> searchPhoneGet({
-    required String phone,
+    required String countryCode,
+    String? phone,
     String? name,
+    BuiltList<String>? keywords,
+    String? latitude,
+    String? longitude,
+    SearchPhoneGetBoundingBoxParameter? boundingBox,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -57,11 +68,30 @@ class SearchApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'phone':
-          encodeQueryParameter(_serializers, phone, const FullType(String)),
+      r'countryCode': encodeQueryParameter(
+          _serializers, countryCode, const FullType(String)),
+      if (phone != null)
+        r'phone':
+            encodeQueryParameter(_serializers, phone, const FullType(String)),
       if (name != null)
         r'name':
             encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (keywords != null)
+        r'keywords': encodeCollectionQueryParameter<String>(
+          _serializers,
+          keywords,
+          const FullType(BuiltList, [FullType(String)]),
+          format: ListFormat.multi,
+        ),
+      if (latitude != null)
+        r'latitude': encodeQueryParameter(
+            _serializers, latitude, const FullType(String)),
+      if (longitude != null)
+        r'longitude': encodeQueryParameter(
+            _serializers, longitude, const FullType(String)),
+      if (boundingBox != null)
+        r'boundingBox': encodeQueryParameter(_serializers, boundingBox,
+            const FullType(SearchPhoneGetBoundingBoxParameter)),
     };
 
     final _response = await _dio.request<Object>(

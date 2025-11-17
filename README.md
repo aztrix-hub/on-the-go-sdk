@@ -187,6 +187,8 @@ Class | Method | HTTP request | Description
  - [Photo](doc/Photo.md)
  - [PublishPostsGet200Response](doc/PublishPostsGet200Response.md)
  - [ResetPassword](doc/ResetPassword.md)
+ - [SearchPhoneGetBoundingBoxParameter](doc/SearchPhoneGetBoundingBoxParameter.md)
+ - [SearchPhoneGetBoundingBoxParameterTopLeft](doc/SearchPhoneGetBoundingBoxParameterTopLeft.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)

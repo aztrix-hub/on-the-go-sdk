@@ -79,6 +79,8 @@ doc/PublishApi.md
 doc/PublishPostsGet200Response.md
 doc/ResetPassword.md
 doc/SearchApi.md
+doc/SearchPhoneGetBoundingBoxParameter.md
+doc/SearchPhoneGetBoundingBoxParameterTopLeft.md
 doc/SiteColorsPatchRequest.md
 doc/SitesApi.md
 doc/SocialPost.md
@@ -182,6 +184,8 @@ lib/src/model/opening_hour_interval.dart
 lib/src/model/photo.dart
 lib/src/model/publish_posts_get200_response.dart
 lib/src/model/reset_password.dart
+lib/src/model/search_phone_get_bounding_box_parameter.dart
+lib/src/model/search_phone_get_bounding_box_parameter_top_left.dart
 lib/src/model/site_colors_patch_request.dart
 lib/src/model/social_post.dart
 lib/src/model/special_opening_hour.dart
@@ -270,6 +274,8 @@ test/publish_api_test.dart
 test/publish_posts_get200_response_test.dart
 test/reset_password_test.dart
 test/search_api_test.dart
+test/search_phone_get_bounding_box_parameter_test.dart
+test/search_phone_get_bounding_box_parameter_top_left_test.dart
 test/site_colors_patch_request_test.dart
 test/sites_api_test.dart
 test/social_post_test.dart

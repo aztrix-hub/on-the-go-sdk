@@ -808,7 +808,7 @@
         ]
       }
     },
-    "/search/phone": {
+    "search/phone": {
       "get": {
         "tags": [
           "search"
@@ -816,7 +816,7 @@
         "summary": "Search individuals or locations",
         "parameters": [
           {
-            "name": "phone",
+            "name": "countryCode",
             "in": "query",
             "schema": {
               "type": "string"
@@ -824,10 +824,72 @@
             "required": true
           },
           {
+            "name": "phone",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "name",
             "in": "query",
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "keywords",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "latitude",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "boundingBox",
+            "in": "query",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "topLeft": {
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "bottomRight": {
+                  "type": "object",
+                  "properties": {
+                    "latitude": {
+                      "type": "string"
+                    },
+                    "longitude": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
             }
           }
         ],
