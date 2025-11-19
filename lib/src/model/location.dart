@@ -37,6 +37,7 @@ part 'location.g.dart';
 /// * [averageRating]
 /// * [reviewCount]
 /// * [sponsored]
+/// * [source_]
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -100,6 +101,9 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'sponsored')
   bool? get sponsored;
+
+  @BuiltValueField(wireName: r'source')
+  String? get source_;
 
   Location._();
 
@@ -259,6 +263,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.sponsored,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.source_ != null) {
+      yield r'source';
+      yield serializers.serialize(
+        object.source_,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -426,6 +437,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.sponsored = valueDes;
+          break;
+        case r'source':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.source_ = valueDes;
           break;
         default:
           unhandled.add(key);

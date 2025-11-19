@@ -2696,6 +2696,9 @@
           "email": {
             "type": "string",
             "description": "Email"
+          },
+          "source": {
+            "type": "string"
           }
         },
         "description": "User Model"
@@ -2780,6 +2783,9 @@
           },
           "sponsored": {
             "type": "boolean"
+          },
+          "source": {
+            "type": "string"
           }
         },
         "description": "Location"

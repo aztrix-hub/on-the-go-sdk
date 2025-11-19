@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **phone** | **String** |  | [optional] 
 **birthDate** | [**Date**](Date.md) |  | [optional] 
 **email** | **String** | Email | [optional] 
+**source_** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

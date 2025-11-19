@@ -21,6 +21,8 @@ class _$Individual extends Individual {
   final Date? birthDate;
   @override
   final String? email;
+  @override
+  final String? source_;
 
   factory _$Individual([void Function(IndividualBuilder)? updates]) =>
       (IndividualBuilder()..update(updates))._build();
@@ -32,7 +34,8 @@ class _$Individual extends Individual {
       this.address,
       this.phone,
       this.birthDate,
-      this.email})
+      this.email,
+      this.source_})
       : super._();
   @override
   Individual rebuild(void Function(IndividualBuilder) updates) =>
@@ -51,7 +54,8 @@ class _$Individual extends Individual {
         address == other.address &&
         phone == other.phone &&
         birthDate == other.birthDate &&
-        email == other.email;
+        email == other.email &&
+        source_ == other.source_;
   }
 
   @override
@@ -64,6 +68,7 @@ class _$Individual extends Individual {
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,7 +82,8 @@ class _$Individual extends Individual {
           ..add('address', address)
           ..add('phone', phone)
           ..add('birthDate', birthDate)
-          ..add('email', email))
+          ..add('email', email)
+          ..add('source_', source_))
         .toString();
   }
 }
@@ -113,6 +119,10 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
 
+  String? _source_;
+  String? get source_ => _$this._source_;
+  set source_(String? source_) => _$this._source_ = source_;
+
   IndividualBuilder() {
     Individual._defaults(this);
   }
@@ -127,6 +137,7 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
       _phone = $v.phone;
       _birthDate = $v.birthDate;
       _email = $v.email;
+      _source_ = $v.source_;
       _$v = null;
     }
     return this;
@@ -159,6 +170,7 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
             phone: phone,
             birthDate: birthDate,
             email: email,
+            source_: source_,
           );
     } catch (_) {
       late String _$failedField;

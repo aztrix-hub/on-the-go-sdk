@@ -47,6 +47,8 @@ class _$Location extends Location {
   final int? reviewCount;
   @override
   final bool? sponsored;
+  @override
+  final String? source_;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (LocationBuilder()..update(updates))._build();
@@ -71,7 +73,8 @@ class _$Location extends Location {
       this.categories,
       this.averageRating,
       this.reviewCount,
-      this.sponsored})
+      this.sponsored,
+      this.source_})
       : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
@@ -103,7 +106,8 @@ class _$Location extends Location {
         categories == other.categories &&
         averageRating == other.averageRating &&
         reviewCount == other.reviewCount &&
-        sponsored == other.sponsored;
+        sponsored == other.sponsored &&
+        source_ == other.source_;
   }
 
   @override
@@ -129,6 +133,7 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jc(_$hash, reviewCount.hashCode);
     _$hash = $jc(_$hash, sponsored.hashCode);
+    _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -155,7 +160,8 @@ class _$Location extends Location {
           ..add('categories', categories)
           ..add('averageRating', averageRating)
           ..add('reviewCount', reviewCount)
-          ..add('sponsored', sponsored))
+          ..add('sponsored', sponsored)
+          ..add('source_', source_))
         .toString();
   }
 }
@@ -254,6 +260,10 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   bool? get sponsored => _$this._sponsored;
   set sponsored(bool? sponsored) => _$this._sponsored = sponsored;
 
+  String? _source_;
+  String? get source_ => _$this._source_;
+  set source_(String? source_) => _$this._source_ = source_;
+
   LocationBuilder() {
     Location._defaults(this);
   }
@@ -281,6 +291,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _averageRating = $v.averageRating;
       _reviewCount = $v.reviewCount;
       _sponsored = $v.sponsored;
+      _source_ = $v.source_;
       _$v = null;
     }
     return this;
@@ -325,6 +336,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             averageRating: averageRating,
             reviewCount: reviewCount,
             sponsored: sponsored,
+            source_: source_,
           );
     } catch (_) {
       late String _$failedField;

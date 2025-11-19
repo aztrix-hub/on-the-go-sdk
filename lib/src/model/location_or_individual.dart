@@ -34,6 +34,7 @@ part 'location_or_individual.g.dart';
 /// * [averageRating]
 /// * [reviewCount]
 /// * [sponsored]
+/// * [source_]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
 /// * [birthDate]

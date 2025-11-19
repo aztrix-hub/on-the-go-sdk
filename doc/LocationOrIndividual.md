@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **averageRating** | **double** |  | [optional] 
 **reviewCount** | **int** |  | [optional] 
 **sponsored** | **bool** |  | [optional] 
+**source_** | **String** |  | [optional] 
 **firstname** | **String** | First Name | 
 **lastname** | **String** | Last name | 
 **birthDate** | [**Date**](Date.md) |  | [optional] 
