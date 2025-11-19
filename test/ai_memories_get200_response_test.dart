@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<AiMemoriesGet200ResponseMemoriesInner> memories
+    // BuiltList<AiMemoriesInner> memories
     test('to test the property `memories`', () async {
       // TODO
     });

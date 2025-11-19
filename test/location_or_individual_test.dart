@@ -110,6 +110,11 @@ void main() {
       // TODO
     });
 
+    // String source_
+    test('to test the property `source_`', () async {
+      // TODO
+    });
+
     // First Name
     // String firstname
     test('to test the property `firstname`', () async {

@@ -108,5 +108,10 @@ void main() {
     test('to test the property `sponsored`', () async {
       // TODO
     });
+
+    // String source_
+    test('to test the property `source_`', () async {
+      // TODO
+    });
   });
 }

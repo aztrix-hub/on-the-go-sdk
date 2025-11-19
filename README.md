@@ -145,7 +145,7 @@ Class | Method | HTTP request | Description
  - [AiLegacyConversationPostRequest](doc/AiLegacyConversationPostRequest.md)
  - [AiLegacyConversationPostRequestUserLocation](doc/AiLegacyConversationPostRequestUserLocation.md)
  - [AiMemoriesGet200Response](doc/AiMemoriesGet200Response.md)
- - [AiMemoriesGet200ResponseMemoriesInner](doc/AiMemoriesGet200ResponseMemoriesInner.md)
+ - [AiMemoriesInner](doc/AiMemoriesInner.md)
  - [AiMessage](doc/AiMessage.md)
  - [AiMessageAttributes](doc/AiMessageAttributes.md)
  - [AiMessageLocationAttribute](doc/AiMessageLocationAttribute.md)

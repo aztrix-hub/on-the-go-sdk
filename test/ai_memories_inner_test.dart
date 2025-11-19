@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiMemoriesGet200ResponseMemoriesInner
+// tests for AiMemoriesInner
 void main() {
-  final instance = AiMemoriesGet200ResponseMemoriesInnerBuilder();
+  final instance = AiMemoriesInnerBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiMemoriesGet200ResponseMemoriesInner, () {
+  group(AiMemoriesInner, () {
     // String id
     test('to test the property `id`', () async {
       // TODO

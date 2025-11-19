@@ -14,7 +14,7 @@ class _$AiMemoriesGet200Response extends AiMemoriesGet200Response {
   @override
   final int? previous;
   @override
-  final BuiltList<AiMemoriesGet200ResponseMemoriesInner>? memories;
+  final BuiltList<AiMemoriesInner>? memories;
 
   factory _$AiMemoriesGet200Response(
           [void Function(AiMemoriesGet200ResponseBuilder)? updates]) =>
@@ -81,10 +81,10 @@ class AiMemoriesGet200ResponseBuilder
   int? get previous => _$this._previous;
   set previous(int? previous) => _$this._previous = previous;
 
-  ListBuilder<AiMemoriesGet200ResponseMemoriesInner>? _memories;
-  ListBuilder<AiMemoriesGet200ResponseMemoriesInner> get memories =>
-      _$this._memories ??= ListBuilder<AiMemoriesGet200ResponseMemoriesInner>();
-  set memories(ListBuilder<AiMemoriesGet200ResponseMemoriesInner>? memories) =>
+  ListBuilder<AiMemoriesInner>? _memories;
+  ListBuilder<AiMemoriesInner> get memories =>
+      _$this._memories ??= ListBuilder<AiMemoriesInner>();
+  set memories(ListBuilder<AiMemoriesInner>? memories) =>
       _$this._memories = memories;
 
   AiMemoriesGet200ResponseBuilder() {

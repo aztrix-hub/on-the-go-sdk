@@ -39,7 +39,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiLegacyConversationPostRequest.serializer)
       ..add(AiLegacyConversationPostRequestUserLocation.serializer)
       ..add(AiMemoriesGet200Response.serializer)
-      ..add(AiMemoriesGet200ResponseMemoriesInner.serializer)
+      ..add(AiMemoriesInner.serializer)
       ..add(AiMessage.serializer)
       ..add(AiMessageAttributes.serializer)
       ..add(AiMessageLocationAttribute.serializer)
@@ -112,9 +112,8 @@ Serializers _$serializers = (Serializers().toBuilder()
           ]),
           () => ListBuilder<AiLegacyConversationPost200ResponseMessagesInner>())
       ..addBuilderFactory(
-          const FullType(BuiltList,
-              const [const FullType(AiMemoriesGet200ResponseMemoriesInner)]),
-          () => ListBuilder<AiMemoriesGet200ResponseMemoriesInner>())
+          const FullType(BuiltList, const [const FullType(AiMemoriesInner)]),
+          () => ListBuilder<AiMemoriesInner>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())

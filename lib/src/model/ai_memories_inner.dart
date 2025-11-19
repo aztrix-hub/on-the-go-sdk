@@ -7,9 +7,9 @@ import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_memories_get200_response_memories_inner.g.dart';
+part 'ai_memories_inner.g.dart';
 
-/// AiMemoriesGet200ResponseMemoriesInner
+/// AiMemoriesInner
 ///
 /// Properties:
 /// * [id]
@@ -18,10 +18,8 @@ part 'ai_memories_get200_response_memories_inner.g.dart';
 /// * [createdAt]
 /// * [updatedAt]
 @BuiltValue()
-abstract class AiMemoriesGet200ResponseMemoriesInner
-    implements
-        Built<AiMemoriesGet200ResponseMemoriesInner,
-            AiMemoriesGet200ResponseMemoriesInnerBuilder> {
+abstract class AiMemoriesInner
+    implements Built<AiMemoriesInner, AiMemoriesInnerBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
@@ -31,40 +29,36 @@ abstract class AiMemoriesGet200ResponseMemoriesInner
   @BuiltValueField(wireName: r'categories')
   BuiltList<String>? get categories;
 
-  @BuiltValueField(wireName: r'created_at')
+  @BuiltValueField(wireName: r'createdAt')
   DateTime? get createdAt;
 
-  @BuiltValueField(wireName: r'updated_at')
+  @BuiltValueField(wireName: r'updatedAt')
   DateTime? get updatedAt;
 
-  AiMemoriesGet200ResponseMemoriesInner._();
+  AiMemoriesInner._();
 
-  factory AiMemoriesGet200ResponseMemoriesInner(
-          [void updates(AiMemoriesGet200ResponseMemoriesInnerBuilder b)]) =
-      _$AiMemoriesGet200ResponseMemoriesInner;
+  factory AiMemoriesInner([void updates(AiMemoriesInnerBuilder b)]) =
+      _$AiMemoriesInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AiMemoriesGet200ResponseMemoriesInnerBuilder b) => b;
+  static void _defaults(AiMemoriesInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiMemoriesGet200ResponseMemoriesInner> get serializer =>
-      _$AiMemoriesGet200ResponseMemoriesInnerSerializer();
+  static Serializer<AiMemoriesInner> get serializer =>
+      _$AiMemoriesInnerSerializer();
 }
 
-class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
-    implements PrimitiveSerializer<AiMemoriesGet200ResponseMemoriesInner> {
+class _$AiMemoriesInnerSerializer
+    implements PrimitiveSerializer<AiMemoriesInner> {
   @override
-  final Iterable<Type> types = const [
-    AiMemoriesGet200ResponseMemoriesInner,
-    _$AiMemoriesGet200ResponseMemoriesInner
-  ];
+  final Iterable<Type> types = const [AiMemoriesInner, _$AiMemoriesInner];
 
   @override
-  final String wireName = r'AiMemoriesGet200ResponseMemoriesInner';
+  final String wireName = r'AiMemoriesInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiMemoriesGet200ResponseMemoriesInner object, {
+    AiMemoriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.id != null) {
@@ -89,14 +83,14 @@ class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
       );
     }
     if (object.createdAt != null) {
-      yield r'created_at';
+      yield r'createdAt';
       yield serializers.serialize(
         object.createdAt,
         specifiedType: const FullType(DateTime),
       );
     }
     if (object.updatedAt != null) {
-      yield r'updated_at';
+      yield r'updatedAt';
       yield serializers.serialize(
         object.updatedAt,
         specifiedType: const FullType(DateTime),
@@ -107,7 +101,7 @@ class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiMemoriesGet200ResponseMemoriesInner object, {
+    AiMemoriesInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -120,7 +114,7 @@ class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiMemoriesGet200ResponseMemoriesInnerBuilder result,
+    required AiMemoriesInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -148,14 +142,14 @@ class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
           ) as BuiltList<String>;
           result.categories.replace(valueDes);
           break;
-        case r'created_at':
+        case r'createdAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.createdAt = valueDes;
           break;
-        case r'updated_at':
+        case r'updatedAt':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(DateTime),
@@ -171,12 +165,12 @@ class _$AiMemoriesGet200ResponseMemoriesInnerSerializer
   }
 
   @override
-  AiMemoriesGet200ResponseMemoriesInner deserialize(
+  AiMemoriesInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiMemoriesGet200ResponseMemoriesInnerBuilder();
+    final result = AiMemoriesInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

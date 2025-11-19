@@ -3,8 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/ai_memories_inner.dart';
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -31,7 +31,7 @@ abstract class AiMemoriesGet200Response
   int? get previous;
 
   @BuiltValueField(wireName: r'memories')
-  BuiltList<AiMemoriesGet200ResponseMemoriesInner>? get memories;
+  BuiltList<AiMemoriesInner>? get memories;
 
   AiMemoriesGet200Response._();
 
@@ -88,8 +88,7 @@ class _$AiMemoriesGet200ResponseSerializer
       yield r'memories';
       yield serializers.serialize(
         object.memories,
-        specifiedType: const FullType(
-            BuiltList, [FullType(AiMemoriesGet200ResponseMemoriesInner)]),
+        specifiedType: const FullType(BuiltList, [FullType(AiMemoriesInner)]),
       );
     }
   }
@@ -141,9 +140,9 @@ class _$AiMemoriesGet200ResponseSerializer
         case r'memories':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(
-                BuiltList, [FullType(AiMemoriesGet200ResponseMemoriesInner)]),
-          ) as BuiltList<AiMemoriesGet200ResponseMemoriesInner>;
+            specifiedType:
+                const FullType(BuiltList, [FullType(AiMemoriesInner)]),
+          ) as BuiltList<AiMemoriesInner>;
           result.memories.replace(valueDes);
           break;
         default:

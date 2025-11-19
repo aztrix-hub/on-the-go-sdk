@@ -1,13 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ai_memories_get200_response_memories_inner.dart';
+part of 'ai_memories_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$AiMemoriesGet200ResponseMemoriesInner
-    extends AiMemoriesGet200ResponseMemoriesInner {
+class _$AiMemoriesInner extends AiMemoriesInner {
   @override
   final String? id;
   @override
@@ -19,29 +18,23 @@ class _$AiMemoriesGet200ResponseMemoriesInner
   @override
   final DateTime? updatedAt;
 
-  factory _$AiMemoriesGet200ResponseMemoriesInner(
-          [void Function(AiMemoriesGet200ResponseMemoriesInnerBuilder)?
-              updates]) =>
-      (AiMemoriesGet200ResponseMemoriesInnerBuilder()..update(updates))
-          ._build();
+  factory _$AiMemoriesInner([void Function(AiMemoriesInnerBuilder)? updates]) =>
+      (AiMemoriesInnerBuilder()..update(updates))._build();
 
-  _$AiMemoriesGet200ResponseMemoriesInner._(
+  _$AiMemoriesInner._(
       {this.id, this.memory, this.categories, this.createdAt, this.updatedAt})
       : super._();
   @override
-  AiMemoriesGet200ResponseMemoriesInner rebuild(
-          void Function(AiMemoriesGet200ResponseMemoriesInnerBuilder)
-              updates) =>
+  AiMemoriesInner rebuild(void Function(AiMemoriesInnerBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  AiMemoriesGet200ResponseMemoriesInnerBuilder toBuilder() =>
-      AiMemoriesGet200ResponseMemoriesInnerBuilder()..replace(this);
+  AiMemoriesInnerBuilder toBuilder() => AiMemoriesInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is AiMemoriesGet200ResponseMemoriesInner &&
+    return other is AiMemoriesInner &&
         id == other.id &&
         memory == other.memory &&
         categories == other.categories &&
@@ -63,8 +56,7 @@ class _$AiMemoriesGet200ResponseMemoriesInner
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(
-            r'AiMemoriesGet200ResponseMemoriesInner')
+    return (newBuiltValueToStringHelper(r'AiMemoriesInner')
           ..add('id', id)
           ..add('memory', memory)
           ..add('categories', categories)
@@ -74,11 +66,9 @@ class _$AiMemoriesGet200ResponseMemoriesInner
   }
 }
 
-class AiMemoriesGet200ResponseMemoriesInnerBuilder
-    implements
-        Builder<AiMemoriesGet200ResponseMemoriesInner,
-            AiMemoriesGet200ResponseMemoriesInnerBuilder> {
-  _$AiMemoriesGet200ResponseMemoriesInner? _$v;
+class AiMemoriesInnerBuilder
+    implements Builder<AiMemoriesInner, AiMemoriesInnerBuilder> {
+  _$AiMemoriesInner? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -102,11 +92,11 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
   DateTime? get updatedAt => _$this._updatedAt;
   set updatedAt(DateTime? updatedAt) => _$this._updatedAt = updatedAt;
 
-  AiMemoriesGet200ResponseMemoriesInnerBuilder() {
-    AiMemoriesGet200ResponseMemoriesInner._defaults(this);
+  AiMemoriesInnerBuilder() {
+    AiMemoriesInner._defaults(this);
   }
 
-  AiMemoriesGet200ResponseMemoriesInnerBuilder get _$this {
+  AiMemoriesInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -120,24 +110,23 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
   }
 
   @override
-  void replace(AiMemoriesGet200ResponseMemoriesInner other) {
-    _$v = other as _$AiMemoriesGet200ResponseMemoriesInner;
+  void replace(AiMemoriesInner other) {
+    _$v = other as _$AiMemoriesInner;
   }
 
   @override
-  void update(
-      void Function(AiMemoriesGet200ResponseMemoriesInnerBuilder)? updates) {
+  void update(void Function(AiMemoriesInnerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  AiMemoriesGet200ResponseMemoriesInner build() => _build();
+  AiMemoriesInner build() => _build();
 
-  _$AiMemoriesGet200ResponseMemoriesInner _build() {
-    _$AiMemoriesGet200ResponseMemoriesInner _$result;
+  _$AiMemoriesInner _build() {
+    _$AiMemoriesInner _$result;
     try {
       _$result = _$v ??
-          _$AiMemoriesGet200ResponseMemoriesInner._(
+          _$AiMemoriesInner._(
             id: id,
             memory: memory,
             categories: _categories?.build(),
@@ -151,9 +140,7 @@ class AiMemoriesGet200ResponseMemoriesInnerBuilder
         _categories?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'AiMemoriesGet200ResponseMemoriesInner',
-            _$failedField,
-            e.toString());
+            r'AiMemoriesInner', _$failedField, e.toString());
       }
       rethrow;
     }

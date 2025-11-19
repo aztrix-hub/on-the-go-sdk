@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiMemoriesGet200ResponseMemoriesInner
+# on_the_go_sdk.model.AiMemoriesInner
 
 ## Load the model package
 ```dart

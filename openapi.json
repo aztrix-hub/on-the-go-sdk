@@ -680,7 +680,7 @@
         ]
       }
     },
-    "location/photo": {
+    "/location/photo": {
       "post": {
         "tags": [
           "locations"
@@ -808,7 +808,7 @@
         ]
       }
     },
-    "search/phone": {
+    "/search/phone": {
       "get": {
         "tags": [
           "search"
@@ -1734,32 +1734,7 @@
                       "format": "int32"
                     },
                     "memories": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "memory": {
-                            "type": "string"
-                          },
-                          "categories": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          },
-                          "created_at": {
-                            "type": "string",
-                            "format": "date-time"
-                          },
-                          "updated_at": {
-                            "type": "string",
-                            "format": "date-time"
-                          }
-                        }
-                      }
+                      "$ref": "#/components/schemas/AiMemories"
                     }
                   }
                 }
@@ -2118,7 +2093,7 @@
         ]
       }
     },
-    "notifications/register": {
+    "/notifications/register": {
       "post": {
         "tags": [
           "notifications"
@@ -2157,7 +2132,7 @@
         ]
       }
     },
-    "notifications/config": {
+    "/notifications/config": {
       "get": {
         "tags": [
           "notifications"
@@ -2278,7 +2253,7 @@
         ]
       }
     },
-    "publish/posts": {
+    "/publish/posts": {
       "get": {
         "tags": [
           "publish"
@@ -3667,6 +3642,34 @@
           },
           "title": {
             "type": "string"
+          }
+        }
+      },
+      "AiMemories": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "memory": {
+              "type": "string"
+            },
+            "categories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "createdAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time"
+            }
           }
         }
       }

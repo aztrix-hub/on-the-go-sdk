@@ -44,7 +44,7 @@ import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response_
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_memories_get200_response_memories_inner.dart';
+import 'package:on_the_go_sdk/src/model/ai_memories_inner.dart';
 import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
@@ -130,7 +130,7 @@ part 'serializers.g.dart';
   AiLegacyConversationPostRequest,
   AiLegacyConversationPostRequestUserLocation,
   AiMemoriesGet200Response,
-  AiMemoriesGet200ResponseMemoriesInner,
+  AiMemoriesInner,
   AiMessage,
   AiMessageAttributes,
   AiMessageLocationAttribute,

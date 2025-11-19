@@ -8,7 +8,7 @@ void main() {
   group(SearchApi, () {
     // Search individuals or locations
     //
-    //Future<BuiltList<LocationOrIndividual>> searchPhoneGet(String countryCode, { String phone, String name, BuiltList<String> keywords, String latitude, String longitude, SearchPhoneGetBoundingBoxParameter boundingBox }) async
+    //Future<BuiltList<LocationOrIndividual>> searchPhoneGet({ String countryCode, String phone, String name, BuiltList<String> keywords, String latitude, String longitude, SearchPhoneGetBoundingBoxParameter boundingBox }) async
     test('test searchPhoneGet', () async {
       // TODO
     });
