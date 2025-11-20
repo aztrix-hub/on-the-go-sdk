@@ -3,72 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/search_phone_get_bounding_box_parameter_top_left.dart';
+import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'search_phone_get_bounding_box_parameter.g.dart';
+part 'search_get_bounding_box_parameter.g.dart';
 
-/// SearchPhoneGetBoundingBoxParameter
+/// SearchGetBoundingBoxParameter
 ///
 /// Properties:
 /// * [topLeft]
 /// * [bottomRight]
 @BuiltValue()
-abstract class SearchPhoneGetBoundingBoxParameter
+abstract class SearchGetBoundingBoxParameter
     implements
-        Built<SearchPhoneGetBoundingBoxParameter,
-            SearchPhoneGetBoundingBoxParameterBuilder> {
+        Built<SearchGetBoundingBoxParameter,
+            SearchGetBoundingBoxParameterBuilder> {
   @BuiltValueField(wireName: r'topLeft')
-  SearchPhoneGetBoundingBoxParameterTopLeft? get topLeft;
+  SearchGetBoundingBoxParameterTopLeft? get topLeft;
 
   @BuiltValueField(wireName: r'bottomRight')
-  SearchPhoneGetBoundingBoxParameterTopLeft? get bottomRight;
+  SearchGetBoundingBoxParameterTopLeft? get bottomRight;
 
-  SearchPhoneGetBoundingBoxParameter._();
+  SearchGetBoundingBoxParameter._();
 
-  factory SearchPhoneGetBoundingBoxParameter(
-          [void updates(SearchPhoneGetBoundingBoxParameterBuilder b)]) =
-      _$SearchPhoneGetBoundingBoxParameter;
+  factory SearchGetBoundingBoxParameter(
+          [void updates(SearchGetBoundingBoxParameterBuilder b)]) =
+      _$SearchGetBoundingBoxParameter;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SearchPhoneGetBoundingBoxParameterBuilder b) => b;
+  static void _defaults(SearchGetBoundingBoxParameterBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SearchPhoneGetBoundingBoxParameter> get serializer =>
-      _$SearchPhoneGetBoundingBoxParameterSerializer();
+  static Serializer<SearchGetBoundingBoxParameter> get serializer =>
+      _$SearchGetBoundingBoxParameterSerializer();
 }
 
-class _$SearchPhoneGetBoundingBoxParameterSerializer
-    implements PrimitiveSerializer<SearchPhoneGetBoundingBoxParameter> {
+class _$SearchGetBoundingBoxParameterSerializer
+    implements PrimitiveSerializer<SearchGetBoundingBoxParameter> {
   @override
   final Iterable<Type> types = const [
-    SearchPhoneGetBoundingBoxParameter,
-    _$SearchPhoneGetBoundingBoxParameter
+    SearchGetBoundingBoxParameter,
+    _$SearchGetBoundingBoxParameter
   ];
 
   @override
-  final String wireName = r'SearchPhoneGetBoundingBoxParameter';
+  final String wireName = r'SearchGetBoundingBoxParameter';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SearchPhoneGetBoundingBoxParameter object, {
+    SearchGetBoundingBoxParameter object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.topLeft != null) {
       yield r'topLeft';
       yield serializers.serialize(
         object.topLeft,
-        specifiedType:
-            const FullType(SearchPhoneGetBoundingBoxParameterTopLeft),
+        specifiedType: const FullType(SearchGetBoundingBoxParameterTopLeft),
       );
     }
     if (object.bottomRight != null) {
       yield r'bottomRight';
       yield serializers.serialize(
         object.bottomRight,
-        specifiedType:
-            const FullType(SearchPhoneGetBoundingBoxParameterTopLeft),
+        specifiedType: const FullType(SearchGetBoundingBoxParameterTopLeft),
       );
     }
   }
@@ -76,7 +74,7 @@ class _$SearchPhoneGetBoundingBoxParameterSerializer
   @override
   Object serialize(
     Serializers serializers,
-    SearchPhoneGetBoundingBoxParameter object, {
+    SearchGetBoundingBoxParameter object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -89,7 +87,7 @@ class _$SearchPhoneGetBoundingBoxParameterSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required SearchPhoneGetBoundingBoxParameterBuilder result,
+    required SearchGetBoundingBoxParameterBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -99,17 +97,15 @@ class _$SearchPhoneGetBoundingBoxParameterSerializer
         case r'topLeft':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(SearchPhoneGetBoundingBoxParameterTopLeft),
-          ) as SearchPhoneGetBoundingBoxParameterTopLeft;
+            specifiedType: const FullType(SearchGetBoundingBoxParameterTopLeft),
+          ) as SearchGetBoundingBoxParameterTopLeft;
           result.topLeft.replace(valueDes);
           break;
         case r'bottomRight':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(SearchPhoneGetBoundingBoxParameterTopLeft),
-          ) as SearchPhoneGetBoundingBoxParameterTopLeft;
+            specifiedType: const FullType(SearchGetBoundingBoxParameterTopLeft),
+          ) as SearchGetBoundingBoxParameterTopLeft;
           result.bottomRight.replace(valueDes);
           break;
         default:
@@ -121,12 +117,12 @@ class _$SearchPhoneGetBoundingBoxParameterSerializer
   }
 
   @override
-  SearchPhoneGetBoundingBoxParameter deserialize(
+  SearchGetBoundingBoxParameter deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = SearchPhoneGetBoundingBoxParameterBuilder();
+    final result = SearchGetBoundingBoxParameterBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

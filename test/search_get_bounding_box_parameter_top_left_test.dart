@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for SearchPhoneGetBoundingBoxParameterTopLeft
+// tests for SearchGetBoundingBoxParameterTopLeft
 void main() {
-  final instance = SearchPhoneGetBoundingBoxParameterTopLeftBuilder();
+  final instance = SearchGetBoundingBoxParameterTopLeftBuilder();
   // TODO add properties to the builder and call build()
 
-  group(SearchPhoneGetBoundingBoxParameterTopLeft, () {
+  group(SearchGetBoundingBoxParameterTopLeft, () {
     // String latitude
     test('to test the property `latitude`', () async {
       // TODO

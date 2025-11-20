@@ -9,11 +9,11 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**searchPhoneGet**](SearchApi.md#searchphoneget) | **GET** /search/phone | Search individuals or locations
+[**searchGet**](SearchApi.md#searchget) | **GET** /search | Search individuals or locations
 
 
-# **searchPhoneGet**
-> BuiltList<LocationOrIndividual> searchPhoneGet(countryCode, phone, name, keywords, latitude, longitude, boundingBox)
+# **searchGet**
+> BuiltList<LocationOrIndividual> searchGet(countryCode, phone, name, keywords, categories, latitude, longitude, boundingBox)
 
 Search individuals or locations
 
@@ -26,15 +26,16 @@ final String countryCode = countryCode_example; // String |
 final String phone = phone_example; // String | 
 final String name = name_example; // String | 
 final BuiltList<String> keywords = ; // BuiltList<String> | 
+final BuiltList<String> categories = ; // BuiltList<String> | SIC category codes
 final String latitude = latitude_example; // String | 
 final String longitude = longitude_example; // String | 
-final SearchPhoneGetBoundingBoxParameter boundingBox = ; // SearchPhoneGetBoundingBoxParameter | 
+final SearchGetBoundingBoxParameter boundingBox = ; // SearchGetBoundingBoxParameter | 
 
 try {
-    final response = api.searchPhoneGet(countryCode, phone, name, keywords, latitude, longitude, boundingBox);
+    final response = api.searchGet(countryCode, phone, name, keywords, categories, latitude, longitude, boundingBox);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling SearchApi->searchPhoneGet: $e\n');
+    print('Exception when calling SearchApi->searchGet: $e\n');
 }
 ```
 
@@ -46,9 +47,10 @@ Name | Type | Description  | Notes
  **phone** | **String**|  | [optional] 
  **name** | **String**|  | [optional] 
  **keywords** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
+ **categories** | [**BuiltList&lt;String&gt;**](String.md)| SIC category codes | [optional] 
  **latitude** | **String**|  | [optional] 
  **longitude** | **String**|  | [optional] 
- **boundingBox** | [**SearchPhoneGetBoundingBoxParameter**](.md)|  | [optional] 
+ **boundingBox** | [**SearchGetBoundingBoxParameter**](.md)|  | [optional] 
 
 ### Return type
 

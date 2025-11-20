@@ -99,7 +99,7 @@ Class | Method | HTTP request | Description
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsDelete**](doc/PublishApi.md#publishpostsdelete) | **DELETE** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsGet**](doc/PublishApi.md#publishpostsget) | **GET** /publish/posts | 
 [*PublishApi*](doc/PublishApi.md) | [**publishPostsPost**](doc/PublishApi.md#publishpostspost) | **POST** /publish/posts | 
-[*SearchApi*](doc/SearchApi.md) | [**searchPhoneGet**](doc/SearchApi.md#searchphoneget) | **GET** /search/phone | Search individuals or locations
+[*SearchApi*](doc/SearchApi.md) | [**searchGet**](doc/SearchApi.md#searchget) | **GET** /search | Search individuals or locations
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
@@ -187,8 +187,8 @@ Class | Method | HTTP request | Description
  - [Photo](doc/Photo.md)
  - [PublishPostsGet200Response](doc/PublishPostsGet200Response.md)
  - [ResetPassword](doc/ResetPassword.md)
- - [SearchPhoneGetBoundingBoxParameter](doc/SearchPhoneGetBoundingBoxParameter.md)
- - [SearchPhoneGetBoundingBoxParameterTopLeft](doc/SearchPhoneGetBoundingBoxParameterTopLeft.md)
+ - [SearchGetBoundingBoxParameter](doc/SearchGetBoundingBoxParameter.md)
+ - [SearchGetBoundingBoxParameterTopLeft](doc/SearchGetBoundingBoxParameterTopLeft.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)

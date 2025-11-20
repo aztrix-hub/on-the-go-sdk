@@ -86,8 +86,8 @@ import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
 import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
-import 'package:on_the_go_sdk/src/model/search_phone_get_bounding_box_parameter.dart';
-import 'package:on_the_go_sdk/src/model/search_phone_get_bounding_box_parameter_top_left.dart';
+import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
+import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
@@ -172,8 +172,8 @@ part 'serializers.g.dart';
   Photo,
   PublishPostsGet200Response,
   ResetPassword,
-  SearchPhoneGetBoundingBoxParameter,
-  SearchPhoneGetBoundingBoxParameterTopLeft,
+  SearchGetBoundingBoxParameter,
+  SearchGetBoundingBoxParameterTopLeft,
   SiteColorsPatchRequest,
   SocialPost,
   SpecialOpeningHour,

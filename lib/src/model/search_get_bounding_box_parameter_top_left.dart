@@ -6,53 +6,52 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'search_phone_get_bounding_box_parameter_top_left.g.dart';
+part 'search_get_bounding_box_parameter_top_left.g.dart';
 
-/// SearchPhoneGetBoundingBoxParameterTopLeft
+/// SearchGetBoundingBoxParameterTopLeft
 ///
 /// Properties:
 /// * [latitude]
 /// * [longitude]
 @BuiltValue()
-abstract class SearchPhoneGetBoundingBoxParameterTopLeft
+abstract class SearchGetBoundingBoxParameterTopLeft
     implements
-        Built<SearchPhoneGetBoundingBoxParameterTopLeft,
-            SearchPhoneGetBoundingBoxParameterTopLeftBuilder> {
+        Built<SearchGetBoundingBoxParameterTopLeft,
+            SearchGetBoundingBoxParameterTopLeftBuilder> {
   @BuiltValueField(wireName: r'latitude')
   String? get latitude;
 
   @BuiltValueField(wireName: r'longitude')
   String? get longitude;
 
-  SearchPhoneGetBoundingBoxParameterTopLeft._();
+  SearchGetBoundingBoxParameterTopLeft._();
 
-  factory SearchPhoneGetBoundingBoxParameterTopLeft(
-          [void updates(SearchPhoneGetBoundingBoxParameterTopLeftBuilder b)]) =
-      _$SearchPhoneGetBoundingBoxParameterTopLeft;
+  factory SearchGetBoundingBoxParameterTopLeft(
+          [void updates(SearchGetBoundingBoxParameterTopLeftBuilder b)]) =
+      _$SearchGetBoundingBoxParameterTopLeft;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SearchPhoneGetBoundingBoxParameterTopLeftBuilder b) =>
-      b;
+  static void _defaults(SearchGetBoundingBoxParameterTopLeftBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SearchPhoneGetBoundingBoxParameterTopLeft> get serializer =>
-      _$SearchPhoneGetBoundingBoxParameterTopLeftSerializer();
+  static Serializer<SearchGetBoundingBoxParameterTopLeft> get serializer =>
+      _$SearchGetBoundingBoxParameterTopLeftSerializer();
 }
 
-class _$SearchPhoneGetBoundingBoxParameterTopLeftSerializer
-    implements PrimitiveSerializer<SearchPhoneGetBoundingBoxParameterTopLeft> {
+class _$SearchGetBoundingBoxParameterTopLeftSerializer
+    implements PrimitiveSerializer<SearchGetBoundingBoxParameterTopLeft> {
   @override
   final Iterable<Type> types = const [
-    SearchPhoneGetBoundingBoxParameterTopLeft,
-    _$SearchPhoneGetBoundingBoxParameterTopLeft
+    SearchGetBoundingBoxParameterTopLeft,
+    _$SearchGetBoundingBoxParameterTopLeft
   ];
 
   @override
-  final String wireName = r'SearchPhoneGetBoundingBoxParameterTopLeft';
+  final String wireName = r'SearchGetBoundingBoxParameterTopLeft';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SearchPhoneGetBoundingBoxParameterTopLeft object, {
+    SearchGetBoundingBoxParameterTopLeft object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.latitude != null) {
@@ -74,7 +73,7 @@ class _$SearchPhoneGetBoundingBoxParameterTopLeftSerializer
   @override
   Object serialize(
     Serializers serializers,
-    SearchPhoneGetBoundingBoxParameterTopLeft object, {
+    SearchGetBoundingBoxParameterTopLeft object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -87,7 +86,7 @@ class _$SearchPhoneGetBoundingBoxParameterTopLeftSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required SearchPhoneGetBoundingBoxParameterTopLeftBuilder result,
+    required SearchGetBoundingBoxParameterTopLeftBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -117,12 +116,12 @@ class _$SearchPhoneGetBoundingBoxParameterTopLeftSerializer
   }
 
   @override
-  SearchPhoneGetBoundingBoxParameterTopLeft deserialize(
+  SearchGetBoundingBoxParameterTopLeft deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = SearchPhoneGetBoundingBoxParameterTopLeftBuilder();
+    final result = SearchGetBoundingBoxParameterTopLeftBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -808,7 +808,7 @@
         ]
       }
     },
-    "/search/phone": {
+    "/search": {
       "get": {
         "tags": [
           "search"
@@ -838,6 +838,17 @@
           },
           {
             "name": "keywords",
+            "in": "query",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "categories",
+            "description": "SIC category codes",
             "in": "query",
             "schema": {
               "type": "array",

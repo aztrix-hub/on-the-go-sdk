@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.SearchPhoneGetBoundingBoxParameterTopLeft
+# on_the_go_sdk.model.SearchGetBoundingBoxParameterTopLeft
 
 ## Load the model package
 ```dart
