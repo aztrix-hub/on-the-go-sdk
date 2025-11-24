@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // AiChatDataPost200ResponseToolCalls toolCalls
+    // AiToolResponses toolCalls
     test('to test the property `toolCalls`', () async {
       // TODO
     });

@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
+import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
 import 'package:on_the_go_sdk/src/model/ai_action_map.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_email.dart';
@@ -39,7 +39,7 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   BuiltList<LocationOrIndividual>? get search;
 
   @BuiltValueField(wireName: r'contact')
-  AiChatDataPost200ResponseToolCallsGetContact? get contact;
+  AiToolCallsGetContact? get contact;
 
   @BuiltValueField(wireName: r'updateContact')
   AiChatDataPost200ResponseActionsUpdateContact? get updateContact;
@@ -107,8 +107,7 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
       yield r'contact';
       yield serializers.serialize(
         object.contact,
-        specifiedType:
-            const FullType(AiChatDataPost200ResponseToolCallsGetContact),
+        specifiedType: const FullType(AiToolCallsGetContact),
       );
     }
     if (object.updateContact != null) {
@@ -218,9 +217,8 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
         case r'contact':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(AiChatDataPost200ResponseToolCallsGetContact),
-          ) as AiChatDataPost200ResponseToolCallsGetContact;
+            specifiedType: const FullType(AiToolCallsGetContact),
+          ) as AiToolCallsGetContact;
           result.contact.replace(valueDes);
           break;
         case r'updateContact':

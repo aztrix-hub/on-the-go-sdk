@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    // AiChatDataPostRequestToolResponses toolResponses
+    // AiToolResponses toolResponses
     test('to test the property `toolResponses`', () async {
       // TODO
     });

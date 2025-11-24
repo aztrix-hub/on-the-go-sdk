@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(AiToolCalls, () {
-    // AiChatDataPost200ResponseToolCallsGetContact getContact
+    // AiToolCallsGetContact getContact
     test('to test the property `getContact`', () async {
       // TODO
     });

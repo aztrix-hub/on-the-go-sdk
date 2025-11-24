@@ -1292,12 +1292,7 @@
                     "type": "string"
                   },
                   "toolResponses": {
-                    "type": "object",
-                    "properties": {
-                      "getContact": {
-                        "$ref": "#/components/schemas/Individual"
-                      }
-                    }
+                    "$ref": "#/components/schemas/AiToolResponses"
                   }
                 }
               }
@@ -1415,20 +1410,7 @@
                       }
                     },
                     "toolCalls": {
-                      "type": "object",
-                      "properties": {
-                        "getContact": {
-                          "type": "object",
-                          "properties": {
-                            "name": {
-                              "type": "string"
-                            },
-                            "phone": {
-                              "type": "string"
-                            }
-                          }
-                        }
-                      }
+                      "$ref": "#/components/schemas/AiToolResponses"
                     }
                   }
                 }

@@ -8,7 +8,7 @@ part of 'ai_tool_calls.dart';
 
 class _$AiToolCalls extends AiToolCalls {
   @override
-  final AiChatDataPost200ResponseToolCallsGetContact? getContact;
+  final AiToolCallsGetContact? getContact;
 
   factory _$AiToolCalls([void Function(AiToolCallsBuilder)? updates]) =>
       (AiToolCallsBuilder()..update(updates))._build();
@@ -46,12 +46,10 @@ class _$AiToolCalls extends AiToolCalls {
 class AiToolCallsBuilder implements Builder<AiToolCalls, AiToolCallsBuilder> {
   _$AiToolCalls? _$v;
 
-  AiChatDataPost200ResponseToolCallsGetContactBuilder? _getContact;
-  AiChatDataPost200ResponseToolCallsGetContactBuilder get getContact =>
-      _$this._getContact ??=
-          AiChatDataPost200ResponseToolCallsGetContactBuilder();
-  set getContact(
-          AiChatDataPost200ResponseToolCallsGetContactBuilder? getContact) =>
+  AiToolCallsGetContactBuilder? _getContact;
+  AiToolCallsGetContactBuilder get getContact =>
+      _$this._getContact ??= AiToolCallsGetContactBuilder();
+  set getContact(AiToolCallsGetContactBuilder? getContact) =>
       _$this._getContact = getContact;
 
   AiToolCallsBuilder() {

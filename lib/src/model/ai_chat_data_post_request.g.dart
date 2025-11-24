@@ -18,7 +18,7 @@ class _$AiChatDataPostRequest extends AiChatDataPostRequest {
   @override
   final String? locationId;
   @override
-  final AiChatDataPostRequestToolResponses? toolResponses;
+  final AiToolResponses? toolResponses;
 
   factory _$AiChatDataPostRequest(
           [void Function(AiChatDataPostRequestBuilder)? updates]) =>
@@ -105,10 +105,10 @@ class AiChatDataPostRequestBuilder
   String? get locationId => _$this._locationId;
   set locationId(String? locationId) => _$this._locationId = locationId;
 
-  AiChatDataPostRequestToolResponsesBuilder? _toolResponses;
-  AiChatDataPostRequestToolResponsesBuilder get toolResponses =>
-      _$this._toolResponses ??= AiChatDataPostRequestToolResponsesBuilder();
-  set toolResponses(AiChatDataPostRequestToolResponsesBuilder? toolResponses) =>
+  AiToolResponsesBuilder? _toolResponses;
+  AiToolResponsesBuilder get toolResponses =>
+      _$this._toolResponses ??= AiToolResponsesBuilder();
+  set toolResponses(AiToolResponsesBuilder? toolResponses) =>
       _$this._toolResponses = toolResponses;
 
   AiChatDataPostRequestBuilder() {

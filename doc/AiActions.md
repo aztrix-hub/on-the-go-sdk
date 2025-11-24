@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **search** | [**BuiltList&lt;LocationOrIndividual&gt;**](LocationOrIndividual.md) |  | [optional] 
-**contact** | [**AiChatDataPost200ResponseToolCallsGetContact**](AiChatDataPost200ResponseToolCallsGetContact.md) |  | [optional] 
+**contact** | [**AiToolCallsGetContact**](AiToolCallsGetContact.md) |  | [optional] 
 **updateContact** | [**AiChatDataPost200ResponseActionsUpdateContact**](AiChatDataPost200ResponseActionsUpdateContact.md) |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **description** | **String** |  | [optional] 

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
+import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -16,7 +16,7 @@ part 'ai_tool_calls.g.dart';
 @BuiltValue()
 abstract class AiToolCalls implements Built<AiToolCalls, AiToolCallsBuilder> {
   @BuiltValueField(wireName: r'getContact')
-  AiChatDataPost200ResponseToolCallsGetContact? get getContact;
+  AiToolCallsGetContact? get getContact;
 
   AiToolCalls._();
 
@@ -45,8 +45,7 @@ class _$AiToolCallsSerializer implements PrimitiveSerializer<AiToolCalls> {
       yield r'getContact';
       yield serializers.serialize(
         object.getContact,
-        specifiedType:
-            const FullType(AiChatDataPost200ResponseToolCallsGetContact),
+        specifiedType: const FullType(AiToolCallsGetContact),
       );
     }
   }
@@ -77,9 +76,8 @@ class _$AiToolCallsSerializer implements PrimitiveSerializer<AiToolCalls> {
         case r'getContact':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(AiChatDataPost200ResponseToolCallsGetContact),
-          ) as AiChatDataPost200ResponseToolCallsGetContact;
+            specifiedType: const FullType(AiToolCallsGetContact),
+          ) as AiToolCallsGetContact;
           result.getContact.replace(valueDes);
           break;
         default:

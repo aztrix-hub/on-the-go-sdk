@@ -25,10 +25,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_em
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_attributes.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
@@ -54,6 +51,7 @@ import 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_description_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_keywords_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
+import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
@@ -111,10 +109,7 @@ part 'serializers.g.dart';
   AiChatDataPost200ResponseActionsText,
   AiChatDataPost200ResponseActionsUpdateContact,
   AiChatDataPost200ResponseAttributes,
-  AiChatDataPost200ResponseToolCalls,
-  AiChatDataPost200ResponseToolCallsGetContact,
   AiChatDataPostRequest,
-  AiChatDataPostRequestToolResponses,
   AiChatDataPostRequestUserLocation,
   AiChatPost200Response,
   AiChatPostRequest,
@@ -140,6 +135,7 @@ part 'serializers.g.dart';
   AiSuggestionsDescriptionGet200Response,
   AiSuggestionsKeywordsGet200Response,
   AiToolCalls,
+  AiToolCallsGetContact,
   AiToolResponses,
   AnalyticsGet200Response,
   Category,

@@ -6,57 +6,49 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'ai_chat_data_post200_response_tool_calls_get_contact.g.dart';
+part 'ai_tool_calls_get_contact.g.dart';
 
-/// AiChatDataPost200ResponseToolCallsGetContact
+/// AiToolCallsGetContact
 ///
 /// Properties:
 /// * [name]
 /// * [phone]
 @BuiltValue()
-abstract class AiChatDataPost200ResponseToolCallsGetContact
-    implements
-        Built<AiChatDataPost200ResponseToolCallsGetContact,
-            AiChatDataPost200ResponseToolCallsGetContactBuilder> {
+abstract class AiToolCallsGetContact
+    implements Built<AiToolCallsGetContact, AiToolCallsGetContactBuilder> {
   @BuiltValueField(wireName: r'name')
   String? get name;
 
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  AiChatDataPost200ResponseToolCallsGetContact._();
+  AiToolCallsGetContact._();
 
-  factory AiChatDataPost200ResponseToolCallsGetContact(
-          [void updates(
-              AiChatDataPost200ResponseToolCallsGetContactBuilder b)]) =
-      _$AiChatDataPost200ResponseToolCallsGetContact;
+  factory AiToolCallsGetContact(
+      [void updates(AiToolCallsGetContactBuilder b)]) = _$AiToolCallsGetContact;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(
-          AiChatDataPost200ResponseToolCallsGetContactBuilder b) =>
-      b;
+  static void _defaults(AiToolCallsGetContactBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<AiChatDataPost200ResponseToolCallsGetContact>
-      get serializer =>
-          _$AiChatDataPost200ResponseToolCallsGetContactSerializer();
+  static Serializer<AiToolCallsGetContact> get serializer =>
+      _$AiToolCallsGetContactSerializer();
 }
 
-class _$AiChatDataPost200ResponseToolCallsGetContactSerializer
-    implements
-        PrimitiveSerializer<AiChatDataPost200ResponseToolCallsGetContact> {
+class _$AiToolCallsGetContactSerializer
+    implements PrimitiveSerializer<AiToolCallsGetContact> {
   @override
   final Iterable<Type> types = const [
-    AiChatDataPost200ResponseToolCallsGetContact,
-    _$AiChatDataPost200ResponseToolCallsGetContact
+    AiToolCallsGetContact,
+    _$AiToolCallsGetContact
   ];
 
   @override
-  final String wireName = r'AiChatDataPost200ResponseToolCallsGetContact';
+  final String wireName = r'AiToolCallsGetContact';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    AiChatDataPost200ResponseToolCallsGetContact object, {
+    AiToolCallsGetContact object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.name != null) {
@@ -78,7 +70,7 @@ class _$AiChatDataPost200ResponseToolCallsGetContactSerializer
   @override
   Object serialize(
     Serializers serializers,
-    AiChatDataPost200ResponseToolCallsGetContact object, {
+    AiToolCallsGetContact object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -91,7 +83,7 @@ class _$AiChatDataPost200ResponseToolCallsGetContactSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required AiChatDataPost200ResponseToolCallsGetContactBuilder result,
+    required AiToolCallsGetContactBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -121,12 +113,12 @@ class _$AiChatDataPost200ResponseToolCallsGetContactSerializer
   }
 
   @override
-  AiChatDataPost200ResponseToolCallsGetContact deserialize(
+  AiToolCallsGetContact deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = AiChatDataPost200ResponseToolCallsGetContactBuilder();
+    final result = AiToolCallsGetContactBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

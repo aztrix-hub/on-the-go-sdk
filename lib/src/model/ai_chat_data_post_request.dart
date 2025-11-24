@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses.dart';
+import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -38,7 +38,7 @@ abstract class AiChatDataPostRequest
   String? get locationId;
 
   @BuiltValueField(wireName: r'toolResponses')
-  AiChatDataPostRequestToolResponses? get toolResponses;
+  AiToolResponses? get toolResponses;
 
   AiChatDataPostRequest._();
 
@@ -104,7 +104,7 @@ class _$AiChatDataPostRequestSerializer
       yield r'toolResponses';
       yield serializers.serialize(
         object.toolResponses,
-        specifiedType: const FullType(AiChatDataPostRequestToolResponses),
+        specifiedType: const FullType(AiToolResponses),
       );
     }
   }
@@ -170,8 +170,8 @@ class _$AiChatDataPostRequestSerializer
         case r'toolResponses':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(AiChatDataPostRequestToolResponses),
-          ) as AiChatDataPostRequestToolResponses;
+            specifiedType: const FullType(AiToolResponses),
+          ) as AiToolResponses;
           result.toolResponses.replace(valueDes);
           break;
         default:

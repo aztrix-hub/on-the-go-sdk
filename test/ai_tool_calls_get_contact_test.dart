@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for AiChatDataPost200ResponseToolCallsGetContact
+// tests for AiToolCallsGetContact
 void main() {
-  final instance = AiChatDataPost200ResponseToolCallsGetContactBuilder();
+  final instance = AiToolCallsGetContactBuilder();
   // TODO add properties to the builder and call build()
 
-  group(AiChatDataPost200ResponseToolCallsGetContact, () {
+  group(AiToolCallsGetContact, () {
     // String name
     test('to test the property `name`', () async {
       // TODO

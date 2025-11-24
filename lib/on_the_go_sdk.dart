@@ -32,10 +32,7 @@ export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_em
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_text.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_actions_update_contact.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_attributes.dart';
-export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls.dart';
-export 'package:on_the_go_sdk/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request.dart';
-export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_tool_responses.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
@@ -61,6 +58,7 @@ export 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_suggestions_description_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_suggestions_keywords_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
+export 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 export 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 export 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 export 'package:on_the_go_sdk/src/model/category.dart';

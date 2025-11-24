@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.AiChatDataPost200ResponseToolCalls
+# on_the_go_sdk.model.AiToolCallsGetContact
 
 ## Load the model package
 ```dart
@@ -8,7 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**getContact** | [**AiChatDataPost200ResponseToolCallsGetContact**](AiChatDataPost200ResponseToolCallsGetContact.md) |  | [optional] 
+**name** | **String** |  | [optional] 
+**phone** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

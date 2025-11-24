@@ -12,10 +12,7 @@ doc/AiChatDataPost200ResponseActionsEmail.md
 doc/AiChatDataPost200ResponseActionsText.md
 doc/AiChatDataPost200ResponseActionsUpdateContact.md
 doc/AiChatDataPost200ResponseAttributes.md
-doc/AiChatDataPost200ResponseToolCalls.md
-doc/AiChatDataPost200ResponseToolCallsGetContact.md
 doc/AiChatDataPostRequest.md
-doc/AiChatDataPostRequestToolResponses.md
 doc/AiChatDataPostRequestUserLocation.md
 doc/AiChatPost200Response.md
 doc/AiChatPostRequest.md
@@ -41,6 +38,7 @@ doc/AiMessagesResponse.md
 doc/AiSuggestionsDescriptionGet200Response.md
 doc/AiSuggestionsKeywordsGet200Response.md
 doc/AiToolCalls.md
+doc/AiToolCallsGetContact.md
 doc/AiToolResponses.md
 doc/AnalyticsApi.md
 doc/AnalyticsGet200Response.md
@@ -122,10 +120,7 @@ lib/src/model/ai_chat_data_post200_response_actions_email.dart
 lib/src/model/ai_chat_data_post200_response_actions_text.dart
 lib/src/model/ai_chat_data_post200_response_actions_update_contact.dart
 lib/src/model/ai_chat_data_post200_response_attributes.dart
-lib/src/model/ai_chat_data_post200_response_tool_calls.dart
-lib/src/model/ai_chat_data_post200_response_tool_calls_get_contact.dart
 lib/src/model/ai_chat_data_post_request.dart
-lib/src/model/ai_chat_data_post_request_tool_responses.dart
 lib/src/model/ai_chat_data_post_request_user_location.dart
 lib/src/model/ai_chat_post200_response.dart
 lib/src/model/ai_chat_post_request.dart
@@ -151,6 +146,7 @@ lib/src/model/ai_messages_response.dart
 lib/src/model/ai_suggestions_description_get200_response.dart
 lib/src/model/ai_suggestions_keywords_get200_response.dart
 lib/src/model/ai_tool_calls.dart
+lib/src/model/ai_tool_calls_get_contact.dart
 lib/src/model/ai_tool_responses.dart
 lib/src/model/analytics_get200_response.dart
 lib/src/model/category.dart
@@ -207,10 +203,7 @@ test/ai_chat_data_post200_response_actions_text_test.dart
 test/ai_chat_data_post200_response_actions_update_contact_test.dart
 test/ai_chat_data_post200_response_attributes_test.dart
 test/ai_chat_data_post200_response_test.dart
-test/ai_chat_data_post200_response_tool_calls_get_contact_test.dart
-test/ai_chat_data_post200_response_tool_calls_test.dart
 test/ai_chat_data_post_request_test.dart
-test/ai_chat_data_post_request_tool_responses_test.dart
 test/ai_chat_data_post_request_user_location_test.dart
 test/ai_chat_post200_response_test.dart
 test/ai_chat_post_request_test.dart
@@ -235,6 +228,7 @@ test/ai_message_test.dart
 test/ai_messages_response_test.dart
 test/ai_suggestions_description_get200_response_test.dart
 test/ai_suggestions_keywords_get200_response_test.dart
+test/ai_tool_calls_get_contact_test.dart
 test/ai_tool_calls_test.dart
 test/ai_tool_responses_test.dart
 test/analytics_api_test.dart

@@ -10,7 +10,7 @@ class _$AiActions extends AiActions {
   @override
   final BuiltList<LocationOrIndividual>? search;
   @override
-  final AiChatDataPost200ResponseToolCallsGetContact? contact;
+  final AiToolCallsGetContact? contact;
   @override
   final AiChatDataPost200ResponseActionsUpdateContact? updateContact;
   @override
@@ -121,10 +121,10 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
   set search(ListBuilder<LocationOrIndividual>? search) =>
       _$this._search = search;
 
-  AiChatDataPost200ResponseToolCallsGetContactBuilder? _contact;
-  AiChatDataPost200ResponseToolCallsGetContactBuilder get contact =>
-      _$this._contact ??= AiChatDataPost200ResponseToolCallsGetContactBuilder();
-  set contact(AiChatDataPost200ResponseToolCallsGetContactBuilder? contact) =>
+  AiToolCallsGetContactBuilder? _contact;
+  AiToolCallsGetContactBuilder get contact =>
+      _$this._contact ??= AiToolCallsGetContactBuilder();
+  set contact(AiToolCallsGetContactBuilder? contact) =>
       _$this._contact = contact;
 
   AiChatDataPost200ResponseActionsUpdateContactBuilder? _updateContact;

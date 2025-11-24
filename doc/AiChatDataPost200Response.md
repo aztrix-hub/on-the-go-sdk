@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**AiChatDataPost200ResponseAttributes**](AiChatDataPost200ResponseAttributes.md) |  | [optional] 
 **actions** | [**AiChatDataPost200ResponseActions**](AiChatDataPost200ResponseActions.md) |  | [optional] 
-**toolCalls** | [**AiChatDataPost200ResponseToolCalls**](AiChatDataPost200ResponseToolCalls.md) |  | [optional] 
+**toolCalls** | [**AiToolResponses**](AiToolResponses.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

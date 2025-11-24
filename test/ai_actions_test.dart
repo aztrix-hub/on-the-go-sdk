@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // AiChatDataPost200ResponseToolCallsGetContact contact
+    // AiToolCallsGetContact contact
     test('to test the property `contact`', () async {
       // TODO
     });

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **userLocation** | [**AiChatDataPostRequestUserLocation**](AiChatDataPostRequestUserLocation.md) |  | [optional] 
 **dateTime** | **String** |  | [optional] 
 **locationId** | **String** |  | [optional] 
-**toolResponses** | [**AiChatDataPostRequestToolResponses**](AiChatDataPostRequestToolResponses.md) |  | [optional] 
+**toolResponses** | [**AiToolResponses**](AiToolResponses.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

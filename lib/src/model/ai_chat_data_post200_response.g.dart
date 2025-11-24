@@ -12,7 +12,7 @@ class _$AiChatDataPost200Response extends AiChatDataPost200Response {
   @override
   final AiChatDataPost200ResponseActions? actions;
   @override
-  final AiChatDataPost200ResponseToolCalls? toolCalls;
+  final AiToolResponses? toolCalls;
 
   factory _$AiChatDataPost200Response(
           [void Function(AiChatDataPost200ResponseBuilder)? updates]) =>
@@ -75,10 +75,10 @@ class AiChatDataPost200ResponseBuilder
   set actions(AiChatDataPost200ResponseActionsBuilder? actions) =>
       _$this._actions = actions;
 
-  AiChatDataPost200ResponseToolCallsBuilder? _toolCalls;
-  AiChatDataPost200ResponseToolCallsBuilder get toolCalls =>
-      _$this._toolCalls ??= AiChatDataPost200ResponseToolCallsBuilder();
-  set toolCalls(AiChatDataPost200ResponseToolCallsBuilder? toolCalls) =>
+  AiToolResponsesBuilder? _toolCalls;
+  AiToolResponsesBuilder get toolCalls =>
+      _$this._toolCalls ??= AiToolResponsesBuilder();
+  set toolCalls(AiToolResponsesBuilder? toolCalls) =>
       _$this._toolCalls = toolCalls;
 
   AiChatDataPost200ResponseBuilder() {
