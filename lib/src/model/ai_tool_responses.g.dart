@@ -8,7 +8,7 @@ part of 'ai_tool_responses.dart';
 
 class _$AiToolResponses extends AiToolResponses {
   @override
-  final Individual? getContact;
+  final LocationOrIndividual? getContact;
 
   factory _$AiToolResponses([void Function(AiToolResponsesBuilder)? updates]) =>
       (AiToolResponsesBuilder()..update(updates))._build();
@@ -47,10 +47,10 @@ class AiToolResponsesBuilder
     implements Builder<AiToolResponses, AiToolResponsesBuilder> {
   _$AiToolResponses? _$v;
 
-  IndividualBuilder? _getContact;
-  IndividualBuilder get getContact =>
-      _$this._getContact ??= IndividualBuilder();
-  set getContact(IndividualBuilder? getContact) =>
+  LocationOrIndividualBuilder? _getContact;
+  LocationOrIndividualBuilder get getContact =>
+      _$this._getContact ??= LocationOrIndividualBuilder();
+  set getContact(LocationOrIndividualBuilder? getContact) =>
       _$this._getContact = getContact;
 
   AiToolResponsesBuilder() {

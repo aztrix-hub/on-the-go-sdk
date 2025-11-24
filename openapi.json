@@ -1295,7 +1295,7 @@
                     "type": "object",
                     "properties": {
                       "getContact": {
-                        "$ref": "#/components/schemas/LocationOrIndividual"
+                        "$ref": "#/components/schemas/Individual"
                       }
                     }
                   }
@@ -3416,7 +3416,7 @@
         "type": "object",
         "properties": {
           "getContact": {
-            "$ref": "#/components/schemas/Individual"
+            "$ref": "#/components/schemas/LocationOrIndividual"
           }
         }
       },
