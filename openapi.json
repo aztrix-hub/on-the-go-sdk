@@ -1295,7 +1295,7 @@
                     "type": "object",
                     "properties": {
                       "getContact": {
-                        "$ref": "#/components/schemas/Individual"
+                        "$ref": "#/components/schemas/LocationOrIndividual"
                       }
                     }
                   }

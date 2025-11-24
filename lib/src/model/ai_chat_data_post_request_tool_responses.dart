@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/individual.dart';
+import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -19,7 +19,7 @@ abstract class AiChatDataPostRequestToolResponses
         Built<AiChatDataPostRequestToolResponses,
             AiChatDataPostRequestToolResponsesBuilder> {
   @BuiltValueField(wireName: r'getContact')
-  Individual? get getContact;
+  LocationOrIndividual? get getContact;
 
   AiChatDataPostRequestToolResponses._();
 
@@ -55,7 +55,7 @@ class _$AiChatDataPostRequestToolResponsesSerializer
       yield r'getContact';
       yield serializers.serialize(
         object.getContact,
-        specifiedType: const FullType(Individual),
+        specifiedType: const FullType(LocationOrIndividual),
       );
     }
   }
@@ -86,8 +86,8 @@ class _$AiChatDataPostRequestToolResponsesSerializer
         case r'getContact':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Individual),
-          ) as Individual;
+            specifiedType: const FullType(LocationOrIndividual),
+          ) as LocationOrIndividual;
           result.getContact.replace(valueDes);
           break;
         default:
