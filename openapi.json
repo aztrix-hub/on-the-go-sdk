@@ -1498,9 +1498,6 @@
                   "conversationId": {
                     "type": "string"
                   },
-                  "userId": {
-                    "type": "string"
-                  },
                   "message": {
                     "$ref": "#/components/schemas/AiMessage"
                   }
@@ -1580,7 +1577,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       },
       "post": {
         "tags": [
@@ -1596,9 +1598,6 @@
                 ],
                 "properties": {
                   "conversationId": {
-                    "type": "string"
-                  },
-                  "userId": {
                     "type": "string"
                   },
                   "action": {
@@ -1660,9 +1659,6 @@
                 ],
                 "properties": {
                   "conversationId": {
-                    "type": "string"
-                  },
-                  "userId": {
                     "type": "string"
                   },
                   "action": {
@@ -1746,7 +1742,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       },
       "delete": {
         "tags": [
@@ -1769,7 +1770,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/ai/suggestions/description": {
