@@ -16,5 +16,10 @@ void main() {
     test('to test the property `message`', () async {
       // TODO
     });
+
+    // String userId
+    test('to test the property `userId`', () async {
+      // TODO
+    });
   });
 }

@@ -11,6 +11,8 @@ class _$AiConversationMessagePostRequest
   @override
   final String conversationId;
   @override
+  final String? userId;
+  @override
   final AiMessage message;
 
   factory _$AiConversationMessagePostRequest(
@@ -18,7 +20,7 @@ class _$AiConversationMessagePostRequest
       (AiConversationMessagePostRequestBuilder()..update(updates))._build();
 
   _$AiConversationMessagePostRequest._(
-      {required this.conversationId, required this.message})
+      {required this.conversationId, this.userId, required this.message})
       : super._();
   @override
   AiConversationMessagePostRequest rebuild(
@@ -34,6 +36,7 @@ class _$AiConversationMessagePostRequest
     if (identical(other, this)) return true;
     return other is AiConversationMessagePostRequest &&
         conversationId == other.conversationId &&
+        userId == other.userId &&
         message == other.message;
   }
 
@@ -41,6 +44,7 @@ class _$AiConversationMessagePostRequest
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, conversationId.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, message.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -50,6 +54,7 @@ class _$AiConversationMessagePostRequest
   String toString() {
     return (newBuiltValueToStringHelper(r'AiConversationMessagePostRequest')
           ..add('conversationId', conversationId)
+          ..add('userId', userId)
           ..add('message', message))
         .toString();
   }
@@ -66,6 +71,10 @@ class AiConversationMessagePostRequestBuilder
   set conversationId(String? conversationId) =>
       _$this._conversationId = conversationId;
 
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
+
   AiMessageBuilder? _message;
   AiMessageBuilder get message => _$this._message ??= AiMessageBuilder();
   set message(AiMessageBuilder? message) => _$this._message = message;
@@ -78,6 +87,7 @@ class AiConversationMessagePostRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _conversationId = $v.conversationId;
+      _userId = $v.userId;
       _message = $v.message.toBuilder();
       _$v = null;
     }
@@ -106,6 +116,7 @@ class AiConversationMessagePostRequestBuilder
                 conversationId,
                 r'AiConversationMessagePostRequest',
                 'conversationId'),
+            userId: userId,
             message: message.build(),
           );
     } catch (_) {

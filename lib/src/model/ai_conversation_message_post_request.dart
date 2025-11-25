@@ -13,6 +13,7 @@ part 'ai_conversation_message_post_request.g.dart';
 ///
 /// Properties:
 /// * [conversationId]
+/// * [userId]
 /// * [message]
 @BuiltValue()
 abstract class AiConversationMessagePostRequest
@@ -21,6 +22,9 @@ abstract class AiConversationMessagePostRequest
             AiConversationMessagePostRequestBuilder> {
   @BuiltValueField(wireName: r'conversationId')
   String get conversationId;
+
+  @BuiltValueField(wireName: r'userId')
+  String? get userId;
 
   @BuiltValueField(wireName: r'message')
   AiMessage get message;
@@ -60,6 +64,13 @@ class _$AiConversationMessagePostRequestSerializer
       object.conversationId,
       specifiedType: const FullType(String),
     );
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'message';
     yield serializers.serialize(
       object.message,
@@ -96,6 +107,13 @@ class _$AiConversationMessagePostRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.conversationId = valueDes;
+          break;
+        case r'userId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userId = valueDes;
           break;
         case r'message':
           final valueDes = serializers.deserialize(

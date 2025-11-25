@@ -10,13 +10,16 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   @override
   final String conversationId;
   @override
+  final String? userId;
+  @override
   final String? action;
 
   factory _$AiConversationPostRequest(
           [void Function(AiConversationPostRequestBuilder)? updates]) =>
       (AiConversationPostRequestBuilder()..update(updates))._build();
 
-  _$AiConversationPostRequest._({required this.conversationId, this.action})
+  _$AiConversationPostRequest._(
+      {required this.conversationId, this.userId, this.action})
       : super._();
   @override
   AiConversationPostRequest rebuild(
@@ -32,6 +35,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
     if (identical(other, this)) return true;
     return other is AiConversationPostRequest &&
         conversationId == other.conversationId &&
+        userId == other.userId &&
         action == other.action;
   }
 
@@ -39,6 +43,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, conversationId.hashCode);
+    _$hash = $jc(_$hash, userId.hashCode);
     _$hash = $jc(_$hash, action.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -48,6 +53,7 @@ class _$AiConversationPostRequest extends AiConversationPostRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiConversationPostRequest')
           ..add('conversationId', conversationId)
+          ..add('userId', userId)
           ..add('action', action))
         .toString();
   }
@@ -63,6 +69,10 @@ class AiConversationPostRequestBuilder
   set conversationId(String? conversationId) =>
       _$this._conversationId = conversationId;
 
+  String? _userId;
+  String? get userId => _$this._userId;
+  set userId(String? userId) => _$this._userId = userId;
+
   String? _action;
   String? get action => _$this._action;
   set action(String? action) => _$this._action = action;
@@ -75,6 +85,7 @@ class AiConversationPostRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _conversationId = $v.conversationId;
+      _userId = $v.userId;
       _action = $v.action;
       _$v = null;
     }
@@ -99,6 +110,7 @@ class AiConversationPostRequestBuilder
         _$AiConversationPostRequest._(
           conversationId: BuiltValueNullFieldError.checkNotNull(
               conversationId, r'AiConversationPostRequest', 'conversationId'),
+          userId: userId,
           action: action,
         );
     replace(_$result);

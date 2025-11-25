@@ -1498,6 +1498,9 @@
                   "conversationId": {
                     "type": "string"
                   },
+                  "userId": {
+                    "type": "string"
+                  },
                   "message": {
                     "$ref": "#/components/schemas/AiMessage"
                   }
@@ -1595,6 +1598,9 @@
                   "conversationId": {
                     "type": "string"
                   },
+                  "userId": {
+                    "type": "string"
+                  },
                   "action": {
                     "type": "string"
                   }
@@ -1654,6 +1660,9 @@
                 ],
                 "properties": {
                   "conversationId": {
+                    "type": "string"
+                  },
+                  "userId": {
                     "type": "string"
                   },
                   "action": {
