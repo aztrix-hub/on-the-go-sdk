@@ -30,6 +30,7 @@ import 'package:on_the_go_sdk/src/model/ai_chat_data_post_request_user_location.
 import 'package:on_the_go_sdk/src/model/ai_chat_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_context.dart';
+import 'package:on_the_go_sdk/src/model/ai_conversation.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_action_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_message_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_conversation_post200_response.dart';
@@ -114,6 +115,7 @@ part 'serializers.g.dart';
   AiChatPost200Response,
   AiChatPostRequest,
   AiContext,
+  AiConversation,
   AiConversationActionGet200Response,
   AiConversationMessagePostRequest,
   AiConversationPost200Response,
@@ -180,6 +182,10 @@ part 'serializers.g.dart';
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AiConversation)]),
+        () => ListBuilder<AiConversation>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MetricType)]),
         () => ListBuilder<MetricType>(),

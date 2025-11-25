@@ -41,6 +41,11 @@ void main() {
       // TODO
     });
 
+    //Future<BuiltList<AiConversation>> aiConversationsGet() async
+    test('test aiConversationsGet', () async {
+      // TODO
+    });
+
     //Future<AiLegacyChatPost200Response> aiLegacyChatPost({ AiLegacyChatPostRequest aiLegacyChatPostRequest }) async
     test('test aiLegacyChatPost', () async {
       // TODO

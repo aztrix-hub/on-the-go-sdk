@@ -72,6 +72,7 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiConversationGet**](doc/AiApi.md#aiconversationget) | **GET** /ai/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationMessagePost**](doc/AiApi.md#aiconversationmessagepost) | **POST** /ai/conversation/message | 
 [*AiApi*](doc/AiApi.md) | [**aiConversationPost**](doc/AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[*AiApi*](doc/AiApi.md) | [**aiConversationsGet**](doc/AiApi.md#aiconversationsget) | **GET** /ai/conversations | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyChatPost**](doc/AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
 [*AiApi*](doc/AiApi.md) | [**aiLegacyConversationPost**](doc/AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [*AiApi*](doc/AiApi.md) | [**aiMemoriesDelete**](doc/AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
@@ -131,6 +132,7 @@ Class | Method | HTTP request | Description
  - [AiChatPost200Response](doc/AiChatPost200Response.md)
  - [AiChatPostRequest](doc/AiChatPostRequest.md)
  - [AiContext](doc/AiContext.md)
+ - [AiConversation](doc/AiConversation.md)
  - [AiConversationActionGet200Response](doc/AiConversationActionGet200Response.md)
  - [AiConversationMessagePostRequest](doc/AiConversationMessagePostRequest.md)
  - [AiConversationPost200Response](doc/AiConversationPost200Response.md)

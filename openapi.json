@@ -1555,7 +1555,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successfully added a message",
+            "description": "Successfully retrieved messages",
             "content": {
               "application/json": {
                 "schema": {
@@ -1610,7 +1610,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successfully retrieved messages",
+            "description": "Successfully added a message",
             "content": {
               "application/jsonl": {
                 "schema": {
@@ -1629,6 +1629,46 @@
                       "type": "string"
                     }
                   }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/ai/conversations": {
+      "get": {
+        "tags": [
+          "ai"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully retrieved conversations",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AiConversation"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
@@ -3332,6 +3372,17 @@
           "endTime": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "AiConversation": {
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "messages": {
+            "$ref": "#/components/schemas/AiMessages"
           }
         }
       },

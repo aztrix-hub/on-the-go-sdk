@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**aiConversationGet**](AiApi.md#aiconversationget) | **GET** /ai/conversation | 
 [**aiConversationMessagePost**](AiApi.md#aiconversationmessagepost) | **POST** /ai/conversation/message | 
 [**aiConversationPost**](AiApi.md#aiconversationpost) | **POST** /ai/conversation | 
+[**aiConversationsGet**](AiApi.md#aiconversationsget) | **GET** /ai/conversations | 
 [**aiLegacyChatPost**](AiApi.md#ailegacychatpost) | **POST** /ai/legacy/chat | 
 [**aiLegacyConversationPost**](AiApi.md#ailegacyconversationpost) | **POST** /ai/legacy/conversation | 
 [**aiMemoriesDelete**](AiApi.md#aimemoriesdelete) | **DELETE** /ai/memories | 
@@ -332,6 +333,47 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: application/json
  - **Accept**: application/jsonl
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **aiConversationsGet**
+> BuiltList<AiConversation> aiConversationsGet()
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getAiApi();
+
+try {
+    final response = api.aiConversationsGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AiApi->aiConversationsGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**BuiltList&lt;AiConversation&gt;**](AiConversation.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
