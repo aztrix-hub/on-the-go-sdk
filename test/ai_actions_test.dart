@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // BuiltList<LocationOrIndividual> searchPhone
+    test('to test the property `searchPhone`', () async {
+      // TODO
+    });
+
     // AiToolCallsGetContact contact
     test('to test the property `contact`', () async {
       // TODO

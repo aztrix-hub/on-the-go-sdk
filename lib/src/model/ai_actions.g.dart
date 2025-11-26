@@ -10,6 +10,8 @@ class _$AiActions extends AiActions {
   @override
   final BuiltList<LocationOrIndividual>? search;
   @override
+  final BuiltList<LocationOrIndividual>? searchPhone;
+  @override
   final AiToolCallsGetContact? contact;
   @override
   final AiChatDataPost200ResponseActionsUpdateContact? updateContact;
@@ -37,6 +39,7 @@ class _$AiActions extends AiActions {
 
   _$AiActions._(
       {this.search,
+      this.searchPhone,
       this.contact,
       this.updateContact,
       this.keywords,
@@ -61,6 +64,7 @@ class _$AiActions extends AiActions {
     if (identical(other, this)) return true;
     return other is AiActions &&
         search == other.search &&
+        searchPhone == other.searchPhone &&
         contact == other.contact &&
         updateContact == other.updateContact &&
         keywords == other.keywords &&
@@ -78,6 +82,7 @@ class _$AiActions extends AiActions {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, search.hashCode);
+    _$hash = $jc(_$hash, searchPhone.hashCode);
     _$hash = $jc(_$hash, contact.hashCode);
     _$hash = $jc(_$hash, updateContact.hashCode);
     _$hash = $jc(_$hash, keywords.hashCode);
@@ -97,6 +102,7 @@ class _$AiActions extends AiActions {
   String toString() {
     return (newBuiltValueToStringHelper(r'AiActions')
           ..add('search', search)
+          ..add('searchPhone', searchPhone)
           ..add('contact', contact)
           ..add('updateContact', updateContact)
           ..add('keywords', keywords)
@@ -120,6 +126,12 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _$this._search ??= ListBuilder<LocationOrIndividual>();
   set search(ListBuilder<LocationOrIndividual>? search) =>
       _$this._search = search;
+
+  ListBuilder<LocationOrIndividual>? _searchPhone;
+  ListBuilder<LocationOrIndividual> get searchPhone =>
+      _$this._searchPhone ??= ListBuilder<LocationOrIndividual>();
+  set searchPhone(ListBuilder<LocationOrIndividual>? searchPhone) =>
+      _$this._searchPhone = searchPhone;
 
   AiToolCallsGetContactBuilder? _contact;
   AiToolCallsGetContactBuilder get contact =>
@@ -193,6 +205,7 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
     final $v = _$v;
     if ($v != null) {
       _search = $v.search?.toBuilder();
+      _searchPhone = $v.searchPhone?.toBuilder();
       _contact = $v.contact?.toBuilder();
       _updateContact = $v.updateContact?.toBuilder();
       _keywords = $v.keywords?.toBuilder();
@@ -228,6 +241,7 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       _$result = _$v ??
           _$AiActions._(
             search: _search?.build(),
+            searchPhone: _searchPhone?.build(),
             contact: _contact?.build(),
             updateContact: _updateContact?.build(),
             keywords: _keywords?.build(),
@@ -245,6 +259,8 @@ class AiActionsBuilder implements Builder<AiActions, AiActionsBuilder> {
       try {
         _$failedField = 'search';
         _search?.build();
+        _$failedField = 'searchPhone';
+        _searchPhone?.build();
         _$failedField = 'contact';
         _contact?.build();
         _$failedField = 'updateContact';

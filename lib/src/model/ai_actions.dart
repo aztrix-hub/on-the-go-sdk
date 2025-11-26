@@ -22,6 +22,7 @@ part 'ai_actions.g.dart';
 ///
 /// Properties:
 /// * [search]
+/// * [searchPhone]
 /// * [contact]
 /// * [updateContact]
 /// * [keywords]
@@ -37,6 +38,9 @@ part 'ai_actions.g.dart';
 abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'search')
   BuiltList<LocationOrIndividual>? get search;
+
+  @BuiltValueField(wireName: r'searchPhone')
+  BuiltList<LocationOrIndividual>? get searchPhone;
 
   @BuiltValueField(wireName: r'contact')
   AiToolCallsGetContact? get contact;
@@ -99,6 +103,14 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
       yield r'search';
       yield serializers.serialize(
         object.search,
+        specifiedType:
+            const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+      );
+    }
+    if (object.searchPhone != null) {
+      yield r'searchPhone';
+      yield serializers.serialize(
+        object.searchPhone,
         specifiedType:
             const FullType(BuiltList, [FullType(LocationOrIndividual)]),
       );
@@ -213,6 +225,14 @@ class _$AiActionsSerializer implements PrimitiveSerializer<AiActions> {
                 const FullType(BuiltList, [FullType(LocationOrIndividual)]),
           ) as BuiltList<LocationOrIndividual>;
           result.search.replace(valueDes);
+          break;
+        case r'searchPhone':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType:
+                const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+          ) as BuiltList<LocationOrIndividual>;
+          result.searchPhone.replace(valueDes);
           break;
         case r'contact':
           final valueDes = serializers.deserialize(

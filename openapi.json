@@ -3595,6 +3595,12 @@
               "$ref": "#/components/schemas/LocationOrIndividual"
             }
           },
+          "searchPhone": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/LocationOrIndividual"
+            }
+          },
           "contact": {
             "type": "object",
             "properties": {
