@@ -9,8 +9,8 @@
       "description": "Aztrix on-the-go server"
     },
     {
-      "url": "https://api.aztrix.me/webhook-test/",
-      "description": "Aztrix on-the-go test server"
+      "url": "https://api.development.aztrix.me/webhook/",
+      "description": "Aztrix on-the-go development server"
     }
   ],
   "tags": [
