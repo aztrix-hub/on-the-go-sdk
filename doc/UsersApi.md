@@ -16,6 +16,7 @@ Method | HTTP request | Description
 [**userPatch**](UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [**userRegisterPost**](UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
+[**userSystemPost**](UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
 
 
 # **userGet**
@@ -229,7 +230,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userRegisterPost**
-> userRegisterPost(userRegisterPostRequest)
+> userRegisterPost(userSystemPostRequest)
 
 Registers a user
 
@@ -238,10 +239,10 @@ Registers a user
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserRegisterPostRequest userRegisterPostRequest = ; // UserRegisterPostRequest | 
+final UserSystemPostRequest userSystemPostRequest = ; // UserSystemPostRequest | 
 
 try {
-    api.userRegisterPost(userRegisterPostRequest);
+    api.userRegisterPost(userSystemPostRequest);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userRegisterPost: $e\n');
 }
@@ -251,7 +252,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRegisterPostRequest** | [**UserRegisterPostRequest**](UserRegisterPostRequest.md)|  | 
+ **userSystemPostRequest** | [**UserSystemPostRequest**](UserSystemPostRequest.md)|  | 
 
 ### Return type
 
@@ -298,6 +299,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userSystemPost**
+> UserSystemPost200Response userSystemPost(userSystemPostRequest)
+
+Find the system for the user
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserSystemPostRequest userSystemPostRequest = ; // UserSystemPostRequest | 
+
+try {
+    final response = api.userSystemPost(userSystemPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userSystemPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userSystemPostRequest** | [**UserSystemPostRequest**](UserSystemPostRequest.md)|  | 
+
+### Return type
+
+[**UserSystemPost200Response**](UserSystemPost200Response.md)
 
 ### Authorization
 

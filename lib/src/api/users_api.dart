@@ -13,7 +13,8 @@ import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_system_post_request.dart';
 
 class UsersApi {
   final Dio _dio;
@@ -452,7 +453,7 @@ class UsersApi {
   ///
   ///
   /// Parameters:
-  /// * [userRegisterPostRequest]
+  /// * [userSystemPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -463,7 +464,7 @@ class UsersApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> userRegisterPost({
-    required UserRegisterPostRequest userRegisterPostRequest,
+    required UserSystemPostRequest userSystemPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -488,9 +489,9 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserRegisterPostRequest);
+      const _type = FullType(UserSystemPostRequest);
       _bodyData =
-          _serializers.serialize(userRegisterPostRequest, specifiedType: _type);
+          _serializers.serialize(userSystemPostRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -579,5 +580,101 @@ class UsersApi {
     );
 
     return _response;
+  }
+
+  /// Find the system for the user
+  ///
+  ///
+  /// Parameters:
+  /// * [userSystemPostRequest]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [UserSystemPost200Response] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<UserSystemPost200Response>> userSystemPost({
+    required UserSystemPostRequest userSystemPostRequest,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/user/system';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(UserSystemPostRequest);
+      _bodyData =
+          _serializers.serialize(userSystemPostRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    UserSystemPost200Response? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(UserSystemPost200Response),
+            ) as UserSystemPost200Response;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<UserSystemPost200Response>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 }

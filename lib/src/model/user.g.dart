@@ -10,9 +10,9 @@ class _$User extends User {
   @override
   final String? id;
   @override
-  final String firstname;
+  final String? firstname;
   @override
-  final String lastname;
+  final String? lastname;
   @override
   final String? email;
   @override
@@ -25,8 +25,8 @@ class _$User extends User {
 
   _$User._(
       {this.id,
-      required this.firstname,
-      required this.lastname,
+      this.firstname,
+      this.lastname,
       this.email,
       this.phone,
       this.language})
@@ -138,10 +138,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
     final _$result = _$v ??
         _$User._(
           id: id,
-          firstname: BuiltValueNullFieldError.checkNotNull(
-              firstname, r'User', 'firstname'),
-          lastname: BuiltValueNullFieldError.checkNotNull(
-              lastname, r'User', 'lastname'),
+          firstname: firstname,
+          lastname: lastname,
           email: email,
           phone: phone,
           language: language,

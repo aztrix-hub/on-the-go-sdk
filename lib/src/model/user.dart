@@ -24,11 +24,11 @@ abstract class User implements Built<User, UserBuilder> {
 
   /// First Name
   @BuiltValueField(wireName: r'firstname')
-  String get firstname;
+  String? get firstname;
 
   /// Last name
   @BuiltValueField(wireName: r'lastname')
-  String get lastname;
+  String? get lastname;
 
   /// User email
   @BuiltValueField(wireName: r'email')
@@ -70,16 +70,20 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'firstname';
-    yield serializers.serialize(
-      object.firstname,
-      specifiedType: const FullType(String),
-    );
-    yield r'lastname';
-    yield serializers.serialize(
-      object.lastname,
-      specifiedType: const FullType(String),
-    );
+    if (object.firstname != null) {
+      yield r'firstname';
+      yield serializers.serialize(
+        object.firstname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.lastname != null) {
+      yield r'lastname';
+      yield serializers.serialize(
+        object.lastname,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(

@@ -111,6 +111,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**userRegisterPost**](doc/UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
+[*UsersApi*](doc/UsersApi.md) | [**userSystemPost**](doc/UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -195,7 +196,8 @@ Class | Method | HTTP request | Description
  - [User](doc/User.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
- - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
+ - [UserSystemPost200Response](doc/UserSystemPost200Response.md)
+ - [UserSystemPostRequest](doc/UserSystemPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 
 

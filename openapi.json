@@ -43,6 +43,61 @@
     }
   ],
   "paths": {
+    "/user/system": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Find the system for the user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "User email",
+                    "required": true
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "system": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
     "/user/login": {
       "post": {
         "tags": [
@@ -146,11 +201,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -261,6 +313,9 @@
           "400": {
             "description": "Error occurred"
           },
+          "401": {
+            "description": "Unauthorised"
+          },
           "500": {
             "description": "Internal Server Error"
           }
@@ -300,8 +355,8 @@
           "400": {
             "description": "Error occurred"
           },
-          "403": {
-            "description": "Forbidden"
+          "401": {
+            "description": "Unauthorised"
           },
           "500": {
             "description": "Internal Server Error"
@@ -340,9 +395,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Request Forbidden"
           },
           "400": {
             "description": "Invalid or missing parameter"
@@ -396,9 +448,6 @@
               }
             }
           },
-          "403": {
-            "description": "Request Forbidden"
-          },
           "400": {
             "description": "Invalid or missing parameter"
           },
@@ -438,9 +487,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Request Forbidden"
           },
           "400": {
             "description": "Invalid or missing parameter"
@@ -491,9 +537,6 @@
               }
             }
           },
-          "403": {
-            "description": "Request Forbidden"
-          },
           "400": {
             "description": "Invalid or missing parameter"
           },
@@ -542,9 +585,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Request Forbidden"
           },
           "400": {
             "description": "Invalid or missing parameter"
@@ -605,9 +645,6 @@
               }
             }
           },
-          "403": {
-            "description": "Request Forbidden"
-          },
           "400": {
             "description": "Invalid or missing parameter"
           },
@@ -665,9 +702,6 @@
           },
           "400": {
             "description": "Invalid or missing parameter"
-          },
-          "403": {
-            "description": "Forbidden"
           },
           "500": {
             "description": "Internal Server Error"
@@ -780,9 +814,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Forbidden"
           },
           "400": {
             "description": "An error occured",
@@ -2023,11 +2054,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2121,11 +2149,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2160,11 +2185,8 @@
           "200": {
             "description": "Success"
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2220,11 +2242,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2281,11 +2300,8 @@
           "200": {
             "description": "Success"
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2321,11 +2337,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2366,11 +2379,8 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2403,11 +2413,8 @@
           "200": {
             "description": "Social Post deleted"
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "401": {
-            "description": "Not Authorized"
+            "description": "Unauthorised"
           },
           "400": {
             "description": "Invalid or Missing Parameter"
@@ -2446,9 +2453,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Request Forbidden"
           },
           "400": {
             "description": "Invalid or missing parameter"
@@ -2505,9 +2509,6 @@
                 }
               }
             }
-          },
-          "403": {
-            "description": "Request Forbidden"
           },
           "400": {
             "description": "Invalid or missing parameter"
@@ -2584,9 +2585,6 @@
               }
             }
           },
-          "403": {
-            "description": "Forbidden"
-          },
           "400": {
             "description": "Invalid or Missing parameter"
           },
@@ -2658,10 +2656,6 @@
         }
       },
       "User": {
-        "required": [
-          "firstname",
-          "lastname"
-        ],
         "type": "object",
         "properties": {
           "id": {

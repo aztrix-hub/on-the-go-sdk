@@ -93,7 +93,8 @@ import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_system_post_request.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 
 part 'serializers.g.dart';
@@ -178,7 +179,8 @@ part 'serializers.g.dart';
   User,
   UserOauthPost200Response,
   UserOauthPostRequest,
-  UserRegisterPostRequest,
+  UserSystemPost200Response,
+  UserSystemPostRequest,
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()

@@ -43,7 +43,7 @@ void main() {
 
     // Registers a user
     //
-    //Future userRegisterPost(UserRegisterPostRequest userRegisterPostRequest) async
+    //Future userRegisterPost(UserSystemPostRequest userSystemPostRequest) async
     test('test userRegisterPost', () async {
       // TODO
     });
@@ -54,6 +54,13 @@ void main() {
     //
     //Future userResetPasswordPost(ResetPassword resetPassword) async
     test('test userResetPasswordPost', () async {
+      // TODO
+    });
+
+    // Find the system for the user
+    //
+    //Future<UserSystemPost200Response> userSystemPost(UserSystemPostRequest userSystemPostRequest) async
+    test('test userSystemPost', () async {
       // TODO
     });
   });
