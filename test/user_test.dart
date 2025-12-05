@@ -35,8 +35,8 @@ void main() {
       // TODO
     });
 
-    // String language
-    test('to test the property `language`', () async {
+    // String locale
+    test('to test the property `locale`', () async {
       // TODO
     });
   });

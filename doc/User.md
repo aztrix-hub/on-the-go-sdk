@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **lastname** | **String** | Last name | [optional] 
 **email** | **String** | User email | [optional] 
 **phone** | **String** |  | [optional] 
-**language** | **String** |  | [optional] 
+**locale** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

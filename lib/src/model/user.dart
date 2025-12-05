@@ -16,7 +16,7 @@ part 'user.g.dart';
 /// * [lastname] - Last name
 /// * [email] - User email
 /// * [phone]
-/// * [language]
+/// * [locale]
 @BuiltValue()
 abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -37,8 +37,8 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'phone')
   String? get phone;
 
-  @BuiltValueField(wireName: r'language')
-  String? get language;
+  @BuiltValueField(wireName: r'locale')
+  String? get locale;
 
   User._();
 
@@ -98,10 +98,10 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.language != null) {
-      yield r'language';
+    if (object.locale != null) {
+      yield r'locale';
       yield serializers.serialize(
-        object.language,
+        object.locale,
         specifiedType: const FullType(String),
       );
     }
@@ -165,12 +165,12 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as String;
           result.phone = valueDes;
           break;
-        case r'language':
+        case r'locale':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.language = valueDes;
+          result.locale = valueDes;
           break;
         default:
           unhandled.add(key);

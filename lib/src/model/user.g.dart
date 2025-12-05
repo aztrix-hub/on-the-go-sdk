@@ -18,7 +18,7 @@ class _$User extends User {
   @override
   final String? phone;
   @override
-  final String? language;
+  final String? locale;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (UserBuilder()..update(updates))._build();
@@ -29,7 +29,7 @@ class _$User extends User {
       this.lastname,
       this.email,
       this.phone,
-      this.language})
+      this.locale})
       : super._();
   @override
   User rebuild(void Function(UserBuilder) updates) =>
@@ -47,7 +47,7 @@ class _$User extends User {
         lastname == other.lastname &&
         email == other.email &&
         phone == other.phone &&
-        language == other.language;
+        locale == other.locale;
   }
 
   @override
@@ -58,7 +58,7 @@ class _$User extends User {
     _$hash = $jc(_$hash, lastname.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, language.hashCode);
+    _$hash = $jc(_$hash, locale.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,7 +71,7 @@ class _$User extends User {
           ..add('lastname', lastname)
           ..add('email', email)
           ..add('phone', phone)
-          ..add('language', language))
+          ..add('locale', locale))
         .toString();
   }
 }
@@ -99,9 +99,9 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
-  String? _language;
-  String? get language => _$this._language;
-  set language(String? language) => _$this._language = language;
+  String? _locale;
+  String? get locale => _$this._locale;
+  set locale(String? locale) => _$this._locale = locale;
 
   UserBuilder() {
     User._defaults(this);
@@ -115,7 +115,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _lastname = $v.lastname;
       _email = $v.email;
       _phone = $v.phone;
-      _language = $v.language;
+      _locale = $v.locale;
       _$v = null;
     }
     return this;
@@ -142,7 +142,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
           lastname: lastname,
           email: email,
           phone: phone,
-          language: language,
+          locale: locale,
         );
     replace(_$result);
     return _$result;
