@@ -16,10 +16,10 @@ part 'individual.g.dart';
 /// * [id]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
-/// * [address]
-/// * [phone]
-/// * [birthDate]
 /// * [email] - Email
+/// * [phone]
+/// * [address]
+/// * [birthDate]
 /// * [source_]
 @BuiltValue()
 abstract class Individual implements Built<Individual, IndividualBuilder> {
@@ -28,24 +28,24 @@ abstract class Individual implements Built<Individual, IndividualBuilder> {
 
   /// First Name
   @BuiltValueField(wireName: r'firstname')
-  String get firstname;
+  String? get firstname;
 
   /// Last name
   @BuiltValueField(wireName: r'lastname')
-  String get lastname;
-
-  @BuiltValueField(wireName: r'address')
-  Address? get address;
-
-  @BuiltValueField(wireName: r'phone')
-  String? get phone;
-
-  @BuiltValueField(wireName: r'birthDate')
-  Date? get birthDate;
+  String? get lastname;
 
   /// Email
   @BuiltValueField(wireName: r'email')
   String? get email;
+
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
+
+  @BuiltValueField(wireName: r'address')
+  Address? get address;
+
+  @BuiltValueField(wireName: r'birthDate')
+  Date? get birthDate;
 
   @BuiltValueField(wireName: r'source')
   String? get source_;
@@ -80,21 +80,25 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
         specifiedType: const FullType(String),
       );
     }
-    yield r'firstname';
-    yield serializers.serialize(
-      object.firstname,
-      specifiedType: const FullType(String),
-    );
-    yield r'lastname';
-    yield serializers.serialize(
-      object.lastname,
-      specifiedType: const FullType(String),
-    );
-    if (object.address != null) {
-      yield r'address';
+    if (object.firstname != null) {
+      yield r'firstname';
       yield serializers.serialize(
-        object.address,
-        specifiedType: const FullType(Address),
+        object.firstname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.lastname != null) {
+      yield r'lastname';
+      yield serializers.serialize(
+        object.lastname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
       );
     }
     if (object.phone != null) {
@@ -104,18 +108,18 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
         specifiedType: const FullType(String),
       );
     }
+    if (object.address != null) {
+      yield r'address';
+      yield serializers.serialize(
+        object.address,
+        specifiedType: const FullType(Address),
+      );
+    }
     if (object.birthDate != null) {
       yield r'birthDate';
       yield serializers.serialize(
         object.birthDate,
         specifiedType: const FullType(Date),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
       );
     }
     if (object.source_ != null) {
@@ -171,12 +175,12 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
           ) as String;
           result.lastname = valueDes;
           break;
-        case r'address':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(Address),
-          ) as Address;
-          result.address.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         case r'phone':
           final valueDes = serializers.deserialize(
@@ -185,19 +189,19 @@ class _$IndividualSerializer implements PrimitiveSerializer<Individual> {
           ) as String;
           result.phone = valueDes;
           break;
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Address),
+          ) as Address;
+          result.address.replace(valueDes);
+          break;
         case r'birthDate':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(Date),
           ) as Date;
           result.birthDate = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
           break;
         case r'source':
           final valueDes = serializers.deserialize(

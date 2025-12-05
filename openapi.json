@@ -2683,10 +2683,6 @@
         "description": "User Model"
       },
       "Individual": {
-        "required": [
-          "firstname",
-          "lastname"
-        ],
         "type": "object",
         "properties": {
           "id": {
@@ -2700,19 +2696,19 @@
             "type": "string",
             "description": "Last name"
           },
-          "address": {
-            "$ref": "#/components/schemas/Address"
+          "email": {
+            "type": "string",
+            "description": "Email"
           },
           "phone": {
             "type": "string"
           },
+          "address": {
+            "$ref": "#/components/schemas/Address"
+          },
           "birthDate": {
             "type": "string",
             "format": "date"
-          },
-          "email": {
-            "type": "string",
-            "description": "Email"
           },
           "source": {
             "type": "string"

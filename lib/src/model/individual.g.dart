@@ -10,17 +10,17 @@ class _$Individual extends Individual {
   @override
   final String? id;
   @override
-  final String firstname;
+  final String? firstname;
   @override
-  final String lastname;
+  final String? lastname;
   @override
-  final Address? address;
+  final String? email;
   @override
   final String? phone;
   @override
-  final Date? birthDate;
+  final Address? address;
   @override
-  final String? email;
+  final Date? birthDate;
   @override
   final String? source_;
 
@@ -29,12 +29,12 @@ class _$Individual extends Individual {
 
   _$Individual._(
       {this.id,
-      required this.firstname,
-      required this.lastname,
-      this.address,
-      this.phone,
-      this.birthDate,
+      this.firstname,
+      this.lastname,
       this.email,
+      this.phone,
+      this.address,
+      this.birthDate,
       this.source_})
       : super._();
   @override
@@ -51,10 +51,10 @@ class _$Individual extends Individual {
         id == other.id &&
         firstname == other.firstname &&
         lastname == other.lastname &&
-        address == other.address &&
-        phone == other.phone &&
-        birthDate == other.birthDate &&
         email == other.email &&
+        phone == other.phone &&
+        address == other.address &&
+        birthDate == other.birthDate &&
         source_ == other.source_;
   }
 
@@ -64,10 +64,10 @@ class _$Individual extends Individual {
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, firstname.hashCode);
     _$hash = $jc(_$hash, lastname.hashCode);
-    _$hash = $jc(_$hash, address.hashCode);
-    _$hash = $jc(_$hash, phone.hashCode);
-    _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, birthDate.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -79,10 +79,10 @@ class _$Individual extends Individual {
           ..add('id', id)
           ..add('firstname', firstname)
           ..add('lastname', lastname)
-          ..add('address', address)
-          ..add('phone', phone)
-          ..add('birthDate', birthDate)
           ..add('email', email)
+          ..add('phone', phone)
+          ..add('address', address)
+          ..add('birthDate', birthDate)
           ..add('source_', source_))
         .toString();
   }
@@ -103,21 +103,21 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
   String? get lastname => _$this._lastname;
   set lastname(String? lastname) => _$this._lastname = lastname;
 
-  AddressBuilder? _address;
-  AddressBuilder get address => _$this._address ??= AddressBuilder();
-  set address(AddressBuilder? address) => _$this._address = address;
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
 
   String? _phone;
   String? get phone => _$this._phone;
   set phone(String? phone) => _$this._phone = phone;
 
+  AddressBuilder? _address;
+  AddressBuilder get address => _$this._address ??= AddressBuilder();
+  set address(AddressBuilder? address) => _$this._address = address;
+
   Date? _birthDate;
   Date? get birthDate => _$this._birthDate;
   set birthDate(Date? birthDate) => _$this._birthDate = birthDate;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
 
   String? _source_;
   String? get source_ => _$this._source_;
@@ -133,10 +133,10 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
       _id = $v.id;
       _firstname = $v.firstname;
       _lastname = $v.lastname;
-      _address = $v.address?.toBuilder();
-      _phone = $v.phone;
-      _birthDate = $v.birthDate;
       _email = $v.email;
+      _phone = $v.phone;
+      _address = $v.address?.toBuilder();
+      _birthDate = $v.birthDate;
       _source_ = $v.source_;
       _$v = null;
     }
@@ -162,14 +162,12 @@ class IndividualBuilder implements Builder<Individual, IndividualBuilder> {
       _$result = _$v ??
           _$Individual._(
             id: id,
-            firstname: BuiltValueNullFieldError.checkNotNull(
-                firstname, r'Individual', 'firstname'),
-            lastname: BuiltValueNullFieldError.checkNotNull(
-                lastname, r'Individual', 'lastname'),
-            address: _address?.build(),
-            phone: phone,
-            birthDate: birthDate,
+            firstname: firstname,
+            lastname: lastname,
             email: email,
+            phone: phone,
+            address: _address?.build(),
+            birthDate: birthDate,
             source_: source_,
           );
     } catch (_) {

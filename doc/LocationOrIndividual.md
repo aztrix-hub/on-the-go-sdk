@@ -29,8 +29,8 @@ Name | Type | Description | Notes
 **reviewCount** | **int** |  | [optional] 
 **sponsored** | **bool** |  | [optional] 
 **source_** | **String** |  | [optional] 
-**firstname** | **String** | First Name | 
-**lastname** | **String** | Last name | 
+**firstname** | **String** | First Name | [optional] 
+**lastname** | **String** | Last name | [optional] 
 **birthDate** | [**Date**](Date.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

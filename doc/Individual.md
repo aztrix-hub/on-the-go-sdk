@@ -9,12 +9,12 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**firstname** | **String** | First Name | 
-**lastname** | **String** | Last name | 
-**address** | [**Address**](Address.md) |  | [optional] 
-**phone** | **String** |  | [optional] 
-**birthDate** | [**Date**](Date.md) |  | [optional] 
+**firstname** | **String** | First Name | [optional] 
+**lastname** | **String** | Last name | [optional] 
 **email** | **String** | Email | [optional] 
+**phone** | **String** |  | [optional] 
+**address** | [**Address**](Address.md) |  | [optional] 
+**birthDate** | [**Date**](Date.md) |  | [optional] 
 **source_** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
