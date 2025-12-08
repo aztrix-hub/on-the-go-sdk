@@ -41,7 +41,7 @@ void main() {
       // TODO
     });
 
-    //Future<Location> locationPhotoDelete(String locationId, String id) async
+    //Future<Location> locationPhotoDelete(String locationId, String id, LocationPhotoType type) async
     test('test locationPhotoDelete', () async {
       // TODO
     });

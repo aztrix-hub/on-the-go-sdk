@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationPhotoDelete**
-> Location locationPhotoDelete(locationId, id)
+> Location locationPhotoDelete(locationId, id, type)
 
 
 
@@ -271,9 +271,10 @@ import 'package:on_the_go_sdk/api.dart';
 final api = OnTheGoSdk().getLocationsApi();
 final String locationId = locationId_example; // String | 
 final String id = id_example; // String | 
+final LocationPhotoType type = ; // LocationPhotoType | 
 
 try {
-    final response = api.locationPhotoDelete(locationId, id);
+    final response = api.locationPhotoDelete(locationId, id, type);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationPhotoDelete: $e\n');
@@ -286,6 +287,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **locationId** | **String**|  | 
  **id** | **String**|  | 
+ **type** | [**LocationPhotoType**](.md)|  | 
 
 ### Return type
 

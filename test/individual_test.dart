@@ -24,8 +24,9 @@ void main() {
       // TODO
     });
 
-    // Address address
-    test('to test the property `address`', () async {
+    // Email
+    // String email
+    test('to test the property `email`', () async {
       // TODO
     });
 
@@ -34,14 +35,13 @@ void main() {
       // TODO
     });
 
-    // Date birthDate
-    test('to test the property `birthDate`', () async {
+    // Address address
+    test('to test the property `address`', () async {
       // TODO
     });
 
-    // Email
-    // String email
-    test('to test the property `email`', () async {
+    // Date birthDate
+    test('to test the property `birthDate`', () async {
       // TODO
     });
 

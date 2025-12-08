@@ -15,6 +15,7 @@ import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
+import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/locations_listings_get200_response.dart';
 
@@ -521,6 +522,7 @@ class LocationsApi {
   /// Parameters:
   /// * [locationId]
   /// * [id]
+  /// * [type]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -533,6 +535,7 @@ class LocationsApi {
   Future<Response<Location>> locationPhotoDelete({
     required String locationId,
     required String id,
+    required LocationPhotoType type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -564,6 +567,8 @@ class LocationsApi {
       r'locationId': encodeQueryParameter(
           _serializers, locationId, const FullType(String)),
       r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
+      r'type': encodeQueryParameter(
+          _serializers, type, const FullType(LocationPhotoType)),
     };
 
     final _response = await _dio.request<Object>(

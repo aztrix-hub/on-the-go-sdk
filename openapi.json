@@ -802,6 +802,14 @@
               "type": "string"
             },
             "required": true
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/LocationPhotoType"
+            },
+            "required": true
           }
         ],
         "responses": {
