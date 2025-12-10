@@ -369,6 +369,99 @@
         ]
       }
     },
+    "/user/connections": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get user connections",
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/DirectoryType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "connections successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Connection"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+      },
+    "/user/connection": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "create a user connection",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/DirectoryType"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "connections successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/location": {
       "get": {
         "tags": [
@@ -2445,25 +2538,30 @@
         ],
         "responses": {
           "200": {
-            "description": "Listing details successfully retrieved",
+            "description": "Listing successfully retrieved",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "listings": {
                       "type": "array",
                       "items": {
                         "$ref": "#/components/schemas/Listing"
                       }
                     }
                   }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid or missing parameter"
+          "401": {
+            "description": "Unauthorised"
           },
           "500": {
             "description": "Internal Server Error"
@@ -2476,24 +2574,22 @@
         ]
       }
     },
-    "/location/listing/connect": {
+    "/locations/listing": {
       "get": {
         "tags": [
           "locations"
         ],
         "parameters": [
           {
-            "name": "locationId",
+            "name": "listingId",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "string"
             }
           },
           {
-            "name": "listingId",
+            "name": "type",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "string"
             }
@@ -2501,25 +2597,91 @@
         ],
         "responses": {
           "200": {
-            "description": "Listing details successfully retrieved",
+            "description": "Listing successfully retrieved",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "connectUrl": {
-                      "type": "string"
-                    },
-                    "oauthUrl": {
-                      "type": "string"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Listing"
                 }
               }
             }
           },
           "400": {
-            "description": "Invalid or missing parameter"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "locations"
+        ],
+        "summary": "Create a Listing",
+        "requestBody": {
+          "description": "Listing object",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/DirectoryType",
+                    "required": true
+                  },
+                  "locationId": {
+                    "type": "string",
+                    "required": true
+                    },
+                  "externalLocationId": {
+                    "type": "string",
+                    "required": true
+                  }
+                }
+                    }
+                  }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Listing successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Listing"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised"
           },
           "500": {
             "description": "Internal Server Error"
@@ -2689,6 +2851,17 @@
           }
         },
         "description": "User Model"
+      },
+      "Connection": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "token": {
+            "type": "string"
+          }
+        }
       },
       "Individual": {
         "type": "object",
@@ -3011,20 +3184,24 @@
         "type": "object",
         "properties": {
           "id": {
-            "type": "string"
+            "type": "string",
+            "required": true
           },
           "type": {
-            "$ref": "#/components/schemas/DirectoryType"
+            "$ref": "#/components/schemas/DirectoryType",
+            "required": true
           },
           "locationId": {
-            "type": "string"
+            "type": "string",
+            "required": true
           },
           "url": {
             "type": "string",
             "description": "listing URL"
           },
           "connected": {
-            "type": "boolean"
+            "type": "boolean",
+            "required": true
           }
         }
       },

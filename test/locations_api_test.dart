@@ -27,11 +27,6 @@ void main() {
       // TODO
     });
 
-    //Future<LocationListingConnectGet200Response> locationListingConnectGet(String locationId, String listingId) async
-    test('test locationListingConnectGet', () async {
-      // TODO
-    });
-
     // Update a Location
     //
     // Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing
@@ -65,7 +60,19 @@ void main() {
       // TODO
     });
 
-    //Future<LocationsListingsGet200Response> locationsListingsGet() async
+    //Future<Listing> locationsListingGet({ String listingId, String type }) async
+    test('test locationsListingGet', () async {
+      // TODO
+    });
+
+    // Create a Listing
+    //
+    //Future<Listing> locationsListingPost(LocationsListingPostRequest locationsListingPostRequest) async
+    test('test locationsListingPost', () async {
+      // TODO
+    });
+
+    //Future<BuiltList<Listing>> locationsListingsGet() async
     test('test locationsListingsGet', () async {
       // TODO
     });

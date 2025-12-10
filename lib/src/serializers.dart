@@ -56,6 +56,7 @@ import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
+import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/error_response.dart';
@@ -68,12 +69,11 @@ import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
-import 'package:on_the_go_sdk/src/model/location_listing_connect_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/locations_listings_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/locations_listing_post_request.dart';
 import 'package:on_the_go_sdk/src/model/login_body.dart';
 import 'package:on_the_go_sdk/src/model/login_response.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
@@ -91,6 +91,7 @@ import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
@@ -142,6 +143,7 @@ part 'serializers.g.dart';
   AiToolResponses,
   AnalyticsGet200Response,
   Category,
+  Connection,
   DataPoint,
   DirectoryType,
   ErrorResponse,
@@ -154,12 +156,11 @@ part 'serializers.g.dart';
   Location,
   LocationDelete200Response,
   LocationDeleteRequest,
-  LocationListingConnectGet200Response,
   LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,
   LocationsGet200Response,
-  LocationsListingsGet200Response,
+  LocationsListingPostRequest,
   LoginBody,
   LoginResponse,
   Metric,
@@ -177,6 +178,7 @@ part 'serializers.g.dart';
   SocialPost,
   SpecialOpeningHour,
   User,
+  UserConnectionPostRequest,
   UserOauthPost200Response,
   UserOauthPostRequest,
   UserSystemPost200Response,
@@ -184,6 +186,14 @@ part 'serializers.g.dart';
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Listing)]),
+        () => ListBuilder<Listing>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Connection)]),
+        () => ListBuilder<Connection>(),
+      )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiConversation)]),
         () => ListBuilder<AiConversation>(),

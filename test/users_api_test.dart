@@ -6,6 +6,20 @@ void main() {
   final instance = OnTheGoSdk().getUsersApi();
 
   group(UsersApi, () {
+    // create a user connection
+    //
+    //Future<Connection> userConnectionPost(UserConnectionPostRequest userConnectionPostRequest) async
+    test('test userConnectionPost', () async {
+      // TODO
+    });
+
+    // Get user connections
+    //
+    //Future<BuiltList<Connection>> userConnectionsGet(DirectoryType type) async
+    test('test userConnectionsGet', () async {
+      // TODO
+    });
+
     // Get the current user
     //
     //Future<User> userGet() async

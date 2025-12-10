@@ -86,12 +86,13 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationDelete**](doc/LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
-[*LocationsApi*](doc/LocationsApi.md) | [**locationListingConnectGet**](doc/LocationsApi.md#locationlistingconnectget) | **GET** /location/listing/connect | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoPost**](doc/LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPost**](doc/LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingGet**](doc/LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingPost**](doc/LocationsApi.md#locationslistingpost) | **POST** /locations/listing | Create a Listing
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsListingsGet**](doc/LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsSearchGet**](doc/LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
@@ -104,6 +105,8 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
+[*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
+[*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
@@ -159,6 +162,7 @@ Class | Method | HTTP request | Description
  - [AiToolResponses](doc/AiToolResponses.md)
  - [AnalyticsGet200Response](doc/AnalyticsGet200Response.md)
  - [Category](doc/Category.md)
+ - [Connection](doc/Connection.md)
  - [DataPoint](doc/DataPoint.md)
  - [DirectoryType](doc/DirectoryType.md)
  - [ErrorResponse](doc/ErrorResponse.md)
@@ -171,12 +175,11 @@ Class | Method | HTTP request | Description
  - [Location](doc/Location.md)
  - [LocationDelete200Response](doc/LocationDelete200Response.md)
  - [LocationDeleteRequest](doc/LocationDeleteRequest.md)
- - [LocationListingConnectGet200Response](doc/LocationListingConnectGet200Response.md)
  - [LocationOrIndividual](doc/LocationOrIndividual.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)
  - [LocationsGet200Response](doc/LocationsGet200Response.md)
- - [LocationsListingsGet200Response](doc/LocationsListingsGet200Response.md)
+ - [LocationsListingPostRequest](doc/LocationsListingPostRequest.md)
  - [LoginBody](doc/LoginBody.md)
  - [LoginResponse](doc/LoginResponse.md)
  - [Metric](doc/Metric.md)
@@ -194,6 +197,7 @@ Class | Method | HTTP request | Description
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
+ - [UserConnectionPostRequest](doc/UserConnectionPostRequest.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
  - [UserSystemPost200Response](doc/UserSystemPost200Response.md)

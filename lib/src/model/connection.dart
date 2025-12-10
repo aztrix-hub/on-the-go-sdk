@@ -6,65 +6,55 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'location_listing_connect_get200_response.g.dart';
+part 'connection.g.dart';
 
-/// LocationListingConnectGet200Response
+/// Connection
 ///
 /// Properties:
-/// * [connectUrl]
-/// * [oauthUrl]
+/// * [id]
+/// * [token]
 @BuiltValue()
-abstract class LocationListingConnectGet200Response
-    implements
-        Built<LocationListingConnectGet200Response,
-            LocationListingConnectGet200ResponseBuilder> {
-  @BuiltValueField(wireName: r'connectUrl')
-  String? get connectUrl;
+abstract class Connection implements Built<Connection, ConnectionBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-  @BuiltValueField(wireName: r'oauthUrl')
-  String? get oauthUrl;
+  @BuiltValueField(wireName: r'token')
+  String? get token;
 
-  LocationListingConnectGet200Response._();
+  Connection._();
 
-  factory LocationListingConnectGet200Response(
-          [void updates(LocationListingConnectGet200ResponseBuilder b)]) =
-      _$LocationListingConnectGet200Response;
+  factory Connection([void updates(ConnectionBuilder b)]) = _$Connection;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationListingConnectGet200ResponseBuilder b) => b;
+  static void _defaults(ConnectionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationListingConnectGet200Response> get serializer =>
-      _$LocationListingConnectGet200ResponseSerializer();
+  static Serializer<Connection> get serializer => _$ConnectionSerializer();
 }
 
-class _$LocationListingConnectGet200ResponseSerializer
-    implements PrimitiveSerializer<LocationListingConnectGet200Response> {
+class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
   @override
-  final Iterable<Type> types = const [
-    LocationListingConnectGet200Response,
-    _$LocationListingConnectGet200Response
-  ];
+  final Iterable<Type> types = const [Connection, _$Connection];
 
   @override
-  final String wireName = r'LocationListingConnectGet200Response';
+  final String wireName = r'Connection';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationListingConnectGet200Response object, {
+    Connection object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.connectUrl != null) {
-      yield r'connectUrl';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.connectUrl,
+        object.id,
         specifiedType: const FullType(String),
       );
     }
-    if (object.oauthUrl != null) {
-      yield r'oauthUrl';
+    if (object.token != null) {
+      yield r'token';
       yield serializers.serialize(
-        object.oauthUrl,
+        object.token,
         specifiedType: const FullType(String),
       );
     }
@@ -73,7 +63,7 @@ class _$LocationListingConnectGet200ResponseSerializer
   @override
   Object serialize(
     Serializers serializers,
-    LocationListingConnectGet200Response object, {
+    Connection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,26 +76,26 @@ class _$LocationListingConnectGet200ResponseSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationListingConnectGet200ResponseBuilder result,
+    required ConnectionBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'connectUrl':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.connectUrl = valueDes;
+          result.id = valueDes;
           break;
-        case r'oauthUrl':
+        case r'token':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.oauthUrl = valueDes;
+          result.token = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -116,12 +106,12 @@ class _$LocationListingConnectGet200ResponseSerializer
   }
 
   @override
-  LocationListingConnectGet200Response deserialize(
+  Connection deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationListingConnectGet200ResponseBuilder();
+    final result = ConnectionBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

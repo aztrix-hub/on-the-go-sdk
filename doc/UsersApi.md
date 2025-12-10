@@ -9,6 +9,8 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**userConnectionPost**](UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
+[**userConnectionsGet**](UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [**userGet**](UsersApi.md#userget) | **GET** /user | Get the current user
 [**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
@@ -18,6 +20,96 @@ Method | HTTP request | Description
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [**userSystemPost**](UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
 
+
+# **userConnectionPost**
+> Connection userConnectionPost(userConnectionPostRequest)
+
+create a user connection
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserConnectionPostRequest userConnectionPostRequest = ; // UserConnectionPostRequest | 
+
+try {
+    final response = api.userConnectionPost(userConnectionPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userConnectionPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userConnectionPostRequest** | [**UserConnectionPostRequest**](UserConnectionPostRequest.md)|  | 
+
+### Return type
+
+[**Connection**](Connection.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userConnectionsGet**
+> BuiltList<Connection> userConnectionsGet(type)
+
+Get user connections
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getUsersApi();
+final DirectoryType type = ; // DirectoryType | 
+
+try {
+    final response = api.userConnectionsGet(type);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userConnectionsGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | [**DirectoryType**](.md)|  | 
+
+### Return type
+
+[**BuiltList&lt;Connection&gt;**](Connection.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userGet**
 > User userGet()

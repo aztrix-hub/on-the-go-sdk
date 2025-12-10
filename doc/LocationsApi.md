@@ -12,12 +12,13 @@ Method | HTTP request | Description
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
-[**locationListingConnectGet**](LocationsApi.md#locationlistingconnectget) | **GET** /location/listing/connect | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [**locationPhotoPost**](LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [**locationPost**](LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
+[**locationsListingGet**](LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
+[**locationsListingPost**](LocationsApi.md#locationslistingpost) | **POST** /locations/listing | Create a Listing
 [**locationsListingsGet**](LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [**locationsSearchGet**](LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 
@@ -147,53 +148,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Location**](Location.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **locationListingConnectGet**
-> LocationListingConnectGet200Response locationListingConnectGet(locationId, listingId)
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getLocationsApi();
-final String locationId = locationId_example; // String | 
-final String listingId = listingId_example; // String | 
-
-try {
-    final response = api.locationListingConnectGet(locationId, listingId);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationListingConnectGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationId** | **String**|  | 
- **listingId** | **String**|  | 
-
-### Return type
-
-[**LocationListingConnectGet200Response**](LocationListingConnectGet200Response.md)
 
 ### Authorization
 
@@ -439,8 +393,100 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **locationsListingGet**
+> Listing locationsListingGet(listingId, type)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String listingId = listingId_example; // String | 
+final String type = type_example; // String | 
+
+try {
+    final response = api.locationsListingGet(listingId, type);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationsListingGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listingId** | **String**|  | [optional] 
+ **type** | **String**|  | [optional] 
+
+### Return type
+
+[**Listing**](Listing.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationsListingPost**
+> Listing locationsListingPost(locationsListingPostRequest)
+
+Create a Listing
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final LocationsListingPostRequest locationsListingPostRequest = ; // LocationsListingPostRequest | Listing object
+
+try {
+    final response = api.locationsListingPost(locationsListingPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationsListingPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationsListingPostRequest** | [**LocationsListingPostRequest**](LocationsListingPostRequest.md)| Listing object | 
+
+### Return type
+
+[**Listing**](Listing.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **locationsListingsGet**
-> LocationsListingsGet200Response locationsListingsGet()
+> BuiltList<Listing> locationsListingsGet()
 
 
 
@@ -467,7 +513,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**LocationsListingsGet200Response**](LocationsListingsGet200Response.md)
+[**BuiltList&lt;Listing&gt;**](Listing.md)
 
 ### Authorization
 
