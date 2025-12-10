@@ -7,10 +7,10 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
-import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 
@@ -121,9 +121,9 @@ class InboxApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [InboxPost200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<InboxItem>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<InboxPost200Response>> inboxPost({
+  Future<Response<BuiltList<InboxItem>>> inboxPost({
     required InboxPostRequest inboxPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -180,7 +180,7 @@ class InboxApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    InboxPost200Response? _responseData;
+    BuiltList<InboxItem>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -188,8 +188,8 @@ class InboxApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(InboxPost200Response),
-            ) as InboxPost200Response;
+              specifiedType: const FullType(BuiltList, [FullType(InboxItem)]),
+            ) as BuiltList<InboxItem>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -200,7 +200,7 @@ class InboxApi {
       );
     }
 
-    return Response<InboxPost200Response>(
+    return Response<BuiltList<InboxItem>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

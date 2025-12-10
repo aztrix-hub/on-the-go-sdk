@@ -21,17 +21,17 @@ void main() {
       // TODO
     });
 
-    //Future<AiMessagesResponse> aiConversationDataPost({ AiConversationPostRequest aiConversationPostRequest }) async
+    //Future<BuiltList<AiMessage>> aiConversationDataPost({ AiConversationPostRequest aiConversationPostRequest }) async
     test('test aiConversationDataPost', () async {
       // TODO
     });
 
-    //Future<AiMessagesResponse> aiConversationGet(String conversationId) async
+    //Future<BuiltList<AiMessage>> aiConversationGet(String conversationId) async
     test('test aiConversationGet', () async {
       // TODO
     });
 
-    //Future<AiMessagesResponse> aiConversationMessagePost({ AiConversationMessagePostRequest aiConversationMessagePostRequest }) async
+    //Future<BuiltList<AiMessage>> aiConversationMessagePost({ AiConversationMessagePostRequest aiConversationMessagePostRequest }) async
     test('test aiConversationMessagePost', () async {
       // TODO
     });

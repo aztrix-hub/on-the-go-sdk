@@ -1,32 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_response.dart';
+part of 'login.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LoginResponse extends LoginResponse {
+class _$Login extends Login {
   @override
   final String? accessToken;
   @override
   final bool? oauth;
 
-  factory _$LoginResponse([void Function(LoginResponseBuilder)? updates]) =>
-      (LoginResponseBuilder()..update(updates))._build();
+  factory _$Login([void Function(LoginBuilder)? updates]) =>
+      (LoginBuilder()..update(updates))._build();
 
-  _$LoginResponse._({this.accessToken, this.oauth}) : super._();
+  _$Login._({this.accessToken, this.oauth}) : super._();
   @override
-  LoginResponse rebuild(void Function(LoginResponseBuilder) updates) =>
+  Login rebuild(void Function(LoginBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginResponseBuilder toBuilder() => LoginResponseBuilder()..replace(this);
+  LoginBuilder toBuilder() => LoginBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginResponse &&
+    return other is Login &&
         accessToken == other.accessToken &&
         oauth == other.oauth;
   }
@@ -42,16 +42,15 @@ class _$LoginResponse extends LoginResponse {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'LoginResponse')
+    return (newBuiltValueToStringHelper(r'Login')
           ..add('accessToken', accessToken)
           ..add('oauth', oauth))
         .toString();
   }
 }
 
-class LoginResponseBuilder
-    implements Builder<LoginResponse, LoginResponseBuilder> {
-  _$LoginResponse? _$v;
+class LoginBuilder implements Builder<Login, LoginBuilder> {
+  _$Login? _$v;
 
   String? _accessToken;
   String? get accessToken => _$this._accessToken;
@@ -61,11 +60,11 @@ class LoginResponseBuilder
   bool? get oauth => _$this._oauth;
   set oauth(bool? oauth) => _$this._oauth = oauth;
 
-  LoginResponseBuilder() {
-    LoginResponse._defaults(this);
+  LoginBuilder() {
+    Login._defaults(this);
   }
 
-  LoginResponseBuilder get _$this {
+  LoginBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _accessToken = $v.accessToken;
@@ -76,21 +75,21 @@ class LoginResponseBuilder
   }
 
   @override
-  void replace(LoginResponse other) {
-    _$v = other as _$LoginResponse;
+  void replace(Login other) {
+    _$v = other as _$Login;
   }
 
   @override
-  void update(void Function(LoginResponseBuilder)? updates) {
+  void update(void Function(LoginBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LoginResponse build() => _build();
+  Login build() => _build();
 
-  _$LoginResponse _build() {
+  _$Login _build() {
     final _$result = _$v ??
-        _$LoginResponse._(
+        _$Login._(
           accessToken: accessToken,
           oauth: oauth,
         );

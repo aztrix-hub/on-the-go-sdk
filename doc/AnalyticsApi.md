@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **analyticsGet**
-> AnalyticsGet200Response analyticsGet(locationIds, startDate, endDate, metrics)
+> BuiltList<Metric> analyticsGet(locationIds, startDate, endDate, metrics)
 
 
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AnalyticsGet200Response**](AnalyticsGet200Response.md)
+[**BuiltList&lt;Metric&gt;**](Metric.md)
 
 ### Authorization
 

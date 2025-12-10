@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.LocationsGet200Response
+# on_the_go_sdk.model.Login
 
 ## Load the model package
 ```dart
@@ -8,7 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
+**accessToken** | **String** | Access Token | [optional] 
+**oauth** | **bool** | Whether OAuth should be initiated | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

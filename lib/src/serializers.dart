@@ -48,20 +48,17 @@ import 'package:on_the_go_sdk/src/model/ai_message_attributes.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_bounding_box.dart';
 import 'package:on_the_go_sdk/src/model/ai_message_location_attribute_coordinates.dart';
-import 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_description_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_keywords_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_calls.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
-import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/error_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
-import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 import 'package:on_the_go_sdk/src/model/individual.dart';
@@ -72,10 +69,8 @@ import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
-import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/locations_listing_post_request.dart';
-import 'package:on_the_go_sdk/src/model/login_body.dart';
-import 'package:on_the_go_sdk/src/model/login_response.dart';
+import 'package:on_the_go_sdk/src/model/login.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
 import 'package:on_the_go_sdk/src/model/metric_data.dart';
 import 'package:on_the_go_sdk/src/model/metric_type.dart';
@@ -83,7 +78,6 @@ import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dar
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
-import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
@@ -92,6 +86,7 @@ import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
@@ -135,20 +130,17 @@ part 'serializers.g.dart';
   AiMessageLocationAttribute,
   AiMessageLocationAttributeBoundingBox,
   AiMessageLocationAttributeCoordinates,
-  AiMessagesResponse,
   AiSuggestionsDescriptionGet200Response,
   AiSuggestionsKeywordsGet200Response,
   AiToolCalls,
   AiToolCallsGetContact,
   AiToolResponses,
-  AnalyticsGet200Response,
   Category,
   Connection,
   DataPoint,
   DirectoryType,
   ErrorResponse,
   InboxItem,
-  InboxPost200Response,
   InboxPostRequest,
   InboxReplyPostRequest,
   Individual,
@@ -159,10 +151,8 @@ part 'serializers.g.dart';
   LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,
-  LocationsGet200Response,
   LocationsListingPostRequest,
-  LoginBody,
-  LoginResponse,
+  Login,
   Metric,
   MetricData,
   MetricType,
@@ -170,7 +160,6 @@ part 'serializers.g.dart';
   OpeningHour,
   OpeningHourInterval,
   Photo,
-  PublishPostsGet200Response,
   ResetPassword,
   SearchGetBoundingBoxParameter,
   SearchGetBoundingBoxParameterTopLeft,
@@ -179,6 +168,7 @@ part 'serializers.g.dart';
   SpecialOpeningHour,
   User,
   UserConnectionPostRequest,
+  UserLoginPostRequest,
   UserOauthPost200Response,
   UserOauthPostRequest,
   UserSystemPost200Response,
@@ -191,12 +181,20 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Listing>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AiMessage)]),
+        () => ListBuilder<AiMessage>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Connection)]),
         () => ListBuilder<Connection>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiConversation)]),
         () => ListBuilder<AiConversation>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Location)]),
+        () => ListBuilder<Location>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MetricType)]),
@@ -213,6 +211,18 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LocationOrIndividual)]),
         () => ListBuilder<LocationOrIndividual>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Metric)]),
+        () => ListBuilder<Metric>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(InboxItem)]),
+        () => ListBuilder<InboxItem>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(SocialPost)]),
+        () => ListBuilder<SocialPost>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

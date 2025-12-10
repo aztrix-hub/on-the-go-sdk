@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inboxPost**
-> InboxPost200Response inboxPost(inboxPostRequest)
+> BuiltList<InboxItem> inboxPost(inboxPostRequest)
 
 
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InboxPost200Response**](InboxPost200Response.md)
+[**BuiltList&lt;InboxItem&gt;**](InboxItem.md)
 
 ### Authorization
 

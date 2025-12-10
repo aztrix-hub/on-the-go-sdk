@@ -59,7 +59,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **publishPostsGet**
-> PublishPostsGet200Response publishPostsGet()
+> BuiltList<SocialPost> publishPostsGet()
 
 
 
@@ -86,7 +86,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PublishPostsGet200Response**](PublishPostsGet200Response.md)
+[**BuiltList&lt;SocialPost&gt;**](SocialPost.md)
 
 ### Authorization
 

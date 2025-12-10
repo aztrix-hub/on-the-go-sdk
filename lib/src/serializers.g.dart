@@ -44,13 +44,11 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiMessageLocationAttributeBoundingBox.serializer)
       ..add(AiMessageLocationAttributeCoordinates.serializer)
       ..add(AiMessageRoleEnum.serializer)
-      ..add(AiMessagesResponse.serializer)
       ..add(AiSuggestionsDescriptionGet200Response.serializer)
       ..add(AiSuggestionsKeywordsGet200Response.serializer)
       ..add(AiToolCalls.serializer)
       ..add(AiToolCallsGetContact.serializer)
       ..add(AiToolResponses.serializer)
-      ..add(AnalyticsGet200Response.serializer)
       ..add(Category.serializer)
       ..add(Connection.serializer)
       ..add(DataPoint.serializer)
@@ -59,7 +57,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(ErrorResponse.serializer)
       ..add(InboxItem.serializer)
       ..add(InboxItemTypeEnum.serializer)
-      ..add(InboxPost200Response.serializer)
       ..add(InboxPostRequest.serializer)
       ..add(InboxPostRequestStatusEnum.serializer)
       ..add(InboxReplyPostRequest.serializer)
@@ -71,10 +68,8 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(LocationOrIndividual.serializer)
       ..add(LocationPhotoPostRequest.serializer)
       ..add(LocationPhotoType.serializer)
-      ..add(LocationsGet200Response.serializer)
       ..add(LocationsListingPostRequest.serializer)
-      ..add(LoginBody.serializer)
-      ..add(LoginResponse.serializer)
+      ..add(Login.serializer)
       ..add(Metric.serializer)
       ..add(MetricData.serializer)
       ..add(MetricType.serializer)
@@ -82,7 +77,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(OpeningHour.serializer)
       ..add(OpeningHourInterval.serializer)
       ..add(Photo.serializer)
-      ..add(PublishPostsGet200Response.serializer)
       ..add(ResetPassword.serializer)
       ..add(SearchGetBoundingBoxParameter.serializer)
       ..add(SearchGetBoundingBoxParameterTopLeft.serializer)
@@ -91,6 +85,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(SpecialOpeningHour.serializer)
       ..add(User.serializer)
       ..add(UserConnectionPostRequest.serializer)
+      ..add(UserLoginPostRequest.serializer)
       ..add(UserOauthPost200Response.serializer)
       ..add(UserOauthPostRequest.serializer)
       ..add(UserSystemPost200Response.serializer)
@@ -119,9 +114,6 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(AiMessage)]),
-          () => ListBuilder<AiMessage>())
-      ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DataPoint)]),
           () => ListBuilder<DataPoint>())
       ..addBuilderFactory(
@@ -134,16 +126,10 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(InboxItem)]),
           () => ListBuilder<InboxItem>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(InboxItem)]),
-          () => ListBuilder<InboxItem>())
-      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
           () => ListBuilder<InboxPostRequestStatusEnum>())
       ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Location)]),
-          () => ListBuilder<Location>())
-      ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LocationOrIndividual)]),
           () => ListBuilder<LocationOrIndividual>())
@@ -171,9 +157,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(OpeningHour)]),
           () => ListBuilder<OpeningHour>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Metric)]),
-          () => ListBuilder<Metric>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(MetricData)]),
           () => ListBuilder<MetricData>())
@@ -185,9 +168,6 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(OpeningHourInterval)]),
           () => ListBuilder<OpeningHourInterval>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(SocialPost)]),
-          () => ListBuilder<SocialPost>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(String)]),
           () => ListBuilder<String>())

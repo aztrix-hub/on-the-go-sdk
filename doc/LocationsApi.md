@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsGet**
-> LocationsGet200Response locationsGet(language)
+> BuiltList<Location> locationsGet(language)
 
 Get locations
 
@@ -380,7 +380,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LocationsGet200Response**](LocationsGet200Response.md)
+[**BuiltList&lt;Location&gt;**](Location.md)
 
 ### Authorization
 
@@ -527,7 +527,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsSearchGet**
-> LocationsGet200Response locationsSearchGet(countryCode, name)
+> BuiltList<Location> locationsSearchGet(countryCode, name)
 
 Search for locations
 
@@ -560,7 +560,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LocationsGet200Response**](LocationsGet200Response.md)
+[**BuiltList&lt;Location&gt;**](Location.md)
 
 ### Authorization
 

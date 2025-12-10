@@ -11,11 +11,11 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/login_body.dart';
-import 'package:on_the_go_sdk/src/model/login_response.dart';
+import 'package:on_the_go_sdk/src/model/login.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
@@ -305,7 +305,7 @@ class UsersApi {
   ///
   ///
   /// Parameters:
-  /// * [loginBody]
+  /// * [userLoginPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -313,10 +313,10 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LoginResponse] as data
+  /// Returns a [Future] containing a [Response] with a [Login] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LoginResponse>> userLoginPost({
-    required LoginBody loginBody,
+  Future<Response<Login>> userLoginPost({
+    required UserLoginPostRequest userLoginPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -341,8 +341,9 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LoginBody);
-      _bodyData = _serializers.serialize(loginBody, specifiedType: _type);
+      const _type = FullType(UserLoginPostRequest);
+      _bodyData =
+          _serializers.serialize(userLoginPostRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(
@@ -364,7 +365,7 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LoginResponse? _responseData;
+    Login? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -372,8 +373,8 @@ class UsersApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(LoginResponse),
-            ) as LoginResponse;
+              specifiedType: const FullType(Login),
+            ) as Login;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -384,7 +385,7 @@ class UsersApi {
       );
     }
 
-    return Response<LoginResponse>(
+    return Response<Login>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

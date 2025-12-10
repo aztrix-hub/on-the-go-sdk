@@ -16,7 +16,6 @@ import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
-import 'package:on_the_go_sdk/src/model/locations_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/locations_listing_post_request.dart';
 
 class LocationsApi {
@@ -734,9 +733,9 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Location>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationsGet200Response>> locationsGet({
+  Future<Response<BuiltList<Location>>> locationsGet({
     required String language,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -779,7 +778,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LocationsGet200Response? _responseData;
+    BuiltList<Location>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -787,8 +786,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(LocationsGet200Response),
-            ) as LocationsGet200Response;
+              specifiedType: const FullType(BuiltList, [FullType(Location)]),
+            ) as BuiltList<Location>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -799,7 +798,7 @@ class LocationsApi {
       );
     }
 
-    return Response<LocationsGet200Response>(
+    return Response<BuiltList<Location>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -1103,9 +1102,9 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LocationsGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Location>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationsGet200Response>> locationsSearchGet({
+  Future<Response<BuiltList<Location>>> locationsSearchGet({
     required String countryCode,
     String? name,
     CancelToken? cancelToken,
@@ -1152,7 +1151,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LocationsGet200Response? _responseData;
+    BuiltList<Location>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -1160,8 +1159,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(LocationsGet200Response),
-            ) as LocationsGet200Response;
+              specifiedType: const FullType(BuiltList, [FullType(Location)]),
+            ) as BuiltList<Location>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -1172,7 +1171,7 @@ class LocationsApi {
       );
     }
 
-    return Response<LocationsGet200Response>(
+    return Response<BuiltList<Location>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

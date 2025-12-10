@@ -11,7 +11,7 @@ void main() {
       // TODO
     });
 
-    //Future<InboxPost200Response> inboxPost(InboxPostRequest inboxPostRequest) async
+    //Future<BuiltList<InboxItem>> inboxPost(InboxPostRequest inboxPostRequest) async
     test('test inboxPost', () async {
       // TODO
     });

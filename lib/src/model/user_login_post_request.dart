@@ -6,61 +6,65 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login_response.g.dart';
+part 'user_login_post_request.g.dart';
 
-/// User access_token
+/// UserLoginPostRequest
 ///
 /// Properties:
-/// * [accessToken] - Access Token
-/// * [oauth] - Whether OAuth should be initiated
+/// * [email] - User email
+/// * [password] - User Password
 @BuiltValue()
-abstract class LoginResponse
-    implements Built<LoginResponse, LoginResponseBuilder> {
-  /// Access Token
-  @BuiltValueField(wireName: r'access_token')
-  String? get accessToken;
+abstract class UserLoginPostRequest
+    implements Built<UserLoginPostRequest, UserLoginPostRequestBuilder> {
+  /// User email
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
-  /// Whether OAuth should be initiated
-  @BuiltValueField(wireName: r'oauth')
-  bool? get oauth;
+  /// User Password
+  @BuiltValueField(wireName: r'password')
+  String? get password;
 
-  LoginResponse._();
+  UserLoginPostRequest._();
 
-  factory LoginResponse([void updates(LoginResponseBuilder b)]) =
-      _$LoginResponse;
+  factory UserLoginPostRequest([void updates(UserLoginPostRequestBuilder b)]) =
+      _$UserLoginPostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginResponseBuilder b) => b;
+  static void _defaults(UserLoginPostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LoginResponse> get serializer =>
-      _$LoginResponseSerializer();
+  static Serializer<UserLoginPostRequest> get serializer =>
+      _$UserLoginPostRequestSerializer();
 }
 
-class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
+class _$UserLoginPostRequestSerializer
+    implements PrimitiveSerializer<UserLoginPostRequest> {
   @override
-  final Iterable<Type> types = const [LoginResponse, _$LoginResponse];
+  final Iterable<Type> types = const [
+    UserLoginPostRequest,
+    _$UserLoginPostRequest
+  ];
 
   @override
-  final String wireName = r'LoginResponse';
+  final String wireName = r'UserLoginPostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LoginResponse object, {
+    UserLoginPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.accessToken != null) {
-      yield r'access_token';
+    if (object.email != null) {
+      yield r'email';
       yield serializers.serialize(
-        object.accessToken,
+        object.email,
         specifiedType: const FullType(String),
       );
     }
-    if (object.oauth != null) {
-      yield r'oauth';
+    if (object.password != null) {
+      yield r'password';
       yield serializers.serialize(
-        object.oauth,
-        specifiedType: const FullType(bool),
+        object.password,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -68,7 +72,7 @@ class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
   @override
   Object serialize(
     Serializers serializers,
-    LoginResponse object, {
+    UserLoginPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -81,26 +85,26 @@ class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginResponseBuilder result,
+    required UserLoginPostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_token':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.accessToken = valueDes;
+          result.email = valueDes;
           break;
-        case r'oauth':
+        case r'password':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.oauth = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.password = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -111,12 +115,12 @@ class _$LoginResponseSerializer implements PrimitiveSerializer<LoginResponse> {
   }
 
   @override
-  LoginResponse deserialize(
+  UserLoginPostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginResponseBuilder();
+    final result = UserLoginPostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -29,7 +29,7 @@ void main() {
 
     // Provides an access_token for the user
     //
-    //Future<LoginResponse> userLoginPost(LoginBody loginBody) async
+    //Future<Login> userLoginPost(UserLoginPostRequest userLoginPostRequest) async
     test('test userLoginPost', () async {
       // TODO
     });

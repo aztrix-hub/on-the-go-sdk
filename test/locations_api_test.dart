@@ -55,7 +55,7 @@ void main() {
 
     // Get locations
     //
-    //Future<LocationsGet200Response> locationsGet(String language) async
+    //Future<BuiltList<Location>> locationsGet(String language) async
     test('test locationsGet', () async {
       // TODO
     });
@@ -79,7 +79,7 @@ void main() {
 
     // Search for locations
     //
-    //Future<LocationsGet200Response> locationsSearchGet(String countryCode, { String name }) async
+    //Future<BuiltList<Location>> locationsSearchGet(String countryCode, { String name }) async
     test('test locationsSearchGet', () async {
       // TODO
     });

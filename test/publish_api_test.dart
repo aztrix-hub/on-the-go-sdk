@@ -11,7 +11,7 @@ void main() {
       // TODO
     });
 
-    //Future<PublishPostsGet200Response> publishPostsGet() async
+    //Future<BuiltList<SocialPost>> publishPostsGet() async
     test('test publishPostsGet', () async {
       // TODO
     });

@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationDataPost**
-> AiMessagesResponse aiConversationDataPost(aiConversationPostRequest)
+> BuiltList<AiMessage> aiConversationDataPost(aiConversationPostRequest)
 
 
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiMessagesResponse**](AiMessagesResponse.md)
+[**BuiltList&lt;AiMessage&gt;**](AiMessage.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationGet**
-> AiMessagesResponse aiConversationGet(conversationId)
+> BuiltList<AiMessage> aiConversationGet(conversationId)
 
 
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiMessagesResponse**](AiMessagesResponse.md)
+[**BuiltList&lt;AiMessage&gt;**](AiMessage.md)
 
 ### Authorization
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **aiConversationMessagePost**
-> AiMessagesResponse aiConversationMessagePost(aiConversationMessagePostRequest)
+> BuiltList<AiMessage> aiConversationMessagePost(aiConversationMessagePostRequest)
 
 
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AiMessagesResponse**](AiMessagesResponse.md)
+[**BuiltList&lt;AiMessage&gt;**](AiMessage.md)
 
 ### Authorization
 

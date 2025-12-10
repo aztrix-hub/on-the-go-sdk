@@ -9,8 +9,8 @@ import 'package:dio/dio.dart';
 
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
-import 'package:on_the_go_sdk/src/model/analytics_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/date.dart';
+import 'package:on_the_go_sdk/src/model/metric.dart';
 import 'package:on_the_go_sdk/src/model/metric_type.dart';
 
 class AnalyticsApi {
@@ -35,9 +35,9 @@ class AnalyticsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AnalyticsGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<Metric>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AnalyticsGet200Response>> analyticsGet({
+  Future<Response<BuiltList<Metric>>> analyticsGet({
     BuiltList<String>? locationIds,
     Date? startDate,
     Date? endDate,
@@ -101,7 +101,7 @@ class AnalyticsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AnalyticsGet200Response? _responseData;
+    BuiltList<Metric>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -109,8 +109,8 @@ class AnalyticsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AnalyticsGet200Response),
-            ) as AnalyticsGet200Response;
+              specifiedType: const FullType(BuiltList, [FullType(Metric)]),
+            ) as BuiltList<Metric>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -121,7 +121,7 @@ class AnalyticsApi {
       );
     }
 
-    return Response<AnalyticsGet200Response>(
+    return Response<BuiltList<Metric>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

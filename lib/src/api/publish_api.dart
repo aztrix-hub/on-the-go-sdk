@@ -7,8 +7,8 @@ import 'dart:async';
 import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
-import 'package:on_the_go_sdk/src/model/publish_posts_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 
 class PublishApi {
@@ -88,9 +88,9 @@ class PublishApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PublishPostsGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<SocialPost>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<PublishPostsGet200Response>> publishPostsGet({
+  Future<Response<BuiltList<SocialPost>>> publishPostsGet({
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -126,7 +126,7 @@ class PublishApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    PublishPostsGet200Response? _responseData;
+    BuiltList<SocialPost>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -134,8 +134,8 @@ class PublishApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(PublishPostsGet200Response),
-            ) as PublishPostsGet200Response;
+              specifiedType: const FullType(BuiltList, [FullType(SocialPost)]),
+            ) as BuiltList<SocialPost>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,7 +146,7 @@ class PublishApi {
       );
     }
 
-    return Response<PublishPostsGet200Response>(
+    return Response<BuiltList<SocialPost>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

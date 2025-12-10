@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for LoginBody
+// tests for UserLoginPostRequest
 void main() {
-  final instance = LoginBodyBuilder();
+  final instance = UserLoginPostRequestBuilder();
   // TODO add properties to the builder and call build()
 
-  group(LoginBody, () {
+  group(UserLoginPostRequest, () {
     // User email
     // String email
     test('to test the property `email`', () async {

@@ -108,7 +108,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginBody"
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "description": "User email"
+                  },
+                  "password": {
+                    "type": "string",
+                    "description": "User Password"
+                  }
+                }
               }
             }
           },
@@ -120,7 +130,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LoginResponse"
+                  "$ref": "#/components/schemas/Login"
                 }
               }
             }
@@ -412,7 +422,7 @@
           }
         ]
       }
-      },
+    },
     "/user/connection": {
       "post": {
         "tags": [
@@ -666,14 +676,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "locations": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Location"
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
                   }
                 }
               }
@@ -725,14 +730,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "locations": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Location"
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
                   }
                 }
               }
@@ -1644,7 +1644,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AiMessagesResponse"
+                  "$ref": "#/components/schemas/AiMessages"
                 }
               }
             }
@@ -1691,7 +1691,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AiMessagesResponse"
+                  "$ref": "#/components/schemas/AiMessages"
                 }
               }
             }
@@ -1847,7 +1847,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AiMessagesResponse"
+                  "$ref": "#/components/schemas/AiMessages"
                 }
               }
             }
@@ -2109,12 +2109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "inbox": {
-                      "$ref": "#/components/schemas/InboxItems"
-                    }
-                  }
+                  "$ref": "#/components/schemas/InboxItems"
                 }
               }
             }
@@ -2428,12 +2423,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "posts": {
-                      "$ref": "#/components/schemas/SocialPosts"
-                    }
-                  }
+                  "$ref": "#/components/schemas/SocialPosts"
                 }
               }
             }
@@ -2542,12 +2532,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                      "type": "array",
-                      "items": {
-                        "$ref": "#/components/schemas/Listing"
-                      }
-                    }
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Listing"
                   }
+                }
+              }
             }
           },
           "400": {
@@ -2636,11 +2626,11 @@
         "summary": "Create a Listing",
         "requestBody": {
           "description": "Listing object",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
                   "type": {
                     "$ref": "#/components/schemas/DirectoryType",
                     "required": true
@@ -2648,14 +2638,14 @@
                   "locationId": {
                     "type": "string",
                     "required": true
-                    },
+                  },
                   "externalLocationId": {
                     "type": "string",
                     "required": true
                   }
                 }
-                    }
-                  }
+              }
+            }
           },
           "required": true
         },
@@ -2745,12 +2735,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "metrics": {
-                      "$ref": "#/components/schemas/Metrics"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Metrics"
                 }
               }
             }
@@ -2783,21 +2768,7 @@
           }
         }
       },
-      "LoginBody": {
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "User email"
-          },
-          "password": {
-            "type": "string",
-            "description": "User Password"
-          }
-        },
-        "description": "Login Command"
-      },
-      "LoginResponse": {
+      "Login": {
         "type": "object",
         "properties": {
           "access_token": {
@@ -3556,17 +3527,6 @@
           "conversationId": {
             "type": "string"
           },
-          "messages": {
-            "$ref": "#/components/schemas/AiMessages"
-          }
-        }
-      },
-      "AiMessagesResponse": {
-        "type": "object",
-        "required": [
-          "messages"
-        ],
-        "properties": {
           "messages": {
             "$ref": "#/components/schemas/AiMessages"
           }

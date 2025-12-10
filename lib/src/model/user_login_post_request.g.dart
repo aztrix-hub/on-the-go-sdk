@@ -1,32 +1,35 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_body.dart';
+part of 'user_login_post_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LoginBody extends LoginBody {
+class _$UserLoginPostRequest extends UserLoginPostRequest {
   @override
   final String? email;
   @override
   final String? password;
 
-  factory _$LoginBody([void Function(LoginBodyBuilder)? updates]) =>
-      (LoginBodyBuilder()..update(updates))._build();
+  factory _$UserLoginPostRequest(
+          [void Function(UserLoginPostRequestBuilder)? updates]) =>
+      (UserLoginPostRequestBuilder()..update(updates))._build();
 
-  _$LoginBody._({this.email, this.password}) : super._();
+  _$UserLoginPostRequest._({this.email, this.password}) : super._();
   @override
-  LoginBody rebuild(void Function(LoginBodyBuilder) updates) =>
+  UserLoginPostRequest rebuild(
+          void Function(UserLoginPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LoginBodyBuilder toBuilder() => LoginBodyBuilder()..replace(this);
+  UserLoginPostRequestBuilder toBuilder() =>
+      UserLoginPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LoginBody &&
+    return other is UserLoginPostRequest &&
         email == other.email &&
         password == other.password;
   }
@@ -42,15 +45,16 @@ class _$LoginBody extends LoginBody {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'LoginBody')
+    return (newBuiltValueToStringHelper(r'UserLoginPostRequest')
           ..add('email', email)
           ..add('password', password))
         .toString();
   }
 }
 
-class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
-  _$LoginBody? _$v;
+class UserLoginPostRequestBuilder
+    implements Builder<UserLoginPostRequest, UserLoginPostRequestBuilder> {
+  _$UserLoginPostRequest? _$v;
 
   String? _email;
   String? get email => _$this._email;
@@ -60,11 +64,11 @@ class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
   String? get password => _$this._password;
   set password(String? password) => _$this._password = password;
 
-  LoginBodyBuilder() {
-    LoginBody._defaults(this);
+  UserLoginPostRequestBuilder() {
+    UserLoginPostRequest._defaults(this);
   }
 
-  LoginBodyBuilder get _$this {
+  UserLoginPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _email = $v.email;
@@ -75,21 +79,21 @@ class LoginBodyBuilder implements Builder<LoginBody, LoginBodyBuilder> {
   }
 
   @override
-  void replace(LoginBody other) {
-    _$v = other as _$LoginBody;
+  void replace(UserLoginPostRequest other) {
+    _$v = other as _$UserLoginPostRequest;
   }
 
   @override
-  void update(void Function(LoginBodyBuilder)? updates) {
+  void update(void Function(UserLoginPostRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LoginBody build() => _build();
+  UserLoginPostRequest build() => _build();
 
-  _$LoginBody _build() {
+  _$UserLoginPostRequest _build() {
     final _$result = _$v ??
-        _$LoginBody._(
+        _$UserLoginPostRequest._(
           email: email,
           password: password,
         );

@@ -23,7 +23,7 @@ import 'package:on_the_go_sdk/src/model/ai_legacy_chat_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_legacy_conversation_post_request.dart';
 import 'package:on_the_go_sdk/src/model/ai_memories_get200_response.dart';
-import 'package:on_the_go_sdk/src/model/ai_messages_response.dart';
+import 'package:on_the_go_sdk/src/model/ai_message.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_description_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/ai_suggestions_keywords_get200_response.dart';
 
@@ -343,9 +343,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<AiMessage>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiMessagesResponse>> aiConversationDataPost({
+  Future<Response<BuiltList<AiMessage>>> aiConversationDataPost({
     AiConversationPostRequest? aiConversationPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -397,7 +397,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiMessagesResponse? _responseData;
+    BuiltList<AiMessage>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -405,8 +405,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiMessagesResponse),
-            ) as AiMessagesResponse;
+              specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+            ) as BuiltList<AiMessage>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -417,7 +417,7 @@ class AiApi {
       );
     }
 
-    return Response<AiMessagesResponse>(
+    return Response<BuiltList<AiMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -441,9 +441,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<AiMessage>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiMessagesResponse>> aiConversationGet({
+  Future<Response<BuiltList<AiMessage>>> aiConversationGet({
     required String conversationId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -486,7 +486,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiMessagesResponse? _responseData;
+    BuiltList<AiMessage>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -494,8 +494,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiMessagesResponse),
-            ) as AiMessagesResponse;
+              specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+            ) as BuiltList<AiMessage>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -506,7 +506,7 @@ class AiApi {
       );
     }
 
-    return Response<AiMessagesResponse>(
+    return Response<BuiltList<AiMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -530,9 +530,9 @@ class AiApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AiMessagesResponse] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<AiMessage>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AiMessagesResponse>> aiConversationMessagePost({
+  Future<Response<BuiltList<AiMessage>>> aiConversationMessagePost({
     AiConversationMessagePostRequest? aiConversationMessagePostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -591,7 +591,7 @@ class AiApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    AiMessagesResponse? _responseData;
+    BuiltList<AiMessage>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -599,8 +599,8 @@ class AiApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(AiMessagesResponse),
-            ) as AiMessagesResponse;
+              specifiedType: const FullType(BuiltList, [FullType(AiMessage)]),
+            ) as BuiltList<AiMessage>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -611,7 +611,7 @@ class AiApi {
       );
     }
 
-    return Response<AiMessagesResponse>(
+    return Response<BuiltList<AiMessage>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

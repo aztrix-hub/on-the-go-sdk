@@ -153,7 +153,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userLoginPost**
-> LoginResponse userLoginPost(loginBody)
+> Login userLoginPost(userLoginPostRequest)
 
 Provides an access_token for the user
 
@@ -162,10 +162,10 @@ Provides an access_token for the user
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final LoginBody loginBody = ; // LoginBody | 
+final UserLoginPostRequest userLoginPostRequest = ; // UserLoginPostRequest | 
 
 try {
-    final response = api.userLoginPost(loginBody);
+    final response = api.userLoginPost(userLoginPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userLoginPost: $e\n');
@@ -176,11 +176,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **loginBody** | [**LoginBody**](LoginBody.md)|  | 
+ **userLoginPostRequest** | [**UserLoginPostRequest**](UserLoginPostRequest.md)|  | 
 
 ### Return type
 
-[**LoginResponse**](LoginResponse.md)
+[**Login**](Login.md)
 
 ### Authorization
 
