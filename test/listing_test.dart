@@ -32,5 +32,10 @@ void main() {
     test('to test the property `connected`', () async {
       // TODO
     });
+
+    // String externalLocationId
+    test('to test the property `externalLocationId`', () async {
+      // TODO
+    });
   });
 }

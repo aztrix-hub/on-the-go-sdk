@@ -6,52 +6,57 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'connection.g.dart';
+part 'user_connection_patch_request.g.dart';
 
-/// Connection
+/// UserConnectionPatchRequest
 ///
 /// Properties:
-/// * [id]
+/// * [connectionId]
 /// * [token]
-/// * [type]
 @BuiltValue()
-abstract class Connection implements Built<Connection, ConnectionBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+abstract class UserConnectionPatchRequest
+    implements
+        Built<UserConnectionPatchRequest, UserConnectionPatchRequestBuilder> {
+  @BuiltValueField(wireName: r'connectionId')
+  String? get connectionId;
 
   @BuiltValueField(wireName: r'token')
   String? get token;
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+  UserConnectionPatchRequest._();
 
-  Connection._();
-
-  factory Connection([void updates(ConnectionBuilder b)]) = _$Connection;
+  factory UserConnectionPatchRequest(
+          [void updates(UserConnectionPatchRequestBuilder b)]) =
+      _$UserConnectionPatchRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ConnectionBuilder b) => b;
+  static void _defaults(UserConnectionPatchRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Connection> get serializer => _$ConnectionSerializer();
+  static Serializer<UserConnectionPatchRequest> get serializer =>
+      _$UserConnectionPatchRequestSerializer();
 }
 
-class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
+class _$UserConnectionPatchRequestSerializer
+    implements PrimitiveSerializer<UserConnectionPatchRequest> {
   @override
-  final Iterable<Type> types = const [Connection, _$Connection];
+  final Iterable<Type> types = const [
+    UserConnectionPatchRequest,
+    _$UserConnectionPatchRequest
+  ];
 
   @override
-  final String wireName = r'Connection';
+  final String wireName = r'UserConnectionPatchRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Connection object, {
+    UserConnectionPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
+    if (object.connectionId != null) {
+      yield r'connectionId';
       yield serializers.serialize(
-        object.id,
+        object.connectionId,
         specifiedType: const FullType(String),
       );
     }
@@ -62,19 +67,12 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    Connection object, {
+    UserConnectionPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -87,19 +85,19 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ConnectionBuilder result,
+    required UserConnectionPatchRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
+        case r'connectionId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.id = valueDes;
+          result.connectionId = valueDes;
           break;
         case r'token':
           final valueDes = serializers.deserialize(
@@ -107,13 +105,6 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
             specifiedType: const FullType(String),
           ) as String;
           result.token = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -124,12 +115,12 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
   }
 
   @override
-  Connection deserialize(
+  UserConnectionPatchRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ConnectionBuilder();
+    final result = UserConnectionPatchRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

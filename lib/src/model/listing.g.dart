@@ -17,11 +17,19 @@ class _$Listing extends Listing {
   final String? url;
   @override
   final bool? connected;
+  @override
+  final String? externalLocationId;
 
   factory _$Listing([void Function(ListingBuilder)? updates]) =>
       (ListingBuilder()..update(updates))._build();
 
-  _$Listing._({this.id, this.type, this.locationId, this.url, this.connected})
+  _$Listing._(
+      {this.id,
+      this.type,
+      this.locationId,
+      this.url,
+      this.connected,
+      this.externalLocationId})
       : super._();
   @override
   Listing rebuild(void Function(ListingBuilder) updates) =>
@@ -38,7 +46,8 @@ class _$Listing extends Listing {
         type == other.type &&
         locationId == other.locationId &&
         url == other.url &&
-        connected == other.connected;
+        connected == other.connected &&
+        externalLocationId == other.externalLocationId;
   }
 
   @override
@@ -49,6 +58,7 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, connected.hashCode);
+    _$hash = $jc(_$hash, externalLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -60,7 +70,8 @@ class _$Listing extends Listing {
           ..add('type', type)
           ..add('locationId', locationId)
           ..add('url', url)
-          ..add('connected', connected))
+          ..add('connected', connected)
+          ..add('externalLocationId', externalLocationId))
         .toString();
   }
 }
@@ -88,6 +99,11 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   bool? get connected => _$this._connected;
   set connected(bool? connected) => _$this._connected = connected;
 
+  String? _externalLocationId;
+  String? get externalLocationId => _$this._externalLocationId;
+  set externalLocationId(String? externalLocationId) =>
+      _$this._externalLocationId = externalLocationId;
+
   ListingBuilder() {
     Listing._defaults(this);
   }
@@ -100,6 +116,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _locationId = $v.locationId;
       _url = $v.url;
       _connected = $v.connected;
+      _externalLocationId = $v.externalLocationId;
       _$v = null;
     }
     return this;
@@ -126,6 +143,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
           locationId: locationId,
           url: url,
           connected: connected,
+          externalLocationId: externalLocationId,
         );
     replace(_$result);
     return _$result;

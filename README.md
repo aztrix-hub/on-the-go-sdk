@@ -92,7 +92,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPost**](doc/LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsListingGet**](doc/LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
-[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingPost**](doc/LocationsApi.md#locationslistingpost) | **POST** /locations/listing | Create a Listing
+[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingPatch**](doc/LocationsApi.md#locationslistingpatch) | **PATCH** /locations/listing | Update a Listing and create/update a connection
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsListingsGet**](doc/LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsSearchGet**](doc/LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
@@ -105,6 +105,8 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
+[*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationsGet**](doc/UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
+[*UsersApi*](doc/UsersApi.md) | [**userConnectionPatch**](doc/UsersApi.md#userconnectionpatch) | **PATCH** /user/connection | update a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
@@ -175,7 +177,10 @@ Class | Method | HTTP request | Description
  - [LocationOrIndividual](doc/LocationOrIndividual.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)
- - [LocationsListingPostRequest](doc/LocationsListingPostRequest.md)
+ - [LocationsListingPatch200Response](doc/LocationsListingPatch200Response.md)
+ - [LocationsListingPatchRequest](doc/LocationsListingPatchRequest.md)
+ - [LocationsListingPatchRequestConnection](doc/LocationsListingPatchRequestConnection.md)
+ - [LocationsListingPatchRequestListing](doc/LocationsListingPatchRequestListing.md)
  - [Login](doc/Login.md)
  - [Metric](doc/Metric.md)
  - [MetricData](doc/MetricData.md)
@@ -191,6 +196,7 @@ Class | Method | HTTP request | Description
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
+ - [UserConnectionPatchRequest](doc/UserConnectionPatchRequest.md)
  - [UserConnectionPostRequest](doc/UserConnectionPostRequest.md)
  - [UserLoginPostRequest](doc/UserLoginPostRequest.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)

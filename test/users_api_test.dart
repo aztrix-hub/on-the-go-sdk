@@ -6,6 +6,20 @@ void main() {
   final instance = OnTheGoSdk().getUsersApi();
 
   group(UsersApi, () {
+    // get locations from a connection
+    //
+    //Future<BuiltList<Location>> userConnectionLocationsGet(String redirectUrl, { String connectionId, DirectoryType type }) async
+    test('test userConnectionLocationsGet', () async {
+      // TODO
+    });
+
+    // update a user connection
+    //
+    //Future<Connection> userConnectionPatch(UserConnectionPatchRequest userConnectionPatchRequest) async
+    test('test userConnectionPatch', () async {
+      // TODO
+    });
+
     // create a user connection
     //
     //Future<Connection> userConnectionPost(UserConnectionPostRequest userConnectionPostRequest) async

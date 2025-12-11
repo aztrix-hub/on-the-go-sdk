@@ -69,7 +69,10 @@ import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
-import 'package:on_the_go_sdk/src/model/locations_listing_post_request.dart';
+import 'package:on_the_go_sdk/src/model/locations_listing_patch200_response.dart';
+import 'package:on_the_go_sdk/src/model/locations_listing_patch_request.dart';
+import 'package:on_the_go_sdk/src/model/locations_listing_patch_request_connection.dart';
+import 'package:on_the_go_sdk/src/model/locations_listing_patch_request_listing.dart';
 import 'package:on_the_go_sdk/src/model/login.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
 import 'package:on_the_go_sdk/src/model/metric_data.dart';
@@ -85,6 +88,7 @@ import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_connection_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
@@ -151,7 +155,10 @@ part 'serializers.g.dart';
   LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,
-  LocationsListingPostRequest,
+  LocationsListingPatch200Response,
+  LocationsListingPatchRequest,
+  LocationsListingPatchRequestConnection,
+  LocationsListingPatchRequestListing,
   Login,
   Metric,
   MetricData,
@@ -167,6 +174,7 @@ part 'serializers.g.dart';
   SocialPost,
   SpecialOpeningHour,
   User,
+  UserConnectionPatchRequest,
   UserConnectionPostRequest,
   UserLoginPostRequest,
   UserOauthPost200Response,

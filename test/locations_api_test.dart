@@ -60,19 +60,19 @@ void main() {
       // TODO
     });
 
-    //Future<Listing> locationsListingGet({ String listingId, String type }) async
+    //Future<Listing> locationsListingGet(String redirectUrl, { String listingId, String type }) async
     test('test locationsListingGet', () async {
       // TODO
     });
 
-    // Create a Listing
+    // Update a Listing and create/update a connection
     //
-    //Future<Listing> locationsListingPost(LocationsListingPostRequest locationsListingPostRequest) async
-    test('test locationsListingPost', () async {
+    //Future<LocationsListingPatch200Response> locationsListingPatch(LocationsListingPatchRequest locationsListingPatchRequest) async
+    test('test locationsListingPatch', () async {
       // TODO
     });
 
-    //Future<BuiltList<Listing>> locationsListingsGet() async
+    //Future<BuiltList<Listing>> locationsListingsGet({ String redirectUrl }) async
     test('test locationsListingsGet', () async {
       // TODO
     });

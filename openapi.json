@@ -470,6 +470,111 @@
             "authToken": []
           }
         ]
+      },
+      "patch": {
+        "tags": [
+          "users"
+        ],
+        "summary": "update a user connection",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "connectionId": {
+                    "type": "string"
+                  },
+                  "token": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "connections successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Connection"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/user/connection/locations": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "get locations from a connection",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/DirectoryType"
+            }
+          },
+          {
+            "name": "redirectUrl",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "locations successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/location": {
@@ -2526,6 +2631,15 @@
         "tags": [
           "locations"
         ],
+        "parameters": [
+          {
+            "name": "redirectUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "Listing successfully retrieved",
@@ -2583,6 +2697,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "redirectUrl",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2619,11 +2741,11 @@
           }
         ]
       },
-      "post": {
+      "patch": {
         "tags": [
           "locations"
         ],
-        "summary": "Create a Listing",
+        "summary": "Update a Listing and create/update a connection",
         "requestBody": {
           "description": "Listing object",
           "content": {
@@ -2631,17 +2753,32 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "type": {
-                    "$ref": "#/components/schemas/DirectoryType",
-                    "required": true
+                  "listing": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "required": true
+                      },
+                      "externalLocationId": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
                   },
-                  "locationId": {
-                    "type": "string",
-                    "required": true
-                  },
-                  "externalLocationId": {
-                    "type": "string",
-                    "required": true
+                  "connection": {
+                    "type": "object",
+                    "required": true,
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "token": {
+                        "type": "string",
+                        "required": true
+                      }
+                    }
                   }
                 }
               }
@@ -2655,7 +2792,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Listing"
+                  "type": "object",
+                  "properties": {
+                    "listing": {
+                      "$ref": "#/components/schemas/Listing"
+                    },
+                    "connection": {
+                      "$ref": "#/components/schemas/Connection"
+                    }
+                  }
                 }
               }
             }
@@ -2830,6 +2975,9 @@
             "type": "string"
           },
           "token": {
+            "type": "string"
+          },
+          "type": {
             "type": "string"
           }
         }
@@ -3172,6 +3320,10 @@
           },
           "connected": {
             "type": "boolean",
+            "required": true
+          },
+          "externalLocationId": {
+            "type": "string",
             "required": true
           }
         }

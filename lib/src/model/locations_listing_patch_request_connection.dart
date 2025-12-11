@@ -3,80 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'locations_listing_post_request.g.dart';
+part 'locations_listing_patch_request_connection.g.dart';
 
-/// LocationsListingPostRequest
+/// LocationsListingPatchRequestConnection
 ///
 /// Properties:
-/// * [type]
-/// * [locationId]
-/// * [externalLocationId]
+/// * [id]
+/// * [token]
 @BuiltValue()
-abstract class LocationsListingPostRequest
+abstract class LocationsListingPatchRequestConnection
     implements
-        Built<LocationsListingPostRequest, LocationsListingPostRequestBuilder> {
-  @BuiltValueField(wireName: r'type')
-  DirectoryType? get type;
-  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+        Built<LocationsListingPatchRequestConnection,
+            LocationsListingPatchRequestConnectionBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-  @BuiltValueField(wireName: r'locationId')
-  String? get locationId;
+  @BuiltValueField(wireName: r'token')
+  String? get token;
 
-  @BuiltValueField(wireName: r'externalLocationId')
-  String? get externalLocationId;
+  LocationsListingPatchRequestConnection._();
 
-  LocationsListingPostRequest._();
-
-  factory LocationsListingPostRequest(
-          [void updates(LocationsListingPostRequestBuilder b)]) =
-      _$LocationsListingPostRequest;
+  factory LocationsListingPatchRequestConnection(
+          [void updates(LocationsListingPatchRequestConnectionBuilder b)]) =
+      _$LocationsListingPatchRequestConnection;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationsListingPostRequestBuilder b) => b;
+  static void _defaults(LocationsListingPatchRequestConnectionBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationsListingPostRequest> get serializer =>
-      _$LocationsListingPostRequestSerializer();
+  static Serializer<LocationsListingPatchRequestConnection> get serializer =>
+      _$LocationsListingPatchRequestConnectionSerializer();
 }
 
-class _$LocationsListingPostRequestSerializer
-    implements PrimitiveSerializer<LocationsListingPostRequest> {
+class _$LocationsListingPatchRequestConnectionSerializer
+    implements PrimitiveSerializer<LocationsListingPatchRequestConnection> {
   @override
   final Iterable<Type> types = const [
-    LocationsListingPostRequest,
-    _$LocationsListingPostRequest
+    LocationsListingPatchRequestConnection,
+    _$LocationsListingPatchRequestConnection
   ];
 
   @override
-  final String wireName = r'LocationsListingPostRequest';
+  final String wireName = r'LocationsListingPatchRequestConnection';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationsListingPostRequest object, {
+    LocationsListingPatchRequestConnection object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.type != null) {
-      yield r'type';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
-    if (object.locationId != null) {
-      yield r'locationId';
-      yield serializers.serialize(
-        object.locationId,
+        object.id,
         specifiedType: const FullType(String),
       );
     }
-    if (object.externalLocationId != null) {
-      yield r'externalLocationId';
+    if (object.token != null) {
+      yield r'token';
       yield serializers.serialize(
-        object.externalLocationId,
+        object.token,
         specifiedType: const FullType(String),
       );
     }
@@ -85,7 +73,7 @@ class _$LocationsListingPostRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    LocationsListingPostRequest object, {
+    LocationsListingPatchRequestConnection object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -98,33 +86,26 @@ class _$LocationsListingPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationsListingPostRequestBuilder result,
+    required LocationsListingPatchRequestConnectionBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DirectoryType),
-          ) as DirectoryType;
-          result.type = valueDes;
-          break;
-        case r'locationId':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.locationId = valueDes;
+          result.id = valueDes;
           break;
-        case r'externalLocationId':
+        case r'token':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.externalLocationId = valueDes;
+          result.token = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -135,12 +116,12 @@ class _$LocationsListingPostRequestSerializer
   }
 
   @override
-  LocationsListingPostRequest deserialize(
+  LocationsListingPatchRequestConnection deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationsListingPostRequestBuilder();
+    final result = LocationsListingPatchRequestConnectionBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 [**locationPost**](LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [**locationsListingGet**](LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
-[**locationsListingPost**](LocationsApi.md#locationslistingpost) | **POST** /locations/listing | Create a Listing
+[**locationsListingPatch**](LocationsApi.md#locationslistingpatch) | **PATCH** /locations/listing | Update a Listing and create/update a connection
 [**locationsListingsGet**](LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [**locationsSearchGet**](LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsListingGet**
-> Listing locationsListingGet(listingId, type)
+> Listing locationsListingGet(redirectUrl, listingId, type)
 
 
 
@@ -407,11 +407,12 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
+final String redirectUrl = redirectUrl_example; // String | 
 final String listingId = listingId_example; // String | 
 final String type = type_example; // String | 
 
 try {
-    final response = api.locationsListingGet(listingId, type);
+    final response = api.locationsListingGet(redirectUrl, listingId, type);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationsListingGet: $e\n');
@@ -422,6 +423,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **redirectUrl** | **String**|  | 
  **listingId** | **String**|  | [optional] 
  **type** | **String**|  | [optional] 
 
@@ -440,10 +442,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **locationsListingPost**
-> Listing locationsListingPost(locationsListingPostRequest)
+# **locationsListingPatch**
+> LocationsListingPatch200Response locationsListingPatch(locationsListingPatchRequest)
 
-Create a Listing
+Update a Listing and create/update a connection
 
 ### Example
 ```dart
@@ -454,13 +456,13 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
-final LocationsListingPostRequest locationsListingPostRequest = ; // LocationsListingPostRequest | Listing object
+final LocationsListingPatchRequest locationsListingPatchRequest = ; // LocationsListingPatchRequest | Listing object
 
 try {
-    final response = api.locationsListingPost(locationsListingPostRequest);
+    final response = api.locationsListingPatch(locationsListingPatchRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationsListingPost: $e\n');
+    print('Exception when calling LocationsApi->locationsListingPatch: $e\n');
 }
 ```
 
@@ -468,11 +470,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationsListingPostRequest** | [**LocationsListingPostRequest**](LocationsListingPostRequest.md)| Listing object | 
+ **locationsListingPatchRequest** | [**LocationsListingPatchRequest**](LocationsListingPatchRequest.md)| Listing object | 
 
 ### Return type
 
-[**Listing**](Listing.md)
+[**LocationsListingPatch200Response**](LocationsListingPatch200Response.md)
 
 ### Authorization
 
@@ -486,7 +488,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationsListingsGet**
-> BuiltList<Listing> locationsListingsGet()
+> BuiltList<Listing> locationsListingsGet(redirectUrl)
 
 
 
@@ -499,9 +501,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
+final String redirectUrl = redirectUrl_example; // String | 
 
 try {
-    final response = api.locationsListingsGet();
+    final response = api.locationsListingsGet(redirectUrl);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationsListingsGet: $e\n');
@@ -509,7 +512,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **redirectUrl** | **String**|  | [optional] 
 
 ### Return type
 

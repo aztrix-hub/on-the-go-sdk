@@ -17,6 +17,7 @@ part 'listing.g.dart';
 /// * [locationId]
 /// * [url] - listing URL
 /// * [connected]
+/// * [externalLocationId]
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -35,6 +36,9 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
 
   @BuiltValueField(wireName: r'connected')
   bool? get connected;
+
+  @BuiltValueField(wireName: r'externalLocationId')
+  String? get externalLocationId;
 
   Listing._();
 
@@ -92,6 +96,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield serializers.serialize(
         object.connected,
         specifiedType: const FullType(bool),
+      );
+    }
+    if (object.externalLocationId != null) {
+      yield r'externalLocationId';
+      yield serializers.serialize(
+        object.externalLocationId,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -153,6 +164,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
             specifiedType: const FullType(bool),
           ) as bool;
           result.connected = valueDes;
+          break;
+        case r'externalLocationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.externalLocationId = valueDes;
           break;
         default:
           unhandled.add(key);
