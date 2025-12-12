@@ -1240,6 +1240,7 @@
       }
     },
     "/ai/legacy/conversation": {
+      "deprecated": true,
       "post": {
         "tags": [
           "ai"
@@ -1328,6 +1329,7 @@
       }
     },
     "/ai/legacy/chat": {
+      "deprecated": true,
       "post": {
         "tags": [
           "ai"
@@ -1401,6 +1403,7 @@
       }
     },
     "/ai/chat": {
+      "deprecated": true,
       "post": {
         "tags": [
           "ai"
@@ -1486,6 +1489,7 @@
       }
     },
     "/ai/chat/data": {
+      "deprecated": true,
       "post": {
         "tags": [
           "ai"
@@ -2627,6 +2631,7 @@
       }
     },
     "/locations/listings": {
+      "deprecated": true,
       "get": {
         "tags": [
           "locations"
@@ -2678,7 +2683,68 @@
         ]
       }
     },
-    "/locations/listing": {
+    "/location/listings": {
+      "get": {
+        "tags": [
+          "locations"
+        ],
+        "parameters": [
+          {
+            "name": "locationId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirectUrl",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Listings successfully retrieved",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Listing"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/location/listing": {
+      "deprecated": true,
       "get": {
         "tags": [
           "locations"
@@ -3309,6 +3375,9 @@
           "type": {
             "$ref": "#/components/schemas/DirectoryType",
             "required": true
+          },
+          "connectionId": {
+            "type": "string"
           },
           "locationId": {
             "type": "string",

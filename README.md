@@ -86,13 +86,14 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationDelete**](doc/LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingPatch**](doc/LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing and create/update a connection
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingsGet**](doc/LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoPost**](doc/LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPost**](doc/LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
-[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingGet**](doc/LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
-[*LocationsApi*](doc/LocationsApi.md) | [**locationsListingPatch**](doc/LocationsApi.md#locationslistingpatch) | **PATCH** /locations/listing | Update a Listing and create/update a connection
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsListingsGet**](doc/LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsSearchGet**](doc/LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
@@ -174,13 +175,13 @@ Class | Method | HTTP request | Description
  - [Location](doc/Location.md)
  - [LocationDelete200Response](doc/LocationDelete200Response.md)
  - [LocationDeleteRequest](doc/LocationDeleteRequest.md)
+ - [LocationListingPatch200Response](doc/LocationListingPatch200Response.md)
+ - [LocationListingPatchRequest](doc/LocationListingPatchRequest.md)
+ - [LocationListingPatchRequestConnection](doc/LocationListingPatchRequestConnection.md)
+ - [LocationListingPatchRequestListing](doc/LocationListingPatchRequestListing.md)
  - [LocationOrIndividual](doc/LocationOrIndividual.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)
- - [LocationsListingPatch200Response](doc/LocationsListingPatch200Response.md)
- - [LocationsListingPatchRequest](doc/LocationsListingPatchRequest.md)
- - [LocationsListingPatchRequestConnection](doc/LocationsListingPatchRequestConnection.md)
- - [LocationsListingPatchRequestListing](doc/LocationsListingPatchRequestListing.md)
  - [Login](doc/Login.md)
  - [Metric](doc/Metric.md)
  - [MetricData](doc/MetricData.md)

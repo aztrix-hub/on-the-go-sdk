@@ -1,39 +1,39 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locations_listing_patch_request_connection.dart';
+part of 'location_listing_patch_request_connection.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LocationsListingPatchRequestConnection
-    extends LocationsListingPatchRequestConnection {
+class _$LocationListingPatchRequestConnection
+    extends LocationListingPatchRequestConnection {
   @override
   final String? id;
   @override
   final String? token;
 
-  factory _$LocationsListingPatchRequestConnection(
-          [void Function(LocationsListingPatchRequestConnectionBuilder)?
+  factory _$LocationListingPatchRequestConnection(
+          [void Function(LocationListingPatchRequestConnectionBuilder)?
               updates]) =>
-      (LocationsListingPatchRequestConnectionBuilder()..update(updates))
+      (LocationListingPatchRequestConnectionBuilder()..update(updates))
           ._build();
 
-  _$LocationsListingPatchRequestConnection._({this.id, this.token}) : super._();
+  _$LocationListingPatchRequestConnection._({this.id, this.token}) : super._();
   @override
-  LocationsListingPatchRequestConnection rebuild(
-          void Function(LocationsListingPatchRequestConnectionBuilder)
+  LocationListingPatchRequestConnection rebuild(
+          void Function(LocationListingPatchRequestConnectionBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LocationsListingPatchRequestConnectionBuilder toBuilder() =>
-      LocationsListingPatchRequestConnectionBuilder()..replace(this);
+  LocationListingPatchRequestConnectionBuilder toBuilder() =>
+      LocationListingPatchRequestConnectionBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LocationsListingPatchRequestConnection &&
+    return other is LocationListingPatchRequestConnection &&
         id == other.id &&
         token == other.token;
   }
@@ -50,18 +50,18 @@ class _$LocationsListingPatchRequestConnection
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'LocationsListingPatchRequestConnection')
+            r'LocationListingPatchRequestConnection')
           ..add('id', id)
           ..add('token', token))
         .toString();
   }
 }
 
-class LocationsListingPatchRequestConnectionBuilder
+class LocationListingPatchRequestConnectionBuilder
     implements
-        Builder<LocationsListingPatchRequestConnection,
-            LocationsListingPatchRequestConnectionBuilder> {
-  _$LocationsListingPatchRequestConnection? _$v;
+        Builder<LocationListingPatchRequestConnection,
+            LocationListingPatchRequestConnectionBuilder> {
+  _$LocationListingPatchRequestConnection? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -71,11 +71,11 @@ class LocationsListingPatchRequestConnectionBuilder
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
 
-  LocationsListingPatchRequestConnectionBuilder() {
-    LocationsListingPatchRequestConnection._defaults(this);
+  LocationListingPatchRequestConnectionBuilder() {
+    LocationListingPatchRequestConnection._defaults(this);
   }
 
-  LocationsListingPatchRequestConnectionBuilder get _$this {
+  LocationListingPatchRequestConnectionBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -86,22 +86,22 @@ class LocationsListingPatchRequestConnectionBuilder
   }
 
   @override
-  void replace(LocationsListingPatchRequestConnection other) {
-    _$v = other as _$LocationsListingPatchRequestConnection;
+  void replace(LocationListingPatchRequestConnection other) {
+    _$v = other as _$LocationListingPatchRequestConnection;
   }
 
   @override
   void update(
-      void Function(LocationsListingPatchRequestConnectionBuilder)? updates) {
+      void Function(LocationListingPatchRequestConnectionBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LocationsListingPatchRequestConnection build() => _build();
+  LocationListingPatchRequestConnection build() => _build();
 
-  _$LocationsListingPatchRequestConnection _build() {
+  _$LocationListingPatchRequestConnection _build() {
     final _$result = _$v ??
-        _$LocationsListingPatchRequestConnection._(
+        _$LocationListingPatchRequestConnection._(
           id: id,
           token: token,
         );

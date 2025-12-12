@@ -1,38 +1,38 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'locations_listing_patch_request_listing.dart';
+part of 'location_listing_patch_request_listing.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$LocationsListingPatchRequestListing
-    extends LocationsListingPatchRequestListing {
+class _$LocationListingPatchRequestListing
+    extends LocationListingPatchRequestListing {
   @override
   final String? id;
   @override
   final String? externalLocationId;
 
-  factory _$LocationsListingPatchRequestListing(
-          [void Function(LocationsListingPatchRequestListingBuilder)?
+  factory _$LocationListingPatchRequestListing(
+          [void Function(LocationListingPatchRequestListingBuilder)?
               updates]) =>
-      (LocationsListingPatchRequestListingBuilder()..update(updates))._build();
+      (LocationListingPatchRequestListingBuilder()..update(updates))._build();
 
-  _$LocationsListingPatchRequestListing._({this.id, this.externalLocationId})
+  _$LocationListingPatchRequestListing._({this.id, this.externalLocationId})
       : super._();
   @override
-  LocationsListingPatchRequestListing rebuild(
-          void Function(LocationsListingPatchRequestListingBuilder) updates) =>
+  LocationListingPatchRequestListing rebuild(
+          void Function(LocationListingPatchRequestListingBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  LocationsListingPatchRequestListingBuilder toBuilder() =>
-      LocationsListingPatchRequestListingBuilder()..replace(this);
+  LocationListingPatchRequestListingBuilder toBuilder() =>
+      LocationListingPatchRequestListingBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is LocationsListingPatchRequestListing &&
+    return other is LocationListingPatchRequestListing &&
         id == other.id &&
         externalLocationId == other.externalLocationId;
   }
@@ -48,18 +48,18 @@ class _$LocationsListingPatchRequestListing
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'LocationsListingPatchRequestListing')
+    return (newBuiltValueToStringHelper(r'LocationListingPatchRequestListing')
           ..add('id', id)
           ..add('externalLocationId', externalLocationId))
         .toString();
   }
 }
 
-class LocationsListingPatchRequestListingBuilder
+class LocationListingPatchRequestListingBuilder
     implements
-        Builder<LocationsListingPatchRequestListing,
-            LocationsListingPatchRequestListingBuilder> {
-  _$LocationsListingPatchRequestListing? _$v;
+        Builder<LocationListingPatchRequestListing,
+            LocationListingPatchRequestListingBuilder> {
+  _$LocationListingPatchRequestListing? _$v;
 
   String? _id;
   String? get id => _$this._id;
@@ -70,11 +70,11 @@ class LocationsListingPatchRequestListingBuilder
   set externalLocationId(String? externalLocationId) =>
       _$this._externalLocationId = externalLocationId;
 
-  LocationsListingPatchRequestListingBuilder() {
-    LocationsListingPatchRequestListing._defaults(this);
+  LocationListingPatchRequestListingBuilder() {
+    LocationListingPatchRequestListing._defaults(this);
   }
 
-  LocationsListingPatchRequestListingBuilder get _$this {
+  LocationListingPatchRequestListingBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
@@ -85,22 +85,22 @@ class LocationsListingPatchRequestListingBuilder
   }
 
   @override
-  void replace(LocationsListingPatchRequestListing other) {
-    _$v = other as _$LocationsListingPatchRequestListing;
+  void replace(LocationListingPatchRequestListing other) {
+    _$v = other as _$LocationListingPatchRequestListing;
   }
 
   @override
   void update(
-      void Function(LocationsListingPatchRequestListingBuilder)? updates) {
+      void Function(LocationListingPatchRequestListingBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  LocationsListingPatchRequestListing build() => _build();
+  LocationListingPatchRequestListing build() => _build();
 
-  _$LocationsListingPatchRequestListing _build() {
+  _$LocationListingPatchRequestListing _build() {
     final _$result = _$v ??
-        _$LocationsListingPatchRequestListing._(
+        _$LocationListingPatchRequestListing._(
           id: id,
           externalLocationId: externalLocationId,
         );

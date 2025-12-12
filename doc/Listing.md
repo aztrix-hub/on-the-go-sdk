@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
+**connectionId** | **String** |  | [optional] 
 **locationId** | **String** |  | [optional] 
 **url** | **String** | listing URL | [optional] 
 **connected** | **bool** |  | [optional] 

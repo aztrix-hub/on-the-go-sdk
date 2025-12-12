@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.LocationsListingPatchRequestConnection
+# on_the_go_sdk.model.LocationListingPatchRequestConnection
 
 ## Load the model package
 ```dart

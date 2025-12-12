@@ -27,6 +27,23 @@ void main() {
       // TODO
     });
 
+    //Future<Listing> locationListingGet(String redirectUrl, { String listingId, String type }) async
+    test('test locationListingGet', () async {
+      // TODO
+    });
+
+    // Update a Listing and create/update a connection
+    //
+    //Future<LocationListingPatch200Response> locationListingPatch(LocationListingPatchRequest locationListingPatchRequest) async
+    test('test locationListingPatch', () async {
+      // TODO
+    });
+
+    //Future<BuiltList<Listing>> locationListingsGet(String locationId, { String redirectUrl }) async
+    test('test locationListingsGet', () async {
+      // TODO
+    });
+
     // Update a Location
     //
     // Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing
@@ -57,18 +74,6 @@ void main() {
     //
     //Future<BuiltList<Location>> locationsGet(String language) async
     test('test locationsGet', () async {
-      // TODO
-    });
-
-    //Future<Listing> locationsListingGet(String redirectUrl, { String listingId, String type }) async
-    test('test locationsListingGet', () async {
-      // TODO
-    });
-
-    // Update a Listing and create/update a connection
-    //
-    //Future<LocationsListingPatch200Response> locationsListingPatch(LocationsListingPatchRequest locationsListingPatchRequest) async
-    test('test locationsListingPatch', () async {
       // TODO
     });
 

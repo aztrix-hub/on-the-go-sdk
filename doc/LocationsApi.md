@@ -12,13 +12,14 @@ Method | HTTP request | Description
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
+[**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
+[**locationListingPatch**](LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing and create/update a connection
+[**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
 [**locationPhotoPost**](LocationsApi.md#locationphotopost) | **POST** /location/photo | 
 [**locationPost**](LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
-[**locationsListingGet**](LocationsApi.md#locationslistingget) | **GET** /locations/listing | 
-[**locationsListingPatch**](LocationsApi.md#locationslistingpatch) | **PATCH** /locations/listing | Update a Listing and create/update a connection
 [**locationsListingsGet**](LocationsApi.md#locationslistingsget) | **GET** /locations/listings | 
 [**locationsSearchGet**](LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
 
@@ -148,6 +149,147 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Location**](Location.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationListingGet**
+> Listing locationListingGet(redirectUrl, listingId, type)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String redirectUrl = redirectUrl_example; // String | 
+final String listingId = listingId_example; // String | 
+final String type = type_example; // String | 
+
+try {
+    final response = api.locationListingGet(redirectUrl, listingId, type);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **redirectUrl** | **String**|  | 
+ **listingId** | **String**|  | [optional] 
+ **type** | **String**|  | [optional] 
+
+### Return type
+
+[**Listing**](Listing.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationListingPatch**
+> LocationListingPatch200Response locationListingPatch(locationListingPatchRequest)
+
+Update a Listing and create/update a connection
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final LocationListingPatchRequest locationListingPatchRequest = ; // LocationListingPatchRequest | Listing object
+
+try {
+    final response = api.locationListingPatch(locationListingPatchRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingPatch: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationListingPatchRequest** | [**LocationListingPatchRequest**](LocationListingPatchRequest.md)| Listing object | 
+
+### Return type
+
+[**LocationListingPatch200Response**](LocationListingPatch200Response.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationListingsGet**
+> BuiltList<Listing> locationListingsGet(locationId, redirectUrl)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String locationId = locationId_example; // String | 
+final String redirectUrl = redirectUrl_example; // String | 
+
+try {
+    final response = api.locationListingsGet(locationId, redirectUrl);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingsGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **locationId** | **String**|  | 
+ **redirectUrl** | **String**|  | [optional] 
+
+### Return type
+
+[**BuiltList&lt;Listing&gt;**](Listing.md)
 
 ### Authorization
 
@@ -389,100 +531,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **locationsListingGet**
-> Listing locationsListingGet(redirectUrl, listingId, type)
-
-
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getLocationsApi();
-final String redirectUrl = redirectUrl_example; // String | 
-final String listingId = listingId_example; // String | 
-final String type = type_example; // String | 
-
-try {
-    final response = api.locationsListingGet(redirectUrl, listingId, type);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationsListingGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **redirectUrl** | **String**|  | 
- **listingId** | **String**|  | [optional] 
- **type** | **String**|  | [optional] 
-
-### Return type
-
-[**Listing**](Listing.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **locationsListingPatch**
-> LocationsListingPatch200Response locationsListingPatch(locationsListingPatchRequest)
-
-Update a Listing and create/update a connection
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getLocationsApi();
-final LocationsListingPatchRequest locationsListingPatchRequest = ; // LocationsListingPatchRequest | Listing object
-
-try {
-    final response = api.locationsListingPatch(locationsListingPatchRequest);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationsListingPatch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **locationsListingPatchRequest** | [**LocationsListingPatchRequest**](LocationsListingPatchRequest.md)| Listing object | 
-
-### Return type
-
-[**LocationsListingPatch200Response**](LocationsListingPatch200Response.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

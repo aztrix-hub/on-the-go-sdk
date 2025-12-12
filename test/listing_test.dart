@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    // String connectionId
+    test('to test the property `connectionId`', () async {
+      // TODO
+    });
+
     // String locationId
     test('to test the property `locationId`', () async {
       // TODO

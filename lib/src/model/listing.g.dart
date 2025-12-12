@@ -12,6 +12,8 @@ class _$Listing extends Listing {
   @override
   final DirectoryType? type;
   @override
+  final String? connectionId;
+  @override
   final String? locationId;
   @override
   final String? url;
@@ -26,6 +28,7 @@ class _$Listing extends Listing {
   _$Listing._(
       {this.id,
       this.type,
+      this.connectionId,
       this.locationId,
       this.url,
       this.connected,
@@ -44,6 +47,7 @@ class _$Listing extends Listing {
     return other is Listing &&
         id == other.id &&
         type == other.type &&
+        connectionId == other.connectionId &&
         locationId == other.locationId &&
         url == other.url &&
         connected == other.connected &&
@@ -55,6 +59,7 @@ class _$Listing extends Listing {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, url.hashCode);
     _$hash = $jc(_$hash, connected.hashCode);
@@ -68,6 +73,7 @@ class _$Listing extends Listing {
     return (newBuiltValueToStringHelper(r'Listing')
           ..add('id', id)
           ..add('type', type)
+          ..add('connectionId', connectionId)
           ..add('locationId', locationId)
           ..add('url', url)
           ..add('connected', connected)
@@ -86,6 +92,10 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   DirectoryType? _type;
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
+
+  String? _connectionId;
+  String? get connectionId => _$this._connectionId;
+  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
 
   String? _locationId;
   String? get locationId => _$this._locationId;
@@ -113,6 +123,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
     if ($v != null) {
       _id = $v.id;
       _type = $v.type;
+      _connectionId = $v.connectionId;
       _locationId = $v.locationId;
       _url = $v.url;
       _connected = $v.connected;
@@ -140,6 +151,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
         _$Listing._(
           id: id,
           type: type,
+          connectionId: connectionId,
           locationId: locationId,
           url: url,
           connected: connected,

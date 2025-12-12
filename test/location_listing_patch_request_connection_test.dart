@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for LocationsListingPatchRequestConnection
+// tests for LocationListingPatchRequestConnection
 void main() {
-  final instance = LocationsListingPatchRequestConnectionBuilder();
+  final instance = LocationListingPatchRequestConnectionBuilder();
   // TODO add properties to the builder and call build()
 
-  group(LocationsListingPatchRequestConnection, () {
+  group(LocationListingPatchRequestConnection, () {
     // String id
     test('to test the property `id`', () async {
       // TODO

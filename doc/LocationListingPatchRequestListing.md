@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.LocationsListingPatchRequest
+# on_the_go_sdk.model.LocationListingPatchRequestListing
 
 ## Load the model package
 ```dart
@@ -8,8 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**listing** | [**LocationsListingPatchRequestListing**](LocationsListingPatchRequestListing.md) |  | [optional] 
-**connection** | [**LocationsListingPatchRequestConnection**](LocationsListingPatchRequestConnection.md) |  | [optional] 
+**id** | **String** |  | [optional] 
+**externalLocationId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

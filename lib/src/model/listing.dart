@@ -14,6 +14,7 @@ part 'listing.g.dart';
 /// Properties:
 /// * [id]
 /// * [type]
+/// * [connectionId]
 /// * [locationId]
 /// * [url] - listing URL
 /// * [connected]
@@ -26,6 +27,9 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  @BuiltValueField(wireName: r'connectionId')
+  String? get connectionId;
 
   @BuiltValueField(wireName: r'locationId')
   String? get locationId;
@@ -75,6 +79,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(DirectoryType),
+      );
+    }
+    if (object.connectionId != null) {
+      yield r'connectionId';
+      yield serializers.serialize(
+        object.connectionId,
+        specifiedType: const FullType(String),
       );
     }
     if (object.locationId != null) {
@@ -143,6 +154,13 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
           result.type = valueDes;
+          break;
+        case r'connectionId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectionId = valueDes;
           break;
         case r'locationId':
           final valueDes = serializers.deserialize(

@@ -3,71 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/locations_listing_patch_request_connection.dart';
-import 'package:on_the_go_sdk/src/model/locations_listing_patch_request_listing.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_patch_request_connection.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_patch_request_listing.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'locations_listing_patch_request.g.dart';
+part 'location_listing_patch_request.g.dart';
 
-/// LocationsListingPatchRequest
+/// LocationListingPatchRequest
 ///
 /// Properties:
 /// * [listing]
 /// * [connection]
 @BuiltValue()
-abstract class LocationsListingPatchRequest
+abstract class LocationListingPatchRequest
     implements
-        Built<LocationsListingPatchRequest,
-            LocationsListingPatchRequestBuilder> {
+        Built<LocationListingPatchRequest, LocationListingPatchRequestBuilder> {
   @BuiltValueField(wireName: r'listing')
-  LocationsListingPatchRequestListing? get listing;
+  LocationListingPatchRequestListing? get listing;
 
   @BuiltValueField(wireName: r'connection')
-  LocationsListingPatchRequestConnection? get connection;
+  LocationListingPatchRequestConnection? get connection;
 
-  LocationsListingPatchRequest._();
+  LocationListingPatchRequest._();
 
-  factory LocationsListingPatchRequest(
-          [void updates(LocationsListingPatchRequestBuilder b)]) =
-      _$LocationsListingPatchRequest;
+  factory LocationListingPatchRequest(
+          [void updates(LocationListingPatchRequestBuilder b)]) =
+      _$LocationListingPatchRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationsListingPatchRequestBuilder b) => b;
+  static void _defaults(LocationListingPatchRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationsListingPatchRequest> get serializer =>
-      _$LocationsListingPatchRequestSerializer();
+  static Serializer<LocationListingPatchRequest> get serializer =>
+      _$LocationListingPatchRequestSerializer();
 }
 
-class _$LocationsListingPatchRequestSerializer
-    implements PrimitiveSerializer<LocationsListingPatchRequest> {
+class _$LocationListingPatchRequestSerializer
+    implements PrimitiveSerializer<LocationListingPatchRequest> {
   @override
   final Iterable<Type> types = const [
-    LocationsListingPatchRequest,
-    _$LocationsListingPatchRequest
+    LocationListingPatchRequest,
+    _$LocationListingPatchRequest
   ];
 
   @override
-  final String wireName = r'LocationsListingPatchRequest';
+  final String wireName = r'LocationListingPatchRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationsListingPatchRequest object, {
+    LocationListingPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.listing != null) {
       yield r'listing';
       yield serializers.serialize(
         object.listing,
-        specifiedType: const FullType(LocationsListingPatchRequestListing),
+        specifiedType: const FullType(LocationListingPatchRequestListing),
       );
     }
     if (object.connection != null) {
       yield r'connection';
       yield serializers.serialize(
         object.connection,
-        specifiedType: const FullType(LocationsListingPatchRequestConnection),
+        specifiedType: const FullType(LocationListingPatchRequestConnection),
       );
     }
   }
@@ -75,7 +74,7 @@ class _$LocationsListingPatchRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    LocationsListingPatchRequest object, {
+    LocationListingPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -88,7 +87,7 @@ class _$LocationsListingPatchRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationsListingPatchRequestBuilder result,
+    required LocationListingPatchRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -98,16 +97,16 @@ class _$LocationsListingPatchRequestSerializer
         case r'listing':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationsListingPatchRequestListing),
-          ) as LocationsListingPatchRequestListing;
+            specifiedType: const FullType(LocationListingPatchRequestListing),
+          ) as LocationListingPatchRequestListing;
           result.listing.replace(valueDes);
           break;
         case r'connection':
           final valueDes = serializers.deserialize(
             value,
             specifiedType:
-                const FullType(LocationsListingPatchRequestConnection),
-          ) as LocationsListingPatchRequestConnection;
+                const FullType(LocationListingPatchRequestConnection),
+          ) as LocationListingPatchRequestConnection;
           result.connection.replace(valueDes);
           break;
         default:
@@ -119,12 +118,12 @@ class _$LocationsListingPatchRequestSerializer
   }
 
   @override
-  LocationsListingPatchRequest deserialize(
+  LocationListingPatchRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationsListingPatchRequestBuilder();
+    final result = LocationListingPatchRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
