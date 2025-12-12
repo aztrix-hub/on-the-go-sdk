@@ -143,6 +143,7 @@ class UsersApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Connection] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<Connection>> userConnectionPatch({
     required UserConnectionPatchRequest userConnectionPatchRequest,
     CancelToken? cancelToken,

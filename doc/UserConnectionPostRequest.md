@@ -9,7 +9,8 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
-**token** | **String** |  | [optional] 
+**code** | **String** |  | [optional] 
+**redirectUrl** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

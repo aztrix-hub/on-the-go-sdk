@@ -13,7 +13,8 @@ part 'user_connection_post_request.g.dart';
 ///
 /// Properties:
 /// * [type]
-/// * [token]
+/// * [code]
+/// * [redirectUrl]
 @BuiltValue()
 abstract class UserConnectionPostRequest
     implements
@@ -22,8 +23,11 @@ abstract class UserConnectionPostRequest
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
-  @BuiltValueField(wireName: r'token')
-  String? get token;
+  @BuiltValueField(wireName: r'code')
+  String? get code;
+
+  @BuiltValueField(wireName: r'redirectUrl')
+  String? get redirectUrl;
 
   UserConnectionPostRequest._();
 
@@ -62,10 +66,17 @@ class _$UserConnectionPostRequestSerializer
         specifiedType: const FullType(DirectoryType),
       );
     }
-    if (object.token != null) {
-      yield r'token';
+    if (object.code != null) {
+      yield r'code';
       yield serializers.serialize(
-        object.token,
+        object.code,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.redirectUrl != null) {
+      yield r'redirectUrl';
+      yield serializers.serialize(
+        object.redirectUrl,
         specifiedType: const FullType(String),
       );
     }
@@ -101,12 +112,19 @@ class _$UserConnectionPostRequestSerializer
           ) as DirectoryType;
           result.type = valueDes;
           break;
-        case r'token':
+        case r'code':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.token = valueDes;
+          result.code = valueDes;
+          break;
+        case r'redirectUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.redirectUrl = valueDes;
           break;
         default:
           unhandled.add(key);

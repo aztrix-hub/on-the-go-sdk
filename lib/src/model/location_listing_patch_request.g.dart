@@ -8,15 +8,16 @@ part of 'location_listing_patch_request.dart';
 
 class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   @override
-  final LocationListingPatchRequestListing? listing;
+  final String? id;
   @override
-  final LocationListingPatchRequestConnection? connection;
+  final String? externalLocationId;
 
   factory _$LocationListingPatchRequest(
           [void Function(LocationListingPatchRequestBuilder)? updates]) =>
       (LocationListingPatchRequestBuilder()..update(updates))._build();
 
-  _$LocationListingPatchRequest._({this.listing, this.connection}) : super._();
+  _$LocationListingPatchRequest._({this.id, this.externalLocationId})
+      : super._();
   @override
   LocationListingPatchRequest rebuild(
           void Function(LocationListingPatchRequestBuilder) updates) =>
@@ -30,15 +31,15 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is LocationListingPatchRequest &&
-        listing == other.listing &&
-        connection == other.connection;
+        id == other.id &&
+        externalLocationId == other.externalLocationId;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, listing.hashCode);
-    _$hash = $jc(_$hash, connection.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, externalLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -46,8 +47,8 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationListingPatchRequest')
-          ..add('listing', listing)
-          ..add('connection', connection))
+          ..add('id', id)
+          ..add('externalLocationId', externalLocationId))
         .toString();
   }
 }
@@ -58,17 +59,14 @@ class LocationListingPatchRequestBuilder
             LocationListingPatchRequestBuilder> {
   _$LocationListingPatchRequest? _$v;
 
-  LocationListingPatchRequestListingBuilder? _listing;
-  LocationListingPatchRequestListingBuilder get listing =>
-      _$this._listing ??= LocationListingPatchRequestListingBuilder();
-  set listing(LocationListingPatchRequestListingBuilder? listing) =>
-      _$this._listing = listing;
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
 
-  LocationListingPatchRequestConnectionBuilder? _connection;
-  LocationListingPatchRequestConnectionBuilder get connection =>
-      _$this._connection ??= LocationListingPatchRequestConnectionBuilder();
-  set connection(LocationListingPatchRequestConnectionBuilder? connection) =>
-      _$this._connection = connection;
+  String? _externalLocationId;
+  String? get externalLocationId => _$this._externalLocationId;
+  set externalLocationId(String? externalLocationId) =>
+      _$this._externalLocationId = externalLocationId;
 
   LocationListingPatchRequestBuilder() {
     LocationListingPatchRequest._defaults(this);
@@ -77,8 +75,8 @@ class LocationListingPatchRequestBuilder
   LocationListingPatchRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _listing = $v.listing?.toBuilder();
-      _connection = $v.connection?.toBuilder();
+      _id = $v.id;
+      _externalLocationId = $v.externalLocationId;
       _$v = null;
     }
     return this;
@@ -98,26 +96,11 @@ class LocationListingPatchRequestBuilder
   LocationListingPatchRequest build() => _build();
 
   _$LocationListingPatchRequest _build() {
-    _$LocationListingPatchRequest _$result;
-    try {
-      _$result = _$v ??
-          _$LocationListingPatchRequest._(
-            listing: _listing?.build(),
-            connection: _connection?.build(),
-          );
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'listing';
-        _listing?.build();
-        _$failedField = 'connection';
-        _connection?.build();
-      } catch (e) {
-        throw BuiltValueNestedFieldError(
-            r'LocationListingPatchRequest', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        _$LocationListingPatchRequest._(
+          id: id,
+          externalLocationId: externalLocationId,
+        );
     replace(_$result);
     return _$result;
   }

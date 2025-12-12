@@ -87,7 +87,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationDelete**](doc/LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
-[*LocationsApi*](doc/LocationsApi.md) | [**locationListingPatch**](doc/LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing and create/update a connection
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingPatch**](doc/LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingsGet**](doc/LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -177,8 +177,6 @@ Class | Method | HTTP request | Description
  - [LocationDeleteRequest](doc/LocationDeleteRequest.md)
  - [LocationListingPatch200Response](doc/LocationListingPatch200Response.md)
  - [LocationListingPatchRequest](doc/LocationListingPatchRequest.md)
- - [LocationListingPatchRequestConnection](doc/LocationListingPatchRequestConnection.md)
- - [LocationListingPatchRequestListing](doc/LocationListingPatchRequestListing.md)
  - [LocationOrIndividual](doc/LocationOrIndividual.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)

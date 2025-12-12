@@ -410,7 +410,7 @@ class LocationsApi {
     );
   }
 
-  /// Update a Listing and create/update a connection
+  /// Update a Listing
   ///
   ///
   /// Parameters:

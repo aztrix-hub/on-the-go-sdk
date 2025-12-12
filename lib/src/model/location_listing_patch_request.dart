@@ -3,8 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/location_listing_patch_request_connection.dart';
-import 'package:on_the_go_sdk/src/model/location_listing_patch_request_listing.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,17 +11,17 @@ part 'location_listing_patch_request.g.dart';
 /// LocationListingPatchRequest
 ///
 /// Properties:
-/// * [listing]
-/// * [connection]
+/// * [id]
+/// * [externalLocationId]
 @BuiltValue()
 abstract class LocationListingPatchRequest
     implements
         Built<LocationListingPatchRequest, LocationListingPatchRequestBuilder> {
-  @BuiltValueField(wireName: r'listing')
-  LocationListingPatchRequestListing? get listing;
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-  @BuiltValueField(wireName: r'connection')
-  LocationListingPatchRequestConnection? get connection;
+  @BuiltValueField(wireName: r'externalLocationId')
+  String? get externalLocationId;
 
   LocationListingPatchRequest._();
 
@@ -55,18 +53,18 @@ class _$LocationListingPatchRequestSerializer
     LocationListingPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.listing != null) {
-      yield r'listing';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.listing,
-        specifiedType: const FullType(LocationListingPatchRequestListing),
+        object.id,
+        specifiedType: const FullType(String),
       );
     }
-    if (object.connection != null) {
-      yield r'connection';
+    if (object.externalLocationId != null) {
+      yield r'externalLocationId';
       yield serializers.serialize(
-        object.connection,
-        specifiedType: const FullType(LocationListingPatchRequestConnection),
+        object.externalLocationId,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -94,20 +92,19 @@ class _$LocationListingPatchRequestSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'listing':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(LocationListingPatchRequestListing),
-          ) as LocationListingPatchRequestListing;
-          result.listing.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
           break;
-        case r'connection':
+        case r'externalLocationId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(LocationListingPatchRequestConnection),
-          ) as LocationListingPatchRequestConnection;
-          result.connection.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.externalLocationId = valueDes;
           break;
         default:
           unhandled.add(key);

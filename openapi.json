@@ -438,7 +438,10 @@
                   "type": {
                     "$ref": "#/components/schemas/DirectoryType"
                   },
-                  "token": {
+                  "code": {
+                    "type": "string"
+                  },
+                  "redirectUrl": {
                     "type": "string"
                   }
                 }
@@ -472,6 +475,7 @@
         ]
       },
       "patch": {
+        "deprecated": true,
         "tags": [
           "users"
         ],
@@ -2811,7 +2815,7 @@
         "tags": [
           "locations"
         ],
-        "summary": "Update a Listing and create/update a connection",
+        "summary": "Update a Listing",
         "requestBody": {
           "description": "Listing object",
           "content": {
@@ -2819,32 +2823,13 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "listing": {
-                    "type": "object",
-                    "required": true,
-                    "properties": {
-                      "id": {
-                        "type": "string",
-                        "required": true
-                      },
-                      "externalLocationId": {
-                        "type": "string",
-                        "required": true
-                      }
-                    }
+                  "id": {
+                    "type": "string",
+                    "required": true
                   },
-                  "connection": {
-                    "type": "object",
-                    "required": true,
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "token": {
-                        "type": "string",
-                        "required": true
-                      }
-                    }
+                  "externalLocationId": {
+                    "type": "string",
+                    "required": true
                   }
                 }
               }
@@ -3040,11 +3025,11 @@
           "id": {
             "type": "string"
           },
-          "token": {
-            "type": "string"
-          },
           "type": {
             "type": "string"
+          },
+          "data": {
+            "type": "object"
           }
         }
       },

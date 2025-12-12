@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
 [**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
-[**locationListingPatch**](LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing and create/update a connection
+[**locationListingPatch**](LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing
 [**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 # **locationListingPatch**
 > LocationListingPatch200Response locationListingPatch(locationListingPatchRequest)
 
-Update a Listing and create/update a connection
+Update a Listing
 
 ### Example
 ```dart
