@@ -80,6 +80,7 @@ doc/SitesApi.md
 doc/SocialPost.md
 doc/SpecialOpeningHour.md
 doc/User.md
+doc/UserConnectionLocationsGet200ResponseInner.md
 doc/UserConnectionPatchRequest.md
 doc/UserConnectionPostRequest.md
 doc/UserLoginPostRequest.md
@@ -182,6 +183,7 @@ lib/src/model/site_colors_patch_request.dart
 lib/src/model/social_post.dart
 lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart
+lib/src/model/user_connection_locations_get200_response_inner.dart
 lib/src/model/user_connection_patch_request.dart
 lib/src/model/user_connection_post_request.dart
 lib/src/model/user_login_post_request.dart
@@ -191,3 +193,4 @@ lib/src/model/user_system_post200_response.dart
 lib/src/model/user_system_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
+test/user_connection_locations_get200_response_inner_test.dart

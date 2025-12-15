@@ -543,14 +543,6 @@
             "schema": {
               "$ref": "#/components/schemas/DirectoryType"
             }
-          },
-          {
-            "name": "redirectUrl",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -561,7 +553,18 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Location"
+                    "type": "object",
+                    "properties": {
+                      "connectionId": {
+                        "type": "string"
+                      },
+                      "locations": {
+                        "type": "array",
+                        "items": {
+                          "$ref": "#/components/schemas/Location"
+                        }
+                      }
+                    }
                   }
                 }
               }
@@ -2700,13 +2703,6 @@
             "schema": {
               "type": "string"
             }
-          },
-          {
-            "name": "redirectUrl",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -2748,8 +2744,8 @@
       }
     },
     "/location/listing": {
-      "deprecated": true,
       "get": {
+        "deprecated": true,
         "tags": [
           "locations"
         ],
@@ -2824,6 +2820,10 @@
                 "type": "object",
                 "properties": {
                   "id": {
+                    "type": "string",
+                    "required": true
+                  },
+                  "connectionId": {
                     "type": "string",
                     "required": true
                   },

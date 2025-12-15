@@ -195,6 +195,7 @@ Class | Method | HTTP request | Description
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
+ - [UserConnectionLocationsGet200ResponseInner](doc/UserConnectionLocationsGet200ResponseInner.md)
  - [UserConnectionPatchRequest](doc/UserConnectionPatchRequest.md)
  - [UserConnectionPostRequest](doc/UserConnectionPostRequest.md)
  - [UserLoginPostRequest](doc/UserLoginPostRequest.md)

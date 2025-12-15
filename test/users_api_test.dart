@@ -8,7 +8,7 @@ void main() {
   group(UsersApi, () {
     // get locations from a connection
     //
-    //Future<BuiltList<Location>> userConnectionLocationsGet(String redirectUrl, { String connectionId, DirectoryType type }) async
+    //Future<UserConnectionLocationsGet200Response> userConnectionLocationsGet({ String connectionId, DirectoryType type }) async
     test('test userConnectionLocationsGet', () async {
       // TODO
     });

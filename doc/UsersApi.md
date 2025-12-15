@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **userConnectionLocationsGet**
-> BuiltList<Location> userConnectionLocationsGet(redirectUrl, connectionId, type)
+> BuiltList<UserConnectionLocationsGet200ResponseInner> userConnectionLocationsGet(connectionId, type)
 
 get locations from a connection
 
@@ -37,12 +37,11 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getUsersApi();
-final String redirectUrl = redirectUrl_example; // String | 
 final String connectionId = connectionId_example; // String | 
 final DirectoryType type = ; // DirectoryType | 
 
 try {
-    final response = api.userConnectionLocationsGet(redirectUrl, connectionId, type);
+    final response = api.userConnectionLocationsGet(connectionId, type);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userConnectionLocationsGet: $e\n');
@@ -53,13 +52,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **redirectUrl** | **String**|  | 
  **connectionId** | **String**|  | [optional] 
  **type** | [**DirectoryType**](.md)|  | [optional] 
 
 ### Return type
 
-[**BuiltList&lt;Location&gt;**](Location.md)
+[**BuiltList&lt;UserConnectionLocationsGet200ResponseInner&gt;**](UserConnectionLocationsGet200ResponseInner.md)
 
 ### Authorization
 

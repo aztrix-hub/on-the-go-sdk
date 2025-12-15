@@ -93,6 +93,7 @@ export 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 export 'package:on_the_go_sdk/src/model/social_post.dart';
 export 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 export 'package:on_the_go_sdk/src/model/user.dart';
+export 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
 export 'package:on_the_go_sdk/src/model/user_connection_patch_request.dart';
 export 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 export 'package:on_the_go_sdk/src/model/user_login_post_request.dart';

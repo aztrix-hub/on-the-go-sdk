@@ -327,6 +327,7 @@ class LocationsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [Listing] as data
   /// Throws [DioException] if API call or serialization fails
+  @Deprecated('This operation has been deprecated')
   Future<Response<Listing>> locationListingGet({
     required String redirectUrl,
     String? listingId,
@@ -518,7 +519,6 @@ class LocationsApi {
   ///
   /// Parameters:
   /// * [locationId]
-  /// * [redirectUrl]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -530,7 +530,6 @@ class LocationsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<Listing>>> locationListingsGet({
     required String locationId,
-    String? redirectUrl,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -561,9 +560,6 @@ class LocationsApi {
     final _queryParameters = <String, dynamic>{
       r'locationId': encodeQueryParameter(
           _serializers, locationId, const FullType(String)),
-      if (redirectUrl != null)
-        r'redirectUrl': encodeQueryParameter(
-            _serializers, redirectUrl, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

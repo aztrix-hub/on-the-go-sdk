@@ -12,8 +12,13 @@ void main() {
       // TODO
     });
 
-    // String token
-    test('to test the property `token`', () async {
+    // String code
+    test('to test the property `code`', () async {
+      // TODO
+    });
+
+    // String redirectUrl
+    test('to test the property `redirectUrl`', () async {
       // TODO
     });
   });

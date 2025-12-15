@@ -7,13 +7,18 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(LocationListingPatchRequest, () {
-    // LocationListingPatchRequestListing listing
-    test('to test the property `listing`', () async {
+    // String id
+    test('to test the property `id`', () async {
       // TODO
     });
 
-    // LocationListingPatchRequestConnection connection
-    test('to test the property `connection`', () async {
+    // String connectionId
+    test('to test the property `connectionId`', () async {
+      // TODO
+    });
+
+    // String externalLocationId
+    test('to test the property `externalLocationId`', () async {
       // TODO
     });
   });

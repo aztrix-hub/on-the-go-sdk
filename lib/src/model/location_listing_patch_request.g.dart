@@ -10,13 +10,16 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   @override
   final String? id;
   @override
+  final String? connectionId;
+  @override
   final String? externalLocationId;
 
   factory _$LocationListingPatchRequest(
           [void Function(LocationListingPatchRequestBuilder)? updates]) =>
       (LocationListingPatchRequestBuilder()..update(updates))._build();
 
-  _$LocationListingPatchRequest._({this.id, this.externalLocationId})
+  _$LocationListingPatchRequest._(
+      {this.id, this.connectionId, this.externalLocationId})
       : super._();
   @override
   LocationListingPatchRequest rebuild(
@@ -32,6 +35,7 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
     if (identical(other, this)) return true;
     return other is LocationListingPatchRequest &&
         id == other.id &&
+        connectionId == other.connectionId &&
         externalLocationId == other.externalLocationId;
   }
 
@@ -39,6 +43,7 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, externalLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -48,6 +53,7 @@ class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'LocationListingPatchRequest')
           ..add('id', id)
+          ..add('connectionId', connectionId)
           ..add('externalLocationId', externalLocationId))
         .toString();
   }
@@ -63,6 +69,10 @@ class LocationListingPatchRequestBuilder
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
+  String? _connectionId;
+  String? get connectionId => _$this._connectionId;
+  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
+
   String? _externalLocationId;
   String? get externalLocationId => _$this._externalLocationId;
   set externalLocationId(String? externalLocationId) =>
@@ -76,6 +86,7 @@ class LocationListingPatchRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _connectionId = $v.connectionId;
       _externalLocationId = $v.externalLocationId;
       _$v = null;
     }
@@ -99,6 +110,7 @@ class LocationListingPatchRequestBuilder
     final _$result = _$v ??
         _$LocationListingPatchRequest._(
           id: id,
+          connectionId: connectionId,
           externalLocationId: externalLocationId,
         );
     replace(_$result);

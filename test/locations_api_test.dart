@@ -32,14 +32,14 @@ void main() {
       // TODO
     });
 
-    // Update a Listing and create/update a connection
+    // Update a Listing
     //
     //Future<LocationListingPatch200Response> locationListingPatch(LocationListingPatchRequest locationListingPatchRequest) async
     test('test locationListingPatch', () async {
       // TODO
     });
 
-    //Future<BuiltList<Listing>> locationListingsGet(String locationId, { String redirectUrl }) async
+    //Future<BuiltList<Listing>> locationListingsGet(String locationId) async
     test('test locationListingsGet', () async {
       // TODO
     });

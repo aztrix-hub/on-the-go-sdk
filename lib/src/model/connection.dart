@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,18 +13,18 @@ part 'connection.g.dart';
 ///
 /// Properties:
 /// * [id]
-/// * [token]
 /// * [type]
+/// * [data]
 @BuiltValue()
 abstract class Connection implements Built<Connection, ConnectionBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
 
-  @BuiltValueField(wireName: r'token')
-  String? get token;
-
   @BuiltValueField(wireName: r'type')
   String? get type;
+
+  @BuiltValueField(wireName: r'data')
+  JsonObject? get data;
 
   Connection._();
 
@@ -55,18 +56,18 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.token != null) {
-      yield r'token';
-      yield serializers.serialize(
-        object.token,
-        specifiedType: const FullType(String),
-      );
-    }
     if (object.type != null) {
       yield r'type';
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType(JsonObject),
       );
     }
   }
@@ -101,19 +102,19 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
           ) as String;
           result.id = valueDes;
           break;
-        case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.token = valueDes;
-          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
           result.type = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(JsonObject),
+          ) as JsonObject;
+          result.data = valueDes;
           break;
         default:
           unhandled.add(key);

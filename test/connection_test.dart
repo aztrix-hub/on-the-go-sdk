@@ -12,13 +12,13 @@ void main() {
       // TODO
     });
 
-    // String token
-    test('to test the property `token`', () async {
+    // String type
+    test('to test the property `type`', () async {
       // TODO
     });
 
-    // String type
-    test('to test the property `type`', () async {
+    // JsonObject data
+    test('to test the property `data`', () async {
       // TODO
     });
   });

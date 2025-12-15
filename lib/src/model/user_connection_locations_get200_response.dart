@@ -3,69 +3,71 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'location_listing_patch_request_connection.g.dart';
+part 'user_connection_locations_get200_response.g.dart';
 
-/// LocationListingPatchRequestConnection
+/// UserConnectionLocationsGet200Response
 ///
 /// Properties:
-/// * [id]
-/// * [token]
+/// * [connectionId]
+/// * [locations]
 @BuiltValue()
-abstract class LocationListingPatchRequestConnection
+abstract class UserConnectionLocationsGet200Response
     implements
-        Built<LocationListingPatchRequestConnection,
-            LocationListingPatchRequestConnectionBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+        Built<UserConnectionLocationsGet200Response,
+            UserConnectionLocationsGet200ResponseBuilder> {
+  @BuiltValueField(wireName: r'connectionId')
+  String? get connectionId;
 
-  @BuiltValueField(wireName: r'token')
-  String? get token;
+  @BuiltValueField(wireName: r'locations')
+  BuiltList<Location>? get locations;
 
-  LocationListingPatchRequestConnection._();
+  UserConnectionLocationsGet200Response._();
 
-  factory LocationListingPatchRequestConnection(
-          [void updates(LocationListingPatchRequestConnectionBuilder b)]) =
-      _$LocationListingPatchRequestConnection;
+  factory UserConnectionLocationsGet200Response(
+          [void updates(UserConnectionLocationsGet200ResponseBuilder b)]) =
+      _$UserConnectionLocationsGet200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LocationListingPatchRequestConnectionBuilder b) => b;
+  static void _defaults(UserConnectionLocationsGet200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<LocationListingPatchRequestConnection> get serializer =>
-      _$LocationListingPatchRequestConnectionSerializer();
+  static Serializer<UserConnectionLocationsGet200Response> get serializer =>
+      _$UserConnectionLocationsGet200ResponseSerializer();
 }
 
-class _$LocationListingPatchRequestConnectionSerializer
-    implements PrimitiveSerializer<LocationListingPatchRequestConnection> {
+class _$UserConnectionLocationsGet200ResponseSerializer
+    implements PrimitiveSerializer<UserConnectionLocationsGet200Response> {
   @override
   final Iterable<Type> types = const [
-    LocationListingPatchRequestConnection,
-    _$LocationListingPatchRequestConnection
+    UserConnectionLocationsGet200Response,
+    _$UserConnectionLocationsGet200Response
   ];
 
   @override
-  final String wireName = r'LocationListingPatchRequestConnection';
+  final String wireName = r'UserConnectionLocationsGet200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    LocationListingPatchRequestConnection object, {
+    UserConnectionLocationsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
+    if (object.connectionId != null) {
+      yield r'connectionId';
       yield serializers.serialize(
-        object.id,
+        object.connectionId,
         specifiedType: const FullType(String),
       );
     }
-    if (object.token != null) {
-      yield r'token';
+    if (object.locations != null) {
+      yield r'locations';
       yield serializers.serialize(
-        object.token,
-        specifiedType: const FullType(String),
+        object.locations,
+        specifiedType: const FullType(BuiltList, [FullType(Location)]),
       );
     }
   }
@@ -73,7 +75,7 @@ class _$LocationListingPatchRequestConnectionSerializer
   @override
   Object serialize(
     Serializers serializers,
-    LocationListingPatchRequestConnection object, {
+    UserConnectionLocationsGet200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,26 +88,26 @@ class _$LocationListingPatchRequestConnectionSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LocationListingPatchRequestConnectionBuilder result,
+    required UserConnectionLocationsGet200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
+        case r'connectionId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.id = valueDes;
+          result.connectionId = valueDes;
           break;
-        case r'token':
+        case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.token = valueDes;
+            specifiedType: const FullType(BuiltList, [FullType(Location)]),
+          ) as BuiltList<Location>;
+          result.locations.replace(valueDes);
           break;
         default:
           unhandled.add(key);
@@ -116,12 +118,12 @@ class _$LocationListingPatchRequestConnectionSerializer
   }
 
   @override
-  LocationListingPatchRequestConnection deserialize(
+  UserConnectionLocationsGet200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LocationListingPatchRequestConnectionBuilder();
+    final result = UserConnectionLocationsGet200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

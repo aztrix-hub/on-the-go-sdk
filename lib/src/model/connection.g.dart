@@ -10,14 +10,14 @@ class _$Connection extends Connection {
   @override
   final String? id;
   @override
-  final String? token;
-  @override
   final String? type;
+  @override
+  final JsonObject? data;
 
   factory _$Connection([void Function(ConnectionBuilder)? updates]) =>
       (ConnectionBuilder()..update(updates))._build();
 
-  _$Connection._({this.id, this.token, this.type}) : super._();
+  _$Connection._({this.id, this.type, this.data}) : super._();
   @override
   Connection rebuild(void Function(ConnectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -30,16 +30,16 @@ class _$Connection extends Connection {
     if (identical(other, this)) return true;
     return other is Connection &&
         id == other.id &&
-        token == other.token &&
-        type == other.type;
+        type == other.type &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
-    _$hash = $jc(_$hash, token.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -48,8 +48,8 @@ class _$Connection extends Connection {
   String toString() {
     return (newBuiltValueToStringHelper(r'Connection')
           ..add('id', id)
-          ..add('token', token)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('data', data))
         .toString();
   }
 }
@@ -61,13 +61,13 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _token;
-  String? get token => _$this._token;
-  set token(String? token) => _$this._token = token;
-
   String? _type;
   String? get type => _$this._type;
   set type(String? type) => _$this._type = type;
+
+  JsonObject? _data;
+  JsonObject? get data => _$this._data;
+  set data(JsonObject? data) => _$this._data = data;
 
   ConnectionBuilder() {
     Connection._defaults(this);
@@ -77,8 +77,8 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
-      _token = $v.token;
       _type = $v.type;
+      _data = $v.data;
       _$v = null;
     }
     return this;
@@ -101,8 +101,8 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
     final _$result = _$v ??
         _$Connection._(
           id: id,
-          token: token,
           type: type,
+          data: data,
         );
     replace(_$result);
     return _$result;

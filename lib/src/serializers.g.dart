@@ -85,6 +85,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(SocialPost.serializer)
       ..add(SpecialOpeningHour.serializer)
       ..add(User.serializer)
+      ..add(UserConnectionLocationsGet200ResponseInner.serializer)
       ..add(UserConnectionPatchRequest.serializer)
       ..add(UserConnectionPostRequest.serializer)
       ..add(UserLoginPostRequest.serializer)
@@ -131,6 +132,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
           () => ListBuilder<InboxPostRequestStatusEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(Location)]),
+          () => ListBuilder<Location>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LocationOrIndividual)]),

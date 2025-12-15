@@ -11,10 +11,10 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/login.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
@@ -34,7 +34,6 @@ class UsersApi {
   ///
   ///
   /// Parameters:
-  /// * [redirectUrl]
   /// * [connectionId]
   /// * [type]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -44,10 +43,10 @@ class UsersApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<Location>] as data
+  /// Returns a [Future] containing a [Response] with a [BuiltList<UserConnectionLocationsGet200ResponseInner>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<Location>>> userConnectionLocationsGet({
-    required String redirectUrl,
+  Future<Response<BuiltList<UserConnectionLocationsGet200ResponseInner>>>
+      userConnectionLocationsGet({
     String? connectionId,
     DirectoryType? type,
     CancelToken? cancelToken,
@@ -84,8 +83,6 @@ class UsersApi {
       if (type != null)
         r'type': encodeQueryParameter(
             _serializers, type, const FullType(DirectoryType)),
-      r'redirectUrl': encodeQueryParameter(
-          _serializers, redirectUrl, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -97,7 +94,7 @@ class UsersApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<Location>? _responseData;
+    BuiltList<UserConnectionLocationsGet200ResponseInner>? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -105,8 +102,9 @@ class UsersApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(BuiltList, [FullType(Location)]),
-            ) as BuiltList<Location>;
+              specifiedType: const FullType(BuiltList,
+                  [FullType(UserConnectionLocationsGet200ResponseInner)]),
+            ) as BuiltList<UserConnectionLocationsGet200ResponseInner>;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -117,7 +115,7 @@ class UsersApi {
       );
     }
 
-    return Response<BuiltList<Location>>(
+    return Response<BuiltList<UserConnectionLocationsGet200ResponseInner>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

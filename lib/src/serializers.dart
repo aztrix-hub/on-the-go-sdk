@@ -86,6 +86,7 @@ import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
@@ -170,6 +171,7 @@ part 'serializers.g.dart';
   SocialPost,
   SpecialOpeningHour,
   User,
+  UserConnectionLocationsGet200ResponseInner,
   UserConnectionPatchRequest,
   UserConnectionPostRequest,
   UserLoginPostRequest,
@@ -181,20 +183,12 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Listing)]),
-        () => ListBuilder<Listing>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiMessage)]),
         () => ListBuilder<AiMessage>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Connection)]),
         () => ListBuilder<Connection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AiConversation)]),
-        () => ListBuilder<AiConversation>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Location)]),
@@ -205,20 +199,33 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<MetricType>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(String)]),
-        () => ListBuilder<String>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Category)]),
         () => ListBuilder<Category>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(LocationOrIndividual)]),
-        () => ListBuilder<LocationOrIndividual>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Metric)]),
         () => ListBuilder<Metric>(),
+      )
+      ..addBuilderFactory(
+        const FullType(
+            BuiltList, [FullType(UserConnectionLocationsGet200ResponseInner)]),
+        () => ListBuilder<UserConnectionLocationsGet200ResponseInner>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Listing)]),
+        () => ListBuilder<Listing>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AiConversation)]),
+        () => ListBuilder<AiConversation>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(String)]),
+        () => ListBuilder<String>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(LocationOrIndividual)]),
+        () => ListBuilder<LocationOrIndividual>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(InboxItem)]),
