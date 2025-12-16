@@ -7,7 +7,12 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(Metric, () {
-    // MetricType type
+    // MetricName name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // DirectoryType type
     test('to test the property `type`', () async {
       // TODO
     });

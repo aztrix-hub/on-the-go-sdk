@@ -193,10 +193,6 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Location>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(MetricType)]),
-        () => ListBuilder<MetricType>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Category)]),
         () => ListBuilder<Category>(),
       )
@@ -208,6 +204,10 @@ Serializers serializers = (_$serializers.toBuilder()
         const FullType(
             BuiltList, [FullType(UserConnectionLocationsGet200ResponseInner)]),
         () => ListBuilder<UserConnectionLocationsGet200ResponseInner>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(MetricName)]),
+        () => ListBuilder<MetricName>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Listing)]),

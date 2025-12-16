@@ -2758,13 +2758,21 @@
             }
           },
           {
-            "name": "metrics",
+            "name": "type",
+            "in": "query",
+            "description": "The types of metrics you want to get",
+            "schema": {
+              "$ref": "#/components/schemas/DirectoryType"
+            }
+          },
+          {
+            "name": "metricNames",
             "in": "query",
             "description": "The types of metrics you want to get",
             "schema": {
               "type": "array",
               "items": {
-                "$ref": "#/components/schemas/MetricType"
+                "$ref": "#/components/schemas/MetricName"
               }
             }
           }

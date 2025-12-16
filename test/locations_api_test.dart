@@ -27,11 +27,6 @@ void main() {
       // TODO
     });
 
-    //Future<Listing> locationListingGet(String redirectUrl, { String listingId, String type }) async
-    test('test locationListingGet', () async {
-      // TODO
-    });
-
     // Update a Listing
     //
     //Future<LocationListingPatch200Response> locationListingPatch(LocationListingPatchRequest locationListingPatchRequest) async
@@ -39,7 +34,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Listing>> locationListingsGet(String locationId) async
+    //Future<BuiltList<Listing>> locationListingsGet(String locationId, { String redirectUrl }) async
     test('test locationListingsGet', () async {
       // TODO
     });
@@ -74,11 +69,6 @@ void main() {
     //
     //Future<BuiltList<Location>> locationsGet(String language) async
     test('test locationsGet', () async {
-      // TODO
-    });
-
-    //Future<BuiltList<Listing>> locationsListingsGet({ String redirectUrl }) async
-    test('test locationsListingsGet', () async {
       // TODO
     });
 

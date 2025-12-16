@@ -191,4 +191,3 @@ lib/src/model/user_system_post200_response.dart
 lib/src/model/user_system_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/metric_name_test.dart

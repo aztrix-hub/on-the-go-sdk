@@ -8,15 +8,8 @@ void main() {
   group(UsersApi, () {
     // get locations from a connection
     //
-    //Future<UserConnectionLocationsGet200Response> userConnectionLocationsGet({ String connectionId, DirectoryType type }) async
+    //Future<BuiltList<UserConnectionLocationsGet200ResponseInner>> userConnectionLocationsGet({ String connectionId, DirectoryType type }) async
     test('test userConnectionLocationsGet', () async {
-      // TODO
-    });
-
-    // update a user connection
-    //
-    //Future<Connection> userConnectionPatch(UserConnectionPatchRequest userConnectionPatchRequest) async
-    test('test userConnectionPatch', () async {
       // TODO
     });
 
