@@ -3,8 +3,9 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/metric_type.dart';
 import 'package:built_collection/built_collection.dart';
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
+import 'package:on_the_go_sdk/src/model/metric_name.dart';
 import 'package:on_the_go_sdk/src/model/metric_data.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -14,13 +15,18 @@ part 'metric.g.dart';
 /// Metric
 ///
 /// Properties:
+/// * [name]
 /// * [type]
 /// * [data]
 @BuiltValue()
 abstract class Metric implements Built<Metric, MetricBuilder> {
+  @BuiltValueField(wireName: r'name')
+  MetricName? get name;
+  // enum nameEnum {  IMPRESSIONS,  MAPS_IMPRESSIONS,  MOBILE_MAPS_IMPRESSIONS,  SEARCH_IMPRESSIONS,  MOBILE_SEARCH_IMPRESSIONS,  INTERACTIONS,  DIRECTION_INTERACTIONS,  WEBSITE_INTERACTIONS,  CALL_INTERACTIONS,  };
+
   @BuiltValueField(wireName: r'type')
-  MetricType? get type;
-  // enum typeEnum {  TOTAL_INTERACTIONS,  TOTAL_IMPRESSIONS,  GOOGLE_INTERACTIONS,  GOOGLE_IMPRESSIONS,  FACEBOOK_INTERACTIONS,  FACEBOOK_IMPRESSIONS,  };
+  DirectoryType? get type;
+  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'data')
   BuiltList<MetricData>? get data;
@@ -48,11 +54,18 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
     Metric object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(MetricName),
+      );
+    }
     if (object.type != null) {
       yield r'type';
       yield serializers.serialize(
         object.type,
-        specifiedType: const FullType(MetricType),
+        specifiedType: const FullType(DirectoryType),
       );
     }
     if (object.data != null) {
@@ -87,11 +100,18 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MetricName),
+          ) as MetricName;
+          result.name = valueDes;
+          break;
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MetricType),
-          ) as MetricType;
+            specifiedType: const FullType(DirectoryType),
+          ) as DirectoryType;
           result.type = valueDes;
           break;
         case r'data':

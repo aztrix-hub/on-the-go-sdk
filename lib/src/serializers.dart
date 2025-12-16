@@ -74,7 +74,7 @@ import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/login.dart';
 import 'package:on_the_go_sdk/src/model/metric.dart';
 import 'package:on_the_go_sdk/src/model/metric_data.dart';
-import 'package:on_the_go_sdk/src/model/metric_type.dart';
+import 'package:on_the_go_sdk/src/model/metric_name.dart';
 import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
@@ -87,7 +87,6 @@ import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
-import 'package:on_the_go_sdk/src/model/user_connection_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
@@ -159,7 +158,7 @@ part 'serializers.g.dart';
   Login,
   Metric,
   MetricData,
-  MetricType,
+  MetricName,
   NotificationsConfigGet200Response,
   OpeningHour,
   OpeningHourInterval,
@@ -172,7 +171,6 @@ part 'serializers.g.dart';
   SpecialOpeningHour,
   User,
   UserConnectionLocationsGet200ResponseInner,
-  UserConnectionPatchRequest,
   UserConnectionPostRequest,
   UserLoginPostRequest,
   UserOauthPost200Response,

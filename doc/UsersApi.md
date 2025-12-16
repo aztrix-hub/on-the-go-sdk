@@ -10,7 +10,6 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userConnectionLocationsGet**](UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
-[**userConnectionPatch**](UsersApi.md#userconnectionpatch) | **PATCH** /user/connection | update a user connection
 [**userConnectionPost**](UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [**userConnectionsGet**](UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [**userGet**](UsersApi.md#userget) | **GET** /user | Get the current user
@@ -66,51 +65,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **userConnectionPatch**
-> Connection userConnectionPatch(userConnectionPatchRequest)
-
-update a user connection
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getUsersApi();
-final UserConnectionPatchRequest userConnectionPatchRequest = ; // UserConnectionPatchRequest | 
-
-try {
-    final response = api.userConnectionPatch(userConnectionPatchRequest);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling UsersApi->userConnectionPatch: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userConnectionPatchRequest** | [**UserConnectionPatchRequest**](UserConnectionPatchRequest.md)|  | 
-
-### Return type
-
-[**Connection**](Connection.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

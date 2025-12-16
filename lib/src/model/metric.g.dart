@@ -8,14 +8,16 @@ part of 'metric.dart';
 
 class _$Metric extends Metric {
   @override
-  final MetricType? type;
+  final MetricName? name;
+  @override
+  final DirectoryType? type;
   @override
   final BuiltList<MetricData>? data;
 
   factory _$Metric([void Function(MetricBuilder)? updates]) =>
       (MetricBuilder()..update(updates))._build();
 
-  _$Metric._({this.type, this.data}) : super._();
+  _$Metric._({this.name, this.type, this.data}) : super._();
   @override
   Metric rebuild(void Function(MetricBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -26,12 +28,16 @@ class _$Metric extends Metric {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is Metric && type == other.type && data == other.data;
+    return other is Metric &&
+        name == other.name &&
+        type == other.type &&
+        data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
@@ -41,6 +47,7 @@ class _$Metric extends Metric {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Metric')
+          ..add('name', name)
           ..add('type', type)
           ..add('data', data))
         .toString();
@@ -50,9 +57,13 @@ class _$Metric extends Metric {
 class MetricBuilder implements Builder<Metric, MetricBuilder> {
   _$Metric? _$v;
 
-  MetricType? _type;
-  MetricType? get type => _$this._type;
-  set type(MetricType? type) => _$this._type = type;
+  MetricName? _name;
+  MetricName? get name => _$this._name;
+  set name(MetricName? name) => _$this._name = name;
+
+  DirectoryType? _type;
+  DirectoryType? get type => _$this._type;
+  set type(DirectoryType? type) => _$this._type = type;
 
   ListBuilder<MetricData>? _data;
   ListBuilder<MetricData> get data =>
@@ -66,6 +77,7 @@ class MetricBuilder implements Builder<Metric, MetricBuilder> {
   MetricBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _name = $v.name;
       _type = $v.type;
       _data = $v.data?.toBuilder();
       _$v = null;
@@ -91,6 +103,7 @@ class MetricBuilder implements Builder<Metric, MetricBuilder> {
     try {
       _$result = _$v ??
           _$Metric._(
+            name: name,
             type: type,
             data: _data?.build(),
           );

@@ -473,54 +473,6 @@
             "authToken": []
           }
         ]
-      },
-      "patch": {
-        "deprecated": true,
-        "tags": [
-          "users"
-        ],
-        "summary": "update a user connection",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "connectionId": {
-                    "type": "string"
-                  },
-                  "token": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "connections successfully retrieved",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Connection"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid or missing parameter"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
       }
     },
     "/user/connection/locations": {
@@ -2637,59 +2589,6 @@
         ]
       }
     },
-    "/locations/listings": {
-      "deprecated": true,
-      "get": {
-        "tags": [
-          "locations"
-        ],
-        "parameters": [
-          {
-            "name": "redirectUrl",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Listing successfully retrieved",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Listing"
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "An error occured",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorised"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
-      }
-    },
     "/location/listings": {
       "get": {
         "tags": [
@@ -2699,6 +2598,13 @@
           {
             "name": "locationId",
             "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "redirectUrl",
             "in": "query",
             "schema": {
               "type": "string"
@@ -2744,69 +2650,6 @@
       }
     },
     "/location/listing": {
-      "get": {
-        "deprecated": true,
-        "tags": [
-          "locations"
-        ],
-        "parameters": [
-          {
-            "name": "listingId",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "type",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "redirectUrl",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Listing successfully retrieved",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Listing"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "An error occured",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorised"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        },
-        "security": [
-          {
-            "authToken": []
-          }
-        ]
-      },
       "patch": {
         "tags": [
           "locations"
@@ -3632,8 +3475,11 @@
       "Metric": {
         "type": "object",
         "properties": {
+          "name": {
+            "$ref": "#/components/schemas/MetricName"
+          },
           "type": {
-            "$ref": "#/components/schemas/MetricType"
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "data": {
             "type": "array",
@@ -3643,15 +3489,18 @@
           }
         }
       },
-      "MetricType": {
+      "MetricName": {
         "type": "string",
         "enum": [
-          "TOTAL_INTERACTIONS",
-          "TOTAL_IMPRESSIONS",
-          "GOOGLE_INTERACTIONS",
-          "GOOGLE_IMPRESSIONS",
-          "FACEBOOK_INTERACTIONS",
-          "FACEBOOK_IMPRESSIONS"
+          "IMPRESSIONS",
+          "MAPS_IMPRESSIONS",
+          "MOBILE_MAPS_IMPRESSIONS",
+          "SEARCH_IMPRESSIONS",
+          "MOBILE_SEARCH_IMPRESSIONS",
+          "INTERACTIONS",
+          "DIRECTION_INTERACTIONS",
+          "WEBSITE_INTERACTIONS",
+          "CALL_INTERACTIONS"
         ]
       },
       "MetricData": {
