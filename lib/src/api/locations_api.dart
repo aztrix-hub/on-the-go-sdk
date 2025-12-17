@@ -18,6 +18,7 @@ import 'package:on_the_go_sdk/src/model/location_listing_patch200_response.dart'
 import 'package:on_the_go_sdk/src/model/location_listing_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
+import 'package:on_the_go_sdk/src/model/platform.dart';
 
 class LocationsApi {
   final Dio _dio;
@@ -419,6 +420,7 @@ class LocationsApi {
   ///
   /// Parameters:
   /// * [locationId]
+  /// * [platform]
   /// * [redirectUrl]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -431,6 +433,7 @@ class LocationsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<Listing>>> locationListingsGet({
     required String locationId,
+    required Platform platform,
     String? redirectUrl,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -462,6 +465,8 @@ class LocationsApi {
     final _queryParameters = <String, dynamic>{
       r'locationId': encodeQueryParameter(
           _serializers, locationId, const FullType(String)),
+      r'platform': encodeQueryParameter(
+          _serializers, platform, const FullType(Platform)),
       if (redirectUrl != null)
         r'redirectUrl': encodeQueryParameter(
             _serializers, redirectUrl, const FullType(String)),

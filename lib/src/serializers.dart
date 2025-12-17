@@ -79,6 +79,7 @@ import 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dar
 import 'package:on_the_go_sdk/src/model/opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
+import 'package:on_the_go_sdk/src/model/platform.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
@@ -163,6 +164,7 @@ part 'serializers.g.dart';
   OpeningHour,
   OpeningHourInterval,
   Photo,
+  Platform,
   ResetPassword,
   SearchGetBoundingBoxParameter,
   SearchGetBoundingBoxParameterTopLeft,

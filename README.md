@@ -185,6 +185,7 @@ Class | Method | HTTP request | Description
  - [OpeningHour](doc/OpeningHour.md)
  - [OpeningHourInterval](doc/OpeningHourInterval.md)
  - [Photo](doc/Photo.md)
+ - [Platform](doc/Platform.md)
  - [ResetPassword](doc/ResetPassword.md)
  - [SearchGetBoundingBoxParameter](doc/SearchGetBoundingBoxParameter.md)
  - [SearchGetBoundingBoxParameterTopLeft](doc/SearchGetBoundingBoxParameterTopLeft.md)

@@ -34,7 +34,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<Listing>> locationListingsGet(String locationId, { String redirectUrl }) async
+    //Future<BuiltList<Listing>> locationListingsGet(String locationId, Platform platform, { String redirectUrl }) async
     test('test locationListingsGet', () async {
       // TODO
     });

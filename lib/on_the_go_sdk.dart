@@ -86,6 +86,7 @@ export 'package:on_the_go_sdk/src/model/notifications_config_get200_response.dar
 export 'package:on_the_go_sdk/src/model/opening_hour.dart';
 export 'package:on_the_go_sdk/src/model/opening_hour_interval.dart';
 export 'package:on_the_go_sdk/src/model/photo.dart';
+export 'package:on_the_go_sdk/src/model/platform.dart';
 export 'package:on_the_go_sdk/src/model/reset_password.dart';
 export 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
 export 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';

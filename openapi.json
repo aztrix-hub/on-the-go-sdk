@@ -2604,6 +2604,14 @@
             }
           },
           {
+            "name": "platform",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "$ref": "#/components/schemas/Platform"
+            }
+          },
+          {
             "name": "redirectUrl",
             "in": "query",
             "schema": {
@@ -3935,6 +3943,14 @@
             }
           }
         }
+      },
+      "Platform": {
+        "type": "string",
+        "enum": [
+          "WEB",
+          "ANDROID",
+          "IOS"
+        ]
       }
     },
     "securitySchemes": {
