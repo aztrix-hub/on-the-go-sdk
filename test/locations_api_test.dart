@@ -27,6 +27,11 @@ void main() {
       // TODO
     });
 
+    //Future<Listing> locationListingGet(String id) async
+    test('test locationListingGet', () async {
+      // TODO
+    });
+
     // Update a Listing
     //
     //Future<LocationListingPatch200Response> locationListingPatch(LocationListingPatchRequest locationListingPatchRequest) async
