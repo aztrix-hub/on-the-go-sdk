@@ -4,6 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
+import 'package:on_the_go_sdk/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,6 +14,7 @@ part 'user_connection_post_request.g.dart';
 ///
 /// Properties:
 /// * [type]
+/// * [platform]
 /// * [code]
 /// * [redirectUrl]
 @BuiltValue()
@@ -22,6 +24,10 @@ abstract class UserConnectionPostRequest
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  @BuiltValueField(wireName: r'platform')
+  Platform? get platform;
+  // enum platformEnum {  WEB,  ANDROID,  IOS,  };
 
   @BuiltValueField(wireName: r'code')
   String? get code;
@@ -64,6 +70,13 @@ class _$UserConnectionPostRequestSerializer
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(DirectoryType),
+      );
+    }
+    if (object.platform != null) {
+      yield r'platform';
+      yield serializers.serialize(
+        object.platform,
+        specifiedType: const FullType(Platform),
       );
     }
     if (object.code != null) {
@@ -111,6 +124,13 @@ class _$UserConnectionPostRequestSerializer
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
           result.type = valueDes;
+          break;
+        case r'platform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Platform),
+          ) as Platform;
+          result.platform = valueDes;
           break;
         case r'code':
           final valueDes = serializers.deserialize(

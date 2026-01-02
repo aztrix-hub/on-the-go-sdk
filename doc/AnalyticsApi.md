@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **analyticsGet**
-> BuiltList<Metric> analyticsGet(locationIds, startDate, endDate, type, metricNames)
+> BuiltList<Metric> analyticsGet(type, metricNames, locationIds, startDate, endDate)
 
 
 
@@ -26,14 +26,14 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getAnalyticsApi();
+final DirectoryType type = ; // DirectoryType | The types of metrics you want to get
+final BuiltList<MetricName> metricNames = ; // BuiltList<MetricName> | The types of metrics you want to get
 final BuiltList<String> locationIds = ; // BuiltList<String> | 
 final Date startDate = 2013-10-20; // Date | The start date YYYY-MM-DD
 final Date endDate = 2013-10-20; // Date | The end date YYYY-MM-DD
-final DirectoryType type = ; // DirectoryType | The types of metrics you want to get
-final BuiltList<MetricName> metricNames = ; // BuiltList<MetricName> | The types of metrics you want to get
 
 try {
-    final response = api.analyticsGet(locationIds, startDate, endDate, type, metricNames);
+    final response = api.analyticsGet(type, metricNames, locationIds, startDate, endDate);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AnalyticsApi->analyticsGet: $e\n');
@@ -44,11 +44,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **type** | [**DirectoryType**](.md)| The types of metrics you want to get | 
+ **metricNames** | [**BuiltList&lt;MetricName&gt;**](MetricName.md)| The types of metrics you want to get | 
  **locationIds** | [**BuiltList&lt;String&gt;**](String.md)|  | [optional] 
  **startDate** | **Date**| The start date YYYY-MM-DD | [optional] 
  **endDate** | **Date**| The end date YYYY-MM-DD | [optional] 
- **type** | [**DirectoryType**](.md)| The types of metrics you want to get | [optional] 
- **metricNames** | [**BuiltList&lt;MetricName&gt;**](MetricName.md)| The types of metrics you want to get | [optional] 
 
 ### Return type
 

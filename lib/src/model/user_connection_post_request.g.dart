@@ -10,6 +10,8 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
   @override
   final DirectoryType? type;
   @override
+  final Platform? platform;
+  @override
   final String? code;
   @override
   final String? redirectUrl;
@@ -18,7 +20,8 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
           [void Function(UserConnectionPostRequestBuilder)? updates]) =>
       (UserConnectionPostRequestBuilder()..update(updates))._build();
 
-  _$UserConnectionPostRequest._({this.type, this.code, this.redirectUrl})
+  _$UserConnectionPostRequest._(
+      {this.type, this.platform, this.code, this.redirectUrl})
       : super._();
   @override
   UserConnectionPostRequest rebuild(
@@ -34,6 +37,7 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
     if (identical(other, this)) return true;
     return other is UserConnectionPostRequest &&
         type == other.type &&
+        platform == other.platform &&
         code == other.code &&
         redirectUrl == other.redirectUrl;
   }
@@ -42,6 +46,7 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, platform.hashCode);
     _$hash = $jc(_$hash, code.hashCode);
     _$hash = $jc(_$hash, redirectUrl.hashCode);
     _$hash = $jf(_$hash);
@@ -52,6 +57,7 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'UserConnectionPostRequest')
           ..add('type', type)
+          ..add('platform', platform)
           ..add('code', code)
           ..add('redirectUrl', redirectUrl))
         .toString();
@@ -66,6 +72,10 @@ class UserConnectionPostRequestBuilder
   DirectoryType? _type;
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
+
+  Platform? _platform;
+  Platform? get platform => _$this._platform;
+  set platform(Platform? platform) => _$this._platform = platform;
 
   String? _code;
   String? get code => _$this._code;
@@ -83,6 +93,7 @@ class UserConnectionPostRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
+      _platform = $v.platform;
       _code = $v.code;
       _redirectUrl = $v.redirectUrl;
       _$v = null;
@@ -107,6 +118,7 @@ class UserConnectionPostRequestBuilder
     final _$result = _$v ??
         _$UserConnectionPostRequest._(
           type: type,
+          platform: platform,
           code: code,
           redirectUrl: redirectUrl,
         );

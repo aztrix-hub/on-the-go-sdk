@@ -12,6 +12,7 @@ import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/login.dart';
+import 'package:on_the_go_sdk/src/model/platform.dart';
 import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
 import 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
@@ -35,6 +36,7 @@ class UsersApi {
   /// Parameters:
   /// * [connectionId]
   /// * [type]
+  /// * [platform]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -46,8 +48,9 @@ class UsersApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<UserConnectionLocationsGet200ResponseInner>>>
       userConnectionLocationsGet({
-    String? connectionId,
-    DirectoryType? type,
+    required String connectionId,
+    required DirectoryType type,
+    required Platform platform,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -76,12 +79,12 @@ class UsersApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (connectionId != null)
-        r'connectionId': encodeQueryParameter(
-            _serializers, connectionId, const FullType(String)),
-      if (type != null)
-        r'type': encodeQueryParameter(
-            _serializers, type, const FullType(DirectoryType)),
+      r'connectionId': encodeQueryParameter(
+          _serializers, connectionId, const FullType(String)),
+      r'type': encodeQueryParameter(
+          _serializers, type, const FullType(DirectoryType)),
+      r'platform': encodeQueryParameter(
+          _serializers, platform, const FullType(Platform)),
     };
 
     final _response = await _dio.request<Object>(

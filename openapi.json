@@ -436,12 +436,19 @@
                 "type": "object",
                 "properties": {
                   "type": {
+                    "required": true,
                     "$ref": "#/components/schemas/DirectoryType"
                   },
+                  "platform": {
+                    "required": true,
+                    "$ref": "#/components/schemas/Platform"
+                  },
                   "code": {
+                    "required": true,
                     "type": "string"
                   },
                   "redirectUrl": {
+                    "required": true,
                     "type": "string"
                   }
                 }
@@ -485,6 +492,7 @@
           {
             "name": "connectionId",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -492,8 +500,17 @@
           {
             "name": "type",
             "in": "query",
+            "required": true,
             "schema": {
               "$ref": "#/components/schemas/DirectoryType"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/Platform"
             }
           }
         ],
@@ -2816,6 +2833,7 @@
           {
             "name": "type",
             "in": "query",
+            "required": true,
             "description": "The types of metrics you want to get",
             "schema": {
               "$ref": "#/components/schemas/DirectoryType"
@@ -2824,6 +2842,7 @@
           {
             "name": "metricNames",
             "in": "query",
+            "required": true,
             "description": "The types of metrics you want to get",
             "schema": {
               "type": "array",

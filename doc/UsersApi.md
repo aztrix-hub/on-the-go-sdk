@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **userConnectionLocationsGet**
-> BuiltList<UserConnectionLocationsGet200ResponseInner> userConnectionLocationsGet(connectionId, type)
+> BuiltList<UserConnectionLocationsGet200ResponseInner> userConnectionLocationsGet(connectionId, type, platform)
 
 get locations from a connection
 
@@ -38,9 +38,10 @@ import 'package:on_the_go_sdk/api.dart';
 final api = OnTheGoSdk().getUsersApi();
 final String connectionId = connectionId_example; // String | 
 final DirectoryType type = ; // DirectoryType | 
+final Platform platform = ; // Platform | 
 
 try {
-    final response = api.userConnectionLocationsGet(connectionId, type);
+    final response = api.userConnectionLocationsGet(connectionId, type, platform);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userConnectionLocationsGet: $e\n');
@@ -51,8 +52,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionId** | **String**|  | [optional] 
- **type** | [**DirectoryType**](.md)|  | [optional] 
+ **connectionId** | **String**|  | 
+ **type** | [**DirectoryType**](.md)|  | 
+ **platform** | [**Platform**](.md)|  | 
 
 ### Return type
 

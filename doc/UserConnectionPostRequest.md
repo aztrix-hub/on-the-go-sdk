@@ -9,6 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
+**platform** | [**Platform**](Platform.md) |  | [optional] 
 **code** | **String** |  | [optional] 
 **redirectUrl** | **String** |  | [optional] 
 

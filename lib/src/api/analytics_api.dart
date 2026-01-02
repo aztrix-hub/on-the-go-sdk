@@ -25,11 +25,11 @@ class AnalyticsApi {
   ///
   ///
   /// Parameters:
+  /// * [type] - The types of metrics you want to get
+  /// * [metricNames] - The types of metrics you want to get
   /// * [locationIds]
   /// * [startDate] - The start date YYYY-MM-DD
   /// * [endDate] - The end date YYYY-MM-DD
-  /// * [type] - The types of metrics you want to get
-  /// * [metricNames] - The types of metrics you want to get
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -40,11 +40,11 @@ class AnalyticsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Metric>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<Metric>>> analyticsGet({
+    required DirectoryType type,
+    required BuiltList<MetricName> metricNames,
     BuiltList<String>? locationIds,
     Date? startDate,
     Date? endDate,
-    DirectoryType? type,
-    BuiltList<MetricName>? metricNames,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -86,16 +86,14 @@ class AnalyticsApi {
       if (endDate != null)
         r'endDate':
             encodeQueryParameter(_serializers, endDate, const FullType(Date)),
-      if (type != null)
-        r'type': encodeQueryParameter(
-            _serializers, type, const FullType(DirectoryType)),
-      if (metricNames != null)
-        r'metricNames': encodeCollectionQueryParameter<MetricName>(
-          _serializers,
-          metricNames,
-          const FullType(BuiltList, [FullType(MetricName)]),
-          format: ListFormat.multi,
-        ),
+      r'type': encodeQueryParameter(
+          _serializers, type, const FullType(DirectoryType)),
+      r'metricNames': encodeCollectionQueryParameter<MetricName>(
+        _serializers,
+        metricNames,
+        const FullType(BuiltList, [FullType(MetricName)]),
+        format: ListFormat.multi,
+      ),
     };
 
     final _response = await _dio.request<Object>(
