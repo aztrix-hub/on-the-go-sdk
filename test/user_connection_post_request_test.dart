@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // Platform platform
+    test('to test the property `platform`', () async {
+      // TODO
+    });
+
     // String code
     test('to test the property `code`', () async {
       // TODO

@@ -6,59 +6,62 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_system_post_request.g.dart';
+part 'user_register_post_request.g.dart';
 
-/// UserSystemPostRequest
+/// UserRegisterPostRequest
 ///
 /// Properties:
 /// * [email] - User email
 @BuiltValue()
-abstract class UserSystemPostRequest
-    implements Built<UserSystemPostRequest, UserSystemPostRequestBuilder> {
+abstract class UserRegisterPostRequest
+    implements Built<UserRegisterPostRequest, UserRegisterPostRequestBuilder> {
   /// User email
   @BuiltValueField(wireName: r'email')
-  String get email;
+  String? get email;
 
-  UserSystemPostRequest._();
+  UserRegisterPostRequest._();
 
-  factory UserSystemPostRequest(
-      [void updates(UserSystemPostRequestBuilder b)]) = _$UserSystemPostRequest;
+  factory UserRegisterPostRequest(
+          [void updates(UserRegisterPostRequestBuilder b)]) =
+      _$UserRegisterPostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserSystemPostRequestBuilder b) => b;
+  static void _defaults(UserRegisterPostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserSystemPostRequest> get serializer =>
-      _$UserSystemPostRequestSerializer();
+  static Serializer<UserRegisterPostRequest> get serializer =>
+      _$UserRegisterPostRequestSerializer();
 }
 
-class _$UserSystemPostRequestSerializer
-    implements PrimitiveSerializer<UserSystemPostRequest> {
+class _$UserRegisterPostRequestSerializer
+    implements PrimitiveSerializer<UserRegisterPostRequest> {
   @override
   final Iterable<Type> types = const [
-    UserSystemPostRequest,
-    _$UserSystemPostRequest
+    UserRegisterPostRequest,
+    _$UserRegisterPostRequest
   ];
 
   @override
-  final String wireName = r'UserSystemPostRequest';
+  final String wireName = r'UserRegisterPostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserSystemPostRequest object, {
+    UserRegisterPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'email';
-    yield serializers.serialize(
-      object.email,
-      specifiedType: const FullType(String),
-    );
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    UserSystemPostRequest object, {
+    UserRegisterPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -71,7 +74,7 @@ class _$UserSystemPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserSystemPostRequestBuilder result,
+    required UserRegisterPostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -94,12 +97,12 @@ class _$UserSystemPostRequestSerializer
   }
 
   @override
-  UserSystemPostRequest deserialize(
+  UserRegisterPostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserSystemPostRequestBuilder();
+    final result = UserRegisterPostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

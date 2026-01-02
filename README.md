@@ -199,6 +199,7 @@ Class | Method | HTTP request | Description
  - [UserLoginPostRequest](doc/UserLoginPostRequest.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
+ - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
  - [UserSystemPost200Response](doc/UserSystemPost200Response.md)
  - [UserSystemPostRequest](doc/UserSystemPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)

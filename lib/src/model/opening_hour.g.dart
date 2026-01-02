@@ -10,14 +10,15 @@ class _$OpeningHour extends OpeningHour {
   @override
   final int dayOfWeek;
   @override
-  final bool? closed;
+  final bool closed;
   @override
   final BuiltList<OpeningHourInterval>? intervals;
 
   factory _$OpeningHour([void Function(OpeningHourBuilder)? updates]) =>
       (OpeningHourBuilder()..update(updates))._build();
 
-  _$OpeningHour._({required this.dayOfWeek, this.closed, this.intervals})
+  _$OpeningHour._(
+      {required this.dayOfWeek, required this.closed, this.intervals})
       : super._();
   @override
   OpeningHour rebuild(void Function(OpeningHourBuilder) updates) =>
@@ -107,7 +108,8 @@ class OpeningHourBuilder implements Builder<OpeningHour, OpeningHourBuilder> {
           _$OpeningHour._(
             dayOfWeek: BuiltValueNullFieldError.checkNotNull(
                 dayOfWeek, r'OpeningHour', 'dayOfWeek'),
-            closed: closed,
+            closed: BuiltValueNullFieldError.checkNotNull(
+                closed, r'OpeningHour', 'closed'),
             intervals: _intervals?.build(),
           );
     } catch (_) {

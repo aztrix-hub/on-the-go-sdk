@@ -8,18 +8,20 @@ part of 'location_listing_patch_request.dart';
 
 class _$LocationListingPatchRequest extends LocationListingPatchRequest {
   @override
-  final String? id;
+  final String id;
   @override
-  final String? connectionId;
+  final String connectionId;
   @override
-  final String? externalLocationId;
+  final String externalLocationId;
 
   factory _$LocationListingPatchRequest(
           [void Function(LocationListingPatchRequestBuilder)? updates]) =>
       (LocationListingPatchRequestBuilder()..update(updates))._build();
 
   _$LocationListingPatchRequest._(
-      {this.id, this.connectionId, this.externalLocationId})
+      {required this.id,
+      required this.connectionId,
+      required this.externalLocationId})
       : super._();
   @override
   LocationListingPatchRequest rebuild(
@@ -109,9 +111,14 @@ class LocationListingPatchRequestBuilder
   _$LocationListingPatchRequest _build() {
     final _$result = _$v ??
         _$LocationListingPatchRequest._(
-          id: id,
-          connectionId: connectionId,
-          externalLocationId: externalLocationId,
+          id: BuiltValueNullFieldError.checkNotNull(
+              id, r'LocationListingPatchRequest', 'id'),
+          connectionId: BuiltValueNullFieldError.checkNotNull(
+              connectionId, r'LocationListingPatchRequest', 'connectionId'),
+          externalLocationId: BuiltValueNullFieldError.checkNotNull(
+              externalLocationId,
+              r'LocationListingPatchRequest',
+              'externalLocationId'),
         );
     replace(_$result);
     return _$result;

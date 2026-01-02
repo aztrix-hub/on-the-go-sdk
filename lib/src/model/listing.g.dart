@@ -8,17 +8,17 @@ part of 'listing.dart';
 
 class _$Listing extends Listing {
   @override
-  final String? id;
+  final String id;
   @override
-  final DirectoryType? type;
+  final DirectoryType type;
   @override
   final String? connectionId;
   @override
-  final String? locationId;
+  final String locationId;
   @override
   final String? url;
   @override
-  final bool? connected;
+  final bool connected;
   @override
   final String? externalLocationId;
 
@@ -26,12 +26,12 @@ class _$Listing extends Listing {
       (ListingBuilder()..update(updates))._build();
 
   _$Listing._(
-      {this.id,
-      this.type,
+      {required this.id,
+      required this.type,
       this.connectionId,
-      this.locationId,
+      required this.locationId,
       this.url,
-      this.connected,
+      required this.connected,
       this.externalLocationId})
       : super._();
   @override
@@ -149,12 +149,14 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   _$Listing _build() {
     final _$result = _$v ??
         _$Listing._(
-          id: id,
-          type: type,
+          id: BuiltValueNullFieldError.checkNotNull(id, r'Listing', 'id'),
+          type: BuiltValueNullFieldError.checkNotNull(type, r'Listing', 'type'),
           connectionId: connectionId,
-          locationId: locationId,
+          locationId: BuiltValueNullFieldError.checkNotNull(
+              locationId, r'Listing', 'locationId'),
           url: url,
-          connected: connected,
+          connected: BuiltValueNullFieldError.checkNotNull(
+              connected, r'Listing', 'connected'),
           externalLocationId: externalLocationId,
         );
     replace(_$result);

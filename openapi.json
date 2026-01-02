@@ -54,11 +54,13 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "email"
+                ],
                 "properties": {
                   "email": {
                     "type": "string",
-                    "description": "User email",
-                    "required": true
+                    "description": "User email"
                   }
                 }
               }
@@ -2734,18 +2736,20 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "id",
+                  "connectionId",
+                  "externalLocationId"
+                ],
                 "properties": {
                   "id": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   },
                   "connectionId": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   },
                   "externalLocationId": {
-                    "type": "string",
-                    "required": true
+                    "type": "string"
                   }
                 }
               }
@@ -3163,18 +3167,17 @@
       },
       "OpeningHour": {
         "required": [
-          "dayOfWeek"
+          "dayOfWeek",
+          "closed"
         ],
         "type": "object",
         "properties": {
           "dayOfWeek": {
-            "required": true,
             "type": "integer",
             "description": "The weekday (1 - Monday, 2 - Tuesday, 3 - Wednesday, 4 - Thursday, 5 - Friday, 6 - Saturday, 7 - Sunday)",
             "format": "int32"
           },
           "closed": {
-            "required": true,
             "type": "boolean",
             "description": "Open or closed on [dayOfWeek]"
           },
@@ -3278,33 +3281,34 @@
       },
       "Listing": {
         "type": "object",
+        "required": [
+          "id",
+          "type",
+          "locationId",
+          "connected"
+        ],
         "properties": {
           "id": {
-            "type": "string",
-            "required": true
+            "type": "string"
           },
           "type": {
-            "$ref": "#/components/schemas/DirectoryType",
-            "required": true
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "connectionId": {
             "type": "string"
           },
           "locationId": {
-            "type": "string",
-            "required": true
+            "type": "string"
           },
           "url": {
             "type": "string",
             "description": "listing URL"
           },
           "connected": {
-            "type": "boolean",
-            "required": true
+            "type": "boolean"
           },
           "externalLocationId": {
-            "type": "string",
-            "required": true
+            "type": "string"
           }
         }
       },

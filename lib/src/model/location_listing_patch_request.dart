@@ -19,13 +19,13 @@ abstract class LocationListingPatchRequest
     implements
         Built<LocationListingPatchRequest, LocationListingPatchRequestBuilder> {
   @BuiltValueField(wireName: r'id')
-  String? get id;
+  String get id;
 
   @BuiltValueField(wireName: r'connectionId')
-  String? get connectionId;
+  String get connectionId;
 
   @BuiltValueField(wireName: r'externalLocationId')
-  String? get externalLocationId;
+  String get externalLocationId;
 
   LocationListingPatchRequest._();
 
@@ -57,27 +57,21 @@ class _$LocationListingPatchRequestSerializer
     LocationListingPatchRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.connectionId != null) {
-      yield r'connectionId';
-      yield serializers.serialize(
-        object.connectionId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.externalLocationId != null) {
-      yield r'externalLocationId';
-      yield serializers.serialize(
-        object.externalLocationId,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'connectionId';
+    yield serializers.serialize(
+      object.connectionId,
+      specifiedType: const FullType(String),
+    );
+    yield r'externalLocationId';
+    yield serializers.serialize(
+      object.externalLocationId,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override

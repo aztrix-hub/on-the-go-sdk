@@ -20,6 +20,7 @@ import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post_request.dart';
 
@@ -752,7 +753,7 @@ class UsersApi {
   ///
   ///
   /// Parameters:
-  /// * [userSystemPostRequest]
+  /// * [userRegisterPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -763,7 +764,7 @@ class UsersApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> userRegisterPost({
-    required UserSystemPostRequest userSystemPostRequest,
+    required UserRegisterPostRequest userRegisterPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -788,9 +789,9 @@ class UsersApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserSystemPostRequest);
+      const _type = FullType(UserRegisterPostRequest);
       _bodyData =
-          _serializers.serialize(userSystemPostRequest, specifiedType: _type);
+          _serializers.serialize(userRegisterPostRequest, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

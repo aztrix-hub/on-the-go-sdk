@@ -22,24 +22,24 @@ part 'listing.g.dart';
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'id')
-  String? get id;
+  String get id;
 
   @BuiltValueField(wireName: r'type')
-  DirectoryType? get type;
+  DirectoryType get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'connectionId')
   String? get connectionId;
 
   @BuiltValueField(wireName: r'locationId')
-  String? get locationId;
+  String get locationId;
 
   /// listing URL
   @BuiltValueField(wireName: r'url')
   String? get url;
 
   @BuiltValueField(wireName: r'connected')
-  bool? get connected;
+  bool get connected;
 
   @BuiltValueField(wireName: r'externalLocationId')
   String? get externalLocationId;
@@ -67,20 +67,16 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
     Listing object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(DirectoryType),
+    );
     if (object.connectionId != null) {
       yield r'connectionId';
       yield serializers.serialize(
@@ -88,13 +84,11 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.locationId != null) {
-      yield r'locationId';
-      yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'locationId';
+    yield serializers.serialize(
+      object.locationId,
+      specifiedType: const FullType(String),
+    );
     if (object.url != null) {
       yield r'url';
       yield serializers.serialize(
@@ -102,13 +96,11 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.connected != null) {
-      yield r'connected';
-      yield serializers.serialize(
-        object.connected,
-        specifiedType: const FullType(bool),
-      );
-    }
+    yield r'connected';
+    yield serializers.serialize(
+      object.connected,
+      specifiedType: const FullType(bool),
+    );
     if (object.externalLocationId != null) {
       yield r'externalLocationId';
       yield serializers.serialize(

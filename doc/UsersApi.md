@@ -372,7 +372,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userRegisterPost**
-> userRegisterPost(userSystemPostRequest)
+> userRegisterPost(userRegisterPostRequest)
 
 Registers a user
 
@@ -381,10 +381,10 @@ Registers a user
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserSystemPostRequest userSystemPostRequest = ; // UserSystemPostRequest | 
+final UserRegisterPostRequest userRegisterPostRequest = ; // UserRegisterPostRequest | 
 
 try {
-    api.userRegisterPost(userSystemPostRequest);
+    api.userRegisterPost(userRegisterPostRequest);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userRegisterPost: $e\n');
 }
@@ -394,7 +394,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userSystemPostRequest** | [**UserSystemPostRequest**](UserSystemPostRequest.md)|  | 
+ **userRegisterPostRequest** | [**UserRegisterPostRequest**](UserRegisterPostRequest.md)|  | 
 
 ### Return type
 

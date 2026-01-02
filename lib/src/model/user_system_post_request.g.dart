@@ -8,13 +8,13 @@ part of 'user_system_post_request.dart';
 
 class _$UserSystemPostRequest extends UserSystemPostRequest {
   @override
-  final String? email;
+  final String email;
 
   factory _$UserSystemPostRequest(
           [void Function(UserSystemPostRequestBuilder)? updates]) =>
       (UserSystemPostRequestBuilder()..update(updates))._build();
 
-  _$UserSystemPostRequest._({this.email}) : super._();
+  _$UserSystemPostRequest._({required this.email}) : super._();
   @override
   UserSystemPostRequest rebuild(
           void Function(UserSystemPostRequestBuilder) updates) =>
@@ -83,7 +83,8 @@ class UserSystemPostRequestBuilder
   _$UserSystemPostRequest _build() {
     final _$result = _$v ??
         _$UserSystemPostRequest._(
-          email: email,
+          email: BuiltValueNullFieldError.checkNotNull(
+              email, r'UserSystemPostRequest', 'email'),
         );
     replace(_$result);
     return _$result;

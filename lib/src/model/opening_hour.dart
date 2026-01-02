@@ -24,7 +24,7 @@ abstract class OpeningHour implements Built<OpeningHour, OpeningHourBuilder> {
 
   /// Open or closed on [dayOfWeek]
   @BuiltValueField(wireName: r'closed')
-  bool? get closed;
+  bool get closed;
 
   /// A list of openinghours (time intervals), only required when `closed` is `false`
   @BuiltValueField(wireName: r'intervals')
@@ -58,13 +58,11 @@ class _$OpeningHourSerializer implements PrimitiveSerializer<OpeningHour> {
       object.dayOfWeek,
       specifiedType: const FullType(int),
     );
-    if (object.closed != null) {
-      yield r'closed';
-      yield serializers.serialize(
-        object.closed,
-        specifiedType: const FullType(bool),
-      );
-    }
+    yield r'closed';
+    yield serializers.serialize(
+      object.closed,
+      specifiedType: const FullType(bool),
+    );
     if (object.intervals != null) {
       yield r'intervals';
       yield serializers.serialize(
