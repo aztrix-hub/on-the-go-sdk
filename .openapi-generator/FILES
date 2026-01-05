@@ -55,8 +55,7 @@ doc/Listing.md
 doc/Location.md
 doc/LocationDelete200Response.md
 doc/LocationDeleteRequest.md
-doc/LocationListingPatch200Response.md
-doc/LocationListingPatchRequest.md
+doc/LocationListingPostRequest.md
 doc/LocationOrIndividual.md
 doc/LocationPhotoPostRequest.md
 doc/LocationPhotoType.md
@@ -164,8 +163,7 @@ lib/src/model/listing.dart
 lib/src/model/location.dart
 lib/src/model/location_delete200_response.dart
 lib/src/model/location_delete_request.dart
-lib/src/model/location_listing_patch200_response.dart
-lib/src/model/location_listing_patch_request.dart
+lib/src/model/location_listing_post_request.dart
 lib/src/model/location_or_individual.dart
 lib/src/model/location_photo_post_request.dart
 lib/src/model/location_photo_type.dart
@@ -195,4 +193,3 @@ lib/src/model/user_system_post200_response.dart
 lib/src/model/user_system_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/user_register_post_request_test.dart

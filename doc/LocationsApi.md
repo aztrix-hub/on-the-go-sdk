@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
 [**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
-[**locationListingPatch**](LocationsApi.md#locationlistingpatch) | **PATCH** /location/listing | Update a Listing
+[**locationListingPost**](LocationsApi.md#locationlistingpost) | **POST** /location/listing | Create or update a Listing
 [**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -205,10 +205,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **locationListingPatch**
-> LocationListingPatch200Response locationListingPatch(locationListingPatchRequest)
+# **locationListingPost**
+> Listing locationListingPost(locationListingPostRequest)
 
-Update a Listing
+Create or update a Listing
 
 ### Example
 ```dart
@@ -219,13 +219,13 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getLocationsApi();
-final LocationListingPatchRequest locationListingPatchRequest = ; // LocationListingPatchRequest | Listing object
+final LocationListingPostRequest locationListingPostRequest = ; // LocationListingPostRequest | Listing object
 
 try {
-    final response = api.locationListingPatch(locationListingPatchRequest);
+    final response = api.locationListingPost(locationListingPostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling LocationsApi->locationListingPatch: $e\n');
+    print('Exception when calling LocationsApi->locationListingPost: $e\n');
 }
 ```
 
@@ -233,11 +233,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **locationListingPatchRequest** | [**LocationListingPatchRequest**](LocationListingPatchRequest.md)| Listing object | 
+ **locationListingPostRequest** | [**LocationListingPostRequest**](LocationListingPostRequest.md)| Listing object | 
 
 ### Return type
 
-[**LocationListingPatch200Response**](LocationListingPatch200Response.md)
+[**Listing**](Listing.md)
 
 ### Authorization
 

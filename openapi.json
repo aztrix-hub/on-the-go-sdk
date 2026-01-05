@@ -2725,11 +2725,11 @@
           }
         ]
       },
-      "patch": {
+      "post": {
         "tags": [
           "locations"
         ],
-        "summary": "Update a Listing",
+        "summary": "Create or update a Listing",
         "requestBody": {
           "description": "Listing object",
           "content": {
@@ -2737,13 +2737,17 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "id",
+                  "locationId",
+                  "type",
                   "connectionId",
                   "externalLocationId"
                 ],
                 "properties": {
-                  "id": {
+                  "locationId": {
                     "type": "string"
+                  },
+                  "type": {
+                    "$ref": "#/components/schemas/DirectoryType"
                   },
                   "connectionId": {
                     "type": "string"
@@ -2763,15 +2767,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "listing": {
-                      "$ref": "#/components/schemas/Listing"
-                    },
-                    "connection": {
-                      "$ref": "#/components/schemas/Connection"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Listing"
                 }
               }
             }

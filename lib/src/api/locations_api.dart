@@ -14,8 +14,7 @@ import 'package:on_the_go_sdk/src/model/listing.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
-import 'package:on_the_go_sdk/src/model/location_listing_patch200_response.dart';
-import 'package:on_the_go_sdk/src/model/location_listing_patch_request.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
 import 'package:on_the_go_sdk/src/model/platform.dart';
@@ -400,11 +399,11 @@ class LocationsApi {
     );
   }
 
-  /// Update a Listing
+  /// Create or update a Listing
   ///
   ///
   /// Parameters:
-  /// * [locationListingPatchRequest] - Listing object
+  /// * [locationListingPostRequest] - Listing object
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -412,10 +411,10 @@ class LocationsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [LocationListingPatch200Response] as data
+  /// Returns a [Future] containing a [Response] with a [Listing] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<LocationListingPatch200Response>> locationListingPatch({
-    required LocationListingPatchRequest locationListingPatchRequest,
+  Future<Response<Listing>> locationListingPost({
+    required LocationListingPostRequest locationListingPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -425,7 +424,7 @@ class LocationsApi {
   }) async {
     final _path = r'/location/listing';
     final _options = Options(
-      method: r'PATCH',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -447,8 +446,8 @@ class LocationsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(LocationListingPatchRequest);
-      _bodyData = _serializers.serialize(locationListingPatchRequest,
+      const _type = FullType(LocationListingPostRequest);
+      _bodyData = _serializers.serialize(locationListingPostRequest,
           specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
@@ -471,7 +470,7 @@ class LocationsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    LocationListingPatch200Response? _responseData;
+    Listing? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -479,8 +478,8 @@ class LocationsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(LocationListingPatch200Response),
-            ) as LocationListingPatch200Response;
+              specifiedType: const FullType(Listing),
+            ) as Listing;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -491,7 +490,7 @@ class LocationsApi {
       );
     }
 
-    return Response<LocationListingPatch200Response>(
+    return Response<Listing>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
