@@ -32,10 +32,10 @@ void main() {
       // TODO
     });
 
-    // Update a Listing
+    // Create or update a Listing
     //
-    //Future<LocationListingPatch200Response> locationListingPatch(LocationListingPatchRequest locationListingPatchRequest) async
-    test('test locationListingPatch', () async {
+    //Future<Listing> locationListingPost(LocationListingPostRequest locationListingPostRequest) async
+    test('test locationListingPost', () async {
       // TODO
     });
 

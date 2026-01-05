@@ -8,10 +8,10 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | 
+**id** | **String** |  | [optional] 
 **type** | [**DirectoryType**](DirectoryType.md) |  | 
 **connectionId** | **String** |  | [optional] 
-**locationId** | **String** |  | 
+**locationId** | **String** |  | [optional] 
 **url** | **String** | listing URL | [optional] 
 **connected** | **bool** |  | 
 **externalLocationId** | **String** |  | [optional] 

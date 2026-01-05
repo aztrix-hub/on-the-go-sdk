@@ -8,13 +8,13 @@ part of 'listing.dart';
 
 class _$Listing extends Listing {
   @override
-  final String id;
+  final String? id;
   @override
   final DirectoryType type;
   @override
   final String? connectionId;
   @override
-  final String locationId;
+  final String? locationId;
   @override
   final String? url;
   @override
@@ -26,10 +26,10 @@ class _$Listing extends Listing {
       (ListingBuilder()..update(updates))._build();
 
   _$Listing._(
-      {required this.id,
+      {this.id,
       required this.type,
       this.connectionId,
-      required this.locationId,
+      this.locationId,
       this.url,
       required this.connected,
       this.externalLocationId})
@@ -149,11 +149,10 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   _$Listing _build() {
     final _$result = _$v ??
         _$Listing._(
-          id: BuiltValueNullFieldError.checkNotNull(id, r'Listing', 'id'),
+          id: id,
           type: BuiltValueNullFieldError.checkNotNull(type, r'Listing', 'type'),
           connectionId: connectionId,
-          locationId: BuiltValueNullFieldError.checkNotNull(
-              locationId, r'Listing', 'locationId'),
+          locationId: locationId,
           url: url,
           connected: BuiltValueNullFieldError.checkNotNull(
               connected, r'Listing', 'connected'),

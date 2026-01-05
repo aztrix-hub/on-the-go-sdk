@@ -64,7 +64,7 @@ void main() {
 
     // Registers a user
     //
-    //Future userRegisterPost(UserSystemPostRequest userSystemPostRequest) async
+    //Future userRegisterPost(UserRegisterPostRequest userRegisterPostRequest) async
     test('test userRegisterPost', () async {
       // TODO
     });
