@@ -27,17 +27,6 @@ void main() {
       // TODO
     });
 
-    // listing URL
-    // String url
-    test('to test the property `url`', () async {
-      // TODO
-    });
-
-    // bool connected
-    test('to test the property `connected`', () async {
-      // TODO
-    });
-
     // String externalLocationId
     test('to test the property `externalLocationId`', () async {
       // TODO

@@ -8,31 +8,25 @@ part of 'listing.dart';
 
 class _$Listing extends Listing {
   @override
-  final String? id;
+  final String id;
   @override
   final DirectoryType type;
   @override
-  final String? connectionId;
+  final String connectionId;
   @override
-  final String? locationId;
+  final String locationId;
   @override
-  final String? url;
-  @override
-  final bool connected;
-  @override
-  final String? externalLocationId;
+  final String externalLocationId;
 
   factory _$Listing([void Function(ListingBuilder)? updates]) =>
       (ListingBuilder()..update(updates))._build();
 
   _$Listing._(
-      {this.id,
+      {required this.id,
       required this.type,
-      this.connectionId,
-      this.locationId,
-      this.url,
-      required this.connected,
-      this.externalLocationId})
+      required this.connectionId,
+      required this.locationId,
+      required this.externalLocationId})
       : super._();
   @override
   Listing rebuild(void Function(ListingBuilder) updates) =>
@@ -49,8 +43,6 @@ class _$Listing extends Listing {
         type == other.type &&
         connectionId == other.connectionId &&
         locationId == other.locationId &&
-        url == other.url &&
-        connected == other.connected &&
         externalLocationId == other.externalLocationId;
   }
 
@@ -61,8 +53,6 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, locationId.hashCode);
-    _$hash = $jc(_$hash, url.hashCode);
-    _$hash = $jc(_$hash, connected.hashCode);
     _$hash = $jc(_$hash, externalLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -75,8 +65,6 @@ class _$Listing extends Listing {
           ..add('type', type)
           ..add('connectionId', connectionId)
           ..add('locationId', locationId)
-          ..add('url', url)
-          ..add('connected', connected)
           ..add('externalLocationId', externalLocationId))
         .toString();
   }
@@ -101,14 +89,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   String? get locationId => _$this._locationId;
   set locationId(String? locationId) => _$this._locationId = locationId;
 
-  String? _url;
-  String? get url => _$this._url;
-  set url(String? url) => _$this._url = url;
-
-  bool? _connected;
-  bool? get connected => _$this._connected;
-  set connected(bool? connected) => _$this._connected = connected;
-
   String? _externalLocationId;
   String? get externalLocationId => _$this._externalLocationId;
   set externalLocationId(String? externalLocationId) =>
@@ -125,8 +105,6 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _type = $v.type;
       _connectionId = $v.connectionId;
       _locationId = $v.locationId;
-      _url = $v.url;
-      _connected = $v.connected;
       _externalLocationId = $v.externalLocationId;
       _$v = null;
     }
@@ -149,14 +127,14 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   _$Listing _build() {
     final _$result = _$v ??
         _$Listing._(
-          id: id,
+          id: BuiltValueNullFieldError.checkNotNull(id, r'Listing', 'id'),
           type: BuiltValueNullFieldError.checkNotNull(type, r'Listing', 'type'),
-          connectionId: connectionId,
-          locationId: locationId,
-          url: url,
-          connected: BuiltValueNullFieldError.checkNotNull(
-              connected, r'Listing', 'connected'),
-          externalLocationId: externalLocationId,
+          connectionId: BuiltValueNullFieldError.checkNotNull(
+              connectionId, r'Listing', 'connectionId'),
+          locationId: BuiltValueNullFieldError.checkNotNull(
+              locationId, r'Listing', 'locationId'),
+          externalLocationId: BuiltValueNullFieldError.checkNotNull(
+              externalLocationId, r'Listing', 'externalLocationId'),
         );
     replace(_$result);
     return _$result;

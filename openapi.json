@@ -3278,8 +3278,11 @@
       "Listing": {
         "type": "object",
         "required": [
+          "id",
           "type",
-          "connected"
+          "connectionId",
+          "locationId",
+          "externalLocationId"
         ],
         "properties": {
           "id": {
@@ -3293,13 +3296,6 @@
           },
           "locationId": {
             "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "description": "listing URL"
-          },
-          "connected": {
-            "type": "boolean"
           },
           "externalLocationId": {
             "type": "string"
