@@ -3552,11 +3552,14 @@
       "Metric": {
         "type": "object",
         "properties": {
-          "name": {
-            "$ref": "#/components/schemas/MetricName"
+          "locationId": {
+            "type": "string"
           },
           "type": {
             "$ref": "#/components/schemas/DirectoryType"
+          },
+          "name": {
+            "$ref": "#/components/schemas/MetricName"
           },
           "data": {
             "type": "array",

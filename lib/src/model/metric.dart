@@ -15,18 +15,22 @@ part 'metric.g.dart';
 /// Metric
 ///
 /// Properties:
-/// * [name]
+/// * [locationId]
 /// * [type]
+/// * [name]
 /// * [data]
 @BuiltValue()
 abstract class Metric implements Built<Metric, MetricBuilder> {
-  @BuiltValueField(wireName: r'name')
-  MetricName? get name;
-  // enum nameEnum {  IMPRESSIONS,  MAPS_IMPRESSIONS,  MOBILE_MAPS_IMPRESSIONS,  SEARCH_IMPRESSIONS,  MOBILE_SEARCH_IMPRESSIONS,  INTERACTIONS,  DIRECTION_INTERACTIONS,  WEBSITE_INTERACTIONS,  CALL_INTERACTIONS,  };
+  @BuiltValueField(wireName: r'locationId')
+  String? get locationId;
 
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  @BuiltValueField(wireName: r'name')
+  MetricName? get name;
+  // enum nameEnum {  IMPRESSIONS,  MAPS_IMPRESSIONS,  MOBILE_MAPS_IMPRESSIONS,  SEARCH_IMPRESSIONS,  MOBILE_SEARCH_IMPRESSIONS,  INTERACTIONS,  DIRECTION_INTERACTIONS,  WEBSITE_INTERACTIONS,  CALL_INTERACTIONS,  };
 
   @BuiltValueField(wireName: r'data')
   BuiltList<MetricData>? get data;
@@ -54,11 +58,11 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
     Metric object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.name != null) {
-      yield r'name';
+    if (object.locationId != null) {
+      yield r'locationId';
       yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(MetricName),
+        object.locationId,
+        specifiedType: const FullType(String),
       );
     }
     if (object.type != null) {
@@ -66,6 +70,13 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
       yield serializers.serialize(
         object.type,
         specifiedType: const FullType(DirectoryType),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(MetricName),
       );
     }
     if (object.data != null) {
@@ -100,12 +111,12 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'name':
+        case r'locationId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(MetricName),
-          ) as MetricName;
-          result.name = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.locationId = valueDes;
           break;
         case r'type':
           final valueDes = serializers.deserialize(
@@ -113,6 +124,13 @@ class _$MetricSerializer implements PrimitiveSerializer<Metric> {
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
           result.type = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(MetricName),
+          ) as MetricName;
+          result.name = valueDes;
           break;
         case r'data':
           final valueDes = serializers.deserialize(

@@ -8,16 +8,18 @@ part of 'metric.dart';
 
 class _$Metric extends Metric {
   @override
-  final MetricName? name;
+  final String? locationId;
   @override
   final DirectoryType? type;
+  @override
+  final MetricName? name;
   @override
   final BuiltList<MetricData>? data;
 
   factory _$Metric([void Function(MetricBuilder)? updates]) =>
       (MetricBuilder()..update(updates))._build();
 
-  _$Metric._({this.name, this.type, this.data}) : super._();
+  _$Metric._({this.locationId, this.type, this.name, this.data}) : super._();
   @override
   Metric rebuild(void Function(MetricBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -29,16 +31,18 @@ class _$Metric extends Metric {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Metric &&
-        name == other.name &&
+        locationId == other.locationId &&
         type == other.type &&
+        name == other.name &&
         data == other.data;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -47,8 +51,9 @@ class _$Metric extends Metric {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'Metric')
-          ..add('name', name)
+          ..add('locationId', locationId)
           ..add('type', type)
+          ..add('name', name)
           ..add('data', data))
         .toString();
   }
@@ -57,13 +62,17 @@ class _$Metric extends Metric {
 class MetricBuilder implements Builder<Metric, MetricBuilder> {
   _$Metric? _$v;
 
-  MetricName? _name;
-  MetricName? get name => _$this._name;
-  set name(MetricName? name) => _$this._name = name;
+  String? _locationId;
+  String? get locationId => _$this._locationId;
+  set locationId(String? locationId) => _$this._locationId = locationId;
 
   DirectoryType? _type;
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
+
+  MetricName? _name;
+  MetricName? get name => _$this._name;
+  set name(MetricName? name) => _$this._name = name;
 
   ListBuilder<MetricData>? _data;
   ListBuilder<MetricData> get data =>
@@ -77,8 +86,9 @@ class MetricBuilder implements Builder<Metric, MetricBuilder> {
   MetricBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _name = $v.name;
+      _locationId = $v.locationId;
       _type = $v.type;
+      _name = $v.name;
       _data = $v.data?.toBuilder();
       _$v = null;
     }
@@ -103,8 +113,9 @@ class MetricBuilder implements Builder<Metric, MetricBuilder> {
     try {
       _$result = _$v ??
           _$Metric._(
-            name: name,
+            locationId: locationId,
             type: type,
+            name: name,
             data: _data?.build(),
           );
     } catch (_) {
