@@ -63,6 +63,8 @@ import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 import 'package:on_the_go_sdk/src/model/individual.dart';
 import 'package:on_the_go_sdk/src/model/listing.dart';
+import 'package:on_the_go_sdk/src/model/listing_conflict.dart';
+import 'package:on_the_go_sdk/src/model/listing_or_listing_conflicts.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
@@ -148,6 +150,8 @@ part 'serializers.g.dart';
   InboxReplyPostRequest,
   Individual,
   Listing,
+  ListingConflict,
+  ListingOrListingConflicts,
   Location,
   LocationDelete200Response,
   LocationDeleteRequest,

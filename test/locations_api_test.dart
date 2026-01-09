@@ -39,6 +39,13 @@ void main() {
       // TODO
     });
 
+    // Sync a listing
+    //
+    //Future<ListingOrListingConflicts> locationListingSyncPost(String listingId) async
+    test('test locationListingSyncPost', () async {
+      // TODO
+    });
+
     //Future<BuiltList<Listing>> locationListingsGet(String locationId, Platform platform, { String redirectUrl }) async
     test('test locationListingsGet', () async {
       // TODO

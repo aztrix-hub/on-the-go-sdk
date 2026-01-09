@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingPost**](doc/LocationsApi.md#locationlistingpost) | **POST** /location/listing | Create or update a Listing
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingSyncPost**](doc/LocationsApi.md#locationlistingsyncpost) | **POST** /location/listing/sync | Sync a listing
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingsGet**](doc/LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPatch**](doc/LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPhotoDelete**](doc/LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -170,6 +171,8 @@ Class | Method | HTTP request | Description
  - [InboxReplyPostRequest](doc/InboxReplyPostRequest.md)
  - [Individual](doc/Individual.md)
  - [Listing](doc/Listing.md)
+ - [ListingConflict](doc/ListingConflict.md)
+ - [ListingOrListingConflicts](doc/ListingOrListingConflicts.md)
  - [Location](doc/Location.md)
  - [LocationDelete200Response](doc/LocationDelete200Response.md)
  - [LocationDeleteRequest](doc/LocationDeleteRequest.md)

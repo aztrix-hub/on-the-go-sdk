@@ -10,7 +10,7 @@ class _$Location extends Location {
   @override
   final String id;
   @override
-  final String name;
+  final String? name;
   @override
   final Address? address;
   @override
@@ -55,7 +55,7 @@ class _$Location extends Location {
 
   _$Location._(
       {required this.id,
-      required this.name,
+      this.name,
       this.address,
       this.email,
       this.cellphone,
@@ -316,8 +316,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _$result = _$v ??
           _$Location._(
             id: BuiltValueNullFieldError.checkNotNull(id, r'Location', 'id'),
-            name: BuiltValueNullFieldError.checkNotNull(
-                name, r'Location', 'name'),
+            name: name,
             address: _address?.build(),
             email: email,
             cellphone: cellphone,

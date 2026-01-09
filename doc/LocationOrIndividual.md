@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**name** | **String** |  | 
+**name** | **String** |  | [optional] 
 **address** | [**Address**](Address.md) |  | [optional] 
 **email** | **String** | Email | [optional] 
 **cellphone** | **String** |  | [optional] 

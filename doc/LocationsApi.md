@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
 [**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [**locationListingPost**](LocationsApi.md#locationlistingpost) | **POST** /location/listing | Create or update a Listing
+[**locationListingSyncPost**](LocationsApi.md#locationlistingsyncpost) | **POST** /location/listing/sync | Sync a listing
 [**locationListingsGet**](LocationsApi.md#locationlistingsget) | **GET** /location/listings | 
 [**locationPatch**](LocationsApi.md#locationpatch) | **PATCH** /location | Update a Location
 [**locationPhotoDelete**](LocationsApi.md#locationphotodelete) | **DELETE** /location/photo | 
@@ -246,6 +247,51 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationListingSyncPost**
+> ListingOrListingConflicts locationListingSyncPost(listingId)
+
+Sync a listing
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String listingId = listingId_example; // String | 
+
+try {
+    final response = api.locationListingSyncPost(listingId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingSyncPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listingId** | **String**|  | 
+
+### Return type
+
+[**ListingOrListingConflicts**](ListingOrListingConflicts.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -2796,6 +2796,56 @@
         ]
       }
     },
+    "/location/listing/sync": {
+      "post": {
+        "tags": [
+          "locations"
+        ],
+        "summary": "Sync a listing",
+        "parameters": [
+          {
+            "name": "listingId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingOrListingConflicts"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/analytics": {
       "get": {
         "tags": [
@@ -2996,8 +3046,7 @@
       "Location": {
         "type": "object",
         "required": [
-          "id",
-          "name"
+          "id"
         ],
         "properties": {
           "id": {
@@ -3275,6 +3324,18 @@
           }
         }
       },
+      "ListingOrListingConflicts": {
+        "oneOf": [
+          {
+            "description": "Listing successfully synced",
+            "$ref": "#/components/schemas/Listing"
+          },
+          {
+            "description": "The Listing has conflicts and is therefore not synced",
+            "$ref": "#/components/schemas/ListingConflicts"
+          }
+        ]
+      },
       "Listing": {
         "type": "object",
         "required": [
@@ -3298,6 +3359,30 @@
             "type": "string"
           },
           "externalLocationId": {
+            "type": "string"
+          }
+        }
+      },
+      "ListingConflicts": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListingConflict"
+        }
+      },
+      "ListingConflict": {
+        "type": "object",
+        "required": [
+          "internal",
+          "external"
+        ],
+        "properties": {
+          "internal": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "external": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "type": {
             "type": "string"
           }
         }
