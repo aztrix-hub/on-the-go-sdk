@@ -37,7 +37,6 @@ void main() {
       // TODO
     });
 
-    // Opening hours
     // BuiltList<OpeningHour> openingHours
     test('to test the property `openingHours`', () async {
       // TODO

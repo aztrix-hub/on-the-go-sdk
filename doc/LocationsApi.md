@@ -281,7 +281,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listingId** | **String**|  | 
- **location** | [**Location**](Location.md)| Resolve conflicts | 
+ **location** | [**Location**](Location.md)| Resolve conflicts | [optional] 
 
 ### Return type
 

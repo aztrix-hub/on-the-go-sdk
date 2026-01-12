@@ -520,7 +520,7 @@ class LocationsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ListingOrListingConflicts>> locationListingSyncPost({
     required String listingId,
-    required Location location,
+    Location? location,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -558,7 +558,9 @@ class LocationsApi {
 
     try {
       const _type = FullType(Location);
-      _bodyData = _serializers.serialize(location, specifiedType: _type);
+      _bodyData = location == null
+          ? null
+          : _serializers.serialize(location, specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

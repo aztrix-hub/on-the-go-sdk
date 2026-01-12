@@ -47,19 +47,16 @@ void main() {
       // TODO
     });
 
-    // Keywords
     // BuiltList<String> keywords
     test('to test the property `keywords`', () async {
       // TODO
     });
 
-    // Opening hours
     // BuiltList<OpeningHour> openingHours
     test('to test the property `openingHours`', () async {
       // TODO
     });
 
-    // Special opening hours
     // BuiltList<SpecialOpeningHour> specialOpeningHours
     test('to test the property `specialOpeningHours`', () async {
       // TODO

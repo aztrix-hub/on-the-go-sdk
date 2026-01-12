@@ -2820,8 +2820,7 @@
                 "$ref": "#/components/schemas/Location"
               }
             }
-          },
-          "required": true
+          }
         },
         "responses": {
           "200": {
