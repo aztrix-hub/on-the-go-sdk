@@ -27,7 +27,7 @@ part 'ai_actions.g.dart';
 /// * [updateContact]
 /// * [keywords]
 /// * [description]
-/// * [openingHours] - Opening hours
+/// * [openingHours]
 /// * [call]
 /// * [text]
 /// * [email]
@@ -54,7 +54,6 @@ abstract class AiActions implements Built<AiActions, AiActionsBuilder> {
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  /// Opening hours
   @BuiltValueField(wireName: r'openingHours')
   BuiltList<OpeningHour>? get openingHours;
 

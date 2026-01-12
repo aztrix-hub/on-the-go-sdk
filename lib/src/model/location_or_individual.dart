@@ -23,8 +23,8 @@ part 'location_or_individual.g.dart';
 /// * [fax]
 /// * [description]
 /// * [keywords]
-/// * [openingHours] - Opening hours
-/// * [specialOpeningHours] - Special opening hours
+/// * [openingHours]
+/// * [specialOpeningHours]
 /// * [logo]
 /// * [coverPhoto]
 /// * [photoGallery]

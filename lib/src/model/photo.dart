@@ -8,7 +8,7 @@ import 'package:built_value/serializer.dart';
 
 part 'photo.g.dart';
 
-/// Location Photo
+/// Photo
 ///
 /// Properties:
 /// * [id] - A unique id for the photo

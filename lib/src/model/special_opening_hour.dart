@@ -10,7 +10,7 @@ import 'package:built_value/serializer.dart';
 
 part 'special_opening_hour.g.dart';
 
-/// Special Opening Hours
+/// SpecialOpeningHour
 ///
 /// Properties:
 /// * [date] - The date of a special opening hour (format: yyyy-MM-dd)

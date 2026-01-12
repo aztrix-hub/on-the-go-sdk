@@ -2812,6 +2812,17 @@
             }
           }
         ],
+        "requestBody": {
+          "description": "Resolve conflicts",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "content": {
@@ -3046,7 +3057,8 @@
       "Location": {
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "name"
         ],
         "properties": {
           "id": {
@@ -3074,11 +3086,7 @@
             "type": "string"
           },
           "keywords": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "description": "Keywords describing the locations activity"
-            }
+            "$ref": "#/components/schemas/Keywords"
           },
           "openingHours": {
             "$ref": "#/components/schemas/OpeningHours"
@@ -3093,12 +3101,7 @@
             "$ref": "#/components/schemas/Photo"
           },
           "photoGallery": {
-            "uniqueItems": true,
-            "type": "array",
-            "items": {
-              "type": "object",
-              "$ref": "#/components/schemas/Photo"
-            }
+            "$ref": "#/components/schemas/PhotoGallery"
           },
           "timezone": {
             "type": "string"
@@ -3107,10 +3110,7 @@
             "type": "string"
           },
           "categories": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Category"
-            }
+            "$ref": "#/components/schemas/Categories"
           },
           "averageRating": {
             "type": "number",
@@ -3126,8 +3126,7 @@
           "source": {
             "type": "string"
           }
-        },
-        "description": "Location"
+        }
       },
       "LocationOrIndividual": {
         "oneOf": [
@@ -3192,6 +3191,12 @@
           }
         }
       },
+      "Categories": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/Category"
+        }
+      },
       "Category": {
         "type": "object",
         "properties": {
@@ -3203,12 +3208,17 @@
           }
         }
       },
+      "Keywords": {
+        "type": "array",
+        "items": {
+          "$ref": "string"
+        }
+      },
       "OpeningHours": {
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OpeningHour"
-        },
-        "description": "Opening hours"
+        }
       },
       "OpeningHour": {
         "required": [
@@ -3234,7 +3244,6 @@
             }
           }
         },
-        "description": "Opening Hours",
         "example": [
           {
             "dayOfWeek": 1,
@@ -3268,8 +3277,7 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/SpecialOpeningHour"
-        },
-        "description": "Special opening hours"
+        }
       },
       "SpecialOpeningHour": {
         "required": [
@@ -3293,7 +3301,6 @@
             }
           }
         },
-        "description": "Special Opening Hours",
         "example": [
           {
             "date": "1991-06-12",
@@ -3372,26 +3379,65 @@
       "ListingConflict": {
         "type": "object",
         "required": [
-          "internal",
-          "external"
+          "type",
+          "internalValue",
+          "externalValue"
         ],
         "properties": {
-          "internal": {
-            "$ref": "#/components/schemas/Location"
-          },
-          "external": {
-            "$ref": "#/components/schemas/Location"
-          },
-          "type": {
+          "name": {
             "type": "string"
+          },
+          "internalValue": {
+            "$ref": "#/components/schemas/ListingConflictValue"
+          },
+          "externalValue": {
+            "$ref": "#/components/schemas/ListingConflictValue"
           }
         }
       },
+      "ListingConflictValue": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "$ref": "#/components/schemas/Address"
+          },
+          {
+            "$ref": "#/components/schemas/Keywords"
+          },
+          {
+            "$ref": "#/components/schemas/OpeningHours"
+          },
+          {
+            "$ref": "#/components/schemas/SpecialOpeningHours"
+          },
+          {
+            "$ref": "#/components/schemas/Photo"
+          },
+          {
+            "$ref": "#/components/schemas/PhotoGallery"
+          },
+          {
+            "$ref": "#/components/schemas/Categories"
+          }
+        ]
+      },
+      "PhotoGallery": {
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+          "$ref": "#/components/schemas/Photo"
+        }
+      },
       "Photo": {
+        "type": "object",
         "required": [
           "url"
         ],
-        "type": "object",
         "properties": {
           "id": {
             "type": "string",
@@ -3405,8 +3451,7 @@
             "type": "string",
             "description": "A description for the photo - max 255 chars"
           }
-        },
-        "description": "Location Photo"
+        }
       },
       "LocationPhotoType": {
         "type": "string",

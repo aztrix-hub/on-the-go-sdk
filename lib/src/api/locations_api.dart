@@ -508,6 +508,7 @@ class LocationsApi {
   ///
   /// Parameters:
   /// * [listingId]
+  /// * [location] - Resolve conflicts
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -519,6 +520,7 @@ class LocationsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ListingOrListingConflicts>> locationListingSyncPost({
     required String listingId,
+    required Location location,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -543,6 +545,7 @@ class LocationsApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
@@ -551,8 +554,27 @@ class LocationsApi {
           encodeQueryParameter(_serializers, listingId, const FullType(String)),
     };
 
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(Location);
+      _bodyData = _serializers.serialize(location, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+          queryParameters: _queryParameters,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
       queryParameters: _queryParameters,
       cancelToken: cancelToken,

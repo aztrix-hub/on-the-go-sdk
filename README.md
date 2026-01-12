@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
  - [Individual](doc/Individual.md)
  - [Listing](doc/Listing.md)
  - [ListingConflict](doc/ListingConflict.md)
+ - [ListingConflictValue](doc/ListingConflictValue.md)
  - [ListingOrListingConflicts](doc/ListingOrListingConflicts.md)
  - [Location](doc/Location.md)
  - [LocationDelete200Response](doc/LocationDelete200Response.md)

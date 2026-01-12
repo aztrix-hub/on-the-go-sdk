@@ -21,7 +21,7 @@ part 'ai_chat_data_post200_response_actions.g.dart';
 /// * [search]
 /// * [keywords]
 /// * [description]
-/// * [openingHours] - Opening hours
+/// * [openingHours]
 /// * [call]
 /// * [text]
 /// * [email]
@@ -40,7 +40,6 @@ abstract class AiChatDataPost200ResponseActions
   @BuiltValueField(wireName: r'description')
   String? get description;
 
-  /// Opening hours
   @BuiltValueField(wireName: r'openingHours')
   BuiltList<OpeningHour>? get openingHours;
 

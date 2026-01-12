@@ -71,6 +71,7 @@ export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 export 'package:on_the_go_sdk/src/model/individual.dart';
 export 'package:on_the_go_sdk/src/model/listing.dart';
 export 'package:on_the_go_sdk/src/model/listing_conflict.dart';
+export 'package:on_the_go_sdk/src/model/listing_conflict_value.dart';
 export 'package:on_the_go_sdk/src/model/listing_or_listing_conflicts.dart';
 export 'package:on_the_go_sdk/src/model/location.dart';
 export 'package:on_the_go_sdk/src/model/location_delete200_response.dart';

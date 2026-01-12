@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/location.dart';
+import 'package:on_the_go_sdk/src/model/listing_conflict_value.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -12,20 +12,20 @@ part 'listing_conflict.g.dart';
 /// ListingConflict
 ///
 /// Properties:
-/// * [internal]
-/// * [external_]
-/// * [type]
+/// * [name]
+/// * [internalValue]
+/// * [externalValue]
 @BuiltValue()
 abstract class ListingConflict
     implements Built<ListingConflict, ListingConflictBuilder> {
-  @BuiltValueField(wireName: r'internal')
-  Location get internal;
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-  @BuiltValueField(wireName: r'external')
-  Location get external_;
+  @BuiltValueField(wireName: r'internalValue')
+  ListingConflictValue get internalValue;
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+  @BuiltValueField(wireName: r'externalValue')
+  ListingConflictValue get externalValue;
 
   ListingConflict._();
 
@@ -53,23 +53,23 @@ class _$ListingConflictSerializer
     ListingConflict object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'internal';
-    yield serializers.serialize(
-      object.internal,
-      specifiedType: const FullType(Location),
-    );
-    yield r'external';
-    yield serializers.serialize(
-      object.external_,
-      specifiedType: const FullType(Location),
-    );
-    if (object.type != null) {
-      yield r'type';
+    if (object.name != null) {
+      yield r'name';
       yield serializers.serialize(
-        object.type,
+        object.name,
         specifiedType: const FullType(String),
       );
     }
+    yield r'internalValue';
+    yield serializers.serialize(
+      object.internalValue,
+      specifiedType: const FullType(ListingConflictValue),
+    );
+    yield r'externalValue';
+    yield serializers.serialize(
+      object.externalValue,
+      specifiedType: const FullType(ListingConflictValue),
+    );
   }
 
   @override
@@ -95,26 +95,26 @@ class _$ListingConflictSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'internal':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Location),
-          ) as Location;
-          result.internal.replace(valueDes);
-          break;
-        case r'external':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(Location),
-          ) as Location;
-          result.external_.replace(valueDes);
-          break;
-        case r'type':
+        case r'name':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.type = valueDes;
+          result.name = valueDes;
+          break;
+        case r'internalValue':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ListingConflictValue),
+          ) as ListingConflictValue;
+          result.internalValue.replace(valueDes);
+          break;
+        case r'externalValue':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ListingConflictValue),
+          ) as ListingConflictValue;
+          result.externalValue.replace(valueDes);
           break;
         default:
           unhandled.add(key);

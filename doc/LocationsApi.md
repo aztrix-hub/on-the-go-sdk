@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationListingSyncPost**
-> ListingOrListingConflicts locationListingSyncPost(listingId)
+> ListingOrListingConflicts locationListingSyncPost(listingId, location)
 
 Sync a listing
 
@@ -266,9 +266,10 @@ import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getLocationsApi();
 final String listingId = listingId_example; // String | 
+final Location location = ; // Location | Resolve conflicts
 
 try {
-    final response = api.locationListingSyncPost(listingId);
+    final response = api.locationListingSyncPost(listingId, location);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling LocationsApi->locationListingSyncPost: $e\n');
@@ -280,6 +281,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **listingId** | **String**|  | 
+ **location** | [**Location**](Location.md)| Resolve conflicts | 
 
 ### Return type
 
@@ -291,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

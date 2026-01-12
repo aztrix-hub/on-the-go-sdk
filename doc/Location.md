@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
-**name** | **String** |  | [optional] 
+**name** | **String** |  | 
 **address** | [**Address**](Address.md) |  | [optional] 
 **email** | **String** |  | [optional] 
 **cellphone** | **String** |  | [optional] 
@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **fax** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
-**openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 
-**specialOpeningHours** | [**BuiltList&lt;SpecialOpeningHour&gt;**](SpecialOpeningHour.md) | Special opening hours | [optional] 
+**openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) |  | [optional] 
+**specialOpeningHours** | [**BuiltList&lt;SpecialOpeningHour&gt;**](SpecialOpeningHour.md) |  | [optional] 
 **logo** | [**Photo**](Photo.md) |  | [optional] 
 **coverPhoto** | [**Photo**](Photo.md) |  | [optional] 
 **photoGallery** | [**BuiltSet&lt;Photo&gt;**](Photo.md) |  | [optional] 

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **updateContact** | [**AiChatDataPost200ResponseActionsUpdateContact**](AiChatDataPost200ResponseActionsUpdateContact.md) |  | [optional] 
 **keywords** | **BuiltList&lt;String&gt;** |  | [optional] 
 **description** | **String** |  | [optional] 
-**openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) | Opening hours | [optional] 
+**openingHours** | [**BuiltList&lt;OpeningHour&gt;**](OpeningHour.md) |  | [optional] 
 **call** | [**AiChatDataPost200ResponseActionsCall**](AiChatDataPost200ResponseActionsCall.md) |  | [optional] 
 **text** | [**AiChatDataPost200ResponseActionsText**](AiChatDataPost200ResponseActionsText.md) |  | [optional] 
 **email** | [**AiChatDataPost200ResponseActionsEmail**](AiChatDataPost200ResponseActionsEmail.md) |  | [optional] 

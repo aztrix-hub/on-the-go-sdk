@@ -8,17 +8,17 @@ part of 'listing_conflict.dart';
 
 class _$ListingConflict extends ListingConflict {
   @override
-  final Location internal;
+  final String? name;
   @override
-  final Location external_;
+  final ListingConflictValue internalValue;
   @override
-  final String? type;
+  final ListingConflictValue externalValue;
 
   factory _$ListingConflict([void Function(ListingConflictBuilder)? updates]) =>
       (ListingConflictBuilder()..update(updates))._build();
 
   _$ListingConflict._(
-      {required this.internal, required this.external_, this.type})
+      {this.name, required this.internalValue, required this.externalValue})
       : super._();
   @override
   ListingConflict rebuild(void Function(ListingConflictBuilder) updates) =>
@@ -31,17 +31,17 @@ class _$ListingConflict extends ListingConflict {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ListingConflict &&
-        internal == other.internal &&
-        external_ == other.external_ &&
-        type == other.type;
+        name == other.name &&
+        internalValue == other.internalValue &&
+        externalValue == other.externalValue;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, internal.hashCode);
-    _$hash = $jc(_$hash, external_.hashCode);
-    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, internalValue.hashCode);
+    _$hash = $jc(_$hash, externalValue.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -49,9 +49,9 @@ class _$ListingConflict extends ListingConflict {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ListingConflict')
-          ..add('internal', internal)
-          ..add('external_', external_)
-          ..add('type', type))
+          ..add('name', name)
+          ..add('internalValue', internalValue)
+          ..add('externalValue', externalValue))
         .toString();
   }
 }
@@ -60,17 +60,21 @@ class ListingConflictBuilder
     implements Builder<ListingConflict, ListingConflictBuilder> {
   _$ListingConflict? _$v;
 
-  LocationBuilder? _internal;
-  LocationBuilder get internal => _$this._internal ??= LocationBuilder();
-  set internal(LocationBuilder? internal) => _$this._internal = internal;
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
 
-  LocationBuilder? _external_;
-  LocationBuilder get external_ => _$this._external_ ??= LocationBuilder();
-  set external_(LocationBuilder? external_) => _$this._external_ = external_;
+  ListingConflictValueBuilder? _internalValue;
+  ListingConflictValueBuilder get internalValue =>
+      _$this._internalValue ??= ListingConflictValueBuilder();
+  set internalValue(ListingConflictValueBuilder? internalValue) =>
+      _$this._internalValue = internalValue;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  ListingConflictValueBuilder? _externalValue;
+  ListingConflictValueBuilder get externalValue =>
+      _$this._externalValue ??= ListingConflictValueBuilder();
+  set externalValue(ListingConflictValueBuilder? externalValue) =>
+      _$this._externalValue = externalValue;
 
   ListingConflictBuilder() {
     ListingConflict._defaults(this);
@@ -79,9 +83,9 @@ class ListingConflictBuilder
   ListingConflictBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _internal = $v.internal.toBuilder();
-      _external_ = $v.external_.toBuilder();
-      _type = $v.type;
+      _name = $v.name;
+      _internalValue = $v.internalValue.toBuilder();
+      _externalValue = $v.externalValue.toBuilder();
       _$v = null;
     }
     return this;
@@ -105,17 +109,17 @@ class ListingConflictBuilder
     try {
       _$result = _$v ??
           _$ListingConflict._(
-            internal: internal.build(),
-            external_: external_.build(),
-            type: type,
+            name: name,
+            internalValue: internalValue.build(),
+            externalValue: externalValue.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
-        _$failedField = 'internal';
-        internal.build();
-        _$failedField = 'external_';
-        external_.build();
+        _$failedField = 'internalValue';
+        internalValue.build();
+        _$failedField = 'externalValue';
+        externalValue.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ListingConflict', _$failedField, e.toString());

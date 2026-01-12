@@ -8,9 +8,9 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**internal** | [**Location**](Location.md) |  | 
-**external_** | [**Location**](Location.md) |  | 
-**type** | **String** |  | [optional] 
+**name** | **String** |  | [optional] 
+**internalValue** | [**ListingConflictValue**](ListingConflictValue.md) |  | 
+**externalValue** | [**ListingConflictValue**](ListingConflictValue.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

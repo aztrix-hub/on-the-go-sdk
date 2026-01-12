@@ -26,8 +26,8 @@ part 'location.g.dart';
 /// * [fax]
 /// * [description]
 /// * [keywords]
-/// * [openingHours] - Opening hours
-/// * [specialOpeningHours] - Special opening hours
+/// * [openingHours]
+/// * [specialOpeningHours]
 /// * [logo]
 /// * [coverPhoto]
 /// * [photoGallery]
@@ -44,7 +44,7 @@ abstract class Location implements Built<Location, LocationBuilder> {
   String get id;
 
   @BuiltValueField(wireName: r'name')
-  String? get name;
+  String get name;
 
   @BuiltValueField(wireName: r'address')
   Address? get address;
@@ -67,11 +67,9 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'keywords')
   BuiltList<String>? get keywords;
 
-  /// Opening hours
   @BuiltValueField(wireName: r'openingHours')
   BuiltList<OpeningHour>? get openingHours;
 
-  /// Special opening hours
   @BuiltValueField(wireName: r'specialOpeningHours')
   BuiltList<SpecialOpeningHour>? get specialOpeningHours;
 
@@ -133,13 +131,11 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       object.id,
       specifiedType: const FullType(String),
     );
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     if (object.address != null) {
       yield r'address';
       yield serializers.serialize(
