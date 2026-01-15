@@ -305,6 +305,40 @@
         }
       }
     },
+    "/user/authenticated": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Is the user authenticated",
+        "responses": {
+          "200": {
+            "description": "User is authenticated",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error occurred"
+          },
+          "401": {
+            "description": "User is not authenticated"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/user": {
       "get": {
         "tags": [
@@ -2827,7 +2861,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListingOrListingConflicts"
+                  "type": "object",
+                  "required": [
+                    "listing"
+                  ],
+                  "properties": {
+                    "listing": {
+                      "$ref": "#/components/schemas/Listing"
+                    },
+                    "conflicts": {
+                      "$ref": "#/components/schemas/ListingConflicts"
+                    }
+                  }
                 }
               }
             }
@@ -3378,7 +3423,7 @@
       "ListingConflict": {
         "type": "object",
         "required": [
-          "type",
+          "name",
           "internalValue",
           "externalValue"
         ],

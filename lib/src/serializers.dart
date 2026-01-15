@@ -70,6 +70,7 @@ import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_post_request.dart';
+import 'package:on_the_go_sdk/src/model/location_listing_sync_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
@@ -158,6 +159,7 @@ part 'serializers.g.dart';
   LocationDelete200Response,
   LocationDeleteRequest,
   LocationListingPostRequest,
+  LocationListingSyncPost200Response,
   LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,

@@ -6,6 +6,13 @@ void main() {
   final instance = OnTheGoSdk().getUsersApi();
 
   group(UsersApi, () {
+    // Is the user authenticated
+    //
+    //Future<User> userAuthenticatedGet() async
+    test('test userAuthenticatedGet', () async {
+      // TODO
+    });
+
     // get locations from a connection
     //
     //Future<BuiltList<UserConnectionLocationsGet200ResponseInner>> userConnectionLocationsGet(String connectionId, DirectoryType type, Platform platform) async

@@ -106,6 +106,7 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsGet**](doc/SitesApi.md#sitecolorsget) | **GET** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
+[*UsersApi*](doc/UsersApi.md) | [**userAuthenticatedGet**](doc/UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationsGet**](doc/UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
@@ -178,6 +179,7 @@ Class | Method | HTTP request | Description
  - [LocationDelete200Response](doc/LocationDelete200Response.md)
  - [LocationDeleteRequest](doc/LocationDeleteRequest.md)
  - [LocationListingPostRequest](doc/LocationListingPostRequest.md)
+ - [LocationListingSyncPost200Response](doc/LocationListingSyncPost200Response.md)
  - [LocationOrIndividual](doc/LocationOrIndividual.md)
  - [LocationPhotoPostRequest](doc/LocationPhotoPostRequest.md)
  - [LocationPhotoType](doc/LocationPhotoType.md)

@@ -8,7 +8,7 @@ part of 'listing_conflict.dart';
 
 class _$ListingConflict extends ListingConflict {
   @override
-  final String? name;
+  final String name;
   @override
   final ListingConflictValue internalValue;
   @override
@@ -18,7 +18,9 @@ class _$ListingConflict extends ListingConflict {
       (ListingConflictBuilder()..update(updates))._build();
 
   _$ListingConflict._(
-      {this.name, required this.internalValue, required this.externalValue})
+      {required this.name,
+      required this.internalValue,
+      required this.externalValue})
       : super._();
   @override
   ListingConflict rebuild(void Function(ListingConflictBuilder) updates) =>
@@ -109,7 +111,8 @@ class ListingConflictBuilder
     try {
       _$result = _$v ??
           _$ListingConflict._(
-            name: name,
+            name: BuiltValueNullFieldError.checkNotNull(
+                name, r'ListingConflict', 'name'),
             internalValue: internalValue.build(),
             externalValue: externalValue.build(),
           );

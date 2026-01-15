@@ -41,7 +41,7 @@ void main() {
 
     // Sync a listing
     //
-    //Future<ListingOrListingConflicts> locationListingSyncPost(String listingId, { Location location }) async
+    //Future<LocationListingSyncPost200Response> locationListingSyncPost(String listingId, { Location location }) async
     test('test locationListingSyncPost', () async {
       // TODO
     });

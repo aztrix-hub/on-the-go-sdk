@@ -77,6 +77,7 @@ export 'package:on_the_go_sdk/src/model/location.dart';
 export 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 export 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 export 'package:on_the_go_sdk/src/model/location_listing_post_request.dart';
+export 'package:on_the_go_sdk/src/model/location_listing_sync_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 export 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 export 'package:on_the_go_sdk/src/model/location_photo_type.dart';

@@ -19,7 +19,7 @@ part 'listing_conflict.g.dart';
 abstract class ListingConflict
     implements Built<ListingConflict, ListingConflictBuilder> {
   @BuiltValueField(wireName: r'name')
-  String? get name;
+  String get name;
 
   @BuiltValueField(wireName: r'internalValue')
   ListingConflictValue get internalValue;
@@ -53,13 +53,11 @@ class _$ListingConflictSerializer
     ListingConflict object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
     yield r'internalValue';
     yield serializers.serialize(
       object.internalValue,

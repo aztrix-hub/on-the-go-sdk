@@ -69,6 +69,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(LocationDelete200Response.serializer)
       ..add(LocationDeleteRequest.serializer)
       ..add(LocationListingPostRequest.serializer)
+      ..add(LocationListingSyncPost200Response.serializer)
       ..add(LocationOrIndividual.serializer)
       ..add(LocationPhotoPostRequest.serializer)
       ..add(LocationPhotoType.serializer)
@@ -135,6 +136,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(
               BuiltList, const [const FullType(InboxPostRequestStatusEnum)]),
           () => ListBuilder<InboxPostRequestStatusEnum>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ListingConflict)]),
+          () => ListBuilder<ListingConflict>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(Location)]),
           () => ListBuilder<Location>())

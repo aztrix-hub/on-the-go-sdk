@@ -9,6 +9,7 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**userAuthenticatedGet**](UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
 [**userConnectionLocationsGet**](UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
 [**userConnectionPost**](UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [**userConnectionsGet**](UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
@@ -21,6 +22,47 @@ Method | HTTP request | Description
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [**userSystemPost**](UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
 
+
+# **userAuthenticatedGet**
+> User userAuthenticatedGet()
+
+Is the user authenticated
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getUsersApi();
+
+try {
+    final response = api.userAuthenticatedGet();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userAuthenticatedGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**User**](User.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userConnectionLocationsGet**
 > BuiltList<UserConnectionLocationsGet200ResponseInner> userConnectionLocationsGet(connectionId, type, platform)

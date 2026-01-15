@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **locationListingSyncPost**
-> ListingOrListingConflicts locationListingSyncPost(listingId, location)
+> LocationListingSyncPost200Response locationListingSyncPost(listingId, location)
 
 Sync a listing
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListingOrListingConflicts**](ListingOrListingConflicts.md)
+[**LocationListingSyncPost200Response**](LocationListingSyncPost200Response.md)
 
 ### Authorization
 
