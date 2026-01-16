@@ -313,14 +313,7 @@
         "summary": "Is the user authenticated",
         "responses": {
           "200": {
-            "description": "User is authenticated",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/User"
-                }
-              }
-            }
+            "description": "User is authenticated"
           },
           "400": {
             "description": "Error occurred"

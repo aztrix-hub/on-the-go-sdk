@@ -8,7 +8,7 @@ void main() {
   group(UsersApi, () {
     // Is the user authenticated
     //
-    //Future<User> userAuthenticatedGet() async
+    //Future userAuthenticatedGet() async
     test('test userAuthenticatedGet', () async {
       // TODO
     });

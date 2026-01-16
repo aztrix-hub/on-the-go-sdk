@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 
 # **userAuthenticatedGet**
-> User userAuthenticatedGet()
+> userAuthenticatedGet()
 
 Is the user authenticated
 
@@ -39,8 +39,7 @@ import 'package:on_the_go_sdk/api.dart';
 final api = OnTheGoSdk().getUsersApi();
 
 try {
-    final response = api.userAuthenticatedGet();
-    print(response);
+    api.userAuthenticatedGet();
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userAuthenticatedGet: $e\n');
 }
@@ -51,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**User**](User.md)
+void (empty response body)
 
 ### Authorization
 
@@ -60,7 +59,7 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
