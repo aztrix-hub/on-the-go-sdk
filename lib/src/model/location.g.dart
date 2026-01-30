@@ -49,6 +49,16 @@ class _$Location extends Location {
   final bool? sponsored;
   @override
   final String? source_;
+  @override
+  final bool? emailVerified;
+  @override
+  final DateTime? emailVerifiedAt;
+  @override
+  final bool? phoneVerified;
+  @override
+  final DateTime? phoneVerifiedAt;
+  @override
+  final SocialMedia? socialMedia;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (LocationBuilder()..update(updates))._build();
@@ -74,7 +84,12 @@ class _$Location extends Location {
       this.averageRating,
       this.reviewCount,
       this.sponsored,
-      this.source_})
+      this.source_,
+      this.emailVerified,
+      this.emailVerifiedAt,
+      this.phoneVerified,
+      this.phoneVerifiedAt,
+      this.socialMedia})
       : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
@@ -107,7 +122,12 @@ class _$Location extends Location {
         averageRating == other.averageRating &&
         reviewCount == other.reviewCount &&
         sponsored == other.sponsored &&
-        source_ == other.source_;
+        source_ == other.source_ &&
+        emailVerified == other.emailVerified &&
+        emailVerifiedAt == other.emailVerifiedAt &&
+        phoneVerified == other.phoneVerified &&
+        phoneVerifiedAt == other.phoneVerifiedAt &&
+        socialMedia == other.socialMedia;
   }
 
   @override
@@ -134,6 +154,11 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, reviewCount.hashCode);
     _$hash = $jc(_$hash, sponsored.hashCode);
     _$hash = $jc(_$hash, source_.hashCode);
+    _$hash = $jc(_$hash, emailVerified.hashCode);
+    _$hash = $jc(_$hash, emailVerifiedAt.hashCode);
+    _$hash = $jc(_$hash, phoneVerified.hashCode);
+    _$hash = $jc(_$hash, phoneVerifiedAt.hashCode);
+    _$hash = $jc(_$hash, socialMedia.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -161,7 +186,12 @@ class _$Location extends Location {
           ..add('averageRating', averageRating)
           ..add('reviewCount', reviewCount)
           ..add('sponsored', sponsored)
-          ..add('source_', source_))
+          ..add('source_', source_)
+          ..add('emailVerified', emailVerified)
+          ..add('emailVerifiedAt', emailVerifiedAt)
+          ..add('phoneVerified', phoneVerified)
+          ..add('phoneVerifiedAt', phoneVerifiedAt)
+          ..add('socialMedia', socialMedia))
         .toString();
   }
 }
@@ -264,6 +294,32 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   String? get source_ => _$this._source_;
   set source_(String? source_) => _$this._source_ = source_;
 
+  bool? _emailVerified;
+  bool? get emailVerified => _$this._emailVerified;
+  set emailVerified(bool? emailVerified) =>
+      _$this._emailVerified = emailVerified;
+
+  DateTime? _emailVerifiedAt;
+  DateTime? get emailVerifiedAt => _$this._emailVerifiedAt;
+  set emailVerifiedAt(DateTime? emailVerifiedAt) =>
+      _$this._emailVerifiedAt = emailVerifiedAt;
+
+  bool? _phoneVerified;
+  bool? get phoneVerified => _$this._phoneVerified;
+  set phoneVerified(bool? phoneVerified) =>
+      _$this._phoneVerified = phoneVerified;
+
+  DateTime? _phoneVerifiedAt;
+  DateTime? get phoneVerifiedAt => _$this._phoneVerifiedAt;
+  set phoneVerifiedAt(DateTime? phoneVerifiedAt) =>
+      _$this._phoneVerifiedAt = phoneVerifiedAt;
+
+  SocialMediaBuilder? _socialMedia;
+  SocialMediaBuilder get socialMedia =>
+      _$this._socialMedia ??= SocialMediaBuilder();
+  set socialMedia(SocialMediaBuilder? socialMedia) =>
+      _$this._socialMedia = socialMedia;
+
   LocationBuilder() {
     Location._defaults(this);
   }
@@ -292,6 +348,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _reviewCount = $v.reviewCount;
       _sponsored = $v.sponsored;
       _source_ = $v.source_;
+      _emailVerified = $v.emailVerified;
+      _emailVerifiedAt = $v.emailVerifiedAt;
+      _phoneVerified = $v.phoneVerified;
+      _phoneVerifiedAt = $v.phoneVerifiedAt;
+      _socialMedia = $v.socialMedia?.toBuilder();
       _$v = null;
     }
     return this;
@@ -337,6 +398,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             reviewCount: reviewCount,
             sponsored: sponsored,
             source_: source_,
+            emailVerified: emailVerified,
+            emailVerifiedAt: emailVerifiedAt,
+            phoneVerified: phoneVerified,
+            phoneVerifiedAt: phoneVerifiedAt,
+            socialMedia: _socialMedia?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -359,6 +425,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
         _$failedField = 'categories';
         _categories?.build();
+
+        _$failedField = 'socialMedia';
+        _socialMedia?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

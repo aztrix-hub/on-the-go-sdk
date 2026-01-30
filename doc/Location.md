@@ -29,6 +29,11 @@ Name | Type | Description | Notes
 **reviewCount** | **int** |  | [optional] 
 **sponsored** | **bool** |  | [optional] 
 **source_** | **String** |  | [optional] 
+**emailVerified** | **bool** |  | [optional] 
+**emailVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**phoneVerified** | **bool** |  | [optional] 
+**phoneVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**socialMedia** | [**SocialMedia**](SocialMedia.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -87,6 +87,7 @@ import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
+import 'package:on_the_go_sdk/src/model/social_media.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
@@ -98,6 +99,11 @@ import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_system_post_request.dart';
+import 'package:on_the_go_sdk/src/model/verification_request.dart';
+import 'package:on_the_go_sdk/src/model/verification_response.dart';
+import 'package:on_the_go_sdk/src/model/verification_status.dart';
+import 'package:on_the_go_sdk/src/model/verify_code_request.dart';
+import 'package:on_the_go_sdk/src/model/verify_code_response.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 
 part 'serializers.g.dart';
@@ -176,6 +182,7 @@ part 'serializers.g.dart';
   SearchGetBoundingBoxParameter,
   SearchGetBoundingBoxParameterTopLeft,
   SiteColorsPatchRequest,
+  SocialMedia,
   SocialPost,
   SpecialOpeningHour,
   User,
@@ -187,6 +194,11 @@ part 'serializers.g.dart';
   UserRegisterPostRequest,
   UserSystemPost200Response,
   UserSystemPostRequest,
+  VerificationRequest,
+  VerificationResponse,
+  VerificationStatus,
+  VerifyCodeRequest,
+  VerifyCodeResponse,
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()

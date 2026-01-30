@@ -118,6 +118,9 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userRegisterPost**](doc/UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [*UsersApi*](doc/UsersApi.md) | [**userSystemPost**](doc/UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyCheckOtpPost**](doc/VerificationApi.md#verifycheckotppost) | **POST** /verify/check-otp | Verify OTP code
+[*VerificationApi*](doc/VerificationApi.md) | [**verifySendOtpPost**](doc/VerificationApi.md#verifysendotppost) | **POST** /verify/send-otp | Send OTP for email or SMS verification
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusVerificationIdGet**](doc/VerificationApi.md#verifystatusverificationidget) | **GET** /verify/status/{verificationId} | Check verification status
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -196,6 +199,7 @@ Class | Method | HTTP request | Description
  - [SearchGetBoundingBoxParameter](doc/SearchGetBoundingBoxParameter.md)
  - [SearchGetBoundingBoxParameterTopLeft](doc/SearchGetBoundingBoxParameterTopLeft.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
+ - [SocialMedia](doc/SocialMedia.md)
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
@@ -207,6 +211,11 @@ Class | Method | HTTP request | Description
  - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
  - [UserSystemPost200Response](doc/UserSystemPost200Response.md)
  - [UserSystemPostRequest](doc/UserSystemPostRequest.md)
+ - [VerificationRequest](doc/VerificationRequest.md)
+ - [VerificationResponse](doc/VerificationResponse.md)
+ - [VerificationStatus](doc/VerificationStatus.md)
+ - [VerifyCodeRequest](doc/VerifyCodeRequest.md)
+ - [VerifyCodeResponse](doc/VerifyCodeResponse.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 
 

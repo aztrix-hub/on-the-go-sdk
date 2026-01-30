@@ -18,6 +18,7 @@ import 'package:on_the_go_sdk/src/api/publish_api.dart';
 import 'package:on_the_go_sdk/src/api/search_api.dart';
 import 'package:on_the_go_sdk/src/api/sites_api.dart';
 import 'package:on_the_go_sdk/src/api/users_api.dart';
+import 'package:on_the_go_sdk/src/api/verification_api.dart';
 import 'package:on_the_go_sdk/src/api/whitelabel_api.dart';
 
 class OnTheGoSdk {
@@ -137,6 +138,12 @@ class OnTheGoSdk {
   /// by doing that all interceptors will not be executed
   UsersApi getUsersApi() {
     return UsersApi(dio, serializers);
+  }
+
+  /// Get VerificationApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  VerificationApi getVerificationApi() {
+    return VerificationApi(dio, serializers);
   }
 
   /// Get WhitelabelApi instance, base route and serializer can be overridden by a given but be careful,

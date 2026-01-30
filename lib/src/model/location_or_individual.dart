@@ -35,6 +35,11 @@ part 'location_or_individual.g.dart';
 /// * [reviewCount]
 /// * [sponsored]
 /// * [source_]
+/// * [emailVerified]
+/// * [emailVerifiedAt]
+/// * [phoneVerified]
+/// * [phoneVerifiedAt]
+/// * [socialMedia]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
 /// * [birthDate]

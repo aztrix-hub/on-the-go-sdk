@@ -8,6 +8,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
+import 'package:on_the_go_sdk/src/model/social_media.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -38,6 +39,11 @@ part 'location.g.dart';
 /// * [reviewCount]
 /// * [sponsored]
 /// * [source_]
+/// * [emailVerified]
+/// * [emailVerifiedAt]
+/// * [phoneVerified]
+/// * [phoneVerifiedAt]
+/// * [socialMedia]
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -102,6 +108,21 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'source')
   String? get source_;
+
+  @BuiltValueField(wireName: r'emailVerified')
+  bool? get emailVerified;
+
+  @BuiltValueField(wireName: r'emailVerifiedAt')
+  DateTime? get emailVerifiedAt;
+
+  @BuiltValueField(wireName: r'phoneVerified')
+  bool? get phoneVerified;
+
+  @BuiltValueField(wireName: r'phoneVerifiedAt')
+  DateTime? get phoneVerifiedAt;
+
+  @BuiltValueField(wireName: r'socialMedia')
+  SocialMedia? get socialMedia;
 
   Location._();
 
@@ -268,6 +289,41 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.source_,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.emailVerified != null) {
+      yield r'emailVerified';
+      yield serializers.serialize(
+        object.emailVerified,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.emailVerifiedAt != null) {
+      yield r'emailVerifiedAt';
+      yield serializers.serialize(
+        object.emailVerifiedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.phoneVerified != null) {
+      yield r'phoneVerified';
+      yield serializers.serialize(
+        object.phoneVerified,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.phoneVerifiedAt != null) {
+      yield r'phoneVerifiedAt';
+      yield serializers.serialize(
+        object.phoneVerifiedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.socialMedia != null) {
+      yield r'socialMedia';
+      yield serializers.serialize(
+        object.socialMedia,
+        specifiedType: const FullType(SocialMedia),
       );
     }
   }
@@ -442,6 +498,41 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(String),
           ) as String;
           result.source_ = valueDes;
+          break;
+        case r'emailVerified':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.emailVerified = valueDes;
+          break;
+        case r'emailVerifiedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.emailVerifiedAt = valueDes;
+          break;
+        case r'phoneVerified':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.phoneVerified = valueDes;
+          break;
+        case r'phoneVerifiedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.phoneVerifiedAt = valueDes;
+          break;
+        case r'socialMedia':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(SocialMedia),
+          ) as SocialMedia;
+          result.socialMedia.replace(valueDes);
           break;
         default:
           unhandled.add(key);
