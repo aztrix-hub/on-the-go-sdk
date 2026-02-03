@@ -48,14 +48,18 @@
   "paths": {
     "/user/system": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Find the system for the user",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["email"],
+                "required": [
+                  "email"
+                ],
                 "properties": {
                   "email": {
                     "type": "string",
@@ -101,7 +105,9 @@
     },
     "/user/login": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Provides an access_token for the user",
         "requestBody": {
           "content": {
@@ -152,7 +158,9 @@
     },
     "/user/logout": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "responses": {
           "200": {
             "description": "Successfully logged out"
@@ -170,7 +178,9 @@
     },
     "/user/oauth": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Finish OAuth flow",
         "description": "Provides an access_token for a authorization_code",
         "requestBody": {
@@ -220,7 +230,9 @@
     },
     "/user/register": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Registers a user",
         "requestBody": {
           "content": {
@@ -260,7 +272,9 @@
     },
     "/user/reset-password": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Resets the user's password",
         "description": "Changes the user's password to a new password",
         "requestBody": {
@@ -296,7 +310,9 @@
     },
     "/user/authenticated": {
       "get": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Is the user authenticated",
         "responses": {
           "200": {
@@ -321,7 +337,9 @@
     },
     "/user": {
       "get": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Get the current user",
         "responses": {
           "200": {
@@ -335,7 +353,14 @@
             }
           },
           "400": {
-            "description": "Error occurred"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorised"
@@ -351,7 +376,9 @@
         ]
       },
       "patch": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Update the current user",
         "requestBody": {
           "content": {
@@ -375,10 +402,46 @@
             }
           },
           "400": {
-            "description": "Error occurred"
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "401": {
             "description": "Unauthorised"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Delete the current user",
+        "responses": {
+          "200": {
+            "description": "Successfully deleted user"
+          },
+          "400": {
+            "description": "Invalid or missing parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
           },
           "500": {
             "description": "Internal Server Error"
@@ -393,7 +456,9 @@
     },
     "/user/connections": {
       "get": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "Get user connections",
         "parameters": [
           {
@@ -435,7 +500,9 @@
     },
     "/user/connection": {
       "post": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "create a user connection",
         "requestBody": {
           "content": {
@@ -492,7 +559,9 @@
     },
     "/user/connection/locations": {
       "get": {
-        "tags": ["users"],
+        "tags": [
+          "users"
+        ],
         "summary": "get locations from a connection",
         "parameters": [
           {
@@ -561,7 +630,9 @@
     },
     "/location": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Get a Location",
         "parameters": [
           {
@@ -598,7 +669,9 @@
         ]
       },
       "patch": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Update a Location",
         "description": "Make changes to a location. Any blank parameter deletes an old value, any unspecified parameter does nothing",
         "parameters": [
@@ -648,7 +721,9 @@
         ]
       },
       "post": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Create a Location",
         "requestBody": {
           "description": "Location object",
@@ -686,7 +761,9 @@
         ]
       },
       "delete": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Delete a Location",
         "requestBody": {
           "content": {
@@ -735,7 +812,9 @@
     },
     "/locations": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Get locations",
         "parameters": [
           {
@@ -777,7 +856,9 @@
     },
     "/locations/search": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Search for locations",
         "parameters": [
           {
@@ -829,7 +910,9 @@
     },
     "/categories": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Get categories",
         "parameters": [
           {
@@ -882,13 +965,19 @@
     },
     "/location/photo": {
       "post": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "requestBody": {
           "description": "The photo data to upload",
           "content": {
             "application/json": {
               "schema": {
-                "required": ["locationId", "photo", "type"],
+                "required": [
+                  "locationId",
+                  "photo",
+                  "type"
+                ],
                 "type": "object",
                 "properties": {
                   "description": {
@@ -943,7 +1032,9 @@
         ]
       },
       "delete": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "parameters": [
           {
             "name": "locationId",
@@ -1007,7 +1098,9 @@
     },
     "/search": {
       "get": {
-        "tags": ["search"],
+        "tags": [
+          "search"
+        ],
         "summary": "Search individuals or locations",
         "parameters": [
           {
@@ -1123,7 +1216,9 @@
     },
     "/site/colors": {
       "get": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1134,7 +1229,9 @@
         }
       },
       "put": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -1145,7 +1242,9 @@
         }
       },
       "patch": {
-        "tags": ["sites"],
+        "tags": [
+          "sites"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1194,7 +1293,9 @@
     "/ai/legacy/conversation": {
       "deprecated": true,
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -1281,13 +1382,17 @@
     "/ai/legacy/chat": {
       "deprecated": true,
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["userId"],
+                "required": [
+                  "userId"
+                ],
                 "properties": {
                   "userId": {
                     "type": "string"
@@ -1351,13 +1456,18 @@
     "/ai/chat": {
       "deprecated": true,
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["sessionId", "message"],
+                "required": [
+                  "sessionId",
+                  "message"
+                ],
                 "properties": {
                   "userId": {
                     "type": "string"
@@ -1432,13 +1542,18 @@
     "/ai/chat/data": {
       "deprecated": true,
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["sessionId", "message"],
+                "required": [
+                  "sessionId",
+                  "message"
+                ],
                 "properties": {
                   "sessionId": {
                     "type": "string"
@@ -1607,7 +1722,9 @@
     },
     "/ai/conversation/action": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "conversationId",
@@ -1657,13 +1774,18 @@
     },
     "/ai/conversation/message": {
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["conversationId", "message"],
+                "required": [
+                  "conversationId",
+                  "message"
+                ],
                 "properties": {
                   "conversationId": {
                     "type": "string"
@@ -1710,7 +1832,9 @@
     },
     "/ai/conversation": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "conversationId",
@@ -1753,13 +1877,17 @@
         ]
       },
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["conversationId"],
+                "required": [
+                  "conversationId"
+                ],
                 "properties": {
                   "conversationId": {
                     "type": "string"
@@ -1782,7 +1910,12 @@
                   "properties": {
                     "type": {
                       "type": "string",
-                      "enum": ["begin", "item", "end", "error"]
+                      "enum": [
+                        "begin",
+                        "item",
+                        "end",
+                        "error"
+                      ]
                     },
                     "content": {
                       "type": "string"
@@ -1805,7 +1938,9 @@
     },
     "/ai/conversations": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "responses": {
           "200": {
             "description": "Successfully retrieved conversations",
@@ -1843,13 +1978,17 @@
     },
     "/ai/conversation/data": {
       "post": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["conversationId"],
+                "required": [
+                  "conversationId"
+                ],
                 "properties": {
                   "conversationId": {
                     "type": "string"
@@ -1891,7 +2030,9 @@
     },
     "/ai/memories": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "userId",
@@ -1941,7 +2082,9 @@
         ]
       },
       "delete": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -1969,7 +2112,9 @@
     },
     "/ai/suggestions/description": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "locationId",
@@ -2019,7 +2164,9 @@
     },
     "/ai/suggestions/keywords": {
       "get": {
-        "tags": ["ai"],
+        "tags": [
+          "ai"
+        ],
         "parameters": [
           {
             "name": "locationId",
@@ -2072,7 +2219,9 @@
     },
     "/inbox": {
       "post": {
-        "tags": ["inbox"],
+        "tags": [
+          "inbox"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -2138,7 +2287,9 @@
     },
     "/inbox/item": {
       "get": {
-        "tags": ["inbox"],
+        "tags": [
+          "inbox"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2178,7 +2329,9 @@
     },
     "/inbox/reply": {
       "post": {
-        "tags": ["inbox"],
+        "tags": [
+          "inbox"
+        ],
         "parameters": [
           {
             "name": "datapointId",
@@ -2196,7 +2349,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "required": ["reply"],
+                  "required": [
+                    "reply"
+                  ],
                   "reply": {
                     "type": "string",
                     "description": "The text you want to reply"
@@ -2237,7 +2392,9 @@
     },
     "/whitelabel": {
       "get": {
-        "tags": ["whitelabel"],
+        "tags": [
+          "whitelabel"
+        ],
         "responses": {
           "200": {
             "content": {
@@ -2267,7 +2424,9 @@
     },
     "/notifications/register": {
       "post": {
-        "tags": ["notifications"],
+        "tags": [
+          "notifications"
+        ],
         "parameters": [
           {
             "name": "deviceId",
@@ -2301,7 +2460,9 @@
     },
     "/notifications/config": {
       "get": {
-        "tags": ["notifications"],
+        "tags": [
+          "notifications"
+        ],
         "responses": {
           "200": {
             "description": "Success",
@@ -2354,7 +2515,9 @@
         ]
       },
       "post": {
-        "tags": ["notifications"],
+        "tags": [
+          "notifications"
+        ],
         "requestBody": {
           "content": {
             "application/json": {
@@ -2412,7 +2575,9 @@
     },
     "/publish/posts": {
       "get": {
-        "tags": ["publish"],
+        "tags": [
+          "publish"
+        ],
         "responses": {
           "200": {
             "content": {
@@ -2440,7 +2605,9 @@
         ]
       },
       "post": {
-        "tags": ["publish"],
+        "tags": [
+          "publish"
+        ],
         "requestBody": {
           "description": "A SocialPost object",
           "content": {
@@ -2480,7 +2647,9 @@
         ]
       },
       "delete": {
-        "tags": ["publish"],
+        "tags": [
+          "publish"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2514,7 +2683,9 @@
     },
     "/location/listings": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "parameters": [
           {
             "name": "locationId",
@@ -2580,7 +2751,9 @@
     },
     "/location/listing": {
       "get": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "parameters": [
           {
             "name": "id",
@@ -2626,7 +2799,9 @@
         ]
       },
       "post": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Create or update a Listing",
         "requestBody": {
           "description": "Listing object",
@@ -2634,7 +2809,12 @@
             "application/json": {
               "schema": {
                 "type": "object",
-                "required": ["locationId", "type", "connectionId", "externalLocationId"],
+                "required": [
+                  "locationId",
+                  "type",
+                  "connectionId",
+                  "externalLocationId"
+                ],
                 "properties": {
                   "locationId": {
                     "type": "string"
@@ -2691,7 +2871,9 @@
     },
     "/location/listing/sync": {
       "post": {
-        "tags": ["locations"],
+        "tags": [
+          "locations"
+        ],
         "summary": "Sync a listing",
         "parameters": [
           {
@@ -2719,7 +2901,9 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "required": ["listing"],
+                  "required": [
+                    "listing"
+                  ],
                   "properties": {
                     "listing": {
                       "$ref": "#/components/schemas/Listing"
@@ -2758,7 +2942,9 @@
     },
     "/analytics": {
       "get": {
-        "tags": ["analytics"],
+        "tags": [
+          "analytics"
+        ],
         "parameters": [
           {
             "name": "locationIds",
@@ -2836,7 +3022,9 @@
     },
     "/verify/send-otp": {
       "post": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Send OTP for email or SMS verification",
         "requestBody": {
           "content": {
@@ -2877,7 +3065,9 @@
     },
     "/verify/check-otp": {
       "post": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Verify OTP code",
         "requestBody": {
           "content": {
@@ -2918,7 +3108,9 @@
     },
     "/verify/status/{verificationId}": {
       "get": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Check verification status",
         "parameters": [
           {
@@ -2967,11 +3159,17 @@
       },
       "VerificationRequest": {
         "type": "object",
-        "required": ["type", "target"],
+        "required": [
+          "type",
+          "target"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["email", "sms"],
+            "enum": [
+              "email",
+              "sms"
+            ],
             "description": "Type of verification"
           },
           "target": {
@@ -3000,7 +3198,10 @@
       },
       "VerifyCodeRequest": {
         "type": "object",
-        "required": ["verificationId", "code"],
+        "required": [
+          "verificationId",
+          "code"
+        ],
         "properties": {
           "verificationId": {
             "type": "string",
@@ -3021,7 +3222,10 @@
           },
           "type": {
             "type": "string",
-            "enum": ["email", "sms"],
+            "enum": [
+              "email",
+              "sms"
+            ],
             "description": "Type of verification that was completed"
           }
         }
@@ -3034,11 +3238,20 @@
           },
           "type": {
             "type": "string",
-            "enum": ["email", "sms"]
+            "enum": [
+              "email",
+              "sms"
+            ]
           },
           "status": {
             "type": "string",
-            "enum": ["pending", "sent", "verified", "expired", "failed"],
+            "enum": [
+              "pending",
+              "sent",
+              "verified",
+              "expired",
+              "failed"
+            ],
             "description": "Current status of the verification"
           },
           "attempts": {
@@ -3160,7 +3373,10 @@
       },
       "Location": {
         "type": "object",
-        "required": ["id", "name"],
+        "required": [
+          "id",
+          "name"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -3287,7 +3503,12 @@
         ]
       },
       "Address": {
-        "required": ["streetAndNo", "city", "postalCode", "countryCode"],
+        "required": [
+          "streetAndNo",
+          "city",
+          "postalCode",
+          "countryCode"
+        ],
         "type": "object",
         "properties": {
           "streetAndNo": {
@@ -3364,7 +3585,10 @@
         }
       },
       "OpeningHour": {
-        "required": ["dayOfWeek", "closed"],
+        "required": [
+          "dayOfWeek",
+          "closed"
+        ],
         "type": "object",
         "properties": {
           "dayOfWeek": {
@@ -3420,7 +3644,9 @@
         }
       },
       "SpecialOpeningHour": {
-        "required": ["date"],
+        "required": [
+          "date"
+        ],
         "type": "object",
         "properties": {
           "date": {
@@ -3483,7 +3709,13 @@
       },
       "Listing": {
         "type": "object",
-        "required": ["id", "type", "connectionId", "locationId", "externalLocationId"],
+        "required": [
+          "id",
+          "type",
+          "connectionId",
+          "locationId",
+          "externalLocationId"
+        ],
         "properties": {
           "id": {
             "type": "string"
@@ -3510,7 +3742,11 @@
       },
       "ListingConflict": {
         "type": "object",
-        "required": ["name", "internalValue", "externalValue"],
+        "required": [
+          "name",
+          "internalValue",
+          "externalValue"
+        ],
         "properties": {
           "name": {
             "type": "string"
@@ -3563,7 +3799,9 @@
       },
       "Photo": {
         "type": "object",
-        "required": ["url"],
+        "required": [
+          "url"
+        ],
         "properties": {
           "id": {
             "type": "string",
@@ -3581,7 +3819,11 @@
       },
       "LocationPhotoType": {
         "type": "string",
-        "enum": ["LOGO", "COVER", "PHOTO"]
+        "enum": [
+          "LOGO",
+          "COVER",
+          "PHOTO"
+        ]
       },
       "DataPoint": {
         "type": "object",
@@ -3768,7 +4010,10 @@
         "properties": {
           "theme": {
             "type": "string",
-            "enum": ["light", "dark"]
+            "enum": [
+              "light",
+              "dark"
+            ]
           },
           "primaryColor": {
             "type": "string"
@@ -3786,7 +4031,11 @@
       },
       "DirectoryType": {
         "type": "string",
-        "enum": ["GOOGLE", "FACEBOOK", "INSTAGRAM"]
+        "enum": [
+          "GOOGLE",
+          "FACEBOOK",
+          "INSTAGRAM"
+        ]
       },
       "Metrics": {
         "type": "array",
@@ -3850,7 +4099,13 @@
       "SocialPost": {
         "type": "object",
         "properties": {
-          "required": ["id", "title", "text", "listingTypes", "publicationDate"],
+          "required": [
+            "id",
+            "title",
+            "text",
+            "listingTypes",
+            "publicationDate"
+          ],
           "id": {
             "type": "string"
           },
@@ -3914,14 +4169,21 @@
       },
       "AiMessage": {
         "type": "object",
-        "required": ["role"],
+        "required": [
+          "role"
+        ],
         "properties": {
           "dateTime": {
             "type": "string"
           },
           "role": {
             "type": "string",
-            "enum": ["user", "assistant", "system", "tool"]
+            "enum": [
+              "user",
+              "assistant",
+              "system",
+              "tool"
+            ]
           },
           "text": {
             "type": "string"
@@ -4071,11 +4333,17 @@
       },
       "AiContext": {
         "type": "object",
-        "required": ["type"],
+        "required": [
+          "type"
+        ],
         "properties": {
           "type": {
             "type": "string",
-            "enum": ["anonymous", "user", "location"]
+            "enum": [
+              "anonymous",
+              "user",
+              "location"
+            ]
           },
           "value": {
             "$ref": "#/components/schemas/LocationOrIndividual"
@@ -4236,7 +4504,11 @@
       },
       "Platform": {
         "type": "string",
-        "enum": ["WEB", "ANDROID", "IOS"]
+        "enum": [
+          "WEB",
+          "ANDROID",
+          "IOS"
+        ]
       }
     },
     "securitySchemes": {

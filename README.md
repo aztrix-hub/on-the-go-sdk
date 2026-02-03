@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationsGet**](doc/UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
+[*UsersApi*](doc/UsersApi.md) | [**userDelete**](doc/UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 

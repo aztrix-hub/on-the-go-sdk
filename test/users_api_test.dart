@@ -34,6 +34,13 @@ void main() {
       // TODO
     });
 
+    // Delete the current user
+    //
+    //Future userDelete() async
+    test('test userDelete', () async {
+      // TODO
+    });
+
     // Get the current user
     //
     //Future<User> userGet() async

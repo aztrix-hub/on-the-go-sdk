@@ -113,6 +113,31 @@ void main() {
       // TODO
     });
 
+    // bool emailVerified
+    test('to test the property `emailVerified`', () async {
+      // TODO
+    });
+
+    // DateTime emailVerifiedAt
+    test('to test the property `emailVerifiedAt`', () async {
+      // TODO
+    });
+
+    // bool phoneVerified
+    test('to test the property `phoneVerified`', () async {
+      // TODO
+    });
+
+    // DateTime phoneVerifiedAt
+    test('to test the property `phoneVerifiedAt`', () async {
+      // TODO
+    });
+
+    // SocialMedia socialMedia
+    test('to test the property `socialMedia`', () async {
+      // TODO
+    });
+
     // First Name
     // String firstname
     test('to test the property `firstname`', () async {
