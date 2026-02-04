@@ -120,8 +120,11 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
 [*UsersApi*](doc/UsersApi.md) | [**userSystemPost**](doc/UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyCheckOtpPost**](doc/VerificationApi.md#verifycheckotppost) | **POST** /verify/check-otp | Verify OTP code
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyEidCallbackPost**](doc/VerificationApi.md#verifyeidcallbackpost) | **POST** /verify/eid/callback | Process eID verification callback
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyEidInitiatePost**](doc/VerificationApi.md#verifyeidinitiatepost) | **POST** /verify/eid/initiate | Initiate eID verification via IDURA
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyEidStatusGet**](doc/VerificationApi.md#verifyeidstatusget) | **GET** /verify/eid/status | Check eID verification status
 [*VerificationApi*](doc/VerificationApi.md) | [**verifySendOtpPost**](doc/VerificationApi.md#verifysendotppost) | **POST** /verify/send-otp | Send OTP for email or SMS verification
-[*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusVerificationIdGet**](doc/VerificationApi.md#verifystatusverificationidget) | **GET** /verify/status/{verificationId} | Check verification status
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusGet**](doc/VerificationApi.md#verifystatusget) | **GET** /verify/status | Check verification status
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -170,6 +173,13 @@ Class | Method | HTTP request | Description
  - [Connection](doc/Connection.md)
  - [DataPoint](doc/DataPoint.md)
  - [DirectoryType](doc/DirectoryType.md)
+ - [EidCallbackRequest](doc/EidCallbackRequest.md)
+ - [EidCallbackResponse](doc/EidCallbackResponse.md)
+ - [EidProvider](doc/EidProvider.md)
+ - [EidVerificationRequest](doc/EidVerificationRequest.md)
+ - [EidVerificationResponse](doc/EidVerificationResponse.md)
+ - [EidVerificationStatus](doc/EidVerificationStatus.md)
+ - [EidVerifiedData](doc/EidVerifiedData.md)
  - [ErrorResponse](doc/ErrorResponse.md)
  - [InboxItem](doc/InboxItem.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
@@ -200,7 +210,6 @@ Class | Method | HTTP request | Description
  - [SearchGetBoundingBoxParameter](doc/SearchGetBoundingBoxParameter.md)
  - [SearchGetBoundingBoxParameterTopLeft](doc/SearchGetBoundingBoxParameterTopLeft.md)
  - [SiteColorsPatchRequest](doc/SiteColorsPatchRequest.md)
- - [SocialMedia](doc/SocialMedia.md)
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)

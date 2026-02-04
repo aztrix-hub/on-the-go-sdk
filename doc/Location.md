@@ -33,7 +33,15 @@ Name | Type | Description | Notes
 **emailVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **phoneVerified** | **bool** |  | [optional] 
 **phoneVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**socialMedia** | [**SocialMedia**](SocialMedia.md) |  | [optional] 
+**instagram** | **String** | Instagram username or URL | [optional] 
+**facebook** | **String** | Facebook page URL | [optional] 
+**twitter** | **String** | Twitter/X username or URL | [optional] 
+**whatsapp** | **String** | WhatsApp phone number | [optional] 
+**snapchat** | **String** | Snapchat username | [optional] 
+**linkedin** | **String** | LinkedIn profile/company URL | [optional] 
+**verified** | **bool** | Whether the location has been verified via eID (IDURA) | [optional] 
+**verifiedAt** | [**DateTime**](DateTime.md) | When the location was verified via eID | [optional] 
+**verifiedBy** | **String** | Name of the person who verified the location | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

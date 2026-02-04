@@ -58,7 +58,23 @@ class _$Location extends Location {
   @override
   final DateTime? phoneVerifiedAt;
   @override
-  final SocialMedia? socialMedia;
+  final String? instagram;
+  @override
+  final String? facebook;
+  @override
+  final String? twitter;
+  @override
+  final String? whatsapp;
+  @override
+  final String? snapchat;
+  @override
+  final String? linkedin;
+  @override
+  final bool? verified;
+  @override
+  final DateTime? verifiedAt;
+  @override
+  final String? verifiedBy;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (LocationBuilder()..update(updates))._build();
@@ -89,7 +105,15 @@ class _$Location extends Location {
       this.emailVerifiedAt,
       this.phoneVerified,
       this.phoneVerifiedAt,
-      this.socialMedia})
+      this.instagram,
+      this.facebook,
+      this.twitter,
+      this.whatsapp,
+      this.snapchat,
+      this.linkedin,
+      this.verified,
+      this.verifiedAt,
+      this.verifiedBy})
       : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
@@ -127,7 +151,15 @@ class _$Location extends Location {
         emailVerifiedAt == other.emailVerifiedAt &&
         phoneVerified == other.phoneVerified &&
         phoneVerifiedAt == other.phoneVerifiedAt &&
-        socialMedia == other.socialMedia;
+        instagram == other.instagram &&
+        facebook == other.facebook &&
+        twitter == other.twitter &&
+        whatsapp == other.whatsapp &&
+        snapchat == other.snapchat &&
+        linkedin == other.linkedin &&
+        verified == other.verified &&
+        verifiedAt == other.verifiedAt &&
+        verifiedBy == other.verifiedBy;
   }
 
   @override
@@ -158,7 +190,15 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, emailVerifiedAt.hashCode);
     _$hash = $jc(_$hash, phoneVerified.hashCode);
     _$hash = $jc(_$hash, phoneVerifiedAt.hashCode);
-    _$hash = $jc(_$hash, socialMedia.hashCode);
+    _$hash = $jc(_$hash, instagram.hashCode);
+    _$hash = $jc(_$hash, facebook.hashCode);
+    _$hash = $jc(_$hash, twitter.hashCode);
+    _$hash = $jc(_$hash, whatsapp.hashCode);
+    _$hash = $jc(_$hash, snapchat.hashCode);
+    _$hash = $jc(_$hash, linkedin.hashCode);
+    _$hash = $jc(_$hash, verified.hashCode);
+    _$hash = $jc(_$hash, verifiedAt.hashCode);
+    _$hash = $jc(_$hash, verifiedBy.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -191,7 +231,15 @@ class _$Location extends Location {
           ..add('emailVerifiedAt', emailVerifiedAt)
           ..add('phoneVerified', phoneVerified)
           ..add('phoneVerifiedAt', phoneVerifiedAt)
-          ..add('socialMedia', socialMedia))
+          ..add('instagram', instagram)
+          ..add('facebook', facebook)
+          ..add('twitter', twitter)
+          ..add('whatsapp', whatsapp)
+          ..add('snapchat', snapchat)
+          ..add('linkedin', linkedin)
+          ..add('verified', verified)
+          ..add('verifiedAt', verifiedAt)
+          ..add('verifiedBy', verifiedBy))
         .toString();
   }
 }
@@ -314,11 +362,41 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set phoneVerifiedAt(DateTime? phoneVerifiedAt) =>
       _$this._phoneVerifiedAt = phoneVerifiedAt;
 
-  SocialMediaBuilder? _socialMedia;
-  SocialMediaBuilder get socialMedia =>
-      _$this._socialMedia ??= SocialMediaBuilder();
-  set socialMedia(SocialMediaBuilder? socialMedia) =>
-      _$this._socialMedia = socialMedia;
+  String? _instagram;
+  String? get instagram => _$this._instagram;
+  set instagram(String? instagram) => _$this._instagram = instagram;
+
+  String? _facebook;
+  String? get facebook => _$this._facebook;
+  set facebook(String? facebook) => _$this._facebook = facebook;
+
+  String? _twitter;
+  String? get twitter => _$this._twitter;
+  set twitter(String? twitter) => _$this._twitter = twitter;
+
+  String? _whatsapp;
+  String? get whatsapp => _$this._whatsapp;
+  set whatsapp(String? whatsapp) => _$this._whatsapp = whatsapp;
+
+  String? _snapchat;
+  String? get snapchat => _$this._snapchat;
+  set snapchat(String? snapchat) => _$this._snapchat = snapchat;
+
+  String? _linkedin;
+  String? get linkedin => _$this._linkedin;
+  set linkedin(String? linkedin) => _$this._linkedin = linkedin;
+
+  bool? _verified;
+  bool? get verified => _$this._verified;
+  set verified(bool? verified) => _$this._verified = verified;
+
+  DateTime? _verifiedAt;
+  DateTime? get verifiedAt => _$this._verifiedAt;
+  set verifiedAt(DateTime? verifiedAt) => _$this._verifiedAt = verifiedAt;
+
+  String? _verifiedBy;
+  String? get verifiedBy => _$this._verifiedBy;
+  set verifiedBy(String? verifiedBy) => _$this._verifiedBy = verifiedBy;
 
   LocationBuilder() {
     Location._defaults(this);
@@ -352,7 +430,15 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _emailVerifiedAt = $v.emailVerifiedAt;
       _phoneVerified = $v.phoneVerified;
       _phoneVerifiedAt = $v.phoneVerifiedAt;
-      _socialMedia = $v.socialMedia?.toBuilder();
+      _instagram = $v.instagram;
+      _facebook = $v.facebook;
+      _twitter = $v.twitter;
+      _whatsapp = $v.whatsapp;
+      _snapchat = $v.snapchat;
+      _linkedin = $v.linkedin;
+      _verified = $v.verified;
+      _verifiedAt = $v.verifiedAt;
+      _verifiedBy = $v.verifiedBy;
       _$v = null;
     }
     return this;
@@ -402,7 +488,15 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             emailVerifiedAt: emailVerifiedAt,
             phoneVerified: phoneVerified,
             phoneVerifiedAt: phoneVerifiedAt,
-            socialMedia: _socialMedia?.build(),
+            instagram: instagram,
+            facebook: facebook,
+            twitter: twitter,
+            whatsapp: whatsapp,
+            snapchat: snapchat,
+            linkedin: linkedin,
+            verified: verified,
+            verifiedAt: verifiedAt,
+            verifiedBy: verifiedBy,
           );
     } catch (_) {
       late String _$failedField;
@@ -425,9 +519,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
         _$failedField = 'categories';
         _categories?.build();
-
-        _$failedField = 'socialMedia';
-        _socialMedia?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

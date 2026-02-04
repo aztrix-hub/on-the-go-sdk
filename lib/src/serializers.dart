@@ -57,6 +57,13 @@ import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
+import 'package:on_the_go_sdk/src/model/eid_callback_request.dart';
+import 'package:on_the_go_sdk/src/model/eid_callback_response.dart';
+import 'package:on_the_go_sdk/src/model/eid_provider.dart';
+import 'package:on_the_go_sdk/src/model/eid_verification_request.dart';
+import 'package:on_the_go_sdk/src/model/eid_verification_response.dart';
+import 'package:on_the_go_sdk/src/model/eid_verification_status.dart';
+import 'package:on_the_go_sdk/src/model/eid_verified_data.dart';
 import 'package:on_the_go_sdk/src/model/error_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
@@ -87,7 +94,6 @@ import 'package:on_the_go_sdk/src/model/reset_password.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter.dart';
 import 'package:on_the_go_sdk/src/model/search_get_bounding_box_parameter_top_left.dart';
 import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
-import 'package:on_the_go_sdk/src/model/social_media.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
@@ -152,6 +158,13 @@ part 'serializers.g.dart';
   Connection,
   DataPoint,
   DirectoryType,
+  EidCallbackRequest,
+  EidCallbackResponse,
+  EidProvider,
+  EidVerificationRequest,
+  EidVerificationResponse,
+  EidVerificationStatus,
+  EidVerifiedData,
   ErrorResponse,
   InboxItem,
   InboxPostRequest,
@@ -182,7 +195,6 @@ part 'serializers.g.dart';
   SearchGetBoundingBoxParameter,
   SearchGetBoundingBoxParameterTopLeft,
   SiteColorsPatchRequest,
-  SocialMedia,
   SocialPost,
   SpecialOpeningHour,
   User,

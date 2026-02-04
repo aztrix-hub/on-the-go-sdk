@@ -45,6 +45,13 @@ doc/Category.md
 doc/Connection.md
 doc/DataPoint.md
 doc/DirectoryType.md
+doc/EidCallbackRequest.md
+doc/EidCallbackResponse.md
+doc/EidProvider.md
+doc/EidVerificationRequest.md
+doc/EidVerificationResponse.md
+doc/EidVerificationStatus.md
+doc/EidVerifiedData.md
 doc/ErrorResponse.md
 doc/InboxApi.md
 doc/InboxItem.md
@@ -81,7 +88,6 @@ doc/SearchGetBoundingBoxParameter.md
 doc/SearchGetBoundingBoxParameterTopLeft.md
 doc/SiteColorsPatchRequest.md
 doc/SitesApi.md
-doc/SocialMedia.md
 doc/SocialPost.md
 doc/SpecialOpeningHour.md
 doc/User.md
@@ -166,6 +172,13 @@ lib/src/model/connection.dart
 lib/src/model/data_point.dart
 lib/src/model/date.dart
 lib/src/model/directory_type.dart
+lib/src/model/eid_callback_request.dart
+lib/src/model/eid_callback_response.dart
+lib/src/model/eid_provider.dart
+lib/src/model/eid_verification_request.dart
+lib/src/model/eid_verification_response.dart
+lib/src/model/eid_verification_status.dart
+lib/src/model/eid_verified_data.dart
 lib/src/model/error_response.dart
 lib/src/model/inbox_item.dart
 lib/src/model/inbox_post_request.dart
@@ -196,7 +209,6 @@ lib/src/model/reset_password.dart
 lib/src/model/search_get_bounding_box_parameter.dart
 lib/src/model/search_get_bounding_box_parameter_top_left.dart
 lib/src/model/site_colors_patch_request.dart
-lib/src/model/social_media.dart
 lib/src/model/social_post.dart
 lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart

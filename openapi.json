@@ -3106,7 +3106,7 @@
         }
       }
     },
-    "/verify/status/{verificationId}": {
+    "/verify/status": {
       "get": {
         "tags": [
           "verification"
@@ -3115,7 +3115,7 @@
         "parameters": [
           {
             "name": "verificationId",
-            "in": "path",
+            "in": "query",
             "required": true,
             "description": "The verification ID",
             "schema": {
@@ -3136,6 +3136,126 @@
           },
           "404": {
             "description": "Verification not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/verify/eid/initiate": {
+      "post": {
+        "tags": ["verification"],
+        "summary": "Initiate eID verification via IDURA",
+        "description": "Starts an eID verification flow using IDURA OIDC. Returns an authorization URL for the user to authenticate with their eID provider.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EidVerificationRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "eID verification initiated successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EidVerificationResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/verify/eid/callback": {
+      "post": {
+        "tags": ["verification"],
+        "summary": "Process eID verification callback",
+        "description": "Processes the OIDC callback after user authenticates with their eID provider. Exchanges the authorization code for an ID token and updates the location verification status.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EidCallbackRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "eID verification callback processed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EidCallbackResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid callback data or verification failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/verify/eid/status": {
+      "get": {
+        "tags": ["verification"],
+        "summary": "Check eID verification status",
+        "description": "Returns the current status of an eID verification session including verified user data if successful.",
+        "parameters": [
+          {
+            "name": "verificationId",
+            "in": "query",
+            "required": true,
+            "description": "The eID verification session ID",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "eID verification status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EidVerificationStatus"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Verification session not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -3265,6 +3385,153 @@
           "verifiedAt": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "EidProvider": {
+        "type": "string",
+        "enum": [
+          "swedish_bankid",
+          "danish_mitid",
+          "norwegian_bankid",
+          "german_ausweis",
+          "finnish_trust_network"
+        ],
+        "description": "Available European eID providers"
+      },
+      "EidVerificationRequest": {
+        "type": "object",
+        "required": ["provider", "redirectUri"],
+        "properties": {
+          "provider": {
+            "$ref": "#/components/schemas/EidProvider"
+          },
+          "redirectUri": {
+            "type": "string",
+            "description": "The URI to redirect to after eID authentication"
+          },
+          "locationId": {
+            "type": "string",
+            "description": "Optional location ID to associate with the verification"
+          },
+          "state": {
+            "type": "string",
+            "description": "Optional state parameter for CSRF protection"
+          }
+        }
+      },
+      "EidVerificationResponse": {
+        "type": "object",
+        "properties": {
+          "verificationId": {
+            "type": "string",
+            "description": "Unique identifier for this eID verification session"
+          },
+          "authorizationUrl": {
+            "type": "string",
+            "description": "The URL to redirect the user to for eID authentication"
+          },
+          "state": {
+            "type": "string",
+            "description": "State parameter for CSRF protection"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this verification session expires"
+          }
+        }
+      },
+      "EidCallbackRequest": {
+        "type": "object",
+        "required": ["verificationId", "code"],
+        "properties": {
+          "verificationId": {
+            "type": "string",
+            "description": "The verification session ID"
+          },
+          "code": {
+            "type": "string",
+            "description": "The authorization code from the OIDC callback"
+          },
+          "state": {
+            "type": "string",
+            "description": "The state parameter for CSRF validation"
+          }
+        }
+      },
+      "EidCallbackResponse": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the verification was successful"
+          },
+          "verificationId": {
+            "type": "string",
+            "description": "The verification session ID"
+          }
+        }
+      },
+      "EidVerificationStatus": {
+        "type": "object",
+        "properties": {
+          "verificationId": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/EidProvider"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["pending", "verified", "expired", "failed"],
+            "description": "Current status of the eID verification"
+          },
+          "verifiedData": {
+            "$ref": "#/components/schemas/EidVerifiedData"
+          },
+          "locationId": {
+            "type": "string",
+            "description": "The location ID associated with this verification"
+          },
+          "expiresAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "verifiedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "error": {
+            "type": "string",
+            "description": "Error message if verification failed"
+          }
+        }
+      },
+      "EidVerifiedData": {
+        "type": "object",
+        "description": "Data extracted from the verified eID",
+        "properties": {
+          "givenName": {
+            "type": "string",
+            "description": "The user's given/first name"
+          },
+          "familyName": {
+            "type": "string",
+            "description": "The user's family/last name"
+          },
+          "personalNumber": {
+            "type": "string",
+            "description": "The user's personal identification number (if available)"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date",
+            "description": "The user's date of birth"
+          },
+          "country": {
+            "type": "string",
+            "description": "The country of the eID issuer"
           }
         }
       },
@@ -3457,15 +3724,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "socialMedia": {
-            "$ref": "#/components/schemas/SocialMedia"
-          }
-        }
-      },
-      "SocialMedia": {
-        "type": "object",
-        "description": "Social media links for a business",
-        "properties": {
           "instagram": {
             "type": "string",
             "description": "Instagram username or URL"
@@ -3489,6 +3747,19 @@
           "linkedin": {
             "type": "string",
             "description": "LinkedIn profile/company URL"
+          },
+          "verified": {
+            "type": "boolean",
+            "description": "Whether the location has been verified via eID (IDURA)"
+          },
+          "verifiedAt": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When the location was verified via eID"
+          },
+          "verifiedBy": {
+            "type": "string",
+            "description": "Name of the person who verified the location"
           }
         }
       },

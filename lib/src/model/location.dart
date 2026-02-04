@@ -8,7 +8,6 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
-import 'package:on_the_go_sdk/src/model/social_media.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -43,7 +42,15 @@ part 'location.g.dart';
 /// * [emailVerifiedAt]
 /// * [phoneVerified]
 /// * [phoneVerifiedAt]
-/// * [socialMedia]
+/// * [instagram] - Instagram username or URL
+/// * [facebook] - Facebook page URL
+/// * [twitter] - Twitter/X username or URL
+/// * [whatsapp] - WhatsApp phone number
+/// * [snapchat] - Snapchat username
+/// * [linkedin] - LinkedIn profile/company URL
+/// * [verified] - Whether the location has been verified via eID (IDURA)
+/// * [verifiedAt] - When the location was verified via eID
+/// * [verifiedBy] - Name of the person who verified the location
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -121,8 +128,41 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'phoneVerifiedAt')
   DateTime? get phoneVerifiedAt;
 
-  @BuiltValueField(wireName: r'socialMedia')
-  SocialMedia? get socialMedia;
+  /// Instagram username or URL
+  @BuiltValueField(wireName: r'instagram')
+  String? get instagram;
+
+  /// Facebook page URL
+  @BuiltValueField(wireName: r'facebook')
+  String? get facebook;
+
+  /// Twitter/X username or URL
+  @BuiltValueField(wireName: r'twitter')
+  String? get twitter;
+
+  /// WhatsApp phone number
+  @BuiltValueField(wireName: r'whatsapp')
+  String? get whatsapp;
+
+  /// Snapchat username
+  @BuiltValueField(wireName: r'snapchat')
+  String? get snapchat;
+
+  /// LinkedIn profile/company URL
+  @BuiltValueField(wireName: r'linkedin')
+  String? get linkedin;
+
+  /// Whether the location has been verified via eID (IDURA)
+  @BuiltValueField(wireName: r'verified')
+  bool? get verified;
+
+  /// When the location was verified via eID
+  @BuiltValueField(wireName: r'verifiedAt')
+  DateTime? get verifiedAt;
+
+  /// Name of the person who verified the location
+  @BuiltValueField(wireName: r'verifiedBy')
+  String? get verifiedBy;
 
   Location._();
 
@@ -319,11 +359,67 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(DateTime),
       );
     }
-    if (object.socialMedia != null) {
-      yield r'socialMedia';
+    if (object.instagram != null) {
+      yield r'instagram';
       yield serializers.serialize(
-        object.socialMedia,
-        specifiedType: const FullType(SocialMedia),
+        object.instagram,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.facebook != null) {
+      yield r'facebook';
+      yield serializers.serialize(
+        object.facebook,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.twitter != null) {
+      yield r'twitter';
+      yield serializers.serialize(
+        object.twitter,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.whatsapp != null) {
+      yield r'whatsapp';
+      yield serializers.serialize(
+        object.whatsapp,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.snapchat != null) {
+      yield r'snapchat';
+      yield serializers.serialize(
+        object.snapchat,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.linkedin != null) {
+      yield r'linkedin';
+      yield serializers.serialize(
+        object.linkedin,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.verified != null) {
+      yield r'verified';
+      yield serializers.serialize(
+        object.verified,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.verifiedAt != null) {
+      yield r'verifiedAt';
+      yield serializers.serialize(
+        object.verifiedAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.verifiedBy != null) {
+      yield r'verifiedBy';
+      yield serializers.serialize(
+        object.verifiedBy,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -527,12 +623,68 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as DateTime;
           result.phoneVerifiedAt = valueDes;
           break;
-        case r'socialMedia':
+        case r'instagram':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(SocialMedia),
-          ) as SocialMedia;
-          result.socialMedia.replace(valueDes);
+            specifiedType: const FullType(String),
+          ) as String;
+          result.instagram = valueDes;
+          break;
+        case r'facebook':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.facebook = valueDes;
+          break;
+        case r'twitter':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.twitter = valueDes;
+          break;
+        case r'whatsapp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.whatsapp = valueDes;
+          break;
+        case r'snapchat':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.snapchat = valueDes;
+          break;
+        case r'linkedin':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.linkedin = valueDes;
+          break;
+        case r'verified':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.verified = valueDes;
+          break;
+        case r'verifiedAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.verifiedAt = valueDes;
+          break;
+        case r'verifiedBy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.verifiedBy = valueDes;
           break;
         default:
           unhandled.add(key);

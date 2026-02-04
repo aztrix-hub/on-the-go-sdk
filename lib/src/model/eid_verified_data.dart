@@ -3,108 +3,101 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/date.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'social_media.g.dart';
+part 'eid_verified_data.g.dart';
 
-/// Social media links for a business
+/// Data extracted from the verified eID
 ///
 /// Properties:
-/// * [instagram] - Instagram username or URL
-/// * [facebook] - Facebook page URL
-/// * [twitter] - Twitter/X username or URL
-/// * [whatsapp] - WhatsApp phone number
-/// * [snapchat] - Snapchat username
-/// * [linkedin] - LinkedIn profile/company URL
+/// * [givenName] - The user's given/first name
+/// * [familyName] - The user's family/last name
+/// * [personalNumber] - The user's personal identification number (if available)
+/// * [dateOfBirth] - The user's date of birth
+/// * [country] - The country of the eID issuer
 @BuiltValue()
-abstract class SocialMedia implements Built<SocialMedia, SocialMediaBuilder> {
-  /// Instagram username or URL
-  @BuiltValueField(wireName: r'instagram')
-  String? get instagram;
+abstract class EidVerifiedData
+    implements Built<EidVerifiedData, EidVerifiedDataBuilder> {
+  /// The user's given/first name
+  @BuiltValueField(wireName: r'givenName')
+  String? get givenName;
 
-  /// Facebook page URL
-  @BuiltValueField(wireName: r'facebook')
-  String? get facebook;
+  /// The user's family/last name
+  @BuiltValueField(wireName: r'familyName')
+  String? get familyName;
 
-  /// Twitter/X username or URL
-  @BuiltValueField(wireName: r'twitter')
-  String? get twitter;
+  /// The user's personal identification number (if available)
+  @BuiltValueField(wireName: r'personalNumber')
+  String? get personalNumber;
 
-  /// WhatsApp phone number
-  @BuiltValueField(wireName: r'whatsapp')
-  String? get whatsapp;
+  /// The user's date of birth
+  @BuiltValueField(wireName: r'dateOfBirth')
+  Date? get dateOfBirth;
 
-  /// Snapchat username
-  @BuiltValueField(wireName: r'snapchat')
-  String? get snapchat;
+  /// The country of the eID issuer
+  @BuiltValueField(wireName: r'country')
+  String? get country;
 
-  /// LinkedIn profile/company URL
-  @BuiltValueField(wireName: r'linkedin')
-  String? get linkedin;
+  EidVerifiedData._();
 
-  SocialMedia._();
-
-  factory SocialMedia([void updates(SocialMediaBuilder b)]) = _$SocialMedia;
+  factory EidVerifiedData([void updates(EidVerifiedDataBuilder b)]) =
+      _$EidVerifiedData;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SocialMediaBuilder b) => b;
+  static void _defaults(EidVerifiedDataBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<SocialMedia> get serializer => _$SocialMediaSerializer();
+  static Serializer<EidVerifiedData> get serializer =>
+      _$EidVerifiedDataSerializer();
 }
 
-class _$SocialMediaSerializer implements PrimitiveSerializer<SocialMedia> {
+class _$EidVerifiedDataSerializer
+    implements PrimitiveSerializer<EidVerifiedData> {
   @override
-  final Iterable<Type> types = const [SocialMedia, _$SocialMedia];
+  final Iterable<Type> types = const [EidVerifiedData, _$EidVerifiedData];
 
   @override
-  final String wireName = r'SocialMedia';
+  final String wireName = r'EidVerifiedData';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    SocialMedia object, {
+    EidVerifiedData object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.instagram != null) {
-      yield r'instagram';
+    if (object.givenName != null) {
+      yield r'givenName';
       yield serializers.serialize(
-        object.instagram,
+        object.givenName,
         specifiedType: const FullType(String),
       );
     }
-    if (object.facebook != null) {
-      yield r'facebook';
+    if (object.familyName != null) {
+      yield r'familyName';
       yield serializers.serialize(
-        object.facebook,
+        object.familyName,
         specifiedType: const FullType(String),
       );
     }
-    if (object.twitter != null) {
-      yield r'twitter';
+    if (object.personalNumber != null) {
+      yield r'personalNumber';
       yield serializers.serialize(
-        object.twitter,
+        object.personalNumber,
         specifiedType: const FullType(String),
       );
     }
-    if (object.whatsapp != null) {
-      yield r'whatsapp';
+    if (object.dateOfBirth != null) {
+      yield r'dateOfBirth';
       yield serializers.serialize(
-        object.whatsapp,
-        specifiedType: const FullType(String),
+        object.dateOfBirth,
+        specifiedType: const FullType(Date),
       );
     }
-    if (object.snapchat != null) {
-      yield r'snapchat';
+    if (object.country != null) {
+      yield r'country';
       yield serializers.serialize(
-        object.snapchat,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.linkedin != null) {
-      yield r'linkedin';
-      yield serializers.serialize(
-        object.linkedin,
+        object.country,
         specifiedType: const FullType(String),
       );
     }
@@ -113,7 +106,7 @@ class _$SocialMediaSerializer implements PrimitiveSerializer<SocialMedia> {
   @override
   Object serialize(
     Serializers serializers,
-    SocialMedia object, {
+    EidVerifiedData object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -126,54 +119,47 @@ class _$SocialMediaSerializer implements PrimitiveSerializer<SocialMedia> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required SocialMediaBuilder result,
+    required EidVerifiedDataBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'instagram':
+        case r'givenName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.instagram = valueDes;
+          result.givenName = valueDes;
           break;
-        case r'facebook':
+        case r'familyName':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.facebook = valueDes;
+          result.familyName = valueDes;
           break;
-        case r'twitter':
+        case r'personalNumber':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.twitter = valueDes;
+          result.personalNumber = valueDes;
           break;
-        case r'whatsapp':
+        case r'dateOfBirth':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.whatsapp = valueDes;
+            specifiedType: const FullType(Date),
+          ) as Date;
+          result.dateOfBirth = valueDes;
           break;
-        case r'snapchat':
+        case r'country':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.snapchat = valueDes;
-          break;
-        case r'linkedin':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.linkedin = valueDes;
+          result.country = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -184,12 +170,12 @@ class _$SocialMediaSerializer implements PrimitiveSerializer<SocialMedia> {
   }
 
   @override
-  SocialMedia deserialize(
+  EidVerifiedData deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = SocialMediaBuilder();
+    final result = EidVerifiedDataBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(
