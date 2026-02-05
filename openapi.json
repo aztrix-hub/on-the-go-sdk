@@ -3145,7 +3145,9 @@
     },
     "/verify/eid/initiate": {
       "post": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Initiate eID verification via IDURA",
         "description": "Starts an eID verification flow using IDURA OIDC. Returns an authorization URL for the user to authenticate with their eID provider.",
         "requestBody": {
@@ -3187,7 +3189,9 @@
     },
     "/verify/eid/callback": {
       "post": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Process eID verification callback",
         "description": "Processes the OIDC callback after user authenticates with their eID provider. Exchanges the authorization code for an ID token and updates the location verification status.",
         "requestBody": {
@@ -3229,7 +3233,9 @@
     },
     "/verify/eid/status": {
       "get": {
-        "tags": ["verification"],
+        "tags": [
+          "verification"
+        ],
         "summary": "Check eID verification status",
         "description": "Returns the current status of an eID verification session including verified user data if successful.",
         "parameters": [
@@ -3401,7 +3407,10 @@
       },
       "EidVerificationRequest": {
         "type": "object",
-        "required": ["provider", "redirectUri"],
+        "required": [
+          "provider",
+          "redirectUri"
+        ],
         "properties": {
           "provider": {
             "$ref": "#/components/schemas/EidProvider"
@@ -3444,7 +3453,10 @@
       },
       "EidCallbackRequest": {
         "type": "object",
-        "required": ["verificationId", "code"],
+        "required": [
+          "verificationId",
+          "code"
+        ],
         "properties": {
           "verificationId": {
             "type": "string",
@@ -3484,7 +3496,12 @@
           },
           "status": {
             "type": "string",
-            "enum": ["pending", "verified", "expired", "failed"],
+            "enum": [
+              "pending",
+              "verified",
+              "expired",
+              "failed"
+            ],
             "description": "Current status of the eID verification"
           },
           "verifiedData": {
@@ -3916,7 +3933,8 @@
       },
       "SpecialOpeningHour": {
         "required": [
-          "date"
+          "date",
+          "closed"
         ],
         "type": "object",
         "properties": {
