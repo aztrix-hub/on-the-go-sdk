@@ -30,7 +30,7 @@ part 'inbox_item.g.dart';
 @BuiltValue()
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'id')
-  String get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'locationId')
   String get locationId;
@@ -96,11 +96,13 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
     InboxItem object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'locationId';
     yield serializers.serialize(
       object.locationId,

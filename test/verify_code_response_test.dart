@@ -18,5 +18,23 @@ void main() {
     test('to test the property `type`', () async {
       // TODO
     });
+
+    // JWT access token if account was provisioned or logged in
+    // String accessToken
+    test('to test the property `accessToken`', () async {
+      // TODO
+    });
+
+    // Status of the account after verification
+    // String accountStatus
+    test('to test the property `accountStatus`', () async {
+      // TODO
+    });
+
+    // The type of account (e.g., passwordless)
+    // String accountType
+    test('to test the property `accountType`', () async {
+      // TODO
+    });
   });
 }

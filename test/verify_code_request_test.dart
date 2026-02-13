@@ -18,5 +18,17 @@ void main() {
     test('to test the property `code`', () async {
       // TODO
     });
+
+    // If true, create a passwordless account on successful verification (for new users)
+    // bool provisionAccount
+    test('to test the property `provisionAccount`', () async {
+      // TODO
+    });
+
+    // If true, login to existing account on successful verification (for login flow)
+    // bool loginAccount
+    test('to test the property `loginAccount`', () async {
+      // TODO
+    });
   });
 }

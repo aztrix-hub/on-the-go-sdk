@@ -117,7 +117,7 @@ class _$InboxItemTypeEnumSerializer
 
 class _$InboxItem extends InboxItem {
   @override
-  final String id;
+  final String? id;
   @override
   final String locationId;
   @override
@@ -149,7 +149,7 @@ class _$InboxItem extends InboxItem {
       (InboxItemBuilder()..update(updates))._build();
 
   _$InboxItem._(
-      {required this.id,
+      {this.id,
       required this.locationId,
       this.rootId,
       this.parentId,
@@ -337,7 +337,7 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
     try {
       _$result = _$v ??
           _$InboxItem._(
-            id: BuiltValueNullFieldError.checkNotNull(id, r'InboxItem', 'id'),
+            id: id,
             locationId: BuiltValueNullFieldError.checkNotNull(
                 locationId, r'InboxItem', 'locationId'),
             rootId: rootId,

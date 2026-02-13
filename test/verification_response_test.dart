@@ -18,5 +18,11 @@ void main() {
     test('to test the property `expiresAt`', () async {
       // TODO
     });
+
+    // Whether an account already exists for this email
+    // bool accountExists
+    test('to test the property `accountExists`', () async {
+      // TODO
+    });
   });
 }

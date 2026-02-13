@@ -4272,7 +4272,6 @@
       "InboxItem": {
         "type": "object",
         "required": [
-          "id",
           "locationId",
           "directory"
         ],
