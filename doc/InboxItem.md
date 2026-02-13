@@ -8,8 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**locationId** | **String** |  | [optional] 
+**id** | **String** |  | 
+**locationId** | **String** |  | 
 **rootId** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
 **date** | [**DateTime**](DateTime.md) |  | [optional] 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **message** | **String** |  | [optional] 
 **likes** | **int** |  | [optional] 
-**directory** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
+**directory** | [**DirectoryType**](DirectoryType.md) |  | 
 **rating** | **double** |  | [optional] 
 **status** | **String** |  | [optional] 
 **comments** | [**BuiltList&lt;InboxItem&gt;**](InboxItem.md) |  | [optional] 

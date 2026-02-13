@@ -133,8 +133,57 @@ void main() {
       // TODO
     });
 
-    // SocialMedia socialMedia
-    test('to test the property `socialMedia`', () async {
+    // Instagram username or URL
+    // String instagram
+    test('to test the property `instagram`', () async {
+      // TODO
+    });
+
+    // Facebook page URL
+    // String facebook
+    test('to test the property `facebook`', () async {
+      // TODO
+    });
+
+    // Twitter/X username or URL
+    // String twitter
+    test('to test the property `twitter`', () async {
+      // TODO
+    });
+
+    // WhatsApp phone number
+    // String whatsapp
+    test('to test the property `whatsapp`', () async {
+      // TODO
+    });
+
+    // Snapchat username
+    // String snapchat
+    test('to test the property `snapchat`', () async {
+      // TODO
+    });
+
+    // LinkedIn profile/company URL
+    // String linkedin
+    test('to test the property `linkedin`', () async {
+      // TODO
+    });
+
+    // Whether the location has been verified via eID (IDURA)
+    // bool verified
+    test('to test the property `verified`', () async {
+      // TODO
+    });
+
+    // When the location was verified via eID
+    // DateTime verifiedAt
+    test('to test the property `verifiedAt`', () async {
+      // TODO
+    });
+
+    // Name of the person who verified the location
+    // String verifiedBy
+    test('to test the property `verifiedBy`', () async {
       // TODO
     });
 

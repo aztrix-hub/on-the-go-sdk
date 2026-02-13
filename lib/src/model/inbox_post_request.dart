@@ -15,8 +15,7 @@ part 'inbox_post_request.g.dart';
 /// * [startDate]
 /// * [endDate]
 /// * [status]
-/// * [page]
-/// * [pageSize]
+/// * [pageToken]
 @BuiltValue()
 abstract class InboxPostRequest
     implements Built<InboxPostRequest, InboxPostRequestBuilder> {
@@ -30,11 +29,8 @@ abstract class InboxPostRequest
   BuiltList<InboxPostRequestStatusEnum>? get status;
   // enum statusEnum {  resolved,  unresolved,  replied,  unreplied,  contentUpdated,  contentNonUpdated,  };
 
-  @BuiltValueField(wireName: r'page')
-  num? get page;
-
-  @BuiltValueField(wireName: r'pageSize')
-  num? get pageSize;
+  @BuiltValueField(wireName: r'pageToken')
+  String? get pageToken;
 
   InboxPostRequest._();
 
@@ -42,9 +38,7 @@ abstract class InboxPostRequest
       _$InboxPostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InboxPostRequestBuilder b) => b
-    ..page = 1
-    ..pageSize = 20;
+  static void _defaults(InboxPostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
   static Serializer<InboxPostRequest> get serializer =>
@@ -86,18 +80,11 @@ class _$InboxPostRequestSerializer
             const FullType(BuiltList, [FullType(InboxPostRequestStatusEnum)]),
       );
     }
-    if (object.page != null) {
-      yield r'page';
+    if (object.pageToken != null) {
+      yield r'pageToken';
       yield serializers.serialize(
-        object.page,
-        specifiedType: const FullType(num),
-      );
-    }
-    if (object.pageSize != null) {
-      yield r'pageSize';
-      yield serializers.serialize(
-        object.pageSize,
-        specifiedType: const FullType(num),
+        object.pageToken,
+        specifiedType: const FullType(String),
       );
     }
   }
@@ -147,19 +134,12 @@ class _$InboxPostRequestSerializer
           ) as BuiltList<InboxPostRequestStatusEnum>;
           result.status.replace(valueDes);
           break;
-        case r'page':
+        case r'pageToken':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.page = valueDes;
-          break;
-        case r'pageSize':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(num),
-          ) as num;
-          result.pageSize = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.pageToken = valueDes;
           break;
         default:
           unhandled.add(key);

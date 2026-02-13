@@ -97,16 +97,14 @@ class _$InboxPostRequest extends InboxPostRequest {
   @override
   final BuiltList<InboxPostRequestStatusEnum>? status;
   @override
-  final num? page;
-  @override
-  final num? pageSize;
+  final String? pageToken;
 
   factory _$InboxPostRequest(
           [void Function(InboxPostRequestBuilder)? updates]) =>
       (InboxPostRequestBuilder()..update(updates))._build();
 
   _$InboxPostRequest._(
-      {this.startDate, this.endDate, this.status, this.page, this.pageSize})
+      {this.startDate, this.endDate, this.status, this.pageToken})
       : super._();
   @override
   InboxPostRequest rebuild(void Function(InboxPostRequestBuilder) updates) =>
@@ -123,8 +121,7 @@ class _$InboxPostRequest extends InboxPostRequest {
         startDate == other.startDate &&
         endDate == other.endDate &&
         status == other.status &&
-        page == other.page &&
-        pageSize == other.pageSize;
+        pageToken == other.pageToken;
   }
 
   @override
@@ -133,8 +130,7 @@ class _$InboxPostRequest extends InboxPostRequest {
     _$hash = $jc(_$hash, startDate.hashCode);
     _$hash = $jc(_$hash, endDate.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
-    _$hash = $jc(_$hash, page.hashCode);
-    _$hash = $jc(_$hash, pageSize.hashCode);
+    _$hash = $jc(_$hash, pageToken.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -145,8 +141,7 @@ class _$InboxPostRequest extends InboxPostRequest {
           ..add('startDate', startDate)
           ..add('endDate', endDate)
           ..add('status', status)
-          ..add('page', page)
-          ..add('pageSize', pageSize))
+          ..add('pageToken', pageToken))
         .toString();
   }
 }
@@ -169,13 +164,9 @@ class InboxPostRequestBuilder
   set status(ListBuilder<InboxPostRequestStatusEnum>? status) =>
       _$this._status = status;
 
-  num? _page;
-  num? get page => _$this._page;
-  set page(num? page) => _$this._page = page;
-
-  num? _pageSize;
-  num? get pageSize => _$this._pageSize;
-  set pageSize(num? pageSize) => _$this._pageSize = pageSize;
+  String? _pageToken;
+  String? get pageToken => _$this._pageToken;
+  set pageToken(String? pageToken) => _$this._pageToken = pageToken;
 
   InboxPostRequestBuilder() {
     InboxPostRequest._defaults(this);
@@ -187,8 +178,7 @@ class InboxPostRequestBuilder
       _startDate = $v.startDate;
       _endDate = $v.endDate;
       _status = $v.status?.toBuilder();
-      _page = $v.page;
-      _pageSize = $v.pageSize;
+      _pageToken = $v.pageToken;
       _$v = null;
     }
     return this;
@@ -215,8 +205,7 @@ class InboxPostRequestBuilder
             startDate: startDate,
             endDate: endDate,
             status: _status?.build(),
-            page: page,
-            pageSize: pageSize,
+            pageToken: pageToken,
           );
     } catch (_) {
       late String _$failedField;

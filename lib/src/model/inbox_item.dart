@@ -30,10 +30,10 @@ part 'inbox_item.g.dart';
 @BuiltValue()
 abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   @BuiltValueField(wireName: r'id')
-  String? get id;
+  String get id;
 
   @BuiltValueField(wireName: r'locationId')
-  String? get locationId;
+  String get locationId;
 
   @BuiltValueField(wireName: r'rootId')
   String? get rootId;
@@ -61,7 +61,7 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
   int? get likes;
 
   @BuiltValueField(wireName: r'directory')
-  DirectoryType? get directory;
+  DirectoryType get directory;
   // enum directoryEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'rating')
@@ -96,20 +96,16 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
     InboxItem object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.locationId != null) {
-      yield r'locationId';
-      yield serializers.serialize(
-        object.locationId,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'locationId';
+    yield serializers.serialize(
+      object.locationId,
+      specifiedType: const FullType(String),
+    );
     if (object.rootId != null) {
       yield r'rootId';
       yield serializers.serialize(
@@ -166,13 +162,11 @@ class _$InboxItemSerializer implements PrimitiveSerializer<InboxItem> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.directory != null) {
-      yield r'directory';
-      yield serializers.serialize(
-        object.directory,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
+    yield r'directory';
+    yield serializers.serialize(
+      object.directory,
+      specifiedType: const FullType(DirectoryType),
+    );
     if (object.rating != null) {
       yield r'rating';
       yield serializers.serialize(

@@ -117,9 +117,9 @@ class _$InboxItemTypeEnumSerializer
 
 class _$InboxItem extends InboxItem {
   @override
-  final String? id;
+  final String id;
   @override
-  final String? locationId;
+  final String locationId;
   @override
   final String? rootId;
   @override
@@ -137,7 +137,7 @@ class _$InboxItem extends InboxItem {
   @override
   final int? likes;
   @override
-  final DirectoryType? directory;
+  final DirectoryType directory;
   @override
   final double? rating;
   @override
@@ -149,8 +149,8 @@ class _$InboxItem extends InboxItem {
       (InboxItemBuilder()..update(updates))._build();
 
   _$InboxItem._(
-      {this.id,
-      this.locationId,
+      {required this.id,
+      required this.locationId,
       this.rootId,
       this.parentId,
       this.date,
@@ -159,7 +159,7 @@ class _$InboxItem extends InboxItem {
       this.type,
       this.message,
       this.likes,
-      this.directory,
+      required this.directory,
       this.rating,
       this.status,
       this.comments})
@@ -337,8 +337,9 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
     try {
       _$result = _$v ??
           _$InboxItem._(
-            id: id,
-            locationId: locationId,
+            id: BuiltValueNullFieldError.checkNotNull(id, r'InboxItem', 'id'),
+            locationId: BuiltValueNullFieldError.checkNotNull(
+                locationId, r'InboxItem', 'locationId'),
             rootId: rootId,
             parentId: parentId,
             date: date,
@@ -347,7 +348,8 @@ class InboxItemBuilder implements Builder<InboxItem, InboxItemBuilder> {
             type: type,
             message: message,
             likes: likes,
-            directory: directory,
+            directory: BuiltValueNullFieldError.checkNotNull(
+                directory, r'InboxItem', 'directory'),
             rating: rating,
             status: status,
             comments: _comments?.build(),

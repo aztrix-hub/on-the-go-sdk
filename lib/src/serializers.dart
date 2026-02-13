@@ -66,6 +66,7 @@ import 'package:on_the_go_sdk/src/model/eid_verification_status.dart';
 import 'package:on_the_go_sdk/src/model/eid_verified_data.dart';
 import 'package:on_the_go_sdk/src/model/error_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_item.dart';
+import 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 import 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 import 'package:on_the_go_sdk/src/model/individual.dart';
@@ -167,6 +168,7 @@ part 'serializers.g.dart';
   EidVerifiedData,
   ErrorResponse,
   InboxItem,
+  InboxPost200Response,
   InboxPostRequest,
   InboxReplyPostRequest,
   Individual,
@@ -215,31 +217,6 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AiMessage)]),
-        () => ListBuilder<AiMessage>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Connection)]),
-        () => ListBuilder<Connection>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Location)]),
-        () => ListBuilder<Location>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Category)]),
-        () => ListBuilder<Category>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Metric)]),
-        () => ListBuilder<Metric>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(UserConnectionLocationsGet200ResponseInner)]),
-        () => ListBuilder<UserConnectionLocationsGet200ResponseInner>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MetricName)]),
         () => ListBuilder<MetricName>(),
       )
@@ -248,24 +225,45 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Listing>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AiMessage)]),
+        () => ListBuilder<AiMessage>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Connection)]),
+        () => ListBuilder<Connection>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiConversation)]),
         () => ListBuilder<AiConversation>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Location)]),
+        () => ListBuilder<Location>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Category)]),
+        () => ListBuilder<Category>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LocationOrIndividual)]),
         () => ListBuilder<LocationOrIndividual>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(InboxItem)]),
-        () => ListBuilder<InboxItem>(),
+        const FullType(BuiltList, [FullType(Metric)]),
+        () => ListBuilder<Metric>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SocialPost)]),
         () => ListBuilder<SocialPost>(),
+      )
+      ..addBuilderFactory(
+        const FullType(
+            BuiltList, [FullType(UserConnectionLocationsGet200ResponseInner)]),
+        () => ListBuilder<UserConnectionLocationsGet200ResponseInner>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

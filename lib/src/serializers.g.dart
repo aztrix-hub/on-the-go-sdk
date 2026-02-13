@@ -65,6 +65,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(ErrorResponse.serializer)
       ..add(InboxItem.serializer)
       ..add(InboxItemTypeEnum.serializer)
+      ..add(InboxPost200Response.serializer)
       ..add(InboxPostRequest.serializer)
       ..add(InboxPostRequestStatusEnum.serializer)
       ..add(InboxReplyPostRequest.serializer)
@@ -146,6 +147,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(int)]),
           () => ListBuilder<int>())
+      ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(InboxItem)]),
+          () => ListBuilder<InboxItem>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(InboxItem)]),
           () => ListBuilder<InboxItem>())

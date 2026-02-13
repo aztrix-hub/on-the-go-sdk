@@ -22,13 +22,8 @@ void main() {
       // TODO
     });
 
-    // num page (default value: 1)
-    test('to test the property `page`', () async {
-      // TODO
-    });
-
-    // num pageSize (default value: 20)
-    test('to test the property `pageSize`', () async {
+    // String pageToken
+    test('to test the property `pageToken`', () async {
       // TODO
     });
   });

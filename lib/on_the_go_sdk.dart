@@ -74,6 +74,7 @@ export 'package:on_the_go_sdk/src/model/eid_verification_status.dart';
 export 'package:on_the_go_sdk/src/model/eid_verified_data.dart';
 export 'package:on_the_go_sdk/src/model/error_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_item.dart';
+export 'package:on_the_go_sdk/src/model/inbox_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/inbox_post_request.dart';
 export 'package:on_the_go_sdk/src/model/inbox_reply_post_request.dart';
 export 'package:on_the_go_sdk/src/model/individual.dart';

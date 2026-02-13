@@ -25,7 +25,7 @@ abstract class SpecialOpeningHour
 
   /// Open or closed on [date]
   @BuiltValueField(wireName: r'closed')
-  bool? get closed;
+  bool get closed;
 
   /// A list of hour ranges (time intervals), only required when `closed` is `false`
   @BuiltValueField(wireName: r'intervals')
@@ -62,13 +62,11 @@ class _$SpecialOpeningHourSerializer
       object.date,
       specifiedType: const FullType(String),
     );
-    if (object.closed != null) {
-      yield r'closed';
-      yield serializers.serialize(
-        object.closed,
-        specifiedType: const FullType(bool),
-      );
-    }
+    yield r'closed';
+    yield serializers.serialize(
+      object.closed,
+      specifiedType: const FullType(bool),
+    );
     if (object.intervals != null) {
       yield r'intervals';
       yield serializers.serialize(

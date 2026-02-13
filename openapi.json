@@ -2250,13 +2250,8 @@
                       ]
                     }
                   },
-                  "page": {
-                    "type": "number",
-                    "default": 1
-                  },
-                  "pageSize": {
-                    "type": "number",
-                    "default": 20
+                  "pageToken": {
+                    "type": "string"
                   }
                 }
               }
@@ -2269,7 +2264,18 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/InboxItems"
+                  "type": "object",
+                  "required": [
+                    "items"
+                  ],
+                  "properties": {
+                    "items": {
+                      "$ref": "#/components/schemas/InboxItems"
+                    },
+                    "nextPageToken": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -4232,6 +4238,11 @@
       },
       "InboxItem": {
         "type": "object",
+        "required": [
+          "id",
+          "locationId",
+          "directory"
+        ],
         "properties": {
           "id": {
             "type": "string"

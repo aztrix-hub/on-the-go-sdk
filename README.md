@@ -182,6 +182,7 @@ Class | Method | HTTP request | Description
  - [EidVerifiedData](doc/EidVerifiedData.md)
  - [ErrorResponse](doc/ErrorResponse.md)
  - [InboxItem](doc/InboxItem.md)
+ - [InboxPost200Response](doc/InboxPost200Response.md)
  - [InboxPostRequest](doc/InboxPostRequest.md)
  - [InboxReplyPostRequest](doc/InboxReplyPostRequest.md)
  - [Individual](doc/Individual.md)

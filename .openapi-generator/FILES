@@ -55,6 +55,7 @@ doc/EidVerifiedData.md
 doc/ErrorResponse.md
 doc/InboxApi.md
 doc/InboxItem.md
+doc/InboxPost200Response.md
 doc/InboxPostRequest.md
 doc/InboxReplyPostRequest.md
 doc/Individual.md
@@ -181,6 +182,7 @@ lib/src/model/eid_verification_status.dart
 lib/src/model/eid_verified_data.dart
 lib/src/model/error_response.dart
 lib/src/model/inbox_item.dart
+lib/src/model/inbox_post200_response.dart
 lib/src/model/inbox_post_request.dart
 lib/src/model/inbox_reply_post_request.dart
 lib/src/model/individual.dart

@@ -10,7 +10,7 @@ class _$SpecialOpeningHour extends SpecialOpeningHour {
   @override
   final String date;
   @override
-  final bool? closed;
+  final bool closed;
   @override
   final BuiltList<OpeningHourInterval>? intervals;
 
@@ -18,7 +18,8 @@ class _$SpecialOpeningHour extends SpecialOpeningHour {
           [void Function(SpecialOpeningHourBuilder)? updates]) =>
       (SpecialOpeningHourBuilder()..update(updates))._build();
 
-  _$SpecialOpeningHour._({required this.date, this.closed, this.intervals})
+  _$SpecialOpeningHour._(
+      {required this.date, required this.closed, this.intervals})
       : super._();
   @override
   SpecialOpeningHour rebuild(
@@ -111,7 +112,8 @@ class SpecialOpeningHourBuilder
           _$SpecialOpeningHour._(
             date: BuiltValueNullFieldError.checkNotNull(
                 date, r'SpecialOpeningHour', 'date'),
-            closed: closed,
+            closed: BuiltValueNullFieldError.checkNotNull(
+                closed, r'SpecialOpeningHour', 'closed'),
             intervals: _intervals?.build(),
           );
     } catch (_) {
