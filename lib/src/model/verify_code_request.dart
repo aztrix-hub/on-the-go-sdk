@@ -13,6 +13,8 @@ part 'verify_code_request.g.dart';
 /// Properties:
 /// * [verificationId] - The verification ID from send-otp response
 /// * [code] - The OTP code to verify
+/// * [provisionAccount] - If true, create a passwordless account on successful verification (for new users)
+/// * [loginAccount] - If true, login to existing account on successful verification (for login flow)
 @BuiltValue()
 abstract class VerifyCodeRequest
     implements Built<VerifyCodeRequest, VerifyCodeRequestBuilder> {
@@ -23,6 +25,14 @@ abstract class VerifyCodeRequest
   /// The OTP code to verify
   @BuiltValueField(wireName: r'code')
   String get code;
+
+  /// If true, create a passwordless account on successful verification (for new users)
+  @BuiltValueField(wireName: r'provisionAccount')
+  bool? get provisionAccount;
+
+  /// If true, login to existing account on successful verification (for login flow)
+  @BuiltValueField(wireName: r'loginAccount')
+  bool? get loginAccount;
 
   VerifyCodeRequest._();
 
@@ -60,6 +70,20 @@ class _$VerifyCodeRequestSerializer
       object.code,
       specifiedType: const FullType(String),
     );
+    if (object.provisionAccount != null) {
+      yield r'provisionAccount';
+      yield serializers.serialize(
+        object.provisionAccount,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.loginAccount != null) {
+      yield r'loginAccount';
+      yield serializers.serialize(
+        object.loginAccount,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -98,6 +122,20 @@ class _$VerifyCodeRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.code = valueDes;
+          break;
+        case r'provisionAccount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.provisionAccount = valueDes;
+          break;
+        case r'loginAccount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.loginAccount = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -305,7 +305,12 @@
           "500": {
             "description": "Internal Server Error"
           }
-        }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
       }
     },
     "/user/authenticated": {
@@ -3325,6 +3330,10 @@
             "type": "string",
             "format": "date-time",
             "description": "When the OTP expires"
+          },
+          "accountExists": {
+            "type": "boolean",
+            "description": "Whether an account already exists for this email"
           }
         }
       },
@@ -3342,6 +3351,14 @@
           "code": {
             "type": "string",
             "description": "The OTP code to verify"
+          },
+          "provisionAccount": {
+            "type": "boolean",
+            "description": "If true, create a passwordless account on successful verification (for new users)"
+          },
+          "loginAccount": {
+            "type": "boolean",
+            "description": "If true, login to existing account on successful verification (for login flow)"
           }
         }
       },
@@ -3359,6 +3376,22 @@
               "sms"
             ],
             "description": "Type of verification that was completed"
+          },
+          "access_token": {
+            "type": "string",
+            "description": "JWT access token if account was provisioned or logged in"
+          },
+          "accountStatus": {
+            "type": "string",
+            "enum": [
+              "created",
+              "existing"
+            ],
+            "description": "Status of the account after verification"
+          },
+          "account_type": {
+            "type": "string",
+            "description": "The type of account (e.g., passwordless)"
           }
         }
       },

@@ -11,12 +11,16 @@ class _$VerificationResponse extends VerificationResponse {
   final String? verificationId;
   @override
   final DateTime? expiresAt;
+  @override
+  final bool? accountExists;
 
   factory _$VerificationResponse(
           [void Function(VerificationResponseBuilder)? updates]) =>
       (VerificationResponseBuilder()..update(updates))._build();
 
-  _$VerificationResponse._({this.verificationId, this.expiresAt}) : super._();
+  _$VerificationResponse._(
+      {this.verificationId, this.expiresAt, this.accountExists})
+      : super._();
   @override
   VerificationResponse rebuild(
           void Function(VerificationResponseBuilder) updates) =>
@@ -31,7 +35,8 @@ class _$VerificationResponse extends VerificationResponse {
     if (identical(other, this)) return true;
     return other is VerificationResponse &&
         verificationId == other.verificationId &&
-        expiresAt == other.expiresAt;
+        expiresAt == other.expiresAt &&
+        accountExists == other.accountExists;
   }
 
   @override
@@ -39,6 +44,7 @@ class _$VerificationResponse extends VerificationResponse {
     var _$hash = 0;
     _$hash = $jc(_$hash, verificationId.hashCode);
     _$hash = $jc(_$hash, expiresAt.hashCode);
+    _$hash = $jc(_$hash, accountExists.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -47,7 +53,8 @@ class _$VerificationResponse extends VerificationResponse {
   String toString() {
     return (newBuiltValueToStringHelper(r'VerificationResponse')
           ..add('verificationId', verificationId)
-          ..add('expiresAt', expiresAt))
+          ..add('expiresAt', expiresAt)
+          ..add('accountExists', accountExists))
         .toString();
   }
 }
@@ -65,6 +72,11 @@ class VerificationResponseBuilder
   DateTime? get expiresAt => _$this._expiresAt;
   set expiresAt(DateTime? expiresAt) => _$this._expiresAt = expiresAt;
 
+  bool? _accountExists;
+  bool? get accountExists => _$this._accountExists;
+  set accountExists(bool? accountExists) =>
+      _$this._accountExists = accountExists;
+
   VerificationResponseBuilder() {
     VerificationResponse._defaults(this);
   }
@@ -74,6 +86,7 @@ class VerificationResponseBuilder
     if ($v != null) {
       _verificationId = $v.verificationId;
       _expiresAt = $v.expiresAt;
+      _accountExists = $v.accountExists;
       _$v = null;
     }
     return this;
@@ -97,6 +110,7 @@ class VerificationResponseBuilder
         _$VerificationResponse._(
           verificationId: verificationId,
           expiresAt: expiresAt,
+          accountExists: accountExists,
         );
     replace(_$result);
     return _$result;

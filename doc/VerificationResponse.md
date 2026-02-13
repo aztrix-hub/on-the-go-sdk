@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **verificationId** | **String** | Unique identifier for this verification | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) | When the OTP expires | [optional] 
+**accountExists** | **bool** | Whether an account already exists for this email | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

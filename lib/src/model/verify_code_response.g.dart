@@ -28,8 +28,37 @@ final BuiltSet<VerifyCodeResponseTypeEnum> _$verifyCodeResponseTypeEnumValues =
   _$verifyCodeResponseTypeEnum_sms,
 ]);
 
+const VerifyCodeResponseAccountStatusEnum
+    _$verifyCodeResponseAccountStatusEnum_created =
+    const VerifyCodeResponseAccountStatusEnum._('created');
+const VerifyCodeResponseAccountStatusEnum
+    _$verifyCodeResponseAccountStatusEnum_existing =
+    const VerifyCodeResponseAccountStatusEnum._('existing');
+
+VerifyCodeResponseAccountStatusEnum
+    _$verifyCodeResponseAccountStatusEnumValueOf(String name) {
+  switch (name) {
+    case 'created':
+      return _$verifyCodeResponseAccountStatusEnum_created;
+    case 'existing':
+      return _$verifyCodeResponseAccountStatusEnum_existing;
+    default:
+      throw ArgumentError(name);
+  }
+}
+
+final BuiltSet<VerifyCodeResponseAccountStatusEnum>
+    _$verifyCodeResponseAccountStatusEnumValues = BuiltSet<
+        VerifyCodeResponseAccountStatusEnum>(const <VerifyCodeResponseAccountStatusEnum>[
+  _$verifyCodeResponseAccountStatusEnum_created,
+  _$verifyCodeResponseAccountStatusEnum_existing,
+]);
+
 Serializer<VerifyCodeResponseTypeEnum> _$verifyCodeResponseTypeEnumSerializer =
     _$VerifyCodeResponseTypeEnumSerializer();
+Serializer<VerifyCodeResponseAccountStatusEnum>
+    _$verifyCodeResponseAccountStatusEnumSerializer =
+    _$VerifyCodeResponseAccountStatusEnumSerializer();
 
 class _$VerifyCodeResponseTypeEnumSerializer
     implements PrimitiveSerializer<VerifyCodeResponseTypeEnum> {
@@ -60,17 +89,61 @@ class _$VerifyCodeResponseTypeEnumSerializer
           _fromWire[serialized] ?? (serialized is String ? serialized : ''));
 }
 
+class _$VerifyCodeResponseAccountStatusEnumSerializer
+    implements PrimitiveSerializer<VerifyCodeResponseAccountStatusEnum> {
+  static const Map<String, Object> _toWire = const <String, Object>{
+    'created': 'created',
+    'existing': 'existing',
+  };
+  static const Map<Object, String> _fromWire = const <Object, String>{
+    'created': 'created',
+    'existing': 'existing',
+  };
+
+  @override
+  final Iterable<Type> types = const <Type>[
+    VerifyCodeResponseAccountStatusEnum
+  ];
+  @override
+  final String wireName = 'VerifyCodeResponseAccountStatusEnum';
+
+  @override
+  Object serialize(
+          Serializers serializers, VerifyCodeResponseAccountStatusEnum object,
+          {FullType specifiedType = FullType.unspecified}) =>
+      _toWire[object.name] ?? object.name;
+
+  @override
+  VerifyCodeResponseAccountStatusEnum deserialize(
+          Serializers serializers, Object serialized,
+          {FullType specifiedType = FullType.unspecified}) =>
+      VerifyCodeResponseAccountStatusEnum.valueOf(
+          _fromWire[serialized] ?? (serialized is String ? serialized : ''));
+}
+
 class _$VerifyCodeResponse extends VerifyCodeResponse {
   @override
   final bool? verified;
   @override
   final VerifyCodeResponseTypeEnum? type;
+  @override
+  final String? accessToken;
+  @override
+  final VerifyCodeResponseAccountStatusEnum? accountStatus;
+  @override
+  final String? accountType;
 
   factory _$VerifyCodeResponse(
           [void Function(VerifyCodeResponseBuilder)? updates]) =>
       (VerifyCodeResponseBuilder()..update(updates))._build();
 
-  _$VerifyCodeResponse._({this.verified, this.type}) : super._();
+  _$VerifyCodeResponse._(
+      {this.verified,
+      this.type,
+      this.accessToken,
+      this.accountStatus,
+      this.accountType})
+      : super._();
   @override
   VerifyCodeResponse rebuild(
           void Function(VerifyCodeResponseBuilder) updates) =>
@@ -85,7 +158,10 @@ class _$VerifyCodeResponse extends VerifyCodeResponse {
     if (identical(other, this)) return true;
     return other is VerifyCodeResponse &&
         verified == other.verified &&
-        type == other.type;
+        type == other.type &&
+        accessToken == other.accessToken &&
+        accountStatus == other.accountStatus &&
+        accountType == other.accountType;
   }
 
   @override
@@ -93,6 +169,9 @@ class _$VerifyCodeResponse extends VerifyCodeResponse {
     var _$hash = 0;
     _$hash = $jc(_$hash, verified.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, accessToken.hashCode);
+    _$hash = $jc(_$hash, accountStatus.hashCode);
+    _$hash = $jc(_$hash, accountType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -101,7 +180,10 @@ class _$VerifyCodeResponse extends VerifyCodeResponse {
   String toString() {
     return (newBuiltValueToStringHelper(r'VerifyCodeResponse')
           ..add('verified', verified)
-          ..add('type', type))
+          ..add('type', type)
+          ..add('accessToken', accessToken)
+          ..add('accountStatus', accountStatus)
+          ..add('accountType', accountType))
         .toString();
   }
 }
@@ -118,6 +200,20 @@ class VerifyCodeResponseBuilder
   VerifyCodeResponseTypeEnum? get type => _$this._type;
   set type(VerifyCodeResponseTypeEnum? type) => _$this._type = type;
 
+  String? _accessToken;
+  String? get accessToken => _$this._accessToken;
+  set accessToken(String? accessToken) => _$this._accessToken = accessToken;
+
+  VerifyCodeResponseAccountStatusEnum? _accountStatus;
+  VerifyCodeResponseAccountStatusEnum? get accountStatus =>
+      _$this._accountStatus;
+  set accountStatus(VerifyCodeResponseAccountStatusEnum? accountStatus) =>
+      _$this._accountStatus = accountStatus;
+
+  String? _accountType;
+  String? get accountType => _$this._accountType;
+  set accountType(String? accountType) => _$this._accountType = accountType;
+
   VerifyCodeResponseBuilder() {
     VerifyCodeResponse._defaults(this);
   }
@@ -127,6 +223,9 @@ class VerifyCodeResponseBuilder
     if ($v != null) {
       _verified = $v.verified;
       _type = $v.type;
+      _accessToken = $v.accessToken;
+      _accountStatus = $v.accountStatus;
+      _accountType = $v.accountType;
       _$v = null;
     }
     return this;
@@ -150,6 +249,9 @@ class VerifyCodeResponseBuilder
         _$VerifyCodeResponse._(
           verified: verified,
           type: type,
+          accessToken: accessToken,
+          accountStatus: accountStatus,
+          accountType: accountType,
         );
     replace(_$result);
     return _$result;

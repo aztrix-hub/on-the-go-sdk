@@ -14,6 +14,9 @@ part 'verify_code_response.g.dart';
 /// Properties:
 /// * [verified] - Whether the verification was successful
 /// * [type] - Type of verification that was completed
+/// * [accessToken] - JWT access token if account was provisioned or logged in
+/// * [accountStatus] - Status of the account after verification
+/// * [accountType] - The type of account (e.g., passwordless)
 @BuiltValue()
 abstract class VerifyCodeResponse
     implements Built<VerifyCodeResponse, VerifyCodeResponseBuilder> {
@@ -25,6 +28,19 @@ abstract class VerifyCodeResponse
   @BuiltValueField(wireName: r'type')
   VerifyCodeResponseTypeEnum? get type;
   // enum typeEnum {  email,  sms,  };
+
+  /// JWT access token if account was provisioned or logged in
+  @BuiltValueField(wireName: r'access_token')
+  String? get accessToken;
+
+  /// Status of the account after verification
+  @BuiltValueField(wireName: r'accountStatus')
+  VerifyCodeResponseAccountStatusEnum? get accountStatus;
+  // enum accountStatusEnum {  created,  existing,  };
+
+  /// The type of account (e.g., passwordless)
+  @BuiltValueField(wireName: r'account_type')
+  String? get accountType;
 
   VerifyCodeResponse._();
 
@@ -66,6 +82,27 @@ class _$VerifyCodeResponseSerializer
         specifiedType: const FullType(VerifyCodeResponseTypeEnum),
       );
     }
+    if (object.accessToken != null) {
+      yield r'access_token';
+      yield serializers.serialize(
+        object.accessToken,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.accountStatus != null) {
+      yield r'accountStatus';
+      yield serializers.serialize(
+        object.accountStatus,
+        specifiedType: const FullType(VerifyCodeResponseAccountStatusEnum),
+      );
+    }
+    if (object.accountType != null) {
+      yield r'account_type';
+      yield serializers.serialize(
+        object.accountType,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -104,6 +141,27 @@ class _$VerifyCodeResponseSerializer
             specifiedType: const FullType(VerifyCodeResponseTypeEnum),
           ) as VerifyCodeResponseTypeEnum;
           result.type = valueDes;
+          break;
+        case r'access_token':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accessToken = valueDes;
+          break;
+        case r'accountStatus':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(VerifyCodeResponseAccountStatusEnum),
+          ) as VerifyCodeResponseAccountStatusEnum;
+          result.accountStatus = valueDes;
+          break;
+        case r'account_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accountType = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -154,4 +212,26 @@ class VerifyCodeResponseTypeEnum extends EnumClass {
       _$verifyCodeResponseTypeEnumValues;
   static VerifyCodeResponseTypeEnum valueOf(String name) =>
       _$verifyCodeResponseTypeEnumValueOf(name);
+}
+
+class VerifyCodeResponseAccountStatusEnum extends EnumClass {
+  /// Status of the account after verification
+  @BuiltValueEnumConst(wireName: r'created')
+  static const VerifyCodeResponseAccountStatusEnum created =
+      _$verifyCodeResponseAccountStatusEnum_created;
+
+  /// Status of the account after verification
+  @BuiltValueEnumConst(wireName: r'existing')
+  static const VerifyCodeResponseAccountStatusEnum existing =
+      _$verifyCodeResponseAccountStatusEnum_existing;
+
+  static Serializer<VerifyCodeResponseAccountStatusEnum> get serializer =>
+      _$verifyCodeResponseAccountStatusEnumSerializer;
+
+  const VerifyCodeResponseAccountStatusEnum._(String name) : super(name);
+
+  static BuiltSet<VerifyCodeResponseAccountStatusEnum> get values =>
+      _$verifyCodeResponseAccountStatusEnumValues;
+  static VerifyCodeResponseAccountStatusEnum valueOf(String name) =>
+      _$verifyCodeResponseAccountStatusEnumValueOf(name);
 }

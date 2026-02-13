@@ -13,6 +13,7 @@ part 'verification_response.g.dart';
 /// Properties:
 /// * [verificationId] - Unique identifier for this verification
 /// * [expiresAt] - When the OTP expires
+/// * [accountExists] - Whether an account already exists for this email
 @BuiltValue()
 abstract class VerificationResponse
     implements Built<VerificationResponse, VerificationResponseBuilder> {
@@ -23,6 +24,10 @@ abstract class VerificationResponse
   /// When the OTP expires
   @BuiltValueField(wireName: r'expiresAt')
   DateTime? get expiresAt;
+
+  /// Whether an account already exists for this email
+  @BuiltValueField(wireName: r'accountExists')
+  bool? get accountExists;
 
   VerificationResponse._();
 
@@ -67,6 +72,13 @@ class _$VerificationResponseSerializer
         specifiedType: const FullType(DateTime),
       );
     }
+    if (object.accountExists != null) {
+      yield r'accountExists';
+      yield serializers.serialize(
+        object.accountExists,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
   @override
@@ -105,6 +117,13 @@ class _$VerificationResponseSerializer
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.expiresAt = valueDes;
+          break;
+        case r'accountExists':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.accountExists = valueDes;
           break;
         default:
           unhandled.add(key);
