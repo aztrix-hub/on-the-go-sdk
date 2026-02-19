@@ -654,7 +654,14 @@
         },
         "responses": {
           "200": {
-            "description": "location successfully created"
+            "description": "location successfully created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
           },
           "400": {
             "description": "Invalid or missing parameter",

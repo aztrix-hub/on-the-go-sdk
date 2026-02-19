@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **connectionLocationPost**
-> connectionLocationPost(location)
+> Location connectionLocationPost(location)
 
 create a location on a connection
 
@@ -31,7 +31,8 @@ final api = OnTheGoSdk().getConnectionsApi();
 final Location location = ; // Location | 
 
 try {
-    api.connectionLocationPost(location);
+    final response = api.connectionLocationPost(location);
+    print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectionsApi->connectionLocationPost: $e\n');
 }
@@ -45,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Location**](Location.md)
 
 ### Authorization
 
