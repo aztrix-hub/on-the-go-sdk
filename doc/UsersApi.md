@@ -10,6 +10,7 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userAuthenticatedGet**](UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
+[**userConnectionLocationPost**](UsersApi.md#userconnectionlocationpost) | **POST** /user/connection/location | create a location on a connection
 [**userConnectionLocationsGet**](UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
 [**userConnectionPost**](UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [**userConnectionsGet**](UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
@@ -61,6 +62,50 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userConnectionLocationPost**
+> userConnectionLocationPost(location)
+
+create a location on a connection
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getUsersApi();
+final Location location = ; // Location | 
+
+try {
+    api.userConnectionLocationPost(location);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userConnectionLocationPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **location** | [**Location**](Location.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

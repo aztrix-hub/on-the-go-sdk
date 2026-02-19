@@ -13,6 +13,13 @@ void main() {
       // TODO
     });
 
+    // create a location on a connection
+    //
+    //Future userConnectionLocationPost(Location location) async
+    test('test userConnectionLocationPost', () async {
+      // TODO
+    });
+
     // get locations from a connection
     //
     //Future<BuiltList<UserConnectionLocationsGet200ResponseInner>> userConnectionLocationsGet(String connectionId, DirectoryType type, Platform platform) async

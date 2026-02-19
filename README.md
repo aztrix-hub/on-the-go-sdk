@@ -107,6 +107,7 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
 [*UsersApi*](doc/UsersApi.md) | [**userAuthenticatedGet**](doc/UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
+[*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationPost**](doc/UsersApi.md#userconnectionlocationpost) | **POST** /user/connection/location | create a location on a connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationsGet**](doc/UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections

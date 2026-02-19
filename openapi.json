@@ -633,6 +633,47 @@
         ]
       }
     },
+    "/user/connection/location": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "create a location on a connection",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Location"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "location successfully created"
+          },
+          "400": {
+            "description": "Invalid or missing parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/location": {
       "get": {
         "tags": [
