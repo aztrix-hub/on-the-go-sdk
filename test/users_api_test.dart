@@ -13,27 +13,6 @@ void main() {
       // TODO
     });
 
-    // create a location on a connection
-    //
-    //Future userConnectionLocationPost(Location location) async
-    test('test userConnectionLocationPost', () async {
-      // TODO
-    });
-
-    // get locations from a connection
-    //
-    //Future<BuiltList<UserConnectionLocationsGet200ResponseInner>> userConnectionLocationsGet(String connectionId, DirectoryType type, Platform platform) async
-    test('test userConnectionLocationsGet', () async {
-      // TODO
-    });
-
-    // create a user connection
-    //
-    //Future<Connection> userConnectionPost(UserConnectionPostRequest userConnectionPostRequest) async
-    test('test userConnectionPost', () async {
-      // TODO
-    });
-
     // Get user connections
     //
     //Future<BuiltList<Connection>> userConnectionsGet(DirectoryType type) async

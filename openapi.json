@@ -21,6 +21,9 @@
       "name": "locations"
     },
     {
+      "name": "connections"
+    },
+    {
       "name": "sites"
     },
     {
@@ -503,10 +506,10 @@
         ]
       }
     },
-    "/user/connection": {
+    "/connection": {
       "post": {
         "tags": [
-          "users"
+          "connections"
         ],
         "summary": "create a user connection",
         "requestBody": {
@@ -562,10 +565,10 @@
         ]
       }
     },
-    "/user/connection/locations": {
+    "/connection/locations": {
       "get": {
         "tags": [
-          "users"
+          "connections"
         ],
         "summary": "get locations from a connection",
         "parameters": [
@@ -633,10 +636,10 @@
         ]
       }
     },
-    "/user/connection/location": {
+    "/connection/location": {
       "post": {
         "tags": [
-          "users"
+          "connections"
         ],
         "summary": "create a location on a connection",
         "requestBody": {
@@ -3683,6 +3686,10 @@
           },
           "locale": {
             "type": "string"
+          },
+          "account_type": {
+            "type": "string",
+            "description": "The type of account (e.g., passwordless)"
           }
         },
         "description": "User Model"

@@ -8,54 +8,52 @@ import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_connection_locations_get200_response_inner.g.dart';
+part 'connection_locations_get200_response_inner.g.dart';
 
-/// UserConnectionLocationsGet200ResponseInner
+/// ConnectionLocationsGet200ResponseInner
 ///
 /// Properties:
 /// * [connectionId]
 /// * [locations]
 @BuiltValue()
-abstract class UserConnectionLocationsGet200ResponseInner
+abstract class ConnectionLocationsGet200ResponseInner
     implements
-        Built<UserConnectionLocationsGet200ResponseInner,
-            UserConnectionLocationsGet200ResponseInnerBuilder> {
+        Built<ConnectionLocationsGet200ResponseInner,
+            ConnectionLocationsGet200ResponseInnerBuilder> {
   @BuiltValueField(wireName: r'connectionId')
   String? get connectionId;
 
   @BuiltValueField(wireName: r'locations')
   BuiltList<Location>? get locations;
 
-  UserConnectionLocationsGet200ResponseInner._();
+  ConnectionLocationsGet200ResponseInner._();
 
-  factory UserConnectionLocationsGet200ResponseInner(
-          [void updates(UserConnectionLocationsGet200ResponseInnerBuilder b)]) =
-      _$UserConnectionLocationsGet200ResponseInner;
+  factory ConnectionLocationsGet200ResponseInner(
+          [void updates(ConnectionLocationsGet200ResponseInnerBuilder b)]) =
+      _$ConnectionLocationsGet200ResponseInner;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserConnectionLocationsGet200ResponseInnerBuilder b) =>
-      b;
+  static void _defaults(ConnectionLocationsGet200ResponseInnerBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserConnectionLocationsGet200ResponseInner>
-      get serializer =>
-          _$UserConnectionLocationsGet200ResponseInnerSerializer();
+  static Serializer<ConnectionLocationsGet200ResponseInner> get serializer =>
+      _$ConnectionLocationsGet200ResponseInnerSerializer();
 }
 
-class _$UserConnectionLocationsGet200ResponseInnerSerializer
-    implements PrimitiveSerializer<UserConnectionLocationsGet200ResponseInner> {
+class _$ConnectionLocationsGet200ResponseInnerSerializer
+    implements PrimitiveSerializer<ConnectionLocationsGet200ResponseInner> {
   @override
   final Iterable<Type> types = const [
-    UserConnectionLocationsGet200ResponseInner,
-    _$UserConnectionLocationsGet200ResponseInner
+    ConnectionLocationsGet200ResponseInner,
+    _$ConnectionLocationsGet200ResponseInner
   ];
 
   @override
-  final String wireName = r'UserConnectionLocationsGet200ResponseInner';
+  final String wireName = r'ConnectionLocationsGet200ResponseInner';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserConnectionLocationsGet200ResponseInner object, {
+    ConnectionLocationsGet200ResponseInner object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.connectionId != null) {
@@ -77,7 +75,7 @@ class _$UserConnectionLocationsGet200ResponseInnerSerializer
   @override
   Object serialize(
     Serializers serializers,
-    UserConnectionLocationsGet200ResponseInner object, {
+    ConnectionLocationsGet200ResponseInner object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -90,7 +88,7 @@ class _$UserConnectionLocationsGet200ResponseInnerSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserConnectionLocationsGet200ResponseInnerBuilder result,
+    required ConnectionLocationsGet200ResponseInnerBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -120,12 +118,12 @@ class _$UserConnectionLocationsGet200ResponseInnerSerializer
   }
 
   @override
-  UserConnectionLocationsGet200ResponseInner deserialize(
+  ConnectionLocationsGet200ResponseInner deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserConnectionLocationsGet200ResponseInnerBuilder();
+    final result = ConnectionLocationsGet200ResponseInnerBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

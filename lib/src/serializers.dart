@@ -55,6 +55,8 @@ import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
+import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
+import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/eid_callback_request.dart';
@@ -98,8 +100,6 @@ import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
-import 'package:on_the_go_sdk/src/model/user_connection_locations_get200_response_inner.dart';
-import 'package:on_the_go_sdk/src/model/user_connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
@@ -157,6 +157,8 @@ part 'serializers.g.dart';
   AiToolResponses,
   Category,
   Connection,
+  ConnectionLocationsGet200ResponseInner,
+  ConnectionPostRequest,
   DataPoint,
   DirectoryType,
   EidCallbackRequest,
@@ -200,8 +202,6 @@ part 'serializers.g.dart';
   SocialPost,
   SpecialOpeningHour,
   User,
-  UserConnectionLocationsGet200ResponseInner,
-  UserConnectionPostRequest,
   UserLoginPostRequest,
   UserOauthPost200Response,
   UserOauthPostRequest,
@@ -227,6 +227,11 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiMessage)]),
         () => ListBuilder<AiMessage>(),
+      )
+      ..addBuilderFactory(
+        const FullType(
+            BuiltList, [FullType(ConnectionLocationsGet200ResponseInner)]),
+        () => ListBuilder<ConnectionLocationsGet200ResponseInner>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(Connection)]),
@@ -259,11 +264,6 @@ Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SocialPost)]),
         () => ListBuilder<SocialPost>(),
-      )
-      ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(UserConnectionLocationsGet200ResponseInner)]),
-        () => ListBuilder<UserConnectionLocationsGet200ResponseInner>(),
       )
       ..add(const OneOfSerializer())
       ..add(const AnyOfSerializer())

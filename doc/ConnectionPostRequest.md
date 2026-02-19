@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.UserConnectionLocationsGet200ResponseInner
+# on_the_go_sdk.model.ConnectionPostRequest
 
 ## Load the model package
 ```dart
@@ -8,8 +8,10 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**connectionId** | **String** |  | [optional] 
-**locations** | [**BuiltList&lt;Location&gt;**](Location.md) |  | [optional] 
+**type** | [**DirectoryType**](DirectoryType.md) |  | [optional] 
+**platform** | [**Platform**](Platform.md) |  | [optional] 
+**code** | **String** |  | [optional] 
+**redirectUrl** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

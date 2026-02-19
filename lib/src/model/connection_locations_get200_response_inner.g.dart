@@ -1,41 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_connection_locations_get200_response_inner.dart';
+part of 'connection_locations_get200_response_inner.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$UserConnectionLocationsGet200ResponseInner
-    extends UserConnectionLocationsGet200ResponseInner {
+class _$ConnectionLocationsGet200ResponseInner
+    extends ConnectionLocationsGet200ResponseInner {
   @override
   final String? connectionId;
   @override
   final BuiltList<Location>? locations;
 
-  factory _$UserConnectionLocationsGet200ResponseInner(
-          [void Function(UserConnectionLocationsGet200ResponseInnerBuilder)?
+  factory _$ConnectionLocationsGet200ResponseInner(
+          [void Function(ConnectionLocationsGet200ResponseInnerBuilder)?
               updates]) =>
-      (UserConnectionLocationsGet200ResponseInnerBuilder()..update(updates))
+      (ConnectionLocationsGet200ResponseInnerBuilder()..update(updates))
           ._build();
 
-  _$UserConnectionLocationsGet200ResponseInner._(
+  _$ConnectionLocationsGet200ResponseInner._(
       {this.connectionId, this.locations})
       : super._();
   @override
-  UserConnectionLocationsGet200ResponseInner rebuild(
-          void Function(UserConnectionLocationsGet200ResponseInnerBuilder)
+  ConnectionLocationsGet200ResponseInner rebuild(
+          void Function(ConnectionLocationsGet200ResponseInnerBuilder)
               updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserConnectionLocationsGet200ResponseInnerBuilder toBuilder() =>
-      UserConnectionLocationsGet200ResponseInnerBuilder()..replace(this);
+  ConnectionLocationsGet200ResponseInnerBuilder toBuilder() =>
+      ConnectionLocationsGet200ResponseInnerBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is UserConnectionLocationsGet200ResponseInner &&
+    return other is ConnectionLocationsGet200ResponseInner &&
         connectionId == other.connectionId &&
         locations == other.locations;
   }
@@ -52,18 +52,18 @@ class _$UserConnectionLocationsGet200ResponseInner
   @override
   String toString() {
     return (newBuiltValueToStringHelper(
-            r'UserConnectionLocationsGet200ResponseInner')
+            r'ConnectionLocationsGet200ResponseInner')
           ..add('connectionId', connectionId)
           ..add('locations', locations))
         .toString();
   }
 }
 
-class UserConnectionLocationsGet200ResponseInnerBuilder
+class ConnectionLocationsGet200ResponseInnerBuilder
     implements
-        Builder<UserConnectionLocationsGet200ResponseInner,
-            UserConnectionLocationsGet200ResponseInnerBuilder> {
-  _$UserConnectionLocationsGet200ResponseInner? _$v;
+        Builder<ConnectionLocationsGet200ResponseInner,
+            ConnectionLocationsGet200ResponseInnerBuilder> {
+  _$ConnectionLocationsGet200ResponseInner? _$v;
 
   String? _connectionId;
   String? get connectionId => _$this._connectionId;
@@ -75,11 +75,11 @@ class UserConnectionLocationsGet200ResponseInnerBuilder
   set locations(ListBuilder<Location>? locations) =>
       _$this._locations = locations;
 
-  UserConnectionLocationsGet200ResponseInnerBuilder() {
-    UserConnectionLocationsGet200ResponseInner._defaults(this);
+  ConnectionLocationsGet200ResponseInnerBuilder() {
+    ConnectionLocationsGet200ResponseInner._defaults(this);
   }
 
-  UserConnectionLocationsGet200ResponseInnerBuilder get _$this {
+  ConnectionLocationsGet200ResponseInnerBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _connectionId = $v.connectionId;
@@ -90,25 +90,24 @@ class UserConnectionLocationsGet200ResponseInnerBuilder
   }
 
   @override
-  void replace(UserConnectionLocationsGet200ResponseInner other) {
-    _$v = other as _$UserConnectionLocationsGet200ResponseInner;
+  void replace(ConnectionLocationsGet200ResponseInner other) {
+    _$v = other as _$ConnectionLocationsGet200ResponseInner;
   }
 
   @override
   void update(
-      void Function(UserConnectionLocationsGet200ResponseInnerBuilder)?
-          updates) {
+      void Function(ConnectionLocationsGet200ResponseInnerBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  UserConnectionLocationsGet200ResponseInner build() => _build();
+  ConnectionLocationsGet200ResponseInner build() => _build();
 
-  _$UserConnectionLocationsGet200ResponseInner _build() {
-    _$UserConnectionLocationsGet200ResponseInner _$result;
+  _$ConnectionLocationsGet200ResponseInner _build() {
+    _$ConnectionLocationsGet200ResponseInner _$result;
     try {
       _$result = _$v ??
-          _$UserConnectionLocationsGet200ResponseInner._(
+          _$ConnectionLocationsGet200ResponseInner._(
             connectionId: connectionId,
             locations: _locations?.build(),
           );
@@ -119,7 +118,7 @@ class UserConnectionLocationsGet200ResponseInnerBuilder
         _locations?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
-            r'UserConnectionLocationsGet200ResponseInner',
+            r'ConnectionLocationsGet200ResponseInner',
             _$failedField,
             e.toString());
       }

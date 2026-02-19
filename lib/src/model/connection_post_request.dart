@@ -8,9 +8,9 @@ import 'package:on_the_go_sdk/src/model/platform.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'user_connection_post_request.g.dart';
+part 'connection_post_request.g.dart';
 
-/// UserConnectionPostRequest
+/// ConnectionPostRequest
 ///
 /// Properties:
 /// * [type]
@@ -18,9 +18,8 @@ part 'user_connection_post_request.g.dart';
 /// * [code]
 /// * [redirectUrl]
 @BuiltValue()
-abstract class UserConnectionPostRequest
-    implements
-        Built<UserConnectionPostRequest, UserConnectionPostRequestBuilder> {
+abstract class ConnectionPostRequest
+    implements Built<ConnectionPostRequest, ConnectionPostRequestBuilder> {
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
@@ -35,34 +34,33 @@ abstract class UserConnectionPostRequest
   @BuiltValueField(wireName: r'redirectUrl')
   String? get redirectUrl;
 
-  UserConnectionPostRequest._();
+  ConnectionPostRequest._();
 
-  factory UserConnectionPostRequest(
-          [void updates(UserConnectionPostRequestBuilder b)]) =
-      _$UserConnectionPostRequest;
+  factory ConnectionPostRequest(
+      [void updates(ConnectionPostRequestBuilder b)]) = _$ConnectionPostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UserConnectionPostRequestBuilder b) => b;
+  static void _defaults(ConnectionPostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<UserConnectionPostRequest> get serializer =>
-      _$UserConnectionPostRequestSerializer();
+  static Serializer<ConnectionPostRequest> get serializer =>
+      _$ConnectionPostRequestSerializer();
 }
 
-class _$UserConnectionPostRequestSerializer
-    implements PrimitiveSerializer<UserConnectionPostRequest> {
+class _$ConnectionPostRequestSerializer
+    implements PrimitiveSerializer<ConnectionPostRequest> {
   @override
   final Iterable<Type> types = const [
-    UserConnectionPostRequest,
-    _$UserConnectionPostRequest
+    ConnectionPostRequest,
+    _$ConnectionPostRequest
   ];
 
   @override
-  final String wireName = r'UserConnectionPostRequest';
+  final String wireName = r'ConnectionPostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    UserConnectionPostRequest object, {
+    ConnectionPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
     if (object.type != null) {
@@ -98,7 +96,7 @@ class _$UserConnectionPostRequestSerializer
   @override
   Object serialize(
     Serializers serializers,
-    UserConnectionPostRequest object, {
+    ConnectionPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -111,7 +109,7 @@ class _$UserConnectionPostRequestSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required UserConnectionPostRequestBuilder result,
+    required ConnectionPostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
@@ -155,12 +153,12 @@ class _$UserConnectionPostRequestSerializer
   }
 
   @override
-  UserConnectionPostRequest deserialize(
+  ConnectionPostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = UserConnectionPostRequestBuilder();
+    final result = ConnectionPostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

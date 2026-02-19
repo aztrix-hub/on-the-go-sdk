@@ -17,6 +17,7 @@ part 'user.g.dart';
 /// * [email] - User email
 /// * [phone]
 /// * [locale]
+/// * [accountType] - The type of account (e.g., passwordless)
 @BuiltValue()
 abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -39,6 +40,10 @@ abstract class User implements Built<User, UserBuilder> {
 
   @BuiltValueField(wireName: r'locale')
   String? get locale;
+
+  /// The type of account (e.g., passwordless)
+  @BuiltValueField(wireName: r'account_type')
+  String? get accountType;
 
   User._();
 
@@ -102,6 +107,13 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
       yield r'locale';
       yield serializers.serialize(
         object.locale,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.accountType != null) {
+      yield r'account_type';
+      yield serializers.serialize(
+        object.accountType,
         specifiedType: const FullType(String),
       );
     }
@@ -171,6 +183,13 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
             specifiedType: const FullType(String),
           ) as String;
           result.locale = valueDes;
+          break;
+        case r'account_type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.accountType = valueDes;
           break;
         default:
           unhandled.add(key);

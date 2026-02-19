@@ -19,6 +19,8 @@ class _$User extends User {
   final String? phone;
   @override
   final String? locale;
+  @override
+  final String? accountType;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (UserBuilder()..update(updates))._build();
@@ -29,7 +31,8 @@ class _$User extends User {
       this.lastname,
       this.email,
       this.phone,
-      this.locale})
+      this.locale,
+      this.accountType})
       : super._();
   @override
   User rebuild(void Function(UserBuilder) updates) =>
@@ -47,7 +50,8 @@ class _$User extends User {
         lastname == other.lastname &&
         email == other.email &&
         phone == other.phone &&
-        locale == other.locale;
+        locale == other.locale &&
+        accountType == other.accountType;
   }
 
   @override
@@ -59,6 +63,7 @@ class _$User extends User {
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, locale.hashCode);
+    _$hash = $jc(_$hash, accountType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -71,7 +76,8 @@ class _$User extends User {
           ..add('lastname', lastname)
           ..add('email', email)
           ..add('phone', phone)
-          ..add('locale', locale))
+          ..add('locale', locale)
+          ..add('accountType', accountType))
         .toString();
   }
 }
@@ -103,6 +109,10 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
+  String? _accountType;
+  String? get accountType => _$this._accountType;
+  set accountType(String? accountType) => _$this._accountType = accountType;
+
   UserBuilder() {
     User._defaults(this);
   }
@@ -116,6 +126,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _email = $v.email;
       _phone = $v.phone;
       _locale = $v.locale;
+      _accountType = $v.accountType;
       _$v = null;
     }
     return this;
@@ -143,6 +154,7 @@ class UserBuilder implements Builder<User, UserBuilder> {
           email: email,
           phone: phone,
           locale: locale,
+          accountType: accountType,
         );
     replace(_$result);
     return _$result;

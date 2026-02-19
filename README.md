@@ -80,6 +80,9 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsDescriptionGet**](doc/AiApi.md#aisuggestionsdescriptionget) | **GET** /ai/suggestions/description | 
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsKeywordsGet**](doc/AiApi.md#aisuggestionskeywordsget) | **GET** /ai/suggestions/keywords | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationPost**](doc/ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationsGet**](doc/ConnectionsApi.md#connectionlocationsget) | **GET** /connection/locations | get locations from a connection
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionPost**](doc/ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
@@ -107,9 +110,6 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
 [*UsersApi*](doc/UsersApi.md) | [**userAuthenticatedGet**](doc/UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
-[*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationPost**](doc/UsersApi.md#userconnectionlocationpost) | **POST** /user/connection/location | create a location on a connection
-[*UsersApi*](doc/UsersApi.md) | [**userConnectionLocationsGet**](doc/UsersApi.md#userconnectionlocationsget) | **GET** /user/connection/locations | get locations from a connection
-[*UsersApi*](doc/UsersApi.md) | [**userConnectionPost**](doc/UsersApi.md#userconnectionpost) | **POST** /user/connection | create a user connection
 [*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [*UsersApi*](doc/UsersApi.md) | [**userDelete**](doc/UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
@@ -172,6 +172,8 @@ Class | Method | HTTP request | Description
  - [AiToolResponses](doc/AiToolResponses.md)
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
+ - [ConnectionLocationsGet200ResponseInner](doc/ConnectionLocationsGet200ResponseInner.md)
+ - [ConnectionPostRequest](doc/ConnectionPostRequest.md)
  - [DataPoint](doc/DataPoint.md)
  - [DirectoryType](doc/DirectoryType.md)
  - [EidCallbackRequest](doc/EidCallbackRequest.md)
@@ -215,8 +217,6 @@ Class | Method | HTTP request | Description
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
- - [UserConnectionLocationsGet200ResponseInner](doc/UserConnectionLocationsGet200ResponseInner.md)
- - [UserConnectionPostRequest](doc/UserConnectionPostRequest.md)
  - [UserLoginPostRequest](doc/UserLoginPostRequest.md)
  - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
  - [UserOauthPostRequest](doc/UserOauthPostRequest.md)

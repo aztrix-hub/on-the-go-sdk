@@ -43,6 +43,9 @@ doc/AiToolResponses.md
 doc/AnalyticsApi.md
 doc/Category.md
 doc/Connection.md
+doc/ConnectionLocationsGet200ResponseInner.md
+doc/ConnectionPostRequest.md
+doc/ConnectionsApi.md
 doc/DataPoint.md
 doc/DirectoryType.md
 doc/EidCallbackRequest.md
@@ -92,8 +95,6 @@ doc/SitesApi.md
 doc/SocialPost.md
 doc/SpecialOpeningHour.md
 doc/User.md
-doc/UserConnectionLocationsGet200ResponseInner.md
-doc/UserConnectionPostRequest.md
 doc/UserLoginPostRequest.md
 doc/UserOauthPost200Response.md
 doc/UserOauthPostRequest.md
@@ -113,6 +114,7 @@ lib/on_the_go_sdk.dart
 lib/src/api.dart
 lib/src/api/ai_api.dart
 lib/src/api/analytics_api.dart
+lib/src/api/connections_api.dart
 lib/src/api/inbox_api.dart
 lib/src/api/locations_api.dart
 lib/src/api/notifications_api.dart
@@ -170,6 +172,8 @@ lib/src/model/ai_tool_calls_get_contact.dart
 lib/src/model/ai_tool_responses.dart
 lib/src/model/category.dart
 lib/src/model/connection.dart
+lib/src/model/connection_locations_get200_response_inner.dart
+lib/src/model/connection_post_request.dart
 lib/src/model/data_point.dart
 lib/src/model/date.dart
 lib/src/model/directory_type.dart
@@ -214,8 +218,6 @@ lib/src/model/site_colors_patch_request.dart
 lib/src/model/social_post.dart
 lib/src/model/special_opening_hour.dart
 lib/src/model/user.dart
-lib/src/model/user_connection_locations_get200_response_inner.dart
-lib/src/model/user_connection_post_request.dart
 lib/src/model/user_login_post_request.dart
 lib/src/model/user_oauth_post200_response.dart
 lib/src/model/user_oauth_post_request.dart

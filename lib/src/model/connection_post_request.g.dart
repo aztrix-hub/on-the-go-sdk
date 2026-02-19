@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_connection_post_request.dart';
+part of 'connection_post_request.dart';
 
 // **************************************************************************
 // BuiltValueGenerator
 // **************************************************************************
 
-class _$UserConnectionPostRequest extends UserConnectionPostRequest {
+class _$ConnectionPostRequest extends ConnectionPostRequest {
   @override
   final DirectoryType? type;
   @override
@@ -16,26 +16,26 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
   @override
   final String? redirectUrl;
 
-  factory _$UserConnectionPostRequest(
-          [void Function(UserConnectionPostRequestBuilder)? updates]) =>
-      (UserConnectionPostRequestBuilder()..update(updates))._build();
+  factory _$ConnectionPostRequest(
+          [void Function(ConnectionPostRequestBuilder)? updates]) =>
+      (ConnectionPostRequestBuilder()..update(updates))._build();
 
-  _$UserConnectionPostRequest._(
+  _$ConnectionPostRequest._(
       {this.type, this.platform, this.code, this.redirectUrl})
       : super._();
   @override
-  UserConnectionPostRequest rebuild(
-          void Function(UserConnectionPostRequestBuilder) updates) =>
+  ConnectionPostRequest rebuild(
+          void Function(ConnectionPostRequestBuilder) updates) =>
       (toBuilder()..update(updates)).build();
 
   @override
-  UserConnectionPostRequestBuilder toBuilder() =>
-      UserConnectionPostRequestBuilder()..replace(this);
+  ConnectionPostRequestBuilder toBuilder() =>
+      ConnectionPostRequestBuilder()..replace(this);
 
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is UserConnectionPostRequest &&
+    return other is ConnectionPostRequest &&
         type == other.type &&
         platform == other.platform &&
         code == other.code &&
@@ -55,7 +55,7 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper(r'UserConnectionPostRequest')
+    return (newBuiltValueToStringHelper(r'ConnectionPostRequest')
           ..add('type', type)
           ..add('platform', platform)
           ..add('code', code)
@@ -64,10 +64,9 @@ class _$UserConnectionPostRequest extends UserConnectionPostRequest {
   }
 }
 
-class UserConnectionPostRequestBuilder
-    implements
-        Builder<UserConnectionPostRequest, UserConnectionPostRequestBuilder> {
-  _$UserConnectionPostRequest? _$v;
+class ConnectionPostRequestBuilder
+    implements Builder<ConnectionPostRequest, ConnectionPostRequestBuilder> {
+  _$ConnectionPostRequest? _$v;
 
   DirectoryType? _type;
   DirectoryType? get type => _$this._type;
@@ -85,11 +84,11 @@ class UserConnectionPostRequestBuilder
   String? get redirectUrl => _$this._redirectUrl;
   set redirectUrl(String? redirectUrl) => _$this._redirectUrl = redirectUrl;
 
-  UserConnectionPostRequestBuilder() {
-    UserConnectionPostRequest._defaults(this);
+  ConnectionPostRequestBuilder() {
+    ConnectionPostRequest._defaults(this);
   }
 
-  UserConnectionPostRequestBuilder get _$this {
+  ConnectionPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
@@ -102,21 +101,21 @@ class UserConnectionPostRequestBuilder
   }
 
   @override
-  void replace(UserConnectionPostRequest other) {
-    _$v = other as _$UserConnectionPostRequest;
+  void replace(ConnectionPostRequest other) {
+    _$v = other as _$ConnectionPostRequest;
   }
 
   @override
-  void update(void Function(UserConnectionPostRequestBuilder)? updates) {
+  void update(void Function(ConnectionPostRequestBuilder)? updates) {
     if (updates != null) updates(this);
   }
 
   @override
-  UserConnectionPostRequest build() => _build();
+  ConnectionPostRequest build() => _build();
 
-  _$UserConnectionPostRequest _build() {
+  _$ConnectionPostRequest _build() {
     final _$result = _$v ??
-        _$UserConnectionPostRequest._(
+        _$ConnectionPostRequest._(
           type: type,
           platform: platform,
           code: code,

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **email** | **String** | User email | [optional] 
 **phone** | **String** |  | [optional] 
 **locale** | **String** |  | [optional] 
+**accountType** | **String** | The type of account (e.g., passwordless) | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
