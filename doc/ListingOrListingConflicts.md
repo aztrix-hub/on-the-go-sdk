@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **type** | [**DirectoryType**](DirectoryType.md) |  | 
 **connectionId** | **String** |  | 
 **locationId** | **String** |  | 
-**externalLocationId** | **String** |  | 
+**connectionLocationId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

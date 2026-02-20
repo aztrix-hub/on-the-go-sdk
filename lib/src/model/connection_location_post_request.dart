@@ -14,6 +14,7 @@ part 'connection_location_post_request.g.dart';
 ///
 /// Properties:
 /// * [type]
+/// * [languageCode] - A required field for Google
 /// * [location]
 @BuiltValue()
 abstract class ConnectionLocationPostRequest
@@ -23,6 +24,10 @@ abstract class ConnectionLocationPostRequest
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  /// A required field for Google
+  @BuiltValueField(wireName: r'languageCode')
+  String? get languageCode;
 
   @BuiltValueField(wireName: r'location')
   Location? get location;
@@ -64,6 +69,13 @@ class _$ConnectionLocationPostRequestSerializer
         specifiedType: const FullType(DirectoryType),
       );
     }
+    if (object.languageCode != null) {
+      yield r'languageCode';
+      yield serializers.serialize(
+        object.languageCode,
+        specifiedType: const FullType(String),
+      );
+    }
     if (object.location != null) {
       yield r'location';
       yield serializers.serialize(
@@ -102,6 +114,13 @@ class _$ConnectionLocationPostRequestSerializer
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
           result.type = valueDes;
+          break;
+        case r'languageCode':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.languageCode = valueDes;
           break;
         case r'location':
           final valueDes = serializers.deserialize(

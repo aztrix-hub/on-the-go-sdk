@@ -19,7 +19,7 @@ part 'listing_or_listing_conflicts.g.dart';
 /// * [type]
 /// * [connectionId]
 /// * [locationId]
-/// * [externalLocationId]
+/// * [connectionLocationId]
 @BuiltValue()
 abstract class ListingOrListingConflicts
     implements

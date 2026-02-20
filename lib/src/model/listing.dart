@@ -16,7 +16,7 @@ part 'listing.g.dart';
 /// * [type]
 /// * [connectionId]
 /// * [locationId]
-/// * [externalLocationId]
+/// * [connectionLocationId]
 @BuiltValue()
 abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -32,8 +32,8 @@ abstract class Listing implements Built<Listing, ListingBuilder> {
   @BuiltValueField(wireName: r'locationId')
   String get locationId;
 
-  @BuiltValueField(wireName: r'externalLocationId')
-  String get externalLocationId;
+  @BuiltValueField(wireName: r'connectionLocationId')
+  String get connectionLocationId;
 
   Listing._();
 
@@ -78,9 +78,9 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
       object.locationId,
       specifiedType: const FullType(String),
     );
-    yield r'externalLocationId';
+    yield r'connectionLocationId';
     yield serializers.serialize(
-      object.externalLocationId,
+      object.connectionLocationId,
       specifiedType: const FullType(String),
     );
   }
@@ -136,12 +136,12 @@ class _$ListingSerializer implements PrimitiveSerializer<Listing> {
           ) as String;
           result.locationId = valueDes;
           break;
-        case r'externalLocationId':
+        case r'connectionLocationId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.externalLocationId = valueDes;
+          result.connectionLocationId = valueDes;
           break;
         default:
           unhandled.add(key);

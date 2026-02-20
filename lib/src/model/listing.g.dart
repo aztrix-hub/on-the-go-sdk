@@ -16,7 +16,7 @@ class _$Listing extends Listing {
   @override
   final String locationId;
   @override
-  final String externalLocationId;
+  final String connectionLocationId;
 
   factory _$Listing([void Function(ListingBuilder)? updates]) =>
       (ListingBuilder()..update(updates))._build();
@@ -26,7 +26,7 @@ class _$Listing extends Listing {
       required this.type,
       required this.connectionId,
       required this.locationId,
-      required this.externalLocationId})
+      required this.connectionLocationId})
       : super._();
   @override
   Listing rebuild(void Function(ListingBuilder) updates) =>
@@ -43,7 +43,7 @@ class _$Listing extends Listing {
         type == other.type &&
         connectionId == other.connectionId &&
         locationId == other.locationId &&
-        externalLocationId == other.externalLocationId;
+        connectionLocationId == other.connectionLocationId;
   }
 
   @override
@@ -53,7 +53,7 @@ class _$Listing extends Listing {
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, locationId.hashCode);
-    _$hash = $jc(_$hash, externalLocationId.hashCode);
+    _$hash = $jc(_$hash, connectionLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -65,7 +65,7 @@ class _$Listing extends Listing {
           ..add('type', type)
           ..add('connectionId', connectionId)
           ..add('locationId', locationId)
-          ..add('externalLocationId', externalLocationId))
+          ..add('connectionLocationId', connectionLocationId))
         .toString();
   }
 }
@@ -89,10 +89,10 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
   String? get locationId => _$this._locationId;
   set locationId(String? locationId) => _$this._locationId = locationId;
 
-  String? _externalLocationId;
-  String? get externalLocationId => _$this._externalLocationId;
-  set externalLocationId(String? externalLocationId) =>
-      _$this._externalLocationId = externalLocationId;
+  String? _connectionLocationId;
+  String? get connectionLocationId => _$this._connectionLocationId;
+  set connectionLocationId(String? connectionLocationId) =>
+      _$this._connectionLocationId = connectionLocationId;
 
   ListingBuilder() {
     Listing._defaults(this);
@@ -105,7 +105,7 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
       _type = $v.type;
       _connectionId = $v.connectionId;
       _locationId = $v.locationId;
-      _externalLocationId = $v.externalLocationId;
+      _connectionLocationId = $v.connectionLocationId;
       _$v = null;
     }
     return this;
@@ -133,8 +133,8 @@ class ListingBuilder implements Builder<Listing, ListingBuilder> {
               connectionId, r'Listing', 'connectionId'),
           locationId: BuiltValueNullFieldError.checkNotNull(
               locationId, r'Listing', 'locationId'),
-          externalLocationId: BuiltValueNullFieldError.checkNotNull(
-              externalLocationId, r'Listing', 'externalLocationId'),
+          connectionLocationId: BuiltValueNullFieldError.checkNotNull(
+              connectionLocationId, r'Listing', 'connectionLocationId'),
         );
     replace(_$result);
     return _$result;

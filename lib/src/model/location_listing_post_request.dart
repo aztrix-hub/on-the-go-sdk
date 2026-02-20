@@ -15,7 +15,7 @@ part 'location_listing_post_request.g.dart';
 /// * [locationId]
 /// * [type]
 /// * [connectionId]
-/// * [externalLocationId]
+/// * [connectionLocationId]
 @BuiltValue()
 abstract class LocationListingPostRequest
     implements
@@ -30,8 +30,8 @@ abstract class LocationListingPostRequest
   @BuiltValueField(wireName: r'connectionId')
   String get connectionId;
 
-  @BuiltValueField(wireName: r'externalLocationId')
-  String get externalLocationId;
+  @BuiltValueField(wireName: r'connectionLocationId')
+  String get connectionLocationId;
 
   LocationListingPostRequest._();
 
@@ -78,9 +78,9 @@ class _$LocationListingPostRequestSerializer
       object.connectionId,
       specifiedType: const FullType(String),
     );
-    yield r'externalLocationId';
+    yield r'connectionLocationId';
     yield serializers.serialize(
-      object.externalLocationId,
+      object.connectionLocationId,
       specifiedType: const FullType(String),
     );
   }
@@ -129,12 +129,12 @@ class _$LocationListingPostRequestSerializer
           ) as String;
           result.connectionId = valueDes;
           break;
-        case r'externalLocationId':
+        case r'connectionLocationId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.externalLocationId = valueDes;
+          result.connectionLocationId = valueDes;
           break;
         default:
           unhandled.add(key);

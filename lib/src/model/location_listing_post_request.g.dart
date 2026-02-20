@@ -14,7 +14,7 @@ class _$LocationListingPostRequest extends LocationListingPostRequest {
   @override
   final String connectionId;
   @override
-  final String externalLocationId;
+  final String connectionLocationId;
 
   factory _$LocationListingPostRequest(
           [void Function(LocationListingPostRequestBuilder)? updates]) =>
@@ -24,7 +24,7 @@ class _$LocationListingPostRequest extends LocationListingPostRequest {
       {required this.locationId,
       required this.type,
       required this.connectionId,
-      required this.externalLocationId})
+      required this.connectionLocationId})
       : super._();
   @override
   LocationListingPostRequest rebuild(
@@ -42,7 +42,7 @@ class _$LocationListingPostRequest extends LocationListingPostRequest {
         locationId == other.locationId &&
         type == other.type &&
         connectionId == other.connectionId &&
-        externalLocationId == other.externalLocationId;
+        connectionLocationId == other.connectionLocationId;
   }
 
   @override
@@ -51,7 +51,7 @@ class _$LocationListingPostRequest extends LocationListingPostRequest {
     _$hash = $jc(_$hash, locationId.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jc(_$hash, connectionId.hashCode);
-    _$hash = $jc(_$hash, externalLocationId.hashCode);
+    _$hash = $jc(_$hash, connectionLocationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -62,7 +62,7 @@ class _$LocationListingPostRequest extends LocationListingPostRequest {
           ..add('locationId', locationId)
           ..add('type', type)
           ..add('connectionId', connectionId)
-          ..add('externalLocationId', externalLocationId))
+          ..add('connectionLocationId', connectionLocationId))
         .toString();
   }
 }
@@ -84,10 +84,10 @@ class LocationListingPostRequestBuilder
   String? get connectionId => _$this._connectionId;
   set connectionId(String? connectionId) => _$this._connectionId = connectionId;
 
-  String? _externalLocationId;
-  String? get externalLocationId => _$this._externalLocationId;
-  set externalLocationId(String? externalLocationId) =>
-      _$this._externalLocationId = externalLocationId;
+  String? _connectionLocationId;
+  String? get connectionLocationId => _$this._connectionLocationId;
+  set connectionLocationId(String? connectionLocationId) =>
+      _$this._connectionLocationId = connectionLocationId;
 
   LocationListingPostRequestBuilder() {
     LocationListingPostRequest._defaults(this);
@@ -99,7 +99,7 @@ class LocationListingPostRequestBuilder
       _locationId = $v.locationId;
       _type = $v.type;
       _connectionId = $v.connectionId;
-      _externalLocationId = $v.externalLocationId;
+      _connectionLocationId = $v.connectionLocationId;
       _$v = null;
     }
     return this;
@@ -127,10 +127,10 @@ class LocationListingPostRequestBuilder
               type, r'LocationListingPostRequest', 'type'),
           connectionId: BuiltValueNullFieldError.checkNotNull(
               connectionId, r'LocationListingPostRequest', 'connectionId'),
-          externalLocationId: BuiltValueNullFieldError.checkNotNull(
-              externalLocationId,
+          connectionLocationId: BuiltValueNullFieldError.checkNotNull(
+              connectionLocationId,
               r'LocationListingPostRequest',
-              'externalLocationId'),
+              'connectionLocationId'),
         );
     replace(_$result);
     return _$result;

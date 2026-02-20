@@ -10,13 +10,17 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   @override
   final DirectoryType? type;
   @override
+  final String? languageCode;
+  @override
   final Location? location;
 
   factory _$ConnectionLocationPostRequest(
           [void Function(ConnectionLocationPostRequestBuilder)? updates]) =>
       (ConnectionLocationPostRequestBuilder()..update(updates))._build();
 
-  _$ConnectionLocationPostRequest._({this.type, this.location}) : super._();
+  _$ConnectionLocationPostRequest._(
+      {this.type, this.languageCode, this.location})
+      : super._();
   @override
   ConnectionLocationPostRequest rebuild(
           void Function(ConnectionLocationPostRequestBuilder) updates) =>
@@ -31,6 +35,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
     if (identical(other, this)) return true;
     return other is ConnectionLocationPostRequest &&
         type == other.type &&
+        languageCode == other.languageCode &&
         location == other.location;
   }
 
@@ -38,6 +43,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, languageCode.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -47,6 +53,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionLocationPostRequest')
           ..add('type', type)
+          ..add('languageCode', languageCode)
           ..add('location', location))
         .toString();
   }
@@ -62,6 +69,10 @@ class ConnectionLocationPostRequestBuilder
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
 
+  String? _languageCode;
+  String? get languageCode => _$this._languageCode;
+  set languageCode(String? languageCode) => _$this._languageCode = languageCode;
+
   LocationBuilder? _location;
   LocationBuilder get location => _$this._location ??= LocationBuilder();
   set location(LocationBuilder? location) => _$this._location = location;
@@ -74,6 +85,7 @@ class ConnectionLocationPostRequestBuilder
     final $v = _$v;
     if ($v != null) {
       _type = $v.type;
+      _languageCode = $v.languageCode;
       _location = $v.location?.toBuilder();
       _$v = null;
     }
@@ -99,6 +111,7 @@ class ConnectionLocationPostRequestBuilder
       _$result = _$v ??
           _$ConnectionLocationPostRequest._(
             type: type,
+            languageCode: languageCode,
             location: _location?.build(),
           );
     } catch (_) {

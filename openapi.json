@@ -651,6 +651,10 @@
                   "type": {
                     "$ref": "#/components/schemas/DirectoryType"
                   },
+                  "languageCode": {
+                    "type": "string",
+                    "description": "A required field for Google"
+                  },
                   "location": {
                     "$ref": "#/components/schemas/Location"
                   }
@@ -2883,7 +2887,7 @@
                   "locationId",
                   "type",
                   "connectionId",
-                  "externalLocationId"
+                  "connectionLocationId"
                 ],
                 "properties": {
                   "locationId": {
@@ -2895,7 +2899,7 @@
                   "connectionId": {
                     "type": "string"
                   },
-                  "externalLocationId": {
+                  "connectionLocationId": {
                     "type": "string"
                   }
                 }
@@ -4105,7 +4109,7 @@
           "type",
           "connectionId",
           "locationId",
-          "externalLocationId"
+          "connectionLocationId"
         ],
         "properties": {
           "id": {
@@ -4120,7 +4124,7 @@
           "locationId": {
             "type": "string"
           },
-          "externalLocationId": {
+          "connectionLocationId": {
             "type": "string"
           }
         }

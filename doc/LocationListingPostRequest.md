@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **locationId** | **String** |  | 
 **type** | [**DirectoryType**](DirectoryType.md) |  | 
 **connectionId** | **String** |  | 
-**externalLocationId** | **String** |  | 
+**connectionLocationId** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
