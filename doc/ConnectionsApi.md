@@ -10,6 +10,8 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**connectionLocationPost**](ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
+[**connectionLocationVerificationCompletePost**](ConnectionsApi.md#connectionlocationverificationcompletepost) | **POST** /connection/location/verification/complete | complete verification
+[**connectionLocationVerificationPost**](ConnectionsApi.md#connectionlocationverificationpost) | **POST** /connection/location/verification | start verification process
 [**connectionLocationsGet**](ConnectionsApi.md#connectionlocationsget) | **GET** /connection/locations | get locations from a connection
 [**connectionPost**](ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
 
@@ -47,6 +49,94 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Location**](Location.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **connectionLocationVerificationCompletePost**
+> connectionLocationVerificationCompletePost(connectionLocationVerificationCompletePostRequest)
+
+complete verification
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getConnectionsApi();
+final ConnectionLocationVerificationCompletePostRequest connectionLocationVerificationCompletePostRequest = ; // ConnectionLocationVerificationCompletePostRequest | 
+
+try {
+    api.connectionLocationVerificationCompletePost(connectionLocationVerificationCompletePostRequest);
+} catch on DioException (e) {
+    print('Exception when calling ConnectionsApi->connectionLocationVerificationCompletePost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectionLocationVerificationCompletePostRequest** | [**ConnectionLocationVerificationCompletePostRequest**](ConnectionLocationVerificationCompletePostRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **connectionLocationVerificationPost**
+> connectionLocationVerificationPost(connectionLocationVerificationPostRequest)
+
+start verification process
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getConnectionsApi();
+final ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest = ; // ConnectionLocationVerificationPostRequest | 
+
+try {
+    api.connectionLocationVerificationPost(connectionLocationVerificationPostRequest);
+} catch on DioException (e) {
+    print('Exception when calling ConnectionsApi->connectionLocationVerificationPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectionLocationVerificationPostRequest** | [**ConnectionLocationVerificationPostRequest**](ConnectionLocationVerificationPostRequest.md)|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

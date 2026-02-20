@@ -56,6 +56,8 @@ import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
@@ -159,6 +161,8 @@ part 'serializers.g.dart';
   Category,
   Connection,
   ConnectionLocationPostRequest,
+  ConnectionLocationVerificationCompletePostRequest,
+  ConnectionLocationVerificationPostRequest,
   ConnectionLocationsGet200ResponseInner,
   ConnectionPostRequest,
   DataPoint,
