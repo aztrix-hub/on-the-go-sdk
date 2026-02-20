@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
@@ -27,7 +28,7 @@ class ConnectionsApi {
   ///
   ///
   /// Parameters:
-  /// * [location]
+  /// * [connectionLocationPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +39,7 @@ class ConnectionsApi {
   /// Returns a [Future] containing a [Response] with a [Location] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<Location>> connectionLocationPost({
-    required Location location,
+    required ConnectionLocationPostRequest connectionLocationPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -70,8 +71,9 @@ class ConnectionsApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Location);
-      _bodyData = _serializers.serialize(location, specifiedType: _type);
+      const _type = FullType(ConnectionLocationPostRequest);
+      _bodyData = _serializers.serialize(connectionLocationPostRequest,
+          specifiedType: _type);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _options.compose(

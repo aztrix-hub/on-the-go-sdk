@@ -43,6 +43,7 @@ doc/AiToolResponses.md
 doc/AnalyticsApi.md
 doc/Category.md
 doc/Connection.md
+doc/ConnectionLocationPostRequest.md
 doc/ConnectionLocationsGet200ResponseInner.md
 doc/ConnectionPostRequest.md
 doc/ConnectionsApi.md
@@ -172,6 +173,7 @@ lib/src/model/ai_tool_calls_get_contact.dart
 lib/src/model/ai_tool_responses.dart
 lib/src/model/category.dart
 lib/src/model/connection.dart
+lib/src/model/connection_location_post_request.dart
 lib/src/model/connection_locations_get200_response_inner.dart
 lib/src/model/connection_post_request.dart
 lib/src/model/data_point.dart
@@ -231,3 +233,4 @@ lib/src/model/verify_code_request.dart
 lib/src/model/verify_code_response.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
+test/connection_location_post_request_test.dart

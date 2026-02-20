@@ -172,6 +172,7 @@ Class | Method | HTTP request | Description
  - [AiToolResponses](doc/AiToolResponses.md)
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
+ - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationsGet200ResponseInner](doc/ConnectionLocationsGet200ResponseInner.md)
  - [ConnectionPostRequest](doc/ConnectionPostRequest.md)
  - [DataPoint](doc/DataPoint.md)

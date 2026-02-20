@@ -646,7 +646,15 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Location"
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "$ref": "#/components/schemas/DirectoryType"
+                  },
+                  "location": {
+                    "$ref": "#/components/schemas/Location"
+                  }
+                }
               }
             }
           },

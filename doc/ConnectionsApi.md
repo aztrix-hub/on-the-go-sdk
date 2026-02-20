@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **connectionLocationPost**
-> Location connectionLocationPost(location)
+> Location connectionLocationPost(connectionLocationPostRequest)
 
 create a location on a connection
 
@@ -28,10 +28,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getConnectionsApi();
-final Location location = ; // Location | 
+final ConnectionLocationPostRequest connectionLocationPostRequest = ; // ConnectionLocationPostRequest | 
 
 try {
-    final response = api.connectionLocationPost(location);
+    final response = api.connectionLocationPost(connectionLocationPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectionsApi->connectionLocationPost: $e\n');
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location** | [**Location**](Location.md)|  | 
+ **connectionLocationPostRequest** | [**ConnectionLocationPostRequest**](ConnectionLocationPostRequest.md)|  | 
 
 ### Return type
 
