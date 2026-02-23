@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectionsGet**
-> BuiltList<Connection> connectionsGet(type)
+> BuiltList<Connection> connectionsGet()
 
 Get user connections
 
@@ -258,10 +258,9 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getConnectionsApi();
-final DirectoryType type = ; // DirectoryType | 
 
 try {
-    final response = api.connectionsGet(type);
+    final response = api.connectionsGet();
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectionsApi->connectionsGet: $e\n');
@@ -269,10 +268,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | [**DirectoryType**](.md)|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 

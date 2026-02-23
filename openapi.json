@@ -468,16 +468,6 @@
           "connections"
         ],
         "summary": "Get user connections",
-        "parameters": [
-          {
-            "name": "type",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/DirectoryType"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "connections successfully retrieved",

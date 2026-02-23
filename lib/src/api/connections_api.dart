@@ -487,7 +487,6 @@ class ConnectionsApi {
   ///
   ///
   /// Parameters:
-  /// * [type]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -498,7 +497,6 @@ class ConnectionsApi {
   /// Returns a [Future] containing a [Response] with a [BuiltList<Connection>] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<Connection>>> connectionsGet({
-    required DirectoryType type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -526,15 +524,9 @@ class ConnectionsApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'type': encodeQueryParameter(
-          _serializers, type, const FullType(DirectoryType)),
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
