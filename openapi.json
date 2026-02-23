@@ -462,10 +462,10 @@
         ]
       }
     },
-    "/user/connections": {
+    "/connections": {
       "get": {
         "tags": [
-          "users"
+          "connections"
         ],
         "summary": "Get user connections",
         "parameters": [
@@ -980,6 +980,41 @@
             "authToken": []
           }
         ]
+      }
+    },
+    "/public/location": {
+      "get": {
+        "tags": [
+          "locations"
+        ],
+        "operationId": "publicLocationGet",
+        "summary": "Get a public location (no auth)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Location found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Location"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Location not found"
+          }
+        },
+        "security": []
       }
     },
     "/locations": {

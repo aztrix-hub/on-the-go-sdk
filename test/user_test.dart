@@ -39,5 +39,11 @@ void main() {
     test('to test the property `locale`', () async {
       // TODO
     });
+
+    // The type of account (e.g., passwordless)
+    // String accountType
+    test('to test the property `accountType`', () async {
+      // TODO
+    });
   });
 }

@@ -10,7 +10,6 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userAuthenticatedGet**](UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
-[**userConnectionsGet**](UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [**userDelete**](UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [**userGet**](UsersApi.md#userget) | **GET** /user | Get the current user
 [**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
@@ -59,51 +58,6 @@ void (empty response body)
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **userConnectionsGet**
-> BuiltList<Connection> userConnectionsGet(type)
-
-Get user connections
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getUsersApi();
-final DirectoryType type = ; // DirectoryType | 
-
-try {
-    final response = api.userConnectionsGet(type);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling UsersApi->userConnectionsGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | [**DirectoryType**](.md)|  | 
-
-### Return type
-
-[**BuiltList&lt;Connection&gt;**](Connection.md)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

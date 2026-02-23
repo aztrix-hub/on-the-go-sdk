@@ -13,13 +13,6 @@ void main() {
       // TODO
     });
 
-    // Get user connections
-    //
-    //Future<BuiltList<Connection>> userConnectionsGet(DirectoryType type) async
-    test('test userConnectionsGet', () async {
-      // TODO
-    });
-
     // Delete the current user
     //
     //Future userDelete() async

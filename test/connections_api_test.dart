@@ -8,8 +8,22 @@ void main() {
   group(ConnectionsApi, () {
     // create a location on a connection
     //
-    //Future connectionLocationPost(Location location) async
+    //Future<Location> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
     test('test connectionLocationPost', () async {
+      // TODO
+    });
+
+    // complete verification
+    //
+    //Future connectionLocationVerificationCompletePost(ConnectionLocationVerificationCompletePostRequest connectionLocationVerificationCompletePostRequest) async
+    test('test connectionLocationVerificationCompletePost', () async {
+      // TODO
+    });
+
+    // start verification process
+    //
+    //Future connectionLocationVerificationPost(ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest) async
+    test('test connectionLocationVerificationPost', () async {
       // TODO
     });
 
@@ -24,6 +38,13 @@ void main() {
     //
     //Future<Connection> connectionPost(ConnectionPostRequest connectionPostRequest) async
     test('test connectionPost', () async {
+      // TODO
+    });
+
+    // Get user connections
+    //
+    //Future<BuiltList<Connection>> connectionsGet(DirectoryType type) async
+    test('test connectionsGet', () async {
       // TODO
     });
   });

@@ -85,6 +85,7 @@ Class | Method | HTTP request | Description
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationPost**](doc/ConnectionsApi.md#connectionlocationverificationpost) | **POST** /connection/location/verification | start verification process
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationsGet**](doc/ConnectionsApi.md#connectionlocationsget) | **GET** /connection/locations | get locations from a connection
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionPost**](doc/ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionsGet**](doc/ConnectionsApi.md#connectionsget) | **GET** /connections | Get user connections
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
@@ -101,6 +102,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**locationPost**](doc/LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsGet**](doc/LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [*LocationsApi*](doc/LocationsApi.md) | [**locationsSearchGet**](doc/LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
+[*LocationsApi*](doc/LocationsApi.md) | [**publicLocationGet**](doc/LocationsApi.md#publiclocationget) | **GET** /public/location | Get a public location (no auth)
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigGet**](doc/NotificationsApi.md#notificationsconfigget) | **GET** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsConfigPost**](doc/NotificationsApi.md#notificationsconfigpost) | **POST** /notifications/config | 
 [*NotificationsApi*](doc/NotificationsApi.md) | [**notificationsRegisterPost**](doc/NotificationsApi.md#notificationsregisterpost) | **POST** /notifications/register | 
@@ -112,7 +114,6 @@ Class | Method | HTTP request | Description
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPatch**](doc/SitesApi.md#sitecolorspatch) | **PATCH** /site/colors | 
 [*SitesApi*](doc/SitesApi.md) | [**siteColorsPut**](doc/SitesApi.md#sitecolorsput) | **PUT** /site/colors | 
 [*UsersApi*](doc/UsersApi.md) | [**userAuthenticatedGet**](doc/UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
-[*UsersApi*](doc/UsersApi.md) | [**userConnectionsGet**](doc/UsersApi.md#userconnectionsget) | **GET** /user/connections | Get user connections
 [*UsersApi*](doc/UsersApi.md) | [**userDelete**](doc/UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user

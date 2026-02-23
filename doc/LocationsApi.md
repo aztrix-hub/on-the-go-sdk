@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**locationPost**](LocationsApi.md#locationpost) | **POST** /location | Create a Location
 [**locationsGet**](LocationsApi.md#locationsget) | **GET** /locations | Get locations
 [**locationsSearchGet**](LocationsApi.md#locationssearchget) | **GET** /locations/search | Search for locations
+[**publicLocationGet**](LocationsApi.md#publiclocationget) | **GET** /public/location | Get a public location (no auth)
 
 
 # **categoriesGet**
@@ -619,6 +620,47 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **publicLocationGet**
+> Location publicLocationGet(id)
+
+Get a public location (no auth)
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String id = id_example; // String | 
+
+try {
+    final response = api.publicLocationGet(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->publicLocationGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**Location**](Location.md)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

@@ -12,6 +12,12 @@ void main() {
       // TODO
     });
 
+    // A required field for Google
+    // String languageCode
+    test('to test the property `languageCode`', () async {
+      // TODO
+    });
+
     // Location location
     test('to test the property `location`', () async {
       // TODO
