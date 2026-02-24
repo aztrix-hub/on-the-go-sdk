@@ -819,9 +819,21 @@
               "schema": {
                 "type": "object",
                 "required": [
+                  "connectionId",
+                  "connectionLocationId",
+                  "method",
                   "token"
                 ],
                 "properties": {
+                  "connectionId": {
+                    "type": "string"
+                  },
+                  "connectionLocationId": {
+                    "type": "string"
+                  },
+                  "method": {
+                    "$ref": "#/components/schemas/ConnectionLocationVerificationMethod"
+                  },
                   "token": {
                     "type": "string"
                   }
