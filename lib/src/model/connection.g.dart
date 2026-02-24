@@ -10,7 +10,7 @@ class _$Connection extends Connection {
   @override
   final String? id;
   @override
-  final String? type;
+  final DirectoryType? type;
   @override
   final JsonObject? data;
 
@@ -61,9 +61,9 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
 
-  String? _type;
-  String? get type => _$this._type;
-  set type(String? type) => _$this._type = type;
+  DirectoryType? _type;
+  DirectoryType? get type => _$this._type;
+  set type(DirectoryType? type) => _$this._type = type;
 
   JsonObject? _data;
   JsonObject? get data => _$this._data;

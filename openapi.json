@@ -3849,7 +3849,7 @@
             "type": "string"
           },
           "type": {
-            "type": "string"
+            "$ref": "#/components/schemas/DirectoryType"
           },
           "data": {
             "type": "object"

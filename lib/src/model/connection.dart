@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:built_value/json_object.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -21,7 +22,8 @@ abstract class Connection implements Built<Connection, ConnectionBuilder> {
   String? get id;
 
   @BuiltValueField(wireName: r'type')
-  String? get type;
+  DirectoryType? get type;
+  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'data')
   JsonObject? get data;
@@ -60,7 +62,7 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
       yield r'type';
       yield serializers.serialize(
         object.type,
-        specifiedType: const FullType(String),
+        specifiedType: const FullType(DirectoryType),
       );
     }
     if (object.data != null) {
@@ -105,8 +107,8 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
         case r'type':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
+            specifiedType: const FullType(DirectoryType),
+          ) as DirectoryType;
           result.type = valueDes;
           break;
         case r'data':
