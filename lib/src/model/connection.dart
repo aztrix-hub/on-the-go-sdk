@@ -19,10 +19,10 @@ part 'connection.g.dart';
 @BuiltValue()
 abstract class Connection implements Built<Connection, ConnectionBuilder> {
   @BuiltValueField(wireName: r'id')
-  String? get id;
+  String get id;
 
   @BuiltValueField(wireName: r'type')
-  DirectoryType? get type;
+  DirectoryType get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'data')
@@ -51,20 +51,16 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
     Connection object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
+    yield r'id';
+    yield serializers.serialize(
+      object.id,
+      specifiedType: const FullType(String),
+    );
+    yield r'type';
+    yield serializers.serialize(
+      object.type,
+      specifiedType: const FullType(DirectoryType),
+    );
     if (object.data != null) {
       yield r'data';
       yield serializers.serialize(

@@ -11,7 +11,8 @@ part 'connection_location_verification_post_request.g.dart';
 /// ConnectionLocationVerificationPostRequest
 ///
 /// Properties:
-/// * [id]
+/// * [connectionId]
+/// * [connectionLocationId]
 /// * [email]
 /// * [phoneNumber]
 @BuiltValue()
@@ -19,8 +20,11 @@ abstract class ConnectionLocationVerificationPostRequest
     implements
         Built<ConnectionLocationVerificationPostRequest,
             ConnectionLocationVerificationPostRequestBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String get id;
+  @BuiltValueField(wireName: r'connectionId')
+  String get connectionId;
+
+  @BuiltValueField(wireName: r'connectionLocationId')
+  String get connectionLocationId;
 
   @BuiltValueField(wireName: r'email')
   String? get email;
@@ -59,9 +63,14 @@ class _$ConnectionLocationVerificationPostRequestSerializer
     ConnectionLocationVerificationPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
+    yield r'connectionId';
     yield serializers.serialize(
-      object.id,
+      object.connectionId,
+      specifiedType: const FullType(String),
+    );
+    yield r'connectionLocationId';
+    yield serializers.serialize(
+      object.connectionLocationId,
       specifiedType: const FullType(String),
     );
     if (object.email != null) {
@@ -103,12 +112,19 @@ class _$ConnectionLocationVerificationPostRequestSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'id':
+        case r'connectionId':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.id = valueDes;
+          result.connectionId = valueDes;
+          break;
+        case r'connectionLocationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectionLocationId = valueDes;
           break;
         case r'email':
           final valueDes = serializers.deserialize(

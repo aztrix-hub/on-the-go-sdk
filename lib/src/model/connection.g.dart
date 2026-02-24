@@ -8,16 +8,16 @@ part of 'connection.dart';
 
 class _$Connection extends Connection {
   @override
-  final String? id;
+  final String id;
   @override
-  final DirectoryType? type;
+  final DirectoryType type;
   @override
   final JsonObject? data;
 
   factory _$Connection([void Function(ConnectionBuilder)? updates]) =>
       (ConnectionBuilder()..update(updates))._build();
 
-  _$Connection._({this.id, this.type, this.data}) : super._();
+  _$Connection._({required this.id, required this.type, this.data}) : super._();
   @override
   Connection rebuild(void Function(ConnectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -100,8 +100,9 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
   _$Connection _build() {
     final _$result = _$v ??
         _$Connection._(
-          id: id,
-          type: type,
+          id: BuiltValueNullFieldError.checkNotNull(id, r'Connection', 'id'),
+          type: BuiltValueNullFieldError.checkNotNull(
+              type, r'Connection', 'type'),
           data: data,
         );
     replace(_$result);

@@ -698,10 +698,14 @@
               "schema": {
                 "type": "object",
                 "required": [
-                  "id"
+                  "connectionId",
+                  "connectionLocationId"
                 ],
                 "properties": {
-                  "id": {
+                  "connectionId": {
+                    "type": "string"
+                  },
+                  "connectionLocationId": {
                     "type": "string"
                   },
                   "email": {
@@ -3844,6 +3848,10 @@
       },
       "Connection": {
         "type": "object",
+        "required": [
+          "id",
+          "type"
+        ],
         "properties": {
           "id": {
             "type": "string"

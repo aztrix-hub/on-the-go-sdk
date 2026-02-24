@@ -9,7 +9,9 @@ part of 'connection_location_verification_post_request.dart';
 class _$ConnectionLocationVerificationPostRequest
     extends ConnectionLocationVerificationPostRequest {
   @override
-  final String id;
+  final String connectionId;
+  @override
+  final String connectionLocationId;
   @override
   final String? email;
   @override
@@ -22,7 +24,10 @@ class _$ConnectionLocationVerificationPostRequest
           ._build();
 
   _$ConnectionLocationVerificationPostRequest._(
-      {required this.id, this.email, this.phoneNumber})
+      {required this.connectionId,
+      required this.connectionLocationId,
+      this.email,
+      this.phoneNumber})
       : super._();
   @override
   ConnectionLocationVerificationPostRequest rebuild(
@@ -38,7 +43,8 @@ class _$ConnectionLocationVerificationPostRequest
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ConnectionLocationVerificationPostRequest &&
-        id == other.id &&
+        connectionId == other.connectionId &&
+        connectionLocationId == other.connectionLocationId &&
         email == other.email &&
         phoneNumber == other.phoneNumber;
   }
@@ -46,7 +52,8 @@ class _$ConnectionLocationVerificationPostRequest
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, connectionId.hashCode);
+    _$hash = $jc(_$hash, connectionLocationId.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jf(_$hash);
@@ -57,7 +64,8 @@ class _$ConnectionLocationVerificationPostRequest
   String toString() {
     return (newBuiltValueToStringHelper(
             r'ConnectionLocationVerificationPostRequest')
-          ..add('id', id)
+          ..add('connectionId', connectionId)
+          ..add('connectionLocationId', connectionLocationId)
           ..add('email', email)
           ..add('phoneNumber', phoneNumber))
         .toString();
@@ -70,9 +78,14 @@ class ConnectionLocationVerificationPostRequestBuilder
             ConnectionLocationVerificationPostRequestBuilder> {
   _$ConnectionLocationVerificationPostRequest? _$v;
 
-  String? _id;
-  String? get id => _$this._id;
-  set id(String? id) => _$this._id = id;
+  String? _connectionId;
+  String? get connectionId => _$this._connectionId;
+  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
+
+  String? _connectionLocationId;
+  String? get connectionLocationId => _$this._connectionLocationId;
+  set connectionLocationId(String? connectionLocationId) =>
+      _$this._connectionLocationId = connectionLocationId;
 
   String? _email;
   String? get email => _$this._email;
@@ -89,7 +102,8 @@ class ConnectionLocationVerificationPostRequestBuilder
   ConnectionLocationVerificationPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _id = $v.id;
+      _connectionId = $v.connectionId;
+      _connectionLocationId = $v.connectionLocationId;
       _email = $v.email;
       _phoneNumber = $v.phoneNumber;
       _$v = null;
@@ -115,8 +129,12 @@ class ConnectionLocationVerificationPostRequestBuilder
   _$ConnectionLocationVerificationPostRequest _build() {
     final _$result = _$v ??
         _$ConnectionLocationVerificationPostRequest._(
-          id: BuiltValueNullFieldError.checkNotNull(
-              id, r'ConnectionLocationVerificationPostRequest', 'id'),
+          connectionId: BuiltValueNullFieldError.checkNotNull(connectionId,
+              r'ConnectionLocationVerificationPostRequest', 'connectionId'),
+          connectionLocationId: BuiltValueNullFieldError.checkNotNull(
+              connectionLocationId,
+              r'ConnectionLocationVerificationPostRequest',
+              'connectionLocationId'),
           email: email,
           phoneNumber: phoneNumber,
         );
