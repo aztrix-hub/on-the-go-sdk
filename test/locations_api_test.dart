@@ -90,5 +90,12 @@ void main() {
     test('test locationsSearchGet', () async {
       // TODO
     });
+
+    // Get a public location (no auth)
+    //
+    //Future<Location> publicLocationGet(String id) async
+    test('test publicLocationGet', () async {
+      // TODO
+    });
   });
 }

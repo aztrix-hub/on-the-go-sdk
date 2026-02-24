@@ -66,6 +66,8 @@ export 'package:on_the_go_sdk/src/model/category.dart';
 export 'package:on_the_go_sdk/src/model/connection.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
+export 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
+export 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_verification_post_request.dart';
 export 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 export 'package:on_the_go_sdk/src/model/connection_post_request.dart';

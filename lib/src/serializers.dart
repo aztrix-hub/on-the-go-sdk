@@ -57,6 +57,8 @@ import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
@@ -162,6 +164,8 @@ part 'serializers.g.dart';
   Connection,
   ConnectionLocationPostRequest,
   ConnectionLocationVerificationCompletePostRequest,
+  ConnectionLocationVerificationMethod,
+  ConnectionLocationVerificationOption,
   ConnectionLocationVerificationPostRequest,
   ConnectionLocationsGet200ResponseInner,
   ConnectionPostRequest,
@@ -223,6 +227,26 @@ part 'serializers.g.dart';
 ])
 Serializers serializers = (_$serializers.toBuilder()
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(AiMessage)]),
+        () => ListBuilder<AiMessage>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Connection)]),
+        () => ListBuilder<Connection>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Location)]),
+        () => ListBuilder<Location>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Category)]),
+        () => ListBuilder<Category>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(Metric)]),
+        () => ListBuilder<Metric>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MetricName)]),
         () => ListBuilder<MetricName>(),
       )
@@ -231,41 +255,26 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Listing>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(AiMessage)]),
-        () => ListBuilder<AiMessage>(),
-      )
-      ..addBuilderFactory(
         const FullType(
             BuiltList, [FullType(ConnectionLocationsGet200ResponseInner)]),
         () => ListBuilder<ConnectionLocationsGet200ResponseInner>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Connection)]),
-        () => ListBuilder<Connection>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(AiConversation)]),
         () => ListBuilder<AiConversation>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Location)]),
-        () => ListBuilder<Location>(),
+        const FullType(
+            BuiltList, [FullType(ConnectionLocationVerificationOption)]),
+        () => ListBuilder<ConnectionLocationVerificationOption>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
       ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Category)]),
-        () => ListBuilder<Category>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LocationOrIndividual)]),
         () => ListBuilder<LocationOrIndividual>(),
-      )
-      ..addBuilderFactory(
-        const FullType(BuiltList, [FullType(Metric)]),
-        () => ListBuilder<Metric>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SocialPost)]),

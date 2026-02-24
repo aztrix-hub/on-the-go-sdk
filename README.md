@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationPost**](doc/ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationCompletePost**](doc/ConnectionsApi.md#connectionlocationverificationcompletepost) | **POST** /connection/location/verification/complete | complete verification
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationOptionsGet**](doc/ConnectionsApi.md#connectionlocationverificationoptionsget) | **GET** /connection/location/verification-options | get verification options
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationPost**](doc/ConnectionsApi.md#connectionlocationverificationpost) | **POST** /connection/location/verification | start verification process
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationsGet**](doc/ConnectionsApi.md#connectionlocationsget) | **GET** /connection/locations | get locations from a connection
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionPost**](doc/ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
@@ -177,6 +178,8 @@ Class | Method | HTTP request | Description
  - [Connection](doc/Connection.md)
  - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationVerificationCompletePostRequest](doc/ConnectionLocationVerificationCompletePostRequest.md)
+ - [ConnectionLocationVerificationMethod](doc/ConnectionLocationVerificationMethod.md)
+ - [ConnectionLocationVerificationOption](doc/ConnectionLocationVerificationOption.md)
  - [ConnectionLocationVerificationPostRequest](doc/ConnectionLocationVerificationPostRequest.md)
  - [ConnectionLocationsGet200ResponseInner](doc/ConnectionLocationsGet200ResponseInner.md)
  - [ConnectionPostRequest](doc/ConnectionPostRequest.md)

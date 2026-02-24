@@ -8,7 +8,7 @@ void main() {
   group(ConnectionsApi, () {
     // create a location on a connection
     //
-    //Future<Location> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
+    //Future<BuiltList<ConnectionLocationVerificationOption>> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
     test('test connectionLocationPost', () async {
       // TODO
     });
@@ -17,6 +17,13 @@ void main() {
     //
     //Future connectionLocationVerificationCompletePost(ConnectionLocationVerificationCompletePostRequest connectionLocationVerificationCompletePostRequest) async
     test('test connectionLocationVerificationCompletePost', () async {
+      // TODO
+    });
+
+    // get verification options
+    //
+    //Future<BuiltList<ConnectionLocationVerificationOption>> connectionLocationVerificationOptionsGet(String connectionId, String connectionLocationId) async
+    test('test connectionLocationVerificationOptionsGet', () async {
       // TODO
     });
 
@@ -29,7 +36,7 @@ void main() {
 
     // get locations from a connection
     //
-    //Future<BuiltList<ConnectionLocationsGet200ResponseInner>> connectionLocationsGet(String connectionId, DirectoryType type, Platform platform) async
+    //Future<BuiltList<ConnectionLocationsGet200ResponseInner>> connectionLocationsGet(Platform platform, { String connectionId, DirectoryType type }) async
     test('test connectionLocationsGet', () async {
       // TODO
     });
@@ -43,7 +50,7 @@ void main() {
 
     // Get user connections
     //
-    //Future<BuiltList<Connection>> connectionsGet(DirectoryType type) async
+    //Future<BuiltList<Connection>> connectionsGet() async
     test('test connectionsGet', () async {
       // TODO
     });

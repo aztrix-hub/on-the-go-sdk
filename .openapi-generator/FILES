@@ -45,6 +45,8 @@ doc/Category.md
 doc/Connection.md
 doc/ConnectionLocationPostRequest.md
 doc/ConnectionLocationVerificationCompletePostRequest.md
+doc/ConnectionLocationVerificationMethod.md
+doc/ConnectionLocationVerificationOption.md
 doc/ConnectionLocationVerificationPostRequest.md
 doc/ConnectionLocationsGet200ResponseInner.md
 doc/ConnectionPostRequest.md
@@ -177,6 +179,8 @@ lib/src/model/category.dart
 lib/src/model/connection.dart
 lib/src/model/connection_location_post_request.dart
 lib/src/model/connection_location_verification_complete_post_request.dart
+lib/src/model/connection_location_verification_method.dart
+lib/src/model/connection_location_verification_option.dart
 lib/src/model/connection_location_verification_post_request.dart
 lib/src/model/connection_locations_get200_response_inner.dart
 lib/src/model/connection_post_request.dart

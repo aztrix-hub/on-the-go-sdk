@@ -660,7 +660,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Location"
+                  "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
                 }
               }
             }
@@ -723,6 +723,62 @@
         "responses": {
           "200": {
             "description": "verification started"
+          },
+          "400": {
+            "description": "Invalid or missing parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/connection/location/verification-options": {
+      "get": {
+        "tags": [
+          "connections"
+        ],
+        "summary": "get verification options",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionLocationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Available verification options",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                }
+              }
+            }
           },
           "400": {
             "description": "Invalid or missing parameter",
@@ -5044,6 +5100,33 @@
           "WEB",
           "ANDROID",
           "IOS"
+        ]
+      },
+      "ConnectionLocationVerificationOptions": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ConnectionLocationVerificationOption"
+        }
+      },
+      "ConnectionLocationVerificationOption": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "$ref": "#/components/schemas/ConnectionLocationVerificationMethod"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ConnectionLocationVerificationMethod": {
+        "type": "string",
+        "enum": [
+          "ADDRESS",
+          "EMAIL",
+          "PHONE_CALL",
+          "SMS",
+          "VETTED_PARTNER"
         ]
       }
     },
