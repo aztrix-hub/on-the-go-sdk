@@ -565,18 +565,18 @@
           {
             "name": "connectionId",
             "in": "query",
-            "required": true,
             "schema": {
               "type": "string"
-            }
+            },
+            "description": "optional connectionId. If neither connectionId or type is provided all connections are used"
           },
           {
             "name": "type",
             "in": "query",
-            "required": true,
             "schema": {
               "$ref": "#/components/schemas/DirectoryType"
-            }
+            },
+            "description": "optional type, will be ignored if connectionId is provided. If neither connectionId or type is provided all connections are used"
           },
           {
             "name": "platform",

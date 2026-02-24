@@ -285,9 +285,9 @@ class ConnectionsApi {
   ///
   ///
   /// Parameters:
-  /// * [connectionId]
-  /// * [type]
   /// * [platform]
+  /// * [connectionId] - optional connectionId. If neither connectionId or type is provided all connections are used
+  /// * [type] - optional type, will be ignored if connectionId is provided. If neither connectionId or type is provided all connections are used
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -299,9 +299,9 @@ class ConnectionsApi {
   /// Throws [DioException] if API call or serialization fails
   Future<Response<BuiltList<ConnectionLocationsGet200ResponseInner>>>
       connectionLocationsGet({
-    required String connectionId,
-    required DirectoryType type,
     required Platform platform,
+    String? connectionId,
+    DirectoryType? type,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -330,10 +330,12 @@ class ConnectionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      r'connectionId': encodeQueryParameter(
-          _serializers, connectionId, const FullType(String)),
-      r'type': encodeQueryParameter(
-          _serializers, type, const FullType(DirectoryType)),
+      if (connectionId != null)
+        r'connectionId': encodeQueryParameter(
+            _serializers, connectionId, const FullType(String)),
+      if (type != null)
+        r'type': encodeQueryParameter(
+            _serializers, type, const FullType(DirectoryType)),
       r'platform': encodeQueryParameter(
           _serializers, platform, const FullType(Platform)),
     };

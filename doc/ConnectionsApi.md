@@ -151,7 +151,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectionLocationsGet**
-> BuiltList<ConnectionLocationsGet200ResponseInner> connectionLocationsGet(connectionId, type, platform)
+> BuiltList<ConnectionLocationsGet200ResponseInner> connectionLocationsGet(platform, connectionId, type)
 
 get locations from a connection
 
@@ -164,12 +164,12 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getConnectionsApi();
-final String connectionId = connectionId_example; // String | 
-final DirectoryType type = ; // DirectoryType | 
 final Platform platform = ; // Platform | 
+final String connectionId = connectionId_example; // String | optional connectionId. If neither connectionId or type is provided all connections are used
+final DirectoryType type = ; // DirectoryType | optional type, will be ignored if connectionId is provided. If neither connectionId or type is provided all connections are used
 
 try {
-    final response = api.connectionLocationsGet(connectionId, type, platform);
+    final response = api.connectionLocationsGet(platform, connectionId, type);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ConnectionsApi->connectionLocationsGet: $e\n');
@@ -180,9 +180,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **connectionId** | **String**|  | 
- **type** | [**DirectoryType**](.md)|  | 
  **platform** | [**Platform**](.md)|  | 
+ **connectionId** | **String**| optional connectionId. If neither connectionId or type is provided all connections are used | [optional] 
+ **type** | [**DirectoryType**](.md)| optional type, will be ignored if connectionId is provided. If neither connectionId or type is provided all connections are used | [optional] 
 
 ### Return type
 
