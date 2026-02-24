@@ -708,11 +708,17 @@
                   "connectionLocationId": {
                     "type": "string"
                   },
+                  "method": {
+                    "$ref": "#/components/schemas/ConnectionLocationVerificationMethod"
+                  },
                   "email": {
                     "type": "string"
                   },
-                  "phoneNumber": {
+                  "phone": {
                     "type": "string"
+                  },
+                  "address": {
+                    "$ref": "#/components/schemas/Address"
                   }
                 }
               }

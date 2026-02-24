@@ -13,9 +13,13 @@ class _$ConnectionLocationVerificationPostRequest
   @override
   final String connectionLocationId;
   @override
+  final ConnectionLocationVerificationMethod? method;
+  @override
   final String? email;
   @override
-  final String? phoneNumber;
+  final String? phone;
+  @override
+  final Address? address;
 
   factory _$ConnectionLocationVerificationPostRequest(
           [void Function(ConnectionLocationVerificationPostRequestBuilder)?
@@ -26,8 +30,10 @@ class _$ConnectionLocationVerificationPostRequest
   _$ConnectionLocationVerificationPostRequest._(
       {required this.connectionId,
       required this.connectionLocationId,
+      this.method,
       this.email,
-      this.phoneNumber})
+      this.phone,
+      this.address})
       : super._();
   @override
   ConnectionLocationVerificationPostRequest rebuild(
@@ -45,8 +51,10 @@ class _$ConnectionLocationVerificationPostRequest
     return other is ConnectionLocationVerificationPostRequest &&
         connectionId == other.connectionId &&
         connectionLocationId == other.connectionLocationId &&
+        method == other.method &&
         email == other.email &&
-        phoneNumber == other.phoneNumber;
+        phone == other.phone &&
+        address == other.address;
   }
 
   @override
@@ -54,8 +62,10 @@ class _$ConnectionLocationVerificationPostRequest
     var _$hash = 0;
     _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, connectionLocationId.hashCode);
+    _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, phoneNumber.hashCode);
+    _$hash = $jc(_$hash, phone.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -66,8 +76,10 @@ class _$ConnectionLocationVerificationPostRequest
             r'ConnectionLocationVerificationPostRequest')
           ..add('connectionId', connectionId)
           ..add('connectionLocationId', connectionLocationId)
+          ..add('method', method)
           ..add('email', email)
-          ..add('phoneNumber', phoneNumber))
+          ..add('phone', phone)
+          ..add('address', address))
         .toString();
   }
 }
@@ -87,13 +99,22 @@ class ConnectionLocationVerificationPostRequestBuilder
   set connectionLocationId(String? connectionLocationId) =>
       _$this._connectionLocationId = connectionLocationId;
 
+  ConnectionLocationVerificationMethod? _method;
+  ConnectionLocationVerificationMethod? get method => _$this._method;
+  set method(ConnectionLocationVerificationMethod? method) =>
+      _$this._method = method;
+
   String? _email;
   String? get email => _$this._email;
   set email(String? email) => _$this._email = email;
 
-  String? _phoneNumber;
-  String? get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
+  String? _phone;
+  String? get phone => _$this._phone;
+  set phone(String? phone) => _$this._phone = phone;
+
+  AddressBuilder? _address;
+  AddressBuilder get address => _$this._address ??= AddressBuilder();
+  set address(AddressBuilder? address) => _$this._address = address;
 
   ConnectionLocationVerificationPostRequestBuilder() {
     ConnectionLocationVerificationPostRequest._defaults(this);
@@ -104,8 +125,10 @@ class ConnectionLocationVerificationPostRequestBuilder
     if ($v != null) {
       _connectionId = $v.connectionId;
       _connectionLocationId = $v.connectionLocationId;
+      _method = $v.method;
       _email = $v.email;
-      _phoneNumber = $v.phoneNumber;
+      _phone = $v.phone;
+      _address = $v.address?.toBuilder();
       _$v = null;
     }
     return this;
@@ -127,17 +150,34 @@ class ConnectionLocationVerificationPostRequestBuilder
   ConnectionLocationVerificationPostRequest build() => _build();
 
   _$ConnectionLocationVerificationPostRequest _build() {
-    final _$result = _$v ??
-        _$ConnectionLocationVerificationPostRequest._(
-          connectionId: BuiltValueNullFieldError.checkNotNull(connectionId,
-              r'ConnectionLocationVerificationPostRequest', 'connectionId'),
-          connectionLocationId: BuiltValueNullFieldError.checkNotNull(
-              connectionLocationId,
-              r'ConnectionLocationVerificationPostRequest',
-              'connectionLocationId'),
-          email: email,
-          phoneNumber: phoneNumber,
-        );
+    _$ConnectionLocationVerificationPostRequest _$result;
+    try {
+      _$result = _$v ??
+          _$ConnectionLocationVerificationPostRequest._(
+            connectionId: BuiltValueNullFieldError.checkNotNull(connectionId,
+                r'ConnectionLocationVerificationPostRequest', 'connectionId'),
+            connectionLocationId: BuiltValueNullFieldError.checkNotNull(
+                connectionLocationId,
+                r'ConnectionLocationVerificationPostRequest',
+                'connectionLocationId'),
+            method: method,
+            email: email,
+            phone: phone,
+            address: _address?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'address';
+        _address?.build();
+      } catch (e) {
+        throw BuiltValueNestedFieldError(
+            r'ConnectionLocationVerificationPostRequest',
+            _$failedField,
+            e.toString());
+      }
+      rethrow;
+    }
     replace(_$result);
     return _$result;
   }

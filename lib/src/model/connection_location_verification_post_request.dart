@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
+import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -13,8 +15,10 @@ part 'connection_location_verification_post_request.g.dart';
 /// Properties:
 /// * [connectionId]
 /// * [connectionLocationId]
+/// * [method]
 /// * [email]
-/// * [phoneNumber]
+/// * [phone]
+/// * [address]
 @BuiltValue()
 abstract class ConnectionLocationVerificationPostRequest
     implements
@@ -26,11 +30,18 @@ abstract class ConnectionLocationVerificationPostRequest
   @BuiltValueField(wireName: r'connectionLocationId')
   String get connectionLocationId;
 
+  @BuiltValueField(wireName: r'method')
+  ConnectionLocationVerificationMethod? get method;
+  // enum methodEnum {  ADDRESS,  EMAIL,  PHONE_CALL,  SMS,  VETTED_PARTNER,  };
+
   @BuiltValueField(wireName: r'email')
   String? get email;
 
-  @BuiltValueField(wireName: r'phoneNumber')
-  String? get phoneNumber;
+  @BuiltValueField(wireName: r'phone')
+  String? get phone;
+
+  @BuiltValueField(wireName: r'address')
+  Address? get address;
 
   ConnectionLocationVerificationPostRequest._();
 
@@ -73,6 +84,13 @@ class _$ConnectionLocationVerificationPostRequestSerializer
       object.connectionLocationId,
       specifiedType: const FullType(String),
     );
+    if (object.method != null) {
+      yield r'method';
+      yield serializers.serialize(
+        object.method,
+        specifiedType: const FullType(ConnectionLocationVerificationMethod),
+      );
+    }
     if (object.email != null) {
       yield r'email';
       yield serializers.serialize(
@@ -80,11 +98,18 @@ class _$ConnectionLocationVerificationPostRequestSerializer
         specifiedType: const FullType(String),
       );
     }
-    if (object.phoneNumber != null) {
-      yield r'phoneNumber';
+    if (object.phone != null) {
+      yield r'phone';
       yield serializers.serialize(
-        object.phoneNumber,
+        object.phone,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.address != null) {
+      yield r'address';
+      yield serializers.serialize(
+        object.address,
+        specifiedType: const FullType(Address),
       );
     }
   }
@@ -126,6 +151,13 @@ class _$ConnectionLocationVerificationPostRequestSerializer
           ) as String;
           result.connectionLocationId = valueDes;
           break;
+        case r'method':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ConnectionLocationVerificationMethod),
+          ) as ConnectionLocationVerificationMethod;
+          result.method = valueDes;
+          break;
         case r'email':
           final valueDes = serializers.deserialize(
             value,
@@ -133,12 +165,19 @@ class _$ConnectionLocationVerificationPostRequestSerializer
           ) as String;
           result.email = valueDes;
           break;
-        case r'phoneNumber':
+        case r'phone':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.phoneNumber = valueDes;
+          result.phone = valueDes;
+          break;
+        case r'address':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(Address),
+          ) as Address;
+          result.address.replace(valueDes);
           break;
         default:
           unhandled.add(key);
