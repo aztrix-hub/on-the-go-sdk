@@ -24,7 +24,7 @@ abstract class ConnectionLocationVerificationOption
   // enum methodEnum {  ADDRESS,  EMAIL,  PHONE_CALL,  SMS,  VETTED_PARTNER,  };
 
   @BuiltValueField(wireName: r'value')
-  String get value;
+  String? get value;
 
   ConnectionLocationVerificationOption._();
 
@@ -61,11 +61,13 @@ class _$ConnectionLocationVerificationOptionSerializer
       object.method,
       specifiedType: const FullType(ConnectionLocationVerificationMethod),
     );
-    yield r'value';
-    yield serializers.serialize(
-      object.value,
-      specifiedType: const FullType(String),
-    );
+    if (object.value != null) {
+      yield r'value';
+      yield serializers.serialize(
+        object.value,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
