@@ -176,6 +176,7 @@ Class | Method | HTTP request | Description
  - [AiToolResponses](doc/AiToolResponses.md)
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
+ - [ConnectionLocationPost200Response](doc/ConnectionLocationPost200Response.md)
  - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationVerificationCompletePostRequest](doc/ConnectionLocationVerificationCompletePostRequest.md)
  - [ConnectionLocationVerificationMethod](doc/ConnectionLocationVerificationMethod.md)

@@ -20,11 +20,11 @@ abstract class ConnectionLocationVerificationOption
         Built<ConnectionLocationVerificationOption,
             ConnectionLocationVerificationOptionBuilder> {
   @BuiltValueField(wireName: r'method')
-  ConnectionLocationVerificationMethod? get method;
+  ConnectionLocationVerificationMethod get method;
   // enum methodEnum {  ADDRESS,  EMAIL,  PHONE_CALL,  SMS,  VETTED_PARTNER,  };
 
   @BuiltValueField(wireName: r'value')
-  String? get value;
+  String get value;
 
   ConnectionLocationVerificationOption._();
 
@@ -56,20 +56,16 @@ class _$ConnectionLocationVerificationOptionSerializer
     ConnectionLocationVerificationOption object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.method != null) {
-      yield r'method';
-      yield serializers.serialize(
-        object.method,
-        specifiedType: const FullType(ConnectionLocationVerificationMethod),
-      );
-    }
-    if (object.value != null) {
-      yield r'value';
-      yield serializers.serialize(
-        object.value,
-        specifiedType: const FullType(String),
-      );
-    }
+    yield r'method';
+    yield serializers.serialize(
+      object.method,
+      specifiedType: const FullType(ConnectionLocationVerificationMethod),
+    );
+    yield r'value';
+    yield serializers.serialize(
+      object.value,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override

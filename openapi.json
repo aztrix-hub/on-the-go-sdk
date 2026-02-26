@@ -660,7 +660,15 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                  "type": "object",
+                  "properties": {
+                    "location": {
+                      "$ref": "#/components/schemas/Location"
+                    },
+                    "verificationOptions": {
+                      "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                    }
+                  }
                 }
               }
             }
@@ -5128,6 +5136,10 @@
       },
       "ConnectionLocationVerificationOption": {
         "type": "object",
+        "required": [
+          "method",
+          "value"
+        ],
         "properties": {
           "method": {
             "$ref": "#/components/schemas/ConnectionLocationVerificationMethod"

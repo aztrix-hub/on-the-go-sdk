@@ -9,16 +9,17 @@ part of 'connection_location_verification_option.dart';
 class _$ConnectionLocationVerificationOption
     extends ConnectionLocationVerificationOption {
   @override
-  final ConnectionLocationVerificationMethod? method;
+  final ConnectionLocationVerificationMethod method;
   @override
-  final String? value;
+  final String value;
 
   factory _$ConnectionLocationVerificationOption(
           [void Function(ConnectionLocationVerificationOptionBuilder)?
               updates]) =>
       (ConnectionLocationVerificationOptionBuilder()..update(updates))._build();
 
-  _$ConnectionLocationVerificationOption._({this.method, this.value})
+  _$ConnectionLocationVerificationOption._(
+      {required this.method, required this.value})
       : super._();
   @override
   ConnectionLocationVerificationOption rebuild(
@@ -101,8 +102,10 @@ class ConnectionLocationVerificationOptionBuilder
   _$ConnectionLocationVerificationOption _build() {
     final _$result = _$v ??
         _$ConnectionLocationVerificationOption._(
-          method: method,
-          value: value,
+          method: BuiltValueNullFieldError.checkNotNull(
+              method, r'ConnectionLocationVerificationOption', 'method'),
+          value: BuiltValueNullFieldError.checkNotNull(
+              value, r'ConnectionLocationVerificationOption', 'value'),
         );
     replace(_$result);
     return _$result;

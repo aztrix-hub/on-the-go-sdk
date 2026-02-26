@@ -10,6 +10,7 @@ import 'package:dio/dio.dart';
 import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
@@ -38,10 +39,9 @@ class ConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ConnectionLocationVerificationOption>] as data
+  /// Returns a [Future] containing a [Response] with a [ConnectionLocationPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ConnectionLocationVerificationOption>>>
-      connectionLocationPost({
+  Future<Response<ConnectionLocationPost200Response>> connectionLocationPost({
     required ConnectionLocationPostRequest connectionLocationPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -98,7 +98,7 @@ class ConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<ConnectionLocationVerificationOption>? _responseData;
+    ConnectionLocationPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -106,9 +106,8 @@ class ConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(
-                  BuiltList, [FullType(ConnectionLocationVerificationOption)]),
-            ) as BuiltList<ConnectionLocationVerificationOption>;
+              specifiedType: const FullType(ConnectionLocationPost200Response),
+            ) as ConnectionLocationPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -119,7 +118,7 @@ class ConnectionsApi {
       );
     }
 
-    return Response<BuiltList<ConnectionLocationVerificationOption>>(
+    return Response<ConnectionLocationPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

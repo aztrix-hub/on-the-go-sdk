@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **connectionLocationPost**
-> BuiltList<ConnectionLocationVerificationOption> connectionLocationPost(connectionLocationPostRequest)
+> ConnectionLocationPost200Response connectionLocationPost(connectionLocationPostRequest)
 
 create a location on a connection
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;ConnectionLocationVerificationOption&gt;**](ConnectionLocationVerificationOption.md)
+[**ConnectionLocationPost200Response**](ConnectionLocationPost200Response.md)
 
 ### Authorization
 

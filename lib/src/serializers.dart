@@ -55,6 +55,7 @@ import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
@@ -162,6 +163,7 @@ part 'serializers.g.dart';
   AiToolResponses,
   Category,
   Connection,
+  ConnectionLocationPost200Response,
   ConnectionLocationPostRequest,
   ConnectionLocationVerificationCompletePostRequest,
   ConnectionLocationVerificationMethod,

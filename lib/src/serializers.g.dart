@@ -51,6 +51,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiToolResponses.serializer)
       ..add(Category.serializer)
       ..add(Connection.serializer)
+      ..add(ConnectionLocationPost200Response.serializer)
       ..add(ConnectionLocationPostRequest.serializer)
       ..add(ConnectionLocationVerificationCompletePostRequest.serializer)
       ..add(ConnectionLocationVerificationMethod.serializer)
@@ -144,6 +145,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConnectionLocationVerificationOption)]),
+          () => ListBuilder<ConnectionLocationVerificationOption>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DataPoint)]),
           () => ListBuilder<DataPoint>())
