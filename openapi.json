@@ -856,7 +856,27 @@
             "description": "verification complete"
           },
           "400": {
-            "description": "Invalid or missing parameter",
+            "description": "Invalid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "460": {
+            "description": "Verification failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "470": {
+            "description": "Too late, verification expired",
             "content": {
               "application/json": {
                 "schema": {
