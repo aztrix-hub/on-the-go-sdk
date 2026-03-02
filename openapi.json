@@ -5209,12 +5209,20 @@
       },
       "ConnectionLocation": {
         "type": "object",
+        "required": [
+          "data",
+          "metadata"
+        ],
         "properties": {
           "data": {
             "$ref": "#/components/schemas/Location"
           },
           "metadata": {
             "type": "object",
+            "required": [
+              "originUrl",
+              "ownership"
+            ],
             "properties": {
               "originUrl": {
                 "type": "boolean"

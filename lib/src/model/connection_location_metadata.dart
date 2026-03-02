@@ -18,10 +18,10 @@ abstract class ConnectionLocationMetadata
     implements
         Built<ConnectionLocationMetadata, ConnectionLocationMetadataBuilder> {
   @BuiltValueField(wireName: r'originUrl')
-  bool? get originUrl;
+  bool get originUrl;
 
   @BuiltValueField(wireName: r'ownership')
-  bool? get ownership;
+  bool get ownership;
 
   ConnectionLocationMetadata._();
 
@@ -53,20 +53,16 @@ class _$ConnectionLocationMetadataSerializer
     ConnectionLocationMetadata object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.originUrl != null) {
-      yield r'originUrl';
-      yield serializers.serialize(
-        object.originUrl,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.ownership != null) {
-      yield r'ownership';
-      yield serializers.serialize(
-        object.ownership,
-        specifiedType: const FullType(bool),
-      );
-    }
+    yield r'originUrl';
+    yield serializers.serialize(
+      object.originUrl,
+      specifiedType: const FullType(bool),
+    );
+    yield r'ownership';
+    yield serializers.serialize(
+      object.ownership,
+      specifiedType: const FullType(bool),
+    );
   }
 
   @override

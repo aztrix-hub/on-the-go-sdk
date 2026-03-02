@@ -19,10 +19,10 @@ part 'connection_location.g.dart';
 abstract class ConnectionLocation
     implements Built<ConnectionLocation, ConnectionLocationBuilder> {
   @BuiltValueField(wireName: r'data')
-  Location? get data;
+  Location get data;
 
   @BuiltValueField(wireName: r'metadata')
-  ConnectionLocationMetadata? get metadata;
+  ConnectionLocationMetadata get metadata;
 
   ConnectionLocation._();
 
@@ -50,20 +50,16 @@ class _$ConnectionLocationSerializer
     ConnectionLocation object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(Location),
-      );
-    }
-    if (object.metadata != null) {
-      yield r'metadata';
-      yield serializers.serialize(
-        object.metadata,
-        specifiedType: const FullType(ConnectionLocationMetadata),
-      );
-    }
+    yield r'data';
+    yield serializers.serialize(
+      object.data,
+      specifiedType: const FullType(Location),
+    );
+    yield r'metadata';
+    yield serializers.serialize(
+      object.metadata,
+      specifiedType: const FullType(ConnectionLocationMetadata),
+    );
   }
 
   @override

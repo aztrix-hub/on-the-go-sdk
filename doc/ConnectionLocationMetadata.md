@@ -8,8 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**originUrl** | **bool** |  | [optional] 
-**ownership** | **bool** |  | [optional] 
+**originUrl** | **bool** |  | 
+**ownership** | **bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

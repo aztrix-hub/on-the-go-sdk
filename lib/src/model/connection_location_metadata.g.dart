@@ -8,15 +8,17 @@ part of 'connection_location_metadata.dart';
 
 class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
   @override
-  final bool? originUrl;
+  final bool originUrl;
   @override
-  final bool? ownership;
+  final bool ownership;
 
   factory _$ConnectionLocationMetadata(
           [void Function(ConnectionLocationMetadataBuilder)? updates]) =>
       (ConnectionLocationMetadataBuilder()..update(updates))._build();
 
-  _$ConnectionLocationMetadata._({this.originUrl, this.ownership}) : super._();
+  _$ConnectionLocationMetadata._(
+      {required this.originUrl, required this.ownership})
+      : super._();
   @override
   ConnectionLocationMetadata rebuild(
           void Function(ConnectionLocationMetadataBuilder) updates) =>
@@ -95,8 +97,10 @@ class ConnectionLocationMetadataBuilder
   _$ConnectionLocationMetadata _build() {
     final _$result = _$v ??
         _$ConnectionLocationMetadata._(
-          originUrl: originUrl,
-          ownership: ownership,
+          originUrl: BuiltValueNullFieldError.checkNotNull(
+              originUrl, r'ConnectionLocationMetadata', 'originUrl'),
+          ownership: BuiltValueNullFieldError.checkNotNull(
+              ownership, r'ConnectionLocationMetadata', 'ownership'),
         );
     replace(_$result);
     return _$result;

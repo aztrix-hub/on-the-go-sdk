@@ -8,15 +8,16 @@ part of 'connection_location.dart';
 
 class _$ConnectionLocation extends ConnectionLocation {
   @override
-  final Location? data;
+  final Location data;
   @override
-  final ConnectionLocationMetadata? metadata;
+  final ConnectionLocationMetadata metadata;
 
   factory _$ConnectionLocation(
           [void Function(ConnectionLocationBuilder)? updates]) =>
       (ConnectionLocationBuilder()..update(updates))._build();
 
-  _$ConnectionLocation._({this.data, this.metadata}) : super._();
+  _$ConnectionLocation._({required this.data, required this.metadata})
+      : super._();
   @override
   ConnectionLocation rebuild(
           void Function(ConnectionLocationBuilder) updates) =>
@@ -73,8 +74,8 @@ class ConnectionLocationBuilder
   ConnectionLocationBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _data = $v.data?.toBuilder();
-      _metadata = $v.metadata?.toBuilder();
+      _data = $v.data.toBuilder();
+      _metadata = $v.metadata.toBuilder();
       _$v = null;
     }
     return this;
@@ -98,16 +99,16 @@ class ConnectionLocationBuilder
     try {
       _$result = _$v ??
           _$ConnectionLocation._(
-            data: _data?.build(),
-            metadata: _metadata?.build(),
+            data: data.build(),
+            metadata: metadata.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'data';
-        _data?.build();
+        data.build();
         _$failedField = 'metadata';
-        _metadata?.build();
+        metadata.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ConnectionLocation', _$failedField, e.toString());
