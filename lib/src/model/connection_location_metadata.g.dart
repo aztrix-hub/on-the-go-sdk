@@ -8,7 +8,7 @@ part of 'connection_location_metadata.dart';
 
 class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
   @override
-  final bool originUrl;
+  final String originUrl;
   @override
   final bool ownership;
 
@@ -59,9 +59,9 @@ class ConnectionLocationMetadataBuilder
         Builder<ConnectionLocationMetadata, ConnectionLocationMetadataBuilder> {
   _$ConnectionLocationMetadata? _$v;
 
-  bool? _originUrl;
-  bool? get originUrl => _$this._originUrl;
-  set originUrl(bool? originUrl) => _$this._originUrl = originUrl;
+  String? _originUrl;
+  String? get originUrl => _$this._originUrl;
+  set originUrl(String? originUrl) => _$this._originUrl = originUrl;
 
   bool? _ownership;
   bool? get ownership => _$this._ownership;

@@ -18,7 +18,7 @@ abstract class ConnectionLocationMetadata
     implements
         Built<ConnectionLocationMetadata, ConnectionLocationMetadataBuilder> {
   @BuiltValueField(wireName: r'originUrl')
-  bool get originUrl;
+  String get originUrl;
 
   @BuiltValueField(wireName: r'ownership')
   bool get ownership;
@@ -56,7 +56,7 @@ class _$ConnectionLocationMetadataSerializer
     yield r'originUrl';
     yield serializers.serialize(
       object.originUrl,
-      specifiedType: const FullType(bool),
+      specifiedType: const FullType(String),
     );
     yield r'ownership';
     yield serializers.serialize(
@@ -91,8 +91,8 @@ class _$ConnectionLocationMetadataSerializer
         case r'originUrl':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
+            specifiedType: const FullType(String),
+          ) as String;
           result.originUrl = valueDes;
           break;
         case r'ownership':
