@@ -603,7 +603,7 @@
                       "locations": {
                         "type": "array",
                         "items": {
-                          "$ref": "#/components/schemas/Location"
+                          "$ref": "#/components/schemas/ConnectionLocation"
                         }
                       }
                     }
@@ -663,7 +663,7 @@
                   "type": "object",
                   "properties": {
                     "location": {
-                      "$ref": "#/components/schemas/Location"
+                      "$ref": "#/components/schemas/ConnectionLocation"
                     },
                     "verificationOptions": {
                       "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
@@ -790,6 +790,65 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid or missing parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
+    "/connection/location/actions": {
+      "get": {
+        "tags": [
+          "connections"
+        ],
+        "summary": "get the actions to gain ownership of the location",
+        "parameters": [
+          {
+            "name": "connectionId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "connectionLocationId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Actions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ConnectionLocationAction"
+                  }
                 }
               }
             }
@@ -5146,6 +5205,34 @@
           "WEB",
           "ANDROID",
           "IOS"
+        ]
+      },
+      "ConnectionLocation": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Location"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "originUrl": {
+                "type": "boolean"
+              },
+              "ownership": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
+      "ConnectionLocationAction": {
+        "type": "string",
+        "enum": [
+          "WAIT",
+          "VERIFY",
+          "RESOLVE_CONFLICT",
+          "RESOLVE_GUIDELINES"
         ]
       },
       "ConnectionLocationVerificationOptions": {

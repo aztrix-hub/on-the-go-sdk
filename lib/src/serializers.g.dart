@@ -51,6 +51,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(AiToolResponses.serializer)
       ..add(Category.serializer)
       ..add(Connection.serializer)
+      ..add(ConnectionLocation.serializer)
+      ..add(ConnectionLocationAction.serializer)
+      ..add(ConnectionLocationMetadata.serializer)
       ..add(ConnectionLocationPost200Response.serializer)
       ..add(ConnectionLocationPostRequest.serializer)
       ..add(ConnectionLocationVerificationCompletePostRequest.serializer)
@@ -146,6 +149,9 @@ Serializers _$serializers = (Serializers().toBuilder()
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())
       ..addBuilderFactory(
+          const FullType(BuiltList, const [const FullType(ConnectionLocation)]),
+          () => ListBuilder<ConnectionLocation>())
+      ..addBuilderFactory(
           const FullType(BuiltList,
               const [const FullType(ConnectionLocationVerificationOption)]),
           () => ListBuilder<ConnectionLocationVerificationOption>())
@@ -171,9 +177,6 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(ListingConflict)]),
           () => ListBuilder<ListingConflict>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(Location)]),
-          () => ListBuilder<Location>())
       ..addBuilderFactory(
           const FullType(
               BuiltList, const [const FullType(LocationOrIndividual)]),

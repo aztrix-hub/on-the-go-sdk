@@ -9,7 +9,7 @@ part of 'connection_location_post200_response.dart';
 class _$ConnectionLocationPost200Response
     extends ConnectionLocationPost200Response {
   @override
-  final Location? location;
+  final ConnectionLocation? location;
   @override
   final BuiltList<ConnectionLocationVerificationOption>? verificationOptions;
 
@@ -61,9 +61,11 @@ class ConnectionLocationPost200ResponseBuilder
             ConnectionLocationPost200ResponseBuilder> {
   _$ConnectionLocationPost200Response? _$v;
 
-  LocationBuilder? _location;
-  LocationBuilder get location => _$this._location ??= LocationBuilder();
-  set location(LocationBuilder? location) => _$this._location = location;
+  ConnectionLocationBuilder? _location;
+  ConnectionLocationBuilder get location =>
+      _$this._location ??= ConnectionLocationBuilder();
+  set location(ConnectionLocationBuilder? location) =>
+      _$this._location = location;
 
   ListBuilder<ConnectionLocationVerificationOption>? _verificationOptions;
   ListBuilder<ConnectionLocationVerificationOption> get verificationOptions =>

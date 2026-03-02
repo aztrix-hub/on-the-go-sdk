@@ -17,13 +17,23 @@ void main() {
       // TODO
     });
 
+    // ConnectionLocationVerificationMethod method
+    test('to test the property `method`', () async {
+      // TODO
+    });
+
     // String email
     test('to test the property `email`', () async {
       // TODO
     });
 
-    // String phoneNumber
-    test('to test the property `phoneNumber`', () async {
+    // String phone
+    test('to test the property `phone`', () async {
+      // TODO
+    });
+
+    // Address address
+    test('to test the property `address`', () async {
       // TODO
     });
   });

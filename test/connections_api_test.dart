@@ -6,9 +6,16 @@ void main() {
   final instance = OnTheGoSdk().getConnectionsApi();
 
   group(ConnectionsApi, () {
+    // get the actions to gain ownership of the location
+    //
+    //Future<BuiltList<ConnectionLocationAction>> connectionLocationActionsGet(String connectionId, String connectionLocationId) async
+    test('test connectionLocationActionsGet', () async {
+      // TODO
+    });
+
     // create a location on a connection
     //
-    //Future<BuiltList<ConnectionLocationVerificationOption>> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
+    //Future<ConnectionLocationPost200Response> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
     test('test connectionLocationPost', () async {
       // TODO
     });

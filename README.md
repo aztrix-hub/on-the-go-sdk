@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsDescriptionGet**](doc/AiApi.md#aisuggestionsdescriptionget) | **GET** /ai/suggestions/description | 
 [*AiApi*](doc/AiApi.md) | [**aiSuggestionsKeywordsGet**](doc/AiApi.md#aisuggestionskeywordsget) | **GET** /ai/suggestions/keywords | 
 [*AnalyticsApi*](doc/AnalyticsApi.md) | [**analyticsGet**](doc/AnalyticsApi.md#analyticsget) | **GET** /analytics | 
+[*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationActionsGet**](doc/ConnectionsApi.md#connectionlocationactionsget) | **GET** /connection/location/actions | get the actions to gain ownership of the location
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationPost**](doc/ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationCompletePost**](doc/ConnectionsApi.md#connectionlocationverificationcompletepost) | **POST** /connection/location/verification/complete | complete verification
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionLocationVerificationOptionsGet**](doc/ConnectionsApi.md#connectionlocationverificationoptionsget) | **GET** /connection/location/verification-options | get verification options
@@ -176,6 +177,9 @@ Class | Method | HTTP request | Description
  - [AiToolResponses](doc/AiToolResponses.md)
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
+ - [ConnectionLocation](doc/ConnectionLocation.md)
+ - [ConnectionLocationAction](doc/ConnectionLocationAction.md)
+ - [ConnectionLocationMetadata](doc/ConnectionLocationMetadata.md)
  - [ConnectionLocationPost200Response](doc/ConnectionLocationPost200Response.md)
  - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationVerificationCompletePostRequest](doc/ConnectionLocationVerificationCompletePostRequest.md)

@@ -7,6 +7,21 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(ConnectionLocationVerificationCompletePostRequest, () {
+    // String connectionId
+    test('to test the property `connectionId`', () async {
+      // TODO
+    });
+
+    // String connectionLocationId
+    test('to test the property `connectionLocationId`', () async {
+      // TODO
+    });
+
+    // ConnectionLocationVerificationMethod method
+    test('to test the property `method`', () async {
+      // TODO
+    });
+
     // String token
     test('to test the property `token`', () async {
       // TODO

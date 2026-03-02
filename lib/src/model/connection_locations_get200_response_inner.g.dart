@@ -11,7 +11,7 @@ class _$ConnectionLocationsGet200ResponseInner
   @override
   final String? connectionId;
   @override
-  final BuiltList<Location>? locations;
+  final BuiltList<ConnectionLocation>? locations;
 
   factory _$ConnectionLocationsGet200ResponseInner(
           [void Function(ConnectionLocationsGet200ResponseInnerBuilder)?
@@ -69,10 +69,10 @@ class ConnectionLocationsGet200ResponseInnerBuilder
   String? get connectionId => _$this._connectionId;
   set connectionId(String? connectionId) => _$this._connectionId = connectionId;
 
-  ListBuilder<Location>? _locations;
-  ListBuilder<Location> get locations =>
-      _$this._locations ??= ListBuilder<Location>();
-  set locations(ListBuilder<Location>? locations) =>
+  ListBuilder<ConnectionLocation>? _locations;
+  ListBuilder<ConnectionLocation> get locations =>
+      _$this._locations ??= ListBuilder<ConnectionLocation>();
+  set locations(ListBuilder<ConnectionLocation>? locations) =>
       _$this._locations = locations;
 
   ConnectionLocationsGet200ResponseInnerBuilder() {

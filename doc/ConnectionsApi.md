@@ -9,6 +9,7 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**connectionLocationActionsGet**](ConnectionsApi.md#connectionlocationactionsget) | **GET** /connection/location/actions | get the actions to gain ownership of the location
 [**connectionLocationPost**](ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
 [**connectionLocationVerificationCompletePost**](ConnectionsApi.md#connectionlocationverificationcompletepost) | **POST** /connection/location/verification/complete | complete verification
 [**connectionLocationVerificationOptionsGet**](ConnectionsApi.md#connectionlocationverificationoptionsget) | **GET** /connection/location/verification-options | get verification options
@@ -17,6 +18,53 @@ Method | HTTP request | Description
 [**connectionPost**](ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
 [**connectionsGet**](ConnectionsApi.md#connectionsget) | **GET** /connections | Get user connections
 
+
+# **connectionLocationActionsGet**
+> BuiltList<ConnectionLocationAction> connectionLocationActionsGet(connectionId, connectionLocationId)
+
+get the actions to gain ownership of the location
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getConnectionsApi();
+final String connectionId = connectionId_example; // String | 
+final String connectionLocationId = connectionLocationId_example; // String | 
+
+try {
+    final response = api.connectionLocationActionsGet(connectionId, connectionLocationId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ConnectionsApi->connectionLocationActionsGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectionId** | **String**|  | 
+ **connectionLocationId** | **String**|  | 
+
+### Return type
+
+[**BuiltList&lt;ConnectionLocationAction&gt;**](ConnectionLocationAction.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectionLocationPost**
 > ConnectionLocationPost200Response connectionLocationPost(connectionLocationPostRequest)

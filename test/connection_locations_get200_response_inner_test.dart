@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<Location> locations
+    // BuiltList<ConnectionLocation> locations
     test('to test the property `locations`', () async {
       // TODO
     });
