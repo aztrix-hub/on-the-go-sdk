@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationDelete**](doc/LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [*LocationsApi*](doc/LocationsApi.md) | [**locationGet**](doc/LocationsApi.md#locationget) | **GET** /location | Get a Location
+[*LocationsApi*](doc/LocationsApi.md) | [**locationListingConflictsPost**](doc/LocationsApi.md#locationlistingconflictspost) | **POST** /location/listing/conflicts | Get a list of sync conflicts
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingGet**](doc/LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingPost**](doc/LocationsApi.md#locationlistingpost) | **POST** /location/listing | Create or update a Listing
 [*LocationsApi*](doc/LocationsApi.md) | [**locationListingSyncPost**](doc/LocationsApi.md#locationlistingsyncpost) | **POST** /location/listing/sync | Sync a listing

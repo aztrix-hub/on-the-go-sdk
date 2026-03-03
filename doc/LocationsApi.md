@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**categoriesGet**](LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [**locationDelete**](LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location
 [**locationGet**](LocationsApi.md#locationget) | **GET** /location | Get a Location
+[**locationListingConflictsPost**](LocationsApi.md#locationlistingconflictspost) | **POST** /location/listing/conflicts | Get a list of sync conflicts
 [**locationListingGet**](LocationsApi.md#locationlistingget) | **GET** /location/listing | 
 [**locationListingPost**](LocationsApi.md#locationlistingpost) | **POST** /location/listing | Create or update a Listing
 [**locationListingSyncPost**](LocationsApi.md#locationlistingsyncpost) | **POST** /location/listing/sync | Sync a listing
@@ -150,6 +151,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Location**](Location.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **locationListingConflictsPost**
+> BuiltList<ListingConflict> locationListingConflictsPost(listingId)
+
+Get a list of sync conflicts
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getLocationsApi();
+final String listingId = listingId_example; // String | 
+
+try {
+    final response = api.locationListingConflictsPost(listingId);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling LocationsApi->locationListingConflictsPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **listingId** | **String**|  | 
+
+### Return type
+
+[**BuiltList&lt;ListingConflict&gt;**](ListingConflict.md)
 
 ### Authorization
 

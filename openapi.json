@@ -3237,6 +3237,56 @@
         ]
       }
     },
+    "/location/listing/conflicts": {
+      "post": {
+        "tags": [
+          "locations"
+        ],
+        "summary": "Get a list of sync conflicts",
+        "parameters": [
+          {
+            "name": "listingId",
+            "required": true,
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListingConflicts"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "An error occured",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorised"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      }
+    },
     "/location/listing/sync": {
       "post": {
         "tags": [
@@ -5221,13 +5271,17 @@
             "type": "object",
             "required": [
               "originUrl",
-              "ownership"
+              "ownership",
+              "synced"
             ],
             "properties": {
               "originUrl": {
                 "type": "string"
               },
               "ownership": {
+                "type": "boolean"
+              },
+              "synced": {
                 "type": "boolean"
               }
             }

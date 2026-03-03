@@ -259,6 +259,10 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<Metric>(),
       )
       ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ListingConflict)]),
+        () => ListBuilder<ListingConflict>(),
+      )
+      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(MetricName)]),
         () => ListBuilder<MetricName>(),
       )

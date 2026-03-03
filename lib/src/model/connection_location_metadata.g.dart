@@ -11,13 +11,15 @@ class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
   final String originUrl;
   @override
   final bool ownership;
+  @override
+  final bool synced;
 
   factory _$ConnectionLocationMetadata(
           [void Function(ConnectionLocationMetadataBuilder)? updates]) =>
       (ConnectionLocationMetadataBuilder()..update(updates))._build();
 
   _$ConnectionLocationMetadata._(
-      {required this.originUrl, required this.ownership})
+      {required this.originUrl, required this.ownership, required this.synced})
       : super._();
   @override
   ConnectionLocationMetadata rebuild(
@@ -33,7 +35,8 @@ class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
     if (identical(other, this)) return true;
     return other is ConnectionLocationMetadata &&
         originUrl == other.originUrl &&
-        ownership == other.ownership;
+        ownership == other.ownership &&
+        synced == other.synced;
   }
 
   @override
@@ -41,6 +44,7 @@ class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
     var _$hash = 0;
     _$hash = $jc(_$hash, originUrl.hashCode);
     _$hash = $jc(_$hash, ownership.hashCode);
+    _$hash = $jc(_$hash, synced.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -49,7 +53,8 @@ class _$ConnectionLocationMetadata extends ConnectionLocationMetadata {
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionLocationMetadata')
           ..add('originUrl', originUrl)
-          ..add('ownership', ownership))
+          ..add('ownership', ownership)
+          ..add('synced', synced))
         .toString();
   }
 }
@@ -67,6 +72,10 @@ class ConnectionLocationMetadataBuilder
   bool? get ownership => _$this._ownership;
   set ownership(bool? ownership) => _$this._ownership = ownership;
 
+  bool? _synced;
+  bool? get synced => _$this._synced;
+  set synced(bool? synced) => _$this._synced = synced;
+
   ConnectionLocationMetadataBuilder() {
     ConnectionLocationMetadata._defaults(this);
   }
@@ -76,6 +85,7 @@ class ConnectionLocationMetadataBuilder
     if ($v != null) {
       _originUrl = $v.originUrl;
       _ownership = $v.ownership;
+      _synced = $v.synced;
       _$v = null;
     }
     return this;
@@ -101,6 +111,8 @@ class ConnectionLocationMetadataBuilder
               originUrl, r'ConnectionLocationMetadata', 'originUrl'),
           ownership: BuiltValueNullFieldError.checkNotNull(
               ownership, r'ConnectionLocationMetadata', 'ownership'),
+          synced: BuiltValueNullFieldError.checkNotNull(
+              synced, r'ConnectionLocationMetadata', 'synced'),
         );
     replace(_$result);
     return _$result;
