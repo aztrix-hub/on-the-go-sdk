@@ -15,6 +15,7 @@ part 'connection.g.dart';
 /// Properties:
 /// * [id]
 /// * [type]
+/// * [email]
 /// * [data]
 @BuiltValue()
 abstract class Connection implements Built<Connection, ConnectionBuilder> {
@@ -24,6 +25,9 @@ abstract class Connection implements Built<Connection, ConnectionBuilder> {
   @BuiltValueField(wireName: r'type')
   DirectoryType get type;
   // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  @BuiltValueField(wireName: r'email')
+  String get email;
 
   @BuiltValueField(wireName: r'data')
   JsonObject? get data;
@@ -60,6 +64,11 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
     yield serializers.serialize(
       object.type,
       specifiedType: const FullType(DirectoryType),
+    );
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
     );
     if (object.data != null) {
       yield r'data';
@@ -106,6 +115,13 @@ class _$ConnectionSerializer implements PrimitiveSerializer<Connection> {
             specifiedType: const FullType(DirectoryType),
           ) as DirectoryType;
           result.type = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
           break;
         case r'data':
           final valueDes = serializers.deserialize(

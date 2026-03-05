@@ -4061,7 +4061,8 @@
         "type": "object",
         "required": [
           "id",
-          "type"
+          "type",
+          "email"
         ],
         "properties": {
           "id": {
@@ -4069,6 +4070,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/DirectoryType"
+          },
+          "email": {
+            "type": "string"
           },
           "data": {
             "type": "object"

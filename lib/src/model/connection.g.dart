@@ -12,12 +12,16 @@ class _$Connection extends Connection {
   @override
   final DirectoryType type;
   @override
+  final String email;
+  @override
   final JsonObject? data;
 
   factory _$Connection([void Function(ConnectionBuilder)? updates]) =>
       (ConnectionBuilder()..update(updates))._build();
 
-  _$Connection._({required this.id, required this.type, this.data}) : super._();
+  _$Connection._(
+      {required this.id, required this.type, required this.email, this.data})
+      : super._();
   @override
   Connection rebuild(void Function(ConnectionBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -31,6 +35,7 @@ class _$Connection extends Connection {
     return other is Connection &&
         id == other.id &&
         type == other.type &&
+        email == other.email &&
         data == other.data;
   }
 
@@ -39,6 +44,7 @@ class _$Connection extends Connection {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, data.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -49,6 +55,7 @@ class _$Connection extends Connection {
     return (newBuiltValueToStringHelper(r'Connection')
           ..add('id', id)
           ..add('type', type)
+          ..add('email', email)
           ..add('data', data))
         .toString();
   }
@@ -65,6 +72,10 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
   DirectoryType? get type => _$this._type;
   set type(DirectoryType? type) => _$this._type = type;
 
+  String? _email;
+  String? get email => _$this._email;
+  set email(String? email) => _$this._email = email;
+
   JsonObject? _data;
   JsonObject? get data => _$this._data;
   set data(JsonObject? data) => _$this._data = data;
@@ -78,6 +89,7 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
     if ($v != null) {
       _id = $v.id;
       _type = $v.type;
+      _email = $v.email;
       _data = $v.data;
       _$v = null;
     }
@@ -103,6 +115,8 @@ class ConnectionBuilder implements Builder<Connection, ConnectionBuilder> {
           id: BuiltValueNullFieldError.checkNotNull(id, r'Connection', 'id'),
           type: BuiltValueNullFieldError.checkNotNull(
               type, r'Connection', 'type'),
+          email: BuiltValueNullFieldError.checkNotNull(
+              email, r'Connection', 'email'),
           data: data,
         );
     replace(_$result);
