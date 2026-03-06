@@ -5317,7 +5317,8 @@
       "ConnectionLocationVerification": {
         "type": "object",
         "required": [
-          "method"
+          "method",
+          "status"
         ],
         "properties": {
           "id": {

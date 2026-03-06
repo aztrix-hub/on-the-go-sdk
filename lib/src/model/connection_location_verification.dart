@@ -30,7 +30,7 @@ abstract class ConnectionLocationVerification
   DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'status')
-  ConnectionLocationVerificationStatus? get status;
+  ConnectionLocationVerificationStatus get status;
   // enum statusEnum {  START,  PENDING,  COMPLETED,  };
 
   @BuiltValueField(wireName: r'method')
@@ -84,13 +84,11 @@ class _$ConnectionLocationVerificationSerializer
         specifiedType: const FullType(DateTime),
       );
     }
-    if (object.status != null) {
-      yield r'status';
-      yield serializers.serialize(
-        object.status,
-        specifiedType: const FullType(ConnectionLocationVerificationStatus),
-      );
-    }
+    yield r'status';
+    yield serializers.serialize(
+      object.status,
+      specifiedType: const FullType(ConnectionLocationVerificationStatus),
+    );
     yield r'method';
     yield serializers.serialize(
       object.method,

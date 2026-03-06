@@ -12,7 +12,7 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
   @override
   final DateTime? createdAt;
   @override
-  final ConnectionLocationVerificationStatus? status;
+  final ConnectionLocationVerificationStatus status;
   @override
   final ConnectionLocationVerificationMethod method;
   @override
@@ -23,7 +23,11 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
       (ConnectionLocationVerificationBuilder()..update(updates))._build();
 
   _$ConnectionLocationVerification._(
-      {this.id, this.createdAt, this.status, required this.method, this.value})
+      {this.id,
+      this.createdAt,
+      required this.status,
+      required this.method,
+      this.value})
       : super._();
   @override
   ConnectionLocationVerification rebuild(
@@ -132,7 +136,8 @@ class ConnectionLocationVerificationBuilder
         _$ConnectionLocationVerification._(
           id: id,
           createdAt: createdAt,
-          status: status,
+          status: BuiltValueNullFieldError.checkNotNull(
+              status, r'ConnectionLocationVerification', 'status'),
           method: BuiltValueNullFieldError.checkNotNull(
               method, r'ConnectionLocationVerification', 'method'),
           value: value,

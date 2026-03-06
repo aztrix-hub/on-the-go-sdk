@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**status** | [**ConnectionLocationVerificationStatus**](ConnectionLocationVerificationStatus.md) |  | [optional] 
+**status** | [**ConnectionLocationVerificationStatus**](ConnectionLocationVerificationStatus.md) |  | 
 **method** | [**ConnectionLocationVerificationMethod**](ConnectionLocationVerificationMethod.md) |  | 
 **value** | **String** |  | [optional] 
 
