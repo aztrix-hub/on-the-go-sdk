@@ -4,8 +4,8 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
 import 'package:on_the_go_sdk/src/model/connection_location.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -15,7 +15,7 @@ part 'connection_location_post200_response.g.dart';
 ///
 /// Properties:
 /// * [location]
-/// * [verificationOptions]
+/// * [verifications]
 @BuiltValue()
 abstract class ConnectionLocationPost200Response
     implements
@@ -24,8 +24,8 @@ abstract class ConnectionLocationPost200Response
   @BuiltValueField(wireName: r'location')
   ConnectionLocation? get location;
 
-  @BuiltValueField(wireName: r'verificationOptions')
-  BuiltList<ConnectionLocationVerificationOption>? get verificationOptions;
+  @BuiltValueField(wireName: r'verifications')
+  BuiltList<ConnectionLocationVerification>? get verifications;
 
   ConnectionLocationPost200Response._();
 
@@ -64,12 +64,12 @@ class _$ConnectionLocationPost200ResponseSerializer
         specifiedType: const FullType(ConnectionLocation),
       );
     }
-    if (object.verificationOptions != null) {
-      yield r'verificationOptions';
+    if (object.verifications != null) {
+      yield r'verifications';
       yield serializers.serialize(
-        object.verificationOptions,
+        object.verifications,
         specifiedType: const FullType(
-            BuiltList, [FullType(ConnectionLocationVerificationOption)]),
+            BuiltList, [FullType(ConnectionLocationVerification)]),
       );
     }
   }
@@ -104,13 +104,13 @@ class _$ConnectionLocationPost200ResponseSerializer
           ) as ConnectionLocation;
           result.location.replace(valueDes);
           break;
-        case r'verificationOptions':
+        case r'verifications':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(
-                BuiltList, [FullType(ConnectionLocationVerificationOption)]),
-          ) as BuiltList<ConnectionLocationVerificationOption>;
-          result.verificationOptions.replace(valueDes);
+                BuiltList, [FullType(ConnectionLocationVerification)]),
+          ) as BuiltList<ConnectionLocationVerification>;
+          result.verifications.replace(valueDes);
           break;
         default:
           unhandled.add(key);

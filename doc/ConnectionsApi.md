@@ -12,8 +12,8 @@ Method | HTTP request | Description
 [**connectionLocationActionsGet**](ConnectionsApi.md#connectionlocationactionsget) | **GET** /connection/location/actions | get the actions to gain ownership of the location
 [**connectionLocationPost**](ConnectionsApi.md#connectionlocationpost) | **POST** /connection/location | create a location on a connection
 [**connectionLocationVerificationCompletePost**](ConnectionsApi.md#connectionlocationverificationcompletepost) | **POST** /connection/location/verification/complete | complete verification
-[**connectionLocationVerificationOptionsGet**](ConnectionsApi.md#connectionlocationverificationoptionsget) | **GET** /connection/location/verification-options | get verification options
 [**connectionLocationVerificationPost**](ConnectionsApi.md#connectionlocationverificationpost) | **POST** /connection/location/verification | start verification process
+[**connectionLocationVerificationsGet**](ConnectionsApi.md#connectionlocationverificationsget) | **GET** /connection/location/verifications | get verification options
 [**connectionLocationsGet**](ConnectionsApi.md#connectionlocationsget) | **GET** /connection/locations | get locations from a connection
 [**connectionPost**](ConnectionsApi.md#connectionpost) | **POST** /connection | create a user connection
 [**connectionsGet**](ConnectionsApi.md#connectionsget) | **GET** /connections | Get user connections
@@ -155,8 +155,53 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **connectionLocationVerificationOptionsGet**
-> BuiltList<ConnectionLocationVerificationOption> connectionLocationVerificationOptionsGet(connectionId, connectionLocationId)
+# **connectionLocationVerificationPost**
+> ConnectionLocationVerification connectionLocationVerificationPost(connectionLocationVerificationPostRequest)
+
+start verification process
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getConnectionsApi();
+final ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest = ; // ConnectionLocationVerificationPostRequest | 
+
+try {
+    final response = api.connectionLocationVerificationPost(connectionLocationVerificationPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling ConnectionsApi->connectionLocationVerificationPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **connectionLocationVerificationPostRequest** | [**ConnectionLocationVerificationPostRequest**](ConnectionLocationVerificationPostRequest.md)|  | 
+
+### Return type
+
+[**ConnectionLocationVerification**](ConnectionLocationVerification.md)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **connectionLocationVerificationsGet**
+> BuiltList<ConnectionLocationVerification> connectionLocationVerificationsGet(connectionId, connectionLocationId)
 
 get verification options
 
@@ -173,10 +218,10 @@ final String connectionId = connectionId_example; // String |
 final String connectionLocationId = connectionLocationId_example; // String | 
 
 try {
-    final response = api.connectionLocationVerificationOptionsGet(connectionId, connectionLocationId);
+    final response = api.connectionLocationVerificationsGet(connectionId, connectionLocationId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ConnectionsApi->connectionLocationVerificationOptionsGet: $e\n');
+    print('Exception when calling ConnectionsApi->connectionLocationVerificationsGet: $e\n');
 }
 ```
 
@@ -189,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;ConnectionLocationVerificationOption&gt;**](ConnectionLocationVerificationOption.md)
+[**BuiltList&lt;ConnectionLocationVerification&gt;**](ConnectionLocationVerification.md)
 
 ### Authorization
 
@@ -198,50 +243,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **connectionLocationVerificationPost**
-> connectionLocationVerificationPost(connectionLocationVerificationPostRequest)
-
-start verification process
-
-### Example
-```dart
-import 'package:on_the_go_sdk/api.dart';
-// TODO Configure API key authorization: authToken
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
-// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
-
-final api = OnTheGoSdk().getConnectionsApi();
-final ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest = ; // ConnectionLocationVerificationPostRequest | 
-
-try {
-    api.connectionLocationVerificationPost(connectionLocationVerificationPostRequest);
-} catch on DioException (e) {
-    print('Exception when calling ConnectionsApi->connectionLocationVerificationPost: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **connectionLocationVerificationPostRequest** | [**ConnectionLocationVerificationPostRequest**](ConnectionLocationVerificationPostRequest.md)|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[authToken](../README.md#authToken)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

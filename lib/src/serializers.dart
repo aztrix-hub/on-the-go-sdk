@@ -60,10 +60,11 @@ import 'package:on_the_go_sdk/src/model/connection_location_action.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_metadata.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
-import 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_status.dart';
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/data_point.dart';
@@ -171,10 +172,11 @@ part 'serializers.g.dart';
   ConnectionLocationMetadata,
   ConnectionLocationPost200Response,
   ConnectionLocationPostRequest,
+  ConnectionLocationVerification,
   ConnectionLocationVerificationCompletePostRequest,
   ConnectionLocationVerificationMethod,
-  ConnectionLocationVerificationOption,
   ConnectionLocationVerificationPostRequest,
+  ConnectionLocationVerificationStatus,
   ConnectionLocationsGet200ResponseInner,
   ConnectionPostRequest,
   DataPoint,
@@ -280,17 +282,16 @@ Serializers serializers = (_$serializers.toBuilder()
         () => ListBuilder<AiConversation>(),
       )
       ..addBuilderFactory(
-        const FullType(
-            BuiltList, [FullType(ConnectionLocationVerificationOption)]),
-        () => ListBuilder<ConnectionLocationVerificationOption>(),
-      )
-      ..addBuilderFactory(
         const FullType(BuiltList, [FullType(String)]),
         () => ListBuilder<String>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(LocationOrIndividual)]),
         () => ListBuilder<LocationOrIndividual>(),
+      )
+      ..addBuilderFactory(
+        const FullType(BuiltList, [FullType(ConnectionLocationVerification)]),
+        () => ListBuilder<ConnectionLocationVerification>(),
       )
       ..addBuilderFactory(
         const FullType(BuiltList, [FullType(SocialPost)]),

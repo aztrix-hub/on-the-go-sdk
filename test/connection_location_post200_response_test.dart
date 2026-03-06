@@ -12,8 +12,8 @@ void main() {
       // TODO
     });
 
-    // BuiltList<ConnectionLocationVerificationOption> verificationOptions
-    test('to test the property `verificationOptions`', () async {
+    // BuiltList<ConnectionLocationVerification> verifications
+    test('to test the property `verifications`', () async {
       // TODO
     });
   });

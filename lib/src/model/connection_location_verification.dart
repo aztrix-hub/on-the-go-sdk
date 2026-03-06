@@ -4,21 +4,31 @@
 
 // ignore_for_file: unused_element
 import 'package:on_the_go_sdk/src/model/connection_location_verification_method.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification_status.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'connection_location_verification_option.g.dart';
+part 'connection_location_verification.g.dart';
 
-/// ConnectionLocationVerificationOption
+/// ConnectionLocationVerification
 ///
 /// Properties:
+/// * [id]
+/// * [status]
 /// * [method]
 /// * [value]
 @BuiltValue()
-abstract class ConnectionLocationVerificationOption
+abstract class ConnectionLocationVerification
     implements
-        Built<ConnectionLocationVerificationOption,
-            ConnectionLocationVerificationOptionBuilder> {
+        Built<ConnectionLocationVerification,
+            ConnectionLocationVerificationBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
+
+  @BuiltValueField(wireName: r'status')
+  ConnectionLocationVerificationStatus? get status;
+  // enum statusEnum {  START,  PENDING,  COMPLETED,  };
+
   @BuiltValueField(wireName: r'method')
   ConnectionLocationVerificationMethod get method;
   // enum methodEnum {  ADDRESS,  EMAIL,  PHONE_CALL,  SMS,  VETTED_PARTNER,  };
@@ -26,36 +36,50 @@ abstract class ConnectionLocationVerificationOption
   @BuiltValueField(wireName: r'value')
   String? get value;
 
-  ConnectionLocationVerificationOption._();
+  ConnectionLocationVerification._();
 
-  factory ConnectionLocationVerificationOption(
-          [void updates(ConnectionLocationVerificationOptionBuilder b)]) =
-      _$ConnectionLocationVerificationOption;
+  factory ConnectionLocationVerification(
+          [void updates(ConnectionLocationVerificationBuilder b)]) =
+      _$ConnectionLocationVerification;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ConnectionLocationVerificationOptionBuilder b) => b;
+  static void _defaults(ConnectionLocationVerificationBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<ConnectionLocationVerificationOption> get serializer =>
-      _$ConnectionLocationVerificationOptionSerializer();
+  static Serializer<ConnectionLocationVerification> get serializer =>
+      _$ConnectionLocationVerificationSerializer();
 }
 
-class _$ConnectionLocationVerificationOptionSerializer
-    implements PrimitiveSerializer<ConnectionLocationVerificationOption> {
+class _$ConnectionLocationVerificationSerializer
+    implements PrimitiveSerializer<ConnectionLocationVerification> {
   @override
   final Iterable<Type> types = const [
-    ConnectionLocationVerificationOption,
-    _$ConnectionLocationVerificationOption
+    ConnectionLocationVerification,
+    _$ConnectionLocationVerification
   ];
 
   @override
-  final String wireName = r'ConnectionLocationVerificationOption';
+  final String wireName = r'ConnectionLocationVerification';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    ConnectionLocationVerificationOption object, {
+    ConnectionLocationVerification object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.status != null) {
+      yield r'status';
+      yield serializers.serialize(
+        object.status,
+        specifiedType: const FullType(ConnectionLocationVerificationStatus),
+      );
+    }
     yield r'method';
     yield serializers.serialize(
       object.method,
@@ -73,7 +97,7 @@ class _$ConnectionLocationVerificationOptionSerializer
   @override
   Object serialize(
     Serializers serializers,
-    ConnectionLocationVerificationOption object, {
+    ConnectionLocationVerification object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -86,13 +110,27 @@ class _$ConnectionLocationVerificationOptionSerializer
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required ConnectionLocationVerificationOptionBuilder result,
+    required ConnectionLocationVerificationBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'status':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ConnectionLocationVerificationStatus),
+          ) as ConnectionLocationVerificationStatus;
+          result.status = valueDes;
+          break;
         case r'method':
           final valueDes = serializers.deserialize(
             value,
@@ -116,12 +154,12 @@ class _$ConnectionLocationVerificationOptionSerializer
   }
 
   @override
-  ConnectionLocationVerificationOption deserialize(
+  ConnectionLocationVerification deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = ConnectionLocationVerificationOptionBuilder();
+    final result = ConnectionLocationVerificationBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

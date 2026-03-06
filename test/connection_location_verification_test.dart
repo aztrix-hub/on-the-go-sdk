@@ -1,12 +1,22 @@
 import 'package:test/test.dart';
 import 'package:on_the_go_sdk/on_the_go_sdk.dart';
 
-// tests for ConnectionLocationVerificationOption
+// tests for ConnectionLocationVerification
 void main() {
-  final instance = ConnectionLocationVerificationOptionBuilder();
+  final instance = ConnectionLocationVerificationBuilder();
   // TODO add properties to the builder and call build()
 
-  group(ConnectionLocationVerificationOption, () {
+  group(ConnectionLocationVerification, () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // ConnectionLocationVerificationStatus status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
     // ConnectionLocationVerificationMethod method
     test('to test the property `method`', () async {
       // TODO

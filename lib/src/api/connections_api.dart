@@ -13,8 +13,8 @@ import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_action.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
-import 'package:on_the_go_sdk/src/model/connection_location_verification_option.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
@@ -302,101 +302,6 @@ class ConnectionsApi {
     return _response;
   }
 
-  /// get verification options
-  ///
-  ///
-  /// Parameters:
-  /// * [connectionId]
-  /// * [connectionLocationId]
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<ConnectionLocationVerificationOption>] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<ConnectionLocationVerificationOption>>>
-      connectionLocationVerificationOptionsGet({
-    required String connectionId,
-    required String connectionLocationId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/connection/location/verification-options';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'apiKey',
-            'name': 'authToken',
-            'keyName': 'authToken',
-            'where': 'header',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      r'connectionId': encodeQueryParameter(
-          _serializers, connectionId, const FullType(String)),
-      r'connectionLocationId': encodeQueryParameter(
-          _serializers, connectionLocationId, const FullType(String)),
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    BuiltList<ConnectionLocationVerificationOption>? _responseData;
-
-    try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null
-          ? null
-          : _serializers.deserialize(
-              rawResponse,
-              specifiedType: const FullType(
-                  BuiltList, [FullType(ConnectionLocationVerificationOption)]),
-            ) as BuiltList<ConnectionLocationVerificationOption>;
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<BuiltList<ConnectionLocationVerificationOption>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// start verification process
   ///
   ///
@@ -409,9 +314,10 @@ class ConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [ConnectionLocationVerification] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> connectionLocationVerificationPost({
+  Future<Response<ConnectionLocationVerification>>
+      connectionLocationVerificationPost({
     required ConnectionLocationVerificationPostRequest
         connectionLocationVerificationPostRequest,
     CancelToken? cancelToken,
@@ -470,7 +376,131 @@ class ConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    return _response;
+    ConnectionLocationVerification? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(ConnectionLocationVerification),
+            ) as ConnectionLocationVerification;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<ConnectionLocationVerification>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// get verification options
+  ///
+  ///
+  /// Parameters:
+  /// * [connectionId]
+  /// * [connectionLocationId]
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [BuiltList<ConnectionLocationVerification>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<ConnectionLocationVerification>>>
+      connectionLocationVerificationsGet({
+    required String connectionId,
+    required String connectionLocationId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/connection/location/verifications';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'apiKey',
+            'name': 'authToken',
+            'keyName': 'authToken',
+            'where': 'header',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      r'connectionId': encodeQueryParameter(
+          _serializers, connectionId, const FullType(String)),
+      r'connectionLocationId': encodeQueryParameter(
+          _serializers, connectionLocationId, const FullType(String)),
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    BuiltList<ConnectionLocationVerification>? _responseData;
+
+    try {
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null
+          ? null
+          : _serializers.deserialize(
+              rawResponse,
+              specifiedType: const FullType(
+                  BuiltList, [FullType(ConnectionLocationVerification)]),
+            ) as BuiltList<ConnectionLocationVerification>;
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<BuiltList<ConnectionLocationVerification>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
   }
 
   /// get locations from a connection

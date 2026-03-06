@@ -665,8 +665,8 @@
                     "location": {
                       "$ref": "#/components/schemas/ConnectionLocation"
                     },
-                    "verificationOptions": {
-                      "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                    "verifications": {
+                      "$ref": "#/components/schemas/ConnectionLocationVerifications"
                     }
                   }
                 }
@@ -736,7 +736,14 @@
         },
         "responses": {
           "200": {
-            "description": "verification started"
+            "description": "verification started",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConnectionLocationVerification"
+                }
+              }
+            }
           },
           "400": {
             "description": "Invalid or missing parameter",
@@ -759,7 +766,7 @@
         ]
       }
     },
-    "/connection/location/verification-options": {
+    "/connection/location/verifications": {
       "get": {
         "tags": [
           "connections"
@@ -789,7 +796,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConnectionLocationVerificationOptions"
+                  "$ref": "#/components/schemas/ConnectionLocationVerifications"
                 }
               }
             }
@@ -5301,18 +5308,24 @@
           "RESOLVE_GUIDELINES"
         ]
       },
-      "ConnectionLocationVerificationOptions": {
+      "ConnectionLocationVerifications": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ConnectionLocationVerificationOption"
+          "$ref": "#/components/schemas/ConnectionLocationVerification"
         }
       },
-      "ConnectionLocationVerificationOption": {
+      "ConnectionLocationVerification": {
         "type": "object",
         "required": [
           "method"
         ],
         "properties": {
+          "id": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ConnectionLocationVerificationStatus"
+          },
           "method": {
             "$ref": "#/components/schemas/ConnectionLocationVerificationMethod"
           },
@@ -5320,6 +5333,14 @@
             "type": "string"
           }
         }
+      },
+      "ConnectionLocationVerificationStatus": {
+        "type": "string",
+        "enum": [
+          "START",
+          "PENDING",
+          "COMPLETED"
+        ]
       },
       "ConnectionLocationVerificationMethod": {
         "type": "string",

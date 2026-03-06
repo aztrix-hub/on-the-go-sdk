@@ -7,13 +7,18 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(ConnectionLocationMetadata, () {
-    // bool originUrl
+    // String originUrl
     test('to test the property `originUrl`', () async {
       // TODO
     });
 
     // bool ownership
     test('to test the property `ownership`', () async {
+      // TODO
+    });
+
+    // bool synced
+    test('to test the property `synced`', () async {
       // TODO
     });
   });

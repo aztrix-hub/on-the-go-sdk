@@ -27,17 +27,17 @@ void main() {
       // TODO
     });
 
-    // get verification options
+    // start verification process
     //
-    //Future<BuiltList<ConnectionLocationVerificationOption>> connectionLocationVerificationOptionsGet(String connectionId, String connectionLocationId) async
-    test('test connectionLocationVerificationOptionsGet', () async {
+    //Future<ConnectionLocationVerification> connectionLocationVerificationPost(ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest) async
+    test('test connectionLocationVerificationPost', () async {
       // TODO
     });
 
-    // start verification process
+    // get verification options
     //
-    //Future connectionLocationVerificationPost(ConnectionLocationVerificationPostRequest connectionLocationVerificationPostRequest) async
-    test('test connectionLocationVerificationPost', () async {
+    //Future<BuiltList<ConnectionLocationVerification>> connectionLocationVerificationsGet(String connectionId, String connectionLocationId) async
+    test('test connectionLocationVerificationsGet', () async {
       // TODO
     });
 

@@ -11,14 +11,13 @@ class _$ConnectionLocationPost200Response
   @override
   final ConnectionLocation? location;
   @override
-  final BuiltList<ConnectionLocationVerificationOption>? verificationOptions;
+  final BuiltList<ConnectionLocationVerification>? verifications;
 
   factory _$ConnectionLocationPost200Response(
           [void Function(ConnectionLocationPost200ResponseBuilder)? updates]) =>
       (ConnectionLocationPost200ResponseBuilder()..update(updates))._build();
 
-  _$ConnectionLocationPost200Response._(
-      {this.location, this.verificationOptions})
+  _$ConnectionLocationPost200Response._({this.location, this.verifications})
       : super._();
   @override
   ConnectionLocationPost200Response rebuild(
@@ -34,14 +33,14 @@ class _$ConnectionLocationPost200Response
     if (identical(other, this)) return true;
     return other is ConnectionLocationPost200Response &&
         location == other.location &&
-        verificationOptions == other.verificationOptions;
+        verifications == other.verifications;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, location.hashCode);
-    _$hash = $jc(_$hash, verificationOptions.hashCode);
+    _$hash = $jc(_$hash, verifications.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -50,7 +49,7 @@ class _$ConnectionLocationPost200Response
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionLocationPost200Response')
           ..add('location', location)
-          ..add('verificationOptions', verificationOptions))
+          ..add('verifications', verifications))
         .toString();
   }
 }
@@ -67,14 +66,12 @@ class ConnectionLocationPost200ResponseBuilder
   set location(ConnectionLocationBuilder? location) =>
       _$this._location = location;
 
-  ListBuilder<ConnectionLocationVerificationOption>? _verificationOptions;
-  ListBuilder<ConnectionLocationVerificationOption> get verificationOptions =>
-      _$this._verificationOptions ??=
-          ListBuilder<ConnectionLocationVerificationOption>();
-  set verificationOptions(
-          ListBuilder<ConnectionLocationVerificationOption>?
-              verificationOptions) =>
-      _$this._verificationOptions = verificationOptions;
+  ListBuilder<ConnectionLocationVerification>? _verifications;
+  ListBuilder<ConnectionLocationVerification> get verifications =>
+      _$this._verifications ??= ListBuilder<ConnectionLocationVerification>();
+  set verifications(
+          ListBuilder<ConnectionLocationVerification>? verifications) =>
+      _$this._verifications = verifications;
 
   ConnectionLocationPost200ResponseBuilder() {
     ConnectionLocationPost200Response._defaults(this);
@@ -84,7 +81,7 @@ class ConnectionLocationPost200ResponseBuilder
     final $v = _$v;
     if ($v != null) {
       _location = $v.location?.toBuilder();
-      _verificationOptions = $v.verificationOptions?.toBuilder();
+      _verifications = $v.verifications?.toBuilder();
       _$v = null;
     }
     return this;
@@ -110,15 +107,15 @@ class ConnectionLocationPost200ResponseBuilder
       _$result = _$v ??
           _$ConnectionLocationPost200Response._(
             location: _location?.build(),
-            verificationOptions: _verificationOptions?.build(),
+            verifications: _verifications?.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'location';
         _location?.build();
-        _$failedField = 'verificationOptions';
-        _verificationOptions?.build();
+        _$failedField = 'verifications';
+        _verifications?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ConnectionLocationPost200Response', _$failedField, e.toString());

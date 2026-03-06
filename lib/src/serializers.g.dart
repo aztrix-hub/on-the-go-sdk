@@ -56,10 +56,11 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(ConnectionLocationMetadata.serializer)
       ..add(ConnectionLocationPost200Response.serializer)
       ..add(ConnectionLocationPostRequest.serializer)
+      ..add(ConnectionLocationVerification.serializer)
       ..add(ConnectionLocationVerificationCompletePostRequest.serializer)
       ..add(ConnectionLocationVerificationMethod.serializer)
-      ..add(ConnectionLocationVerificationOption.serializer)
       ..add(ConnectionLocationVerificationPostRequest.serializer)
+      ..add(ConnectionLocationVerificationStatus.serializer)
       ..add(ConnectionLocationsGet200ResponseInner.serializer)
       ..add(ConnectionPostRequest.serializer)
       ..add(DataPoint.serializer)
@@ -153,8 +154,8 @@ Serializers _$serializers = (Serializers().toBuilder()
           () => ListBuilder<ConnectionLocation>())
       ..addBuilderFactory(
           const FullType(BuiltList,
-              const [const FullType(ConnectionLocationVerificationOption)]),
-          () => ListBuilder<ConnectionLocationVerificationOption>())
+              const [const FullType(ConnectionLocationVerification)]),
+          () => ListBuilder<ConnectionLocationVerification>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DataPoint)]),
           () => ListBuilder<DataPoint>())

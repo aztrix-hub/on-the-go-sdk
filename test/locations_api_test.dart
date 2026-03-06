@@ -27,6 +27,13 @@ void main() {
       // TODO
     });
 
+    // Get a list of sync conflicts
+    //
+    //Future<BuiltList<ListingConflict>> locationListingConflictsPost(String listingId) async
+    test('test locationListingConflictsPost', () async {
+      // TODO
+    });
+
     //Future<Listing> locationListingGet(String id) async
     test('test locationListingGet', () async {
       // TODO
