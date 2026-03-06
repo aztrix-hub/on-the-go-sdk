@@ -10,6 +10,8 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
   @override
   final String? id;
   @override
+  final DateTime? createdAt;
+  @override
   final ConnectionLocationVerificationStatus? status;
   @override
   final ConnectionLocationVerificationMethod method;
@@ -21,7 +23,7 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
       (ConnectionLocationVerificationBuilder()..update(updates))._build();
 
   _$ConnectionLocationVerification._(
-      {this.id, this.status, required this.method, this.value})
+      {this.id, this.createdAt, this.status, required this.method, this.value})
       : super._();
   @override
   ConnectionLocationVerification rebuild(
@@ -37,6 +39,7 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
     if (identical(other, this)) return true;
     return other is ConnectionLocationVerification &&
         id == other.id &&
+        createdAt == other.createdAt &&
         status == other.status &&
         method == other.method &&
         value == other.value;
@@ -46,6 +49,7 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, id.hashCode);
+    _$hash = $jc(_$hash, createdAt.hashCode);
     _$hash = $jc(_$hash, status.hashCode);
     _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, value.hashCode);
@@ -57,6 +61,7 @@ class _$ConnectionLocationVerification extends ConnectionLocationVerification {
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionLocationVerification')
           ..add('id', id)
+          ..add('createdAt', createdAt)
           ..add('status', status)
           ..add('method', method)
           ..add('value', value))
@@ -73,6 +78,10 @@ class ConnectionLocationVerificationBuilder
   String? _id;
   String? get id => _$this._id;
   set id(String? id) => _$this._id = id;
+
+  DateTime? _createdAt;
+  DateTime? get createdAt => _$this._createdAt;
+  set createdAt(DateTime? createdAt) => _$this._createdAt = createdAt;
 
   ConnectionLocationVerificationStatus? _status;
   ConnectionLocationVerificationStatus? get status => _$this._status;
@@ -96,6 +105,7 @@ class ConnectionLocationVerificationBuilder
     final $v = _$v;
     if ($v != null) {
       _id = $v.id;
+      _createdAt = $v.createdAt;
       _status = $v.status;
       _method = $v.method;
       _value = $v.value;
@@ -121,6 +131,7 @@ class ConnectionLocationVerificationBuilder
     final _$result = _$v ??
         _$ConnectionLocationVerification._(
           id: id,
+          createdAt: createdAt,
           status: status,
           method: BuiltValueNullFieldError.checkNotNull(
               method, r'ConnectionLocationVerification', 'method'),

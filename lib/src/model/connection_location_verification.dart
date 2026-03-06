@@ -14,6 +14,7 @@ part 'connection_location_verification.g.dart';
 ///
 /// Properties:
 /// * [id]
+/// * [createdAt]
 /// * [status]
 /// * [method]
 /// * [value]
@@ -24,6 +25,9 @@ abstract class ConnectionLocationVerification
             ConnectionLocationVerificationBuilder> {
   @BuiltValueField(wireName: r'id')
   String? get id;
+
+  @BuiltValueField(wireName: r'createdAt')
+  DateTime? get createdAt;
 
   @BuiltValueField(wireName: r'status')
   ConnectionLocationVerificationStatus? get status;
@@ -71,6 +75,13 @@ class _$ConnectionLocationVerificationSerializer
       yield serializers.serialize(
         object.id,
         specifiedType: const FullType(String),
+      );
+    }
+    if (object.createdAt != null) {
+      yield r'createdAt';
+      yield serializers.serialize(
+        object.createdAt,
+        specifiedType: const FullType(DateTime),
       );
     }
     if (object.status != null) {
@@ -123,6 +134,13 @@ class _$ConnectionLocationVerificationSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.id = valueDes;
+          break;
+        case r'createdAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.createdAt = valueDes;
           break;
         case r'status':
           final valueDes = serializers.deserialize(

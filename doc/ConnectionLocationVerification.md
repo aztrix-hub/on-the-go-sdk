@@ -9,6 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
+**createdAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **status** | [**ConnectionLocationVerificationStatus**](ConnectionLocationVerificationStatus.md) |  | [optional] 
 **method** | [**ConnectionLocationVerificationMethod**](ConnectionLocationVerificationMethod.md) |  | 
 **value** | **String** |  | [optional] 
