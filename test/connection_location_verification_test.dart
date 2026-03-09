@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // DateTime createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
     // ConnectionLocationVerificationStatus status
     test('to test the property `status`', () async {
       // TODO

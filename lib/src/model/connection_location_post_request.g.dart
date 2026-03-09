@@ -8,18 +8,20 @@ part of 'connection_location_post_request.dart';
 
 class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   @override
-  final DirectoryType? type;
+  final String connectionId;
   @override
-  final String? languageCode;
+  final String languageCode;
   @override
-  final Location? location;
+  final Location location;
 
   factory _$ConnectionLocationPostRequest(
           [void Function(ConnectionLocationPostRequestBuilder)? updates]) =>
       (ConnectionLocationPostRequestBuilder()..update(updates))._build();
 
   _$ConnectionLocationPostRequest._(
-      {this.type, this.languageCode, this.location})
+      {required this.connectionId,
+      required this.languageCode,
+      required this.location})
       : super._();
   @override
   ConnectionLocationPostRequest rebuild(
@@ -34,7 +36,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is ConnectionLocationPostRequest &&
-        type == other.type &&
+        connectionId == other.connectionId &&
         languageCode == other.languageCode &&
         location == other.location;
   }
@@ -42,7 +44,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, connectionId.hashCode);
     _$hash = $jc(_$hash, languageCode.hashCode);
     _$hash = $jc(_$hash, location.hashCode);
     _$hash = $jf(_$hash);
@@ -52,7 +54,7 @@ class _$ConnectionLocationPostRequest extends ConnectionLocationPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'ConnectionLocationPostRequest')
-          ..add('type', type)
+          ..add('connectionId', connectionId)
           ..add('languageCode', languageCode)
           ..add('location', location))
         .toString();
@@ -65,9 +67,9 @@ class ConnectionLocationPostRequestBuilder
             ConnectionLocationPostRequestBuilder> {
   _$ConnectionLocationPostRequest? _$v;
 
-  DirectoryType? _type;
-  DirectoryType? get type => _$this._type;
-  set type(DirectoryType? type) => _$this._type = type;
+  String? _connectionId;
+  String? get connectionId => _$this._connectionId;
+  set connectionId(String? connectionId) => _$this._connectionId = connectionId;
 
   String? _languageCode;
   String? get languageCode => _$this._languageCode;
@@ -84,9 +86,9 @@ class ConnectionLocationPostRequestBuilder
   ConnectionLocationPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _type = $v.type;
+      _connectionId = $v.connectionId;
       _languageCode = $v.languageCode;
-      _location = $v.location?.toBuilder();
+      _location = $v.location.toBuilder();
       _$v = null;
     }
     return this;
@@ -110,15 +112,17 @@ class ConnectionLocationPostRequestBuilder
     try {
       _$result = _$v ??
           _$ConnectionLocationPostRequest._(
-            type: type,
-            languageCode: languageCode,
-            location: _location?.build(),
+            connectionId: BuiltValueNullFieldError.checkNotNull(
+                connectionId, r'ConnectionLocationPostRequest', 'connectionId'),
+            languageCode: BuiltValueNullFieldError.checkNotNull(
+                languageCode, r'ConnectionLocationPostRequest', 'languageCode'),
+            location: location.build(),
           );
     } catch (_) {
       late String _$failedField;
       try {
         _$failedField = 'location';
-        _location?.build();
+        location.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'ConnectionLocationPostRequest', _$failedField, e.toString());

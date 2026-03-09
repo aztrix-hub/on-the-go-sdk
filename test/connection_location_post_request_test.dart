@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(ConnectionLocationPostRequest, () {
-    // DirectoryType type
-    test('to test the property `type`', () async {
+    // String connectionId
+    test('to test the property `connectionId`', () async {
       // TODO
     });
 

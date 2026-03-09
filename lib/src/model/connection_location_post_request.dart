@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/directory_type.dart';
 import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -13,7 +12,7 @@ part 'connection_location_post_request.g.dart';
 /// ConnectionLocationPostRequest
 ///
 /// Properties:
-/// * [type]
+/// * [connectionId]
 /// * [languageCode] - A required field for Google
 /// * [location]
 @BuiltValue()
@@ -21,16 +20,15 @@ abstract class ConnectionLocationPostRequest
     implements
         Built<ConnectionLocationPostRequest,
             ConnectionLocationPostRequestBuilder> {
-  @BuiltValueField(wireName: r'type')
-  DirectoryType? get type;
-  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  @BuiltValueField(wireName: r'connectionId')
+  String get connectionId;
 
   /// A required field for Google
   @BuiltValueField(wireName: r'languageCode')
-  String? get languageCode;
+  String get languageCode;
 
   @BuiltValueField(wireName: r'location')
-  Location? get location;
+  Location get location;
 
   ConnectionLocationPostRequest._();
 
@@ -62,27 +60,21 @@ class _$ConnectionLocationPostRequestSerializer
     ConnectionLocationPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(DirectoryType),
-      );
-    }
-    if (object.languageCode != null) {
-      yield r'languageCode';
-      yield serializers.serialize(
-        object.languageCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.location != null) {
-      yield r'location';
-      yield serializers.serialize(
-        object.location,
-        specifiedType: const FullType(Location),
-      );
-    }
+    yield r'connectionId';
+    yield serializers.serialize(
+      object.connectionId,
+      specifiedType: const FullType(String),
+    );
+    yield r'languageCode';
+    yield serializers.serialize(
+      object.languageCode,
+      specifiedType: const FullType(String),
+    );
+    yield r'location';
+    yield serializers.serialize(
+      object.location,
+      specifiedType: const FullType(Location),
+    );
   }
 
   @override
@@ -108,12 +100,12 @@ class _$ConnectionLocationPostRequestSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'type':
+        case r'connectionId':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(DirectoryType),
-          ) as DirectoryType;
-          result.type = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.connectionId = valueDes;
           break;
         case r'languageCode':
           final valueDes = serializers.deserialize(

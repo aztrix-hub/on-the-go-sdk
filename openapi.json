@@ -637,9 +637,14 @@
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "connectionId",
+                  "languageCode",
+                  "location"
+                ],
                 "properties": {
-                  "type": {
-                    "$ref": "#/components/schemas/DirectoryType"
+                  "connectionId": {
+                    "type": "string"
                   },
                   "languageCode": {
                     "type": "string",
