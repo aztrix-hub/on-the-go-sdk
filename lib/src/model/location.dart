@@ -42,6 +42,7 @@ part 'location.g.dart';
 /// * [emailVerifiedAt]
 /// * [phoneVerified]
 /// * [phoneVerifiedAt]
+/// * [google] - Google Business Profile URL
 /// * [instagram] - Instagram username or URL
 /// * [facebook] - Facebook page URL
 /// * [twitter] - Twitter/X username or URL
@@ -127,6 +128,10 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'phoneVerifiedAt')
   DateTime? get phoneVerifiedAt;
+
+  /// Google Business Profile URL
+  @BuiltValueField(wireName: r'google')
+  String? get google;
 
   /// Instagram username or URL
   @BuiltValueField(wireName: r'instagram')
@@ -357,6 +362,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.phoneVerifiedAt,
         specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.google != null) {
+      yield r'google';
+      yield serializers.serialize(
+        object.google,
+        specifiedType: const FullType(String),
       );
     }
     if (object.instagram != null) {
@@ -622,6 +634,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(DateTime),
           ) as DateTime;
           result.phoneVerifiedAt = valueDes;
+          break;
+        case r'google':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.google = valueDes;
           break;
         case r'instagram':
           final valueDes = serializers.deserialize(

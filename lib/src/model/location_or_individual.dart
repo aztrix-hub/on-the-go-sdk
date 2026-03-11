@@ -39,6 +39,7 @@ part 'location_or_individual.g.dart';
 /// * [emailVerifiedAt]
 /// * [phoneVerified]
 /// * [phoneVerifiedAt]
+/// * [google] - Google Business Profile URL
 /// * [instagram] - Instagram username or URL
 /// * [facebook] - Facebook page URL
 /// * [twitter] - Twitter/X username or URL

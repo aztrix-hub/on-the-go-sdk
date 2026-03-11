@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **emailVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **phoneVerified** | **bool** |  | [optional] 
 **phoneVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**google** | **String** | Google Business Profile URL | [optional] 
 **instagram** | **String** | Instagram username or URL | [optional] 
 **facebook** | **String** | Facebook page URL | [optional] 
 **twitter** | **String** | Twitter/X username or URL | [optional] 

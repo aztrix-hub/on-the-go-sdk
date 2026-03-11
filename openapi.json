@@ -4211,6 +4211,10 @@
             "type": "string",
             "format": "date-time"
           },
+          "google": {
+            "type": "string",
+            "description": "Google Business Profile URL"
+          },
           "instagram": {
             "type": "string",
             "description": "Instagram username or URL"
