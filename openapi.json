@@ -4211,34 +4211,6 @@
             "type": "string",
             "format": "date-time"
           },
-          "google": {
-            "type": "string",
-            "description": "Google Business Profile URL"
-          },
-          "instagram": {
-            "type": "string",
-            "description": "Instagram username or URL"
-          },
-          "facebook": {
-            "type": "string",
-            "description": "Facebook page URL"
-          },
-          "twitter": {
-            "type": "string",
-            "description": "Twitter/X username or URL"
-          },
-          "whatsapp": {
-            "type": "string",
-            "description": "WhatsApp phone number"
-          },
-          "snapchat": {
-            "type": "string",
-            "description": "Snapchat username"
-          },
-          "linkedin": {
-            "type": "string",
-            "description": "LinkedIn profile/company URL"
-          },
           "verified": {
             "type": "boolean",
             "description": "Whether the location has been verified via eID (IDURA)"

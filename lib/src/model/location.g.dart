@@ -58,20 +58,6 @@ class _$Location extends Location {
   @override
   final DateTime? phoneVerifiedAt;
   @override
-  final String? google;
-  @override
-  final String? instagram;
-  @override
-  final String? facebook;
-  @override
-  final String? twitter;
-  @override
-  final String? whatsapp;
-  @override
-  final String? snapchat;
-  @override
-  final String? linkedin;
-  @override
   final bool? verified;
   @override
   final DateTime? verifiedAt;
@@ -107,13 +93,6 @@ class _$Location extends Location {
       this.emailVerifiedAt,
       this.phoneVerified,
       this.phoneVerifiedAt,
-      this.google,
-      this.instagram,
-      this.facebook,
-      this.twitter,
-      this.whatsapp,
-      this.snapchat,
-      this.linkedin,
       this.verified,
       this.verifiedAt,
       this.verifiedBy})
@@ -154,13 +133,6 @@ class _$Location extends Location {
         emailVerifiedAt == other.emailVerifiedAt &&
         phoneVerified == other.phoneVerified &&
         phoneVerifiedAt == other.phoneVerifiedAt &&
-        google == other.google &&
-        instagram == other.instagram &&
-        facebook == other.facebook &&
-        twitter == other.twitter &&
-        whatsapp == other.whatsapp &&
-        snapchat == other.snapchat &&
-        linkedin == other.linkedin &&
         verified == other.verified &&
         verifiedAt == other.verifiedAt &&
         verifiedBy == other.verifiedBy;
@@ -194,13 +166,6 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, emailVerifiedAt.hashCode);
     _$hash = $jc(_$hash, phoneVerified.hashCode);
     _$hash = $jc(_$hash, phoneVerifiedAt.hashCode);
-    _$hash = $jc(_$hash, google.hashCode);
-    _$hash = $jc(_$hash, instagram.hashCode);
-    _$hash = $jc(_$hash, facebook.hashCode);
-    _$hash = $jc(_$hash, twitter.hashCode);
-    _$hash = $jc(_$hash, whatsapp.hashCode);
-    _$hash = $jc(_$hash, snapchat.hashCode);
-    _$hash = $jc(_$hash, linkedin.hashCode);
     _$hash = $jc(_$hash, verified.hashCode);
     _$hash = $jc(_$hash, verifiedAt.hashCode);
     _$hash = $jc(_$hash, verifiedBy.hashCode);
@@ -236,13 +201,6 @@ class _$Location extends Location {
           ..add('emailVerifiedAt', emailVerifiedAt)
           ..add('phoneVerified', phoneVerified)
           ..add('phoneVerifiedAt', phoneVerifiedAt)
-          ..add('google', google)
-          ..add('instagram', instagram)
-          ..add('facebook', facebook)
-          ..add('twitter', twitter)
-          ..add('whatsapp', whatsapp)
-          ..add('snapchat', snapchat)
-          ..add('linkedin', linkedin)
           ..add('verified', verified)
           ..add('verifiedAt', verifiedAt)
           ..add('verifiedBy', verifiedBy))
@@ -368,34 +326,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set phoneVerifiedAt(DateTime? phoneVerifiedAt) =>
       _$this._phoneVerifiedAt = phoneVerifiedAt;
 
-  String? _google;
-  String? get google => _$this._google;
-  set google(String? google) => _$this._google = google;
-
-  String? _instagram;
-  String? get instagram => _$this._instagram;
-  set instagram(String? instagram) => _$this._instagram = instagram;
-
-  String? _facebook;
-  String? get facebook => _$this._facebook;
-  set facebook(String? facebook) => _$this._facebook = facebook;
-
-  String? _twitter;
-  String? get twitter => _$this._twitter;
-  set twitter(String? twitter) => _$this._twitter = twitter;
-
-  String? _whatsapp;
-  String? get whatsapp => _$this._whatsapp;
-  set whatsapp(String? whatsapp) => _$this._whatsapp = whatsapp;
-
-  String? _snapchat;
-  String? get snapchat => _$this._snapchat;
-  set snapchat(String? snapchat) => _$this._snapchat = snapchat;
-
-  String? _linkedin;
-  String? get linkedin => _$this._linkedin;
-  set linkedin(String? linkedin) => _$this._linkedin = linkedin;
-
   bool? _verified;
   bool? get verified => _$this._verified;
   set verified(bool? verified) => _$this._verified = verified;
@@ -440,13 +370,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _emailVerifiedAt = $v.emailVerifiedAt;
       _phoneVerified = $v.phoneVerified;
       _phoneVerifiedAt = $v.phoneVerifiedAt;
-      _google = $v.google;
-      _instagram = $v.instagram;
-      _facebook = $v.facebook;
-      _twitter = $v.twitter;
-      _whatsapp = $v.whatsapp;
-      _snapchat = $v.snapchat;
-      _linkedin = $v.linkedin;
       _verified = $v.verified;
       _verifiedAt = $v.verifiedAt;
       _verifiedBy = $v.verifiedBy;
@@ -499,13 +422,6 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             emailVerifiedAt: emailVerifiedAt,
             phoneVerified: phoneVerified,
             phoneVerifiedAt: phoneVerifiedAt,
-            google: google,
-            instagram: instagram,
-            facebook: facebook,
-            twitter: twitter,
-            whatsapp: whatsapp,
-            snapchat: snapchat,
-            linkedin: linkedin,
             verified: verified,
             verifiedAt: verifiedAt,
             verifiedBy: verifiedBy,

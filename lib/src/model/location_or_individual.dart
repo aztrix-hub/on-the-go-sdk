@@ -39,13 +39,6 @@ part 'location_or_individual.g.dart';
 /// * [emailVerifiedAt]
 /// * [phoneVerified]
 /// * [phoneVerifiedAt]
-/// * [google] - Google Business Profile URL
-/// * [instagram] - Instagram username or URL
-/// * [facebook] - Facebook page URL
-/// * [twitter] - Twitter/X username or URL
-/// * [whatsapp] - WhatsApp phone number
-/// * [snapchat] - Snapchat username
-/// * [linkedin] - LinkedIn profile/company URL
 /// * [verified] - Whether the location has been verified via eID (IDURA)
 /// * [verifiedAt] - When the location was verified via eID
 /// * [verifiedBy] - Name of the person who verified the location
