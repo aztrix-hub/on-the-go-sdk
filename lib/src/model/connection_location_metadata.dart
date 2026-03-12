@@ -13,7 +13,6 @@ part 'connection_location_metadata.g.dart';
 /// Properties:
 /// * [originUrl]
 /// * [ownership]
-/// * [synced]
 @BuiltValue()
 abstract class ConnectionLocationMetadata
     implements
@@ -23,9 +22,6 @@ abstract class ConnectionLocationMetadata
 
   @BuiltValueField(wireName: r'ownership')
   bool get ownership;
-
-  @BuiltValueField(wireName: r'synced')
-  bool get synced;
 
   ConnectionLocationMetadata._();
 
@@ -67,11 +63,6 @@ class _$ConnectionLocationMetadataSerializer
       object.ownership,
       specifiedType: const FullType(bool),
     );
-    yield r'synced';
-    yield serializers.serialize(
-      object.synced,
-      specifiedType: const FullType(bool),
-    );
   }
 
   @override
@@ -110,13 +101,6 @@ class _$ConnectionLocationMetadataSerializer
             specifiedType: const FullType(bool),
           ) as bool;
           result.ownership = valueDes;
-          break;
-        case r'synced':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.synced = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -5287,17 +5287,13 @@
             "type": "object",
             "required": [
               "originUrl",
-              "ownership",
-              "synced"
+              "ownership"
             ],
             "properties": {
               "originUrl": {
                 "type": "string"
               },
               "ownership": {
-                "type": "boolean"
-              },
-              "synced": {
                 "type": "boolean"
               }
             }

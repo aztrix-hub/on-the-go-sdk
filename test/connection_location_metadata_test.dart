@@ -16,10 +16,5 @@ void main() {
     test('to test the property `ownership`', () async {
       // TODO
     });
-
-    // bool synced
-    test('to test the property `synced`', () async {
-      // TODO
-    });
   });
 }
