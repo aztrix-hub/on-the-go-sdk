@@ -4183,6 +4183,30 @@
           "categories": {
             "$ref": "#/components/schemas/Categories"
           },
+          "instagram": {
+            "type": "string",
+            "description": "Instagram username or URL"
+          },
+          "facebook": {
+            "type": "string",
+            "description": "Facebook page URL"
+          },
+          "twitter": {
+            "type": "string",
+            "description": "Twitter/X username or URL"
+          },
+          "whatsapp": {
+            "type": "string",
+            "description": "WhatsApp phone number"
+          },
+          "snapchat": {
+            "type": "string",
+            "description": "Snapchat username"
+          },
+          "linkedin": {
+            "type": "string",
+            "description": "LinkedIn profile/company URL"
+          },
           "averageRating": {
             "type": "number",
             "format": "float"

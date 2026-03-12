@@ -31,6 +31,12 @@ part 'location_or_individual.g.dart';
 /// * [timezone]
 /// * [website]
 /// * [categories]
+/// * [instagram] - Instagram username or URL
+/// * [facebook] - Facebook page URL
+/// * [twitter] - Twitter/X username or URL
+/// * [whatsapp] - WhatsApp phone number
+/// * [snapchat] - Snapchat username
+/// * [linkedin] - LinkedIn profile/company URL
 /// * [averageRating]
 /// * [reviewCount]
 /// * [sponsored]

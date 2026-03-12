@@ -42,6 +42,18 @@ class _$Location extends Location {
   @override
   final BuiltList<Category>? categories;
   @override
+  final String? instagram;
+  @override
+  final String? facebook;
+  @override
+  final String? twitter;
+  @override
+  final String? whatsapp;
+  @override
+  final String? snapchat;
+  @override
+  final String? linkedin;
+  @override
   final double? averageRating;
   @override
   final int? reviewCount;
@@ -85,6 +97,12 @@ class _$Location extends Location {
       this.timezone,
       this.website,
       this.categories,
+      this.instagram,
+      this.facebook,
+      this.twitter,
+      this.whatsapp,
+      this.snapchat,
+      this.linkedin,
       this.averageRating,
       this.reviewCount,
       this.sponsored,
@@ -125,6 +143,12 @@ class _$Location extends Location {
         timezone == other.timezone &&
         website == other.website &&
         categories == other.categories &&
+        instagram == other.instagram &&
+        facebook == other.facebook &&
+        twitter == other.twitter &&
+        whatsapp == other.whatsapp &&
+        snapchat == other.snapchat &&
+        linkedin == other.linkedin &&
         averageRating == other.averageRating &&
         reviewCount == other.reviewCount &&
         sponsored == other.sponsored &&
@@ -158,6 +182,12 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, timezone.hashCode);
     _$hash = $jc(_$hash, website.hashCode);
     _$hash = $jc(_$hash, categories.hashCode);
+    _$hash = $jc(_$hash, instagram.hashCode);
+    _$hash = $jc(_$hash, facebook.hashCode);
+    _$hash = $jc(_$hash, twitter.hashCode);
+    _$hash = $jc(_$hash, whatsapp.hashCode);
+    _$hash = $jc(_$hash, snapchat.hashCode);
+    _$hash = $jc(_$hash, linkedin.hashCode);
     _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jc(_$hash, reviewCount.hashCode);
     _$hash = $jc(_$hash, sponsored.hashCode);
@@ -193,6 +223,12 @@ class _$Location extends Location {
           ..add('timezone', timezone)
           ..add('website', website)
           ..add('categories', categories)
+          ..add('instagram', instagram)
+          ..add('facebook', facebook)
+          ..add('twitter', twitter)
+          ..add('whatsapp', whatsapp)
+          ..add('snapchat', snapchat)
+          ..add('linkedin', linkedin)
           ..add('averageRating', averageRating)
           ..add('reviewCount', reviewCount)
           ..add('sponsored', sponsored)
@@ -289,6 +325,30 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   set categories(ListBuilder<Category>? categories) =>
       _$this._categories = categories;
 
+  String? _instagram;
+  String? get instagram => _$this._instagram;
+  set instagram(String? instagram) => _$this._instagram = instagram;
+
+  String? _facebook;
+  String? get facebook => _$this._facebook;
+  set facebook(String? facebook) => _$this._facebook = facebook;
+
+  String? _twitter;
+  String? get twitter => _$this._twitter;
+  set twitter(String? twitter) => _$this._twitter = twitter;
+
+  String? _whatsapp;
+  String? get whatsapp => _$this._whatsapp;
+  set whatsapp(String? whatsapp) => _$this._whatsapp = whatsapp;
+
+  String? _snapchat;
+  String? get snapchat => _$this._snapchat;
+  set snapchat(String? snapchat) => _$this._snapchat = snapchat;
+
+  String? _linkedin;
+  String? get linkedin => _$this._linkedin;
+  set linkedin(String? linkedin) => _$this._linkedin = linkedin;
+
   double? _averageRating;
   double? get averageRating => _$this._averageRating;
   set averageRating(double? averageRating) =>
@@ -362,6 +422,12 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _timezone = $v.timezone;
       _website = $v.website;
       _categories = $v.categories?.toBuilder();
+      _instagram = $v.instagram;
+      _facebook = $v.facebook;
+      _twitter = $v.twitter;
+      _whatsapp = $v.whatsapp;
+      _snapchat = $v.snapchat;
+      _linkedin = $v.linkedin;
       _averageRating = $v.averageRating;
       _reviewCount = $v.reviewCount;
       _sponsored = $v.sponsored;
@@ -414,6 +480,12 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             timezone: timezone,
             website: website,
             categories: _categories?.build(),
+            instagram: instagram,
+            facebook: facebook,
+            twitter: twitter,
+            whatsapp: whatsapp,
+            snapchat: snapchat,
+            linkedin: linkedin,
             averageRating: averageRating,
             reviewCount: reviewCount,
             sponsored: sponsored,

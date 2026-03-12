@@ -34,6 +34,12 @@ part 'location.g.dart';
 /// * [timezone]
 /// * [website]
 /// * [categories]
+/// * [instagram] - Instagram username or URL
+/// * [facebook] - Facebook page URL
+/// * [twitter] - Twitter/X username or URL
+/// * [whatsapp] - WhatsApp phone number
+/// * [snapchat] - Snapchat username
+/// * [linkedin] - LinkedIn profile/company URL
 /// * [averageRating]
 /// * [reviewCount]
 /// * [sponsored]
@@ -97,6 +103,30 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'categories')
   BuiltList<Category>? get categories;
+
+  /// Instagram username or URL
+  @BuiltValueField(wireName: r'instagram')
+  String? get instagram;
+
+  /// Facebook page URL
+  @BuiltValueField(wireName: r'facebook')
+  String? get facebook;
+
+  /// Twitter/X username or URL
+  @BuiltValueField(wireName: r'twitter')
+  String? get twitter;
+
+  /// WhatsApp phone number
+  @BuiltValueField(wireName: r'whatsapp')
+  String? get whatsapp;
+
+  /// Snapchat username
+  @BuiltValueField(wireName: r'snapchat')
+  String? get snapchat;
+
+  /// LinkedIn profile/company URL
+  @BuiltValueField(wireName: r'linkedin')
+  String? get linkedin;
 
   @BuiltValueField(wireName: r'averageRating')
   double? get averageRating;
@@ -271,6 +301,48 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield serializers.serialize(
         object.categories,
         specifiedType: const FullType(BuiltList, [FullType(Category)]),
+      );
+    }
+    if (object.instagram != null) {
+      yield r'instagram';
+      yield serializers.serialize(
+        object.instagram,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.facebook != null) {
+      yield r'facebook';
+      yield serializers.serialize(
+        object.facebook,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.twitter != null) {
+      yield r'twitter';
+      yield serializers.serialize(
+        object.twitter,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.whatsapp != null) {
+      yield r'whatsapp';
+      yield serializers.serialize(
+        object.whatsapp,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.snapchat != null) {
+      yield r'snapchat';
+      yield serializers.serialize(
+        object.snapchat,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.linkedin != null) {
+      yield r'linkedin';
+      yield serializers.serialize(
+        object.linkedin,
+        specifiedType: const FullType(String),
       );
     }
     if (object.averageRating != null) {
@@ -494,6 +566,48 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(BuiltList, [FullType(Category)]),
           ) as BuiltList<Category>;
           result.categories.replace(valueDes);
+          break;
+        case r'instagram':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.instagram = valueDes;
+          break;
+        case r'facebook':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.facebook = valueDes;
+          break;
+        case r'twitter':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.twitter = valueDes;
+          break;
+        case r'whatsapp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.whatsapp = valueDes;
+          break;
+        case r'snapchat':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.snapchat = valueDes;
+          break;
+        case r'linkedin':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.linkedin = valueDes;
           break;
         case r'averageRating':
           final valueDes = serializers.deserialize(
