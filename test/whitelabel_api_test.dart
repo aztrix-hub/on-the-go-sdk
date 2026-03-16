@@ -6,7 +6,7 @@ void main() {
   final instance = OnTheGoSdk().getWhitelabelApi();
 
   group(WhitelabelApi, () {
-    //Future<WhitelabelData> whitelabelGet() async
+    //Future<WhitelabelData> whitelabelGet({ String name }) async
     test('test whitelabelGet', () async {
       // TODO
     });

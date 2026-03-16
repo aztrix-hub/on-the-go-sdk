@@ -2775,6 +2775,17 @@
         "tags": [
           "whitelabel"
         ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "search by name, authentication not required",
+            "schema": {
+              "type": "string"
+            },
+            "required": false
+          }
+        ],
         "responses": {
           "200": {
             "content": {

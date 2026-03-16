@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **whitelabelGet**
-> WhitelabelData whitelabelGet()
+> WhitelabelData whitelabelGet(name)
 
 
 
@@ -26,9 +26,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getWhitelabelApi();
+final String name = name_example; // String | search by name, authentication not required
 
 try {
-    final response = api.whitelabelGet();
+    final response = api.whitelabelGet(name);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling WhitelabelApi->whitelabelGet: $e\n');
@@ -36,7 +37,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| search by name, authentication not required | [optional] 
 
 ### Return type
 
