@@ -6,12 +6,15 @@ part of 'directory_type.dart';
 // BuiltValueGenerator
 // **************************************************************************
 
+const DirectoryType _$PA = const DirectoryType._('PA');
 const DirectoryType _$GOOGLE = const DirectoryType._('GOOGLE');
 const DirectoryType _$FACEBOOK = const DirectoryType._('FACEBOOK');
 const DirectoryType _$INSTAGRAM = const DirectoryType._('INSTAGRAM');
 
 DirectoryType _$valueOf(String name) {
   switch (name) {
+    case 'PA':
+      return _$PA;
     case 'GOOGLE':
       return _$GOOGLE;
     case 'FACEBOOK':
@@ -25,6 +28,7 @@ DirectoryType _$valueOf(String name) {
 
 final BuiltSet<DirectoryType> _$values =
     BuiltSet<DirectoryType>(const <DirectoryType>[
+  _$PA,
   _$GOOGLE,
   _$FACEBOOK,
   _$INSTAGRAM,
@@ -32,6 +36,7 @@ final BuiltSet<DirectoryType> _$values =
 
 class _$DirectoryTypeMeta {
   const _$DirectoryTypeMeta();
+  DirectoryType get PA => _$PA;
   DirectoryType get GOOGLE => _$GOOGLE;
   DirectoryType get FACEBOOK => _$FACEBOOK;
   DirectoryType get INSTAGRAM => _$INSTAGRAM;
@@ -49,11 +54,13 @@ Serializer<DirectoryType> _$directoryTypeSerializer =
 
 class _$DirectoryTypeSerializer implements PrimitiveSerializer<DirectoryType> {
   static const Map<String, Object> _toWire = const <String, Object>{
+    'PA': 'PA',
     'GOOGLE': 'GOOGLE',
     'FACEBOOK': 'FACEBOOK',
     'INSTAGRAM': 'INSTAGRAM',
   };
   static const Map<Object, String> _fromWire = const <Object, String>{
+    'PA': 'PA',
     'GOOGLE': 'GOOGLE',
     'FACEBOOK': 'FACEBOOK',
     'INSTAGRAM': 'INSTAGRAM',

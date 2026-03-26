@@ -2796,11 +2796,14 @@
               }
             }
           },
+          "400": {
+            "description": "Invalid or Missing Parameter"
+          },
           "401": {
             "description": "Unauthorised"
           },
-          "400": {
-            "description": "Invalid or Missing Parameter"
+          "404": {
+            "description": "Not found"
           },
           "500": {
             "description": "Internal Server Error"
@@ -4806,6 +4809,7 @@
       "DirectoryType": {
         "type": "string",
         "enum": [
+          "PA",
           "GOOGLE",
           "FACEBOOK",
           "INSTAGRAM"

@@ -26,7 +26,7 @@ abstract class Metric implements Built<Metric, MetricBuilder> {
 
   @BuiltValueField(wireName: r'type')
   DirectoryType? get type;
-  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  // enum typeEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'name')
   MetricName? get name;

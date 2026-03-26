@@ -25,7 +25,7 @@ abstract class LocationListingPostRequest
 
   @BuiltValueField(wireName: r'type')
   DirectoryType get type;
-  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  // enum typeEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'connectionId')
   String get connectionId;

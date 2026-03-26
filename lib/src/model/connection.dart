@@ -24,7 +24,7 @@ abstract class Connection implements Built<Connection, ConnectionBuilder> {
 
   @BuiltValueField(wireName: r'type')
   DirectoryType get type;
-  // enum typeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  // enum typeEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'email')
   String get email;

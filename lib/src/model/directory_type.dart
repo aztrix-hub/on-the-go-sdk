@@ -10,6 +10,8 @@ import 'package:built_value/serializer.dart';
 part 'directory_type.g.dart';
 
 class DirectoryType extends EnumClass {
+  @BuiltValueEnumConst(wireName: r'PA')
+  static const DirectoryType PA = _$PA;
   @BuiltValueEnumConst(wireName: r'GOOGLE')
   static const DirectoryType GOOGLE = _$GOOGLE;
   @BuiltValueEnumConst(wireName: r'FACEBOOK')

@@ -88,7 +88,7 @@ abstract class DataPoint implements Built<DataPoint, DataPointBuilder> {
 
   @BuiltValueField(wireName: r'directoryType')
   DirectoryType? get directoryType;
-  // enum directoryTypeEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  // enum directoryTypeEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   /// Whether the datapoint has been flagged. The exact nature of the flagging depends on the directory, but can be e.g. \"Report as SPAM\"
   @BuiltValueField(wireName: r'flagged')

@@ -62,7 +62,7 @@ abstract class InboxItem implements Built<InboxItem, InboxItemBuilder> {
 
   @BuiltValueField(wireName: r'directory')
   DirectoryType get directory;
-  // enum directoryEnum {  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+  // enum directoryEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
 
   @BuiltValueField(wireName: r'rating')
   double? get rating;
