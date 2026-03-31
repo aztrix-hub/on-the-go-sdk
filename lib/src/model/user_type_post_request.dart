@@ -3,68 +3,62 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/user_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login.g.dart';
+part 'user_type_post_request.g.dart';
 
-/// User access_token
+/// UserTypePostRequest
 ///
 /// Properties:
-/// * [accessToken] - Access Token
-/// * [userType]
+/// * [email] - User email
 @BuiltValue()
-abstract class Login implements Built<Login, LoginBuilder> {
-  /// Access Token
-  @BuiltValueField(wireName: r'access_token')
-  String get accessToken;
+abstract class UserTypePostRequest
+    implements Built<UserTypePostRequest, UserTypePostRequestBuilder> {
+  /// User email
+  @BuiltValueField(wireName: r'email')
+  String get email;
 
-  @BuiltValueField(wireName: r'userType')
-  UserType? get userType;
-  // enum userTypeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
+  UserTypePostRequest._();
 
-  Login._();
-
-  factory Login([void updates(LoginBuilder b)]) = _$Login;
+  factory UserTypePostRequest([void updates(UserTypePostRequestBuilder b)]) =
+      _$UserTypePostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginBuilder b) => b;
+  static void _defaults(UserTypePostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Login> get serializer => _$LoginSerializer();
+  static Serializer<UserTypePostRequest> get serializer =>
+      _$UserTypePostRequestSerializer();
 }
 
-class _$LoginSerializer implements PrimitiveSerializer<Login> {
+class _$UserTypePostRequestSerializer
+    implements PrimitiveSerializer<UserTypePostRequest> {
   @override
-  final Iterable<Type> types = const [Login, _$Login];
+  final Iterable<Type> types = const [
+    UserTypePostRequest,
+    _$UserTypePostRequest
+  ];
 
   @override
-  final String wireName = r'Login';
+  final String wireName = r'UserTypePostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Login object, {
+    UserTypePostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'access_token';
+    yield r'email';
     yield serializers.serialize(
-      object.accessToken,
+      object.email,
       specifiedType: const FullType(String),
     );
-    if (object.userType != null) {
-      yield r'userType';
-      yield serializers.serialize(
-        object.userType,
-        specifiedType: const FullType(UserType),
-      );
-    }
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    Login object, {
+    UserTypePostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,26 +71,19 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginBuilder result,
+    required UserTypePostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_token':
+        case r'email':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.accessToken = valueDes;
-          break;
-        case r'userType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(UserType),
-          ) as UserType;
-          result.userType = valueDes;
+          result.email = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -107,12 +94,12 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   }
 
   @override
-  Login deserialize(
+  UserTypePostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginBuilder();
+    final result = UserTypePostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

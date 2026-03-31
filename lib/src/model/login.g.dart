@@ -8,14 +8,14 @@ part of 'login.dart';
 
 class _$Login extends Login {
   @override
-  final String? accessToken;
+  final String accessToken;
   @override
-  final bool? oauth;
+  final UserType? userType;
 
   factory _$Login([void Function(LoginBuilder)? updates]) =>
       (LoginBuilder()..update(updates))._build();
 
-  _$Login._({this.accessToken, this.oauth}) : super._();
+  _$Login._({required this.accessToken, this.userType}) : super._();
   @override
   Login rebuild(void Function(LoginBuilder) updates) =>
       (toBuilder()..update(updates)).build();
@@ -28,14 +28,14 @@ class _$Login extends Login {
     if (identical(other, this)) return true;
     return other is Login &&
         accessToken == other.accessToken &&
-        oauth == other.oauth;
+        userType == other.userType;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, accessToken.hashCode);
-    _$hash = $jc(_$hash, oauth.hashCode);
+    _$hash = $jc(_$hash, userType.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -44,7 +44,7 @@ class _$Login extends Login {
   String toString() {
     return (newBuiltValueToStringHelper(r'Login')
           ..add('accessToken', accessToken)
-          ..add('oauth', oauth))
+          ..add('userType', userType))
         .toString();
   }
 }
@@ -56,9 +56,9 @@ class LoginBuilder implements Builder<Login, LoginBuilder> {
   String? get accessToken => _$this._accessToken;
   set accessToken(String? accessToken) => _$this._accessToken = accessToken;
 
-  bool? _oauth;
-  bool? get oauth => _$this._oauth;
-  set oauth(bool? oauth) => _$this._oauth = oauth;
+  UserType? _userType;
+  UserType? get userType => _$this._userType;
+  set userType(UserType? userType) => _$this._userType = userType;
 
   LoginBuilder() {
     Login._defaults(this);
@@ -68,7 +68,7 @@ class LoginBuilder implements Builder<Login, LoginBuilder> {
     final $v = _$v;
     if ($v != null) {
       _accessToken = $v.accessToken;
-      _oauth = $v.oauth;
+      _userType = $v.userType;
       _$v = null;
     }
     return this;
@@ -90,8 +90,9 @@ class LoginBuilder implements Builder<Login, LoginBuilder> {
   _$Login _build() {
     final _$result = _$v ??
         _$Login._(
-          accessToken: accessToken,
-          oauth: oauth,
+          accessToken: BuiltValueNullFieldError.checkNotNull(
+              accessToken, r'Login', 'accessToken'),
+          userType: userType,
         );
     replace(_$result);
     return _$result;

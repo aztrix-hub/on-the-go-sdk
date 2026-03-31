@@ -12,13 +12,15 @@ Method | HTTP request | Description
 [**userAuthenticatedGet**](UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
 [**userDelete**](UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [**userGet**](UsersApi.md#userget) | **GET** /user | Get the current user
+[**userLoginOauthPost**](UsersApi.md#userloginoauthpost) | **POST** /user/login/oauth | Finish OAuth flow
 [**userLoginPost**](UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [**userLogoutPost**](UsersApi.md#userlogoutpost) | **POST** /user/logout | 
-[**userOauthPost**](UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
+[**userOtpLoginCompletePost**](UsersApi.md#userotplogincompletepost) | **POST** /user/otp-login/complete | Provides an access_token for the user
+[**userOtpLoginPost**](UsersApi.md#userotploginpost) | **POST** /user/otp-login | Initiates a OTP login
 [**userPatch**](UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [**userRegisterPost**](UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [**userResetPasswordPost**](UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
-[**userSystemPost**](UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
+[**userTypePost**](UsersApi.md#usertypepost) | **POST** /user/type | Find the type of the user
 
 
 # **userAuthenticatedGet**
@@ -142,6 +144,49 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **userLoginOauthPost**
+> UserLoginOauthPost200Response userLoginOauthPost(userLoginOauthPostRequest)
+
+Finish OAuth flow
+
+Provides an access_token for a authorization_code
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserLoginOauthPostRequest userLoginOauthPostRequest = ; // UserLoginOauthPostRequest | 
+
+try {
+    final response = api.userLoginOauthPost(userLoginOauthPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userLoginOauthPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userLoginOauthPostRequest** | [**UserLoginOauthPostRequest**](UserLoginOauthPostRequest.md)|  | 
+
+### Return type
+
+[**UserLoginOauthPost200Response**](UserLoginOauthPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **userLoginPost**
 > Login userLoginPost(userLoginPostRequest)
 
@@ -223,25 +268,23 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userOauthPost**
-> UserOauthPost200Response userOauthPost(userOauthPostRequest)
+# **userOtpLoginCompletePost**
+> Login userOtpLoginCompletePost(userOtpLoginCompletePostRequest)
 
-Finish OAuth flow
-
-Provides an access_token for a authorization_code
+Provides an access_token for the user
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserOauthPostRequest userOauthPostRequest = ; // UserOauthPostRequest | 
+final UserOtpLoginCompletePostRequest userOtpLoginCompletePostRequest = ; // UserOtpLoginCompletePostRequest | 
 
 try {
-    final response = api.userOauthPost(userOauthPostRequest);
+    final response = api.userOtpLoginCompletePost(userOtpLoginCompletePostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UsersApi->userOauthPost: $e\n');
+    print('Exception when calling UsersApi->userOtpLoginCompletePost: $e\n');
 }
 ```
 
@@ -249,11 +292,52 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userOauthPostRequest** | [**UserOauthPostRequest**](UserOauthPostRequest.md)|  | 
+ **userOtpLoginCompletePostRequest** | [**UserOtpLoginCompletePostRequest**](UserOtpLoginCompletePostRequest.md)|  | 
 
 ### Return type
 
-[**UserOauthPost200Response**](UserOauthPost200Response.md)
+[**Login**](Login.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **userOtpLoginPost**
+> UserOtpLoginPost200Response userOtpLoginPost(userOtpLoginPostRequest)
+
+Initiates a OTP login
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+
+final api = OnTheGoSdk().getUsersApi();
+final UserOtpLoginPostRequest userOtpLoginPostRequest = ; // UserOtpLoginPostRequest | 
+
+try {
+    final response = api.userOtpLoginPost(userOtpLoginPostRequest);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling UsersApi->userOtpLoginPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userOtpLoginPostRequest** | [**UserOtpLoginPostRequest**](UserOtpLoginPostRequest.md)|  | 
+
+### Return type
+
+[**UserOtpLoginPost200Response**](UserOtpLoginPost200Response.md)
 
 ### Authorization
 
@@ -312,7 +396,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **userRegisterPost**
-> userRegisterPost(userRegisterPostRequest)
+> userRegisterPost(userOtpLoginPostRequest)
 
 Registers a user
 
@@ -321,10 +405,10 @@ Registers a user
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserRegisterPostRequest userRegisterPostRequest = ; // UserRegisterPostRequest | 
+final UserOtpLoginPostRequest userOtpLoginPostRequest = ; // UserOtpLoginPostRequest | 
 
 try {
-    api.userRegisterPost(userRegisterPostRequest);
+    api.userRegisterPost(userOtpLoginPostRequest);
 } catch on DioException (e) {
     print('Exception when calling UsersApi->userRegisterPost: $e\n');
 }
@@ -334,7 +418,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userRegisterPostRequest** | [**UserRegisterPostRequest**](UserRegisterPostRequest.md)|  | 
+ **userOtpLoginPostRequest** | [**UserOtpLoginPostRequest**](UserOtpLoginPostRequest.md)|  | 
 
 ### Return type
 
@@ -397,23 +481,23 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **userSystemPost**
-> UserSystemPost200Response userSystemPost(userSystemPostRequest)
+# **userTypePost**
+> UserTypePost200Response userTypePost(userTypePostRequest)
 
-Find the system for the user
+Find the type of the user
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
 
 final api = OnTheGoSdk().getUsersApi();
-final UserSystemPostRequest userSystemPostRequest = ; // UserSystemPostRequest | 
+final UserTypePostRequest userTypePostRequest = ; // UserTypePostRequest | 
 
 try {
-    final response = api.userSystemPost(userSystemPostRequest);
+    final response = api.userTypePost(userTypePostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UsersApi->userSystemPost: $e\n');
+    print('Exception when calling UsersApi->userTypePost: $e\n');
 }
 ```
 
@@ -421,11 +505,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userSystemPostRequest** | [**UserSystemPostRequest**](UserSystemPostRequest.md)|  | 
+ **userTypePostRequest** | [**UserTypePostRequest**](UserTypePostRequest.md)|  | 
 
 ### Return type
 
-[**UserSystemPost200Response**](UserSystemPost200Response.md)
+[**UserTypePost200Response**](UserTypePost200Response.md)
 
 ### Authorization
 

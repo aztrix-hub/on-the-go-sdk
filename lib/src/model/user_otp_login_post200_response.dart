@@ -3,60 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/user_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login.g.dart';
+part 'user_otp_login_post200_response.g.dart';
 
-/// User access_token
+/// UserOtpLoginPost200Response
 ///
 /// Properties:
-/// * [accessToken] - Access Token
-/// * [userType]
+/// * [id] - Unique identifier for this verification
+/// * [expiresAt] - When the OTP expires
 @BuiltValue()
-abstract class Login implements Built<Login, LoginBuilder> {
-  /// Access Token
-  @BuiltValueField(wireName: r'access_token')
-  String get accessToken;
+abstract class UserOtpLoginPost200Response
+    implements
+        Built<UserOtpLoginPost200Response, UserOtpLoginPost200ResponseBuilder> {
+  /// Unique identifier for this verification
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-  @BuiltValueField(wireName: r'userType')
-  UserType? get userType;
-  // enum userTypeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
+  /// When the OTP expires
+  @BuiltValueField(wireName: r'expiresAt')
+  DateTime? get expiresAt;
 
-  Login._();
+  UserOtpLoginPost200Response._();
 
-  factory Login([void updates(LoginBuilder b)]) = _$Login;
+  factory UserOtpLoginPost200Response(
+          [void updates(UserOtpLoginPost200ResponseBuilder b)]) =
+      _$UserOtpLoginPost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginBuilder b) => b;
+  static void _defaults(UserOtpLoginPost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Login> get serializer => _$LoginSerializer();
+  static Serializer<UserOtpLoginPost200Response> get serializer =>
+      _$UserOtpLoginPost200ResponseSerializer();
 }
 
-class _$LoginSerializer implements PrimitiveSerializer<Login> {
+class _$UserOtpLoginPost200ResponseSerializer
+    implements PrimitiveSerializer<UserOtpLoginPost200Response> {
   @override
-  final Iterable<Type> types = const [Login, _$Login];
+  final Iterable<Type> types = const [
+    UserOtpLoginPost200Response,
+    _$UserOtpLoginPost200Response
+  ];
 
   @override
-  final String wireName = r'Login';
+  final String wireName = r'UserOtpLoginPost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Login object, {
+    UserOtpLoginPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'access_token';
-    yield serializers.serialize(
-      object.accessToken,
-      specifiedType: const FullType(String),
-    );
-    if (object.userType != null) {
-      yield r'userType';
+    if (object.id != null) {
+      yield r'id';
       yield serializers.serialize(
-        object.userType,
-        specifiedType: const FullType(UserType),
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.expiresAt != null) {
+      yield r'expiresAt';
+      yield serializers.serialize(
+        object.expiresAt,
+        specifiedType: const FullType(DateTime),
       );
     }
   }
@@ -64,7 +74,7 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   @override
   Object serialize(
     Serializers serializers,
-    Login object, {
+    UserOtpLoginPost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,26 +87,26 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginBuilder result,
+    required UserOtpLoginPost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_token':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.accessToken = valueDes;
+          result.id = valueDes;
           break;
-        case r'userType':
+        case r'expiresAt':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(UserType),
-          ) as UserType;
-          result.userType = valueDes;
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.expiresAt = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -107,12 +117,12 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   }
 
   @override
-  Login deserialize(
+  UserOtpLoginPost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginBuilder();
+    final result = UserOtpLoginPost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

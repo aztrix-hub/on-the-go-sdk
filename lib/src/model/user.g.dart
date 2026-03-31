@@ -20,7 +20,9 @@ class _$User extends User {
   @override
   final String? locale;
   @override
-  final String? accountType;
+  final DirectoryType? directory;
+  @override
+  final UserType? type;
 
   factory _$User([void Function(UserBuilder)? updates]) =>
       (UserBuilder()..update(updates))._build();
@@ -32,7 +34,8 @@ class _$User extends User {
       this.email,
       this.phone,
       this.locale,
-      this.accountType})
+      this.directory,
+      this.type})
       : super._();
   @override
   User rebuild(void Function(UserBuilder) updates) =>
@@ -51,7 +54,8 @@ class _$User extends User {
         email == other.email &&
         phone == other.phone &&
         locale == other.locale &&
-        accountType == other.accountType;
+        directory == other.directory &&
+        type == other.type;
   }
 
   @override
@@ -63,7 +67,8 @@ class _$User extends User {
     _$hash = $jc(_$hash, email.hashCode);
     _$hash = $jc(_$hash, phone.hashCode);
     _$hash = $jc(_$hash, locale.hashCode);
-    _$hash = $jc(_$hash, accountType.hashCode);
+    _$hash = $jc(_$hash, directory.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -77,7 +82,8 @@ class _$User extends User {
           ..add('email', email)
           ..add('phone', phone)
           ..add('locale', locale)
-          ..add('accountType', accountType))
+          ..add('directory', directory)
+          ..add('type', type))
         .toString();
   }
 }
@@ -109,9 +115,13 @@ class UserBuilder implements Builder<User, UserBuilder> {
   String? get locale => _$this._locale;
   set locale(String? locale) => _$this._locale = locale;
 
-  String? _accountType;
-  String? get accountType => _$this._accountType;
-  set accountType(String? accountType) => _$this._accountType = accountType;
+  DirectoryType? _directory;
+  DirectoryType? get directory => _$this._directory;
+  set directory(DirectoryType? directory) => _$this._directory = directory;
+
+  UserType? _type;
+  UserType? get type => _$this._type;
+  set type(UserType? type) => _$this._type = type;
 
   UserBuilder() {
     User._defaults(this);
@@ -126,7 +136,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
       _email = $v.email;
       _phone = $v.phone;
       _locale = $v.locale;
-      _accountType = $v.accountType;
+      _directory = $v.directory;
+      _type = $v.type;
       _$v = null;
     }
     return this;
@@ -154,7 +165,8 @@ class UserBuilder implements Builder<User, UserBuilder> {
           email: email,
           phone: phone,
           locale: locale,
-          accountType: accountType,
+          directory: directory,
+          type: type,
         );
     replace(_$result);
     return _$result;

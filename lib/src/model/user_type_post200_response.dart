@@ -7,55 +7,53 @@ import 'package:on_the_go_sdk/src/model/user_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login.g.dart';
+part 'user_type_post200_response.g.dart';
 
-/// User access_token
+/// UserTypePost200Response
 ///
 /// Properties:
-/// * [accessToken] - Access Token
-/// * [userType]
+/// * [type]
 @BuiltValue()
-abstract class Login implements Built<Login, LoginBuilder> {
-  /// Access Token
-  @BuiltValueField(wireName: r'access_token')
-  String get accessToken;
+abstract class UserTypePost200Response
+    implements Built<UserTypePost200Response, UserTypePost200ResponseBuilder> {
+  @BuiltValueField(wireName: r'type')
+  UserType? get type;
+  // enum typeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
 
-  @BuiltValueField(wireName: r'userType')
-  UserType? get userType;
-  // enum userTypeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
+  UserTypePost200Response._();
 
-  Login._();
-
-  factory Login([void updates(LoginBuilder b)]) = _$Login;
+  factory UserTypePost200Response(
+          [void updates(UserTypePost200ResponseBuilder b)]) =
+      _$UserTypePost200Response;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginBuilder b) => b;
+  static void _defaults(UserTypePost200ResponseBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Login> get serializer => _$LoginSerializer();
+  static Serializer<UserTypePost200Response> get serializer =>
+      _$UserTypePost200ResponseSerializer();
 }
 
-class _$LoginSerializer implements PrimitiveSerializer<Login> {
+class _$UserTypePost200ResponseSerializer
+    implements PrimitiveSerializer<UserTypePost200Response> {
   @override
-  final Iterable<Type> types = const [Login, _$Login];
+  final Iterable<Type> types = const [
+    UserTypePost200Response,
+    _$UserTypePost200Response
+  ];
 
   @override
-  final String wireName = r'Login';
+  final String wireName = r'UserTypePost200Response';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Login object, {
+    UserTypePost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'access_token';
-    yield serializers.serialize(
-      object.accessToken,
-      specifiedType: const FullType(String),
-    );
-    if (object.userType != null) {
-      yield r'userType';
+    if (object.type != null) {
+      yield r'type';
       yield serializers.serialize(
-        object.userType,
+        object.type,
         specifiedType: const FullType(UserType),
       );
     }
@@ -64,7 +62,7 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   @override
   Object serialize(
     Serializers serializers,
-    Login object, {
+    UserTypePost200Response object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,26 +75,19 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginBuilder result,
+    required UserTypePost200ResponseBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accessToken = valueDes;
-          break;
-        case r'userType':
+        case r'type':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(UserType),
           ) as UserType;
-          result.userType = valueDes;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -107,12 +98,12 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   }
 
   @override
-  Login deserialize(
+  UserTypePost200Response deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginBuilder();
+    final result = UserTypePost200ResponseBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

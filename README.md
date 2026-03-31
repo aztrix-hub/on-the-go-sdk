@@ -119,18 +119,20 @@ Class | Method | HTTP request | Description
 [*UsersApi*](doc/UsersApi.md) | [**userAuthenticatedGet**](doc/UsersApi.md#userauthenticatedget) | **GET** /user/authenticated | Is the user authenticated
 [*UsersApi*](doc/UsersApi.md) | [**userDelete**](doc/UsersApi.md#userdelete) | **DELETE** /user | Delete the current user
 [*UsersApi*](doc/UsersApi.md) | [**userGet**](doc/UsersApi.md#userget) | **GET** /user | Get the current user
+[*UsersApi*](doc/UsersApi.md) | [**userLoginOauthPost**](doc/UsersApi.md#userloginoauthpost) | **POST** /user/login/oauth | Finish OAuth flow
 [*UsersApi*](doc/UsersApi.md) | [**userLoginPost**](doc/UsersApi.md#userloginpost) | **POST** /user/login | Provides an access_token for the user
 [*UsersApi*](doc/UsersApi.md) | [**userLogoutPost**](doc/UsersApi.md#userlogoutpost) | **POST** /user/logout | 
-[*UsersApi*](doc/UsersApi.md) | [**userOauthPost**](doc/UsersApi.md#useroauthpost) | **POST** /user/oauth | Finish OAuth flow
+[*UsersApi*](doc/UsersApi.md) | [**userOtpLoginCompletePost**](doc/UsersApi.md#userotplogincompletepost) | **POST** /user/otp-login/complete | Provides an access_token for the user
+[*UsersApi*](doc/UsersApi.md) | [**userOtpLoginPost**](doc/UsersApi.md#userotploginpost) | **POST** /user/otp-login | Initiates a OTP login
 [*UsersApi*](doc/UsersApi.md) | [**userPatch**](doc/UsersApi.md#userpatch) | **PATCH** /user | Update the current user
 [*UsersApi*](doc/UsersApi.md) | [**userRegisterPost**](doc/UsersApi.md#userregisterpost) | **POST** /user/register | Registers a user
 [*UsersApi*](doc/UsersApi.md) | [**userResetPasswordPost**](doc/UsersApi.md#userresetpasswordpost) | **POST** /user/reset-password | Resets the user&#39;s password
-[*UsersApi*](doc/UsersApi.md) | [**userSystemPost**](doc/UsersApi.md#usersystempost) | **POST** /user/system | Find the system for the user
-[*VerificationApi*](doc/VerificationApi.md) | [**verifyCheckOtpPost**](doc/VerificationApi.md#verifycheckotppost) | **POST** /verify/check-otp | Verify OTP code
+[*UsersApi*](doc/UsersApi.md) | [**userTypePost**](doc/UsersApi.md#usertypepost) | **POST** /user/type | Find the type of the user
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyCompletePost**](doc/VerificationApi.md#verifycompletepost) | **POST** /verify/complete | Verify OTP code
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyEidCallbackPost**](doc/VerificationApi.md#verifyeidcallbackpost) | **POST** /verify/eid/callback | Process eID verification callback
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyEidInitiatePost**](doc/VerificationApi.md#verifyeidinitiatepost) | **POST** /verify/eid/initiate | Initiate eID verification via IDURA
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyEidStatusGet**](doc/VerificationApi.md#verifyeidstatusget) | **GET** /verify/eid/status | Check eID verification status
-[*VerificationApi*](doc/VerificationApi.md) | [**verifySendOtpPost**](doc/VerificationApi.md#verifysendotppost) | **POST** /verify/send-otp | Send OTP for email or SMS verification
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyPost**](doc/VerificationApi.md#verifypost) | **POST** /verify | Send OTP for email or SMS verification
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusGet**](doc/VerificationApi.md#verifystatusget) | **GET** /verify/status | Check verification status
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
@@ -233,17 +235,20 @@ Class | Method | HTTP request | Description
  - [SocialPost](doc/SocialPost.md)
  - [SpecialOpeningHour](doc/SpecialOpeningHour.md)
  - [User](doc/User.md)
+ - [UserLoginOauthPost200Response](doc/UserLoginOauthPost200Response.md)
+ - [UserLoginOauthPostRequest](doc/UserLoginOauthPostRequest.md)
  - [UserLoginPostRequest](doc/UserLoginPostRequest.md)
- - [UserOauthPost200Response](doc/UserOauthPost200Response.md)
- - [UserOauthPostRequest](doc/UserOauthPostRequest.md)
- - [UserRegisterPostRequest](doc/UserRegisterPostRequest.md)
- - [UserSystemPost200Response](doc/UserSystemPost200Response.md)
- - [UserSystemPostRequest](doc/UserSystemPostRequest.md)
- - [VerificationRequest](doc/VerificationRequest.md)
- - [VerificationResponse](doc/VerificationResponse.md)
+ - [UserOtpLoginCompletePostRequest](doc/UserOtpLoginCompletePostRequest.md)
+ - [UserOtpLoginPost200Response](doc/UserOtpLoginPost200Response.md)
+ - [UserOtpLoginPostRequest](doc/UserOtpLoginPostRequest.md)
+ - [UserType](doc/UserType.md)
+ - [UserTypePost200Response](doc/UserTypePost200Response.md)
+ - [UserTypePostRequest](doc/UserTypePostRequest.md)
  - [VerificationStatus](doc/VerificationStatus.md)
- - [VerifyCodeRequest](doc/VerifyCodeRequest.md)
- - [VerifyCodeResponse](doc/VerifyCodeResponse.md)
+ - [VerifyCompletePost200Response](doc/VerifyCompletePost200Response.md)
+ - [VerifyCompletePostRequest](doc/VerifyCompletePostRequest.md)
+ - [VerifyPostRequest](doc/VerifyPostRequest.md)
+ - [VerifyStatusGet200Response](doc/VerifyStatusGet200Response.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 
 

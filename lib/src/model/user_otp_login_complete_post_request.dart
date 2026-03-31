@@ -3,68 +3,75 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:on_the_go_sdk/src/model/user_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
-part 'login.g.dart';
+part 'user_otp_login_complete_post_request.g.dart';
 
-/// User access_token
+/// UserOtpLoginCompletePostRequest
 ///
 /// Properties:
-/// * [accessToken] - Access Token
-/// * [userType]
+/// * [id] - Unique identifier for this verification
+/// * [code] - the OTP code
 @BuiltValue()
-abstract class Login implements Built<Login, LoginBuilder> {
-  /// Access Token
-  @BuiltValueField(wireName: r'access_token')
-  String get accessToken;
+abstract class UserOtpLoginCompletePostRequest
+    implements
+        Built<UserOtpLoginCompletePostRequest,
+            UserOtpLoginCompletePostRequestBuilder> {
+  /// Unique identifier for this verification
+  @BuiltValueField(wireName: r'id')
+  String get id;
 
-  @BuiltValueField(wireName: r'userType')
-  UserType? get userType;
-  // enum userTypeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
+  /// the OTP code
+  @BuiltValueField(wireName: r'code')
+  String get code;
 
-  Login._();
+  UserOtpLoginCompletePostRequest._();
 
-  factory Login([void updates(LoginBuilder b)]) = _$Login;
+  factory UserOtpLoginCompletePostRequest(
+          [void updates(UserOtpLoginCompletePostRequestBuilder b)]) =
+      _$UserOtpLoginCompletePostRequest;
 
   @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LoginBuilder b) => b;
+  static void _defaults(UserOtpLoginCompletePostRequestBuilder b) => b;
 
   @BuiltValueSerializer(custom: true)
-  static Serializer<Login> get serializer => _$LoginSerializer();
+  static Serializer<UserOtpLoginCompletePostRequest> get serializer =>
+      _$UserOtpLoginCompletePostRequestSerializer();
 }
 
-class _$LoginSerializer implements PrimitiveSerializer<Login> {
+class _$UserOtpLoginCompletePostRequestSerializer
+    implements PrimitiveSerializer<UserOtpLoginCompletePostRequest> {
   @override
-  final Iterable<Type> types = const [Login, _$Login];
+  final Iterable<Type> types = const [
+    UserOtpLoginCompletePostRequest,
+    _$UserOtpLoginCompletePostRequest
+  ];
 
   @override
-  final String wireName = r'Login';
+  final String wireName = r'UserOtpLoginCompletePostRequest';
 
   Iterable<Object?> _serializeProperties(
     Serializers serializers,
-    Login object, {
+    UserOtpLoginCompletePostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'access_token';
+    yield r'id';
     yield serializers.serialize(
-      object.accessToken,
+      object.id,
       specifiedType: const FullType(String),
     );
-    if (object.userType != null) {
-      yield r'userType';
-      yield serializers.serialize(
-        object.userType,
-        specifiedType: const FullType(UserType),
-      );
-    }
+    yield r'code';
+    yield serializers.serialize(
+      object.code,
+      specifiedType: const FullType(String),
+    );
   }
 
   @override
   Object serialize(
     Serializers serializers,
-    Login object, {
+    UserOtpLoginCompletePostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) {
     return _serializeProperties(serializers, object,
@@ -77,26 +84,26 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
     required List<Object?> serializedList,
-    required LoginBuilder result,
+    required UserOtpLoginCompletePostRequestBuilder result,
     required List<Object?> unhandled,
   }) {
     for (var i = 0; i < serializedList.length; i += 2) {
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'access_token':
+        case r'id':
           final valueDes = serializers.deserialize(
             value,
             specifiedType: const FullType(String),
           ) as String;
-          result.accessToken = valueDes;
+          result.id = valueDes;
           break;
-        case r'userType':
+        case r'code':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(UserType),
-          ) as UserType;
-          result.userType = valueDes;
+            specifiedType: const FullType(String),
+          ) as String;
+          result.code = valueDes;
           break;
         default:
           unhandled.add(key);
@@ -107,12 +114,12 @@ class _$LoginSerializer implements PrimitiveSerializer<Login> {
   }
 
   @override
-  Login deserialize(
+  UserOtpLoginCompletePostRequest deserialize(
     Serializers serializers,
     Object serialized, {
     FullType specifiedType = FullType.unspecified,
   }) {
-    final result = LoginBuilder();
+    final result = UserOtpLoginCompletePostRequestBuilder();
     final serializedList = (serialized as Iterable<Object?>).toList();
     final unhandled = <Object?>[];
     _deserializeProperties(

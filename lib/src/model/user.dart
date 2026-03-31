@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:on_the_go_sdk/src/model/directory_type.dart';
+import 'package:on_the_go_sdk/src/model/user_type.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -17,7 +19,8 @@ part 'user.g.dart';
 /// * [email] - User email
 /// * [phone]
 /// * [locale]
-/// * [accountType] - The type of account (e.g., passwordless)
+/// * [directory]
+/// * [type]
 @BuiltValue()
 abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -41,9 +44,13 @@ abstract class User implements Built<User, UserBuilder> {
   @BuiltValueField(wireName: r'locale')
   String? get locale;
 
-  /// The type of account (e.g., passwordless)
-  @BuiltValueField(wireName: r'account_type')
-  String? get accountType;
+  @BuiltValueField(wireName: r'directory')
+  DirectoryType? get directory;
+  // enum directoryEnum {  PA,  GOOGLE,  FACEBOOK,  INSTAGRAM,  };
+
+  @BuiltValueField(wireName: r'type')
+  UserType? get type;
+  // enum typeEnum {  OTG,  OTG_PASSWORDLESS,  UBERALL,  YEXT,  };
 
   User._();
 
@@ -110,11 +117,18 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
         specifiedType: const FullType(String),
       );
     }
-    if (object.accountType != null) {
-      yield r'account_type';
+    if (object.directory != null) {
+      yield r'directory';
       yield serializers.serialize(
-        object.accountType,
-        specifiedType: const FullType(String),
+        object.directory,
+        specifiedType: const FullType(DirectoryType),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(UserType),
       );
     }
   }
@@ -184,12 +198,19 @@ class _$UserSerializer implements PrimitiveSerializer<User> {
           ) as String;
           result.locale = valueDes;
           break;
-        case r'account_type':
+        case r'directory':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.accountType = valueDes;
+            specifiedType: const FullType(DirectoryType),
+          ) as DirectoryType;
+          result.directory = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(UserType),
+          ) as UserType;
+          result.type = valueDes;
           break;
         default:
           unhandled.add(key);

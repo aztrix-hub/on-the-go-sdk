@@ -110,17 +110,20 @@ import 'package:on_the_go_sdk/src/model/site_colors_patch_request.dart';
 import 'package:on_the_go_sdk/src/model/social_post.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
 import 'package:on_the_go_sdk/src/model/user.dart';
+import 'package:on_the_go_sdk/src/model/user_login_oauth_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_login_oauth_post_request.dart';
 import 'package:on_the_go_sdk/src/model/user_login_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_oauth_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/user_oauth_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_register_post_request.dart';
-import 'package:on_the_go_sdk/src/model/user_system_post200_response.dart';
-import 'package:on_the_go_sdk/src/model/user_system_post_request.dart';
-import 'package:on_the_go_sdk/src/model/verification_request.dart';
-import 'package:on_the_go_sdk/src/model/verification_response.dart';
+import 'package:on_the_go_sdk/src/model/user_otp_login_complete_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_otp_login_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_otp_login_post_request.dart';
+import 'package:on_the_go_sdk/src/model/user_type.dart';
+import 'package:on_the_go_sdk/src/model/user_type_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/user_type_post_request.dart';
 import 'package:on_the_go_sdk/src/model/verification_status.dart';
-import 'package:on_the_go_sdk/src/model/verify_code_request.dart';
-import 'package:on_the_go_sdk/src/model/verify_code_response.dart';
+import 'package:on_the_go_sdk/src/model/verify_complete_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/verify_complete_post_request.dart';
+import 'package:on_the_go_sdk/src/model/verify_post_request.dart';
+import 'package:on_the_go_sdk/src/model/verify_status_get200_response.dart';
 import 'package:on_the_go_sdk/src/model/whitelabel_data.dart';
 
 part 'serializers.g.dart';
@@ -222,17 +225,20 @@ part 'serializers.g.dart';
   SocialPost,
   SpecialOpeningHour,
   User,
+  UserLoginOauthPost200Response,
+  UserLoginOauthPostRequest,
   UserLoginPostRequest,
-  UserOauthPost200Response,
-  UserOauthPostRequest,
-  UserRegisterPostRequest,
-  UserSystemPost200Response,
-  UserSystemPostRequest,
-  VerificationRequest,
-  VerificationResponse,
+  UserOtpLoginCompletePostRequest,
+  UserOtpLoginPost200Response,
+  UserOtpLoginPostRequest,
+  UserType,
+  UserTypePost200Response,
+  UserTypePostRequest,
   VerificationStatus,
-  VerifyCodeRequest,
-  VerifyCodeResponse,
+  VerifyCompletePost200Response,
+  VerifyCompletePostRequest,
+  VerifyPostRequest,
+  VerifyStatusGet200Response,
   WhitelabelData,
 ])
 Serializers serializers = (_$serializers.toBuilder()

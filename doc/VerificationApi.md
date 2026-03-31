@@ -9,31 +9,35 @@ All URIs are relative to *https://api.aztrix.me/webhook*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**verifyCheckOtpPost**](VerificationApi.md#verifycheckotppost) | **POST** /verify/check-otp | Verify OTP code
+[**verifyCompletePost**](VerificationApi.md#verifycompletepost) | **POST** /verify/complete | Verify OTP code
 [**verifyEidCallbackPost**](VerificationApi.md#verifyeidcallbackpost) | **POST** /verify/eid/callback | Process eID verification callback
 [**verifyEidInitiatePost**](VerificationApi.md#verifyeidinitiatepost) | **POST** /verify/eid/initiate | Initiate eID verification via IDURA
 [**verifyEidStatusGet**](VerificationApi.md#verifyeidstatusget) | **GET** /verify/eid/status | Check eID verification status
-[**verifySendOtpPost**](VerificationApi.md#verifysendotppost) | **POST** /verify/send-otp | Send OTP for email or SMS verification
+[**verifyPost**](VerificationApi.md#verifypost) | **POST** /verify | Send OTP for email or SMS verification
 [**verifyStatusGet**](VerificationApi.md#verifystatusget) | **GET** /verify/status | Check verification status
 
 
-# **verifyCheckOtpPost**
-> VerifyCodeResponse verifyCheckOtpPost(verifyCodeRequest)
+# **verifyCompletePost**
+> VerifyCompletePost200Response verifyCompletePost(verifyCompletePostRequest)
 
 Verify OTP code
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getVerificationApi();
-final VerifyCodeRequest verifyCodeRequest = ; // VerifyCodeRequest | 
+final VerifyCompletePostRequest verifyCompletePostRequest = ; // VerifyCompletePostRequest | 
 
 try {
-    final response = api.verifyCheckOtpPost(verifyCodeRequest);
+    final response = api.verifyCompletePost(verifyCompletePostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling VerificationApi->verifyCheckOtpPost: $e\n');
+    print('Exception when calling VerificationApi->verifyCompletePost: $e\n');
 }
 ```
 
@@ -41,15 +45,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **verifyCodeRequest** | [**VerifyCodeRequest**](VerifyCodeRequest.md)|  | 
+ **verifyCompletePostRequest** | [**VerifyCompletePostRequest**](VerifyCompletePostRequest.md)|  | 
 
 ### Return type
 
-[**VerifyCodeResponse**](VerifyCodeResponse.md)
+[**VerifyCompletePost200Response**](VerifyCompletePost200Response.md)
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 
@@ -187,23 +191,27 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verifySendOtpPost**
-> VerificationResponse verifySendOtpPost(verificationRequest)
+# **verifyPost**
+> UserOtpLoginPost200Response verifyPost(verifyPostRequest)
 
 Send OTP for email or SMS verification
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getVerificationApi();
-final VerificationRequest verificationRequest = ; // VerificationRequest | 
+final VerifyPostRequest verifyPostRequest = ; // VerifyPostRequest | 
 
 try {
-    final response = api.verifySendOtpPost(verificationRequest);
+    final response = api.verifyPost(verifyPostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling VerificationApi->verifySendOtpPost: $e\n');
+    print('Exception when calling VerificationApi->verifyPost: $e\n');
 }
 ```
 
@@ -211,15 +219,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **verificationRequest** | [**VerificationRequest**](VerificationRequest.md)|  | 
+ **verifyPostRequest** | [**VerifyPostRequest**](VerifyPostRequest.md)|  | 
 
 ### Return type
 
-[**VerificationResponse**](VerificationResponse.md)
+[**UserOtpLoginPost200Response**](UserOtpLoginPost200Response.md)
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 
@@ -229,19 +237,23 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verifyStatusGet**
-> VerificationStatus verifyStatusGet(verificationId)
+> VerifyStatusGet200Response verifyStatusGet(id)
 
 Check verification status
 
 ### Example
 ```dart
 import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getVerificationApi();
-final String verificationId = verificationId_example; // String | The verification ID
+final String id = id_example; // String | The verification ID
 
 try {
-    final response = api.verifyStatusGet(verificationId);
+    final response = api.verifyStatusGet(id);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling VerificationApi->verifyStatusGet: $e\n');
@@ -252,15 +264,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **verificationId** | **String**| The verification ID | 
+ **id** | **String**| The verification ID | 
 
 ### Return type
 
-[**VerificationStatus**](VerificationStatus.md)
+[**VerifyStatusGet200Response**](VerifyStatusGet200Response.md)
 
 ### Authorization
 
-No authorization required
+[authToken](../README.md#authToken)
 
 ### HTTP request headers
 
