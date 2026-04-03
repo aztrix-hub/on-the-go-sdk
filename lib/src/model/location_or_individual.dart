@@ -41,13 +41,6 @@ part 'location_or_individual.g.dart';
 /// * [reviewCount]
 /// * [sponsored]
 /// * [source_]
-/// * [emailVerified]
-/// * [emailVerifiedAt]
-/// * [phoneVerified]
-/// * [phoneVerifiedAt]
-/// * [verified] - Whether the location has been verified via eID (IDURA)
-/// * [verifiedAt] - When the location was verified via eID
-/// * [verifiedBy] - Name of the person who verified the location
 /// * [firstname] - First Name
 /// * [lastname] - Last name
 /// * [birthDate]

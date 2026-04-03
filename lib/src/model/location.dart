@@ -44,13 +44,6 @@ part 'location.g.dart';
 /// * [reviewCount]
 /// * [sponsored]
 /// * [source_]
-/// * [emailVerified]
-/// * [emailVerifiedAt]
-/// * [phoneVerified]
-/// * [phoneVerifiedAt]
-/// * [verified] - Whether the location has been verified via eID (IDURA)
-/// * [verifiedAt] - When the location was verified via eID
-/// * [verifiedBy] - Name of the person who verified the location
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -139,30 +132,6 @@ abstract class Location implements Built<Location, LocationBuilder> {
 
   @BuiltValueField(wireName: r'source')
   String? get source_;
-
-  @BuiltValueField(wireName: r'emailVerified')
-  bool? get emailVerified;
-
-  @BuiltValueField(wireName: r'emailVerifiedAt')
-  DateTime? get emailVerifiedAt;
-
-  @BuiltValueField(wireName: r'phoneVerified')
-  bool? get phoneVerified;
-
-  @BuiltValueField(wireName: r'phoneVerifiedAt')
-  DateTime? get phoneVerifiedAt;
-
-  /// Whether the location has been verified via eID (IDURA)
-  @BuiltValueField(wireName: r'verified')
-  bool? get verified;
-
-  /// When the location was verified via eID
-  @BuiltValueField(wireName: r'verifiedAt')
-  DateTime? get verifiedAt;
-
-  /// Name of the person who verified the location
-  @BuiltValueField(wireName: r'verifiedBy')
-  String? get verifiedBy;
 
   Location._();
 
@@ -370,55 +339,6 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
       yield r'source';
       yield serializers.serialize(
         object.source_,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.emailVerified != null) {
-      yield r'emailVerified';
-      yield serializers.serialize(
-        object.emailVerified,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.emailVerifiedAt != null) {
-      yield r'emailVerifiedAt';
-      yield serializers.serialize(
-        object.emailVerifiedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.phoneVerified != null) {
-      yield r'phoneVerified';
-      yield serializers.serialize(
-        object.phoneVerified,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.phoneVerifiedAt != null) {
-      yield r'phoneVerifiedAt';
-      yield serializers.serialize(
-        object.phoneVerifiedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.verified != null) {
-      yield r'verified';
-      yield serializers.serialize(
-        object.verified,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.verifiedAt != null) {
-      yield r'verifiedAt';
-      yield serializers.serialize(
-        object.verifiedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.verifiedBy != null) {
-      yield r'verifiedBy';
-      yield serializers.serialize(
-        object.verifiedBy,
         specifiedType: const FullType(String),
       );
     }
@@ -636,55 +556,6 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
             specifiedType: const FullType(String),
           ) as String;
           result.source_ = valueDes;
-          break;
-        case r'emailVerified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.emailVerified = valueDes;
-          break;
-        case r'emailVerifiedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.emailVerifiedAt = valueDes;
-          break;
-        case r'phoneVerified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.phoneVerified = valueDes;
-          break;
-        case r'phoneVerifiedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.phoneVerifiedAt = valueDes;
-          break;
-        case r'verified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.verified = valueDes;
-          break;
-        case r'verifiedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.verifiedAt = valueDes;
-          break;
-        case r'verifiedBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.verifiedBy = valueDes;
           break;
         default:
           unhandled.add(key);

@@ -35,13 +35,6 @@ Name | Type | Description | Notes
 **reviewCount** | **int** |  | [optional] 
 **sponsored** | **bool** |  | [optional] 
 **source_** | **String** |  | [optional] 
-**emailVerified** | **bool** |  | [optional] 
-**emailVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**phoneVerified** | **bool** |  | [optional] 
-**phoneVerifiedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**verified** | **bool** | Whether the location has been verified via eID (IDURA) | [optional] 
-**verifiedAt** | [**DateTime**](DateTime.md) | When the location was verified via eID | [optional] 
-**verifiedBy** | **String** | Name of the person who verified the location | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

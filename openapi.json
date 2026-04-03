@@ -4372,33 +4372,6 @@
           },
           "source": {
             "type": "string"
-          },
-          "emailVerified": {
-            "type": "boolean"
-          },
-          "emailVerifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "phoneVerified": {
-            "type": "boolean"
-          },
-          "phoneVerifiedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "verified": {
-            "type": "boolean",
-            "description": "Whether the location has been verified via eID (IDURA)"
-          },
-          "verifiedAt": {
-            "type": "string",
-            "format": "date-time",
-            "description": "When the location was verified via eID"
-          },
-          "verifiedBy": {
-            "type": "string",
-            "description": "Name of the person who verified the location"
           }
         }
       },
