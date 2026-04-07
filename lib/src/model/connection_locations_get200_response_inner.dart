@@ -4,7 +4,7 @@
 
 // ignore_for_file: unused_element
 import 'package:built_collection/built_collection.dart';
-import 'package:on_the_go_sdk/src/model/connection_location.dart';
+import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
 
@@ -24,7 +24,7 @@ abstract class ConnectionLocationsGet200ResponseInner
   String? get connectionId;
 
   @BuiltValueField(wireName: r'locations')
-  BuiltList<ConnectionLocation>? get locations;
+  BuiltList<Location>? get locations;
 
   ConnectionLocationsGet200ResponseInner._();
 
@@ -67,8 +67,7 @@ class _$ConnectionLocationsGet200ResponseInnerSerializer
       yield r'locations';
       yield serializers.serialize(
         object.locations,
-        specifiedType:
-            const FullType(BuiltList, [FullType(ConnectionLocation)]),
+        specifiedType: const FullType(BuiltList, [FullType(Location)]),
       );
     }
   }
@@ -106,9 +105,8 @@ class _$ConnectionLocationsGet200ResponseInnerSerializer
         case r'locations':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType:
-                const FullType(BuiltList, [FullType(ConnectionLocation)]),
-          ) as BuiltList<ConnectionLocation>;
+            specifiedType: const FullType(BuiltList, [FullType(Location)]),
+          ) as BuiltList<Location>;
           result.locations.replace(valueDes);
           break;
         default:

@@ -742,7 +742,7 @@
                       "locations": {
                         "type": "array",
                         "items": {
-                          "$ref": "#/components/schemas/ConnectionLocation"
+                          "$ref": "#/components/schemas/Location"
                         }
                       }
                     }
@@ -807,7 +807,7 @@
                   "type": "object",
                   "properties": {
                     "location": {
-                      "$ref": "#/components/schemas/ConnectionLocation"
+                      "$ref": "#/components/schemas/Location"
                     },
                     "verifications": {
                       "$ref": "#/components/schemas/ConnectionLocationVerifications"
@@ -4367,11 +4367,25 @@
             "type": "integer",
             "format": "int32"
           },
-          "sponsored": {
-            "type": "boolean"
-          },
-          "source": {
-            "type": "string"
+          "metadata": {
+            "properties": {
+              "sponsored": {
+                "type": "boolean",
+                "description": "Only used in search, indicates whether the location got a better ranking because it is sponsored"
+              },
+              "source": {
+                "type": "string",
+                "description": "Only used in search, where the search originates from"
+              },
+              "originUrl": {
+                "type": "string",
+                "description": "Only used in connected locations, the link to the location of the connected directory (for example google maps for the GOOGLE directory)"
+              },
+              "owner": {
+                "type": "boolean",
+                "description": "Only used in connected locations, indicates whether the location is owned by the user"
+              }
+            }
           }
         }
       },
@@ -5398,33 +5412,6 @@
           "ANDROID",
           "IOS"
         ]
-      },
-      "ConnectionLocation": {
-        "type": "object",
-        "required": [
-          "data",
-          "metadata"
-        ],
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/Location"
-          },
-          "metadata": {
-            "type": "object",
-            "required": [
-              "originUrl",
-              "ownership"
-            ],
-            "properties": {
-              "originUrl": {
-                "type": "string"
-              },
-              "ownership": {
-                "type": "boolean"
-              }
-            }
-          }
-        }
       },
       "ConnectionLocationAction": {
         "type": "string",

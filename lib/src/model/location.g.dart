@@ -58,9 +58,7 @@ class _$Location extends Location {
   @override
   final int? reviewCount;
   @override
-  final bool? sponsored;
-  @override
-  final String? source_;
+  final LocationMetadata? metadata;
 
   factory _$Location([void Function(LocationBuilder)? updates]) =>
       (LocationBuilder()..update(updates))._build();
@@ -91,8 +89,7 @@ class _$Location extends Location {
       this.linkedin,
       this.averageRating,
       this.reviewCount,
-      this.sponsored,
-      this.source_})
+      this.metadata})
       : super._();
   @override
   Location rebuild(void Function(LocationBuilder) updates) =>
@@ -130,8 +127,7 @@ class _$Location extends Location {
         linkedin == other.linkedin &&
         averageRating == other.averageRating &&
         reviewCount == other.reviewCount &&
-        sponsored == other.sponsored &&
-        source_ == other.source_;
+        metadata == other.metadata;
   }
 
   @override
@@ -162,8 +158,7 @@ class _$Location extends Location {
     _$hash = $jc(_$hash, linkedin.hashCode);
     _$hash = $jc(_$hash, averageRating.hashCode);
     _$hash = $jc(_$hash, reviewCount.hashCode);
-    _$hash = $jc(_$hash, sponsored.hashCode);
-    _$hash = $jc(_$hash, source_.hashCode);
+    _$hash = $jc(_$hash, metadata.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -196,8 +191,7 @@ class _$Location extends Location {
           ..add('linkedin', linkedin)
           ..add('averageRating', averageRating)
           ..add('reviewCount', reviewCount)
-          ..add('sponsored', sponsored)
-          ..add('source_', source_))
+          ..add('metadata', metadata))
         .toString();
   }
 }
@@ -316,13 +310,11 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
   int? get reviewCount => _$this._reviewCount;
   set reviewCount(int? reviewCount) => _$this._reviewCount = reviewCount;
 
-  bool? _sponsored;
-  bool? get sponsored => _$this._sponsored;
-  set sponsored(bool? sponsored) => _$this._sponsored = sponsored;
-
-  String? _source_;
-  String? get source_ => _$this._source_;
-  set source_(String? source_) => _$this._source_ = source_;
+  LocationMetadataBuilder? _metadata;
+  LocationMetadataBuilder get metadata =>
+      _$this._metadata ??= LocationMetadataBuilder();
+  set metadata(LocationMetadataBuilder? metadata) =>
+      _$this._metadata = metadata;
 
   LocationBuilder() {
     Location._defaults(this);
@@ -356,8 +348,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
       _linkedin = $v.linkedin;
       _averageRating = $v.averageRating;
       _reviewCount = $v.reviewCount;
-      _sponsored = $v.sponsored;
-      _source_ = $v.source_;
+      _metadata = $v.metadata?.toBuilder();
       _$v = null;
     }
     return this;
@@ -407,8 +398,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
             linkedin: linkedin,
             averageRating: averageRating,
             reviewCount: reviewCount,
-            sponsored: sponsored,
-            source_: source_,
+            metadata: _metadata?.build(),
           );
     } catch (_) {
       late String _$failedField;
@@ -431,6 +421,9 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
 
         _$failedField = 'categories';
         _categories?.build();
+
+        _$failedField = 'metadata';
+        _metadata?.build();
       } catch (e) {
         throw BuiltValueNestedFieldError(
             r'Location', _$failedField, e.toString());

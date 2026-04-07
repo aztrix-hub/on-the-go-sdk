@@ -43,9 +43,7 @@ doc/AiToolResponses.md
 doc/AnalyticsApi.md
 doc/Category.md
 doc/Connection.md
-doc/ConnectionLocation.md
 doc/ConnectionLocationAction.md
-doc/ConnectionLocationMetadata.md
 doc/ConnectionLocationPost200Response.md
 doc/ConnectionLocationPostRequest.md
 doc/ConnectionLocationVerification.md
@@ -81,6 +79,7 @@ doc/LocationDelete200Response.md
 doc/LocationDeleteRequest.md
 doc/LocationListingPostRequest.md
 doc/LocationListingSyncPost200Response.md
+doc/LocationMetadata.md
 doc/LocationOrIndividual.md
 doc/LocationPhotoPostRequest.md
 doc/LocationPhotoType.md
@@ -185,9 +184,7 @@ lib/src/model/ai_tool_calls_get_contact.dart
 lib/src/model/ai_tool_responses.dart
 lib/src/model/category.dart
 lib/src/model/connection.dart
-lib/src/model/connection_location.dart
 lib/src/model/connection_location_action.dart
-lib/src/model/connection_location_metadata.dart
 lib/src/model/connection_location_post200_response.dart
 lib/src/model/connection_location_post_request.dart
 lib/src/model/connection_location_verification.dart
@@ -222,6 +219,7 @@ lib/src/model/location_delete200_response.dart
 lib/src/model/location_delete_request.dart
 lib/src/model/location_listing_post_request.dart
 lib/src/model/location_listing_sync_post200_response.dart
+lib/src/model/location_metadata.dart
 lib/src/model/location_or_individual.dart
 lib/src/model/location_photo_post_request.dart
 lib/src/model/location_photo_type.dart
@@ -257,3 +255,4 @@ lib/src/model/verify_post_request.dart
 lib/src/model/verify_status_get200_response.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
+test/location_metadata_test.dart

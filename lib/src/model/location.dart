@@ -8,6 +8,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/address.dart';
 import 'package:on_the_go_sdk/src/model/special_opening_hour.dart';
+import 'package:on_the_go_sdk/src/model/location_metadata.dart';
 import 'package:on_the_go_sdk/src/model/photo.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -42,8 +43,7 @@ part 'location.g.dart';
 /// * [linkedin] - LinkedIn profile/company URL
 /// * [averageRating]
 /// * [reviewCount]
-/// * [sponsored]
-/// * [source_]
+/// * [metadata]
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
@@ -127,11 +127,8 @@ abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'reviewCount')
   int? get reviewCount;
 
-  @BuiltValueField(wireName: r'sponsored')
-  bool? get sponsored;
-
-  @BuiltValueField(wireName: r'source')
-  String? get source_;
+  @BuiltValueField(wireName: r'metadata')
+  LocationMetadata? get metadata;
 
   Location._();
 
@@ -328,18 +325,11 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
         specifiedType: const FullType(int),
       );
     }
-    if (object.sponsored != null) {
-      yield r'sponsored';
+    if (object.metadata != null) {
+      yield r'metadata';
       yield serializers.serialize(
-        object.sponsored,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.source_ != null) {
-      yield r'source';
-      yield serializers.serialize(
-        object.source_,
-        specifiedType: const FullType(String),
+        object.metadata,
+        specifiedType: const FullType(LocationMetadata),
       );
     }
   }
@@ -543,19 +533,12 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
           ) as int;
           result.reviewCount = valueDes;
           break;
-        case r'sponsored':
+        case r'metadata':
           final valueDes = serializers.deserialize(
             value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.sponsored = valueDes;
-          break;
-        case r'source':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.source_ = valueDes;
+            specifiedType: const FullType(LocationMetadata),
+          ) as LocationMetadata;
+          result.metadata.replace(valueDes);
           break;
         default:
           unhandled.add(key);

@@ -33,8 +33,7 @@ Name | Type | Description | Notes
 **linkedin** | **String** | LinkedIn profile/company URL | [optional] 
 **averageRating** | **double** |  | [optional] 
 **reviewCount** | **int** |  | [optional] 
-**sponsored** | **bool** |  | [optional] 
-**source_** | **String** |  | [optional] 
+**metadata** | [**LocationMetadata**](LocationMetadata.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

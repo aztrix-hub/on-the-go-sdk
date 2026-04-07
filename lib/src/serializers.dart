@@ -55,9 +55,7 @@ import 'package:on_the_go_sdk/src/model/ai_tool_calls_get_contact.dart';
 import 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 import 'package:on_the_go_sdk/src/model/category.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
-import 'package:on_the_go_sdk/src/model/connection_location.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_action.dart';
-import 'package:on_the_go_sdk/src/model/connection_location_metadata.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
@@ -91,6 +89,7 @@ import 'package:on_the_go_sdk/src/model/location_delete200_response.dart';
 import 'package:on_the_go_sdk/src/model/location_delete_request.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_listing_sync_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/location_metadata.dart';
 import 'package:on_the_go_sdk/src/model/location_or_individual.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_post_request.dart';
 import 'package:on_the_go_sdk/src/model/location_photo_type.dart';
@@ -170,9 +169,7 @@ part 'serializers.g.dart';
   AiToolResponses,
   Category,
   Connection,
-  ConnectionLocation,
   ConnectionLocationAction,
-  ConnectionLocationMetadata,
   ConnectionLocationPost200Response,
   ConnectionLocationPostRequest,
   ConnectionLocationVerification,
@@ -206,6 +203,7 @@ part 'serializers.g.dart';
   LocationDeleteRequest,
   LocationListingPostRequest,
   LocationListingSyncPost200Response,
+  LocationMetadata,
   LocationOrIndividual,
   LocationPhotoPostRequest,
   LocationPhotoType,

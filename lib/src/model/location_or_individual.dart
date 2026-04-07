@@ -39,11 +39,11 @@ part 'location_or_individual.g.dart';
 /// * [linkedin] - LinkedIn profile/company URL
 /// * [averageRating]
 /// * [reviewCount]
-/// * [sponsored]
-/// * [source_]
+/// * [metadata]
 /// * [firstname] - First Name
 /// * [lastname] - Last name
 /// * [birthDate]
+/// * [source_]
 @BuiltValue()
 abstract class LocationOrIndividual
     implements Built<LocationOrIndividual, LocationOrIndividualBuilder> {
