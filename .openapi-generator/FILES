@@ -255,4 +255,3 @@ lib/src/model/verify_post_request.dart
 lib/src/model/verify_status_get200_response.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/location_metadata_test.dart

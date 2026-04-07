@@ -8,8 +8,8 @@ void main() {
   group(VerificationApi, () {
     // Verify OTP code
     //
-    //Future<VerifyCodeResponse> verifyCheckOtpPost(VerifyCodeRequest verifyCodeRequest) async
-    test('test verifyCheckOtpPost', () async {
+    //Future<VerifyCompletePost200Response> verifyCompletePost(VerifyCompletePostRequest verifyCompletePostRequest) async
+    test('test verifyCompletePost', () async {
       // TODO
     });
 
@@ -42,14 +42,14 @@ void main() {
 
     // Send OTP for email or SMS verification
     //
-    //Future<VerificationResponse> verifySendOtpPost(VerificationRequest verificationRequest) async
-    test('test verifySendOtpPost', () async {
+    //Future<UserOtpLoginPost200Response> verifyPost(VerifyPostRequest verifyPostRequest) async
+    test('test verifyPost', () async {
       // TODO
     });
 
     // Check verification status
     //
-    //Future<VerificationStatus> verifyStatusGet(String verificationId) async
+    //Future<VerifyStatusGet200Response> verifyStatusGet(String id) async
     test('test verifyStatusGet', () async {
       // TODO
     });

@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the builder and call build()
 
   group(ConnectionLocationPost200Response, () {
-    // ConnectionLocation location
+    // Location location
     test('to test the property `location`', () async {
       // TODO
     });

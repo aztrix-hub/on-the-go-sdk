@@ -13,9 +13,8 @@ void main() {
       // TODO
     });
 
-    // Whether OAuth should be initiated
-    // bool oauth
-    test('to test the property `oauth`', () async {
+    // UserType userType
+    test('to test the property `userType`', () async {
       // TODO
     });
   });

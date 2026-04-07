@@ -40,9 +40,13 @@ void main() {
       // TODO
     });
 
-    // The type of account (e.g., passwordless)
-    // String accountType
-    test('to test the property `accountType`', () async {
+    // DirectoryType directory
+    test('to test the property `directory`', () async {
+      // TODO
+    });
+
+    // UserType type
+    test('to test the property `type`', () async {
       // TODO
     });
   });

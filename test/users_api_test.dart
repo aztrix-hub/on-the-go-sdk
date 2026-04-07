@@ -27,6 +27,15 @@ void main() {
       // TODO
     });
 
+    // Finish OAuth flow
+    //
+    // Provides an access_token for a authorization_code
+    //
+    //Future<UserLoginOauthPost200Response> userLoginOauthPost(UserLoginOauthPostRequest userLoginOauthPostRequest) async
+    test('test userLoginOauthPost', () async {
+      // TODO
+    });
+
     // Provides an access_token for the user
     //
     //Future<Login> userLoginPost(UserLoginPostRequest userLoginPostRequest) async
@@ -39,12 +48,17 @@ void main() {
       // TODO
     });
 
-    // Finish OAuth flow
+    // Provides an access_token for the user
     //
-    // Provides an access_token for a authorization_code
+    //Future<Login> userOtpLoginCompletePost(UserOtpLoginCompletePostRequest userOtpLoginCompletePostRequest) async
+    test('test userOtpLoginCompletePost', () async {
+      // TODO
+    });
+
+    // Initiates a OTP login
     //
-    //Future<UserOauthPost200Response> userOauthPost(UserOauthPostRequest userOauthPostRequest) async
-    test('test userOauthPost', () async {
+    //Future<UserOtpLoginPost200Response> userOtpLoginPost(UserOtpLoginPostRequest userOtpLoginPostRequest) async
+    test('test userOtpLoginPost', () async {
       // TODO
     });
 
@@ -57,7 +71,7 @@ void main() {
 
     // Registers a user
     //
-    //Future userRegisterPost(UserRegisterPostRequest userRegisterPostRequest) async
+    //Future userRegisterPost(UserOtpLoginPostRequest userOtpLoginPostRequest) async
     test('test userRegisterPost', () async {
       // TODO
     });
@@ -71,10 +85,10 @@ void main() {
       // TODO
     });
 
-    // Find the system for the user
+    // Find the type of the user
     //
-    //Future<UserSystemPost200Response> userSystemPost(UserSystemPostRequest userSystemPostRequest) async
-    test('test userSystemPost', () async {
+    //Future<UserTypePost200Response> userTypePost(UserTypePostRequest userTypePostRequest) async
+    test('test userTypePost', () async {
       // TODO
     });
   });

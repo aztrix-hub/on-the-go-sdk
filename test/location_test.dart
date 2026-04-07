@@ -138,51 +138,8 @@ void main() {
       // TODO
     });
 
-    // bool sponsored
-    test('to test the property `sponsored`', () async {
-      // TODO
-    });
-
-    // String source_
-    test('to test the property `source_`', () async {
-      // TODO
-    });
-
-    // bool emailVerified
-    test('to test the property `emailVerified`', () async {
-      // TODO
-    });
-
-    // DateTime emailVerifiedAt
-    test('to test the property `emailVerifiedAt`', () async {
-      // TODO
-    });
-
-    // bool phoneVerified
-    test('to test the property `phoneVerified`', () async {
-      // TODO
-    });
-
-    // DateTime phoneVerifiedAt
-    test('to test the property `phoneVerifiedAt`', () async {
-      // TODO
-    });
-
-    // Whether the location has been verified via eID (IDURA)
-    // bool verified
-    test('to test the property `verified`', () async {
-      // TODO
-    });
-
-    // When the location was verified via eID
-    // DateTime verifiedAt
-    test('to test the property `verifiedAt`', () async {
-      // TODO
-    });
-
-    // Name of the person who verified the location
-    // String verifiedBy
-    test('to test the property `verifiedBy`', () async {
+    // LocationMetadata metadata
+    test('to test the property `metadata`', () async {
       // TODO
     });
   });
