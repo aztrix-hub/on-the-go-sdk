@@ -181,7 +181,6 @@ Class | Method | HTTP request | Description
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
  - [ConnectionLocationAction](doc/ConnectionLocationAction.md)
- - [ConnectionLocationPost200Response](doc/ConnectionLocationPost200Response.md)
  - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationVerification](doc/ConnectionLocationVerification.md)
  - [ConnectionLocationVerificationCompletePostRequest](doc/ConnectionLocationVerificationCompletePostRequest.md)

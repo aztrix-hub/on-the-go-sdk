@@ -804,15 +804,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "location": {
-                      "$ref": "#/components/schemas/Location"
-                    },
-                    "verifications": {
-                      "$ref": "#/components/schemas/ConnectionLocationVerifications"
-                    }
-                  }
+                  "$ref": "#/components/schemas/Location"
                 }
               }
             }

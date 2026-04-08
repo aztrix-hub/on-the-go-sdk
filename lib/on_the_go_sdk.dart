@@ -65,7 +65,6 @@ export 'package:on_the_go_sdk/src/model/ai_tool_responses.dart';
 export 'package:on_the_go_sdk/src/model/category.dart';
 export 'package:on_the_go_sdk/src/model/connection.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_action.dart';
-export 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
 export 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';

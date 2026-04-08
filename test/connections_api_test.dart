@@ -15,7 +15,7 @@ void main() {
 
     // create a location on a connection
     //
-    //Future<ConnectionLocationPost200Response> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
+    //Future<Location> connectionLocationPost(ConnectionLocationPostRequest connectionLocationPostRequest) async
     test('test connectionLocationPost', () async {
       // TODO
     });

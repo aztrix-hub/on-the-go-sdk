@@ -44,7 +44,6 @@ doc/AnalyticsApi.md
 doc/Category.md
 doc/Connection.md
 doc/ConnectionLocationAction.md
-doc/ConnectionLocationPost200Response.md
 doc/ConnectionLocationPostRequest.md
 doc/ConnectionLocationVerification.md
 doc/ConnectionLocationVerificationCompletePostRequest.md
@@ -185,7 +184,6 @@ lib/src/model/ai_tool_responses.dart
 lib/src/model/category.dart
 lib/src/model/connection.dart
 lib/src/model/connection_location_action.dart
-lib/src/model/connection_location_post200_response.dart
 lib/src/model/connection_location_post_request.dart
 lib/src/model/connection_location_verification.dart
 lib/src/model/connection_location_verification_complete_post_request.dart
