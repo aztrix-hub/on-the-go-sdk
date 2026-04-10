@@ -25,7 +25,7 @@ abstract class Address implements Built<Address, AddressBuilder> {
   String get streetAndNo;
 
   @BuiltValueField(wireName: r'postalCode')
-  String get postalCode;
+  String? get postalCode;
 
   @BuiltValueField(wireName: r'city')
   String get city;
@@ -73,11 +73,13 @@ class _$AddressSerializer implements PrimitiveSerializer<Address> {
       object.streetAndNo,
       specifiedType: const FullType(String),
     );
-    yield r'postalCode';
-    yield serializers.serialize(
-      object.postalCode,
-      specifiedType: const FullType(String),
-    );
+    if (object.postalCode != null) {
+      yield r'postalCode';
+      yield serializers.serialize(
+        object.postalCode,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'city';
     yield serializers.serialize(
       object.city,

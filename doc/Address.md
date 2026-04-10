@@ -9,7 +9,7 @@ import 'package:on_the_go_sdk/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **streetAndNo** | **String** |  | 
-**postalCode** | **String** |  | 
+**postalCode** | **String** |  | [optional] 
 **city** | **String** |  | 
 **region** | **String** |  | [optional] 
 **countryCode** | **String** |  | 
