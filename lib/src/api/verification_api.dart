@@ -17,7 +17,8 @@ import 'package:on_the_go_sdk/src/model/user_otp_login_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/verify_complete_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/verify_complete_post_request.dart';
 import 'package:on_the_go_sdk/src/model/verify_post_request.dart';
-import 'package:on_the_go_sdk/src/model/verify_status_get200_response.dart';
+import 'package:on_the_go_sdk/src/model/verify_status_post200_response.dart';
+import 'package:on_the_go_sdk/src/model/verify_status_post_request.dart';
 
 class VerificationApi {
   final Dio _dio;
@@ -510,7 +511,7 @@ class VerificationApi {
   ///
   ///
   /// Parameters:
-  /// * [id] - The verification ID
+  /// * [verifyStatusPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -518,10 +519,10 @@ class VerificationApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [VerifyStatusGet200Response] as data
+  /// Returns a [Future] containing a [Response] with a [VerifyStatusPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<VerifyStatusGet200Response>> verifyStatusGet({
-    required String id,
+  Future<Response<VerifyStatusPost200Response>> verifyStatusPost({
+    required VerifyStatusPostRequest verifyStatusPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -531,7 +532,7 @@ class VerificationApi {
   }) async {
     final _path = r'/verify/status';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -546,23 +547,38 @@ class VerificationApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      r'id': encodeQueryParameter(_serializers, id, const FullType(String)),
-    };
+    dynamic _bodyData;
+
+    try {
+      const _type = FullType(VerifyStatusPostRequest);
+      _bodyData =
+          _serializers.serialize(verifyStatusPostRequest, specifiedType: _type);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
 
     final _response = await _dio.request<Object>(
       _path,
+      data: _bodyData,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    VerifyStatusGet200Response? _responseData;
+    VerifyStatusPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -570,8 +586,8 @@ class VerificationApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(VerifyStatusGet200Response),
-            ) as VerifyStatusGet200Response;
+              specifiedType: const FullType(VerifyStatusPost200Response),
+            ) as VerifyStatusPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -582,7 +598,7 @@ class VerificationApi {
       );
     }
 
-    return Response<VerifyStatusGet200Response>(
+    return Response<VerifyStatusPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

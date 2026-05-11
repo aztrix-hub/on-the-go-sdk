@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**verifyEidInitiatePost**](VerificationApi.md#verifyeidinitiatepost) | **POST** /verify/eid/initiate | Initiate eID verification via IDURA
 [**verifyEidStatusGet**](VerificationApi.md#verifyeidstatusget) | **GET** /verify/eid/status | Check eID verification status
 [**verifyPost**](VerificationApi.md#verifypost) | **POST** /verify | Send OTP for email or SMS verification
-[**verifyStatusGet**](VerificationApi.md#verifystatusget) | **GET** /verify/status | Check verification status
+[**verifyStatusPost**](VerificationApi.md#verifystatuspost) | **POST** /verify/status | Check verification status
 
 
 # **verifyCompletePost**
@@ -236,8 +236,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verifyStatusGet**
-> VerifyStatusGet200Response verifyStatusGet(id)
+# **verifyStatusPost**
+> VerifyStatusPost200Response verifyStatusPost(verifyStatusPostRequest)
 
 Check verification status
 
@@ -250,13 +250,13 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getVerificationApi();
-final String id = id_example; // String | The verification ID
+final VerifyStatusPostRequest verifyStatusPostRequest = ; // VerifyStatusPostRequest | 
 
 try {
-    final response = api.verifyStatusGet(id);
+    final response = api.verifyStatusPost(verifyStatusPostRequest);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling VerificationApi->verifyStatusGet: $e\n');
+    print('Exception when calling VerificationApi->verifyStatusPost: $e\n');
 }
 ```
 
@@ -264,11 +264,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**| The verification ID | 
+ **verifyStatusPostRequest** | [**VerifyStatusPostRequest**](VerifyStatusPostRequest.md)|  | 
 
 ### Return type
 
-[**VerifyStatusGet200Response**](VerifyStatusGet200Response.md)
+[**VerifyStatusPost200Response**](VerifyStatusPost200Response.md)
 
 ### Authorization
 
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

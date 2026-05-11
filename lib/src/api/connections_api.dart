@@ -11,6 +11,7 @@ import 'package:built_collection/built_collection.dart';
 import 'package:on_the_go_sdk/src/api_util.dart';
 import 'package:on_the_go_sdk/src/model/connection.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_action.dart';
+import 'package:on_the_go_sdk/src/model/connection_location_post200_response.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_post_request.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification.dart';
 import 'package:on_the_go_sdk/src/model/connection_location_verification_complete_post_request.dart';
@@ -18,7 +19,6 @@ import 'package:on_the_go_sdk/src/model/connection_location_verification_post_re
 import 'package:on_the_go_sdk/src/model/connection_locations_get200_response_inner.dart';
 import 'package:on_the_go_sdk/src/model/connection_post_request.dart';
 import 'package:on_the_go_sdk/src/model/directory_type.dart';
-import 'package:on_the_go_sdk/src/model/location.dart';
 import 'package:on_the_go_sdk/src/model/platform.dart';
 
 class ConnectionsApi {
@@ -135,9 +135,9 @@ class ConnectionsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Location] as data
+  /// Returns a [Future] containing a [Response] with a [ConnectionLocationPost200Response] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Location>> connectionLocationPost({
+  Future<Response<ConnectionLocationPost200Response>> connectionLocationPost({
     required ConnectionLocationPostRequest connectionLocationPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -194,7 +194,7 @@ class ConnectionsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    Location? _responseData;
+    ConnectionLocationPost200Response? _responseData;
 
     try {
       final rawResponse = _response.data;
@@ -202,8 +202,8 @@ class ConnectionsApi {
           ? null
           : _serializers.deserialize(
               rawResponse,
-              specifiedType: const FullType(Location),
-            ) as Location;
+              specifiedType: const FullType(ConnectionLocationPost200Response),
+            ) as ConnectionLocationPost200Response;
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -214,7 +214,7 @@ class ConnectionsApi {
       );
     }
 
-    return Response<Location>(
+    return Response<ConnectionLocationPost200Response>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

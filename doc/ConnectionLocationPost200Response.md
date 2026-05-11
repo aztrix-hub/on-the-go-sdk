@@ -1,4 +1,4 @@
-# on_the_go_sdk.model.Address
+# on_the_go_sdk.model.ConnectionLocationPost200Response
 
 ## Load the model package
 ```dart
@@ -8,14 +8,8 @@ import 'package:on_the_go_sdk/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**streetAndNo** | **String** |  | 
-**postalCode** | **String** |  | 
-**city** | **String** |  | 
-**region** | **String** |  | [optional] 
-**countryCode** | **String** |  | 
-**extraDescription** | **String** |  | [optional] 
-**latitude** | **double** |  | [optional] 
-**longitude** | **double** |  | [optional] 
+**location** | [**Location**](Location.md) |  | [optional] 
+**verifications** | [**BuiltList&lt;ConnectionLocationVerification&gt;**](ConnectionLocationVerification.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

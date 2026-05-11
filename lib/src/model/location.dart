@@ -47,7 +47,7 @@ part 'location.g.dart';
 @BuiltValue()
 abstract class Location implements Built<Location, LocationBuilder> {
   @BuiltValueField(wireName: r'id')
-  String get id;
+  String? get id;
 
   @BuiltValueField(wireName: r'name')
   String get name;
@@ -153,11 +153,13 @@ class _$LocationSerializer implements PrimitiveSerializer<Location> {
     Location object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'id';
-    yield serializers.serialize(
-      object.id,
-      specifiedType: const FullType(String),
-    );
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
     yield r'name';
     yield serializers.serialize(
       object.name,

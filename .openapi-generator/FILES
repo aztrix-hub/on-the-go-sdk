@@ -44,6 +44,7 @@ doc/AnalyticsApi.md
 doc/Category.md
 doc/Connection.md
 doc/ConnectionLocationAction.md
+doc/ConnectionLocationPost200Response.md
 doc/ConnectionLocationPostRequest.md
 doc/ConnectionLocationVerification.md
 doc/ConnectionLocationVerificationCompletePostRequest.md
@@ -118,7 +119,8 @@ doc/VerificationStatus.md
 doc/VerifyCompletePost200Response.md
 doc/VerifyCompletePostRequest.md
 doc/VerifyPostRequest.md
-doc/VerifyStatusGet200Response.md
+doc/VerifyStatusPost200Response.md
+doc/VerifyStatusPostRequest.md
 doc/WhitelabelApi.md
 doc/WhitelabelData.md
 lib/on_the_go_sdk.dart
@@ -184,6 +186,7 @@ lib/src/model/ai_tool_responses.dart
 lib/src/model/category.dart
 lib/src/model/connection.dart
 lib/src/model/connection_location_action.dart
+lib/src/model/connection_location_post200_response.dart
 lib/src/model/connection_location_post_request.dart
 lib/src/model/connection_location_verification.dart
 lib/src/model/connection_location_verification_complete_post_request.dart
@@ -250,6 +253,10 @@ lib/src/model/verification_status.dart
 lib/src/model/verify_complete_post200_response.dart
 lib/src/model/verify_complete_post_request.dart
 lib/src/model/verify_post_request.dart
-lib/src/model/verify_status_get200_response.dart
+lib/src/model/verify_status_post200_response.dart
+lib/src/model/verify_status_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
+test/connection_location_post200_response_test.dart
+test/verify_status_post200_response_test.dart
+test/verify_status_post_request_test.dart

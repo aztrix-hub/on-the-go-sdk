@@ -133,7 +133,7 @@ Class | Method | HTTP request | Description
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyEidInitiatePost**](doc/VerificationApi.md#verifyeidinitiatepost) | **POST** /verify/eid/initiate | Initiate eID verification via IDURA
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyEidStatusGet**](doc/VerificationApi.md#verifyeidstatusget) | **GET** /verify/eid/status | Check eID verification status
 [*VerificationApi*](doc/VerificationApi.md) | [**verifyPost**](doc/VerificationApi.md#verifypost) | **POST** /verify | Send OTP for email or SMS verification
-[*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusGet**](doc/VerificationApi.md#verifystatusget) | **GET** /verify/status | Check verification status
+[*VerificationApi*](doc/VerificationApi.md) | [**verifyStatusPost**](doc/VerificationApi.md#verifystatuspost) | **POST** /verify/status | Check verification status
 [*WhitelabelApi*](doc/WhitelabelApi.md) | [**whitelabelGet**](doc/WhitelabelApi.md#whitelabelget) | **GET** /whitelabel | 
 
 
@@ -181,6 +181,7 @@ Class | Method | HTTP request | Description
  - [Category](doc/Category.md)
  - [Connection](doc/Connection.md)
  - [ConnectionLocationAction](doc/ConnectionLocationAction.md)
+ - [ConnectionLocationPost200Response](doc/ConnectionLocationPost200Response.md)
  - [ConnectionLocationPostRequest](doc/ConnectionLocationPostRequest.md)
  - [ConnectionLocationVerification](doc/ConnectionLocationVerification.md)
  - [ConnectionLocationVerificationCompletePostRequest](doc/ConnectionLocationVerificationCompletePostRequest.md)
@@ -246,7 +247,8 @@ Class | Method | HTTP request | Description
  - [VerifyCompletePost200Response](doc/VerifyCompletePost200Response.md)
  - [VerifyCompletePostRequest](doc/VerifyCompletePostRequest.md)
  - [VerifyPostRequest](doc/VerifyPostRequest.md)
- - [VerifyStatusGet200Response](doc/VerifyStatusGet200Response.md)
+ - [VerifyStatusPost200Response](doc/VerifyStatusPost200Response.md)
+ - [VerifyStatusPostRequest](doc/VerifyStatusPostRequest.md)
  - [WhitelabelData](doc/WhitelabelData.md)
 
 

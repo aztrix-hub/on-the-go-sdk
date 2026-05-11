@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **connectionLocationPost**
-> Location connectionLocationPost(connectionLocationPostRequest)
+> ConnectionLocationPost200Response connectionLocationPost(connectionLocationPostRequest)
 
 create a location on a connection
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Location**](Location.md)
+[**ConnectionLocationPost200Response**](ConnectionLocationPost200Response.md)
 
 ### Authorization
 

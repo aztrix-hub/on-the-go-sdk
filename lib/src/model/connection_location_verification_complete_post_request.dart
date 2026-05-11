@@ -16,6 +16,7 @@ part 'connection_location_verification_complete_post_request.g.dart';
 /// * [connectionLocationId]
 /// * [method]
 /// * [token]
+/// * [verificationId]
 @BuiltValue()
 abstract class ConnectionLocationVerificationCompletePostRequest
     implements
@@ -33,6 +34,9 @@ abstract class ConnectionLocationVerificationCompletePostRequest
 
   @BuiltValueField(wireName: r'token')
   String get token;
+
+  @BuiltValueField(wireName: r'verificationId')
+  String? get verificationId;
 
   ConnectionLocationVerificationCompletePostRequest._();
 
@@ -89,6 +93,13 @@ class _$ConnectionLocationVerificationCompletePostRequestSerializer
       object.token,
       specifiedType: const FullType(String),
     );
+    if (object.verificationId != null) {
+      yield r'verificationId';
+      yield serializers.serialize(
+        object.verificationId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
   @override
@@ -141,6 +152,13 @@ class _$ConnectionLocationVerificationCompletePostRequestSerializer
             specifiedType: const FullType(String),
           ) as String;
           result.token = valueDes;
+          break;
+        case r'verificationId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.verificationId = valueDes;
           break;
         default:
           unhandled.add(key);
