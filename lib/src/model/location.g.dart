@@ -8,7 +8,7 @@ part of 'location.dart';
 
 class _$Location extends Location {
   @override
-  final String id;
+  final String? id;
   @override
   final String name;
   @override
@@ -64,7 +64,7 @@ class _$Location extends Location {
       (LocationBuilder()..update(updates))._build();
 
   _$Location._(
-      {required this.id,
+      {this.id,
       required this.name,
       this.address,
       this.email,
@@ -372,7 +372,7 @@ class LocationBuilder implements Builder<Location, LocationBuilder> {
     try {
       _$result = _$v ??
           _$Location._(
-            id: BuiltValueNullFieldError.checkNotNull(id, r'Location', 'id'),
+            id: id,
             name: BuiltValueNullFieldError.checkNotNull(
                 name, r'Location', 'name'),
             address: _address?.build(),

@@ -10,7 +10,7 @@ class _$Address extends Address {
   @override
   final String streetAndNo;
   @override
-  final String? postalCode;
+  final String postalCode;
   @override
   final String city;
   @override
@@ -29,7 +29,7 @@ class _$Address extends Address {
 
   _$Address._(
       {required this.streetAndNo,
-      this.postalCode,
+      required this.postalCode,
       required this.city,
       this.region,
       required this.countryCode,
@@ -162,7 +162,8 @@ class AddressBuilder implements Builder<Address, AddressBuilder> {
         _$Address._(
           streetAndNo: BuiltValueNullFieldError.checkNotNull(
               streetAndNo, r'Address', 'streetAndNo'),
-          postalCode: postalCode,
+          postalCode: BuiltValueNullFieldError.checkNotNull(
+              postalCode, r'Address', 'postalCode'),
           city: BuiltValueNullFieldError.checkNotNull(city, r'Address', 'city'),
           region: region,
           countryCode: BuiltValueNullFieldError.checkNotNull(

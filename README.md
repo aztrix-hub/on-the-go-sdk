@@ -90,6 +90,7 @@ Class | Method | HTTP request | Description
 [*ConnectionsApi*](doc/ConnectionsApi.md) | [**connectionsGet**](doc/ConnectionsApi.md#connectionsget) | **GET** /connections | Get user connections
 [*InboxApi*](doc/InboxApi.md) | [**inboxItemGet**](doc/InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxPost**](doc/InboxApi.md#inboxpost) | **POST** /inbox | 
+[*InboxApi*](doc/InboxApi.md) | [**inboxReplyDelete**](doc/InboxApi.md#inboxreplydelete) | **DELETE** /inbox/reply | 
 [*InboxApi*](doc/InboxApi.md) | [**inboxReplyPost**](doc/InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 [*LocationsApi*](doc/LocationsApi.md) | [**categoriesGet**](doc/LocationsApi.md#categoriesget) | **GET** /categories | Get categories
 [*LocationsApi*](doc/LocationsApi.md) | [**locationDelete**](doc/LocationsApi.md#locationdelete) | **DELETE** /location | Delete a Location

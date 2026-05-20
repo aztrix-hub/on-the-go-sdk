@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**inboxItemGet**](InboxApi.md#inboxitemget) | **GET** /inbox/item | 
 [**inboxPost**](InboxApi.md#inboxpost) | **POST** /inbox | 
+[**inboxReplyDelete**](InboxApi.md#inboxreplydelete) | **DELETE** /inbox/reply | 
 [**inboxReplyPost**](InboxApi.md#inboxreplypost) | **POST** /inbox/reply | 
 
 
@@ -104,8 +105,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **inboxReplyPost**
-> DataPoint inboxReplyPost(inboxReplyPostRequest)
+# **inboxReplyDelete**
+> inboxReplyDelete(datapointId)
 
 
 
@@ -118,10 +119,55 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getInboxApi();
+final String datapointId = datapointId_example; // String | 
+
+try {
+    api.inboxReplyDelete(datapointId);
+} catch on DioException (e) {
+    print('Exception when calling InboxApi->inboxReplyDelete: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **datapointId** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[authToken](../README.md#authToken)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **inboxReplyPost**
+> DataPoint inboxReplyPost(datapointId, inboxReplyPostRequest)
+
+
+
+### Example
+```dart
+import 'package:on_the_go_sdk/api.dart';
+// TODO Configure API key authorization: authToken
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
+
+final api = OnTheGoSdk().getInboxApi();
+final String datapointId = datapointId_example; // String | Data point ID you want to reply to
 final InboxReplyPostRequest inboxReplyPostRequest = ; // InboxReplyPostRequest | 
 
 try {
-    final response = api.inboxReplyPost(inboxReplyPostRequest);
+    final response = api.inboxReplyPost(datapointId, inboxReplyPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InboxApi->inboxReplyPost: $e\n');
@@ -132,6 +178,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **datapointId** | **String**| Data point ID you want to reply to | 
  **inboxReplyPostRequest** | [**InboxReplyPostRequest**](InboxReplyPostRequest.md)|  | 
 
 ### Return type

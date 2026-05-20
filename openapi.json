@@ -2854,21 +2854,26 @@
         "tags": [
           "inbox"
         ],
-        "parameters": [],
+        "parameters": [
+          {
+            "name": "datapointId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Data point ID you want to reply to"
+          }
+        ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
                 "required": [
-                  "datapointId",
                   "reply"
                 ],
                 "properties": {
-                  "datapointId": {
-                    "type": "string",
-                    "description": "Data point ID you want to reply to"
-                  },
                   "reply": {
                     "type": "string",
                     "description": "The text you want to reply"
@@ -2895,6 +2900,40 @@
           },
           "404": {
             "description": "Data point not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "security": [
+          {
+            "authToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "inbox"
+        ],
+        "parameters": [
+          {
+            "name": "datapointId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Reply deleted"
+          },
+          "400": {
+            "description": "Invalid or missing parameter"
+          },
+          "404": {
+            "description": "Reply not found"
           },
           "500": {
             "description": "Internal Server Error"

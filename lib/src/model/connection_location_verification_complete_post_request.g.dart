@@ -16,6 +16,8 @@ class _$ConnectionLocationVerificationCompletePostRequest
   final ConnectionLocationVerificationMethod method;
   @override
   final String token;
+  @override
+  final String? verificationId;
 
   factory _$ConnectionLocationVerificationCompletePostRequest(
           [void Function(
@@ -29,7 +31,8 @@ class _$ConnectionLocationVerificationCompletePostRequest
       {required this.connectionId,
       required this.connectionLocationId,
       required this.method,
-      required this.token})
+      required this.token,
+      this.verificationId})
       : super._();
   @override
   ConnectionLocationVerificationCompletePostRequest rebuild(
@@ -49,7 +52,8 @@ class _$ConnectionLocationVerificationCompletePostRequest
         connectionId == other.connectionId &&
         connectionLocationId == other.connectionLocationId &&
         method == other.method &&
-        token == other.token;
+        token == other.token &&
+        verificationId == other.verificationId;
   }
 
   @override
@@ -59,6 +63,7 @@ class _$ConnectionLocationVerificationCompletePostRequest
     _$hash = $jc(_$hash, connectionLocationId.hashCode);
     _$hash = $jc(_$hash, method.hashCode);
     _$hash = $jc(_$hash, token.hashCode);
+    _$hash = $jc(_$hash, verificationId.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
   }
@@ -70,7 +75,8 @@ class _$ConnectionLocationVerificationCompletePostRequest
           ..add('connectionId', connectionId)
           ..add('connectionLocationId', connectionLocationId)
           ..add('method', method)
-          ..add('token', token))
+          ..add('token', token)
+          ..add('verificationId', verificationId))
         .toString();
   }
 }
@@ -99,6 +105,11 @@ class ConnectionLocationVerificationCompletePostRequestBuilder
   String? get token => _$this._token;
   set token(String? token) => _$this._token = token;
 
+  String? _verificationId;
+  String? get verificationId => _$this._verificationId;
+  set verificationId(String? verificationId) =>
+      _$this._verificationId = verificationId;
+
   ConnectionLocationVerificationCompletePostRequestBuilder() {
     ConnectionLocationVerificationCompletePostRequest._defaults(this);
   }
@@ -110,6 +121,7 @@ class ConnectionLocationVerificationCompletePostRequestBuilder
       _connectionLocationId = $v.connectionLocationId;
       _method = $v.method;
       _token = $v.token;
+      _verificationId = $v.verificationId;
       _$v = null;
     }
     return this;
@@ -145,6 +157,7 @@ class ConnectionLocationVerificationCompletePostRequestBuilder
               r'ConnectionLocationVerificationCompletePostRequest', 'method'),
           token: BuiltValueNullFieldError.checkNotNull(token,
               r'ConnectionLocationVerificationCompletePostRequest', 'token'),
+          verificationId: verificationId,
         );
     replace(_$result);
     return _$result;

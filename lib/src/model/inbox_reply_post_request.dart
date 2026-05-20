@@ -11,15 +11,10 @@ part 'inbox_reply_post_request.g.dart';
 /// InboxReplyPostRequest
 ///
 /// Properties:
-/// * [datapointId] - Data point ID you want to reply to
 /// * [reply] - The text you want to reply
 @BuiltValue()
 abstract class InboxReplyPostRequest
     implements Built<InboxReplyPostRequest, InboxReplyPostRequestBuilder> {
-  /// Data point ID you want to reply to
-  @BuiltValueField(wireName: r'datapointId')
-  String get datapointId;
-
   /// The text you want to reply
   @BuiltValueField(wireName: r'reply')
   String get reply;
@@ -53,11 +48,6 @@ class _$InboxReplyPostRequestSerializer
     InboxReplyPostRequest object, {
     FullType specifiedType = FullType.unspecified,
   }) sync* {
-    yield r'datapointId';
-    yield serializers.serialize(
-      object.datapointId,
-      specifiedType: const FullType(String),
-    );
     yield r'reply';
     yield serializers.serialize(
       object.reply,
@@ -88,13 +78,6 @@ class _$InboxReplyPostRequestSerializer
       final key = serializedList[i] as String;
       final value = serializedList[i + 1];
       switch (key) {
-        case r'datapointId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.datapointId = valueDes;
-          break;
         case r'reply':
           final valueDes = serializers.deserialize(
             value,
