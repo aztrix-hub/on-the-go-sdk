@@ -52,6 +52,7 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(Category.serializer)
       ..add(Connection.serializer)
       ..add(ConnectionLocationAction.serializer)
+      ..add(ConnectionLocationPost200Response.serializer)
       ..add(ConnectionLocationPostRequest.serializer)
       ..add(ConnectionLocationVerification.serializer)
       ..add(ConnectionLocationVerificationCompletePostRequest.serializer)
@@ -123,8 +124,9 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..add(VerifyCompletePostRequest.serializer)
       ..add(VerifyPostRequest.serializer)
       ..add(VerifyPostRequestTypeEnum.serializer)
-      ..add(VerifyStatusGet200Response.serializer)
-      ..add(VerifyStatusGet200ResponseTypeEnum.serializer)
+      ..add(VerifyStatusPost200Response.serializer)
+      ..add(VerifyStatusPost200ResponseTypeEnum.serializer)
+      ..add(VerifyStatusPostRequest.serializer)
       ..add(WhitelabelData.serializer)
       ..add(WhitelabelDataThemeEnum.serializer)
       ..addBuilderFactory(
@@ -148,6 +150,10 @@ Serializers _$serializers = (Serializers().toBuilder()
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(AiMessage)]),
           () => ListBuilder<AiMessage>())
+      ..addBuilderFactory(
+          const FullType(BuiltList,
+              const [const FullType(ConnectionLocationVerification)]),
+          () => ListBuilder<ConnectionLocationVerification>())
       ..addBuilderFactory(
           const FullType(BuiltList, const [const FullType(DataPoint)]),
           () => ListBuilder<DataPoint>())

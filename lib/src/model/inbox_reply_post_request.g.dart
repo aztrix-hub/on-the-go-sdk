@@ -8,13 +8,16 @@ part of 'inbox_reply_post_request.dart';
 
 class _$InboxReplyPostRequest extends InboxReplyPostRequest {
   @override
-  final String? reply;
+  final String datapointId;
+  @override
+  final String reply;
 
   factory _$InboxReplyPostRequest(
           [void Function(InboxReplyPostRequestBuilder)? updates]) =>
       (InboxReplyPostRequestBuilder()..update(updates))._build();
 
-  _$InboxReplyPostRequest._({this.reply}) : super._();
+  _$InboxReplyPostRequest._({required this.datapointId, required this.reply})
+      : super._();
   @override
   InboxReplyPostRequest rebuild(
           void Function(InboxReplyPostRequestBuilder) updates) =>
@@ -27,12 +30,15 @@ class _$InboxReplyPostRequest extends InboxReplyPostRequest {
   @override
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
-    return other is InboxReplyPostRequest && reply == other.reply;
+    return other is InboxReplyPostRequest &&
+        datapointId == other.datapointId &&
+        reply == other.reply;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
+    _$hash = $jc(_$hash, datapointId.hashCode);
     _$hash = $jc(_$hash, reply.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -41,6 +47,7 @@ class _$InboxReplyPostRequest extends InboxReplyPostRequest {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'InboxReplyPostRequest')
+          ..add('datapointId', datapointId)
           ..add('reply', reply))
         .toString();
   }
@@ -49,6 +56,10 @@ class _$InboxReplyPostRequest extends InboxReplyPostRequest {
 class InboxReplyPostRequestBuilder
     implements Builder<InboxReplyPostRequest, InboxReplyPostRequestBuilder> {
   _$InboxReplyPostRequest? _$v;
+
+  String? _datapointId;
+  String? get datapointId => _$this._datapointId;
+  set datapointId(String? datapointId) => _$this._datapointId = datapointId;
 
   String? _reply;
   String? get reply => _$this._reply;
@@ -61,6 +72,7 @@ class InboxReplyPostRequestBuilder
   InboxReplyPostRequestBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
+      _datapointId = $v.datapointId;
       _reply = $v.reply;
       _$v = null;
     }
@@ -83,7 +95,10 @@ class InboxReplyPostRequestBuilder
   _$InboxReplyPostRequest _build() {
     final _$result = _$v ??
         _$InboxReplyPostRequest._(
-          reply: reply,
+          datapointId: BuiltValueNullFieldError.checkNotNull(
+              datapointId, r'InboxReplyPostRequest', 'datapointId'),
+          reply: BuiltValueNullFieldError.checkNotNull(
+              reply, r'InboxReplyPostRequest', 'reply'),
         );
     replace(_$result);
     return _$result;

@@ -257,6 +257,3 @@ lib/src/model/verify_status_post200_response.dart
 lib/src/model/verify_status_post_request.dart
 lib/src/model/whitelabel_data.dart
 lib/src/serializers.dart
-test/connection_location_post200_response_test.dart
-test/verify_status_post200_response_test.dart
-test/verify_status_post_request_test.dart

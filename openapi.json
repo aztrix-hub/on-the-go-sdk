@@ -2854,26 +2854,21 @@
         "tags": [
           "inbox"
         ],
-        "parameters": [
-          {
-            "name": "datapointId",
-            "in": "path",
-            "description": "Data point ID you want to reply to",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "datapointId",
+                  "reply"
+                ],
                 "properties": {
-                  "required": [
-                    "reply"
-                  ],
+                  "datapointId": {
+                    "type": "string",
+                    "description": "Data point ID you want to reply to"
+                  },
                   "reply": {
                     "type": "string",
                     "description": "The text you want to reply"

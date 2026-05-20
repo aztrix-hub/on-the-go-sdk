@@ -216,7 +216,6 @@ class InboxApi {
   ///
   ///
   /// Parameters:
-  /// * [datapointId] - Data point ID you want to reply to
   /// * [inboxReplyPostRequest]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -228,7 +227,6 @@ class InboxApi {
   /// Returns a [Future] containing a [Response] with a [DataPoint] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<DataPoint>> inboxReplyPost({
-    required String datapointId,
     required InboxReplyPostRequest inboxReplyPostRequest,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -237,10 +235,7 @@ class InboxApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/inbox/reply'.replaceAll(
-        '{' r'datapointId' '}',
-        encodeQueryParameter(_serializers, datapointId, const FullType(String))
-            .toString());
+    final _path = r'/inbox/reply';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

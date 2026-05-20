@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **inboxReplyPost**
-> DataPoint inboxReplyPost(datapointId, inboxReplyPostRequest)
+> DataPoint inboxReplyPost(inboxReplyPostRequest)
 
 
 
@@ -118,11 +118,10 @@ import 'package:on_the_go_sdk/api.dart';
 //defaultApiClient.getAuthentication<ApiKeyAuth>('authToken').apiKeyPrefix = 'Bearer';
 
 final api = OnTheGoSdk().getInboxApi();
-final String datapointId = datapointId_example; // String | Data point ID you want to reply to
 final InboxReplyPostRequest inboxReplyPostRequest = ; // InboxReplyPostRequest | 
 
 try {
-    final response = api.inboxReplyPost(datapointId, inboxReplyPostRequest);
+    final response = api.inboxReplyPost(inboxReplyPostRequest);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling InboxApi->inboxReplyPost: $e\n');
@@ -133,7 +132,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **datapointId** | **String**| Data point ID you want to reply to | 
  **inboxReplyPostRequest** | [**InboxReplyPostRequest**](InboxReplyPostRequest.md)|  | 
 
 ### Return type
